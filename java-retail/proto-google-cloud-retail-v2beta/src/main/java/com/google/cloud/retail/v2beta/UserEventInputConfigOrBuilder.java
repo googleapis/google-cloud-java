@@ -146,5 +146,5 @@ public interface UserEventInputConfigOrBuilder
    */
   com.google.cloud.retail.v2beta.BigQuerySourceOrBuilder getBigQuerySourceOrBuilder();
 
-  public com.google.cloud.retail.v2beta.UserEventInputConfig.SourceCase getSourceCase();
+  com.google.cloud.retail.v2beta.UserEventInputConfig.SourceCase getSourceCase();
 }

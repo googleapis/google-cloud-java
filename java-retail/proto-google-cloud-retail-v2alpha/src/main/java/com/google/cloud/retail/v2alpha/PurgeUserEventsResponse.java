@@ -47,11 +47,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     return new PurgeUserEventsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.PurgeConfigProto
         .internal_static_google_cloud_retail_v2alpha_PurgeUserEventsResponse_descriptor;

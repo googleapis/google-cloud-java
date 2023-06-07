@@ -48,11 +48,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     return new ListSecretVersionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ServiceProto
         .internal_static_google_cloud_secretmanager_v1_ListSecretVersionsResponse_descriptor;

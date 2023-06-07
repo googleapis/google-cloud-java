@@ -118,6 +118,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *
@@ -132,6 +133,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *
@@ -146,6 +148,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *

@@ -45,11 +45,6 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
     return new UpdateControlRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ControlServiceProto
         .internal_static_google_cloud_retail_v2_UpdateControlRequest_descriptor;
@@ -123,7 +118,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -142,7 +139,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -161,7 +160,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -757,7 +758,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -775,7 +778,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -799,7 +804,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -825,7 +832,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -848,7 +857,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -877,7 +888,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -900,7 +913,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -918,7 +933,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *
@@ -940,7 +957,9 @@ public final class UpdateControlRequest extends com.google.protobuf.GeneratedMes
      * Indicates which fields in the provided
      * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
      * supported:
+     *
      * * [Control.name][google.cloud.retail.v2.Control.name]
+     *
      * If not set or empty, all supported fields are updated.
      * </pre>
      *

@@ -171,5 +171,5 @@ public interface EndpointVerificationInfoOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getLastVerificationTimeOrBuilder();
 
-  public com.google.recaptchaenterprise.v1.EndpointVerificationInfo.EndpointCase getEndpointCase();
+  com.google.recaptchaenterprise.v1.EndpointVerificationInfo.EndpointCase getEndpointCase();
 }

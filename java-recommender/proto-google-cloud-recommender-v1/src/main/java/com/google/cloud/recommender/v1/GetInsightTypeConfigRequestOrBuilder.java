@@ -28,9 +28,13 @@ public interface GetInsightTypeConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the InsightTypeConfig to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
    * </pre>
    *
@@ -46,9 +50,13 @@ public interface GetInsightTypeConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the InsightTypeConfig to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
    * </pre>
    *

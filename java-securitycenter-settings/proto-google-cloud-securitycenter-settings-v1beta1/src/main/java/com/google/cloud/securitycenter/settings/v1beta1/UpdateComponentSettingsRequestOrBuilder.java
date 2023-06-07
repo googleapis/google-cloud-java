@@ -28,6 +28,7 @@ public interface UpdateComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`
@@ -50,6 +51,7 @@ public interface UpdateComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`
@@ -72,6 +74,7 @@ public interface UpdateComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`

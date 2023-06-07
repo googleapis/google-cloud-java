@@ -48,11 +48,6 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
     return new ReportPhishingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.phishingprotection.v1beta1.PhishingProtectionProto
         .internal_static_google_cloud_phishingprotection_v1beta1_ReportPhishingRequest_descriptor;

@@ -47,11 +47,6 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     return new GetRecommenderConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommenderProto
         .internal_static_google_cloud_recommender_v1beta1_GetRecommenderConfigRequest_descriptor;
@@ -76,9 +71,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Name of the Recommendation Config to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *
@@ -105,9 +104,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Name of the Recommendation Config to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *
@@ -483,9 +486,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Name of the Recommendation Config to get.
+     *
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
@@ -511,9 +518,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Name of the Recommendation Config to get.
+     *
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
@@ -539,9 +550,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Name of the Recommendation Config to get.
+     *
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
@@ -566,9 +581,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Name of the Recommendation Config to get.
+     *
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
@@ -589,9 +608,13 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Name of the Recommendation Config to get.
+     *
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *

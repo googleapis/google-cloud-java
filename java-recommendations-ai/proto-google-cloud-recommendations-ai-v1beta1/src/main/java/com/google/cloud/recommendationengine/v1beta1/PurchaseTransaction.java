@@ -48,11 +48,6 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     return new PurchaseTransaction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass
         .internal_static_google_cloud_recommendationengine_v1beta1_PurchaseTransaction_descriptor;
@@ -285,10 +280,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -315,10 +312,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -336,10 +335,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -361,10 +362,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -1280,10 +1283,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1310,10 +1315,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1331,10 +1338,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1356,10 +1365,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1390,10 +1401,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1420,10 +1433,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>
@@ -1446,10 +1461,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * Optional. All the costs associated with the product. These can be
      * manufacturing costs, shipping expenses not borne by the end user, or any
      * other costs.
+     *
      * Total product cost such that
      *   profit = revenue - (sum(taxes) + sum(costs))
      * If product_cost is not set, then
      *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+     *
      * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
      * based profit *cannot* be calculated for this Transaction.
      * </pre>

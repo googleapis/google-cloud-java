@@ -48,11 +48,6 @@ public final class RemoveControlRequest extends com.google.protobuf.GeneratedMes
     return new RemoveControlRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ServingConfigServiceProto
         .internal_static_google_cloud_retail_v2beta_RemoveControlRequest_descriptor;

@@ -47,11 +47,6 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.JobProto
         .internal_static_google_cloud_run_v2_GetJobRequest_descriptor;

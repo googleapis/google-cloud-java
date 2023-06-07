@@ -49,11 +49,6 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
     return new Label();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.LabelProto
         .internal_static_google_cloud_securitycenter_v1_Label_descriptor;

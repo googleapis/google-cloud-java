@@ -53,6 +53,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -67,6 +68,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -188,5 +190,5 @@ public interface GitSourceOrBuilder
    */
   com.google.protobuf.ByteString getTagBytes();
 
-  public com.google.cloud.privatecatalog.v1beta1.GitSource.RefCase getRefCase();
+  com.google.cloud.privatecatalog.v1beta1.GitSource.RefCase getRefCase();
 }

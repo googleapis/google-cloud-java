@@ -45,11 +45,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     return new FraudPreventionAssessment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_descriptor;
@@ -111,11 +106,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StolenInstrumentVerdict();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -725,11 +715,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CardTestingVerdict();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

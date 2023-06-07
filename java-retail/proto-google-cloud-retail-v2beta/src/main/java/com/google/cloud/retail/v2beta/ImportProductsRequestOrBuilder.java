@@ -29,6 +29,7 @@ public interface ImportProductsRequestOrBuilder
    * <pre>
    * Required.
    * `projects/1234/locations/global/catalogs/default_catalog/branches/default_branch`
+   *
    * If no updateMask is specified, requires products.create permission.
    * If updateMask is specified, requires products.update permission.
    * </pre>
@@ -46,6 +47,7 @@ public interface ImportProductsRequestOrBuilder
    * <pre>
    * Required.
    * `projects/1234/locations/global/catalogs/default_catalog/branches/default_branch`
+   *
    * If no updateMask is specified, requires products.create permission.
    * If updateMask is specified, requires products.update permission.
    * </pre>
@@ -244,6 +246,7 @@ public interface ImportProductsRequestOrBuilder
    * when the import is finished, a notification is sent to
    * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
+   *
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
@@ -265,6 +268,7 @@ public interface ImportProductsRequestOrBuilder
    * when the import is finished, a notification is sent to
    * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
+   *
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].

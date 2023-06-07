@@ -57,6 +57,7 @@ public interface CatalogOrBuilder
    *
    * <pre>
    * Required. Immutable. The catalog display name.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -73,6 +74,7 @@ public interface CatalogOrBuilder
    *
    * <pre>
    * Required. Immutable. The catalog display name.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>

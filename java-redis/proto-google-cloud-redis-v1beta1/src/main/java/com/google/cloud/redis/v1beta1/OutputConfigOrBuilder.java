@@ -58,5 +58,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.redis.v1beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
-  public com.google.cloud.redis.v1beta1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.redis.v1beta1.OutputConfig.DestinationCase getDestinationCase();
 }

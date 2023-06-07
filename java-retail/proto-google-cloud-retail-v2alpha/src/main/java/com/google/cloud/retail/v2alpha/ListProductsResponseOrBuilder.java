@@ -116,6 +116,7 @@ public interface ListProductsResponseOrBuilder
    * be less than the
    * [total_size][google.cloud.retail.v2alpha.ListProductsResponse.total_size]
    * that matches.
+   *
    * This field is ignored if
    * [ListProductsRequest.require_total_size][google.cloud.retail.v2alpha.ListProductsRequest.require_total_size]
    * is not set or

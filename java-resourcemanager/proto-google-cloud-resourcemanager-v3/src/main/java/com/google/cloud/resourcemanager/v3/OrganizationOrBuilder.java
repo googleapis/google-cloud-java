@@ -292,5 +292,5 @@ public interface OrganizationOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.resourcemanager.v3.Organization.OwnerCase getOwnerCase();
+  com.google.cloud.resourcemanager.v3.Organization.OwnerCase getOwnerCase();
 }

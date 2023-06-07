@@ -47,11 +47,6 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
     return new GetServingConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ServingConfigServiceProto
         .internal_static_google_cloud_retail_v2_GetServingConfigRequest_descriptor;

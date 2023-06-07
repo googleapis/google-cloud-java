@@ -133,6 +133,6 @@ public interface SubordinateConfigOrBuilder
   com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChainOrBuilder
       getPemIssuerChainOrBuilder();
 
-  public com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigCase
+  com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigCase
       getSubordinateConfigCase();
 }

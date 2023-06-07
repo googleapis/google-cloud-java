@@ -101,6 +101,7 @@ public interface CreateServingConfigRequestOrBuilder
    * <pre>
    * Required. The ID to use for the ServingConfig, which will become the final
    * component of the ServingConfig's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>
@@ -116,6 +117,7 @@ public interface CreateServingConfigRequestOrBuilder
    * <pre>
    * Required. The ID to use for the ServingConfig, which will become the final
    * component of the ServingConfig's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>

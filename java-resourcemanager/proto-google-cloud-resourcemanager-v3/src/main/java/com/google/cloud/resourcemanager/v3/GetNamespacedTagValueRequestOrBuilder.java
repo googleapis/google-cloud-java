@@ -28,7 +28,9 @@ public interface GetNamespacedTagValueRequestOrBuilder
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42
@@ -48,7 +50,9 @@ public interface GetNamespacedTagValueRequestOrBuilder
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42

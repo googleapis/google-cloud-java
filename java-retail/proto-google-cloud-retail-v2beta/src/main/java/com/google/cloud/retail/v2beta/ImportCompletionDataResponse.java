@@ -50,11 +50,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     return new ImportCompletionDataResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ImportConfigProto
         .internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_descriptor;

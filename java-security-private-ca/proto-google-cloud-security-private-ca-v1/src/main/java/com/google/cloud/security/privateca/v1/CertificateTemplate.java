@@ -50,11 +50,6 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     return new CertificateTemplate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1_CertificateTemplate_descriptor;

@@ -47,11 +47,6 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetTaskRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.TaskProto
         .internal_static_google_cloud_run_v2_GetTaskRequest_descriptor;

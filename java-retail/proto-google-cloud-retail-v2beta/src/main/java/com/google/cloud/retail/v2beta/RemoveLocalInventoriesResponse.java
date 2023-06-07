@@ -51,11 +51,6 @@ public final class RemoveLocalInventoriesResponse extends com.google.protobuf.Ge
     return new RemoveLocalInventoriesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ProductServiceProto
         .internal_static_google_cloud_retail_v2beta_RemoveLocalInventoriesResponse_descriptor;

@@ -48,11 +48,6 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
     return new CreateExternalAccountKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.publicca.v1beta1.ServiceProto
         .internal_static_google_cloud_security_publicca_v1beta1_CreateExternalAccountKeyRequest_descriptor;

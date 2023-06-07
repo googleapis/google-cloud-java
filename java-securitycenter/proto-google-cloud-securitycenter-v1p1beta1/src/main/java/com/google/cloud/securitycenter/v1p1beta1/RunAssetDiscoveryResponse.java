@@ -47,11 +47,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     return new RunAssetDiscoveryResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponseOuterClass
         .internal_static_google_cloud_securitycenter_v1p1beta1_RunAssetDiscoveryResponse_descriptor;

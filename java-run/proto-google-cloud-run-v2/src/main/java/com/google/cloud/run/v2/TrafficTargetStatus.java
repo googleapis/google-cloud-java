@@ -50,11 +50,6 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     return new TrafficTargetStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.TrafficTargetProto
         .internal_static_google_cloud_run_v2_TrafficTargetStatus_descriptor;

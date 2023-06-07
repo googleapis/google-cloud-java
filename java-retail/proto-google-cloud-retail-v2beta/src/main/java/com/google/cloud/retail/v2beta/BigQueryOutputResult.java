@@ -48,11 +48,6 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
     return new BigQueryOutputResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ExportConfigProto
         .internal_static_google_cloud_retail_v2beta_BigQueryOutputResult_descriptor;

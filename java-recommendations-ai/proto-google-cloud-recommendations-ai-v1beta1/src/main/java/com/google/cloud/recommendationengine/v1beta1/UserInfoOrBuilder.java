@@ -29,6 +29,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Required. A unique identifier for tracking visitors with a length limit of
    * 128 bytes.
+   *
    * For example, this could be implemented with a http cookie, which should be
    * able to uniquely identify a visitor on a single device. This unique
    * identifier should not change if the visitor log in/out of the website.
@@ -46,6 +47,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Required. A unique identifier for tracking visitors with a length limit of
    * 128 bytes.
+   *
    * For example, this could be implemented with a http cookie, which should be
    * able to uniquely identify a visitor on a single device. This unique
    * identifier should not change if the visitor log in/out of the website.
@@ -122,6 +124,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Optional. User agent as included in the HTTP header. UTF-8 encoded string
    * with a length limit of 1 KiB.
+   *
    * This should *not* be set when using the JavaScript pixel or if
    * `directUserRequest` is set.
    * </pre>
@@ -137,6 +140,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Optional. User agent as included in the HTTP header. UTF-8 encoded string
    * with a length limit of 1 KiB.
+   *
    * This should *not* be set when using the JavaScript pixel or if
    * `directUserRequest` is set.
    * </pre>

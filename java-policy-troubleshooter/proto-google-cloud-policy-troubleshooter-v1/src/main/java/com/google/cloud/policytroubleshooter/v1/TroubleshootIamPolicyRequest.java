@@ -45,11 +45,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     return new TroubleshootIamPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.policytroubleshooter.v1.IAMCheckerProto
         .internal_static_google_cloud_policytroubleshooter_v1_TroubleshootIamPolicyRequest_descriptor;

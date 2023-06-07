@@ -71,7 +71,9 @@ public interface UpdateServingConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2beta.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -87,7 +89,9 @@ public interface UpdateServingConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2beta.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -103,7 +107,9 @@ public interface UpdateServingConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2beta.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *

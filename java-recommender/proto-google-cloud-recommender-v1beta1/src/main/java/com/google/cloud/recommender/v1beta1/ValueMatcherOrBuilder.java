@@ -66,5 +66,5 @@ public interface ValueMatcherOrBuilder
    */
   com.google.protobuf.ByteString getMatchesPatternBytes();
 
-  public com.google.cloud.recommender.v1beta1.ValueMatcher.MatchVariantCase getMatchVariantCase();
+  com.google.cloud.recommender.v1beta1.ValueMatcher.MatchVariantCase getMatchVariantCase();
 }

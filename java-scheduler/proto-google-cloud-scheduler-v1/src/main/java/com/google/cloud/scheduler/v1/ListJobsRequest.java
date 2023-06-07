@@ -49,11 +49,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.scheduler.v1.SchedulerProto
         .internal_static_google_cloud_scheduler_v1_ListJobsRequest_descriptor;
@@ -133,6 +128,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Requested page size.
+   *
    * The maximum page size is 500. If unspecified, the page size will
    * be the maximum. Fewer jobs than requested might be returned,
    * even if more jobs exist; use next_page_token to determine if more
@@ -732,6 +728,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more
@@ -751,6 +748,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more
@@ -774,6 +772,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more

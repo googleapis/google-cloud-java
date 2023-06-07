@@ -45,11 +45,6 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     return new ValueMatcher();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1beta1_ValueMatcher_descriptor;
@@ -66,6 +61,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int matchVariantCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object matchVariant_;
 
   public enum MatchVariantCase

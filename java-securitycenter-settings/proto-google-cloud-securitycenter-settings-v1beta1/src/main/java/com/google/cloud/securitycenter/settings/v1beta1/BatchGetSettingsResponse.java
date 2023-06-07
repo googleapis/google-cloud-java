@@ -47,11 +47,6 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
     return new BatchGetSettingsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SettingsServiceProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_BatchGetSettingsResponse_descriptor;

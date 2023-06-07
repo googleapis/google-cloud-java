@@ -28,6 +28,7 @@ public interface ResetComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to reset.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`
@@ -49,6 +50,7 @@ public interface ResetComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to reset.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`

@@ -121,5 +121,5 @@ public interface NotificationMessageOrBuilder
    */
   com.google.cloud.securitycenter.v1.ResourceOrBuilder getResourceOrBuilder();
 
-  public com.google.cloud.securitycenter.v1.NotificationMessage.EventCase getEventCase();
+  com.google.cloud.securitycenter.v1.NotificationMessage.EventCase getEventCase();
 }

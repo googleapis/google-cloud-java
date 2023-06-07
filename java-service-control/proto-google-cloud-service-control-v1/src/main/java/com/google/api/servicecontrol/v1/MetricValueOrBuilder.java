@@ -331,5 +331,5 @@ public interface MetricValueOrBuilder
    */
   com.google.api.servicecontrol.v1.DistributionOrBuilder getDistributionValueOrBuilder();
 
-  public com.google.api.servicecontrol.v1.MetricValue.ValueCase getValueCase();
+  com.google.api.servicecontrol.v1.MetricValue.ValueCase getValueCase();
 }

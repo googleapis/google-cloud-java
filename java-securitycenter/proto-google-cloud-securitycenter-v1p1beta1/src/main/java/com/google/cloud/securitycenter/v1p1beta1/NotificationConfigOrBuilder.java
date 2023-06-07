@@ -202,6 +202,6 @@ public interface NotificationConfigOrBuilder
   com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfigOrBuilder
       getStreamingConfigOrBuilder();
 
-  public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.NotifyConfigCase
+  com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.NotifyConfigCase
       getNotifyConfigCase();
 }

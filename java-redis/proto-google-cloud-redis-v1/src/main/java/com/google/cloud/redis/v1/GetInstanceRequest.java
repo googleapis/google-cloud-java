@@ -47,11 +47,6 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     return new GetInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
         .internal_static_google_cloud_redis_v1_GetInstanceRequest_descriptor;

@@ -47,11 +47,6 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     return new Impact();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1_Impact_descriptor;
@@ -269,6 +264,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int projectionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object projection_;
 
   public enum ProjectionCase

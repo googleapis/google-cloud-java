@@ -46,11 +46,6 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     return new UpdateNotificationConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_UpdateNotificationConfigRequest_descriptor;
@@ -130,6 +125,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <pre>
    * The FieldMask to use when updating the notification config.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -146,6 +142,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <pre>
    * The FieldMask to use when updating the notification config.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -162,6 +159,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <pre>
    * The FieldMask to use when updating the notification config.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -783,6 +781,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -798,6 +797,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -819,6 +819,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -842,6 +843,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -862,6 +864,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -888,6 +891,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -908,6 +912,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -923,6 +928,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -942,6 +948,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * The FieldMask to use when updating the notification config.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *

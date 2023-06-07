@@ -46,11 +46,6 @@ public final class MoveProjectMetadata extends com.google.protobuf.GeneratedMess
     return new MoveProjectMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.ProjectsProto
         .internal_static_google_cloud_resourcemanager_v3_MoveProjectMetadata_descriptor;

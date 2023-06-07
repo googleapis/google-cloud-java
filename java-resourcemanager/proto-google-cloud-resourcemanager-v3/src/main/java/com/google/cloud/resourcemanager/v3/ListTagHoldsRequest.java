@@ -49,11 +49,6 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
     return new ListTagHoldsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagHoldsProto
         .internal_static_google_cloud_resourcemanager_v3_ListTagHoldsRequest_descriptor;
@@ -211,6 +206,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
    * TagValue to return. This field follows the syntax defined by aip.dev/160;
    * the `holder` and `origin` fields are supported for filtering. Currently
    * only `AND` syntax is supported. Some example queries are:
+   *
    *   * `holder =
    *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
    *   * `origin = 35678234`
@@ -243,6 +239,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
    * TagValue to return. This field follows the syntax defined by aip.dev/160;
    * the `holder` and `origin` fields are supported for filtering. Currently
    * only `AND` syntax is supported. Some example queries are:
+   *
    *   * `holder =
    *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
    *   * `origin = 35678234`
@@ -981,6 +978,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
      * TagValue to return. This field follows the syntax defined by aip.dev/160;
      * the `holder` and `origin` fields are supported for filtering. Currently
      * only `AND` syntax is supported. Some example queries are:
+     *
      *   * `holder =
      *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
      *   * `origin = 35678234`
@@ -1012,6 +1010,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
      * TagValue to return. This field follows the syntax defined by aip.dev/160;
      * the `holder` and `origin` fields are supported for filtering. Currently
      * only `AND` syntax is supported. Some example queries are:
+     *
      *   * `holder =
      *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
      *   * `origin = 35678234`
@@ -1043,6 +1042,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
      * TagValue to return. This field follows the syntax defined by aip.dev/160;
      * the `holder` and `origin` fields are supported for filtering. Currently
      * only `AND` syntax is supported. Some example queries are:
+     *
      *   * `holder =
      *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
      *   * `origin = 35678234`
@@ -1073,6 +1073,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
      * TagValue to return. This field follows the syntax defined by aip.dev/160;
      * the `holder` and `origin` fields are supported for filtering. Currently
      * only `AND` syntax is supported. Some example queries are:
+     *
      *   * `holder =
      *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
      *   * `origin = 35678234`
@@ -1099,6 +1100,7 @@ public final class ListTagHoldsRequest extends com.google.protobuf.GeneratedMess
      * TagValue to return. This field follows the syntax defined by aip.dev/160;
      * the `holder` and `origin` fields are supported for filtering. Currently
      * only `AND` syntax is supported. Some example queries are:
+     *
      *   * `holder =
      *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
      *   * `origin = 35678234`

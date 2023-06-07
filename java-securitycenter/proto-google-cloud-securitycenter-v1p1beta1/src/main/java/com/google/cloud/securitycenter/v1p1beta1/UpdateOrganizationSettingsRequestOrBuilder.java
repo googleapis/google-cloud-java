@@ -70,6 +70,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -83,6 +84,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -96,6 +98,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *

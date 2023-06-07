@@ -48,11 +48,6 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
     return new HTTPHeader();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_HTTPHeader_descriptor;

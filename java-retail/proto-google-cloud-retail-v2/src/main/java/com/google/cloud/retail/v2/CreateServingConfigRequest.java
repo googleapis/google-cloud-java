@@ -48,11 +48,6 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     return new CreateServingConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ServingConfigServiceProto
         .internal_static_google_cloud_retail_v2_CreateServingConfigRequest_descriptor;
@@ -191,6 +186,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The ID to use for the ServingConfig, which will become the final
    * component of the ServingConfig's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>
@@ -217,6 +213,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The ID to use for the ServingConfig, which will become the final
    * component of the ServingConfig's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>
@@ -967,6 +964,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The ID to use for the ServingConfig, which will become the final
      * component of the ServingConfig's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-_/.
      * </pre>
@@ -992,6 +990,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The ID to use for the ServingConfig, which will become the final
      * component of the ServingConfig's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-_/.
      * </pre>
@@ -1017,6 +1016,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The ID to use for the ServingConfig, which will become the final
      * component of the ServingConfig's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-_/.
      * </pre>
@@ -1041,6 +1041,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The ID to use for the ServingConfig, which will become the final
      * component of the ServingConfig's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-_/.
      * </pre>
@@ -1061,6 +1062,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The ID to use for the ServingConfig, which will become the final
      * component of the ServingConfig's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-_/.
      * </pre>

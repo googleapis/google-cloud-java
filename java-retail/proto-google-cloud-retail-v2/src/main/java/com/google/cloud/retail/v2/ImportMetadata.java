@@ -49,11 +49,6 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     return new ImportMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ImportConfigProto
         .internal_static_google_cloud_retail_v2_ImportMetadata_descriptor;

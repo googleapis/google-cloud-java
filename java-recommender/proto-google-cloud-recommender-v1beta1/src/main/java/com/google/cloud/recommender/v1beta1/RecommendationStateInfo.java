@@ -47,11 +47,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     return new RecommendationStateInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_descriptor;
@@ -104,6 +99,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is active and can be applied. Recommendations content can
      * be updated by Google.
+     *
      * ACTIVE recommendations can be marked as CLAIMED, SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -116,6 +112,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in claimed state. Recommendations content is
      * immutable and cannot be updated by Google.
+     *
      * CLAIMED recommendations can be marked as CLAIMED, SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -128,6 +125,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in succeeded state. Recommendations content is
      * immutable and cannot be updated by Google.
+     *
      * SUCCEEDED recommendations can be marked as SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -140,6 +138,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in failed state. Recommendations content is immutable
      * and cannot be updated by Google.
+     *
      * FAILED recommendations can be marked as SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -152,6 +151,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in dismissed state. Recommendation content can be
      * updated by Google.
+     *
      * DISMISSED recommendations can be marked as ACTIVE.
      * </pre>
      *
@@ -177,6 +177,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is active and can be applied. Recommendations content can
      * be updated by Google.
+     *
      * ACTIVE recommendations can be marked as CLAIMED, SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -189,6 +190,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in claimed state. Recommendations content is
      * immutable and cannot be updated by Google.
+     *
      * CLAIMED recommendations can be marked as CLAIMED, SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -201,6 +203,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in succeeded state. Recommendations content is
      * immutable and cannot be updated by Google.
+     *
      * SUCCEEDED recommendations can be marked as SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -213,6 +216,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in failed state. Recommendations content is immutable
      * and cannot be updated by Google.
+     *
      * FAILED recommendations can be marked as SUCCEEDED, or FAILED.
      * </pre>
      *
@@ -225,6 +229,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <pre>
      * Recommendation is in dismissed state. Recommendation content can be
      * updated by Google.
+     *
      * DISMISSED recommendations can be marked as ACTIVE.
      * </pre>
      *

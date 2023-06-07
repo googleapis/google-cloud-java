@@ -49,11 +49,6 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
     return new ListControlsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ControlServiceProto
         .internal_static_google_cloud_retail_v2_ListControlsRequest_descriptor;
@@ -207,6 +202,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:
@@ -234,6 +230,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:
@@ -962,6 +959,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
      * * List controls that are used in a single ServingConfig:
@@ -988,6 +986,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
      * * List controls that are used in a single ServingConfig:
@@ -1014,6 +1013,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
      * * List controls that are used in a single ServingConfig:
@@ -1039,6 +1039,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
      * * List controls that are used in a single ServingConfig:
@@ -1060,6 +1061,7 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
      * * List controls that are used in a single ServingConfig:

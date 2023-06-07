@@ -48,11 +48,6 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
     return new RetrieveLegacySecretKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor;

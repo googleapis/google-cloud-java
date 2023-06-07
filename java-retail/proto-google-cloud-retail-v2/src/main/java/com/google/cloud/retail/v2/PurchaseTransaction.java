@@ -48,11 +48,6 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     return new PurchaseTransaction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.UserEventProto
         .internal_static_google_cloud_retail_v2_PurchaseTransaction_descriptor;
@@ -167,6 +162,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
    * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
    * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]
@@ -895,6 +891,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
      * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]
@@ -915,6 +912,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
      * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]
@@ -939,6 +937,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
      * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]

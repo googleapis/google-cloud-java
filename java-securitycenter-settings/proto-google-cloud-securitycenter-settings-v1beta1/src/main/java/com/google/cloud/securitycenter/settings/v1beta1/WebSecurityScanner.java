@@ -45,11 +45,6 @@ public final class WebSecurityScanner extends com.google.protobuf.GeneratedMessa
     return new WebSecurityScanner();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_WebSecurityScanner_descriptor;

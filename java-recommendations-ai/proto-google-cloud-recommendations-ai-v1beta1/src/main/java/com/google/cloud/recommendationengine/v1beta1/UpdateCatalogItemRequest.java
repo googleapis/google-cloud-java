@@ -47,11 +47,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     return new UpdateCatalogItemRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.CatalogServiceOuterClass
         .internal_static_google_cloud_recommendationengine_v1beta1_UpdateCatalogItemRequest_descriptor;

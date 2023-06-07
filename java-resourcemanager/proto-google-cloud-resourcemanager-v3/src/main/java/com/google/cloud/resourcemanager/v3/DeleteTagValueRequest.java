@@ -48,11 +48,6 @@ public final class DeleteTagValueRequest extends com.google.protobuf.GeneratedMe
     return new DeleteTagValueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagValuesProto
         .internal_static_google_cloud_resourcemanager_v3_DeleteTagValueRequest_descriptor;

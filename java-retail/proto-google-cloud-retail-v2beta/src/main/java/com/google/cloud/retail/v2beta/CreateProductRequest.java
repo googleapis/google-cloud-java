@@ -50,11 +50,6 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
     return new CreateProductRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ProductServiceProto
         .internal_static_google_cloud_retail_v2beta_CreateProductRequest_descriptor;
@@ -194,13 +189,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * Required. The ID to use for the
    * [Product][google.cloud.retail.v2beta.Product], which will become the final
    * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+   *
    * If the caller does not have permission to create the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
+   *
    * This field must be unique among all
    * [Product][google.cloud.retail.v2beta.Product]s with the same
    * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
    * Otherwise, an ALREADY_EXISTS error is returned.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -228,13 +226,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * Required. The ID to use for the
    * [Product][google.cloud.retail.v2beta.Product], which will become the final
    * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+   *
    * If the caller does not have permission to create the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
+   *
    * This field must be unique among all
    * [Product][google.cloud.retail.v2beta.Product]s with the same
    * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
    * Otherwise, an ALREADY_EXISTS error is returned.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -985,13 +986,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * Required. The ID to use for the
      * [Product][google.cloud.retail.v2beta.Product], which will become the final
      * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+     *
      * If the caller does not have permission to create the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
+     *
      * This field must be unique among all
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
      * Otherwise, an ALREADY_EXISTS error is returned.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1018,13 +1022,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * Required. The ID to use for the
      * [Product][google.cloud.retail.v2beta.Product], which will become the final
      * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+     *
      * If the caller does not have permission to create the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
+     *
      * This field must be unique among all
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
      * Otherwise, an ALREADY_EXISTS error is returned.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1051,13 +1058,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * Required. The ID to use for the
      * [Product][google.cloud.retail.v2beta.Product], which will become the final
      * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+     *
      * If the caller does not have permission to create the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
+     *
      * This field must be unique among all
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
      * Otherwise, an ALREADY_EXISTS error is returned.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1083,13 +1093,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * Required. The ID to use for the
      * [Product][google.cloud.retail.v2beta.Product], which will become the final
      * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+     *
      * If the caller does not have permission to create the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
+     *
      * This field must be unique among all
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
      * Otherwise, an ALREADY_EXISTS error is returned.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1111,13 +1124,16 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * Required. The ID to use for the
      * [Product][google.cloud.retail.v2beta.Product], which will become the final
      * component of the [Product.name][google.cloud.retail.v2beta.Product.name].
+     *
      * If the caller does not have permission to create the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
+     *
      * This field must be unique among all
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [parent][google.cloud.retail.v2beta.CreateProductRequest.parent].
      * Otherwise, an ALREADY_EXISTS error is returned.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>

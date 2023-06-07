@@ -48,11 +48,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     return new ImportUserEventsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.Import
         .internal_static_google_cloud_recommendationengine_v1beta1_ImportUserEventsRequest_descriptor;

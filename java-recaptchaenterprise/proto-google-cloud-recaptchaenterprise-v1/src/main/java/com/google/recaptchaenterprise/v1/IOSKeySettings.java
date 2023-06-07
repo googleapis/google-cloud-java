@@ -38,18 +38,13 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   private IOSKeySettings() {
-    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IOSKeySettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,7 +83,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedBundleIds_;
+  private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -367,8 +363,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       allowAllBundleIds_ = false;
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -396,7 +391,6 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.IOSKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.IOSKeySettings result =
           new com.google.recaptchaenterprise.v1.IOSKeySettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -404,19 +398,14 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.recaptchaenterprise.v1.IOSKeySettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allowedBundleIds_ = allowedBundleIds_;
-    }
-
     private void buildPartial0(com.google.recaptchaenterprise.v1.IOSKeySettings result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allowAllBundleIds_ = allowAllBundleIds_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allowedBundleIds_.makeImmutable();
+        result.allowedBundleIds_ = allowedBundleIds_;
       }
     }
 
@@ -472,7 +461,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedBundleIds_.isEmpty()) {
         if (allowedBundleIds_.isEmpty()) {
           allowedBundleIds_ = other.allowedBundleIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowedBundleIdsIsMutable();
           allowedBundleIds_.addAll(other.allowedBundleIds_);
@@ -590,14 +579,14 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowedBundleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedBundleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allowedBundleIds_.isModifiable()) {
         allowedBundleIds_ = new com.google.protobuf.LazyStringArrayList(allowedBundleIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -612,7 +601,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowedBundleIds.
      */
     public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
-      return allowedBundleIds_.getUnmodifiableView();
+      allowedBundleIds_.makeImmutable();
+      return allowedBundleIds_;
     }
     /**
      *
@@ -681,6 +671,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,6 +694,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,6 +714,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowedBundleIds(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedBundleIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedBundleIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,8 +731,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowedBundleIds() {
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -763,6 +757,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -51,11 +51,6 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     return new CreateProfileRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudprofiler.v2.ProfilerProto
         .internal_static_google_devtools_cloudprofiler_v2_CreateProfileRequest_descriptor;

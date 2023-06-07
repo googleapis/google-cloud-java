@@ -47,11 +47,6 @@ public final class SinkSettings extends com.google.protobuf.GeneratedMessageV3
     return new SinkSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SinkProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_SinkSettings_descriptor;

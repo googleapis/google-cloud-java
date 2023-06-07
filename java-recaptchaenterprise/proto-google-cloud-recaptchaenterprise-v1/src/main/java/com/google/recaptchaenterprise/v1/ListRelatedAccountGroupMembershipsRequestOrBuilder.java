@@ -75,6 +75,7 @@ public interface ListRelatedAccountGroupMembershipsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous
    * `ListRelatedAccountGroupMemberships` call.
+   *
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroupMemberships` must match the call that provided the
    * page token.
@@ -91,6 +92,7 @@ public interface ListRelatedAccountGroupMembershipsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous
    * `ListRelatedAccountGroupMemberships` call.
+   *
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroupMemberships` must match the call that provided the
    * page token.

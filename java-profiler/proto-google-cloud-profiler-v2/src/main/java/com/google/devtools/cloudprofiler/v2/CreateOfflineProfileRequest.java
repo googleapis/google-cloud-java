@@ -48,11 +48,6 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
     return new CreateOfflineProfileRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudprofiler.v2.ProfilerProto
         .internal_static_google_devtools_cloudprofiler_v2_CreateOfflineProfileRequest_descriptor;

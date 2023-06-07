@@ -45,11 +45,6 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     return new SecurityProjection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1_SecurityProjection_descriptor;

@@ -47,11 +47,6 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
     return new AddSecretVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ServiceProto
         .internal_static_google_cloud_secretmanager_v1_AddSecretVersionRequest_descriptor;

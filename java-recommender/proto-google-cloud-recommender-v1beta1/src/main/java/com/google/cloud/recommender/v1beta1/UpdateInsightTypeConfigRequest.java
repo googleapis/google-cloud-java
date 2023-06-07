@@ -46,11 +46,6 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     return new UpdateInsightTypeConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommenderProto
         .internal_static_google_cloud_recommender_v1beta1_UpdateInsightTypeConfigRequest_descriptor;

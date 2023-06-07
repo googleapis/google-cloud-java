@@ -30,6 +30,7 @@ public interface UpdateInstanceRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`
@@ -50,6 +51,7 @@ public interface UpdateInstanceRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`
@@ -70,6 +72,7 @@ public interface UpdateInstanceRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`

@@ -58,5 +58,5 @@ public interface InputConfigOrBuilder
    */
   com.google.cloud.redis.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.redis.v1beta1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.redis.v1beta1.InputConfig.SourceCase getSourceCase();
 }

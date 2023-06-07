@@ -47,11 +47,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return new Volume();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_Volume_descriptor;
@@ -67,6 +62,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int volumeTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object volumeType_;
 
   public enum VolumeTypeCase

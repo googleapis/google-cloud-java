@@ -49,11 +49,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     return new SecretPayload();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ResourcesProto
         .internal_static_google_cloud_secretmanager_v1_SecretPayload_descriptor;
@@ -106,6 +101,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    * request, the
    * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
    * will generate and store one for you.
+   *
    * The CRC32C value is encoded as a Int64 for compatibility, and can be
    * safely downconverted to uint32 in languages that support this type.
    * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -135,6 +131,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    * request, the
    * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
    * will generate and store one for you.
+   *
    * The CRC32C value is encoded as a Int64 for compatibility, and can be
    * safely downconverted to uint32 in languages that support this type.
    * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -593,6 +590,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * request, the
      * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
      * will generate and store one for you.
+     *
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -622,6 +620,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * request, the
      * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
      * will generate and store one for you.
+     *
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -651,6 +650,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * request, the
      * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
      * will generate and store one for you.
+     *
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -684,6 +684,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * request, the
      * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
      * will generate and store one for you.
+     *
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types

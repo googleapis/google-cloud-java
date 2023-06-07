@@ -351,5 +351,5 @@ public interface KeyOrBuilder
    */
   com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder();
 
-  public com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
+  com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
 }

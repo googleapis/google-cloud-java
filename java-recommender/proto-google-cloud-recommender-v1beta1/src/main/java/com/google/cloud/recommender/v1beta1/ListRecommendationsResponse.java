@@ -48,11 +48,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
     return new ListRecommendationsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommenderProto
         .internal_static_google_cloud_recommender_v1beta1_ListRecommendationsResponse_descriptor;

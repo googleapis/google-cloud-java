@@ -280,6 +280,7 @@ public interface ContainerOrBuilder
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -294,6 +295,7 @@ public interface ContainerOrBuilder
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -308,6 +310,7 @@ public interface ContainerOrBuilder
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -322,6 +325,7 @@ public interface ContainerOrBuilder
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -336,6 +340,7 @@ public interface ContainerOrBuilder
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>

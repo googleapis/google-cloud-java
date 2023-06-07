@@ -48,11 +48,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     return new ListTasksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.TaskProto
         .internal_static_google_cloud_run_v2_ListTasksRequest_descriptor;

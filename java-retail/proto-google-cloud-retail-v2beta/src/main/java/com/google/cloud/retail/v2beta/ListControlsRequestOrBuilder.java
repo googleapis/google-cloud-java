@@ -100,6 +100,7 @@ public interface ListControlsRequestOrBuilder
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2beta.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:
@@ -116,6 +117,7 @@ public interface ListControlsRequestOrBuilder
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2beta.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:

@@ -50,11 +50,6 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     return new CheckError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.CheckErrorProto
         .internal_static_google_api_servicecontrol_v1_CheckError_descriptor;
@@ -682,6 +677,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Subject to whom this error applies. See the specific code enum for more
    * details on this field. For example:
+   *
    * - "project:&lt;project-id or project-number&gt;"
    * - "folder:&lt;folder-id&gt;"
    * - "organization:&lt;organization-id&gt;"
@@ -709,6 +705,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Subject to whom this error applies. See the specific code enum for more
    * details on this field. For example:
+   *
    * - "project:&lt;project-id or project-number&gt;"
    * - "folder:&lt;folder-id&gt;"
    * - "organization:&lt;organization-id&gt;"
@@ -1354,6 +1351,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Subject to whom this error applies. See the specific code enum for more
      * details on this field. For example:
+     *
      * - "project:&lt;project-id or project-number&gt;"
      * - "folder:&lt;folder-id&gt;"
      * - "organization:&lt;organization-id&gt;"
@@ -1380,6 +1378,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Subject to whom this error applies. See the specific code enum for more
      * details on this field. For example:
+     *
      * - "project:&lt;project-id or project-number&gt;"
      * - "folder:&lt;folder-id&gt;"
      * - "organization:&lt;organization-id&gt;"
@@ -1406,6 +1405,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Subject to whom this error applies. See the specific code enum for more
      * details on this field. For example:
+     *
      * - "project:&lt;project-id or project-number&gt;"
      * - "folder:&lt;folder-id&gt;"
      * - "organization:&lt;organization-id&gt;"
@@ -1431,6 +1431,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Subject to whom this error applies. See the specific code enum for more
      * details on this field. For example:
+     *
      * - "project:&lt;project-id or project-number&gt;"
      * - "folder:&lt;folder-id&gt;"
      * - "organization:&lt;organization-id&gt;"
@@ -1452,6 +1453,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Subject to whom this error applies. See the specific code enum for more
      * details on this field. For example:
+     *
      * - "project:&lt;project-id or project-number&gt;"
      * - "folder:&lt;folder-id&gt;"
      * - "organization:&lt;organization-id&gt;"

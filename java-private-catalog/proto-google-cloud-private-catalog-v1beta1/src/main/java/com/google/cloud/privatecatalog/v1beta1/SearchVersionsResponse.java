@@ -48,11 +48,6 @@ public final class SearchVersionsResponse extends com.google.protobuf.GeneratedM
     return new SearchVersionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_SearchVersionsResponse_descriptor;

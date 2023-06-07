@@ -124,5 +124,5 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.run.v2.CloudSqlInstanceOrBuilder getCloudSqlInstanceOrBuilder();
 
-  public com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
+  com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
 }

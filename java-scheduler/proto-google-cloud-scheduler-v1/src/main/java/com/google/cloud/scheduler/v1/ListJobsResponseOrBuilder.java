@@ -84,6 +84,7 @@ public interface ListJobsResponseOrBuilder
    * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs] to retrieve
    * the next page of results. If this is empty it indicates that there are no
    * more results through which to paginate.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -102,6 +103,7 @@ public interface ListJobsResponseOrBuilder
    * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs] to retrieve
    * the next page of results. If this is empty it indicates that there are no
    * more results through which to paginate.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *

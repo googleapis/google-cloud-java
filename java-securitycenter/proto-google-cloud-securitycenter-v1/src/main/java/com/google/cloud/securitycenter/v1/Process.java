@@ -40,7 +40,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   private Process() {
     name_ = "";
     libraries_ = java.util.Collections.emptyList();
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     envVariables_ = java.util.Collections.emptyList();
   }
 
@@ -48,11 +48,6 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Process();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -298,7 +293,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   public static final int ARGS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -821,8 +817,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         scriptBuilder_.dispose();
         scriptBuilder_ = null;
       }
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       argumentsTruncated_ = false;
       if (envVariablesBuilder_ == null) {
         envVariables_ = java.util.Collections.emptyList();
@@ -879,11 +874,6 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.libraries_ = librariesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.args_ = args_;
       if (envVariablesBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           envVariables_ = java.util.Collections.unmodifiableList(envVariables_);
@@ -905,6 +895,10 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.script_ = scriptBuilder_ == null ? script_ : scriptBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.argumentsTruncated_ = argumentsTruncated_;
@@ -1006,7 +1000,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -2026,14 +2020,14 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       return scriptBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2047,7 +2041,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
@@ -2112,6 +2107,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2133,6 +2129,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2151,6 +2148,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2166,8 +2164,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2190,6 +2189,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

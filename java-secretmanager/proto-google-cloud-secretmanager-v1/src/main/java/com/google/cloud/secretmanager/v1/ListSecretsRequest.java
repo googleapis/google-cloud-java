@@ -49,11 +49,6 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
     return new ListSecretsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ServiceProto
         .internal_static_google_cloud_secretmanager_v1_ListSecretsRequest_descriptor;

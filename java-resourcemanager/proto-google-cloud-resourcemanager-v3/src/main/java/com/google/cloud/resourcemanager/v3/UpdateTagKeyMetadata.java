@@ -45,11 +45,6 @@ public final class UpdateTagKeyMetadata extends com.google.protobuf.GeneratedMes
     return new UpdateTagKeyMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagKeysProto
         .internal_static_google_cloud_resourcemanager_v3_UpdateTagKeyMetadata_descriptor;

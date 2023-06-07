@@ -49,11 +49,6 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
     return new SearchVersionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_SearchVersionsRequest_descriptor;
@@ -131,6 +126,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The query to filter the versions.
+   *
    * The supported queries are:
    * * List versions under a product:
    * `parent=catalogs/{catalog}/products/{product}`
@@ -159,6 +155,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The query to filter the versions.
+   *
    * The supported queries are:
    * * List versions under a product:
    * `parent=catalogs/{catalog}/products/{product}`
@@ -787,6 +784,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The query to filter the versions.
+     *
      * The supported queries are:
      * * List versions under a product:
      * `parent=catalogs/{catalog}/products/{product}`
@@ -814,6 +812,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The query to filter the versions.
+     *
      * The supported queries are:
      * * List versions under a product:
      * `parent=catalogs/{catalog}/products/{product}`
@@ -841,6 +840,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The query to filter the versions.
+     *
      * The supported queries are:
      * * List versions under a product:
      * `parent=catalogs/{catalog}/products/{product}`
@@ -867,6 +867,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The query to filter the versions.
+     *
      * The supported queries are:
      * * List versions under a product:
      * `parent=catalogs/{catalog}/products/{product}`
@@ -889,6 +890,7 @@ public final class SearchVersionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The query to filter the versions.
+     *
      * The supported queries are:
      * * List versions under a product:
      * `parent=catalogs/{catalog}/products/{product}`

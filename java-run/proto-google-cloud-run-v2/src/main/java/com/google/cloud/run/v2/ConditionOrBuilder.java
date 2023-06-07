@@ -277,5 +277,5 @@ public interface ConditionOrBuilder
    */
   com.google.cloud.run.v2.Condition.ExecutionReason getExecutionReason();
 
-  public com.google.cloud.run.v2.Condition.ReasonsCase getReasonsCase();
+  com.google.cloud.run.v2.Condition.ReasonsCase getReasonsCase();
 }

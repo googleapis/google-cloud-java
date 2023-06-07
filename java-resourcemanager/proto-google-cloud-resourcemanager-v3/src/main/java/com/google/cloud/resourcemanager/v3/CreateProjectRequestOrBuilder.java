@@ -28,8 +28,10 @@ public interface CreateProjectRequestOrBuilder
    *
    * <pre>
    * Required. The Project to create.
+   *
    * Project ID is required. If the requested ID is unavailable, the request
    * fails.
+   *
    * If the `parent` field is set, the `resourcemanager.projects.create`
    * permission is checked on the parent resource. If no parent is set and
    * the authorization credentials belong to an Organization, the parent
@@ -48,8 +50,10 @@ public interface CreateProjectRequestOrBuilder
    *
    * <pre>
    * Required. The Project to create.
+   *
    * Project ID is required. If the requested ID is unavailable, the request
    * fails.
+   *
    * If the `parent` field is set, the `resourcemanager.projects.create`
    * permission is checked on the parent resource. If no parent is set and
    * the authorization credentials belong to an Organization, the parent
@@ -68,8 +72,10 @@ public interface CreateProjectRequestOrBuilder
    *
    * <pre>
    * Required. The Project to create.
+   *
    * Project ID is required. If the requested ID is unavailable, the request
    * fails.
+   *
    * If the `parent` field is set, the `resourcemanager.projects.create`
    * permission is checked on the parent resource. If no parent is set and
    * the authorization credentials belong to an Organization, the parent

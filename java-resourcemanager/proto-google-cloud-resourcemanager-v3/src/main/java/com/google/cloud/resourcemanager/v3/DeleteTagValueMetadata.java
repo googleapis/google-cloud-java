@@ -45,11 +45,6 @@ public final class DeleteTagValueMetadata extends com.google.protobuf.GeneratedM
     return new DeleteTagValueMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagValuesProto
         .internal_static_google_cloud_resourcemanager_v3_DeleteTagValueMetadata_descriptor;

@@ -118,5 +118,5 @@ public interface ImpactOrBuilder
    */
   com.google.cloud.recommender.v1.SecurityProjectionOrBuilder getSecurityProjectionOrBuilder();
 
-  public com.google.cloud.recommender.v1.Impact.ProjectionCase getProjectionCase();
+  com.google.cloud.recommender.v1.Impact.ProjectionCase getProjectionCase();
 }

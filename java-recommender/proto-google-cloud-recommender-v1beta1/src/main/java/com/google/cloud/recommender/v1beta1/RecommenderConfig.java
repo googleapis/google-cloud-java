@@ -50,11 +50,6 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
     return new RecommenderConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.RecommenderConfigProto
         .internal_static_google_cloud_recommender_v1beta1_RecommenderConfig_descriptor;

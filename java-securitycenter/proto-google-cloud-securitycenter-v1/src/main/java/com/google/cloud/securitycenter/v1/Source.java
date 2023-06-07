@@ -53,11 +53,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return new Source();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SourceOuterClass
         .internal_static_google_cloud_securitycenter_v1_Source_descriptor;

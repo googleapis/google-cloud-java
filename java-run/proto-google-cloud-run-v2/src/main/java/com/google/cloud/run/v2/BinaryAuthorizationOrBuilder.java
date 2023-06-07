@@ -81,5 +81,5 @@ public interface BinaryAuthorizationOrBuilder
    */
   com.google.protobuf.ByteString getBreakglassJustificationBytes();
 
-  public com.google.cloud.run.v2.BinaryAuthorization.BinauthzMethodCase getBinauthzMethodCase();
+  com.google.cloud.run.v2.BinaryAuthorization.BinauthzMethodCase getBinauthzMethodCase();
 }

@@ -48,11 +48,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     return new ListInstancesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
         .internal_static_google_cloud_redis_v1beta1_ListInstancesRequest_descriptor;
@@ -134,6 +129,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the page_size value, the response may include a partial list
    * and a caller should only rely on response's
@@ -723,6 +719,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
@@ -743,6 +740,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
@@ -767,6 +765,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's

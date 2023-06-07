@@ -98,6 +98,5 @@ public interface ExperimentInfoOrBuilder
    */
   com.google.protobuf.ByteString getExperimentBytes();
 
-  public com.google.cloud.retail.v2alpha.ExperimentInfo.ExperimentMetadataCase
-      getExperimentMetadataCase();
+  com.google.cloud.retail.v2alpha.ExperimentInfo.ExperimentMetadataCase getExperimentMetadataCase();
 }

@@ -45,11 +45,6 @@ public final class DeleteTagBindingMetadata extends com.google.protobuf.Generate
     return new DeleteTagBindingMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagBindingsProto
         .internal_static_google_cloud_resourcemanager_v3_DeleteTagBindingMetadata_descriptor;

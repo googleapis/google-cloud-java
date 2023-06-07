@@ -45,11 +45,6 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
     return new ImportErrorsConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.Import
         .internal_static_google_cloud_recommendationengine_v1beta1_ImportErrorsConfig_descriptor;
@@ -66,6 +61,8 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

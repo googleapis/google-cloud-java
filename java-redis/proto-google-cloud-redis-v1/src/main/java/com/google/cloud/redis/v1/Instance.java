@@ -61,18 +61,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     customerManagedKey_ = "";
     suspensionReasons_ = java.util.Collections.emptyList();
     maintenanceVersion_ = "";
-    availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1187,6 +1182,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
@@ -1219,6 +1215,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
@@ -1527,6 +1524,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -1556,6 +1554,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -2005,15 +2004,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -2041,15 +2046,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -2068,15 +2079,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -2102,15 +2119,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -3103,7 +3126,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int AVAILABLE_MAINTENANCE_VERSIONS_FIELD_NUMBER = 40;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList availableMaintenanceVersions_;
+  private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3844,8 +3868,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       suspensionReasons_ = java.util.Collections.emptyList();
       bitField1_ = (bitField1_ & ~0x00000001);
       maintenanceVersion_ = "";
-      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000004);
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -3907,11 +3930,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         bitField1_ = (bitField1_ & ~0x00000001);
       }
       result.suspensionReasons_ = suspensionReasons_;
-      if (((bitField1_ & 0x00000004) != 0)) {
-        availableMaintenanceVersions_ = availableMaintenanceVersions_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000004);
-      }
-      result.availableMaintenanceVersions_ = availableMaintenanceVersions_;
     }
 
     private void buildPartial0(com.google.cloud.redis.v1.Instance result) {
@@ -4023,6 +4041,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       if (((from_bitField1_ & 0x00000002) != 0)) {
         result.maintenanceVersion_ = maintenanceVersion_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        availableMaintenanceVersions_.makeImmutable();
+        result.availableMaintenanceVersions_ = availableMaintenanceVersions_;
       }
     }
 
@@ -4259,7 +4281,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.availableMaintenanceVersions_.isEmpty()) {
         if (availableMaintenanceVersions_.isEmpty()) {
           availableMaintenanceVersions_ = other.availableMaintenanceVersions_;
-          bitField1_ = (bitField1_ & ~0x00000004);
+          bitField1_ |= 0x00000004;
         } else {
           ensureAvailableMaintenanceVersionsIsMutable();
           availableMaintenanceVersions_.addAll(other.availableMaintenanceVersions_);
@@ -4573,6 +4595,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
@@ -4604,6 +4627,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
@@ -4635,6 +4659,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
@@ -4665,6 +4690,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
@@ -4691,6 +4717,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
@@ -5245,6 +5272,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -5273,6 +5301,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -5301,6 +5330,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -5328,6 +5358,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -5351,6 +5382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -6367,15 +6399,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6403,15 +6441,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6430,15 +6474,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6464,15 +6514,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6504,15 +6560,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6540,15 +6602,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6574,15 +6642,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -9493,15 +9567,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList availableMaintenanceVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAvailableMaintenanceVersionsIsMutable() {
-      if (!((bitField1_ & 0x00000004) != 0)) {
+      if (!availableMaintenanceVersions_.isModifiable()) {
         availableMaintenanceVersions_ =
             new com.google.protobuf.LazyStringArrayList(availableMaintenanceVersions_);
-        bitField1_ |= 0x00000004;
       }
+      bitField1_ |= 0x00000004;
     }
     /**
      *
@@ -9518,7 +9592,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the availableMaintenanceVersions.
      */
     public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
-      return availableMaintenanceVersions_.getUnmodifiableView();
+      availableMaintenanceVersions_.makeImmutable();
+      return availableMaintenanceVersions_;
     }
     /**
      *
@@ -9595,6 +9670,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableMaintenanceVersionsIsMutable();
       availableMaintenanceVersions_.set(index, value);
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9619,6 +9695,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableMaintenanceVersionsIsMutable();
       availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9640,6 +9717,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAvailableMaintenanceVersions(java.lang.Iterable<java.lang.String> values) {
       ensureAvailableMaintenanceVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableMaintenanceVersions_);
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9658,8 +9736,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailableMaintenanceVersions() {
-      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField1_ = (bitField1_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -9685,6 +9764,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAvailableMaintenanceVersionsIsMutable();
       availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }

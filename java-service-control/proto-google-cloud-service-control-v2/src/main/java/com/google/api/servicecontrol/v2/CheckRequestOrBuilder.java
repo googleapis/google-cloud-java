@@ -29,6 +29,7 @@ public interface CheckRequestOrBuilder
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -45,6 +46,7 @@ public interface CheckRequestOrBuilder
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.

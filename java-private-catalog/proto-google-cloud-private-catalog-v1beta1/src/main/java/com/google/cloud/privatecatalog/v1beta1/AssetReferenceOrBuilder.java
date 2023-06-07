@@ -461,5 +461,5 @@ public interface AssetReferenceOrBuilder
   @java.lang.Deprecated
   com.google.protobuf.ByteString getVersionBytes();
 
-  public com.google.cloud.privatecatalog.v1beta1.AssetReference.SourceCase getSourceCase();
+  com.google.cloud.privatecatalog.v1beta1.AssetReference.SourceCase getSourceCase();
 }

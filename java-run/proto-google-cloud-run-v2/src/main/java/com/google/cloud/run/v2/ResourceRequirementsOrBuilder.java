@@ -28,6 +28,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -44,6 +45,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -63,6 +65,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -79,6 +82,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -99,6 +103,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to

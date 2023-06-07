@@ -50,11 +50,6 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     return new AssetReference();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_AssetReference_descriptor;
@@ -255,6 +250,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

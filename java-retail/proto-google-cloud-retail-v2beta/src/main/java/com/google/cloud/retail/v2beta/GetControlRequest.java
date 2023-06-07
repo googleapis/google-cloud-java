@@ -47,11 +47,6 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
     return new GetControlRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ControlServiceProto
         .internal_static_google_cloud_retail_v2beta_GetControlRequest_descriptor;

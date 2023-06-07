@@ -28,6 +28,7 @@ public interface ImportCompletionDataRequestOrBuilder
    *
    * <pre>
    * Required. The catalog which the suggestions dataset belongs to.
+   *
    * Format: `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ImportCompletionDataRequestOrBuilder
    *
    * <pre>
    * Required. The catalog which the suggestions dataset belongs to.
+   *
    * Format: `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *

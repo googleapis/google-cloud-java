@@ -55,6 +55,7 @@ public interface SearchVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The query to filter the versions.
+   *
    * The supported queries are:
    * * List versions under a product:
    * `parent=catalogs/{catalog}/products/{product}`
@@ -72,6 +73,7 @@ public interface SearchVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The query to filter the versions.
+   *
    * The supported queries are:
    * * List versions under a product:
    * `parent=catalogs/{catalog}/products/{product}`

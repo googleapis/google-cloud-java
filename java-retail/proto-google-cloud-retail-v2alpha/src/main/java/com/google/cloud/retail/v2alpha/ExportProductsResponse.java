@@ -49,11 +49,6 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     return new ExportProductsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.ExportConfigProto
         .internal_static_google_cloud_retail_v2alpha_ExportProductsResponse_descriptor;

@@ -54,11 +54,6 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
     return new Cvssv3();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.VulnerabilityProto
         .internal_static_google_cloud_securitycenter_v1_Cvssv3_descriptor;

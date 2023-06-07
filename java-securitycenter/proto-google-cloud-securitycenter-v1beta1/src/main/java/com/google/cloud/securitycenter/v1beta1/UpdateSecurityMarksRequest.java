@@ -45,11 +45,6 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
     return new UpdateSecurityMarksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;

@@ -50,11 +50,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     return new SecretVolumeSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_SecretVolumeSource_descriptor;
@@ -227,7 +222,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
    * Integer representation of mode bits to use on created files by default.
    * Must be a value between 0000 and 0777 (octal), defaulting to 0444.
    * Directories within the path are not affected by  this setting.
+   *
    * Notes
+   *
    * * Internally, a umask of 0222 will be applied to any non-zero value.
    * * This is an integer representation of the mode bits. So, the octal
    * integer value should look exactly as the chmod numeric notation with a
@@ -237,6 +234,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
    * (base-10).
    * * This might be in conflict with other options that affect the
    * file mode, like fsGroup, and the result can be other mode bits set.
+   *
    * This might be in conflict with other options that affect the
    * file mode, like fsGroup, and as a result, other mode bits could be set.
    * </pre>
@@ -1235,7 +1233,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * Integer representation of mode bits to use on created files by default.
      * Must be a value between 0000 and 0777 (octal), defaulting to 0444.
      * Directories within the path are not affected by  this setting.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a
@@ -1245,6 +1245,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * (base-10).
      * * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and the result can be other mode bits set.
+     *
      * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and as a result, other mode bits could be set.
      * </pre>
@@ -1264,7 +1265,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * Integer representation of mode bits to use on created files by default.
      * Must be a value between 0000 and 0777 (octal), defaulting to 0444.
      * Directories within the path are not affected by  this setting.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a
@@ -1274,6 +1277,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * (base-10).
      * * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and the result can be other mode bits set.
+     *
      * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and as a result, other mode bits could be set.
      * </pre>
@@ -1297,7 +1301,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * Integer representation of mode bits to use on created files by default.
      * Must be a value between 0000 and 0777 (octal), defaulting to 0444.
      * Directories within the path are not affected by  this setting.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a
@@ -1307,6 +1313,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * (base-10).
      * * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and the result can be other mode bits set.
+     *
      * This might be in conflict with other options that affect the
      * file mode, like fsGroup, and as a result, other mode bits could be set.
      * </pre>

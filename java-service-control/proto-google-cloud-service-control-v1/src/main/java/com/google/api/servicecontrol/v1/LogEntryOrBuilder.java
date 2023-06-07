@@ -466,5 +466,5 @@ public interface LogEntryOrBuilder
    */
   com.google.api.servicecontrol.v1.LogEntrySourceLocationOrBuilder getSourceLocationOrBuilder();
 
-  public com.google.api.servicecontrol.v1.LogEntry.PayloadCase getPayloadCase();
+  com.google.api.servicecontrol.v1.LogEntry.PayloadCase getPayloadCase();
 }

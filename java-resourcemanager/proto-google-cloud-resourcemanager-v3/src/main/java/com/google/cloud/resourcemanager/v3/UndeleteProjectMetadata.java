@@ -46,11 +46,6 @@ public final class UndeleteProjectMetadata extends com.google.protobuf.Generated
     return new UndeleteProjectMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.ProjectsProto
         .internal_static_google_cloud_resourcemanager_v3_UndeleteProjectMetadata_descriptor;

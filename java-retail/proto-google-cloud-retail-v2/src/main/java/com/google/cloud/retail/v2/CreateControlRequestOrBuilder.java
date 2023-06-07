@@ -98,6 +98,7 @@ public interface CreateControlRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Control, which will become the final
    * component of the Control's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>
@@ -113,6 +114,7 @@ public interface CreateControlRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Control, which will become the final
    * component of the Control's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-_/.
    * </pre>

@@ -48,11 +48,6 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
     return new RunJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.scheduler.v1.SchedulerProto
         .internal_static_google_cloud_scheduler_v1_RunJobRequest_descriptor;

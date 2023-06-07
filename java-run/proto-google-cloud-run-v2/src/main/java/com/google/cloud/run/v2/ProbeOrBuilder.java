@@ -198,5 +198,5 @@ public interface ProbeOrBuilder
    */
   com.google.cloud.run.v2.GRPCActionOrBuilder getGrpcOrBuilder();
 
-  public com.google.cloud.run.v2.Probe.ProbeTypeCase getProbeTypeCase();
+  com.google.cloud.run.v2.Probe.ProbeTypeCase getProbeTypeCase();
 }

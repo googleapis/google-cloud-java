@@ -49,11 +49,6 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
     return new GetCompletionConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.CatalogServiceProto
         .internal_static_google_cloud_retail_v2alpha_GetCompletionConfigRequest_descriptor;

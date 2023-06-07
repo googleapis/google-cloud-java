@@ -48,11 +48,6 @@ public final class ListSettingsResponse extends com.google.protobuf.GeneratedMes
     return new ListSettingsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcesettings.v1.ResourceSettingsProto
         .internal_static_google_cloud_resourcesettings_v1_ListSettingsResponse_descriptor;

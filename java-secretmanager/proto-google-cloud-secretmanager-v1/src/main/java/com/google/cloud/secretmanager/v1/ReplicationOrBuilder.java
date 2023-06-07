@@ -99,5 +99,5 @@ public interface ReplicationOrBuilder
    */
   com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder getUserManagedOrBuilder();
 
-  public com.google.cloud.secretmanager.v1.Replication.ReplicationCase getReplicationCase();
+  com.google.cloud.secretmanager.v1.Replication.ReplicationCase getReplicationCase();
 }

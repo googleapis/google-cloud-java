@@ -45,11 +45,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     return new UpdateJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.JobProto
         .internal_static_google_cloud_run_v2_UpdateJobRequest_descriptor;

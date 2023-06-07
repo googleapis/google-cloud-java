@@ -50,11 +50,6 @@ public final class ListCatalogsResponse extends com.google.protobuf.GeneratedMes
     return new ListCatalogsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.CatalogServiceProto
         .internal_static_google_cloud_retail_v2alpha_ListCatalogsResponse_descriptor;

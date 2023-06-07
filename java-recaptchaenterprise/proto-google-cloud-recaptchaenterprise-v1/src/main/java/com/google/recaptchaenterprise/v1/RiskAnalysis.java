@@ -47,11 +47,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     return new RiskAnalysis();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_RiskAnalysis_descriptor;

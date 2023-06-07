@@ -49,11 +49,6 @@ public final class CompletionDetail extends com.google.protobuf.GeneratedMessage
     return new CompletionDetail();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.UserEventProto
         .internal_static_google_cloud_retail_v2_CompletionDetail_descriptor;

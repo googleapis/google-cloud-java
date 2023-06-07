@@ -55,11 +55,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     return new HttpRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.HttpRequestProto
         .internal_static_google_api_servicecontrol_v1_HttpRequest_descriptor;

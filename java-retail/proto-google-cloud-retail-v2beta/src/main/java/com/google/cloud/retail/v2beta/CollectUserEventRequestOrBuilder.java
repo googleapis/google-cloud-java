@@ -194,6 +194,5 @@ public interface CollectUserEventRequestOrBuilder
    */
   com.google.protobuf.ByteString getRawJsonBytes();
 
-  public com.google.cloud.retail.v2beta.CollectUserEventRequest.ConversionRuleCase
-      getConversionRuleCase();
+  com.google.cloud.retail.v2beta.CollectUserEventRequest.ConversionRuleCase getConversionRuleCase();
 }

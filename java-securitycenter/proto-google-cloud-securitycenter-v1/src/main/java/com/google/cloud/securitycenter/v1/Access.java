@@ -55,11 +55,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     return new Access();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.AccessProto
         .internal_static_google_cloud_securitycenter_v1_Access_descriptor;
@@ -84,6 +79,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   *
    * The email address of the authenticated user or a service account acting on
    * behalf of a third party principal making the request. For third party
    * identity callers, the `principal_subject` field is populated instead of
@@ -113,6 +109,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   *
    * The email address of the authenticated user or a service account acting on
    * behalf of a third party principal making the request. For third party
    * identity callers, the `principal_subject` field is populated instead of
@@ -472,6 +469,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    * The name of the service account key that was used to create or exchange
    * credentials when authenticating the service account that made the request.
    * This is a scheme-less URI full resource name. For example:
+   *
    * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
    * </pre>
    *
@@ -498,6 +496,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    * The name of the service account key that was used to create or exchange
    * credentials when authenticating the service account that made the request.
    * This is a scheme-less URI full resource name. For example:
+   *
    * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
    * </pre>
    *
@@ -1310,6 +1309,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     *
      * The email address of the authenticated user or a service account acting on
      * behalf of a third party principal making the request. For third party
      * identity callers, the `principal_subject` field is populated instead of
@@ -1338,6 +1338,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     *
      * The email address of the authenticated user or a service account acting on
      * behalf of a third party principal making the request. For third party
      * identity callers, the `principal_subject` field is populated instead of
@@ -1366,6 +1367,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     *
      * The email address of the authenticated user or a service account acting on
      * behalf of a third party principal making the request. For third party
      * identity callers, the `principal_subject` field is populated instead of
@@ -1393,6 +1395,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     *
      * The email address of the authenticated user or a service account acting on
      * behalf of a third party principal making the request. For third party
      * identity callers, the `principal_subject` field is populated instead of
@@ -1416,6 +1419,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     *
      * The email address of the authenticated user or a service account acting on
      * behalf of a third party principal making the request. For third party
      * identity callers, the `principal_subject` field is populated instead of
@@ -2208,6 +2212,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * The name of the service account key that was used to create or exchange
      * credentials when authenticating the service account that made the request.
      * This is a scheme-less URI full resource name. For example:
+     *
      * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
      * </pre>
      *
@@ -2233,6 +2238,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * The name of the service account key that was used to create or exchange
      * credentials when authenticating the service account that made the request.
      * This is a scheme-less URI full resource name. For example:
+     *
      * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
      * </pre>
      *
@@ -2258,6 +2264,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * The name of the service account key that was used to create or exchange
      * credentials when authenticating the service account that made the request.
      * This is a scheme-less URI full resource name. For example:
+     *
      * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
      * </pre>
      *
@@ -2282,6 +2289,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * The name of the service account key that was used to create or exchange
      * credentials when authenticating the service account that made the request.
      * This is a scheme-less URI full resource name. For example:
+     *
      * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
      * </pre>
      *
@@ -2302,6 +2310,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * The name of the service account key that was used to create or exchange
      * credentials when authenticating the service account that made the request.
      * This is a scheme-less URI full resource name. For example:
+     *
      * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
      * </pre>
      *

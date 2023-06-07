@@ -48,11 +48,6 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     return new TroubleshootIamPolicyResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.policytroubleshooter.v1.IAMCheckerProto
         .internal_static_google_cloud_policytroubleshooter_v1_TroubleshootIamPolicyResponse_descriptor;
@@ -119,9 +114,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    * List of IAM policies that were evaluated to check the member's permissions,
    * with annotations to indicate how each policy contributed to the final
    * result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -141,9 +138,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    * List of IAM policies that were evaluated to check the member's permissions,
    * with annotations to indicate how each policy contributed to the final
    * result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -164,9 +163,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    * List of IAM policies that were evaluated to check the member's permissions,
    * with annotations to indicate how each policy contributed to the final
    * result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -185,9 +186,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    * List of IAM policies that were evaluated to check the member's permissions,
    * with annotations to indicate how each policy contributed to the final
    * result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -207,9 +210,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    * List of IAM policies that were evaluated to check the member's permissions,
    * with annotations to indicate how each policy contributed to the final
    * result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -774,9 +779,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -799,9 +806,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -823,9 +832,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -848,9 +859,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -879,9 +892,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -908,9 +923,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -939,9 +956,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -970,9 +989,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -998,9 +1019,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1027,9 +1050,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1057,9 +1082,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1084,9 +1111,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1111,9 +1140,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1132,9 +1163,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1157,9 +1190,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1183,9 +1218,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1207,9 +1244,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1232,9 +1271,11 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * List of IAM policies that were evaluated to check the member's permissions,
      * with annotations to indicate how each policy contributed to the final
      * result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>

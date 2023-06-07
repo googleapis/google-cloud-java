@@ -29,6 +29,7 @@ public interface ListSettingsRequestOrBuilder
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -48,6 +49,7 @@ public interface ListSettingsRequestOrBuilder
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`

@@ -74,6 +74,7 @@ public interface TransactionDataOrBuilder
    *
    * <pre>
    * The payment method for the transaction. The allowed values are:
+   *
    * * credit-card
    * * debit-card
    * * gift-card
@@ -93,6 +94,7 @@ public interface TransactionDataOrBuilder
    *
    * <pre>
    * The payment method for the transaction. The allowed values are:
+   *
    * * credit-card
    * * debit-card
    * * gift-card

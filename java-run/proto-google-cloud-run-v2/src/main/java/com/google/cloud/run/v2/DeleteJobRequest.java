@@ -48,11 +48,6 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     return new DeleteJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.JobProto
         .internal_static_google_cloud_run_v2_DeleteJobRequest_descriptor;

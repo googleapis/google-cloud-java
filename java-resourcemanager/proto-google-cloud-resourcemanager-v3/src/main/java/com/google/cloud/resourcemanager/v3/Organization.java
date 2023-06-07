@@ -51,11 +51,6 @@ public final class Organization extends com.google.protobuf.GeneratedMessageV3
     return new Organization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.OrganizationsProto
         .internal_static_google_cloud_resourcemanager_v3_Organization_descriptor;
@@ -229,6 +224,8 @@ public final class Organization extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int ownerCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object owner_;
 
   public enum OwnerCase

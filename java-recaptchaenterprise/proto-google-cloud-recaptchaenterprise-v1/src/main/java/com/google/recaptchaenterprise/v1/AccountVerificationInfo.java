@@ -50,11 +50,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     return new AccountVerificationInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_AccountVerificationInfo_descriptor;

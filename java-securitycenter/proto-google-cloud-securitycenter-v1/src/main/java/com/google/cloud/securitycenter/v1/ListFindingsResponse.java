@@ -48,11 +48,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     return new ListFindingsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_descriptor;
@@ -210,11 +205,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       return new ListFindingsResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
           .internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_descriptor;
@@ -236,6 +226,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The change in state of the finding.
+     *
      * When querying across two points in time this describes
      * the change in the finding between the two points: CHANGED, UNCHANGED,
      * ADDED, or REMOVED. Findings can not be deleted, so REMOVED implies that
@@ -728,11 +719,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Resource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -413,6 +413,7 @@ public final class Explanations {
      * the email address that represents that member. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+     *
      * The member must be a Google Account or a service account. Other types of
      * members are not supported.
      * </pre>
@@ -430,6 +431,7 @@ public final class Explanations {
      * the email address that represents that member. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+     *
      * The member must be a Google Account or a service account. Other types of
      * members are not supported.
      * </pre>
@@ -446,6 +448,7 @@ public final class Explanations {
      * <pre>
      * Required. The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -461,6 +464,7 @@ public final class Explanations {
      * <pre>
      * Required. The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -476,8 +480,10 @@ public final class Explanations {
      *
      * <pre>
      * Required. The IAM permission to check for the specified member and resource.
+     *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
+     *
      * For a complete list of predefined IAM roles and the permissions in each
      * role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -492,8 +498,10 @@ public final class Explanations {
      *
      * <pre>
      * Required. The IAM permission to check for the specified member and resource.
+     *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
+     *
      * For a complete list of predefined IAM roles and the permissions in each
      * role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -535,11 +543,6 @@ public final class Explanations {
       return new AccessTuple();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return google.cloud.policytroubleshooter.v1.Explanations
           .internal_static_google_cloud_policytroubleshooter_v1_AccessTuple_descriptor;
@@ -567,6 +570,7 @@ public final class Explanations {
      * the email address that represents that member. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+     *
      * The member must be a Google Account or a service account. Other types of
      * members are not supported.
      * </pre>
@@ -595,6 +599,7 @@ public final class Explanations {
      * the email address that represents that member. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+     *
      * The member must be a Google Account or a service account. Other types of
      * members are not supported.
      * </pre>
@@ -626,6 +631,7 @@ public final class Explanations {
      * <pre>
      * Required. The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -652,6 +658,7 @@ public final class Explanations {
      * <pre>
      * Required. The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -682,8 +689,10 @@ public final class Explanations {
      *
      * <pre>
      * Required. The IAM permission to check for the specified member and resource.
+     *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
+     *
      * For a complete list of predefined IAM roles and the permissions in each
      * role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -709,8 +718,10 @@ public final class Explanations {
      *
      * <pre>
      * Required. The IAM permission to check for the specified member and resource.
+     *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
+     *
      * For a complete list of predefined IAM roles and the permissions in each
      * role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -1140,6 +1151,7 @@ public final class Explanations {
        * the email address that represents that member. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+       *
        * The member must be a Google Account or a service account. Other types of
        * members are not supported.
        * </pre>
@@ -1167,6 +1179,7 @@ public final class Explanations {
        * the email address that represents that member. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+       *
        * The member must be a Google Account or a service account. Other types of
        * members are not supported.
        * </pre>
@@ -1194,6 +1207,7 @@ public final class Explanations {
        * the email address that represents that member. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+       *
        * The member must be a Google Account or a service account. Other types of
        * members are not supported.
        * </pre>
@@ -1220,6 +1234,7 @@ public final class Explanations {
        * the email address that represents that member. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+       *
        * The member must be a Google Account or a service account. Other types of
        * members are not supported.
        * </pre>
@@ -1242,6 +1257,7 @@ public final class Explanations {
        * the email address that represents that member. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
+       *
        * The member must be a Google Account or a service account. Other types of
        * members are not supported.
        * </pre>
@@ -1269,6 +1285,7 @@ public final class Explanations {
        * <pre>
        * Required. The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -1294,6 +1311,7 @@ public final class Explanations {
        * <pre>
        * Required. The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -1319,6 +1337,7 @@ public final class Explanations {
        * <pre>
        * Required. The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -1343,6 +1362,7 @@ public final class Explanations {
        * <pre>
        * Required. The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -1363,6 +1383,7 @@ public final class Explanations {
        * <pre>
        * Required. The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -1389,8 +1410,10 @@ public final class Explanations {
        *
        * <pre>
        * Required. The IAM permission to check for the specified member and resource.
+       *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
+       *
        * For a complete list of predefined IAM roles and the permissions in each
        * role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -1415,8 +1438,10 @@ public final class Explanations {
        *
        * <pre>
        * Required. The IAM permission to check for the specified member and resource.
+       *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
+       *
        * For a complete list of predefined IAM roles and the permissions in each
        * role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -1441,8 +1466,10 @@ public final class Explanations {
        *
        * <pre>
        * Required. The IAM permission to check for the specified member and resource.
+       *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
+       *
        * For a complete list of predefined IAM roles and the permissions in each
        * role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -1466,8 +1493,10 @@ public final class Explanations {
        *
        * <pre>
        * Required. The IAM permission to check for the specified member and resource.
+       *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
+       *
        * For a complete list of predefined IAM roles and the permissions in each
        * role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -1487,8 +1516,10 @@ public final class Explanations {
        *
        * <pre>
        * Required. The IAM permission to check for the specified member and resource.
+       *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
+       *
        * For a complete list of predefined IAM roles and the permissions in each
        * role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -1587,6 +1618,7 @@ public final class Explanations {
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another policy that overrides
      * this policy. To determine whether the member actually has the permission,
@@ -1605,6 +1637,7 @@ public final class Explanations {
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another policy that overrides
      * this policy. To determine whether the member actually has the permission,
@@ -1624,8 +1657,10 @@ public final class Explanations {
      * <pre>
      * The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -1641,8 +1676,10 @@ public final class Explanations {
      * <pre>
      * The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -1658,6 +1695,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -1672,6 +1710,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -1686,6 +1725,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -1700,6 +1740,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1716,6 +1757,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1732,6 +1774,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1747,6 +1790,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1764,6 +1808,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1781,6 +1826,7 @@ public final class Explanations {
      * <pre>
      * The relevance of this policy to the overall determination in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1796,6 +1842,7 @@ public final class Explanations {
      * <pre>
      * The relevance of this policy to the overall determination in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -1839,11 +1886,6 @@ public final class Explanations {
       return new ExplainedPolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return google.cloud.policytroubleshooter.v1.Explanations
           .internal_static_google_cloud_policytroubleshooter_v1_ExplainedPolicy_descriptor;
@@ -1867,6 +1909,7 @@ public final class Explanations {
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another policy that overrides
      * this policy. To determine whether the member actually has the permission,
@@ -1888,6 +1931,7 @@ public final class Explanations {
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another policy that overrides
      * this policy. To determine whether the member actually has the permission,
@@ -1918,8 +1962,10 @@ public final class Explanations {
      * <pre>
      * The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -1946,8 +1992,10 @@ public final class Explanations {
      * <pre>
      * The full resource name that identifies the resource. For example,
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
+     *
      * For examples of full resource names for Google Cloud services, see
      * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
      * </pre>
@@ -1976,6 +2024,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -1993,6 +2042,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -2010,6 +2060,7 @@ public final class Explanations {
      *
      * <pre>
      * The IAM policy attached to the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is empty.
      * </pre>
@@ -2032,6 +2083,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2051,6 +2103,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2071,6 +2124,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2089,6 +2143,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2108,6 +2163,7 @@ public final class Explanations {
      * <pre>
      * Details about how each binding in the policy affects the member's ability,
      * or inability, to use the permission for the resource.
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2130,6 +2186,7 @@ public final class Explanations {
      * <pre>
      * The relevance of this policy to the overall determination in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2148,6 +2205,7 @@ public final class Explanations {
      * <pre>
      * The relevance of this policy to the overall determination in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
      * </pre>
@@ -2690,6 +2748,7 @@ public final class Explanations {
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another policy that overrides
        * this policy. To determine whether the member actually has the permission,
@@ -2711,6 +2770,7 @@ public final class Explanations {
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another policy that overrides
        * this policy. To determine whether the member actually has the permission,
@@ -2735,6 +2795,7 @@ public final class Explanations {
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another policy that overrides
        * this policy. To determine whether the member actually has the permission,
@@ -2760,6 +2821,7 @@ public final class Explanations {
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another policy that overrides
        * this policy. To determine whether the member actually has the permission,
@@ -2788,6 +2850,7 @@ public final class Explanations {
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another policy that overrides
        * this policy. To determine whether the member actually has the permission,
@@ -2813,8 +2876,10 @@ public final class Explanations {
        * <pre>
        * The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -2840,8 +2905,10 @@ public final class Explanations {
        * <pre>
        * The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -2867,8 +2934,10 @@ public final class Explanations {
        * <pre>
        * The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -2893,8 +2962,10 @@ public final class Explanations {
        * <pre>
        * The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -2915,8 +2986,10 @@ public final class Explanations {
        * <pre>
        * The full resource name that identifies the resource. For example,
        * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
+       *
        * For examples of full resource names for Google Cloud services, see
        * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
        * </pre>
@@ -2948,6 +3021,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -2964,6 +3038,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -2984,6 +3059,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3008,6 +3084,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3029,6 +3106,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3056,6 +3134,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3077,6 +3156,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3093,6 +3173,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3111,6 +3192,7 @@ public final class Explanations {
        *
        * <pre>
        * The IAM policy attached to the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is empty.
        * </pre>
@@ -3159,6 +3241,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3181,6 +3264,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3202,6 +3286,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3224,6 +3309,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3252,6 +3338,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3279,6 +3366,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3307,6 +3395,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3335,6 +3424,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3361,6 +3451,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3388,6 +3479,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3415,6 +3507,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3439,6 +3532,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3463,6 +3557,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3481,6 +3576,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3503,6 +3599,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3527,6 +3624,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3548,6 +3646,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3570,6 +3669,7 @@ public final class Explanations {
        * <pre>
        * Details about how each binding in the policy affects the member's ability,
        * or inability, to use the permission for the resource.
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3611,6 +3711,7 @@ public final class Explanations {
        * <pre>
        * The relevance of this policy to the overall determination in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3629,6 +3730,7 @@ public final class Explanations {
        * <pre>
        * The relevance of this policy to the overall determination in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3650,6 +3752,7 @@ public final class Explanations {
        * <pre>
        * The relevance of this policy to the overall determination in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3673,6 +3776,7 @@ public final class Explanations {
        * <pre>
        * The relevance of this policy to the overall determination in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3698,6 +3802,7 @@ public final class Explanations {
        * <pre>
        * The relevance of this policy to the overall determination in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+       *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
        * </pre>
@@ -3791,6 +3896,7 @@ public final class Explanations {
      * <pre>
      * Required. Indicates whether _this binding_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the member actually has the permission,
@@ -3811,6 +3917,7 @@ public final class Explanations {
      * <pre>
      * Required. Indicates whether _this binding_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the member actually has the permission,
@@ -3832,6 +3939,7 @@ public final class Explanations {
      * <pre>
      * The role that this binding grants. For example,
      * `roles/compute.serviceAgent`.
+     *
      * For a complete list of predefined IAM roles, as well as the permissions in
      * each role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -3847,6 +3955,7 @@ public final class Explanations {
      * <pre>
      * The role that this binding grants. For example,
      * `roles/compute.serviceAgent`.
+     *
      * For a complete list of predefined IAM roles, as well as the permissions in
      * each role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -3927,14 +4036,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -3953,14 +4067,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -3986,14 +4105,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -4016,14 +4140,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -4048,14 +4177,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -4101,6 +4235,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -4116,6 +4251,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -4131,6 +4267,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -4171,11 +4308,6 @@ public final class Explanations {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BindingExplanation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4413,6 +4545,7 @@ public final class Explanations {
        * <pre>
        * The binding includes the member. The member can be included directly
        * or indirectly. For example:
+       *
        * * A member is included directly if that member is listed in the binding.
        * * A member is included indirectly if that member is in a Google group or
        *   G Suite domain that is listed in the binding.
@@ -4471,6 +4604,7 @@ public final class Explanations {
        * <pre>
        * The binding includes the member. The member can be included directly
        * or indirectly. For example:
+       *
        * * A member is included directly if that member is listed in the binding.
        * * A member is included indirectly if that member is in a Google group or
        *   G Suite domain that is listed in the binding.
@@ -4689,11 +4823,6 @@ public final class Explanations {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AnnotatedMembership();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5507,6 +5636,7 @@ public final class Explanations {
      * <pre>
      * Required. Indicates whether _this binding_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the member actually has the permission,
@@ -5530,6 +5660,7 @@ public final class Explanations {
      * <pre>
      * Required. Indicates whether _this binding_ provides the specified permission to the
      * specified member for the specified resource.
+     *
      * This field does _not_ indicate whether the member actually has the
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the member actually has the permission,
@@ -5562,6 +5693,7 @@ public final class Explanations {
      * <pre>
      * The role that this binding grants. For example,
      * `roles/compute.serviceAgent`.
+     *
      * For a complete list of predefined IAM roles, as well as the permissions in
      * each role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -5588,6 +5720,7 @@ public final class Explanations {
      * <pre>
      * The role that this binding grants. For example,
      * `roles/compute.serviceAgent`.
+     *
      * For a complete list of predefined IAM roles, as well as the permissions in
      * each role, see https://cloud.google.com/iam/help/roles/reference.
      * </pre>
@@ -5750,14 +5883,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -5792,14 +5930,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -5825,14 +5968,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -5868,14 +6016,19 @@ public final class Explanations {
      * in the request, either directly or indirectly. Each key identifies a member
      * in the binding, and each value indicates whether the member in the binding
      * includes the member in the request.
+     *
      * For example, suppose that a binding includes the following members:
+     *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
+     *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
      * member of the group `group:product-eng&#64;example.com`.
+     *
      * For the first member in the binding, the key is `user:alice&#64;example.com`,
      * and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
+     *
      * For the second member in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
@@ -5950,6 +6103,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -5968,6 +6122,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -5986,6 +6141,7 @@ public final class Explanations {
      * <pre>
      * A condition expression that prevents access unless the expression evaluates
      * to `true`.
+     *
      * To learn about IAM Conditions, see
      * http://cloud.google.com/iam/help/conditions/overview.
      * </pre>
@@ -6569,6 +6725,7 @@ public final class Explanations {
        * <pre>
        * Required. Indicates whether _this binding_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another binding that overrides
        * this binding. To determine whether the member actually has the permission,
@@ -6592,6 +6749,7 @@ public final class Explanations {
        * <pre>
        * Required. Indicates whether _this binding_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another binding that overrides
        * this binding. To determine whether the member actually has the permission,
@@ -6618,6 +6776,7 @@ public final class Explanations {
        * <pre>
        * Required. Indicates whether _this binding_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another binding that overrides
        * this binding. To determine whether the member actually has the permission,
@@ -6645,6 +6804,7 @@ public final class Explanations {
        * <pre>
        * Required. Indicates whether _this binding_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another binding that overrides
        * this binding. To determine whether the member actually has the permission,
@@ -6675,6 +6835,7 @@ public final class Explanations {
        * <pre>
        * Required. Indicates whether _this binding_ provides the specified permission to the
        * specified member for the specified resource.
+       *
        * This field does _not_ indicate whether the member actually has the
        * permission for the resource. There might be another binding that overrides
        * this binding. To determine whether the member actually has the permission,
@@ -6702,6 +6863,7 @@ public final class Explanations {
        * <pre>
        * The role that this binding grants. For example,
        * `roles/compute.serviceAgent`.
+       *
        * For a complete list of predefined IAM roles, as well as the permissions in
        * each role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -6727,6 +6889,7 @@ public final class Explanations {
        * <pre>
        * The role that this binding grants. For example,
        * `roles/compute.serviceAgent`.
+       *
        * For a complete list of predefined IAM roles, as well as the permissions in
        * each role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -6752,6 +6915,7 @@ public final class Explanations {
        * <pre>
        * The role that this binding grants. For example,
        * `roles/compute.serviceAgent`.
+       *
        * For a complete list of predefined IAM roles, as well as the permissions in
        * each role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -6776,6 +6940,7 @@ public final class Explanations {
        * <pre>
        * The role that this binding grants. For example,
        * `roles/compute.serviceAgent`.
+       *
        * For a complete list of predefined IAM roles, as well as the permissions in
        * each role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -6796,6 +6961,7 @@ public final class Explanations {
        * <pre>
        * The role that this binding grants. For example,
        * `roles/compute.serviceAgent`.
+       *
        * For a complete list of predefined IAM roles, as well as the permissions in
        * each role, see https://cloud.google.com/iam/help/roles/reference.
        * </pre>
@@ -7084,14 +7250,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7126,14 +7297,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7159,14 +7335,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7203,14 +7384,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7251,14 +7437,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7293,14 +7484,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7332,14 +7528,19 @@ public final class Explanations {
        * in the request, either directly or indirectly. Each key identifies a member
        * in the binding, and each value indicates whether the member in the binding
        * includes the member in the request.
+       *
        * For example, suppose that a binding includes the following members:
+       *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
+       *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
        * member of the group `group:product-eng&#64;example.com`.
+       *
        * For the first member in the binding, the key is `user:alice&#64;example.com`,
        * and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
+       *
        * For the second member in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
@@ -7469,6 +7670,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7486,6 +7688,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7507,6 +7710,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7532,6 +7736,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7554,6 +7759,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7582,6 +7788,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7604,6 +7811,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7621,6 +7829,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7640,6 +7849,7 @@ public final class Explanations {
        * <pre>
        * A condition expression that prevents access unless the expression evaluates
        * to `true`.
+       *
        * To learn about IAM Conditions, see
        * http://cloud.google.com/iam/help/conditions/overview.
        * </pre>
@@ -7760,57 +7970,57 @@ public final class Explanations {
           + "xplanations.proto\022$google.cloud.policytr"
           + "oubleshooter.v1\032\037google/api/field_behavi"
           + "or.proto\032\032google/iam/v1/policy.proto\032\026go"
-          + "ogle/type/expr.proto\"_\n\013AccessTuple\022\026\n\tp"
-          + "rincipal\030\001 \001(\tB\003\340A\002\022\037\n\022full_resource_nam"
-          + "e\030\002 \001(\tB\003\340A\002\022\027\n\npermission\030\003 \001(\tB\003\340A\002\"\274\002"
-          + "\n\017ExplainedPolicy\022A\n\006access\030\001 \001(\01621.goog"
-          + "le.cloud.policytroubleshooter.v1.AccessS"
-          + "tate\022\032\n\022full_resource_name\030\002 \001(\t\022%\n\006poli"
-          + "cy\030\003 \001(\0132\025.google.iam.v1.Policy\022V\n\024bindi"
-          + "ng_explanations\030\004 \003(\01328.google.cloud.pol"
-          + "icytroubleshooter.v1.BindingExplanation\022"
-          + "K\n\trelevance\030\005 \001(\01628.google.cloud.policy"
-          + "troubleshooter.v1.HeuristicRelevance\"\203\t\n"
-          + "\022BindingExplanation\022F\n\006access\030\001 \001(\01621.go"
-          + "ogle.cloud.policytroubleshooter.v1.Acces"
-          + "sStateB\003\340A\002\022\014\n\004role\030\002 \001(\t\022`\n\017role_permis"
-          + "sion\030\003 \001(\0162G.google.cloud.policytroubles"
-          + "hooter.v1.BindingExplanation.RolePermiss"
-          + "ion\022[\n\031role_permission_relevance\030\004 \001(\01628"
-          + ".google.cloud.policytroubleshooter.v1.He"
-          + "uristicRelevance\022^\n\013memberships\030\005 \003(\0132I."
-          + "google.cloud.policytroubleshooter.v1.Bin"
-          + "dingExplanation.MembershipsEntry\022K\n\trele"
-          + "vance\030\006 \001(\01628.google.cloud.policytrouble"
-          + "shooter.v1.HeuristicRelevance\022$\n\tconditi"
-          + "on\030\007 \001(\0132\021.google.type.Expr\032\273\001\n\023Annotate"
-          + "dMembership\022W\n\nmembership\030\001 \001(\0162C.google"
-          + ".cloud.policytroubleshooter.v1.BindingEx"
-          + "planation.Membership\022K\n\trelevance\030\002 \001(\0162"
-          + "8.google.cloud.policytroubleshooter.v1.H"
-          + "euristicRelevance\032\200\001\n\020MembershipsEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022[\n\005value\030\002 \001(\0132L.google.clou"
-          + "d.policytroubleshooter.v1.BindingExplana"
-          + "tion.AnnotatedMembership:\0028\001\"\232\001\n\016RolePer"
-          + "mission\022\037\n\033ROLE_PERMISSION_UNSPECIFIED\020\000"
-          + "\022\034\n\030ROLE_PERMISSION_INCLUDED\020\001\022 \n\034ROLE_P"
-          + "ERMISSION_NOT_INCLUDED\020\002\022\'\n#ROLE_PERMISS"
-          + "ION_UNKNOWN_INFO_DENIED\020\003\"\246\001\n\nMembership"
-          + "\022\032\n\026MEMBERSHIP_UNSPECIFIED\020\000\022\027\n\023MEMBERSH"
-          + "IP_INCLUDED\020\001\022\033\n\027MEMBERSHIP_NOT_INCLUDED"
-          + "\020\002\022\"\n\036MEMBERSHIP_UNKNOWN_INFO_DENIED\020\003\022\""
-          + "\n\036MEMBERSHIP_UNKNOWN_UNSUPPORTED\020\004*{\n\013Ac"
-          + "cessState\022\034\n\030ACCESS_STATE_UNSPECIFIED\020\000\022"
-          + "\013\n\007GRANTED\020\001\022\017\n\013NOT_GRANTED\020\002\022\027\n\023UNKNOWN"
-          + "_CONDITIONAL\020\003\022\027\n\023UNKNOWN_INFO_DENIED\020\004*"
-          + "O\n\022HeuristicRelevance\022#\n\037HEURISTIC_RELEV"
-          + "ANCE_UNSPECIFIED\020\000\022\n\n\006NORMAL\020\001\022\010\n\004HIGH\020\002"
-          + "B\326\001Z\\cloud.google.com/go/policytroublesh"
-          + "ooter/apiv1/policytroubleshooterpb;polic"
-          + "ytroubleshooterpb\252\002$Google.Cloud.PolicyT"
-          + "roubleshooter.V1\312\002$Google\\Cloud\\PolicyTr"
-          + "oubleshooter\\V1\352\002\'Google::Cloud::PolicyT"
-          + "roubleshooter::V1b\006proto3"
+          + "ogle/type/expr.proto\"b\n\013AccessTuple\022\027\n\tp"
+          + "rincipal\030\001 \001(\tB\004\342A\001\002\022 \n\022full_resource_na"
+          + "me\030\002 \001(\tB\004\342A\001\002\022\030\n\npermission\030\003 \001(\tB\004\342A\001\002"
+          + "\"\274\002\n\017ExplainedPolicy\022A\n\006access\030\001 \001(\01621.g"
+          + "oogle.cloud.policytroubleshooter.v1.Acce"
+          + "ssState\022\032\n\022full_resource_name\030\002 \001(\t\022%\n\006p"
+          + "olicy\030\003 \001(\0132\025.google.iam.v1.Policy\022V\n\024bi"
+          + "nding_explanations\030\004 \003(\01328.google.cloud."
+          + "policytroubleshooter.v1.BindingExplanati"
+          + "on\022K\n\trelevance\030\005 \001(\01628.google.cloud.pol"
+          + "icytroubleshooter.v1.HeuristicRelevance\""
+          + "\204\t\n\022BindingExplanation\022G\n\006access\030\001 \001(\01621"
+          + ".google.cloud.policytroubleshooter.v1.Ac"
+          + "cessStateB\004\342A\001\002\022\014\n\004role\030\002 \001(\t\022`\n\017role_pe"
+          + "rmission\030\003 \001(\0162G.google.cloud.policytrou"
+          + "bleshooter.v1.BindingExplanation.RolePer"
+          + "mission\022[\n\031role_permission_relevance\030\004 \001"
+          + "(\01628.google.cloud.policytroubleshooter.v"
+          + "1.HeuristicRelevance\022^\n\013memberships\030\005 \003("
+          + "\0132I.google.cloud.policytroubleshooter.v1"
+          + ".BindingExplanation.MembershipsEntry\022K\n\t"
+          + "relevance\030\006 \001(\01628.google.cloud.policytro"
+          + "ubleshooter.v1.HeuristicRelevance\022$\n\tcon"
+          + "dition\030\007 \001(\0132\021.google.type.Expr\032\273\001\n\023Anno"
+          + "tatedMembership\022W\n\nmembership\030\001 \001(\0162C.go"
+          + "ogle.cloud.policytroubleshooter.v1.Bindi"
+          + "ngExplanation.Membership\022K\n\trelevance\030\002 "
+          + "\001(\01628.google.cloud.policytroubleshooter."
+          + "v1.HeuristicRelevance\032\200\001\n\020MembershipsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022[\n\005value\030\002 \001(\0132L.google."
+          + "cloud.policytroubleshooter.v1.BindingExp"
+          + "lanation.AnnotatedMembership:\0028\001\"\232\001\n\016Rol"
+          + "ePermission\022\037\n\033ROLE_PERMISSION_UNSPECIFI"
+          + "ED\020\000\022\034\n\030ROLE_PERMISSION_INCLUDED\020\001\022 \n\034RO"
+          + "LE_PERMISSION_NOT_INCLUDED\020\002\022\'\n#ROLE_PER"
+          + "MISSION_UNKNOWN_INFO_DENIED\020\003\"\246\001\n\nMember"
+          + "ship\022\032\n\026MEMBERSHIP_UNSPECIFIED\020\000\022\027\n\023MEMB"
+          + "ERSHIP_INCLUDED\020\001\022\033\n\027MEMBERSHIP_NOT_INCL"
+          + "UDED\020\002\022\"\n\036MEMBERSHIP_UNKNOWN_INFO_DENIED"
+          + "\020\003\022\"\n\036MEMBERSHIP_UNKNOWN_UNSUPPORTED\020\004*{"
+          + "\n\013AccessState\022\034\n\030ACCESS_STATE_UNSPECIFIE"
+          + "D\020\000\022\013\n\007GRANTED\020\001\022\017\n\013NOT_GRANTED\020\002\022\027\n\023UNK"
+          + "NOWN_CONDITIONAL\020\003\022\027\n\023UNKNOWN_INFO_DENIE"
+          + "D\020\004*O\n\022HeuristicRelevance\022#\n\037HEURISTIC_R"
+          + "ELEVANCE_UNSPECIFIED\020\000\022\n\n\006NORMAL\020\001\022\010\n\004HI"
+          + "GH\020\002B\326\001Z\\cloud.google.com/go/policytroub"
+          + "leshooter/apiv1/policytroubleshooterpb;p"
+          + "olicytroubleshooterpb\252\002$Google.Cloud.Pol"
+          + "icyTroubleshooter.V1\312\002$Google\\Cloud\\Poli"
+          + "cyTroubleshooter\\V1\352\002\'Google::Cloud::Pol"
+          + "icyTroubleshooter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -84,6 +84,7 @@ public interface RecommendationOrBuilder
    * new subtype might be added when significant changes to `content` or
    * `primary_impact.category` are introduced. See the Recommenders section
    * to see a list of subtypes for a given Recommender.
+   *
    * Examples:
    *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -103,6 +104,7 @@ public interface RecommendationOrBuilder
    * new subtype might be added when significant changes to `content` or
    * `primary_impact.category` are introduced. See the Recommenders section
    * to see a list of subtypes for a given Recommender.
+   *
    * Examples:
    *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"

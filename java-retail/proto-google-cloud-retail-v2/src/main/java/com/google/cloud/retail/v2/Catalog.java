@@ -48,11 +48,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     return new Catalog();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CatalogProto
         .internal_static_google_cloud_retail_v2_Catalog_descriptor;
@@ -132,6 +127,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. The catalog display name.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -159,6 +155,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. The catalog display name.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -757,6 +754,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The catalog display name.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -783,6 +781,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The catalog display name.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -809,6 +808,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The catalog display name.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -834,6 +834,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The catalog display name.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -855,6 +856,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The catalog display name.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>

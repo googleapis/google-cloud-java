@@ -48,11 +48,6 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
     return new SearchFoldersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.FoldersProto
         .internal_static_google_cloud_resourcemanager_v3_SearchFoldersRequest_descriptor;
@@ -152,11 +147,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    * Optional. Search criteria used to select the folders to return.
    * If no search criteria is specified then all accessible folders will be
    * returned.
+   *
    * Query expressions can be used to restrict results based upon displayName,
    * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
    * can be used along with the suffix wildcard symbol `*`.
+   *
    * The `displayName` field in a query expression should use escaped quotes
    * for values that include whitespace to prevent unexpected behavior.
+   *
    * ```
    * | Field                   | Description                            |
    * |-------------------------|----------------------------------------|
@@ -164,7 +162,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    * | parent                  | Filters by parent (for example: folders/123). |
    * | state, lifecycleState   | Filters by state.                      |
    * ```
+   *
    * Some example queries are:
+   *
    * * Query `displayName=Test*` returns Folder resources whose display name
    * starts with "Test".
    * * Query `state=ACTIVE` returns Folder resources with
@@ -200,11 +200,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    * Optional. Search criteria used to select the folders to return.
    * If no search criteria is specified then all accessible folders will be
    * returned.
+   *
    * Query expressions can be used to restrict results based upon displayName,
    * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
    * can be used along with the suffix wildcard symbol `*`.
+   *
    * The `displayName` field in a query expression should use escaped quotes
    * for values that include whitespace to prevent unexpected behavior.
+   *
    * ```
    * | Field                   | Description                            |
    * |-------------------------|----------------------------------------|
@@ -212,7 +215,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    * | parent                  | Filters by parent (for example: folders/123). |
    * | state, lifecycleState   | Filters by state.                      |
    * ```
+   *
    * Some example queries are:
+   *
    * * Query `displayName=Test*` returns Folder resources whose display name
    * starts with "Test".
    * * Query `state=ACTIVE` returns Folder resources with
@@ -809,11 +814,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * Optional. Search criteria used to select the folders to return.
      * If no search criteria is specified then all accessible folders will be
      * returned.
+     *
      * Query expressions can be used to restrict results based upon displayName,
      * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
      * can be used along with the suffix wildcard symbol `*`.
+     *
      * The `displayName` field in a query expression should use escaped quotes
      * for values that include whitespace to prevent unexpected behavior.
+     *
      * ```
      * | Field                   | Description                            |
      * |-------------------------|----------------------------------------|
@@ -821,7 +829,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * | parent                  | Filters by parent (for example: folders/123). |
      * | state, lifecycleState   | Filters by state.                      |
      * ```
+     *
      * Some example queries are:
+     *
      * * Query `displayName=Test*` returns Folder resources whose display name
      * starts with "Test".
      * * Query `state=ACTIVE` returns Folder resources with
@@ -856,11 +866,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * Optional. Search criteria used to select the folders to return.
      * If no search criteria is specified then all accessible folders will be
      * returned.
+     *
      * Query expressions can be used to restrict results based upon displayName,
      * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
      * can be used along with the suffix wildcard symbol `*`.
+     *
      * The `displayName` field in a query expression should use escaped quotes
      * for values that include whitespace to prevent unexpected behavior.
+     *
      * ```
      * | Field                   | Description                            |
      * |-------------------------|----------------------------------------|
@@ -868,7 +881,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * | parent                  | Filters by parent (for example: folders/123). |
      * | state, lifecycleState   | Filters by state.                      |
      * ```
+     *
      * Some example queries are:
+     *
      * * Query `displayName=Test*` returns Folder resources whose display name
      * starts with "Test".
      * * Query `state=ACTIVE` returns Folder resources with
@@ -903,11 +918,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * Optional. Search criteria used to select the folders to return.
      * If no search criteria is specified then all accessible folders will be
      * returned.
+     *
      * Query expressions can be used to restrict results based upon displayName,
      * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
      * can be used along with the suffix wildcard symbol `*`.
+     *
      * The `displayName` field in a query expression should use escaped quotes
      * for values that include whitespace to prevent unexpected behavior.
+     *
      * ```
      * | Field                   | Description                            |
      * |-------------------------|----------------------------------------|
@@ -915,7 +933,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * | parent                  | Filters by parent (for example: folders/123). |
      * | state, lifecycleState   | Filters by state.                      |
      * ```
+     *
      * Some example queries are:
+     *
      * * Query `displayName=Test*` returns Folder resources whose display name
      * starts with "Test".
      * * Query `state=ACTIVE` returns Folder resources with
@@ -949,11 +969,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * Optional. Search criteria used to select the folders to return.
      * If no search criteria is specified then all accessible folders will be
      * returned.
+     *
      * Query expressions can be used to restrict results based upon displayName,
      * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
      * can be used along with the suffix wildcard symbol `*`.
+     *
      * The `displayName` field in a query expression should use escaped quotes
      * for values that include whitespace to prevent unexpected behavior.
+     *
      * ```
      * | Field                   | Description                            |
      * |-------------------------|----------------------------------------|
@@ -961,7 +984,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * | parent                  | Filters by parent (for example: folders/123). |
      * | state, lifecycleState   | Filters by state.                      |
      * ```
+     *
      * Some example queries are:
+     *
      * * Query `displayName=Test*` returns Folder resources whose display name
      * starts with "Test".
      * * Query `state=ACTIVE` returns Folder resources with
@@ -991,11 +1016,14 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * Optional. Search criteria used to select the folders to return.
      * If no search criteria is specified then all accessible folders will be
      * returned.
+     *
      * Query expressions can be used to restrict results based upon displayName,
      * state and parent, where the operators `=` (`:`) `NOT`, `AND` and `OR`
      * can be used along with the suffix wildcard symbol `*`.
+     *
      * The `displayName` field in a query expression should use escaped quotes
      * for values that include whitespace to prevent unexpected behavior.
+     *
      * ```
      * | Field                   | Description                            |
      * |-------------------------|----------------------------------------|
@@ -1003,7 +1031,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * | parent                  | Filters by parent (for example: folders/123). |
      * | state, lifecycleState   | Filters by state.                      |
      * ```
+     *
      * Some example queries are:
+     *
      * * Query `displayName=Test*` returns Folder resources whose display name
      * starts with "Test".
      * * Query `state=ACTIVE` returns Folder resources with

@@ -47,11 +47,6 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     return new ExperimentInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.SearchServiceProto
         .internal_static_google_cloud_retail_v2alpha_ExperimentInfo_descriptor;
@@ -162,11 +157,6 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ServingConfigExperiment();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -998,6 +988,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int experimentMetadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object experimentMetadata_;
 
   public enum ExperimentMetadataCase

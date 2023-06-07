@@ -47,11 +47,6 @@ public final class UndeleteFolderRequest extends com.google.protobuf.GeneratedMe
     return new UndeleteFolderRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.FoldersProto
         .internal_static_google_cloud_resourcemanager_v3_UndeleteFolderRequest_descriptor;

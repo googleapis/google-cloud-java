@@ -30,6 +30,7 @@ public interface ListProjectsRequestOrBuilder
    * Required. The name of the parent resource whose projects are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
    * </pre>
@@ -48,6 +49,7 @@ public interface ListProjectsRequestOrBuilder
    * Required. The name of the parent resource whose projects are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
    * </pre>

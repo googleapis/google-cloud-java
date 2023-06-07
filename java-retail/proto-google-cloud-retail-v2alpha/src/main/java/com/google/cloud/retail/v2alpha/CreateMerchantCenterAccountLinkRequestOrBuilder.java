@@ -63,6 +63,7 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -83,6 +84,7 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -103,6 +105,7 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is

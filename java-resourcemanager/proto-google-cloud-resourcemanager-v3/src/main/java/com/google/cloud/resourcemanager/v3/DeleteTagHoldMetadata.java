@@ -47,11 +47,6 @@ public final class DeleteTagHoldMetadata extends com.google.protobuf.GeneratedMe
     return new DeleteTagHoldMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagHoldsProto
         .internal_static_google_cloud_resourcemanager_v3_DeleteTagHoldMetadata_descriptor;

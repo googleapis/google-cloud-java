@@ -51,11 +51,6 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     return new ResourceInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v2.ServiceControllerProto
         .internal_static_google_api_servicecontrol_v2_ResourceInfo_descriptor;

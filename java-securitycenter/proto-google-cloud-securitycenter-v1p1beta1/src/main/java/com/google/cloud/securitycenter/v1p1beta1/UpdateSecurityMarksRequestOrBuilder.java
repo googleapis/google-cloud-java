@@ -69,6 +69,7 @@ public interface UpdateSecurityMarksRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -84,6 +85,7 @@ public interface UpdateSecurityMarksRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -99,6 +101,7 @@ public interface UpdateSecurityMarksRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".

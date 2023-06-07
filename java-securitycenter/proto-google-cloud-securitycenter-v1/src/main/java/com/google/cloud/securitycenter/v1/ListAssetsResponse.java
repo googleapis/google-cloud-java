@@ -48,11 +48,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     return new ListAssetsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_ListAssetsResponse_descriptor;
@@ -167,11 +162,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       return new ListAssetsResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
           .internal_static_google_cloud_securitycenter_v1_ListAssetsResponse_ListAssetsResult_descriptor;
@@ -192,6 +182,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The change in state of the asset.
+     *
      * When querying across two points in time this describes
      * the change between the two points: ADDED, REMOVED, or ACTIVE.
      * If there was no compare_duration supplied in the request the state change

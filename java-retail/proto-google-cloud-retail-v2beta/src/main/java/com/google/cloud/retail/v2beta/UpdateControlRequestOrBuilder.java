@@ -71,7 +71,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2beta.Control] to update. The following are
    * NOT supported:
+   *
    * * [Control.name][google.cloud.retail.v2beta.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -87,7 +89,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2beta.Control] to update. The following are
    * NOT supported:
+   *
    * * [Control.name][google.cloud.retail.v2beta.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -103,7 +107,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2beta.Control] to update. The following are
    * NOT supported:
+   *
    * * [Control.name][google.cloud.retail.v2beta.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *

@@ -105,6 +105,6 @@ public interface ReusableConfigWrapperOrBuilder
   com.google.cloud.security.privateca.v1beta1.ReusableConfigValuesOrBuilder
       getReusableConfigValuesOrBuilder();
 
-  public com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper.ConfigValuesCase
+  com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper.ConfigValuesCase
       getConfigValuesCase();
 }

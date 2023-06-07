@@ -49,11 +49,6 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     return new ProductDetail();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass
         .internal_static_google_cloud_recommendationengine_v1beta1_ProductDetail_descriptor;
@@ -289,6 +284,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    * Optional. Quantity of the products in stock when a user event happens.
    * Optional. If provided, this overrides the available quantity in Catalog for
    * this event. and can only be set if `stock_status` is set to `IN_STOCK`.
+   *
    * Note that if an item is out of stock, you must set the `stock_state` field
    * to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not
    * sufficient to mark the item out of stock.
@@ -1394,6 +1390,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      * Optional. Quantity of the products in stock when a user event happens.
      * Optional. If provided, this overrides the available quantity in Catalog for
      * this event. and can only be set if `stock_status` is set to `IN_STOCK`.
+     *
      * Note that if an item is out of stock, you must set the `stock_state` field
      * to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not
      * sufficient to mark the item out of stock.
@@ -1414,6 +1411,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      * Optional. Quantity of the products in stock when a user event happens.
      * Optional. If provided, this overrides the available quantity in Catalog for
      * this event. and can only be set if `stock_status` is set to `IN_STOCK`.
+     *
      * Note that if an item is out of stock, you must set the `stock_state` field
      * to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not
      * sufficient to mark the item out of stock.
@@ -1438,6 +1436,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      * Optional. Quantity of the products in stock when a user event happens.
      * Optional. If provided, this overrides the available quantity in Catalog for
      * this event. and can only be set if `stock_status` is set to `IN_STOCK`.
+     *
      * Note that if an item is out of stock, you must set the `stock_state` field
      * to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not
      * sufficient to mark the item out of stock.

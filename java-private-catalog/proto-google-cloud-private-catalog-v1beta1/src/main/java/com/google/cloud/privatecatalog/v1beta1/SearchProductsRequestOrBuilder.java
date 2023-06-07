@@ -55,6 +55,7 @@ public interface SearchProductsRequestOrBuilder
    *
    * <pre>
    * The query to filter the products.
+   *
    * The supported queries are:
    * * List products of all catalogs: empty
    * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -72,6 +73,7 @@ public interface SearchProductsRequestOrBuilder
    *
    * <pre>
    * The query to filter the products.
+   *
    * The supported queries are:
    * * List products of all catalogs: empty
    * * List products under a catalog: `parent=catalogs/{catalog}`

@@ -45,11 +45,6 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     return new Interval();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CommonProto
         .internal_static_google_cloud_retail_v2_Interval_descriptor;
@@ -66,6 +61,8 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int minCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object min_;
 
   public enum MinCase
@@ -113,6 +110,8 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int maxCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object max_;
 
   public enum MaxCase

@@ -47,11 +47,6 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
     return new InsightStateInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1beta1.InsightOuterClass
         .internal_static_google_cloud_recommender_v1beta1_InsightStateInfo_descriptor;

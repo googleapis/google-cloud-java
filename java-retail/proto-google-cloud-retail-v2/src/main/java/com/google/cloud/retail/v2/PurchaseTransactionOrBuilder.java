@@ -84,6 +84,7 @@ public interface PurchaseTransactionOrBuilder
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
    * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
    * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]

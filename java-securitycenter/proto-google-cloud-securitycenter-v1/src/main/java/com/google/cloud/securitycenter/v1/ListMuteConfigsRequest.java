@@ -49,11 +49,6 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
     return new ListMuteConfigsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_ListMuteConfigsRequest_descriptor;
@@ -159,6 +154,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListMuteConfigs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMuteConfigs` must
    * match the call that provided the page token.
    * </pre>
@@ -185,6 +181,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListMuteConfigs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMuteConfigs` must
    * match the call that provided the page token.
    * </pre>
@@ -791,6 +788,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListMuteConfigs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMuteConfigs` must
      * match the call that provided the page token.
      * </pre>
@@ -816,6 +814,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListMuteConfigs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMuteConfigs` must
      * match the call that provided the page token.
      * </pre>
@@ -841,6 +840,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListMuteConfigs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMuteConfigs` must
      * match the call that provided the page token.
      * </pre>
@@ -865,6 +865,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListMuteConfigs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMuteConfigs` must
      * match the call that provided the page token.
      * </pre>
@@ -885,6 +886,7 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListMuteConfigs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMuteConfigs` must
      * match the call that provided the page token.
      * </pre>

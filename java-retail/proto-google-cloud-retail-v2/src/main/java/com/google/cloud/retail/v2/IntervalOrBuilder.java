@@ -123,7 +123,7 @@ public interface IntervalOrBuilder
    */
   double getExclusiveMaximum();
 
-  public com.google.cloud.retail.v2.Interval.MinCase getMinCase();
+  com.google.cloud.retail.v2.Interval.MinCase getMinCase();
 
-  public com.google.cloud.retail.v2.Interval.MaxCase getMaxCase();
+  com.google.cloud.retail.v2.Interval.MaxCase getMaxCase();
 }

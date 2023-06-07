@@ -105,7 +105,9 @@ public interface ReplaceCatalogAttributeRequestOrBuilder
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] to update.
    * The following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2alpha.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -121,7 +123,9 @@ public interface ReplaceCatalogAttributeRequestOrBuilder
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] to update.
    * The following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2alpha.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -137,7 +141,9 @@ public interface ReplaceCatalogAttributeRequestOrBuilder
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] to update.
    * The following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2alpha.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *

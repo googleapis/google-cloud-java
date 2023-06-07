@@ -350,5 +350,5 @@ public interface RuleOrBuilder
    */
   com.google.cloud.retail.v2.ConditionOrBuilder getConditionOrBuilder();
 
-  public com.google.cloud.retail.v2.Rule.ActionCase getActionCase();
+  com.google.cloud.retail.v2.Rule.ActionCase getActionCase();
 }

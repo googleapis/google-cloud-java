@@ -47,11 +47,6 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
     return new ImportInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
         .internal_static_google_cloud_redis_v1beta1_ImportInstanceRequest_descriptor;

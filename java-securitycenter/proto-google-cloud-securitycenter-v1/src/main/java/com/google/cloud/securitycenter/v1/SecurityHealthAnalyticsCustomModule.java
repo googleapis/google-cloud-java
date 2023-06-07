@@ -57,11 +57,6 @@ public final class SecurityHealthAnalyticsCustomModule
     return new SecurityHealthAnalyticsCustomModule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModuleProto
         .internal_static_google_cloud_securitycenter_v1_SecurityHealthAnalyticsCustomModule_descriptor;
@@ -280,6 +275,7 @@ public final class SecurityHealthAnalyticsCustomModule
    * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
    * or
    * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   *
    * The id {customModule} is server-generated and is not user settable.
    * It will be a numeric id containing 1-20 digits.
    * </pre>
@@ -311,6 +307,7 @@ public final class SecurityHealthAnalyticsCustomModule
    * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
    * or
    * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   *
    * The id {customModule} is server-generated and is not user settable.
    * It will be a numeric id containing 1-20 digits.
    * </pre>
@@ -1177,6 +1174,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
      * or
      * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     *
      * The id {customModule} is server-generated and is not user settable.
      * It will be a numeric id containing 1-20 digits.
      * </pre>
@@ -1207,6 +1205,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
      * or
      * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     *
      * The id {customModule} is server-generated and is not user settable.
      * It will be a numeric id containing 1-20 digits.
      * </pre>
@@ -1237,6 +1236,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
      * or
      * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     *
      * The id {customModule} is server-generated and is not user settable.
      * It will be a numeric id containing 1-20 digits.
      * </pre>
@@ -1266,6 +1266,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
      * or
      * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     *
      * The id {customModule} is server-generated and is not user settable.
      * It will be a numeric id containing 1-20 digits.
      * </pre>
@@ -1291,6 +1292,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
      * or
      * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     *
      * The id {customModule} is server-generated and is not user settable.
      * It will be a numeric id containing 1-20 digits.
      * </pre>

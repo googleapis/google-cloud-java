@@ -47,11 +47,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     return new WriteUserEventRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.UserEventServiceOuterClass
         .internal_static_google_cloud_recommendationengine_v1beta1_WriteUserEventRequest_descriptor;

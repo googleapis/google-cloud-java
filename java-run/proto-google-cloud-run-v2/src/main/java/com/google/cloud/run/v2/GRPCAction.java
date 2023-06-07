@@ -47,11 +47,6 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
     return new GRPCAction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_GRPCAction_descriptor;

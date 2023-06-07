@@ -28,6 +28,7 @@ public interface GetComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to retrieve.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`
@@ -49,6 +50,7 @@ public interface GetComponentSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The component settings to retrieve.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`

@@ -34,6 +34,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
    * or
    * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   *
    * The id {customModule} is server-generated and is not user settable.
    * It will be a numeric id containing 1-20 digits.
    * </pre>
@@ -54,6 +55,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
    * or
    * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   *
    * The id {customModule} is server-generated and is not user settable.
    * It will be a numeric id containing 1-20 digits.
    * </pre>

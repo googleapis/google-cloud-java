@@ -49,11 +49,6 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
     return new ListBigQueryExportsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor;

@@ -51,11 +51,6 @@ public final class CreateMerchantCenterAccountLinkRequest
     return new CreateMerchantCenterAccountLinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.MerchantCenterAccountLinkServiceProto
         .internal_static_google_cloud_retail_v2alpha_CreateMerchantCenterAccountLinkRequest_descriptor;
@@ -139,6 +134,7 @@ public final class CreateMerchantCenterAccountLinkRequest
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -162,6 +158,7 @@ public final class CreateMerchantCenterAccountLinkRequest
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -187,6 +184,7 @@ public final class CreateMerchantCenterAccountLinkRequest
    * Required. The
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
    * to create.
+   *
    * If the caller does not have permission to create the
    * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
    * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -736,6 +734,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -758,6 +757,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -787,6 +787,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -818,6 +819,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -846,6 +848,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -881,6 +884,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -908,6 +912,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -931,6 +936,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is
@@ -958,6 +964,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * Required. The
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]
      * to create.
+     *
      * If the caller does not have permission to create the
      * [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink],
      * regardless of whether or not it exists, a PERMISSION_DENIED error is

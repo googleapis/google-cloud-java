@@ -155,5 +155,5 @@ public interface ValueOrBuilder
    */
   com.google.cloud.resourcesettings.v1.Value.EnumValueOrBuilder getEnumValueOrBuilder();
 
-  public com.google.cloud.resourcesettings.v1.Value.ValueCase getValueCase();
+  com.google.cloud.resourcesettings.v1.Value.ValueCase getValueCase();
 }

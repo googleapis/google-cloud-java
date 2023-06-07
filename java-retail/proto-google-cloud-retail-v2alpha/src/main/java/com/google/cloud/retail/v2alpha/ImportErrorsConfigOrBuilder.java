@@ -69,5 +69,5 @@ public interface ImportErrorsConfigOrBuilder
    */
   com.google.protobuf.ByteString getGcsPrefixBytes();
 
-  public com.google.cloud.retail.v2alpha.ImportErrorsConfig.DestinationCase getDestinationCase();
+  com.google.cloud.retail.v2alpha.ImportErrorsConfig.DestinationCase getDestinationCase();
 }

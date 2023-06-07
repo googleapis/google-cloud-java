@@ -128,5 +128,5 @@ public interface ProductInputConfigOrBuilder
    */
   com.google.cloud.retail.v2alpha.BigQuerySourceOrBuilder getBigQuerySourceOrBuilder();
 
-  public com.google.cloud.retail.v2alpha.ProductInputConfig.SourceCase getSourceCase();
+  com.google.cloud.retail.v2alpha.ProductInputConfig.SourceCase getSourceCase();
 }

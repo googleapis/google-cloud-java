@@ -50,11 +50,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     return new Condition();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ConditionProto
         .internal_static_google_cloud_run_v2_Condition_descriptor;
@@ -1468,6 +1463,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reasonsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reasons_;
 
   public enum ReasonsCase

@@ -139,5 +139,5 @@ public interface InputConfigOrBuilder
   com.google.cloud.recommendationengine.v1beta1.UserEventInlineSourceOrBuilder
       getUserEventInlineSourceOrBuilder();
 
-  public com.google.cloud.recommendationengine.v1beta1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.recommendationengine.v1beta1.InputConfig.SourceCase getSourceCase();
 }

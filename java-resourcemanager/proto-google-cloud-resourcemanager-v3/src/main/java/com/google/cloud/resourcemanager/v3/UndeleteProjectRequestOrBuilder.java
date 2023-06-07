@@ -28,6 +28,7 @@ public interface UndeleteProjectRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project (for example, `projects/415104041262`).
+   *
    * Required.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UndeleteProjectRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project (for example, `projects/415104041262`).
+   *
    * Required.
    * </pre>
    *

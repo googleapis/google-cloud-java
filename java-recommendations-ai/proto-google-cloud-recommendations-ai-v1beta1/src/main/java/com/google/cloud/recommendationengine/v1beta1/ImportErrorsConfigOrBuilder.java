@@ -69,6 +69,6 @@ public interface ImportErrorsConfigOrBuilder
    */
   com.google.protobuf.ByteString getGcsPrefixBytes();
 
-  public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.DestinationCase
+  com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.DestinationCase
       getDestinationCase();
 }

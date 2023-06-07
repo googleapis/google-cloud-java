@@ -69,6 +69,7 @@ public interface UpdateExternalSystemRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the external system resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -82,6 +83,7 @@ public interface UpdateExternalSystemRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the external system resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -95,6 +97,7 @@ public interface UpdateExternalSystemRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the external system resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *

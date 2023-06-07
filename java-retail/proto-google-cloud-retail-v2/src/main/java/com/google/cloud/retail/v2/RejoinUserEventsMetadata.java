@@ -45,11 +45,6 @@ public final class RejoinUserEventsMetadata extends com.google.protobuf.Generate
     return new RejoinUserEventsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.UserEventServiceProto
         .internal_static_google_cloud_retail_v2_RejoinUserEventsMetadata_descriptor;

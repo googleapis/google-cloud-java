@@ -49,11 +49,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
     return new ListNotificationConfigsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsResponse_descriptor;

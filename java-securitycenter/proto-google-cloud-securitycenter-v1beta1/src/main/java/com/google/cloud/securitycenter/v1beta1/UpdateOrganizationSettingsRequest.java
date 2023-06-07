@@ -46,11 +46,6 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
     return new UpdateOrganizationSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1beta1_UpdateOrganizationSettingsRequest_descriptor;

@@ -49,11 +49,6 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     return new LogEntryOperation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.LogEntryProto
         .internal_static_google_api_servicecontrol_v1_LogEntryOperation_descriptor;

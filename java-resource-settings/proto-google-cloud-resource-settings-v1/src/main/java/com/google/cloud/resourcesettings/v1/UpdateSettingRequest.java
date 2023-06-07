@@ -45,11 +45,6 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     return new UpdateSettingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcesettings.v1.ResourceSettingsProto
         .internal_static_google_cloud_resourcesettings_v1_UpdateSettingRequest_descriptor;

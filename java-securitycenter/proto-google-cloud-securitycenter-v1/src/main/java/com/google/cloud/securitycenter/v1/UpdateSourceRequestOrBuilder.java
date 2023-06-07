@@ -69,6 +69,7 @@ public interface UpdateSourceRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -82,6 +83,7 @@ public interface UpdateSourceRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -95,6 +97,7 @@ public interface UpdateSourceRequestOrBuilder
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *

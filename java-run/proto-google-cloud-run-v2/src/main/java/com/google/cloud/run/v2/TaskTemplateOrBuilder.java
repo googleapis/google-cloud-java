@@ -324,5 +324,5 @@ public interface TaskTemplateOrBuilder
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
 
-  public com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
+  com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
 }

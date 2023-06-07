@@ -457,6 +457,6 @@ public interface ComponentSettingsOrBuilder
   com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScannerOrBuilder
       getWebSecurityScannerSettingsOrBuilder();
 
-  public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.SpecificSettingsCase
+  com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.SpecificSettingsCase
       getSpecificSettingsCase();
 }

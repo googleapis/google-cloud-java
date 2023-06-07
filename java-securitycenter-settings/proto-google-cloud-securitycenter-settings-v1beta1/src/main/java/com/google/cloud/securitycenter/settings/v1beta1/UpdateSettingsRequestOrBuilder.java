@@ -28,6 +28,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`
@@ -50,6 +51,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`
@@ -72,6 +74,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`

@@ -49,11 +49,6 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     return new Profile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudprofiler.v2.ProfilerProto
         .internal_static_google_devtools_cloudprofiler_v2_Profile_descriptor;

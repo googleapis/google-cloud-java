@@ -50,11 +50,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     return new ReplaceCatalogAttributeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CatalogServiceProto
         .internal_static_google_cloud_retail_v2_ReplaceCatalogAttributeRequest_descriptor;
@@ -195,7 +190,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
    * following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -214,7 +211,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
    * following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -233,7 +232,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
    * Indicates which fields in the provided
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
    * following are NOT supported:
+   *
    * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -999,7 +1000,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1017,7 +1020,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1041,7 +1046,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1067,7 +1074,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1090,7 +1099,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1119,7 +1130,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1142,7 +1155,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1160,7 +1175,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1182,7 +1199,9 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      * Indicates which fields in the provided
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to update. The
      * following are NOT supported:
+     *
      * * [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *

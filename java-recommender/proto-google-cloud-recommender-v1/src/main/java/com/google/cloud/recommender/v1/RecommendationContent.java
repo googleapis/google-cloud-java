@@ -47,11 +47,6 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     return new RecommendationContent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1_RecommendationContent_descriptor;

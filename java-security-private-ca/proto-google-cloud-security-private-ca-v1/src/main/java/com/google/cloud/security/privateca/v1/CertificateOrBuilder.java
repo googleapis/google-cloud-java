@@ -615,6 +615,6 @@ public interface CertificateOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  public com.google.cloud.security.privateca.v1.Certificate.CertificateConfigCase
+  com.google.cloud.security.privateca.v1.Certificate.CertificateConfigCase
       getCertificateConfigCase();
 }

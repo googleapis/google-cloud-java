@@ -45,11 +45,6 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     return new MetricValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.MetricValueSetProto
         .internal_static_google_api_servicecontrol_v1_MetricValue_descriptor;
@@ -77,6 +72,8 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

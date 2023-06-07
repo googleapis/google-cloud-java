@@ -49,11 +49,6 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     return new SearchProductsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_SearchProductsRequest_descriptor;
@@ -131,6 +126,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to filter the products.
+   *
    * The supported queries are:
    * * List products of all catalogs: empty
    * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -159,6 +155,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to filter the products.
+   *
    * The supported queries are:
    * * List products of all catalogs: empty
    * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -787,6 +784,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the products.
+     *
      * The supported queries are:
      * * List products of all catalogs: empty
      * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -814,6 +812,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the products.
+     *
      * The supported queries are:
      * * List products of all catalogs: empty
      * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -841,6 +840,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the products.
+     *
      * The supported queries are:
      * * List products of all catalogs: empty
      * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -867,6 +867,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the products.
+     *
      * The supported queries are:
      * * List products of all catalogs: empty
      * * List products under a catalog: `parent=catalogs/{catalog}`
@@ -889,6 +890,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the products.
+     *
      * The supported queries are:
      * * List products of all catalogs: empty
      * * List products under a catalog: `parent=catalogs/{catalog}`

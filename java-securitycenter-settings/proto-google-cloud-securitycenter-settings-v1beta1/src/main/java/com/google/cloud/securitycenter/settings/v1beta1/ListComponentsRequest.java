@@ -48,11 +48,6 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
     return new ListComponentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SettingsServiceProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_ListComponentsRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * A page token, received from a previous `ListComponents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListComponents` must
    * match the call that provided the page token.
    * </pre>
@@ -183,6 +179,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * A page token, received from a previous `ListComponents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListComponents` must
    * match the call that provided the page token.
    * </pre>
@@ -794,6 +791,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * A page token, received from a previous `ListComponents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListComponents` must
      * match the call that provided the page token.
      * </pre>
@@ -819,6 +817,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * A page token, received from a previous `ListComponents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListComponents` must
      * match the call that provided the page token.
      * </pre>
@@ -844,6 +843,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * A page token, received from a previous `ListComponents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListComponents` must
      * match the call that provided the page token.
      * </pre>
@@ -868,6 +868,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * A page token, received from a previous `ListComponents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListComponents` must
      * match the call that provided the page token.
      * </pre>
@@ -888,6 +889,7 @@ public final class ListComponentsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * A page token, received from a previous `ListComponents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListComponents` must
      * match the call that provided the page token.
      * </pre>

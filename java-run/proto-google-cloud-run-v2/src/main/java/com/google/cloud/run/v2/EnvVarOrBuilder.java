@@ -143,5 +143,5 @@ public interface EnvVarOrBuilder
    */
   com.google.cloud.run.v2.EnvVarSourceOrBuilder getValueSourceOrBuilder();
 
-  public com.google.cloud.run.v2.EnvVar.ValuesCase getValuesCase();
+  com.google.cloud.run.v2.EnvVar.ValuesCase getValuesCase();
 }

@@ -52,11 +52,6 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     return new MitreAttack();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.MitreAttackProto
         .internal_static_google_cloud_securitycenter_v1_MitreAttack_descriptor;

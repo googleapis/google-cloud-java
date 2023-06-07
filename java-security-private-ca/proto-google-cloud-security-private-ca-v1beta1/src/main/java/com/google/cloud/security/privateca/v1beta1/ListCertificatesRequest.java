@@ -50,11 +50,6 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
     return new ListCertificatesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1beta1.PrivateCaProto
         .internal_static_google_cloud_security_privateca_v1beta1_ListCertificatesRequest_descriptor;

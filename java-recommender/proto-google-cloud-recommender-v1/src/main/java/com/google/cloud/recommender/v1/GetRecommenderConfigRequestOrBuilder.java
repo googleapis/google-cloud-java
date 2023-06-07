@@ -28,9 +28,13 @@ public interface GetRecommenderConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Recommendation Config to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *
@@ -46,9 +50,13 @@ public interface GetRecommenderConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Recommendation Config to get.
+   *
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *

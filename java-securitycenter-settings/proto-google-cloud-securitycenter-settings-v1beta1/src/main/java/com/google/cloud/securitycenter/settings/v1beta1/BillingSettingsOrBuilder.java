@@ -127,6 +127,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -142,6 +143,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -157,6 +159,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>

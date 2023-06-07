@@ -47,11 +47,6 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
     return new GetServiceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ServiceProto
         .internal_static_google_cloud_run_v2_GetServiceRequest_descriptor;

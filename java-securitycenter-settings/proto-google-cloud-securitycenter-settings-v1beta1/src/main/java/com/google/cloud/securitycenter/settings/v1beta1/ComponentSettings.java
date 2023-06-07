@@ -50,11 +50,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     return new ComponentSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_ComponentSettings_descriptor;
@@ -143,11 +138,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DetectorSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -776,6 +766,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   }
 
   private int specificSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object specificSettings_;
 
   public enum SpecificSettingsCase

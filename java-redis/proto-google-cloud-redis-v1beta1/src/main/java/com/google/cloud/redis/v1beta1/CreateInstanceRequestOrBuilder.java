@@ -62,6 +62,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -80,6 +81,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
