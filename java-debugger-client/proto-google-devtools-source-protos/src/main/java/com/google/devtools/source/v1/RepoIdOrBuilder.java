@@ -95,5 +95,5 @@ public interface RepoIdOrBuilder
    */
   com.google.protobuf.ByteString getUidBytes();
 
-  public com.google.devtools.source.v1.RepoId.IdCase getIdCase();
+  com.google.devtools.source.v1.RepoId.IdCase getIdCase();
 }

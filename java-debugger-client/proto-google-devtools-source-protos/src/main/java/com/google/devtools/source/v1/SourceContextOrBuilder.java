@@ -163,5 +163,5 @@ public interface SourceContextOrBuilder
    */
   com.google.devtools.source.v1.GitSourceContextOrBuilder getGitOrBuilder();
 
-  public com.google.devtools.source.v1.SourceContext.ContextCase getContextCase();
+  com.google.devtools.source.v1.SourceContext.ContextCase getContextCase();
 }
