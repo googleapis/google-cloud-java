@@ -36,7 +36,6 @@ import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
-import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -64,7 +63,7 @@ public class HeadersTest {
   private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "fake-table";
   private static final String TABLE_NAME =
-      NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+      "projects%2F" + PROJECT_ID + "%2Finstances%2F" + INSTANCE_ID + "%2Ftables%2F" + TABLE_ID;
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final String TEST_FIXED_HEADER_STRING = "test_fixed_header";
 
