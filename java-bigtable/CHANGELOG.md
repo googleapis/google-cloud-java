@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.23.3](https://github.com/googleapis/java-bigtable/compare/v2.23.2...v2.23.3) (2023-06-08)
+
+
+### Bug Fixes
+
+* Set wait timeout and update default attempt timeout to 30 minutes ([#1779](https://github.com/googleapis/java-bigtable/issues/1779)) ([11019b8](https://github.com/googleapis/java-bigtable/commit/11019b87fe32b5b9c9f2d947ffd9191b56120381))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.20.0 ([#1785](https://github.com/googleapis/java-bigtable/issues/1785)) ([8ddd370](https://github.com/googleapis/java-bigtable/commit/8ddd370bf747bcc7ad7ccb6f00cc5ef188fa3511))
+* Update gapic-generator-java to 2.21.0 ([#1760](https://github.com/googleapis/java-bigtable/issues/1760)) ([05545f8](https://github.com/googleapis/java-bigtable/commit/05545f87692c05c22d17e431551b4a5f91475286))
+* Update shared dependencies to 3.11.0 ([#1783](https://github.com/googleapis/java-bigtable/issues/1783)) ([96aaa2a](https://github.com/googleapis/java-bigtable/commit/96aaa2a5a5a70feeb8ff0fd20b9dfc4a8a464bb7))
+
 ## [2.23.2](https://github.com/googleapis/java-bigtable/compare/v2.23.1...v2.23.2) (2023-05-30)
 
 
