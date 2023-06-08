@@ -50,4 +50,5 @@
     <module>proto-google-cloud-migrationcenter-v1</module>
     <module>google-cloud-migrationcenter-bom</module>
   </modules>
-</project>
+
+  </project>
