@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.15.3](https://github.com/googleapis/java-logging/compare/v3.15.2...v3.15.3) (2023-06-08)
+
+
+### Bug Fixes
+
+* Remove org.jspecify dependency ([#1364](https://github.com/googleapis/java-logging/issues/1364)) ([8138f46](https://github.com/googleapis/java-logging/commit/8138f463e170f1927280d3c083fa403b184fca47))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#1367](https://github.com/googleapis/java-logging/issues/1367)) ([8cd2a53](https://github.com/googleapis/java-logging/commit/8cd2a53b396d4671514bf8cca1b4c2a62cfb457c))
+
 ## [3.15.2](https://github.com/googleapis/java-logging/compare/v3.15.1...v3.15.2) (2023-05-30)
 
 
