@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.mapsplatformdatasets.v1alpha.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1alpha.Dataset;
@@ -193,9 +193,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(createDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataTransportSettings =
@@ -203,9 +203,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(updateDatasetMetadataMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("dataset.name", String.valueOf(request.getDataset().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset.name", String.valueOf(request.getDataset().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
@@ -213,9 +213,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(getDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
@@ -224,9 +224,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
                 .setMethodDescriptor(listDatasetVersionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
@@ -234,9 +234,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(listDatasetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
@@ -244,9 +244,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(deleteDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDatasetVersionRequest, Empty> deleteDatasetVersionTransportSettings =
@@ -254,9 +254,9 @@ public class GrpcMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDatasetsV1A
             .setMethodDescriptor(deleteDatasetVersionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
