@@ -3,9 +3,6 @@
 set -e
 
 REPO_ROOT=$(pwd)
-cd "${REPO_ROOT}"/library_gen_out/google/monitoring/v3
-tar -xzf google-cloud-monitoring-v3-java.tar.gz
-
 cd "${REPO_ROOT}"
 if [ ! -d googleapis-gen ]; then
   git clone https://github.com/googleapis/googleapis-gen.git

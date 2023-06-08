@@ -44,23 +44,18 @@ cd "${GOOGLEAPIS_ROOT}"
 ${PROTO_FILES}
 
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java
-    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java
-    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java/META-INF
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java
+    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java
+    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/META-INF
 
     # Remove empty files. If there are no resource names, one such file might have
     # been created. See java_gapic.bzl.
-    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
+    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
 
-    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java
+    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
+        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
     fi
 done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/..
-tar -zchpf grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz grpc-google-cloud-monitoring-v3-java/*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
-
 ##################### Section 2 #####################
 # generate gapic-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
@@ -108,35 +103,30 @@ mv monitoring_java_gapic_srcjar-resource-name.srcjar "${LIBRARY_GEN_OUT}"/google
 mv monitoring_java_gapic_srcjar-tests.srcjar "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-test.srcjar
 mv monitoring_java_gapic_srcjar-samples.srcjar "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar
 
-for s in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-    unzip -o -q "${s}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-done
-
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar.srcjar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java
-    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java
-    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java/META-INF
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java
+    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java
+    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/META-INF
 
     # Remove empty files. If there are no resource names, one such file might have
     # been created. See java_gapic.bzl.
-    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read f; do rm -f "${f}"; done
+    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read f; do rm -f "${f}"; done
 
-    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java
+    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
+        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
     fi
 done
 
 for test_src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-test.srcjar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/test/java
-    unzip -q -o "${test_src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/test/java
-    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/src/test/java/META-INF
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test/java
+    unzip -q -o "${test_src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test/java
+    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test/java/META-INF
 done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/..
-tar -zchpf gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz gapic-google-cloud-monitoring-v3-java/*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 
+for sample in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar; do
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/samples/snippets/generated/
+    unzip -o -q "${sample}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/samples/snippets/generated/
+done
 ##################### Section 3 #####################
 # generate proto-google-cloud-monitoring-v3-java-resources.tar.gz
 #####################################################
@@ -144,88 +134,23 @@ cd "${GOOGLEAPIS_ROOT}"
 "${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" ${PROTO_FILES}
 
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-resource-name.srcjar ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java
-    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java
-    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java/META-INF
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
+    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
+    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/META-INF
 
     # Remove empty files. If there are no resource names, one such file might have
     # been created. See java_gapic.bzl.
-    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
+    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
 
-    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java
+    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
+        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
     fi
 done
-for proto_src in google/monitoring/v3/alert.proto google/monitoring/v3/alert_service.proto google/monitoring/v3/common.proto google/monitoring/v3/dropped_labels.proto google/monitoring/v3/group.proto google/monitoring/v3/group_service.proto google/monitoring/v3/metric.proto google/monitoring/v3/metric_service.proto google/monitoring/v3/mutation_record.proto google/monitoring/v3/notification.proto google/monitoring/v3/notification_service.proto google/monitoring/v3/query_service.proto google/monitoring/v3/service.proto google/monitoring/v3/service_service.proto google/monitoring/v3/snooze.proto google/monitoring/v3/snooze_service.proto google/monitoring/v3/span_context.proto google/monitoring/v3/uptime.proto google/monitoring/v3/uptime_service.proto; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/proto
-    cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/proto
+for proto_src in ${PROTO_FILES}; do
+    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
+    cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
 done
-
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/..
-tar -zchpf proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz proto-google-cloud-monitoring-v3-java/*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
-
-##################### Section 5 #####################
-# generate grpc-google-cloud-monitoring-v3-java.tar.gz
-#####################################################
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
-for dep in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz; do
-    tar -xzpf "${dep}" -C "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
-done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/.
-
-tar -zchpf ./grpc-google-cloud-monitoring-v3-java.tar.gz ./*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java.tar.gz
-
-##################### Section 6 #####################
-# generate proto-google-cloud-monitoring-v3-java.tar.gz
-#####################################################
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
-for dep in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz; do
-    tar -xzpf "${dep}" -C "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
-done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/.
-
-tar -zchpf ./proto-google-cloud-monitoring-v3-java.tar.gz ./*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java.tar.gz
-rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
-
-##################### Section 7 #####################
-# generate gapic-google-cloud-monitoring-v3-java.tar.gz
-#####################################################
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
-for dep in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz; do
-    tar -xzpf "${dep}" -C "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
-done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/.
-
-tar -zchpf ./gapic-google-cloud-monitoring-v3-java.tar.gz ./*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java.tar.gz
-rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
-
-##################### Section 8 #####################
-# generate google-cloud-monitoring-v3-java.tar.gz
-#####################################################
-for s in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-    unzip -q -o "${s}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-done
-
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-for dep in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java.tar.gz; do
-    tar -xzpf "${dep}" -C "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/..
-
-tar -zchpf google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz google-cloud-monitoring-v3-java/*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java.tar.gz
-rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-##################### Section 9 #####################
+##################### Section 4 #####################
 # compare source code with googleapis-gen
 #####################################################
 echo "Compare source code with googleapis-gen"
