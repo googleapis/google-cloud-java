@@ -4,10 +4,6 @@ set -e
 
 LIBRARY_GEN_OUT=$(pwd)/../library_gen_out
 
-mkdir -p "${LIBRARY_GEN_OUT}"/com_google_protobuf
-mkdir -p "${LIBRARY_GEN_OUT}"/google/api
-mkdir -p "${LIBRARY_GEN_OUT}"/google/rpc
-mkdir -p "${LIBRARY_GEN_OUT}"/google/type
 mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3
 
 ##################### Section 0 #####################
@@ -43,7 +39,9 @@ curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/a
 # generate grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
-"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" "--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" ${PROTO_FILES} \
+"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" \
+"--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" \
+${PROTO_FILES}
 
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java
@@ -110,17 +108,7 @@ mv monitoring_java_gapic_srcjar-resource-name.srcjar "${LIBRARY_GEN_OUT}"/google
 mv monitoring_java_gapic_srcjar-tests.srcjar "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-test.srcjar
 mv monitoring_java_gapic_srcjar-samples.srcjar "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar
 
-unzip -o -q  "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar_raw.srcjar
-# Sync'\''d to the output file name in Writer.java.
-unzip -o -q "${LIBRARY_GEN_OUT}"/google/monitoring/v3/temp-codegen.srcjar -d  "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples
-
-# Sample source files.
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples/samples/snippets/generated/src/main/java
-zip -r "${LIBRARY_GEN_OUT}"/monitoring_java_gapic_samples-samples.srcjar ./
-cd "${LIBRARY_GEN_OUT}"
-mv monitoring_java_gapic_samples-samples.srcjar "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples-samples.srcjar
-
-for s in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_samples-samples.srcjar; do
+for s in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
     unzip -o -q "${s}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
 done
@@ -178,8 +166,6 @@ tar -zchpf proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v
 cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java
-
 ##################### Section 5 #####################
 # generate grpc-google-cloud-monitoring-v3-java.tar.gz
 #####################################################
@@ -192,7 +178,6 @@ cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-jav
 tar -zchpf ./grpc-google-cloud-monitoring-v3-java.tar.gz ./*
 cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java.tar.gz
-rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
 
 ##################### Section 6 #####################
 # generate proto-google-cloud-monitoring-v3-java.tar.gz
@@ -225,7 +210,7 @@ rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v
 ##################### Section 8 #####################
 # generate google-cloud-monitoring-v3-java.tar.gz
 #####################################################
-for s in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples-samples.srcjar; do
+for s in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar-samples.srcjar; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
     unzip -q -o "${s}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
 done
@@ -240,23 +225,6 @@ tar -zchpf google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.g
 cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java.tar.gz
 rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-
-for s in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples-samples.srcjar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-    unzip -q -o "${s}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/../google-cloud-monitoring-v3-java/samples/snippets/generated/
-done
-
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-for dep in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java.tar.gz; do
-    tar -xzpf "${dep}" -C "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-done
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/..
-
-tar -zchpf google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz google-cloud-monitoring-v3-java/*
-cd - > /dev/null
-mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java.tar.gz
-rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
-
 ##################### Section 9 #####################
 # compare source code with googleapis-gen
 #####################################################
