@@ -5,6 +5,108 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "ba2c590cc9970be41e5a663004d354b3881a69d9",
+          "message": "[aiplatform] add blocking_operation_ids to ImportFeatureValuesOperationMetadata",
+          "issues": [
+            "9481"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "28ccf1c9-cc4f-4e3f-8272-721061700ca9",
+      "createTime": "2023-06-08T04:00:46.193Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f2baa928c4f4d9959591ea905d7c9042320dbc71",
+          "message": "[contactcenterinsights] Add the resource definition of a STT recognizer",
+          "issues": [
+            "9492"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "e5a2ad9a-a9f3-4c69-b84c-7b4d76bf326b",
+      "createTime": "2023-06-08T04:00:46.191Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b7890c57859116d1f6033af9f485598d84428f44",
+          "message": "[clouddeploy] Add support for disabling Pod overprovisioning in the progressive deployment strategy configuration for a Kubernetes Target",
+          "issues": [
+            "9499"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "0eda7b8b-c8ed-4c13-a4ff-b870f869c2c5",
+      "createTime": "2023-06-08T04:00:46.188Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0c3b6772868828a429f5f5010483567afe58db54",
+          "message": "[billingbudgets] Add resource_ancestors field to support filtering by folders & organizations",
+          "issues": [
+            "9501"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billingbudgets",
+      "id": "4af32b75-5975-4185-a2ee-7521f8bf8757",
+      "createTime": "2023-06-08T04:00:46.183Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "f172c7e692c7991b878968256b3fe7c538de7c00",
+          "message": "update discoveryengine v1 docs link",
+          "issues": [
+            "9512"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "2c00f3d5-fcf4-4bc9-91b0-7ad92f56c9d9",
+      "createTime": "2023-06-08T04:00:46.181Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a268c8016262a7a5a13be6a9983294f83d1ecc3f",
+          "message": "[migrationcenter] new module for migrationcenter",
+          "issues": [
+            "9514"
+          ]
+        }
+      ],
+      "version": "1.13.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-migrationcenter",
+      "id": "6a61e546-e0e4-49d5-9b49-715be59a2202",
+      "createTime": "2023-06-08T04:00:46.178Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
           "message": "add output field for the number of pooled instances",
           "issues": []
@@ -7411,5 +7513,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-05-26T19:48:20.668Z"
+  "updateTime": "2023-06-08T04:00:46.193Z"
 }
