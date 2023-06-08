@@ -193,6 +193,60 @@ public class QuerySplitterTest {
     RunQueryRequest expectedSplitQueryRequest =
         RunQueryRequest.newBuilder()
             .setPartitionId(PARTITION)
+            .setProjectId(PROJECT_ID)
+            .setQuery(
+                splitQuery.toBuilder().setLimit(Int32Value.newBuilder().setValue(2 * 32).build()))
+            .build();
+
+    assertArrayEquals(expectedSplitQueryRequest.toByteArray(), mockClient.getLastBody());
+  }
+
+  @Test
+  public void getSplitsWithDatabaseId() throws Exception {
+    Datastore datastore = factory.create(options.build());
+    MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
+
+    PartitionId partition =
+        PartitionId.newBuilder().setProjectId(PROJECT_ID).setDatabaseId("test-database").build();
+
+    RunQueryResponse splitQueryResponse =
+        RunQueryResponse.newBuilder()
+            .setQuery(splitQuery)
+            .setBatch(
+                QueryResultBatch.newBuilder()
+                    .setEntityResultType(ResultType.KEY_ONLY)
+                    .setMoreResults(MoreResultsType.NO_MORE_RESULTS)
+                    .addEntityResults(makeKeyOnlyEntity(splitKey0))
+                    .addEntityResults(makeKeyOnlyEntity(splitKey1))
+                    .addEntityResults(makeKeyOnlyEntity(splitKey2))
+                    .addEntityResults(makeKeyOnlyEntity(splitKey3))
+                    .build())
+            .build();
+
+    mockClient.setNextResponse(splitQueryResponse);
+
+    List<Query> splitQueries = QuerySplitterImpl.INSTANCE.getSplits(query, partition, 3, datastore);
+
+    assertThat(splitQueries)
+        .containsExactly(
+            query
+                .toBuilder()
+                .setFilter(makeFilterWithKeyRange(propertyFilter, null, splitKey1))
+                .build(),
+            query
+                .toBuilder()
+                .setFilter(makeFilterWithKeyRange(propertyFilter, splitKey1, splitKey3))
+                .build(),
+            query
+                .toBuilder()
+                .setFilter(makeFilterWithKeyRange(propertyFilter, splitKey3, null))
+                .build());
+
+    RunQueryRequest expectedSplitQueryRequest =
+        RunQueryRequest.newBuilder()
+            .setPartitionId(partition)
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-database")
             .setQuery(
                 splitQuery.toBuilder().setLimit(Int32Value.newBuilder().setValue(2 * 32).build()))
             .build();
@@ -235,6 +289,7 @@ public class QuerySplitterTest {
     RunQueryRequest expectedSplitQueryRequest =
         RunQueryRequest.newBuilder()
             .setPartitionId(PARTITION)
+            .setProjectId(PROJECT_ID)
             .setQuery(
                 splitQuery.toBuilder().setLimit(Int32Value.newBuilder().setValue(99 * 32).build()))
             .build();
@@ -286,6 +341,7 @@ public class QuerySplitterTest {
     RunQueryRequest expectedSplitQueryRequest =
         RunQueryRequest.newBuilder()
             .setPartitionId(PARTITION)
+            .setProjectId(PROJECT_ID)
             .setQuery(
                 splitQuery.toBuilder().setLimit(Int32Value.newBuilder().setValue(2 * 32).build()))
             .setReadOptions(ReadOptions.newBuilder().setReadTime(readTime))

@@ -76,4 +76,14 @@ public class KeyTest {
     Key copy = Key.fromUrlSafe(urlSafe);
     assertEquals(key, copy);
   }
+
+  @Test
+  public void testDatabaseId() {
+    Key.Builder builder = Key.newBuilder("project-id", "kind", "name", "database-id");
+    Key key = builder.build();
+    assertEquals("database-id", key.getDatabaseId());
+    assertEquals("project-id", key.getProjectId());
+    assertEquals("name", key.getName());
+    assertEquals("kind", key.getKind());
+  }
 }

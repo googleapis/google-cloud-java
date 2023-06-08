@@ -24,6 +24,7 @@ import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.protobuf.ProtoHttpContent;
 import com.google.api.client.util.IOUtils;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.protobuf.MessageLite;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
@@ -45,6 +46,8 @@ class RemoteRpc {
 
   @VisibleForTesting static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
   private static final String API_FORMAT_VERSION = "2";
+
+  @VisibleForTesting static final String X_GOOG_REQUEST_PARAMS_HEADER = "x-goog-request-params";
 
   private final HttpRequestFactory client;
   private final HttpRequestInitializer initializer;
@@ -74,7 +77,9 @@ class RemoteRpc {
    *
    * @throws DatastoreException if the RPC fails.
    */
-  public InputStream call(String methodName, MessageLite request) throws DatastoreException {
+  public InputStream call(
+      String methodName, MessageLite request, String projectId, String databaseId)
+      throws DatastoreException {
     logger.fine("remote datastore call " + methodName);
 
     long startTime = System.currentTimeMillis();
@@ -84,7 +89,7 @@ class RemoteRpc {
         rpcCount.incrementAndGet();
         ProtoHttpContent payload = new ProtoHttpContent(request);
         HttpRequest httpRequest = client.buildPostRequest(resolveURL(methodName), payload);
-        setHeaders(request, httpRequest);
+        setHeaders(request, httpRequest, projectId, databaseId);
         // Don't throw an HTTPResponseException on error. It converts the response to a String and
         // throws away the original, whereas we need the raw bytes to parse it as a proto.
         httpRequest.setThrowExceptionOnExecuteError(false);
@@ -123,8 +128,16 @@ class RemoteRpc {
   }
 
   @VisibleForTesting
-  void setHeaders(MessageLite request, HttpRequest httpRequest) {
+  void setHeaders(
+      MessageLite request, HttpRequest httpRequest, String projectId, String databaseId) {
     httpRequest.getHeaders().put(API_FORMAT_VERSION_HEADER, API_FORMAT_VERSION);
+    StringBuilder builder = new StringBuilder("project_id=");
+    builder.append(projectId);
+    if (!Strings.isNullOrEmpty(databaseId)) {
+      builder.append("&database_id=");
+      builder.append(databaseId);
+    }
+    httpRequest.getHeaders().put(X_GOOG_REQUEST_PARAMS_HEADER, builder.toString());
     if (enableE2EChecksum && request != null) {
       String checksum = EndToEndChecksumHandler.computeChecksum(request.toByteArray());
       if (checksum != null) {

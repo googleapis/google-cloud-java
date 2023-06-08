@@ -35,7 +35,7 @@ final class Validator {
     // utility class
   }
 
-  static String validateDatabase(String projectId) {
+  static String validateProjectId(String projectId) {
     checkArgument(!Strings.isNullOrEmpty(projectId), "projectId can't be empty or null");
     checkArgument(
         PROJECT_ID_PATTERN.matcher(projectId).matches(),

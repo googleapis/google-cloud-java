@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.datastore.Datastore;
@@ -74,11 +75,18 @@ public class RemoteDatastoreHelper {
 
   /** Creates a {@code RemoteStorageHelper} object. */
   public static RemoteDatastoreHelper create() {
+    return create("");
+  }
+
+  /** Creates a {@code RemoteStorageHelper} object. */
+  @BetaApi
+  public static RemoteDatastoreHelper create(String databaseId) {
     HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
     transportOptions =
         transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
     DatastoreOptions datastoreOption =
         DatastoreOptions.newBuilder()
+            .setDatabaseId(databaseId)
             .setNamespace(UUID.randomUUID().toString())
             .setRetrySettings(retrySettings())
             .setTransportOptions(transportOptions)

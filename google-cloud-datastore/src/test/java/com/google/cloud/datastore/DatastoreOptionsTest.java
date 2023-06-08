@@ -32,11 +32,13 @@ import org.junit.Test;
 public class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project-id";
+  private static final String DATABASE_ID = "database-id";
   private static final int PORT = 8080;
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
 
+  // todo parameterize
   @Before
   public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
@@ -45,6 +47,7 @@ public class DatastoreOptionsTest {
         DatastoreOptions.newBuilder()
             .setServiceRpcFactory(datastoreRpcFactory)
             .setProjectId(PROJECT_ID)
+            .setDatabaseId(DATABASE_ID)
             .setHost("http://localhost:" + PORT);
     EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(datastoreRpc)
@@ -55,6 +58,11 @@ public class DatastoreOptionsTest {
   @Test
   public void testProjectId() {
     assertEquals(PROJECT_ID, options.build().getProjectId());
+  }
+
+  @Test
+  public void testDatabaseId() {
+    assertEquals(DATABASE_ID, options.build().getDatabaseId());
   }
 
   @Test

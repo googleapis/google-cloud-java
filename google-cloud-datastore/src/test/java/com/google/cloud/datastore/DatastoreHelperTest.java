@@ -37,6 +37,7 @@ public class DatastoreHelperTest {
     DatastoreOptions options = createMock(DatastoreOptions.class);
     expect(options.getProjectId()).andReturn("ds1").once();
     expect(options.getNamespace()).andReturn("ns1").once();
+    expect(options.getDatabaseId()).andReturn("test-db").once();
     replay(options);
     KeyFactory keyFactory = DatastoreHelper.newKeyFactory(options);
     Key key = keyFactory.setKind("k").newKey("bla");
@@ -44,6 +45,7 @@ public class DatastoreHelperTest {
     assertEquals("ns1", key.getNamespace());
     assertEquals("k", key.getKind());
     assertEquals("bla", key.getName());
+    assertEquals("test-db", key.getDatabaseId());
     verify(options);
   }
 

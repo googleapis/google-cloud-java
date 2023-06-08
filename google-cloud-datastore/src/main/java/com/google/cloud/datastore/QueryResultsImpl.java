@@ -53,6 +53,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     com.google.datastore.v1.PartitionId.Builder pbBuilder =
         com.google.datastore.v1.PartitionId.newBuilder();
     pbBuilder.setProjectId(datastore.getOptions().getProjectId());
+    pbBuilder.setDatabaseId(datastore.getOptions().getDatabaseId());
     if (namespace != null) {
       pbBuilder.setNamespaceId(namespace);
     } else if (datastore.getOptions().getNamespace() != null) {
@@ -72,6 +73,8 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
         com.google.datastore.v1.RunQueryRequest.newBuilder();
     readOptionsPb.ifPresent(requestPb::setReadOptions);
     requestPb.setPartitionId(partitionIdPb);
+    requestPb.setProjectId(datastore.getOptions().getProjectId());
+    requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());
     mostRecentQueryPb = requestPb.getQuery();

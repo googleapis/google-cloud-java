@@ -221,6 +221,8 @@ final class QuerySplitterImpl implements QuerySplitter {
     do {
       RunQueryRequest.Builder scatterRequest =
           RunQueryRequest.newBuilder().setPartitionId(partition).setQuery(scatterPointQuery);
+      scatterRequest.setProjectId(partition.getProjectId());
+      scatterRequest.setDatabaseId(partition.getDatabaseId());
       if (readTime != null) {
         scatterRequest.setReadOptions(ReadOptions.newBuilder().setReadTime(readTime).build());
       }

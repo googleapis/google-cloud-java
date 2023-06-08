@@ -16,10 +16,11 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.cloud.datastore.Validator.validateDatabase;
 import static com.google.cloud.datastore.Validator.validateKind;
 import static com.google.cloud.datastore.Validator.validateNamespace;
+import static com.google.cloud.datastore.Validator.validateProjectId;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -35,6 +36,7 @@ public abstract class BaseKey implements Serializable {
 
   private final String projectId;
   private final String namespace;
+  private final String databaseId;
   private final ImmutableList<PathElement> path;
 
   /**
@@ -46,13 +48,14 @@ public abstract class BaseKey implements Serializable {
 
     String projectId = "";
     String namespace = "";
+    String databaseId = "";
     String kind;
     final List<PathElement> ancestors;
 
     private static final int MAX_PATH = 100;
 
     Builder(String projectId) {
-      this.projectId = validateDatabase(projectId);
+      this.projectId = validateProjectId(projectId);
       ancestors = new LinkedList<>();
     }
 
@@ -64,6 +67,7 @@ public abstract class BaseKey implements Serializable {
     Builder(BaseKey copyFrom) {
       projectId = copyFrom.getProjectId();
       namespace = copyFrom.getNamespace();
+      databaseId = copyFrom.getDatabaseId();
       ancestors = new LinkedList<>(copyFrom.getAncestors());
       kind = copyFrom.getKind();
     }
@@ -102,7 +106,7 @@ public abstract class BaseKey implements Serializable {
 
     /** Sets the project ID of the key. */
     public B setProjectId(String projectId) {
-      this.projectId = validateDatabase(projectId);
+      this.projectId = validateProjectId(projectId);
       return self();
     }
 
@@ -112,13 +116,25 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
+    /** Sets the database id of the key. */
+    @BetaApi
+    public B setDatabaseId(String databaseId) {
+      this.databaseId = databaseId;
+      return self();
+    }
+
     protected abstract BaseKey build();
   }
 
   BaseKey(String projectId, String namespace, ImmutableList<PathElement> path) {
+    this(projectId, namespace, "", path);
+  }
+
+  BaseKey(String projectId, String namespace, String databaseId, ImmutableList<PathElement> path) {
     Preconditions.checkArgument(!path.isEmpty(), "Path must not be empty");
     this.projectId = projectId;
     this.namespace = namespace;
+    this.databaseId = databaseId;
     this.path = path;
   }
 
@@ -130,6 +146,10 @@ public abstract class BaseKey implements Serializable {
   /** Returns the key's namespace or {@code null} if not provided. */
   public String getNamespace() {
     return namespace;
+  }
+
+  public String getDatabaseId() {
+    return databaseId;
   }
 
   /** Returns an immutable list with the key's ancestors. */
@@ -158,13 +178,14 @@ public abstract class BaseKey implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("projectId", projectId)
         .add("namespace", namespace)
+        .add("databaseId", databaseId)
         .add("path", path)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getProjectId(), getNamespace(), getPath());
+    return Objects.hash(getProjectId(), getNamespace(), getDatabaseId(), getPath());
   }
 
   @Override
@@ -178,6 +199,7 @@ public abstract class BaseKey implements Serializable {
     BaseKey other = (BaseKey) obj;
     return Objects.equals(getProjectId(), other.getProjectId())
         && Objects.equals(getNamespace(), other.getNamespace())
+        && Objects.equals(getDatabaseId(), other.getDatabaseId())
         && Objects.equals(getPath(), other.getPath());
   }
 
@@ -186,6 +208,7 @@ public abstract class BaseKey implements Serializable {
     com.google.datastore.v1.PartitionId.Builder partitionIdPb =
         com.google.datastore.v1.PartitionId.newBuilder();
     partitionIdPb.setProjectId(projectId);
+    partitionIdPb.setDatabaseId(databaseId);
     partitionIdPb.setNamespaceId(namespace);
     keyPb.setPartitionId(partitionIdPb.build());
     for (PathElement pathEntry : path) {

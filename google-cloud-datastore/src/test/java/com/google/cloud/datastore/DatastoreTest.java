@@ -812,6 +812,7 @@ public class DatastoreTest {
         RunQueryRequest.newBuilder()
             .setReadOptions(readOption)
             .setGqlQuery(query)
+            .setProjectId(PROJECT_ID)
             .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build());
     EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
         .andReturn(RunQueryResponse.newBuilder().build());
@@ -832,6 +833,7 @@ public class DatastoreTest {
         RunQueryRequest.newBuilder()
             .setReadOptions(readOption)
             .setGqlQuery(query)
+            .setProjectId(PROJECT_ID)
             .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build());
     EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
         .andReturn(RunQueryResponse.newBuilder().build());
@@ -902,7 +904,7 @@ public class DatastoreTest {
   @Test
   public void testReserveIds() {
     ReserveIdsRequest reserveIdsRequest =
-        ReserveIdsRequest.newBuilder().addKeys(KEY1.toPb()).build();
+        ReserveIdsRequest.newBuilder().setProjectId(PROJECT_ID).addKeys(KEY1.toPb()).build();
     EasyMock.expect(rpcMock.reserveIds(reserveIdsRequest))
         .andReturn(ReserveIdsResponse.newBuilder().build())
         .times(1);
@@ -962,7 +964,11 @@ public class DatastoreTest {
                     .build())
             .build();
     LookupRequest lookupRequest =
-        LookupRequest.newBuilder().setReadOptions(readOption).addKeys(key).build();
+        LookupRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setReadOptions(readOption)
+            .addKeys(key)
+            .build();
     EasyMock.expect(rpcMock.lookup(lookupRequest))
         .andReturn(LookupResponse.newBuilder().build())
         .times(3);
@@ -988,7 +994,11 @@ public class DatastoreTest {
                     .build())
             .build();
     LookupRequest lookupRequest =
-        LookupRequest.newBuilder().setReadOptions(readOption).addKeys(key).build();
+        LookupRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setReadOptions(readOption)
+            .addKeys(key)
+            .build();
     EasyMock.expect(rpcMock.lookup(lookupRequest))
         .andReturn(LookupResponse.newBuilder().build())
         .times(3);
@@ -1069,14 +1079,17 @@ public class DatastoreTest {
     keysPb.add(KEY4.toPb());
     keysPb.add(KEY5.toPb());
     List<LookupRequest> lookupRequests = new ArrayList<>();
-    lookupRequests.add(LookupRequest.newBuilder().addAllKeys(keysPb).build());
+    lookupRequests.add(
+        LookupRequest.newBuilder().setProjectId(PROJECT_ID).addAllKeys(keysPb).build());
     lookupRequests.add(
         LookupRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
             .addKeys(keysPb.get(1))
             .addKeys(keysPb.get(2))
             .addKeys(keysPb.get(4))
             .build());
-    lookupRequests.add(LookupRequest.newBuilder().addKeys(keysPb.get(4)).build());
+    lookupRequests.add(
+        LookupRequest.newBuilder().setProjectId(PROJECT_ID).addKeys(keysPb.get(4)).build());
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     List<LookupResponse> lookupResponses = new ArrayList<>();
@@ -1201,7 +1214,8 @@ public class DatastoreTest {
 
   @Test
   public void testRetryableException() {
-    LookupRequest requestPb = LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
+    LookupRequest requestPb =
+        LookupRequest.newBuilder().setProjectId(PROJECT_ID).addKeys(KEY1.toPb()).build();
     LookupResponse responsePb =
         LookupResponse.newBuilder()
             .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
@@ -1221,6 +1235,7 @@ public class DatastoreTest {
     ByteString txnBytes = ByteString.copyFromUtf8("txn1");
     LookupRequest requestPb =
         LookupRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
             .addKeys(KEY1.toPb())
             .setReadOptions(ReadOptions.newBuilder().setTransaction(txnBytes).build())
             .build();
@@ -1246,6 +1261,7 @@ public class DatastoreTest {
     ByteString txnBytes = ByteString.copyFromUtf8("txn1");
     LookupRequest requestPb =
         LookupRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
             .addKeys(KEY1.toPb())
             .setReadOptions(ReadOptions.newBuilder().setTransaction(txnBytes).build())
             .build();
@@ -1268,7 +1284,8 @@ public class DatastoreTest {
 
   @Test
   public void testNonRetryableException() {
-    LookupRequest requestPb = LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
+    LookupRequest requestPb =
+        LookupRequest.newBuilder().setProjectId(PROJECT_ID).addKeys(KEY1.toPb()).build();
     EasyMock.expect(rpcMock.lookup(requestPb))
         .andThrow(
             new DatastoreException(DatastoreException.UNKNOWN_CODE, "denied", "PERMISSION_DENIED"))
@@ -1286,7 +1303,8 @@ public class DatastoreTest {
 
   @Test
   public void testRuntimeException() {
-    LookupRequest requestPb = LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
+    LookupRequest requestPb =
+        LookupRequest.newBuilder().setProjectId(PROJECT_ID).addKeys(KEY1.toPb()).build();
     String exceptionMessage = "Artificial runtime exception";
     EasyMock.expect(rpcMock.lookup(requestPb)).andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(rpcFactoryMock, rpcMock);
@@ -1343,6 +1361,26 @@ public class DatastoreTest {
     assertNotNull(cursor2);
     assertEquals(cursor2, cursor1);
     datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+  }
+
+  @Test
+  public void testDatabaseIdKeyFactory() {
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind(KIND1);
+
+    Key key1 = keyFactory.newKey("key1");
+    checkKeyProperties(key1);
+
+    Key key2 = keyFactory.newKey(123);
+    checkKeyProperties(key2);
+
+    IncompleteKey incompleteKey = keyFactory.newKey();
+    checkKeyProperties(incompleteKey);
+  }
+
+  private void checkKeyProperties(BaseKey key) {
+    assertEquals(options.getDatabaseId(), key.getDatabaseId());
+    assertEquals(options.getProjectId(), key.getProjectId());
+    assertEquals(options.getNamespace(), key.getNamespace());
   }
 
   private RunAggregationQueryResponse placeholderAggregationQueryResponse() {

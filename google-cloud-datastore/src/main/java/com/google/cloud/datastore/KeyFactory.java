@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -24,24 +25,32 @@ import com.google.common.collect.ImmutableList;
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
-  private final String pi;
-  private final String ns;
+  private final String initialProjectId;
+  private final String initialNamespace;
+  private final String initialDatabaseId;
 
   public KeyFactory(String projectId) {
     this(projectId, "");
   }
 
   public KeyFactory(String projectId, String namespace) {
+    this(projectId, namespace, "");
+  }
+
+  @BetaApi
+  public KeyFactory(String projectId, String namespace, String databaseId) {
     super(projectId);
     setNamespace(namespace);
-    this.pi = projectId;
-    this.ns = namespace;
+    setDatabaseId(databaseId);
+    this.initialProjectId = projectId;
+    this.initialNamespace = namespace;
+    this.initialDatabaseId = databaseId;
   }
 
   public IncompleteKey newKey() {
     ImmutableList<PathElement> path =
         ImmutableList.<PathElement>builder().addAll(ancestors).add(PathElement.of(kind)).build();
-    return new IncompleteKey(projectId, namespace, path);
+    return new IncompleteKey(projectId, namespace, databaseId, path);
   }
 
   public Key newKey(String name) {
@@ -50,7 +59,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
             .addAll(ancestors)
             .add(PathElement.of(kind, name))
             .build();
-    return new Key(projectId, namespace, path);
+    return new Key(projectId, namespace, databaseId, path);
   }
 
   public Key newKey(long id) {
@@ -59,7 +68,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
             .addAll(ancestors)
             .add(PathElement.of(kind, id))
             .build();
-    return new Key(projectId, namespace, path);
+    return new Key(projectId, namespace, databaseId, path);
   }
 
   /**
@@ -68,8 +77,9 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
    * @return {@code this} for chaining
    */
   public KeyFactory reset() {
-    setProjectId(pi);
-    setNamespace(ns);
+    setProjectId(initialProjectId);
+    setNamespace(initialNamespace);
+    setDatabaseId(initialDatabaseId);
     kind = null;
     ancestors.clear();
     return this;

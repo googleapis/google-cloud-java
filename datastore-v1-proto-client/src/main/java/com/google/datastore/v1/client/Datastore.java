@@ -67,7 +67,8 @@ public class Datastore {
   }
 
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("allocateIds", request)) {
+    try (InputStream is =
+        remoteRpc.call("allocateIds", request, request.getProjectId(), request.getDatabaseId())) {
       return AllocateIdsResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("allocateIds", exception);
@@ -76,7 +77,9 @@ public class Datastore {
 
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
       throws DatastoreException {
-    try (InputStream is = remoteRpc.call("beginTransaction", request)) {
+    try (InputStream is =
+        remoteRpc.call(
+            "beginTransaction", request, request.getProjectId(), request.getDatabaseId())) {
       return BeginTransactionResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("beginTransaction", exception);
@@ -84,7 +87,8 @@ public class Datastore {
   }
 
   public CommitResponse commit(CommitRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("commit", request)) {
+    try (InputStream is =
+        remoteRpc.call("commit", request, request.getProjectId(), request.getDatabaseId())) {
       return CommitResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("commit", exception);
@@ -92,7 +96,8 @@ public class Datastore {
   }
 
   public LookupResponse lookup(LookupRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("lookup", request)) {
+    try (InputStream is =
+        remoteRpc.call("lookup", request, request.getProjectId(), request.getDatabaseId())) {
       return LookupResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("lookup", exception);
@@ -100,7 +105,8 @@ public class Datastore {
   }
 
   public ReserveIdsResponse reserveIds(ReserveIdsRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("reserveIds", request)) {
+    try (InputStream is =
+        remoteRpc.call("reserveIds", request, request.getProjectId(), request.getDatabaseId())) {
       return ReserveIdsResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("reserveIds", exception);
@@ -108,7 +114,8 @@ public class Datastore {
   }
 
   public RollbackResponse rollback(RollbackRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("rollback", request)) {
+    try (InputStream is =
+        remoteRpc.call("rollback", request, request.getProjectId(), request.getDatabaseId())) {
       return RollbackResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("rollback", exception);
@@ -116,7 +123,8 @@ public class Datastore {
   }
 
   public RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException {
-    try (InputStream is = remoteRpc.call("runQuery", request)) {
+    try (InputStream is =
+        remoteRpc.call("runQuery", request, request.getProjectId(), request.getDatabaseId())) {
       return RunQueryResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("runQuery", exception);
@@ -125,7 +133,9 @@ public class Datastore {
 
   public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request)
       throws DatastoreException {
-    try (InputStream is = remoteRpc.call("runAggregationQuery", request)) {
+    try (InputStream is =
+        remoteRpc.call(
+            "runAggregationQuery", request, request.getProjectId(), request.getDatabaseId())) {
       return RunAggregationQueryResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("runAggregationQuery", exception);

@@ -26,13 +26,13 @@ import org.junit.Test;
 public class KeyFactoryTest {
 
   private static final String PROJECT_ID = "projectid";
+  private static final String DATABASE_ID = "database-id";
 
   private KeyFactory keyFactory;
-  private KeyFactory deprecatedKeyFactory;
 
   @Before
   public void setUp() {
-    keyFactory = new KeyFactory(PROJECT_ID).setKind("k");
+    keyFactory = new KeyFactory(PROJECT_ID).setDatabaseId(DATABASE_ID).setKind("k");
   }
 
   @Test
@@ -40,11 +40,13 @@ public class KeyFactoryTest {
     IncompleteKey key =
         keyFactory
             .setProjectId("ds1")
+            .setDatabaseId("db")
             .setNamespace("ns1")
             .addAncestor(PathElement.of("p", 1))
             .build();
     assertEquals("k", key.getKind());
     assertEquals("ds1", key.getProjectId());
+    assertEquals("db", key.getDatabaseId());
     assertEquals("ns1", key.getNamespace());
     assertEquals(1, key.getAncestors().size());
 
@@ -58,12 +60,59 @@ public class KeyFactoryTest {
     key = keyFactory.newKey();
     assertEquals("k1", key.getKind());
     assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("", key.getDatabaseId());
     assertTrue(key.getNamespace().isEmpty());
     assertTrue(key.getAncestors().isEmpty());
 
     keyFactory = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
     key = keyFactory.newKey();
     assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("", key.getDatabaseId());
+    assertEquals("ns1", key.getNamespace());
+    key = keyFactory.setProjectId("bla1").setNamespace("bla2").build();
+    assertEquals("bla1", key.getProjectId());
+    assertEquals("bla2", key.getNamespace());
+    keyFactory.reset().setKind("kind");
+    key = keyFactory.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals("kind", key.getKind());
+  }
+
+  @Test
+  public void testCreatedWithDbId() {
+    KeyFactory keyFactory = new KeyFactory(PROJECT_ID, "namespace", DATABASE_ID).setKind("k");
+    IncompleteKey key =
+        keyFactory
+            .setProjectId("ds1")
+            .setDatabaseId("db")
+            .setNamespace("ns1")
+            .addAncestor(PathElement.of("p", 1))
+            .build();
+    assertEquals("k", key.getKind());
+    assertEquals("ds1", key.getProjectId());
+    assertEquals("db", key.getDatabaseId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals(1, key.getAncestors().size());
+
+    keyFactory.reset();
+    try {
+      keyFactory.newKey(1);
+    } catch (NullPointerException ex) {
+      assertEquals("kind must not be null", ex.getMessage());
+    }
+    keyFactory.setKind("k1");
+    key = keyFactory.newKey();
+    assertEquals("k1", key.getKind());
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals(DATABASE_ID, key.getDatabaseId());
+    assertEquals("namespace", key.getNamespace());
+    assertTrue(key.getAncestors().isEmpty());
+
+    keyFactory = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
+    key = keyFactory.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("", key.getDatabaseId());
     assertEquals("ns1", key.getNamespace());
     key = keyFactory.setProjectId("bla1").setNamespace("bla2").build();
     assertEquals("bla1", key.getProjectId());
@@ -115,6 +164,7 @@ public class KeyFactoryTest {
   private void verifyIncompleteKey(IncompleteKey key, String namespace, PathElement... ancestors) {
     assertEquals("k", key.getKind());
     assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals(DATABASE_ID, key.getDatabaseId());
     assertEquals(namespace, key.getNamespace());
     assertEquals(ancestors.length, key.getAncestors().size());
     Iterator<PathElement> iter = key.getAncestors().iterator();

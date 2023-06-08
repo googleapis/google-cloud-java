@@ -25,8 +25,7 @@ import org.junit.Test;
 
 public class IncompleteKeyTest {
 
-  private static IncompleteKey pk1, pk2;
-  private static IncompleteKey deprecatedPk1, deprecatedPk2;
+  private static IncompleteKey pk1, pk2, pk4;
   private static Key parent1;
 
   @Before
@@ -34,23 +33,32 @@ public class IncompleteKeyTest {
     pk1 = IncompleteKey.newBuilder("ds", "kind1").build();
     parent1 = Key.newBuilder("ds", "kind2", 10).setNamespace("ns").build();
     pk2 = IncompleteKey.newBuilder(parent1, "kind3").build();
+    pk4 = IncompleteKey.newBuilderWithDatabaseId("ds", "kind3", "test-db").build();
   }
 
   @Test
   public void testBuilders() {
     assertEquals("ds", pk1.getProjectId());
+    assertEquals("", pk1.getDatabaseId());
     assertEquals("kind1", pk1.getKind());
     assertTrue(pk1.getAncestors().isEmpty());
 
     assertEquals("ds", pk2.getProjectId());
+    assertEquals("", pk2.getDatabaseId());
     assertEquals("kind3", pk2.getKind());
     assertEquals(parent1.getPath(), pk2.getAncestors());
 
     assertEquals(pk2, IncompleteKey.newBuilder(pk2).build());
     IncompleteKey pk3 = IncompleteKey.newBuilder(pk2).setKind("kind4").build();
     assertEquals("ds", pk3.getProjectId());
+    assertEquals("", pk3.getDatabaseId());
     assertEquals("kind4", pk3.getKind());
     assertEquals(parent1.getPath(), pk3.getAncestors());
+
+    assertEquals("ds", pk4.getProjectId());
+    assertEquals("test-db", pk4.getDatabaseId());
+    assertEquals("kind3", pk4.getKind());
+    assertTrue(pk4.getAncestors().isEmpty());
   }
 
   @Test

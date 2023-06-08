@@ -67,6 +67,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
         com.google.datastore.v1.BeginTransactionRequest.newBuilder();
 
+    requestPb.setProjectId(this.datastore.getOptions().getProjectId());
+    requestPb.setDatabaseId(this.datastore.getOptions().getDatabaseId());
+
     if (options != null) {
       requestPb.setTransactionOptions(options);
     }
@@ -116,6 +119,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.TRANSACTIONAL);
     requestPb.setTransaction(transactionId);
     requestPb.addAllMutations(mutationsPb);
+    requestPb.setProjectId(datastore.getOptions().getProjectId());
+    requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
     com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());

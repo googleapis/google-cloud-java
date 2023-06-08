@@ -59,6 +59,8 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
         com.google.datastore.v1.CommitRequest.newBuilder();
     requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.NON_TRANSACTIONAL);
     requestPb.addAllMutations(mutationsPb);
+    requestPb.setProjectId(datastore.getOptions().getProjectId());
+    requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
     com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());

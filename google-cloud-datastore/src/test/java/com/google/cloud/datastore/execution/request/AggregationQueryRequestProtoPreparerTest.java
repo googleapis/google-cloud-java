@@ -49,8 +49,13 @@ public class AggregationQueryRequestProtoPreparerTest {
   private static final String KIND = "Task";
   private static final String NAMESPACE = "ns";
   private static final String PROJECT_ID = "project-id";
+  private static final String DATABASE_ID = "database-id";
   private static final DatastoreOptions DATASTORE_OPTIONS =
-      DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).setNamespace(NAMESPACE).build();
+      DatastoreOptions.newBuilder()
+          .setProjectId(PROJECT_ID)
+          .setDatabaseId(DATABASE_ID)
+          .setNamespace(NAMESPACE)
+          .build();
   private static final EntityQuery COMPLETED_TASK_STRUCTURED_QUERY =
       Query.newEntityQueryBuilder()
           .setNamespace(NAMESPACE)
@@ -89,6 +94,7 @@ public class AggregationQueryRequestProtoPreparerTest {
         protoPreparer.prepare(QueryAndReadOptions.create(AGGREGATION_OVER_STRUCTURED_QUERY));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
+    assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
 
     assertThat(runAggregationQueryRequest.getPartitionId().getProjectId()).isEqualTo(PROJECT_ID);
     assertThat(runAggregationQueryRequest.getPartitionId().getNamespaceId()).isEqualTo(NAMESPACE);
@@ -111,8 +117,10 @@ public class AggregationQueryRequestProtoPreparerTest {
         protoPreparer.prepare(QueryAndReadOptions.create(AGGREGATION_OVER_GQL_QUERY));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
+    assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
 
     assertThat(runAggregationQueryRequest.getPartitionId().getProjectId()).isEqualTo(PROJECT_ID);
+    assertThat(runAggregationQueryRequest.getPartitionId().getDatabaseId()).isEqualTo(DATABASE_ID);
     assertThat(runAggregationQueryRequest.getPartitionId().getNamespaceId()).isEqualTo(NAMESPACE);
 
     com.google.datastore.v1.GqlQuery gqlQueryProto = runAggregationQueryRequest.getGqlQuery();

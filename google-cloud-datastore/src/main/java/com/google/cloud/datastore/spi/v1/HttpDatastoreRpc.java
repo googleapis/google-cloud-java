@@ -55,6 +55,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()
             .projectId(options.getProjectId())
+            .databaseId(options.getDatabaseId())
             .initializer(getHttpRequestInitializer(options, httpTransportOptions))
             .transport(transport);
     String normalizedHost = options.getHost() != null ? options.getHost().toLowerCase() : "";

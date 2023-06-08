@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.TextFormat;
@@ -49,6 +50,18 @@ public final class Key extends IncompleteKey {
     private Builder(String projectId, String kind, long id) {
       super(projectId, kind);
       this.id = id;
+    }
+
+    private Builder(String projectId, String kind, long id, String databaseId) {
+      super(projectId, kind);
+      this.id = id;
+      this.databaseId = databaseId;
+    }
+
+    private Builder(String projectId, String kind, String name, String databaseId) {
+      super(projectId, kind);
+      this.name = name;
+      this.databaseId = databaseId;
     }
 
     private Builder(IncompleteKey copyFrom, String name) {
@@ -93,12 +106,17 @@ public final class Key extends IncompleteKey {
       } else {
         pathBuilder.add(PathElement.of(kind, id));
       }
-      return new Key(projectId, namespace, pathBuilder.build());
+      return new Key(projectId, namespace, databaseId, pathBuilder.build());
     }
   }
 
   Key(String projectId, String namespace, ImmutableList<PathElement> path) {
     super(projectId, namespace, path);
+    Preconditions.checkArgument(getNameOrId() != null);
+  }
+
+  Key(String projectId, String namespace, String databaseId, ImmutableList<PathElement> path) {
+    super(projectId, namespace, databaseId, path);
     Preconditions.checkArgument(getNameOrId() != null);
   }
 
@@ -162,8 +180,18 @@ public final class Key extends IncompleteKey {
     return new Builder(projectId, kind, name);
   }
 
+  @BetaApi
+  public static Builder newBuilder(String projectId, String kind, String name, String databaseId) {
+    return new Builder(projectId, kind, name, databaseId);
+  }
+
   public static Builder newBuilder(String projectId, String kind, long id) {
     return new Builder(projectId, kind, id);
+  }
+
+  @BetaApi
+  public static Builder newBuilder(String projectId, String kind, long id, String databaseId) {
+    return new Builder(projectId, kind, id, databaseId);
   }
 
   public static Builder newBuilder(Key copyFrom) {
@@ -179,13 +207,13 @@ public final class Key extends IncompleteKey {
   }
 
   public static Builder newBuilder(Key parent, String kind, String name) {
-    Builder builder = newBuilder(parent.getProjectId(), kind, name);
+    Builder builder = newBuilder(parent.getProjectId(), kind, name, parent.getDatabaseId());
     addParentToBuilder(parent, builder);
     return builder;
   }
 
   public static Builder newBuilder(Key parent, String kind, long id) {
-    Builder builder = newBuilder(parent.getProjectId(), kind, id);
+    Builder builder = newBuilder(parent.getProjectId(), kind, id, parent.getDatabaseId());
     addParentToBuilder(parent, builder);
     return builder;
   }

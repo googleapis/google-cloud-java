@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.core.BetaApi;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,6 +41,7 @@ import java.util.List;
  */
 public class DatastoreOptions {
   private final String projectId;
+  private final String databaseId;
   private final String projectEndpoint;
   private final String host;
   private final String localHost;
@@ -56,6 +58,7 @@ public class DatastoreOptions {
         b.projectId != null || b.projectEndpoint != null,
         "Either project ID or project endpoint must be provided.");
     this.projectId = b.projectId;
+    this.databaseId = b.databaseId;
     this.projectEndpoint = b.projectEndpoint;
     this.host = b.host;
     this.localHost = b.localHost;
@@ -72,6 +75,7 @@ public class DatastoreOptions {
         "Can set at most one of project endpoint, host, and local host.";
 
     private String projectId;
+    private String databaseId;
     private String projectEndpoint;
     private String host;
     private String localHost;
@@ -83,6 +87,7 @@ public class DatastoreOptions {
 
     public Builder(DatastoreOptions options) {
       this.projectId = options.projectId;
+      this.databaseId = options.databaseId;
       this.projectEndpoint = options.projectEndpoint;
       this.host = options.host;
       this.localHost = options.localHost;
@@ -99,6 +104,13 @@ public class DatastoreOptions {
     public Builder projectId(String projectId) {
       checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
       this.projectId = projectId;
+      return this;
+    }
+
+    /** Sets the database ID used to access Cloud Datastore. */
+    @BetaApi
+    public Builder databaseId(String databaseId) {
+      this.databaseId = databaseId;
       return this;
     }
 
@@ -174,6 +186,10 @@ public class DatastoreOptions {
 
   public String getProjectId() {
     return projectId;
+  }
+
+  public String getDatabaseId() {
+    return databaseId;
   }
 
   public String getProjectEndpoint() {

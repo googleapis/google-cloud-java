@@ -146,7 +146,8 @@ public class RemoteRpcTest {
         new InjectedTestValues(gzip(response), new byte[1], true);
     RemoteRpc rpc = newRemoteRpc(injectedTestValues);
 
-    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
+    InputStream is =
+        rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance(), "", "");
     BeginTransactionResponse parsedResponse = BeginTransactionResponse.parseFrom(is);
     is.close();
 
@@ -159,14 +160,15 @@ public class RemoteRpcTest {
   public void testHttpHeaders_expectE2eChecksumHeader() throws IOException {
     // Enable E2E-Checksum system env variable
     RemoteRpc.setSystemEnvE2EChecksum(true);
+    String projectId = "project-id";
     MessageLite request =
-        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("project-id")).build();
+        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8(projectId)).build();
     RemoteRpc rpc =
         newRemoteRpc(
             new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
     HttpRequest httpRequest =
         rpc.getClient().buildPostRequest(rpc.resolveURL("blah"), new ProtoHttpContent(request));
-    rpc.setHeaders(request, httpRequest);
+    rpc.setHeaders(request, httpRequest, projectId, "");
     assertNotNull(
         httpRequest.getHeaders().getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
     // Expect to find e2e-checksum header
@@ -181,14 +183,15 @@ public class RemoteRpcTest {
   public void testHttpHeaders_doNotExpectE2eChecksumHeader() throws IOException {
     // disable E2E-Checksum system env variable
     RemoteRpc.setSystemEnvE2EChecksum(false);
+    String projectId = "project-id";
     MessageLite request =
-        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("project-id")).build();
+        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8(projectId)).build();
     RemoteRpc rpc =
         newRemoteRpc(
             new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
     HttpRequest httpRequest =
         rpc.getClient().buildPostRequest(rpc.resolveURL("blah"), new ProtoHttpContent(request));
-    rpc.setHeaders(request, httpRequest);
+    rpc.setHeaders(request, httpRequest, projectId, "");
     assertNotNull(
         httpRequest.getHeaders().getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
     // Do not expect to find e2e-checksum header
@@ -196,6 +199,38 @@ public class RemoteRpcTest {
         httpRequest
             .getHeaders()
             .getFirstHeaderStringValue(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER));
+  }
+
+  @Test
+  public void testHttpHeaders_prefixHeader() throws IOException {
+    String projectId = "my-project";
+    String databaseId = "my-db";
+    MessageLite request =
+        RollbackRequest.newBuilder()
+            .setTransaction(ByteString.copyFromUtf8(projectId))
+            .setDatabaseId(databaseId)
+            .build();
+    RemoteRpc rpc =
+        newRemoteRpc(
+            new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
+    HttpRequest httpRequest =
+        rpc.getClient().buildPostRequest(rpc.resolveURL("blah"), new ProtoHttpContent(request));
+    rpc.setHeaders(request, httpRequest, projectId, databaseId);
+    assertEquals(
+        "project_id=my-project&database_id=my-db",
+        httpRequest.getHeaders().get(RemoteRpc.X_GOOG_REQUEST_PARAMS_HEADER));
+
+    MessageLite request2 =
+        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8(projectId)).build();
+    RemoteRpc rpc2 =
+        newRemoteRpc(
+            new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
+    HttpRequest httpRequest2 =
+        rpc2.getClient().buildPostRequest(rpc2.resolveURL("blah"), new ProtoHttpContent(request2));
+    rpc2.setHeaders(request, httpRequest2, projectId, "");
+    assertEquals(
+        "project_id=my-project",
+        httpRequest2.getHeaders().get(RemoteRpc.X_GOOG_REQUEST_PARAMS_HEADER));
   }
 
   private static BeginTransactionResponse newBeginTransactionResponse() {

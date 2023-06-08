@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -31,6 +32,11 @@ public class IncompleteKey extends BaseKey {
       super(projectId, kind);
     }
 
+    private Builder(String projectId, String kind, String databaseId) {
+      super(projectId, kind);
+      this.databaseId = databaseId;
+    }
+
     private Builder(IncompleteKey copyFrom) {
       super(copyFrom);
     }
@@ -39,7 +45,7 @@ public class IncompleteKey extends BaseKey {
     public IncompleteKey build() {
       ImmutableList<PathElement> path =
           ImmutableList.<PathElement>builder().addAll(ancestors).add(PathElement.of(kind)).build();
-      return new IncompleteKey(projectId, namespace, path);
+      return new IncompleteKey(projectId, namespace, databaseId, path);
     }
   }
 
@@ -47,13 +53,20 @@ public class IncompleteKey extends BaseKey {
     super(projectId, namespace, path);
   }
 
+  IncompleteKey(
+      String projectId, String namespace, String databaseId, ImmutableList<PathElement> path) {
+    super(projectId, namespace, databaseId, path);
+  }
+
   static IncompleteKey fromPb(com.google.datastore.v1.Key keyPb) {
     String projectId = "";
     String namespace = "";
+    String databaseId = "";
     if (keyPb.hasPartitionId()) {
       com.google.datastore.v1.PartitionId partitionIdPb = keyPb.getPartitionId();
       projectId = partitionIdPb.getProjectId();
       namespace = partitionIdPb.getNamespaceId();
+      databaseId = partitionIdPb.getDatabaseId();
     }
     List<com.google.datastore.v1.Key.PathElement> pathElementsPb = keyPb.getPathList();
     Preconditions.checkArgument(!pathElementsPb.isEmpty(), "Path must not be empty");
@@ -64,9 +77,9 @@ public class IncompleteKey extends BaseKey {
     ImmutableList<PathElement> path = pathBuilder.build();
     PathElement leaf = path.get(path.size() - 1);
     if (leaf.getNameOrId() != null) {
-      return new Key(projectId, namespace, path);
+      return new Key(projectId, namespace, databaseId, path);
     }
-    return new IncompleteKey(projectId, namespace, path);
+    return new IncompleteKey(projectId, namespace, databaseId, path);
   }
 
   /** Returns the key's parent. */
@@ -94,12 +107,17 @@ public class IncompleteKey extends BaseKey {
     return new Builder(projectId, kind);
   }
 
+  @BetaApi
+  public static Builder newBuilderWithDatabaseId(String projectId, String kind, String databaseId) {
+    return new Builder(projectId, kind, databaseId);
+  }
+
   public static Builder newBuilder(IncompleteKey copyFrom) {
     return new Builder(copyFrom);
   }
 
   public static Builder newBuilder(Key parent, String kind) {
-    return newBuilder(parent.getProjectId(), kind)
+    return newBuilderWithDatabaseId(parent.getProjectId(), kind, parent.getDatabaseId())
         .setNamespace(parent.getNamespace())
         .addAncestors(parent.getPath());
   }

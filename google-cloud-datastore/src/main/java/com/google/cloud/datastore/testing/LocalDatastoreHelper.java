@@ -88,6 +88,13 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     }
   }
 
+  private final DatastoreOptions.Builder optionsBuilder =
+      DatastoreOptions.newBuilder()
+          .setProjectId(getProjectId())
+          .setHost(DEFAULT_HOST + ":" + getPort())
+          .setCredentials(NoCredentials.getInstance())
+          .setRetrySettings(ServiceOptions.getNoRetrySettings());
+
   /** A builder for {@code LocalDatastoreHelper} objects. */
   public static class Builder {
     private double consistency;
@@ -189,29 +196,27 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return LOGGER;
   }
 
-  private DatastoreOptions.Builder optionsBuilder() {
-    return DatastoreOptions.newBuilder()
-        .setProjectId(getProjectId())
-        .setHost(DEFAULT_HOST + ":" + Integer.toString(getPort()))
-        .setCredentials(NoCredentials.getInstance())
-        .setRetrySettings(ServiceOptions.getNoRetrySettings());
-  }
-
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
    */
   @Override
   public DatastoreOptions getOptions() {
-    return optionsBuilder().build();
+    return optionsBuilder.build();
   }
 
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost. The default namespace is set to {@code namespace}.
+   *
+   * <p>Please use setNamespace and then build() instead.
    */
   public DatastoreOptions getOptions(String namespace) {
-    return optionsBuilder().setNamespace(namespace).build();
+    return optionsBuilder.setNamespace(namespace).build();
+  }
+
+  public DatastoreOptions.Builder setNamespace(String namespace) {
+    return optionsBuilder.setNamespace(namespace);
   }
 
   /** Returns the consistency setting for the local Datastore emulator. */

@@ -60,7 +60,8 @@ public class AggregationQueryRequestProtoPreparer
     RunAggregationQueryRequest.Builder aggregationQueryRequestBuilder =
         RunAggregationQueryRequest.newBuilder()
             .setPartitionId(partitionId)
-            .setProjectId(datastoreOptions.getProjectId());
+            .setProjectId(datastoreOptions.getProjectId())
+            .setDatabaseId(datastoreOptions.getDatabaseId());
 
     if (aggregationQuery.getMode() == GQL) {
       aggregationQueryRequestBuilder.setGqlQuery(buildGqlQuery(aggregationQuery));
@@ -92,7 +93,9 @@ public class AggregationQueryRequestProtoPreparer
 
   private PartitionId getPartitionId(AggregationQuery aggregationQuery) {
     PartitionId.Builder builder =
-        PartitionId.newBuilder().setProjectId(datastoreOptions.getProjectId());
+        PartitionId.newBuilder()
+            .setProjectId(datastoreOptions.getProjectId())
+            .setDatabaseId(datastoreOptions.getDatabaseId());
     String namespace =
         MoreObjects.firstNonNull(aggregationQuery.getNamespace(), datastoreOptions.getNamespace());
     builder.setNamespaceId(namespace);

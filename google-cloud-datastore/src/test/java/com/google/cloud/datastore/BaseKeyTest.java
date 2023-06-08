@@ -36,12 +36,16 @@ public class BaseKeyTest {
       super(projectId, kind);
     }
 
+    Builder(BaseKey copyFrom) {
+      super(copyFrom);
+    }
+
     @Override
     protected BaseKey build() {
       ImmutableList.Builder<PathElement> path = ImmutableList.builder();
       path.addAll(ancestors);
       path.add(PathElement.of(kind));
-      return new BaseKey(projectId, namespace, path.build()) {
+      return new BaseKey(projectId, namespace, databaseId, path.build()) {
 
         @Override
         protected BaseKey getParent() {
@@ -58,6 +62,17 @@ public class BaseKeyTest {
     assertEquals("ds1", key.getProjectId());
     key = builder.setProjectId("ds2").build();
     assertEquals("ds2", key.getProjectId());
+    assertEquals("", key.getDatabaseId());
+  }
+
+  @Test
+  public void testDatabaseId() {
+    Builder builder = new Builder("ds1", "k").setDatabaseId("test-db");
+    BaseKey key = builder.build();
+    assertEquals("ds1", key.getProjectId());
+    key = builder.setProjectId("ds2").build();
+    assertEquals("ds2", key.getProjectId());
+    assertEquals("test-db", key.getDatabaseId());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -119,5 +134,18 @@ public class BaseKeyTest {
     path.add(PathElement.of("p2", "v2"));
     key = builder.addAncestor(path.get(1)).build();
     assertEquals(path, key.getAncestors());
+  }
+
+  @Test
+  public void testCopyFrom() {
+    Builder copyFrom = new Builder("test-project", "kind").setDatabaseId("test-db");
+    Builder builder = new Builder(copyFrom.build());
+    BaseKey baseKey = builder.build();
+    assertEquals("test-project", baseKey.getProjectId());
+    assertEquals("test-db", baseKey.getDatabaseId());
+    assertEquals("kind", baseKey.getKind());
+    assertEquals("", baseKey.getNamespace());
+    assertEquals(new ArrayList<>(), baseKey.getAncestors());
+    assertEquals(PathElement.of("kind"), baseKey.getLeaf());
   }
 }

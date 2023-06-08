@@ -211,12 +211,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_RUNQUERY);
     try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
-          new Callable<com.google.datastore.v1.RunQueryResponse>() {
-            @Override
-            public com.google.datastore.v1.RunQueryResponse call() throws DatastoreException {
-              return datastoreRpc.runQuery(requestPb);
-            }
-          },
+          () -> datastoreRpc.runQuery(requestPb),
           retrySettings,
           requestPb.getReadOptions().getTransaction().isEmpty()
               ? EXCEPTION_HANDLER
@@ -256,6 +251,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     for (IncompleteKey key : keys) {
       requestPb.addKeys(trimNameOrId(key).toPb());
     }
+    requestPb.setProjectId(getOptions().getProjectId());
+    requestPb.setDatabaseId(getOptions().getDatabaseId());
     com.google.datastore.v1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (com.google.datastore.v1.Key keyPb : responsePb.getKeysList()) {
@@ -386,6 +383,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     for (Key k : Sets.newLinkedHashSet(Arrays.asList(keys))) {
       requestPb.addKeys(k.toPb());
     }
+    requestPb.setProjectId(getOptions().getProjectId());
+    requestPb.setDatabaseId(getOptions().getDatabaseId());
     return new ResultsIterator(requestPb);
   }
 
@@ -451,6 +450,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     for (Key key : keys) {
       requestPb.addKeys(key.toPb());
     }
+    requestPb.setProjectId(getOptions().getProjectId());
+    requestPb.setDatabaseId(getOptions().getDatabaseId());
     com.google.datastore.v1.ReserveIdsResponse responsePb = reserveIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     if (responsePb.isInitialized()) {
@@ -565,6 +566,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     com.google.datastore.v1.CommitRequest.Builder requestPb =
         com.google.datastore.v1.CommitRequest.newBuilder();
     requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.NON_TRANSACTIONAL);
+    requestPb.setProjectId(getOptions().getProjectId());
+    requestPb.setDatabaseId(getOptions().getDatabaseId());
     requestPb.addAllMutations(mutationsPb);
     return commit(requestPb.build());
   }
@@ -574,12 +577,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_COMMIT);
     try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
-          new Callable<com.google.datastore.v1.CommitResponse>() {
-            @Override
-            public com.google.datastore.v1.CommitResponse call() throws DatastoreException {
-              return datastoreRpc.commit(requestPb);
-            }
-          },
+          () -> datastoreRpc.commit(requestPb),
           retrySettings,
           requestPb.getTransaction().isEmpty()
               ? EXCEPTION_HANDLER
@@ -625,6 +623,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     com.google.datastore.v1.RollbackRequest.Builder requestPb =
         com.google.datastore.v1.RollbackRequest.newBuilder();
     requestPb.setTransaction(transaction);
+    requestPb.setProjectId(getOptions().getProjectId());
+    requestPb.setDatabaseId(getOptions().getDatabaseId());
     rollback(requestPb.build());
   }
 
