@@ -73,7 +73,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.19.0</version>
+        <version>3.20.0</version>
         <exclusions>
           <exclusion>
             <!-- using the perfmark version in opencensus -->
