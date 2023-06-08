@@ -24,6 +24,7 @@ package com.google.bigtable.admin.v2;
  * <pre>
  * Request message for
  * [google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable][google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable]
+ *
  * Note: This is a private alpha release of Cloud Bigtable snapshots. This
  * feature is not currently available to most Cloud Bigtable customers. This
  * feature might be changed in backward-incompatible ways and is not recommended
@@ -53,11 +54,6 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SnapshotTableRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -562,6 +558,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Request message for
    * [google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable][google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable]
+   *
    * Note: This is a private alpha release of Cloud Bigtable snapshots. This
    * feature is not currently available to most Cloud Bigtable customers. This
    * feature might be changed in backward-incompatible ways and is not recommended

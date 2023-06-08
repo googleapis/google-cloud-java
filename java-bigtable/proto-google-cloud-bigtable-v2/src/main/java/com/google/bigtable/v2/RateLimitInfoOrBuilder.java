@@ -82,6 +82,7 @@ public interface RateLimitInfoOrBuilder
    * load. For example, if the current load is 100 and `factor` is 0.8, the new
    * target load should be 80. After adjusting, the client should ignore
    * `factor` until another `period` has passed.
+   *
    * The client can measure its load using any unit that's comparable over time
    * For example, QPS can be used as long as each request involves a similar
    * amount of work.

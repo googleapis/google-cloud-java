@@ -31,11 +31,13 @@ public interface RequestLatencyStatsOrBuilder
    * when the request was received, to when this value is sent back in the
    * response. For more context on the component that is measuring this latency,
    * see: https://cloud.google.com/bigtable/docs/overview
+   *
    * Note: This value may be slightly shorter than the value reported into
    * aggregate latency metrics in Monitoring for this request
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   *
    * Note: This value includes the end-to-end latency of contacting nodes in
    * the targeted cluster, e.g. measuring from when the first byte arrives at
    * the frontend server, to when this value is sent back as the last value in
@@ -57,11 +59,13 @@ public interface RequestLatencyStatsOrBuilder
    * when the request was received, to when this value is sent back in the
    * response. For more context on the component that is measuring this latency,
    * see: https://cloud.google.com/bigtable/docs/overview
+   *
    * Note: This value may be slightly shorter than the value reported into
    * aggregate latency metrics in Monitoring for this request
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   *
    * Note: This value includes the end-to-end latency of contacting nodes in
    * the targeted cluster, e.g. measuring from when the first byte arrives at
    * the frontend server, to when this value is sent back as the last value in
@@ -83,11 +87,13 @@ public interface RequestLatencyStatsOrBuilder
    * when the request was received, to when this value is sent back in the
    * response. For more context on the component that is measuring this latency,
    * see: https://cloud.google.com/bigtable/docs/overview
+   *
    * Note: This value may be slightly shorter than the value reported into
    * aggregate latency metrics in Monitoring for this request
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   *
    * Note: This value includes the end-to-end latency of contacting nodes in
    * the targeted cluster, e.g. measuring from when the first byte arrives at
    * the frontend server, to when this value is sent back as the last value in

@@ -148,7 +148,7 @@ public interface ColumnRangeOrBuilder
    */
   com.google.protobuf.ByteString getEndQualifierOpen();
 
-  public com.google.bigtable.v2.ColumnRange.StartQualifierCase getStartQualifierCase();
+  com.google.bigtable.v2.ColumnRange.StartQualifierCase getStartQualifierCase();
 
-  public com.google.bigtable.v2.ColumnRange.EndQualifierCase getEndQualifierCase();
+  com.google.bigtable.v2.ColumnRange.EndQualifierCase getEndQualifierCase();
 }

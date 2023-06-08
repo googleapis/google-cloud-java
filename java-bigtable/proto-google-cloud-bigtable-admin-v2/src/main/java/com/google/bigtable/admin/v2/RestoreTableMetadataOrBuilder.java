@@ -167,5 +167,5 @@ public interface RestoreTableMetadataOrBuilder
    */
   com.google.bigtable.admin.v2.OperationProgressOrBuilder getProgressOrBuilder();
 
-  public com.google.bigtable.admin.v2.RestoreTableMetadata.SourceInfoCase getSourceInfoCase();
+  com.google.bigtable.admin.v2.RestoreTableMetadata.SourceInfoCase getSourceInfoCase();
 }

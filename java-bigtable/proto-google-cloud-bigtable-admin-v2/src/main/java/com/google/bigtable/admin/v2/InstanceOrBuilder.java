@@ -139,6 +139,7 @@ public interface InstanceOrBuilder
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -158,6 +159,7 @@ public interface InstanceOrBuilder
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -180,6 +182,7 @@ public interface InstanceOrBuilder
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -199,6 +202,7 @@ public interface InstanceOrBuilder
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -222,6 +226,7 @@ public interface InstanceOrBuilder
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to

@@ -123,7 +123,7 @@ public interface RowRangeOrBuilder
    */
   com.google.protobuf.ByteString getEndKeyClosed();
 
-  public com.google.bigtable.v2.RowRange.StartKeyCase getStartKeyCase();
+  com.google.bigtable.v2.RowRange.StartKeyCase getStartKeyCase();
 
-  public com.google.bigtable.v2.RowRange.EndKeyCase getEndKeyCase();
+  com.google.bigtable.v2.RowRange.EndKeyCase getEndKeyCase();
 }

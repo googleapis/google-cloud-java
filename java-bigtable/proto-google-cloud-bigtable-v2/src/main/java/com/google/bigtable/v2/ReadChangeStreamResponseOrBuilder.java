@@ -128,5 +128,5 @@ public interface ReadChangeStreamResponseOrBuilder
    */
   com.google.bigtable.v2.ReadChangeStreamResponse.CloseStreamOrBuilder getCloseStreamOrBuilder();
 
-  public com.google.bigtable.v2.ReadChangeStreamResponse.StreamRecordCase getStreamRecordCase();
+  com.google.bigtable.v2.ReadChangeStreamResponse.StreamRecordCase getStreamRecordCase();
 }

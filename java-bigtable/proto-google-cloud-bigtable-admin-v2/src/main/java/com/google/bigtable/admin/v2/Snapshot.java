@@ -24,6 +24,7 @@ package com.google.bigtable.admin.v2;
  * <pre>
  * A snapshot of a table at a particular time. A snapshot can be used as a
  * checkpoint for data restoration or a data source for a new table.
+ *
  * Note: This is a private alpha release of Cloud Bigtable snapshots. This
  * feature is not currently available to most Cloud Bigtable customers. This
  * feature might be changed in backward-incompatible ways and is not recommended
@@ -52,11 +53,6 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Snapshot();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -777,6 +773,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A snapshot of a table at a particular time. A snapshot can be used as a
    * checkpoint for data restoration or a data source for a new table.
+   *
    * Note: This is a private alpha release of Cloud Bigtable snapshots. This
    * feature is not currently available to most Cloud Bigtable customers. This
    * feature might be changed in backward-incompatible ways and is not recommended

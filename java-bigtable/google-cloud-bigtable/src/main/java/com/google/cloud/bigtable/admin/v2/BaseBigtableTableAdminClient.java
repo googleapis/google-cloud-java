@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -924,11 +924,15 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @param table Required. The table to update. The table's `name` field is used to identify the
    *     table to update.
    * @param updateMask Required. The list of fields to update. A mask specifying which fields (e.g.
-   *     `deletion_protection`) in the `table` field should be updated. This mask is relative to the
-   *     `table` field, not to the request message. The wildcard (&#42;) path is currently not
-   *     supported. Currently UpdateTable is only supported for the following field: &#42;
-   *     `deletion_protection` If `column_families` is set in `update_mask`, it will return an
-   *     UNIMPLEMENTED error.
+   *     `change_stream_config`) in the `table` field should be updated. This mask is relative to
+   *     the `table` field, not to the request message. The wildcard (&#42;) path is currently not
+   *     supported. Currently UpdateTable is only supported for the following fields:
+   *     <ul>
+   *       <li>`change_stream_config`
+   *       <li>`change_stream_config.retention_period`
+   *       <li>`deletion_protection`
+   *     </ul>
+   *     <p>If `column_families` is set in `update_mask`, it will return an UNIMPLEMENTED error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Table, UpdateTableMetadata> updateTableAsync(

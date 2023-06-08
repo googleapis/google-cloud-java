@@ -86,5 +86,5 @@ public interface RestoreInfoOrBuilder
    */
   com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder();
 
-  public com.google.bigtable.admin.v2.RestoreInfo.SourceInfoCase getSourceInfoCase();
+  com.google.bigtable.admin.v2.RestoreInfo.SourceInfoCase getSourceInfoCase();
 }

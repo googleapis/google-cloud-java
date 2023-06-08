@@ -235,5 +235,5 @@ public interface ClusterOrBuilder
    */
   com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 
-  public com.google.bigtable.admin.v2.Cluster.ConfigCase getConfigCase();
+  com.google.bigtable.admin.v2.Cluster.ConfigCase getConfigCase();
 }

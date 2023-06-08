@@ -23,6 +23,7 @@ package com.google.bigtable.admin.v2;
  *
  * <pre>
  * The metadata for the Operation returned by SnapshotTable.
+ *
  * Note: This is a private alpha release of Cloud Bigtable snapshots. This
  * feature is not currently available to most Cloud Bigtable customers. This
  * feature might be changed in backward-incompatible ways and is not recommended
@@ -47,11 +48,6 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SnapshotTableMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -408,6 +404,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The metadata for the Operation returned by SnapshotTable.
+   *
    * Note: This is a private alpha release of Cloud Bigtable snapshots. This
    * feature is not currently available to most Cloud Bigtable customers. This
    * feature might be changed in backward-incompatible ways and is not recommended

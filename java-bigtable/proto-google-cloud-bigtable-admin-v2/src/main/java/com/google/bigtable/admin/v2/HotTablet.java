@@ -54,11 +54,6 @@ public final class HotTablet extends com.google.protobuf.GeneratedMessageV3
     return new HotTablet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_HotTablet_descriptor;

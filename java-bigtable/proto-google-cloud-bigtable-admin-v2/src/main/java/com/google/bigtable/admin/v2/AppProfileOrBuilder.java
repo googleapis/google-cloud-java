@@ -195,5 +195,5 @@ public interface AppProfileOrBuilder
   com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder
       getSingleClusterRoutingOrBuilder();
 
-  public com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase getRoutingPolicyCase();
+  com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase getRoutingPolicyCase();
 }

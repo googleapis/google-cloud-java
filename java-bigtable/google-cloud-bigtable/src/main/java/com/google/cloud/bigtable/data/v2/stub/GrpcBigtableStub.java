@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,6 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -350,9 +349,9 @@ public class GrpcBigtableStub extends BigtableStub {
                 .setMethodDescriptor(generateInitialChangeStreamPartitionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("table_name", String.valueOf(request.getTableName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("table_name", String.valueOf(request.getTableName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
@@ -361,9 +360,9 @@ public class GrpcBigtableStub extends BigtableStub {
                 .setMethodDescriptor(readChangeStreamMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("table_name", String.valueOf(request.getTableName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("table_name", String.valueOf(request.getTableName()));
+                      return builder.build();
                     })
                 .build();
 

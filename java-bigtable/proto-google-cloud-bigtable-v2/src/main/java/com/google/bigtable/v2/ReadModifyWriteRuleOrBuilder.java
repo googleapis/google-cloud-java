@@ -125,5 +125,5 @@ public interface ReadModifyWriteRuleOrBuilder
    */
   long getIncrementAmount();
 
-  public com.google.bigtable.v2.ReadModifyWriteRule.RuleCase getRuleCase();
+  com.google.bigtable.v2.ReadModifyWriteRule.RuleCase getRuleCase();
 }

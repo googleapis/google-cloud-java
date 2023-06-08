@@ -108,5 +108,5 @@ public interface DropRowRangeRequestOrBuilder
    */
   boolean getDeleteAllDataFromTable();
 
-  public com.google.bigtable.admin.v2.DropRowRangeRequest.TargetCase getTargetCase();
+  com.google.bigtable.admin.v2.DropRowRangeRequest.TargetCase getTargetCase();
 }

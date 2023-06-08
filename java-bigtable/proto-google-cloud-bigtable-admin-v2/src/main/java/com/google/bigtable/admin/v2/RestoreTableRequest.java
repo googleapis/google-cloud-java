@@ -49,11 +49,6 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
     return new RestoreTableRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
         .internal_static_google_bigtable_admin_v2_RestoreTableRequest_descriptor;
@@ -70,6 +65,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

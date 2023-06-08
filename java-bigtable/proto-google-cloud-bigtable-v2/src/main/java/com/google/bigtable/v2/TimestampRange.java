@@ -45,11 +45,6 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     return new TimestampRange();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.DataProto
         .internal_static_google_bigtable_v2_TimestampRange_descriptor;

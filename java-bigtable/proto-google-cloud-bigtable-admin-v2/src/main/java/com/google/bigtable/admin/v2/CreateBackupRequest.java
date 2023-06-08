@@ -48,11 +48,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     return new CreateBackupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
         .internal_static_google_bigtable_admin_v2_CreateBackupRequest_descriptor;

@@ -48,11 +48,6 @@ public final class GenerateInitialChangeStreamPartitionsResponse
     return new GenerateInitialChangeStreamPartitionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsResponse_descriptor;

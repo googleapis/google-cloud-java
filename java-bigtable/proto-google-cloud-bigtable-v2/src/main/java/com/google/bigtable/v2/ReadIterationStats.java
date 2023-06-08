@@ -47,11 +47,6 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     return new ReadIterationStats();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.RequestStatsProto
         .internal_static_google_bigtable_v2_ReadIterationStats_descriptor;

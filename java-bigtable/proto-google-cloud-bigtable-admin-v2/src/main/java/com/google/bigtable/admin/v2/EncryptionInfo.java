@@ -51,11 +51,6 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
     return new EncryptionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.TableProto
         .internal_static_google_bigtable_admin_v2_EncryptionInfo_descriptor;

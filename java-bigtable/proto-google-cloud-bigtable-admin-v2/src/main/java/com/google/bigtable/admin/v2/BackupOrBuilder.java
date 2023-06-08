@@ -33,6 +33,7 @@ public interface BackupOrBuilder
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * The final segment of the name must be between 1 and 50 characters
    * in length.
+   *
    * The backup is stored in the cluster identified by the prefix of the backup
    * name of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -53,6 +54,7 @@ public interface BackupOrBuilder
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * The final segment of the name must be between 1 and 50 characters
    * in length.
+   *
    * The backup is stored in the cluster identified by the prefix of the backup
    * name of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.

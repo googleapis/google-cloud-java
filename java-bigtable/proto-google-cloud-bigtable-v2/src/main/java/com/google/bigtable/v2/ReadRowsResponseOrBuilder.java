@@ -98,6 +98,7 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -107,10 +108,12 @@ public interface ReadRowsResponseOrBuilder
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/
@@ -126,6 +129,7 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -135,10 +139,12 @@ public interface ReadRowsResponseOrBuilder
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/
@@ -154,6 +160,7 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -163,10 +170,12 @@ public interface ReadRowsResponseOrBuilder
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/

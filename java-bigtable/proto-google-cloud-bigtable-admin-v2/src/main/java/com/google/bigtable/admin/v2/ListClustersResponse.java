@@ -39,7 +39,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
 
   private ListClustersResponse() {
     clusters_ = java.util.Collections.emptyList();
-    failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    failedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListClustersResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -143,7 +138,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   public static final int FAILED_LOCATIONS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList failedLocations_;
+  private com.google.protobuf.LazyStringArrayList failedLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -502,8 +498,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
         clustersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      failedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
       return this;
     }
@@ -551,15 +546,14 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.clusters_ = clustersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        failedLocations_ = failedLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.failedLocations_ = failedLocations_;
     }
 
     private void buildPartial0(com.google.bigtable.admin.v2.ListClustersResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        failedLocations_.makeImmutable();
+        result.failedLocations_ = failedLocations_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.nextPageToken_ = nextPageToken_;
       }
@@ -641,7 +635,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       if (!other.failedLocations_.isEmpty()) {
         if (failedLocations_.isEmpty()) {
           failedLocations_ = other.failedLocations_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureFailedLocationsIsMutable();
           failedLocations_.addAll(other.failedLocations_);
@@ -1072,14 +1066,14 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       return clustersBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList failedLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList failedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFailedLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!failedLocations_.isModifiable()) {
         failedLocations_ = new com.google.protobuf.LazyStringArrayList(failedLocations_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1097,7 +1091,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * @return A list containing the failedLocations.
      */
     public com.google.protobuf.ProtocolStringList getFailedLocationsList() {
-      return failedLocations_.getUnmodifiableView();
+      failedLocations_.makeImmutable();
+      return failedLocations_;
     }
     /**
      *
@@ -1178,6 +1173,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       }
       ensureFailedLocationsIsMutable();
       failedLocations_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1203,6 +1199,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       }
       ensureFailedLocationsIsMutable();
       failedLocations_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1225,6 +1222,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
     public Builder addAllFailedLocations(java.lang.Iterable<java.lang.String> values) {
       ensureFailedLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failedLocations_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1244,8 +1242,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFailedLocations() {
-      failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      failedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1272,6 +1271,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureFailedLocationsIsMutable();
       failedLocations_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

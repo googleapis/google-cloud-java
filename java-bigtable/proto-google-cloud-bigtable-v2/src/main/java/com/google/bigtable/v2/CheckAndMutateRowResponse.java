@@ -45,11 +45,6 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
     return new CheckAndMutateRowResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_CheckAndMutateRowResponse_descriptor;

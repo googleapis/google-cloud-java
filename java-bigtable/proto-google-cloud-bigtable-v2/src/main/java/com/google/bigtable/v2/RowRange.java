@@ -45,11 +45,6 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     return new RowRange();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_RowRange_descriptor;
   }
@@ -64,6 +59,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int startKeyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object startKey_;
 
   public enum StartKeyCase
@@ -111,6 +108,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int endKeyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object endKey_;
 
   public enum EndKeyCase

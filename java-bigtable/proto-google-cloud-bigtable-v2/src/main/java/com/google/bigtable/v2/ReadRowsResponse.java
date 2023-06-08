@@ -48,11 +48,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return new ReadRowsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_ReadRowsResponse_descriptor;
@@ -352,7 +347,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      */
     boolean getCommitRow();
 
-    public com.google.bigtable.v2.ReadRowsResponse.CellChunk.RowStatusCase getRowStatusCase();
+    com.google.bigtable.v2.ReadRowsResponse.CellChunk.RowStatusCase getRowStatusCase();
   }
   /**
    *
@@ -376,7 +371,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
     private CellChunk() {
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
-      labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       value_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -384,11 +379,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CellChunk();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -407,6 +397,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private int rowStatusCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object rowStatus_;
 
     public enum RowStatusCase
@@ -625,7 +617,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public static final int LABELS_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList labels_;
+    private com.google.protobuf.LazyStringArrayList labels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1133,8 +1126,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
           qualifierBuilder_ = null;
         }
         timestampMicros_ = 0L;
-        labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
         value_ = com.google.protobuf.ByteString.EMPTY;
         valueSize_ = 0;
         rowStatusCase_ = 0;
@@ -1166,22 +1158,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       public com.google.bigtable.v2.ReadRowsResponse.CellChunk buildPartial() {
         com.google.bigtable.v2.ReadRowsResponse.CellChunk result =
             new com.google.bigtable.v2.ReadRowsResponse.CellChunk(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         buildPartialOneofs(result);
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.bigtable.v2.ReadRowsResponse.CellChunk result) {
-        if (((bitField0_ & 0x00000010) != 0)) {
-          labels_ = labels_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.labels_ = labels_;
       }
 
       private void buildPartial0(com.google.bigtable.v2.ReadRowsResponse.CellChunk result) {
@@ -1198,6 +1180,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.timestampMicros_ = timestampMicros_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          labels_.makeImmutable();
+          result.labels_ = labels_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.value_ = value_;
@@ -1275,7 +1261,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -2003,14 +1989,14 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
-      private com.google.protobuf.LazyStringList labels_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList labels_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!labels_.isModifiable()) {
           labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -2026,7 +2012,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
        * @return A list containing the labels.
        */
       public com.google.protobuf.ProtocolStringList getLabelsList() {
-        return labels_.getUnmodifiableView();
+        labels_.makeImmutable();
+        return labels_;
       }
       /**
        *
@@ -2099,6 +2086,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         }
         ensureLabelsIsMutable();
         labels_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2122,6 +2110,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         }
         ensureLabelsIsMutable();
         labels_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2142,6 +2131,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       public Builder addAllLabels(java.lang.Iterable<java.lang.String> values) {
         ensureLabelsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labels_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2159,8 +2149,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearLabels() {
-        labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -2185,6 +2176,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         ensureLabelsIsMutable();
         labels_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2631,6 +2623,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -2640,10 +2633,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/
@@ -2662,6 +2657,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -2671,10 +2667,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/
@@ -2695,6 +2693,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   *
    * If requested, provide enhanced query performance statistics. The semantics
    * dictate:
    *   * request_stats is empty on every (streamed) response, except
@@ -2704,10 +2703,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *       * For example, if a read request would have returned an empty
    *         response instead a single ReadRowsResponse is streamed with empty
    *         chunks and request_stats filled.
+   *
    * Visually, response messages will stream as follows:
    *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
    *   &#92;______________________/  &#92;________________________________/
    *       Primary response         Trailer of RequestStats info
+   *
    * Or if the read did not return any values:
    *   {chunks: [], request_stats: {...}}
    *   &#92;________________________________/
@@ -3602,6 +3603,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3611,10 +3613,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3632,6 +3636,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3641,10 +3646,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3668,6 +3675,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3677,10 +3685,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3706,6 +3716,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3715,10 +3726,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3741,6 +3754,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3750,10 +3764,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3782,6 +3798,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3791,10 +3808,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3817,6 +3836,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3826,10 +3846,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3847,6 +3869,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3856,10 +3879,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/
@@ -3881,6 +3906,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     *
      * If requested, provide enhanced query performance statistics. The semantics
      * dictate:
      *   * request_stats is empty on every (streamed) response, except
@@ -3890,10 +3916,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *       * For example, if a read request would have returned an empty
      *         response instead a single ReadRowsResponse is streamed with empty
      *         chunks and request_stats filled.
+     *
      * Visually, response messages will stream as follows:
      *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
      *   &#92;______________________/  &#92;________________________________/
      *       Primary response         Trailer of RequestStats info
+     *
      * Or if the read did not return any values:
      *   {chunks: [], request_stats: {...}}
      *   &#92;________________________________/

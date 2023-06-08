@@ -53,11 +53,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return new Instance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_Instance_descriptor;
@@ -625,6 +620,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -656,6 +652,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -678,6 +675,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -707,6 +705,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
    * metrics.
+   *
    * * Label keys must be between 1 and 63 characters long and must conform to
    *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
    * * Label values must be between 0 and 63 characters long and must conform to
@@ -1789,6 +1788,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1820,6 +1820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1842,6 +1843,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1871,6 +1873,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1906,6 +1909,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1937,6 +1941,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to
@@ -1966,6 +1971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * resources into groups that reflect a customer's organizational needs and
      * deployment strategies. They can be used to filter resources and aggregate
      * metrics.
+     *
      * * Label keys must be between 1 and 63 characters long and must conform to
      *   the regular expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`.
      * * Label values must be between 0 and 63 characters long and must conform to

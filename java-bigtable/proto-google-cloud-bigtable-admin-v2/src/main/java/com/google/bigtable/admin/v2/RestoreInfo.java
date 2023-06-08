@@ -47,11 +47,6 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     return new RestoreInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.TableProto
         .internal_static_google_bigtable_admin_v2_RestoreInfo_descriptor;
@@ -68,6 +63,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceInfoCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceInfo_;
 
   public enum SourceInfoCase

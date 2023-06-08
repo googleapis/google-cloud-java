@@ -288,6 +288,47 @@ public interface TableOrBuilder
    *
    *
    * <pre>
+   * If specified, enable the change stream on this table.
+   * Otherwise, the change stream is disabled and the change stream is not
+   * retained.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.ChangeStreamConfig change_stream_config = 8;</code>
+   *
+   * @return Whether the changeStreamConfig field is set.
+   */
+  boolean hasChangeStreamConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, enable the change stream on this table.
+   * Otherwise, the change stream is disabled and the change stream is not
+   * retained.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.ChangeStreamConfig change_stream_config = 8;</code>
+   *
+   * @return The changeStreamConfig.
+   */
+  com.google.bigtable.admin.v2.ChangeStreamConfig getChangeStreamConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, enable the change stream on this table.
+   * Otherwise, the change stream is disabled and the change stream is not
+   * retained.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.ChangeStreamConfig change_stream_config = 8;</code>
+   */
+  com.google.bigtable.admin.v2.ChangeStreamConfigOrBuilder getChangeStreamConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Set to true to make the table protected against data loss. i.e. deleting
    * the following resources through Admin APIs are prohibited:
    *   - The table.

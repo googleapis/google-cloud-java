@@ -129,7 +129,9 @@ public interface CreateTableRequestOrBuilder
    * table into several tablets (tablets are similar to HBase regions).
    * Given two split keys, `s1` and `s2`, three tablets will be created,
    * spanning the key ranges: `[, s1), [s1, s2), [s2, )`.
+   *
    * Example:
+   *
    * * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",`
    *                `"other", "zz"]`
    * * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]`
@@ -152,7 +154,9 @@ public interface CreateTableRequestOrBuilder
    * table into several tablets (tablets are similar to HBase regions).
    * Given two split keys, `s1` and `s2`, three tablets will be created,
    * spanning the key ranges: `[, s1), [s1, s2), [s2, )`.
+   *
    * Example:
+   *
    * * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",`
    *                `"other", "zz"]`
    * * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]`
@@ -175,7 +179,9 @@ public interface CreateTableRequestOrBuilder
    * table into several tablets (tablets are similar to HBase regions).
    * Given two split keys, `s1` and `s2`, three tablets will be created,
    * spanning the key ranges: `[, s1), [s1, s2), [s2, )`.
+   *
    * Example:
+   *
    * * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",`
    *                `"other", "zz"]`
    * * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]`
@@ -198,7 +204,9 @@ public interface CreateTableRequestOrBuilder
    * table into several tablets (tablets are similar to HBase regions).
    * Given two split keys, `s1` and `s2`, three tablets will be created,
    * spanning the key ranges: `[, s1), [s1, s2), [s2, )`.
+   *
    * Example:
+   *
    * * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",`
    *                `"other", "zz"]`
    * * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]`
@@ -222,7 +230,9 @@ public interface CreateTableRequestOrBuilder
    * table into several tablets (tablets are similar to HBase regions).
    * Given two split keys, `s1` and `s2`, three tablets will be created,
    * spanning the key ranges: `[, s1), [s1, s2), [s2, )`.
+   *
    * Example:
+   *
    * * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",`
    *                `"other", "zz"]`
    * * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]`

@@ -49,11 +49,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return new Backup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.TableProto
         .internal_static_google_bigtable_admin_v2_Backup_descriptor;
@@ -242,6 +237,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * The final segment of the name must be between 1 and 50 characters
    * in length.
+   *
    * The backup is stored in the cluster identified by the prefix of the backup
    * name of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -273,6 +269,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * The final segment of the name must be between 1 and 50 characters
    * in length.
+   *
    * The backup is stored in the cluster identified by the prefix of the backup
    * name of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -1180,6 +1177,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * The final segment of the name must be between 1 and 50 characters
      * in length.
+     *
      * The backup is stored in the cluster identified by the prefix of the backup
      * name of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -1210,6 +1208,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * The final segment of the name must be between 1 and 50 characters
      * in length.
+     *
      * The backup is stored in the cluster identified by the prefix of the backup
      * name of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -1240,6 +1239,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * The final segment of the name must be between 1 and 50 characters
      * in length.
+     *
      * The backup is stored in the cluster identified by the prefix of the backup
      * name of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -1269,6 +1269,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * The final segment of the name must be between 1 and 50 characters
      * in length.
+     *
      * The backup is stored in the cluster identified by the prefix of the backup
      * name of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -1294,6 +1295,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * The final segment of the name must be between 1 and 50 characters
      * in length.
+     *
      * The backup is stored in the cluster identified by the prefix of the backup
      * name of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.

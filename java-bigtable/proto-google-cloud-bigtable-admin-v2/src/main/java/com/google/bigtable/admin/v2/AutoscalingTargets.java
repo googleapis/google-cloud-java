@@ -45,11 +45,6 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     return new AutoscalingTargets();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_AutoscalingTargets_descriptor;

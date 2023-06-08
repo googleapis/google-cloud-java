@@ -45,11 +45,6 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
     return new UpdateInstanceMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
         .internal_static_google_bigtable_admin_v2_UpdateInstanceMetadata_descriptor;

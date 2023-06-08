@@ -45,11 +45,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     return new GcRule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.TableProto
         .internal_static_google_bigtable_admin_v2_GcRule_descriptor;
@@ -148,11 +143,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Intersection();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1132,11 +1122,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       return new Union();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.TableProto
           .internal_static_google_bigtable_admin_v2_GcRule_Union_descriptor;
@@ -2028,6 +2013,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int ruleCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rule_;
 
   public enum RuleCase

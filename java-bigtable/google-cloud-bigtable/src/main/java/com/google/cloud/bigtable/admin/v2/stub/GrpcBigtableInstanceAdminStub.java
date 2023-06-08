@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.AppProfile;
 import com.google.bigtable.admin.v2.Cluster;
@@ -56,7 +57,6 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -370,9 +370,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(createInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
@@ -380,9 +380,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
@@ -390,9 +390,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Instance, Instance> updateInstanceTransportSettings =
@@ -400,9 +400,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PartialUpdateInstanceRequest, Operation>
@@ -411,9 +411,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                 .setMethodDescriptor(partialUpdateInstanceMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("instance.name", String.valueOf(request.getInstance().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance.name", String.valueOf(request.getInstance().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteInstanceRequest, Empty> deleteInstanceTransportSettings =
@@ -421,9 +421,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
@@ -431,9 +431,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
@@ -441,9 +441,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
@@ -451,9 +451,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Cluster, Operation> updateClusterTransportSettings =
@@ -461,9 +461,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PartialUpdateClusterRequest, Operation> partialUpdateClusterTransportSettings =
@@ -471,9 +471,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(partialUpdateClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("cluster.name", String.valueOf(request.getCluster().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Empty> deleteClusterTransportSettings =
@@ -481,9 +481,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileTransportSettings =
@@ -491,9 +491,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(createAppProfileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAppProfileRequest, AppProfile> getAppProfileTransportSettings =
@@ -501,9 +501,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(getAppProfileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAppProfilesRequest, ListAppProfilesResponse>
@@ -512,9 +512,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                 .setMethodDescriptor(listAppProfilesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileTransportSettings =
@@ -522,9 +522,10 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(updateAppProfileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("app_profile.name", String.valueOf(request.getAppProfile().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "app_profile.name", String.valueOf(request.getAppProfile().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteAppProfileRequest, Empty> deleteAppProfileTransportSettings =
@@ -532,9 +533,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(deleteAppProfileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -542,9 +543,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -552,9 +553,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -563,9 +564,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListHotTabletsRequest, ListHotTabletsResponse>
@@ -574,9 +575,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                 .setMethodDescriptor(listHotTabletsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

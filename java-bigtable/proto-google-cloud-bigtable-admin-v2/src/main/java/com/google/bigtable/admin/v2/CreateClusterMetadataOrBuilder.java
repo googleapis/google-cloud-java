@@ -137,6 +137,7 @@ public interface CreateClusterMetadataOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
    * to the instance by a later API call will be created in the new cluster by
    * that API call, not this one.
+   *
    * Values: information on how much of a table's data has been copied to the
    * newly-created cluster so far.
    * </pre>
@@ -155,6 +156,7 @@ public interface CreateClusterMetadataOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
    * to the instance by a later API call will be created in the new cluster by
    * that API call, not this one.
+   *
    * Values: information on how much of a table's data has been copied to the
    * newly-created cluster so far.
    * </pre>
@@ -177,6 +179,7 @@ public interface CreateClusterMetadataOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
    * to the instance by a later API call will be created in the new cluster by
    * that API call, not this one.
+   *
    * Values: information on how much of a table's data has been copied to the
    * newly-created cluster so far.
    * </pre>
@@ -196,6 +199,7 @@ public interface CreateClusterMetadataOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
    * to the instance by a later API call will be created in the new cluster by
    * that API call, not this one.
+   *
    * Values: information on how much of a table's data has been copied to the
    * newly-created cluster so far.
    * </pre>
@@ -218,6 +222,7 @@ public interface CreateClusterMetadataOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
    * to the instance by a later API call will be created in the new cluster by
    * that API call, not this one.
+   *
    * Values: information on how much of a table's data has been copied to the
    * newly-created cluster so far.
    * </pre>

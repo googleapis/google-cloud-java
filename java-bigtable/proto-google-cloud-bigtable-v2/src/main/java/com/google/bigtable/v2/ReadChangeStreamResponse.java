@@ -46,11 +46,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     return new ReadChangeStreamResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_ReadChangeStreamResponse_descriptor;
@@ -181,11 +176,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       return new MutationChunk();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.BigtableProto
           .internal_static_google_bigtable_v2_ReadChangeStreamResponse_MutationChunk_descriptor;
@@ -273,11 +263,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ChunkInfo();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2288,11 +2273,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DataChange();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5035,11 +5015,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       return new Heartbeat();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.BigtableProto
           .internal_static_google_bigtable_v2_ReadChangeStreamResponse_Heartbeat_descriptor;
@@ -6263,11 +6238,6 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CloseStream();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8016,6 +7986,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   }
 
   private int streamRecordCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamRecord_;
 
   public enum StreamRecordCase

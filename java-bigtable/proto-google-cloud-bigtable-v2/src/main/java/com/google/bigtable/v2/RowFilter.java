@@ -29,9 +29,11 @@ package com.google.bigtable.v2;
  * can be composed out of these components to express requests such as, "within
  * every column of a particular family, give just the two most recent cells
  * which are older than timestamp X."
+ *
  * There are two broad categories of RowFilters (true filters and transformers),
  * as well as two ways to compose simple filters into more complex ones
  * (chains and interleaves). They work as follows:
+ *
  * * True filters alter the input row by excluding some of its cells wholesale
  * from the output row. An example of a true filter is the `value_regex_filter`,
  * which excludes cells whose values don't match the specified pattern. All
@@ -41,12 +43,15 @@ package com.google.bigtable.v2;
  * `RE2([^&#92;n])`, meaning that it does not match newlines. When attempting to
  * match an arbitrary byte, you should therefore use the escape sequence `&#92;C`,
  * which may need to be further escaped as `&#92;&#92;C` in your client language.
+ *
  * * Transformers alter the input row by changing the values of some of its
  * cells in the output, without excluding them completely. Currently, the only
  * supported transformer is the `strip_value_transformer`, which replaces every
  * cell's value with the empty string.
+ *
  * * Chains and interleaves are described in more detail in the
  * RowFilter.Chain and RowFilter.Interleave documentation.
+ *
  * The total serialized size of a RowFilter message must not
  * exceed 20480 bytes, and RowFilters may not be nested within each other
  * (in Chains or Interleaves) to a depth of more than 20.
@@ -70,11 +75,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RowFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -183,11 +183,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Chain();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1139,6 +1134,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1156,6 +1152,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1171,6 +1168,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1188,6 +1186,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1203,6 +1202,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1220,6 +1220,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1235,6 +1236,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1252,6 +1254,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1267,6 +1270,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1284,6 +1288,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1321,11 +1326,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return new Interleave();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.DataProto
           .internal_static_google_bigtable_v2_RowFilter_Interleave_descriptor;
@@ -1354,6 +1354,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1371,6 +1372,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1389,6 +1391,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1406,6 +1409,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1425,6 +1429,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1442,6 +1447,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1460,6 +1466,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1477,6 +1484,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1495,6 +1503,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * If multiple cells are produced with the same column and timestamp,
      * they will all appear in the output row in an unspecified mutual order.
      * Consider the following example, with three filters:
+     *
      *                                  input row
      *                                      |
      *            -----------------------------------------------------
@@ -1512,6 +1521,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *     4:                      far,bar,7,a
      *     5:                      far,blah,5,x   // identical to #6
      *     6:                      far,blah,5,x   // identical to #5
+     *
      * All interleaved filters are executed atomically.
      * </pre>
      *
@@ -1940,6 +1950,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -1957,6 +1968,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -1978,6 +1990,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -1995,6 +2008,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2016,6 +2030,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2033,6 +2048,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2054,6 +2070,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2071,6 +2088,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2098,6 +2116,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2115,6 +2134,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2140,6 +2160,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2157,6 +2178,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2184,6 +2206,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2201,6 +2224,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2228,6 +2252,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2245,6 +2270,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2269,6 +2295,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2286,6 +2313,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2311,6 +2339,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2328,6 +2357,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2353,6 +2383,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2370,6 +2401,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2394,6 +2426,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2411,6 +2444,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2435,6 +2469,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2452,6 +2487,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2469,6 +2505,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2486,6 +2523,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2507,6 +2545,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2524,6 +2563,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2546,6 +2586,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2563,6 +2604,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2581,6 +2623,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2598,6 +2641,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2616,6 +2660,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        * If multiple cells are produced with the same column and timestamp,
        * they will all appear in the output row in an unspecified mutual order.
        * Consider the following example, with three filters:
+       *
        *                                  input row
        *                                      |
        *            -----------------------------------------------------
@@ -2633,6 +2678,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
        *     4:                      far,bar,7,a
        *     5:                      far,blah,5,x   // identical to #6
        *     6:                      far,blah,5,x   // identical to #5
+       *
        * All interleaved filters are executed atomically.
        * </pre>
        *
@@ -2851,6 +2897,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A RowFilter which evaluates one of two possible RowFilters, depending on
    * whether or not a predicate RowFilter outputs any cells from the input row.
+   *
    * IMPORTANT NOTE: The predicate filter does not execute atomically with the
    * true and false filters, which may lead to inconsistent or unexpected
    * results. Additionally, Condition filters have poor performance, especially
@@ -2875,11 +2922,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Condition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3258,6 +3300,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A RowFilter which evaluates one of two possible RowFilters, depending on
      * whether or not a predicate RowFilter outputs any cells from the input row.
+     *
      * IMPORTANT NOTE: The predicate filter does not execute atomically with the
      * true and false filters, which may lead to inconsistent or unexpected
      * results. Additionally, Condition filters have poor performance, especially
@@ -4132,6 +4175,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase
@@ -4400,6 +4445,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * Hook for introspection into the RowFilter. Outputs all cells directly to
    * the output of the read rather than to any parent filter. Consider the
    * following example:
+   *
    *     Chain(
    *       FamilyRegex("A"),
    *       Interleave(
@@ -4408,6 +4454,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *       ),
    *       QualifierRegex("B")
    *     )
+   *
    *                         A,A,1,w
    *                         A,B,2,x
    *                         B,B,4,z
@@ -4440,14 +4487,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *                         A,A,1,w,labels:[foo]
    *                         A,B,2,x,labels:[foo]  // could be switched
    *                         A,B,2,x               // could be switched
+   *
    * Despite being excluded by the qualifier filter, a copy of every cell
    * that reaches the sink is present in the final result.
+   *
    * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
    * duplicate cells are possible, and appear in an unspecified mutual order.
    * In this case we have a duplicate with column "A:B" and timestamp 2,
    * because one copy passed through the all filter while the other was
    * passed through the label and sink. Note that one copy has label "foo",
    * while the other does not.
+   *
    * Cannot be used within the `predicate_filter`, `true_filter`, or
    * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
    * </pre>
@@ -4468,6 +4518,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * Hook for introspection into the RowFilter. Outputs all cells directly to
    * the output of the read rather than to any parent filter. Consider the
    * following example:
+   *
    *     Chain(
    *       FamilyRegex("A"),
    *       Interleave(
@@ -4476,6 +4527,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *       ),
    *       QualifierRegex("B")
    *     )
+   *
    *                         A,A,1,w
    *                         A,B,2,x
    *                         B,B,4,z
@@ -4508,14 +4560,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *                         A,A,1,w,labels:[foo]
    *                         A,B,2,x,labels:[foo]  // could be switched
    *                         A,B,2,x               // could be switched
+   *
    * Despite being excluded by the qualifier filter, a copy of every cell
    * that reaches the sink is present in the final result.
+   *
    * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
    * duplicate cells are possible, and appear in an unspecified mutual order.
    * In this case we have a duplicate with column "A:B" and timestamp 2,
    * because one copy passed through the all filter while the other was
    * passed through the label and sink. Note that one copy has label "foo",
    * while the other does not.
+   *
    * Cannot be used within the `predicate_filter`, `true_filter`, or
    * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
    * </pre>
@@ -5182,8 +5237,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -5206,8 +5263,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -5243,8 +5302,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -5728,9 +5789,11 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * can be composed out of these components to express requests such as, "within
    * every column of a particular family, give just the two most recent cells
    * which are older than timestamp X."
+   *
    * There are two broad categories of RowFilters (true filters and transformers),
    * as well as two ways to compose simple filters into more complex ones
    * (chains and interleaves). They work as follows:
+   *
    * * True filters alter the input row by excluding some of its cells wholesale
    * from the output row. An example of a true filter is the `value_regex_filter`,
    * which excludes cells whose values don't match the specified pattern. All
@@ -5740,12 +5803,15 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * `RE2([^&#92;n])`, meaning that it does not match newlines. When attempting to
    * match an arbitrary byte, you should therefore use the escape sequence `&#92;C`,
    * which may need to be further escaped as `&#92;&#92;C` in your client language.
+   *
    * * Transformers alter the input row by changing the values of some of its
    * cells in the output, without excluding them completely. Currently, the only
    * supported transformer is the `strip_value_transformer`, which replaces every
    * cell's value with the empty string.
+   *
    * * Chains and interleaves are described in more detail in the
    * RowFilter.Chain and RowFilter.Interleave documentation.
+   *
    * The total serialized size of a RowFilter message must not
    * exceed 20480 bytes, and RowFilters may not be nested within each other
    * (in Chains or Interleaves) to a depth of more than 20.
@@ -6853,6 +6919,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Hook for introspection into the RowFilter. Outputs all cells directly to
      * the output of the read rather than to any parent filter. Consider the
      * following example:
+     *
      *     Chain(
      *       FamilyRegex("A"),
      *       Interleave(
@@ -6861,6 +6928,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *       ),
      *       QualifierRegex("B")
      *     )
+     *
      *                         A,A,1,w
      *                         A,B,2,x
      *                         B,B,4,z
@@ -6893,14 +6961,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *                         A,A,1,w,labels:[foo]
      *                         A,B,2,x,labels:[foo]  // could be switched
      *                         A,B,2,x               // could be switched
+     *
      * Despite being excluded by the qualifier filter, a copy of every cell
      * that reaches the sink is present in the final result.
+     *
      * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
      * duplicate cells are possible, and appear in an unspecified mutual order.
      * In this case we have a duplicate with column "A:B" and timestamp 2,
      * because one copy passed through the all filter while the other was
      * passed through the label and sink. Note that one copy has label "foo",
      * while the other does not.
+     *
      * Cannot be used within the `predicate_filter`, `true_filter`, or
      * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
      * </pre>
@@ -6920,6 +6991,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Hook for introspection into the RowFilter. Outputs all cells directly to
      * the output of the read rather than to any parent filter. Consider the
      * following example:
+     *
      *     Chain(
      *       FamilyRegex("A"),
      *       Interleave(
@@ -6928,6 +7000,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *       ),
      *       QualifierRegex("B")
      *     )
+     *
      *                         A,A,1,w
      *                         A,B,2,x
      *                         B,B,4,z
@@ -6960,14 +7033,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *                         A,A,1,w,labels:[foo]
      *                         A,B,2,x,labels:[foo]  // could be switched
      *                         A,B,2,x               // could be switched
+     *
      * Despite being excluded by the qualifier filter, a copy of every cell
      * that reaches the sink is present in the final result.
+     *
      * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
      * duplicate cells are possible, and appear in an unspecified mutual order.
      * In this case we have a duplicate with column "A:B" and timestamp 2,
      * because one copy passed through the all filter while the other was
      * passed through the label and sink. Note that one copy has label "foo",
      * while the other does not.
+     *
      * Cannot be used within the `predicate_filter`, `true_filter`, or
      * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
      * </pre>
@@ -6990,6 +7066,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Hook for introspection into the RowFilter. Outputs all cells directly to
      * the output of the read rather than to any parent filter. Consider the
      * following example:
+     *
      *     Chain(
      *       FamilyRegex("A"),
      *       Interleave(
@@ -6998,6 +7075,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *       ),
      *       QualifierRegex("B")
      *     )
+     *
      *                         A,A,1,w
      *                         A,B,2,x
      *                         B,B,4,z
@@ -7030,14 +7108,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *                         A,A,1,w,labels:[foo]
      *                         A,B,2,x,labels:[foo]  // could be switched
      *                         A,B,2,x               // could be switched
+     *
      * Despite being excluded by the qualifier filter, a copy of every cell
      * that reaches the sink is present in the final result.
+     *
      * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
      * duplicate cells are possible, and appear in an unspecified mutual order.
      * In this case we have a duplicate with column "A:B" and timestamp 2,
      * because one copy passed through the all filter while the other was
      * passed through the label and sink. Note that one copy has label "foo",
      * while the other does not.
+     *
      * Cannot be used within the `predicate_filter`, `true_filter`, or
      * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
      * </pre>
@@ -7062,6 +7143,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Hook for introspection into the RowFilter. Outputs all cells directly to
      * the output of the read rather than to any parent filter. Consider the
      * following example:
+     *
      *     Chain(
      *       FamilyRegex("A"),
      *       Interleave(
@@ -7070,6 +7152,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *       ),
      *       QualifierRegex("B")
      *     )
+     *
      *                         A,A,1,w
      *                         A,B,2,x
      *                         B,B,4,z
@@ -7102,14 +7185,17 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *                         A,A,1,w,labels:[foo]
      *                         A,B,2,x,labels:[foo]  // could be switched
      *                         A,B,2,x               // could be switched
+     *
      * Despite being excluded by the qualifier filter, a copy of every cell
      * that reaches the sink is present in the final result.
+     *
      * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
      * duplicate cells are possible, and appear in an unspecified mutual order.
      * In this case we have a duplicate with column "A:B" and timestamp 2,
      * because one copy passed through the all filter while the other was
      * passed through the label and sink. Note that one copy has label "foo",
      * while the other does not.
+     *
      * Cannot be used within the `predicate_filter`, `true_filter`, or
      * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
      * </pre>
@@ -8732,8 +8818,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -8757,8 +8845,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -8795,8 +8885,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -8833,8 +8925,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -8864,8 +8958,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -8893,8 +8989,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      * Applies the given label to all cells in the output row. This allows
      * the client to determine which results were produced from which part of
      * the filter.
+     *
      * Values must be at most 15 characters in length, and match the RE2
      * pattern `[a-z0-9&#92;&#92;-]+`
+     *
      * Due to a technical limitation, it is not currently possible to apply
      * multiple labels to a cell. As a result, a Chain may have no more than
      * one sub-filter which contains a `apply_label_transformer`. It is okay for

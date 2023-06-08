@@ -123,7 +123,7 @@ public interface ValueRangeOrBuilder
    */
   com.google.protobuf.ByteString getEndValueOpen();
 
-  public com.google.bigtable.v2.ValueRange.StartValueCase getStartValueCase();
+  com.google.bigtable.v2.ValueRange.StartValueCase getStartValueCase();
 
-  public com.google.bigtable.v2.ValueRange.EndValueCase getEndValueCase();
+  com.google.bigtable.v2.ValueRange.EndValueCase getEndValueCase();
 }

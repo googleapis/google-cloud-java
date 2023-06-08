@@ -49,11 +49,6 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     return new ReadRowsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_ReadRowsRequest_descriptor;
@@ -74,6 +69,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The desired view into RequestStats that should be returned in the response.
+   *
    * See also: RequestStats message.
    * </pre>
    *

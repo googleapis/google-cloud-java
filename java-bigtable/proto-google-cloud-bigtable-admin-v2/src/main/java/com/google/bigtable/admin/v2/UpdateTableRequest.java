@@ -46,11 +46,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateTableRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
         .internal_static_google_bigtable_admin_v2_UpdateTableRequest_descriptor;
@@ -125,11 +120,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The list of fields to update.
-   * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+   * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
    * field should be updated. This mask is relative to the `table` field, not to
    * the request message. The wildcard (*) path is currently not supported.
-   * Currently UpdateTable is only supported for the following field:
-   *  * `deletion_protection`
+   * Currently UpdateTable is only supported for the following fields:
+   *
+   * * `change_stream_config`
+   * * `change_stream_config.retention_period`
+   * * `deletion_protection`
+   *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
    * </pre>
@@ -148,11 +147,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The list of fields to update.
-   * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+   * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
    * field should be updated. This mask is relative to the `table` field, not to
    * the request message. The wildcard (*) path is currently not supported.
-   * Currently UpdateTable is only supported for the following field:
-   *  * `deletion_protection`
+   * Currently UpdateTable is only supported for the following fields:
+   *
+   * * `change_stream_config`
+   * * `change_stream_config.retention_period`
+   * * `deletion_protection`
+   *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
    * </pre>
@@ -171,11 +174,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The list of fields to update.
-   * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+   * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
    * field should be updated. This mask is relative to the `table` field, not to
    * the request message. The wildcard (*) path is currently not supported.
-   * Currently UpdateTable is only supported for the following field:
-   *  * `deletion_protection`
+   * Currently UpdateTable is only supported for the following fields:
+   *
+   * * `change_stream_config`
+   * * `change_stream_config.retention_period`
+   * * `deletion_protection`
+   *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
    * </pre>
@@ -777,11 +784,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -799,11 +810,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -827,11 +842,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -857,11 +876,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -884,11 +907,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -917,11 +944,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -944,11 +975,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -966,11 +1001,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>
@@ -992,11 +1031,15 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The list of fields to update.
-     * A mask specifying which fields (e.g. `deletion_protection`) in the `table`
+     * A mask specifying which fields (e.g. `change_stream_config`) in the `table`
      * field should be updated. This mask is relative to the `table` field, not to
      * the request message. The wildcard (*) path is currently not supported.
-     * Currently UpdateTable is only supported for the following field:
-     *  * `deletion_protection`
+     * Currently UpdateTable is only supported for the following fields:
+     *
+     * * `change_stream_config`
+     * * `change_stream_config.retention_period`
+     * * `deletion_protection`
+     *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
      * </pre>

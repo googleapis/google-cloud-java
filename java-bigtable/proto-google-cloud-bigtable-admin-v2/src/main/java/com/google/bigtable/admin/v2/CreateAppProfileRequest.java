@@ -48,11 +48,6 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     return new CreateAppProfileRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
         .internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_descriptor;

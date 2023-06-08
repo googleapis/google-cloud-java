@@ -49,11 +49,6 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     return new ModifyColumnFamiliesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
         .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
@@ -202,8 +197,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      */
     boolean getDrop();
 
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase
-        getModCase();
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase getModCase();
   }
   /**
    *
@@ -234,11 +228,6 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       return new Modification();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
           .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
@@ -255,6 +244,8 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     private int modCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object mod_;
 
     public enum ModCase

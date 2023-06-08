@@ -159,5 +159,5 @@ public interface GcRuleOrBuilder
    */
   com.google.bigtable.admin.v2.GcRule.UnionOrBuilder getUnionOrBuilder();
 
-  public com.google.bigtable.admin.v2.GcRule.RuleCase getRuleCase();
+  com.google.bigtable.admin.v2.GcRule.RuleCase getRuleCase();
 }

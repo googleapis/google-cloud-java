@@ -49,11 +49,6 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     return new ReadChangeStreamRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
         .internal_static_google_bigtable_v2_ReadChangeStreamRequest_descriptor;
@@ -70,6 +65,8 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   }
 
   private int startFromCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object startFrom_;
 
   public enum StartFromCase
@@ -351,6 +348,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
    * previously left off. If specified, changes will be read starting at the
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
+   *
    * If a single token is provided, the token’s partition must exactly match
    * the request’s partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
@@ -374,6 +372,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
    * previously left off. If specified, changes will be read starting at the
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
+   *
    * If a single token is provided, the token’s partition must exactly match
    * the request’s partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
@@ -400,6 +399,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
    * previously left off. If specified, changes will be read starting at the
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
+   *
    * If a single token is provided, the token’s partition must exactly match
    * the request’s partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
@@ -1762,6 +1762,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1785,6 +1786,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1818,6 +1820,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1848,6 +1851,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1876,6 +1880,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1916,6 +1921,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1949,6 +1955,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1969,6 +1976,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly
@@ -1998,6 +2006,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
      * previously left off. If specified, changes will be read starting at the
      * the position. Tokens are delivered on the stream as part of `Heartbeat`
      * and `CloseStream` messages.
+     *
      * If a single token is provided, the token’s partition must exactly match
      * the request’s partition. If multiple tokens are provided, as in the case
      * of a partition merge, the union of the token partitions must exactly

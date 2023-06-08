@@ -50,11 +50,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     return new AppProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
@@ -154,18 +149,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private MultiClusterRoutingUseAny() {
-      clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clusterIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MultiClusterRoutingUseAny();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -186,7 +176,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList clusterIds_;
+    private com.google.protobuf.LazyStringArrayList clusterIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -464,8 +455,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -495,7 +485,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result =
             new com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -503,18 +492,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          clusterIds_ = clusterIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.clusterIds_ = clusterIds_;
-      }
-
       private void buildPartial0(
           com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          clusterIds_.makeImmutable();
+          result.clusterIds_ = clusterIds_;
+        }
       }
 
       @java.lang.Override
@@ -571,7 +555,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         if (!other.clusterIds_.isEmpty()) {
           if (clusterIds_.isEmpty()) {
             clusterIds_ = other.clusterIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureClusterIdsIsMutable();
             clusterIds_.addAll(other.clusterIds_);
@@ -630,14 +614,14 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList clusterIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList clusterIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureClusterIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!clusterIds_.isModifiable()) {
           clusterIds_ = new com.google.protobuf.LazyStringArrayList(clusterIds_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -652,7 +636,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the clusterIds.
        */
       public com.google.protobuf.ProtocolStringList getClusterIdsList() {
-        return clusterIds_.getUnmodifiableView();
+        clusterIds_.makeImmutable();
+        return clusterIds_;
       }
       /**
        *
@@ -721,6 +706,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         }
         ensureClusterIdsIsMutable();
         clusterIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -743,6 +729,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         }
         ensureClusterIdsIsMutable();
         clusterIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -762,6 +749,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllClusterIds(java.lang.Iterable<java.lang.String> values) {
         ensureClusterIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clusterIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -778,8 +766,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearClusterIds() {
-        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -803,6 +792,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureClusterIdsIsMutable();
         clusterIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -948,11 +938,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SingleClusterRouting();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1648,6 +1633,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int routingPolicyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object routingPolicy_;
 
   public enum RoutingPolicyCase

@@ -52,11 +52,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return new Cluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_Cluster_descriptor;
@@ -399,11 +394,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ClusterAutoscalingConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1483,11 +1473,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return new ClusterConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.InstanceProto
           .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_descriptor;
@@ -2273,11 +2258,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return new EncryptionConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.InstanceProto
           .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor;
@@ -2926,6 +2906,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase

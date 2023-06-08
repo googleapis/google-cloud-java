@@ -163,5 +163,5 @@ public interface MutationOrBuilder
    */
   com.google.bigtable.v2.Mutation.DeleteFromRowOrBuilder getDeleteFromRowOrBuilder();
 
-  public com.google.bigtable.v2.Mutation.MutationCase getMutationCase();
+  com.google.bigtable.v2.Mutation.MutationCase getMutationCase();
 }

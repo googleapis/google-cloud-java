@@ -127,5 +127,5 @@ public interface RestoreTableRequestOrBuilder
    */
   com.google.protobuf.ByteString getBackupBytes();
 
-  public com.google.bigtable.admin.v2.RestoreTableRequest.SourceCase getSourceCase();
+  com.google.bigtable.admin.v2.RestoreTableRequest.SourceCase getSourceCase();
 }

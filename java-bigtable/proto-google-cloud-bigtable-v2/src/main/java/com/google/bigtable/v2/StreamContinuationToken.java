@@ -49,11 +49,6 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
     return new StreamContinuationToken();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.DataProto
         .internal_static_google_bigtable_v2_StreamContinuationToken_descriptor;

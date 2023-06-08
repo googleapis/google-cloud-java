@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.BackupName;
+import com.google.bigtable.admin.v2.ChangeStreamConfig;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.ClusterName;
@@ -143,6 +144,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -191,6 +193,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -239,6 +242,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -299,6 +303,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -357,6 +362,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -417,6 +423,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -563,6 +570,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -605,6 +613,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -647,6 +656,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -768,6 +778,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -818,6 +829,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =
@@ -868,6 +880,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -914,6 +927,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -2058,6 +2072,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
             .build();
     Operation resultOperation =

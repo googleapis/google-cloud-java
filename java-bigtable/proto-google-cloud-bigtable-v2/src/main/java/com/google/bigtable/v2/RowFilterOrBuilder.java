@@ -145,6 +145,7 @@ public interface RowFilterOrBuilder
    * Hook for introspection into the RowFilter. Outputs all cells directly to
    * the output of the read rather than to any parent filter. Consider the
    * following example:
+   *
    *     Chain(
    *       FamilyRegex("A"),
    *       Interleave(
@@ -153,6 +154,7 @@ public interface RowFilterOrBuilder
    *       ),
    *       QualifierRegex("B")
    *     )
+   *
    *                         A,A,1,w
    *                         A,B,2,x
    *                         B,B,4,z
@@ -185,14 +187,17 @@ public interface RowFilterOrBuilder
    *                         A,A,1,w,labels:[foo]
    *                         A,B,2,x,labels:[foo]  // could be switched
    *                         A,B,2,x               // could be switched
+   *
    * Despite being excluded by the qualifier filter, a copy of every cell
    * that reaches the sink is present in the final result.
+   *
    * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
    * duplicate cells are possible, and appear in an unspecified mutual order.
    * In this case we have a duplicate with column "A:B" and timestamp 2,
    * because one copy passed through the all filter while the other was
    * passed through the label and sink. Note that one copy has label "foo",
    * while the other does not.
+   *
    * Cannot be used within the `predicate_filter`, `true_filter`, or
    * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
    * </pre>
@@ -210,6 +215,7 @@ public interface RowFilterOrBuilder
    * Hook for introspection into the RowFilter. Outputs all cells directly to
    * the output of the read rather than to any parent filter. Consider the
    * following example:
+   *
    *     Chain(
    *       FamilyRegex("A"),
    *       Interleave(
@@ -218,6 +224,7 @@ public interface RowFilterOrBuilder
    *       ),
    *       QualifierRegex("B")
    *     )
+   *
    *                         A,A,1,w
    *                         A,B,2,x
    *                         B,B,4,z
@@ -250,14 +257,17 @@ public interface RowFilterOrBuilder
    *                         A,A,1,w,labels:[foo]
    *                         A,B,2,x,labels:[foo]  // could be switched
    *                         A,B,2,x               // could be switched
+   *
    * Despite being excluded by the qualifier filter, a copy of every cell
    * that reaches the sink is present in the final result.
+   *
    * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
    * duplicate cells are possible, and appear in an unspecified mutual order.
    * In this case we have a duplicate with column "A:B" and timestamp 2,
    * because one copy passed through the all filter while the other was
    * passed through the label and sink. Note that one copy has label "foo",
    * while the other does not.
+   *
    * Cannot be used within the `predicate_filter`, `true_filter`, or
    * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
    * </pre>
@@ -736,8 +746,10 @@ public interface RowFilterOrBuilder
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -758,8 +770,10 @@ public interface RowFilterOrBuilder
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -780,8 +794,10 @@ public interface RowFilterOrBuilder
    * Applies the given label to all cells in the output row. This allows
    * the client to determine which results were produced from which part of
    * the filter.
+   *
    * Values must be at most 15 characters in length, and match the RE2
    * pattern `[a-z0-9&#92;&#92;-]+`
+   *
    * Due to a technical limitation, it is not currently possible to apply
    * multiple labels to a cell. As a result, a Chain may have no more than
    * one sub-filter which contains a `apply_label_transformer`. It is okay for
@@ -796,5 +812,5 @@ public interface RowFilterOrBuilder
    */
   com.google.protobuf.ByteString getApplyLabelTransformerBytes();
 
-  public com.google.bigtable.v2.RowFilter.FilterCase getFilterCase();
+  com.google.bigtable.v2.RowFilter.FilterCase getFilterCase();
 }

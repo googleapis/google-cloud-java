@@ -45,11 +45,6 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     return new ColumnFamily();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.TableProto
         .internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor;
@@ -73,6 +68,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.
+   *
    * NOTE: Garbage collection executes opportunistically in the background, and
    * so it's possible for reads to return a cell even if it matches the active
    * GC expression for its family.
@@ -92,6 +88,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.
+   *
    * NOTE: Garbage collection executes opportunistically in the background, and
    * so it's possible for reads to return a cell even if it matches the active
    * GC expression for its family.
@@ -111,6 +108,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.
+   *
    * NOTE: Garbage collection executes opportunistically in the background, and
    * so it's possible for reads to return a cell even if it matches the active
    * GC expression for its family.
@@ -483,6 +481,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -501,6 +500,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -523,6 +523,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -549,6 +550,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -572,6 +574,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -601,6 +604,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -624,6 +628,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -642,6 +647,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.
@@ -662,6 +668,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Garbage collection rule specified as a protobuf.
      * Must serialize to at most 500 bytes.
+     *
      * NOTE: Garbage collection executes opportunistically in the background, and
      * so it's possible for reads to return a cell even if it matches the active
      * GC expression for its family.

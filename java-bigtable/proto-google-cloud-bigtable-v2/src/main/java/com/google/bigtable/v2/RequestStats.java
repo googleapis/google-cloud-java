@@ -48,11 +48,6 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     return new RequestStats();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.RequestStatsProto
         .internal_static_google_bigtable_v2_RequestStats_descriptor;
@@ -69,6 +64,8 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int statsViewCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object statsView_;
 
   public enum StatsViewCase

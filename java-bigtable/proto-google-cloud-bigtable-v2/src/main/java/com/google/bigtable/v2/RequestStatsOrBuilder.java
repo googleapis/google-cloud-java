@@ -61,5 +61,5 @@ public interface RequestStatsOrBuilder
    */
   com.google.bigtable.v2.FullReadStatsViewOrBuilder getFullReadStatsViewOrBuilder();
 
-  public com.google.bigtable.v2.RequestStats.StatsViewCase getStatsViewCase();
+  com.google.bigtable.v2.RequestStats.StatsViewCase getStatsViewCase();
 }
