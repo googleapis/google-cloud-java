@@ -34,7 +34,7 @@ chmod +x protoc-gen-grpc-java
 # gapic-generator-java
 curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/api/gapic-generator-java/2.19.0/gapic-generator-java-2.19.0.jar
 # define utility functions
-function remove_empty_files {
+remove_empty_files() {
   FOLDER=$1
   find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
   if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
@@ -42,7 +42,7 @@ function remove_empty_files {
   fi
 }
 
-function mv_src_files {
+mv_src_files() {
   FOLDER=$1 # one of gapic, proto, samples
   TYPE=$2 # one of main, test
   if [ "${FOLDER}" == "samples" ]; then
