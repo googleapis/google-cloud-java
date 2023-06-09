@@ -17,3 +17,5 @@ jobs:
         cd library_generation
         sh -x compare.sh
         echo "Comparison finished"
+      env:
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
