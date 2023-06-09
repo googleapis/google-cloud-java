@@ -9,7 +9,7 @@ jobs:
       shell: bash
       run: |
         cd library_generation
-        sh -x generate_library.sh 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0 21.12 1.54.1 2.19.0 google/monitoring/v3 true transport=grpc,rest-numeric-enums,grpc-service-config=google/monitoring/v3/monitoring_grpc_service_config.json,gapic-config=google/monitoring/v3/monitoring_gapic.yaml,api-service-config=google/monitoring/v3/monitoring.yaml
+        bash -x generate_library.sh 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0 21.12 1.54.1 2.19.0 google/monitoring/v3 true transport=grpc,rest-numeric-enums,grpc-service-config=google/monitoring/v3/monitoring_grpc_service_config.json,gapic-config=google/monitoring/v3/monitoring_gapic.yaml,api-service-config=google/monitoring/v3/monitoring.yaml
         echo "Code generation finished"
     - name: Compare with googleapis-gen
       shell: bash
