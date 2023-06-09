@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run when labeled and pushed by specific user
+      - name: Run when labeled and pushed by 'release-please-bot' user
         if: |
           github.event_name == 'pull_request' &&
           github.event.action == 'synchronize' &&
