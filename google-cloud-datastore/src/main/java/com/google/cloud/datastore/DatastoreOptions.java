@@ -155,6 +155,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     return namespace;
   }
 
+  @BetaApi
   public String getDatabaseId() {
     return this.databaseId;
   }
@@ -193,7 +194,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), namespace);
+    return Objects.hash(baseHashCode(), namespace, databaseId);
   }
 
   @Override
@@ -202,7 +203,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return false;
     }
     DatastoreOptions other = (DatastoreOptions) obj;
-    return baseEquals(other) && Objects.equals(namespace, other.namespace);
+    return baseEquals(other)
+        && Objects.equals(namespace, other.namespace)
+        && Objects.equals(databaseId, other.databaseId);
   }
 
   public static Builder newBuilder() {

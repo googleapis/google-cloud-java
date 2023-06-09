@@ -17,6 +17,7 @@
 package com.google.cloud.datastore;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -38,7 +39,6 @@ public class DatastoreOptionsTest {
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
 
-  // todo parameterize
   @Before
   public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
@@ -90,6 +90,12 @@ public class DatastoreOptionsTest {
     assertEquals(original.getHost(), copy.getHost());
     assertEquals(original.getRetrySettings(), copy.getRetrySettings());
     assertEquals(original.getCredentials(), copy.getCredentials());
+    assertEquals(original, copy);
+    assertEquals(original.hashCode(), copy.hashCode());
+
+    DatastoreOptions newOptions = options.setDatabaseId("new-database-id").build();
+    assertNotEquals(original, newOptions);
+    assertNotEquals(original.hashCode(), newOptions.hashCode());
   }
 
   @Test

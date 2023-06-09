@@ -148,6 +148,7 @@ public abstract class BaseKey implements Serializable {
     return namespace;
   }
 
+  @BetaApi
   public String getDatabaseId() {
     return databaseId;
   }

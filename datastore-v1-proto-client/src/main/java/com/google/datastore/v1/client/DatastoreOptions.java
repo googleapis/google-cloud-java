@@ -188,6 +188,7 @@ public class DatastoreOptions {
     return projectId;
   }
 
+  @BetaApi
   public String getDatabaseId() {
     return databaseId;
   }
