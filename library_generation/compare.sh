@@ -2,7 +2,7 @@
 
 set -e
 
-REPO_ROOT=$(pwd)
+REPO_ROOT=$(pwd)/..
 cd "${REPO_ROOT}"
 if [ ! -d googleapis-gen ]; then
   git clone https://github.com/googleapis/googleapis-gen.git

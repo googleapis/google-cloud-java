@@ -125,9 +125,3 @@ for proto_src in ${PROTO_FILES}; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
     cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
 done
-##################### Section 4 #####################
-# compare source code with googleapis-gen
-#####################################################
-echo "Compare source code with googleapis-gen"
-cd "${REPO_ROOT}"
-./compare.sh

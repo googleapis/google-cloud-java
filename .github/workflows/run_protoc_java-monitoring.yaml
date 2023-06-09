@@ -11,3 +11,9 @@ jobs:
         cd java-monitoring
         sh -x run_protoc.sh
         echo "Code generation finished"
+    - name: Compare with googleapis-gen
+      shell: bash
+      run: |
+        cd library_generation
+        sh -x compare.sh
+        echo "Comparison finished"
