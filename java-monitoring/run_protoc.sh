@@ -63,19 +63,23 @@ mv_src_files() {
     rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER_SUFFIX}"/java/META-INF
   fi
 }
+
+unzip_src_files() {
+  FOLDER=$1
+  JAR_FILE=monitoring_java_"${FOLDER}".jar
+  mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java
+  unzip -q -o "${LIBRARY_GEN_OUT}"/google/monitoring/v3/"${JAR_FILE}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java
+  rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java/META-INF
+}
 ##################### Section 1 #####################
 # generate grpc-*/
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
 "${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" \
-"--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" \
+"--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc.jar" \
 ${PROTO_FILES}
 
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java
-unzip -q -o "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java
-rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/META-INF
-# Remove empty files. If there are no resource names, one such file might have
-# been created. See java_gapic.bzl.
+unzip_src_files "grpc"
 remove_empty_files "grpc"
 ##################### Section 2 #####################
 # generate gapic-*/, proto-*/, samples/
@@ -113,14 +117,9 @@ mv_src_files "samples" "main"
 # generate proto-*/
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
-"${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" ${PROTO_FILES}
-
+"${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_proto.jar" ${PROTO_FILES}
 mv_src_files "proto" "main"
-
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
-unzip -q -o ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
-rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/META-INF
-
+unzip_src_files "proto"
 remove_empty_files "proto"
 
 for proto_src in ${PROTO_FILES}; do
