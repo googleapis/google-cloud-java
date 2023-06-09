@@ -33,6 +33,34 @@ curl -LJ -o protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-g
 chmod +x protoc-gen-grpc-java
 # gapic-generator-java
 curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/api/gapic-generator-java/2.19.0/gapic-generator-java-2.19.0.jar
+# define utility functions
+function remove_empty_files {
+  FOLDER=$1
+  find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
+  if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
+      mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER}"-google-cloud-monitoring-v3-java
+  fi
+}
+
+function mv_src_files {
+  FOLDER=$1 # one of gapic, proto, samples
+  TYPE=$2 # one of main, test
+  if [ "${FOLDER}" == "samples" ]; then
+    FOLDER_SUFFIX="samples/snippets/generated"
+    SRC_SUFFIX="samples/snippets/generated/src/main/java/com"
+  elif [ "${FOLDER}" == "proto" ]; then
+    FOLDER_SUFFIX="${FOLDER}"-google-cloud-monitoring-v3-java/src/"${TYPE}"
+    SRC_SUFFIX="${FOLDER}/src/${TYPE}/java"
+  else
+    FOLDER_SUFFIX="${FOLDER}"-google-cloud-monitoring-v3-java/src/"${TYPE}"
+    SRC_SUFFIX="src/${TYPE}/java"
+  fi
+  mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER_SUFFIX}"
+  cp -r "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar/"${SRC_SUFFIX}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER_SUFFIX}"
+  if [ "${FOLDER}" != "samples" ]; then
+    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/"${FOLDER_SUFFIX}"/java/META-INF
+  fi
+}
 ##################### Section 1 #####################
 # generate grpc-*/
 #####################################################
@@ -46,10 +74,7 @@ unzip -q -o "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_grpc-proto
 rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/META-INF
 # Remove empty files. If there are no resource names, one such file might have
 # been created. See java_gapic.bzl.
-find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
-if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-    mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
-fi
+remove_empty_files "grpc"
 ##################### Section 2 #####################
 # generate gapic-*/, proto-*/, samples/
 #####################################################
@@ -73,47 +98,29 @@ then
   mkdir -p "${PROTO_DIR}"
   touch "${PROTO_DIR}"/PlaceholderFile.java
 fi
-cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar/proto/src/main/java
-zip -r "${LIBRARY_GEN_OUT}"/monitoring_java_gapic_srcjar-resource-name.srcjar ./
 
 cd "${LIBRARY_GEN_OUT}"
 # Main source files.
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main
-cp -r "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar/src/main/java "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main
-rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/META-INF
-# Remove empty files. If there are no resource names, one such file might have
-# been created. See java_gapic.bzl.
-find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read f; do rm -f "${f}"; done
-
-if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-    mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
-fi
+mv_src_files "gapic" "main"
+remove_empty_files "gapic"
 # Test source files.
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test
-cp -r "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar/src/test/java -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test
-rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/src/test/java/META-INF
+mv_src_files "gapic" "test"
 # Sample source files.
-mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/samples/snippets/generated/
-cp -r "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar/samples/snippets/generated/src/main/java/com -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/samples/snippets/generated/
+mv_src_files "samples" "main"
 ##################### Section 3 #####################
 # generate proto-*/
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
 "${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" ${PROTO_FILES}
 
-for src in ${LIBRARY_GEN_OUT}/monitoring_java_gapic_srcjar-resource-name.srcjar ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar; do
-    mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
-    unzip -q -o "${src}" -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
-    rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/META-INF
+mv_src_files "proto" "main"
 
-    # Remove empty files. If there are no resource names, one such file might have
-    # been created. See java_gapic.bzl.
-    find "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java -type f -size 0 | while read -r f; do rm -f "${f}"; done
+mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
+unzip -q -o ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java
+rm -r -f "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/META-INF
 
-    if [ -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/samples ]; then
-        mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/java/samples "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
-    fi
-done
+remove_empty_files "proto"
+
 for proto_src in ${PROTO_FILES}; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
     cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/src/main/proto
