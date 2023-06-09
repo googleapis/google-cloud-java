@@ -1,0 +1,25 @@
+name: Module specific CHANGELOG.md generation
+
+on:
+  pull_request:
+    types:
+      - synchronize
+    branches:
+      - release-please--branches--main
+
+jobs:
+  autorelease:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run when labeled and pushed by 'release-please-bot' user
+        if: |
+          github.event_name == 'pull_request' &&
+          github.event.action == 'synchronize' &&
+          contains(github.event.pull_request.labels.*.name, 'autorelease: pending') &&
+          github.event.sender.login == 'release-please-bot'
+        run: |
+          echo "Performing changelog.md generation steps..."
