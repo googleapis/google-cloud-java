@@ -21,11 +21,13 @@ GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0
 PROTO_FILES=$(ls google/monitoring/v3/*.proto)
-# pull protoc executable from maven central
+# pull proto files and protoc from protobuf repository
+# maven central doesn't have proto files
 cd "${LIBRARY_GEN_OUT}"
-curl -LJ -o protoc https://repo1.maven.org/maven2/com/google/protobuf/protoc/3.21.12/protoc-3.21.12-linux-x86_64.exe
-chmod +x protoc
-PROTOC_ROOT="${LIBRARY_GEN_OUT}"
+curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
+unzip -o -q protobuf.zip -d protobuf/
+cp -r protobuf/include/google "${GOOGLEAPIS_ROOT}"
+PROTOC_ROOT=${LIBRARY_GEN_OUT}/protobuf/bin
 echo "protoc version: $("${PROTOC_ROOT}"/protoc --version)"
 # pull protoc-gen-grpc-java plugin from maven central
 cd "${LIBRARY_GEN_OUT}"
