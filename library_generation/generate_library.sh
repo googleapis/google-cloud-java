@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-set -e
+set -xe
 
 GOOGLEAPIS_COMMIT=$1
 PROTOBUF_VERSION=$2
 GRPC_VERSION=$3
 GAPIC_GENERATOR_VERSION=$4
 PROTO_PATH=$5
-IS_CLOUD_SDK=$6
+CONTAINS_CLOUD=$6
 JAVA_GAPIC_OPT=$7
 OUT_LAYER_FOLDER="${PROTO_PATH////-}-java"
-if [ "${IS_CLOUD_SDK}" == true ]; then
+if [ "${CONTAINS_CLOUD}" == true ]; then
   OUT_LAYER_FOLDER="${OUT_LAYER_FOLDER//google/google-cloud}"
 fi
 
@@ -104,7 +104,7 @@ ${PROTO_FILES} google/cloud/common_resources.proto
 
 unzip -o -q "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/java_gapic_srcjar_raw.srcjar.zip -d "${LIBRARY_GEN_OUT}"/${PROTO_PATH}
 # Sync'\''d to the output file name in Writer.java.
-unzip -o -q "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/temp-codegen.srcjar -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/java_gapic_srcjar
+unzip -o -q "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/temp-codegen.srcjar -d "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/java_gapic_srcjar
 # Resource name source files.
 PROTO_DIR=${LIBRARY_GEN_OUT}/${PROTO_PATH}/java_gapic_srcjar/proto/src/main/java
 if [ ! -d "${PROTO_DIR}" ]
@@ -136,5 +136,5 @@ remove_empty_files "proto"
 
 for proto_src in ${PROTO_FILES}; do
     mkdir -p "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/"${OUT_LAYER_FOLDER}"/proto-"${OUT_LAYER_FOLDER}"/src/main/proto
-    cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/"${OUT_LAYER_FOLDER}"/proto-"${OUT_LAYER_FOLDER}"/src/main/proto
+    cp -f --parents "${proto_src}" "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/"${OUT_LAYER_FOLDER}"/proto-"${OUT_LAYER_FOLDER}"/src/main/proto
 done
