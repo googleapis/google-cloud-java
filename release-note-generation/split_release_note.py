@@ -109,9 +109,9 @@ def main():
 
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
-
-    print(modules)
-
+    for module in modules:
+        changelog_entries = api_to_modules.get(module.api_name, ['No change'])
+        write_changelog(module, changelog_entries)
 
 if __name__ == '__main__':
     main()
