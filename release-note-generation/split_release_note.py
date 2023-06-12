@@ -38,7 +38,6 @@ POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
 def detect_modules(root_directory):
     modules = []
     for owlbot_yaml_path in root_directory.rglob('.OwlBot.yaml'):
-        print("file: ", owlbot_yaml_path)
 
         # This CHANGELOG.md might not exist for newly created libraries
         changelog = owlbot_yaml_path.parent / 'CHANGELOG.md'
@@ -50,7 +49,6 @@ def detect_modules(root_directory):
 
         with open(owlbot_yaml_path, 'r') as file:
             owlbot_yaml_content = file.read()
-            print("content read", owlbot_yaml_content)
             match = re.search(r'api-name: (.+)', owlbot_yaml_content)
             if match:
                 api_name = match.group(1)
@@ -75,16 +73,19 @@ def group_changes_by_api(main_changes: [str]):
 CHANGELOG_HEADER_MARK = '# Changelog'
 def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
     current_date = date.today()
-    print(current_date)
     changelog_entry = f'## {module.version} ({current_date})\n\n'
     for line in changelog_lines:
         changelog_entry += f'* {line}'
     return changelog_entry
 
 def write_changelog(module: LibraryModule, changelog_entries: [str]):
-    with open(module.changelog, 'r') as file:
-        changelog_content = file.read()
-    entry = create_changelog_entry()
+    changelog_file = module.changelog
+    if changelog_file.exists():
+        with open(changelog_file, 'r') as file:
+            changelog_content = file.read()
+    else:
+        changelog_content = CHANGELOG_HEADER_MARK
+    entry = create_changelog_entry(module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                               f'{CHANGELOG_HEADER_MARK}\n\n{entry}')
     with open(module.changelog, 'w') as file:
@@ -110,7 +111,7 @@ def main():
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
     for module in modules:
-        changelog_entries = api_to_modules.get(module.api_name, ['No change'])
+        changelog_entries = api_to_changelog_entries.get(module.api_name, ['No change'])
         write_changelog(module, changelog_entries)
 
 if __name__ == '__main__':
