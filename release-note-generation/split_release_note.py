@@ -15,6 +15,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
+current_date = date.today()
 # Returns the list of target modules that has CHANGELOG.md
 
 class LibraryModule:
@@ -74,10 +75,10 @@ CHANGELOG_HEADER_MARK = '# Changelog'
 
 
 def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
-    current_date = date.today()
-    changelog_entry = f'## {module.version} ({current_date})\n\n'
+    changelog_entry = f'## {module.version} ({current_date})' \
+                      f'\n\n### Features\n\n'
     for line in changelog_lines:
-        changelog_entry += f'* {line}'
+        changelog_entry += f'* {line}\n'
     return changelog_entry
 
 
@@ -91,7 +92,7 @@ def write_changelog(module: LibraryModule, changelog_entries: [str]):
     entry = create_changelog_entry(module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                                          f'{CHANGELOG_HEADER_MARK}'
-                                         f'\n\n### Features\n\n{entry}')
+                                         f'\n\n{entry}')
     with open(module.changelog, 'w') as file:
         file.write(replaced)
 
