@@ -1,0 +1,117 @@
+# Script to split a main release note into CHANGELOG.md in each module
+
+# 1. Reads the main changelog from standard input
+# 2. Detects target modules by .OwlBot.yaml for api-name: field.
+# 3. Splits the changelog to ~100 modules
+# 4. Writes the changelog entry to the CHANGELOG.md files in the modules
+
+import sys
+import pdb
+import fileinput
+from datetime import date
+import re
+from collections import defaultdict
+from pathlib import Path
+import xml.etree.ElementTree as ET
+
+
+# Returns the list of target modules that has CHANGELOG.md
+
+class LibraryModule:
+    def __init__(self, path: Path, api_name: str, version: str,
+        changelog: Path):
+        self.path = path
+        self.api_name = api_name
+        self.version = version
+        self.changelog = changelog
+
+    def __str__(self):
+        return f"LibraryModule({self.path}, {self.api_name}, {self.version}, {self.changelog})"
+
+    def __repr__(self):
+        return f"LibraryModule({self.path}, {self.api_name}, {self.version}, {self.changelog})"
+
+
+POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
+
+
+def detect_modules(root_directory):
+    modules = []
+    for owlbot_yaml_path in root_directory.rglob('.OwlBot.yaml'):
+        print("file: ", owlbot_yaml_path)
+
+        # This CHANGELOG.md might not exist for newly created libraries
+        changelog = owlbot_yaml_path.parent / 'CHANGELOG.md'
+
+        module_pom_xml = owlbot_yaml_path.parent / 'pom.xml'
+        tree = ET.parse(module_pom_xml)
+        root = tree.getroot()
+        version = root.find('mvn:version', POM_NAMESPACES).text
+
+        with open(owlbot_yaml_path, 'r') as file:
+            owlbot_yaml_content = file.read()
+            print("content read", owlbot_yaml_content)
+            match = re.search(r'api-name: (.+)', owlbot_yaml_content)
+            if match:
+                api_name = match.group(1)
+                modules.append(LibraryModule(owlbot_yaml_path, api_name,
+                                             version,
+                                             changelog))
+    return modules
+
+
+# Returns the dictionary from api name to a list of changelogs
+def group_changes_by_api(main_changes: [str]):
+    api_to_changelog = defaultdict(list)
+    for changelog in main_changes:
+        match = re.search(r'\* \[(.+?)\] (.+)', changelog)
+        if match:
+            api_name = match.group(1)
+            note = match.group(2)
+            api_to_changelog[api_name].append(note)
+    return api_to_changelog
+
+
+CHANGELOG_HEADER_MARK = '# Changelog'
+def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
+    current_date = date.today()
+    print(current_date)
+    changelog_entry = f'## {module.version} ({current_date})\n\n'
+    for line in changelog_lines:
+        changelog_entry += f'* {line}'
+    return changelog_entry
+
+def write_changelog(module: LibraryModule, changelog_entries: [str]):
+    with open(module.changelog, 'r') as file:
+        changelog_content = file.read()
+    entry = create_changelog_entry()
+    replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
+                              f'{CHANGELOG_HEADER_MARK}\n\n{entry}')
+    with open(module.changelog, 'w') as file:
+        file.write(replaced)
+
+def main():
+
+    # Step 1: Reads the main changelog from standard input
+    main_changes = []
+    main_release_note_file = sys.argv[1]
+    with open(main_release_note_file, 'r') as file:
+        for line in file:
+            main_changes.append(line.strip())
+
+    # Step 2: Detects target modules by .OwlBot.yaml for api-name: field.
+    root_directory = sys.argv[2]
+    modules = detect_modules(Path(root_directory))
+    api_to_modules = {module.api_name: module for module in modules}
+
+    # Step 3: Splits the changelog to ~100 modules
+    api_to_changelog_entries = group_changes_by_api(main_changes)
+
+    # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
+    # modules
+
+    print(modules)
+
+
+if __name__ == '__main__':
+    main()
