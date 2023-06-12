@@ -112,6 +112,7 @@ def main():
     # Step 3: Splits the changelog to ~100 modules
     api_to_changelog_entries = group_changes_by_api(main_changes)
 
+    pdb.set_trace()
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
     for module in modules:
