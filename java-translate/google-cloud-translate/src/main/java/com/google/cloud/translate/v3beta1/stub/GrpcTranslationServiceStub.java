@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.translate.v3beta1.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest;
@@ -49,7 +50,6 @@ import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
 import com.google.cloud.translate.v3beta1.TranslateTextRequest;
 import com.google.cloud.translate.v3beta1.TranslateTextResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -256,9 +256,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             .setMethodDescriptor(translateTextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DetectLanguageRequest, DetectLanguageResponse>
@@ -267,9 +267,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                 .setMethodDescriptor(detectLanguageMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -278,9 +278,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                 .setMethodDescriptor(getSupportedLanguagesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
@@ -289,9 +289,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                 .setMethodDescriptor(translateDocumentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
@@ -299,9 +299,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             .setMethodDescriptor(batchTranslateTextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchTranslateDocumentRequest, Operation>
@@ -310,9 +310,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                 .setMethodDescriptor(batchTranslateDocumentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
@@ -320,9 +320,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             .setMethodDescriptor(createGlossaryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListGlossariesRequest, ListGlossariesResponse>
@@ -331,9 +331,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                 .setMethodDescriptor(listGlossariesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
@@ -341,9 +341,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             .setMethodDescriptor(getGlossaryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
@@ -351,9 +351,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             .setMethodDescriptor(deleteGlossaryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
