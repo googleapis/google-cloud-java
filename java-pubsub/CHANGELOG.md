@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.123.14](https://github.com/googleapis/java-pubsub/compare/v1.123.13...v1.123.14) (2023-06-12)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.19.0 ([#1604](https://github.com/googleapis/java-pubsub/issues/1604)) ([7ac609e](https://github.com/googleapis/java-pubsub/commit/7ac609e44c20db73460fe39919439c3a2b597454))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#1605](https://github.com/googleapis/java-pubsub/issues/1605)) ([077ac04](https://github.com/googleapis/java-pubsub/commit/077ac04214be23f6693734c157925a5607ada869))
+
 ## [1.123.13](https://github.com/googleapis/java-pubsub/compare/v1.123.12...v1.123.13) (2023-05-30)
 
 
