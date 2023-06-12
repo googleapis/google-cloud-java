@@ -31,7 +31,7 @@ fi
 GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout "${GOOGLEAPIS_COMMIT}"
-PROTO_FILES=$(ls "${PROTO_PATH}"/*.proto)
+PROTO_FILES=$(find "${PROTO_PATH}" -type f  -name "*.proto")
 # pull proto files and protoc from protobuf repository
 # maven central doesn't have proto files
 cd "${LIBRARY_GEN_OUT}"
