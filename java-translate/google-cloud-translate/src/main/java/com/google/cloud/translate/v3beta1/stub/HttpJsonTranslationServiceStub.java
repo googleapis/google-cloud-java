@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.translate.v3beta1.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest;
@@ -588,56 +589,116 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
             HttpJsonCallSettings.<TranslateTextRequest, TranslateTextResponse>newBuilder()
                 .setMethodDescriptor(translateTextMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
             HttpJsonCallSettings.<DetectLanguageRequest, DetectLanguageResponse>newBuilder()
                 .setMethodDescriptor(detectLanguageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
             HttpJsonCallSettings.<GetSupportedLanguagesRequest, SupportedLanguages>newBuilder()
                 .setMethodDescriptor(getSupportedLanguagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
             HttpJsonCallSettings.<TranslateDocumentRequest, TranslateDocumentResponse>newBuilder()
                 .setMethodDescriptor(translateDocumentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         HttpJsonCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
             .setMethodDescriptor(batchTranslateTextMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
             HttpJsonCallSettings.<BatchTranslateDocumentRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchTranslateDocumentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         HttpJsonCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
             .setMethodDescriptor(createGlossaryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
             HttpJsonCallSettings.<ListGlossariesRequest, ListGlossariesResponse>newBuilder()
                 .setMethodDescriptor(listGlossariesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         HttpJsonCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
             .setMethodDescriptor(getGlossaryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         HttpJsonCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteGlossaryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.translateTextCallable =
