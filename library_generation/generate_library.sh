@@ -83,6 +83,27 @@ unzip_src_files() {
   rm -r -f "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/"${OUT_LAYER_FOLDER}"/"${FOLDER}"-"${OUT_LAYER_FOLDER}"/src/main/java/META-INF
 }
 
+find_additional_protos_in_yaml() {
+  PATTERN=$1
+  FIND_RESULT=$(grep --include=\*.yaml -rw "${PROTO_PATH}" -e "${PATTERN}")
+  if [ -n "${FIND_RESULT}" ]; then
+    echo "${FIND_RESULT}"
+  fi
+}
+
+search_additional_protos() {
+  ADDITIONAL_PROTOS="google/cloud/common_resources.proto" # used by every library
+  IAM_POLICY=$(find_additional_protos_in_yaml "name: google.iam.v1.IAMPolicy")
+  if [ -n "${IAM_POLICY}" ]; then
+    ADDITIONAL_PROTOS="${ADDITIONAL_PROTOS} google/iam/v1/iam_policy.proto"
+  fi
+  LOCATIONS=$(find_additional_protos_in_yaml "name: google.cloud.location.Locations")
+  if [ -n "${LOCATIONS}" ]; then
+    ADDITIONAL_PROTOS="${ADDITIONAL_PROTOS} google/cloud/location/locations.proto"
+  fi
+  echo "${ADDITIONAL_PROTOS}"
+}
+
 ##################### Section 1 #####################
 # generate grpc-*/
 #####################################################
@@ -100,7 +121,7 @@ remove_empty_files "grpc"
 "--plugin=protoc-gen-java_gapic=${REPO_ROOT}/library_generation/gapic-generator-java-wrapper" \
 "--java_gapic_out=metadata:${LIBRARY_GEN_OUT}/${PROTO_PATH}/java_gapic_srcjar_raw.srcjar.zip" \
 "--java_gapic_opt=${JAVA_GAPIC_OPT}" \
-${PROTO_FILES} google/cloud/common_resources.proto
+${PROTO_FILES} $(search_additional_protos)
 
 unzip -o -q "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/java_gapic_srcjar_raw.srcjar.zip -d "${LIBRARY_GEN_OUT}"/${PROTO_PATH}
 # Sync'\''d to the output file name in Writer.java.
