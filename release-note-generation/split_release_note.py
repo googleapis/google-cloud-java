@@ -71,12 +71,15 @@ def group_changes_by_api(main_changes: [str]):
 
 
 CHANGELOG_HEADER_MARK = '# Changelog'
+
+
 def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
     current_date = date.today()
     changelog_entry = f'## {module.version} ({current_date})\n\n'
     for line in changelog_lines:
         changelog_entry += f'* {line}'
     return changelog_entry
+
 
 def write_changelog(module: LibraryModule, changelog_entries: [str]):
     changelog_file = module.changelog
@@ -87,12 +90,13 @@ def write_changelog(module: LibraryModule, changelog_entries: [str]):
         changelog_content = CHANGELOG_HEADER_MARK
     entry = create_changelog_entry(module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
-                              f'{CHANGELOG_HEADER_MARK}\n\n{entry}')
+                                         f'{CHANGELOG_HEADER_MARK}'
+                                         f'\n\n### Features\n\n{entry}')
     with open(module.changelog, 'w') as file:
         file.write(replaced)
 
-def main():
 
+def main():
     # Step 1: Reads the main changelog from standard input
     main_changes = []
     main_release_note_file = sys.argv[1]
@@ -111,8 +115,10 @@ def main():
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
     for module in modules:
-        changelog_entries = api_to_changelog_entries.get(module.api_name, ['No change'])
+        changelog_entries = api_to_changelog_entries.get(module.api_name,
+                                                         ['No change'])
         write_changelog(module, changelog_entries)
+
 
 if __name__ == '__main__':
     main()
