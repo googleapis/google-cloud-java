@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.15.0](https://github.com/googleapis/java-datastore/compare/v2.14.7...v2.15.0) (2023-06-09)
+
+
+### Features
+
+* Multiple dbs support ([#1102](https://github.com/googleapis/java-datastore/issues/1102)) ([7887f32](https://github.com/googleapis/java-datastore/commit/7887f3255cba4dedd7b4f369d77a3279d903127f))
+
+
+### Bug Fixes
+
+* Add some missing annotations and fix equals/hashcode for DatastoreOptions ([#1106](https://github.com/googleapis/java-datastore/issues/1106)) ([c4a79ef](https://github.com/googleapis/java-datastore/commit/c4a79effa83c5fdb7ad8db15ae52e2c70db238bc))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#1104](https://github.com/googleapis/java-datastore/issues/1104)) ([fc9b091](https://github.com/googleapis/java-datastore/commit/fc9b09103a1bfbb238b22102dcf2b889292658ce))
+
 ## [2.14.7](https://github.com/googleapis/java-datastore/compare/v2.14.6...v2.14.7) (2023-05-29)
 
 
