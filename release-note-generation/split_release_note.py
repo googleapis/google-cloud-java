@@ -1,9 +1,11 @@
-# Script to split a main release note into CHANGELOG.md in each module
+# Script to split a main release note into CHANGELOG.md in each module.
 
-# 1. Reads the main changelog from standard input
-# 2. Detects target modules by .OwlBot.yaml for api-name: field.
-# 3. Splits the changelog to ~100 modules
-# 4. Writes the changelog entry to the CHANGELOG.md files in the modules
+# 1st argument: the path to a file that contains the main changelog
+# 2nd argument: the path to a directory that whose child directories contain
+#     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md"
+
+# This script inserts new entries to the CHANGELOG.md files by splitting the
+# main changelog.
 
 import sys
 import pdb
@@ -36,7 +38,7 @@ class LibraryModule:
 POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
 
 
-def detect_modules(root_directory):
+def detect_modules(root_directory: Path):
     modules = []
     for owlbot_yaml_path in root_directory.rglob('.OwlBot.yaml'):
 
@@ -63,7 +65,7 @@ def detect_modules(root_directory):
 def group_changes_by_api(main_changes: [str]):
     api_to_changelog = defaultdict(list)
     for changelog in main_changes:
-        match = re.search(r'\* \[(.+?)\] (.+)', changelog)
+        match = re.search(r'\* \[(.+?)] (.+)', changelog)
         if match:
             api_name = match.group(1)
             note = match.group(2)
@@ -113,7 +115,6 @@ def main():
     # Step 3: Splits the changelog to ~100 modules
     api_to_changelog_entries = group_changes_by_api(main_changes)
 
-    pdb.set_trace()
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
     for module in modules:
