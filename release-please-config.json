@@ -4,6 +4,7 @@
   "separate-pull-requests": false,
   "include-component-in-tag": false,
   "pull-request-title-pattern": "test: pineapple ${version}",
+  "pull-request-header": "test: updated PR header",
   "packages": {
     ".": {
       "extra-files": ["java-accessapproval/README.md"]
