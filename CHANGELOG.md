@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.38.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.2...v2.38.0) (2023-06-13)
+
+
+### Features
+
+* Add storage error codes for KMS ([5d2d3c6](https://github.com/googleapis/java-bigquerystorage/commit/5d2d3c6fc6be14a3cb79cf0ce0e82b48699a97c4))
+* Add table sampling to ReadAPI v1 ([5d2d3c6](https://github.com/googleapis/java-bigquerystorage/commit/5d2d3c6fc6be14a3cb79cf0ce0e82b48699a97c4))
+
+
+### Bug Fixes
+
+* Update copyright year in Java license header replacement template ([#1810](https://github.com/googleapis/java-bigquerystorage/issues/1810)) ([#2138](https://github.com/googleapis/java-bigquerystorage/issues/2138)) ([af99efe](https://github.com/googleapis/java-bigquerystorage/commit/af99efe938302e0d09c98308ad081244d9c5633e))
+
+
+### Dependencies
+
+* Update arrow.version to v12.0.1 ([#2143](https://github.com/googleapis/java-bigquerystorage/issues/2143)) ([7fb618e](https://github.com/googleapis/java-bigquerystorage/commit/7fb618e16b6a06278d511e771b8b46ebf4658aa9))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.27.0 ([#2131](https://github.com/googleapis/java-bigquerystorage/issues/2131)) ([e459348](https://github.com/googleapis/java-bigquerystorage/commit/e4593486959e86808255517861361805dc8769aa))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#2137](https://github.com/googleapis/java-bigquerystorage/issues/2137)) ([5fe7cdb](https://github.com/googleapis/java-bigquerystorage/commit/5fe7cdb6c9b6899a13b0fdde0a5a436d68a509e2))
+* Update dependency org.apache.arrow:arrow-memory-netty to v12.0.1 ([#2144](https://github.com/googleapis/java-bigquerystorage/issues/2144)) ([e738bff](https://github.com/googleapis/java-bigquerystorage/commit/e738bff88e3efaf0f6beb5f2d93057a175671d3e))
+* Update dependency org.apache.arrow:arrow-vector to v12.0.1 ([#2145](https://github.com/googleapis/java-bigquerystorage/issues/2145)) ([34dfda6](https://github.com/googleapis/java-bigquerystorage/commit/34dfda6aeec700c0722ad559e71e85bdedd04bfb))
+* Update dependency org.mockito:mockito-core to v3.12.4 ([#2146](https://github.com/googleapis/java-bigquerystorage/issues/2146)) ([1434fc0](https://github.com/googleapis/java-bigquerystorage/commit/1434fc0b995f5d6c8039acca8ca530e9d11f490b))
+
 ## [2.37.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.1...v2.37.2) (2023-05-30)
 
 
