@@ -3,6 +3,7 @@
   "versioning": "always-bump-minor",
   "separate-pull-requests": false,
   "include-component-in-tag": false,
+  "pull-request-title-pattern": "test: pineapple ${version}",
   "packages": {
     ".": {
       "extra-files": ["java-accessapproval/README.md"]
