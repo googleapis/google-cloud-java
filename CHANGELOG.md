@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.27.1](https://github.com/googleapis/java-bigquery/compare/v2.27.0...v2.27.1) (2023-06-13)
+
+
+### Dependencies
+
+* Update actions/checkout action to v3.5.3 ([#2746](https://github.com/googleapis/java-bigquery/issues/2746)) ([17f8438](https://github.com/googleapis/java-bigquery/commit/17f843880f5633b602de5221c26b830e7e304d2b))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.21.0 ([#2741](https://github.com/googleapis/java-bigquery/issues/2741)) ([d665e52](https://github.com/googleapis/java-bigquery/commit/d665e523b2c393c17a734ff4714aeb85f8d61dd7))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.25.0 ([#2743](https://github.com/googleapis/java-bigquery/issues/2743)) ([5d38d23](https://github.com/googleapis/java-bigquery/commit/5d38d2375cedd29e35d75881a206cab3fdcdd6a5))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#2738](https://github.com/googleapis/java-bigquery/issues/2738)) ([3b56445](https://github.com/googleapis/java-bigquery/commit/3b564458eef9df2173c47e26e2399a6a6cad6eee))
+* Update github/codeql-action action to v2.20.0 ([#2751](https://github.com/googleapis/java-bigquery/issues/2751)) ([42ae181](https://github.com/googleapis/java-bigquery/commit/42ae18134b972c1694a7e012d2f51c916e663c83))
+* Update github/codeql-action action to v2.3.6 ([#2712](https://github.com/googleapis/java-bigquery/issues/2712)) ([f043ed6](https://github.com/googleapis/java-bigquery/commit/f043ed61dacf4ea66eedaf0a6faada06057b7d50))
+
 ## [2.27.0](https://github.com/googleapis/java-bigquery/compare/v2.26.1...v2.27.0) (2023-05-30)
 
 
