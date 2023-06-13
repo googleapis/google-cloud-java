@@ -51,7 +51,9 @@ public class ResourceHeaderTest {
 
   private static final Pattern READ_SESSION_NAME_PATTERN =
       Pattern.compile(
-          ".*" + "read_session\\.table=projects/project/datasets/dataset/tables/table" + ".*");
+          ".*"
+              + "read_session\\.table=projects%2Fproject%2Fdatasets%2Fdataset%2Ftables%2Ftable"
+              + ".*");
   private static final Pattern READ_STREAM_PATTERN =
       Pattern.compile(".*" + "read_stream=streamName" + ".*");
   private static final Pattern STREAM_NAME_PATTERN =
