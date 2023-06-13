@@ -1,5 +1,4 @@
 {
   ".": "1.13.0",
-  "pull-request-header": "test: updated PR header",
-  "group-pull-request-title-pattern": "chore: release ${branch}: ${version}"
+  "group-pull-request-title-pattern": "chores: release ${branch}: ${version}"
 }
