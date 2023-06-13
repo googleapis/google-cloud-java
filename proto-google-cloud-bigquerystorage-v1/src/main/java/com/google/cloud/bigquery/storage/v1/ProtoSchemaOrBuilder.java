@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public interface ProtoSchemaOrBuilder
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>
@@ -52,6 +53,7 @@ public interface ProtoSchemaOrBuilder
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>
@@ -71,6 +73,7 @@ public interface ProtoSchemaOrBuilder
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>

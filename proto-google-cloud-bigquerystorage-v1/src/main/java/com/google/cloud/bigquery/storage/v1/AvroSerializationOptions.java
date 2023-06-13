@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
     return new AvroSerializationOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1.AvroProto
         .internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_descriptor;
@@ -72,10 +67,12 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
    *
    * <pre>
    * Enable displayName attribute in Avro schema.
+   *
    * The Avro specification requires field names to be alphanumeric.  By
    * default, in cases when column names do not conform to these requirements
    * (e.g. non-ascii unicode codepoints) and Avro is requested as an output
    * format, the CreateReadSession call will fail.
+   *
    * Setting this field to true, populates avro field names with a placeholder
    * value and populates a "displayName" attribute for every avro field with the
    * original column name.
@@ -440,10 +437,12 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
      *
      * <pre>
      * Enable displayName attribute in Avro schema.
+     *
      * The Avro specification requires field names to be alphanumeric.  By
      * default, in cases when column names do not conform to these requirements
      * (e.g. non-ascii unicode codepoints) and Avro is requested as an output
      * format, the CreateReadSession call will fail.
+     *
      * Setting this field to true, populates avro field names with a placeholder
      * value and populates a "displayName" attribute for every avro field with the
      * original column name.
@@ -462,10 +461,12 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
      *
      * <pre>
      * Enable displayName attribute in Avro schema.
+     *
      * The Avro specification requires field names to be alphanumeric.  By
      * default, in cases when column names do not conform to these requirements
      * (e.g. non-ascii unicode codepoints) and Avro is requested as an output
      * format, the CreateReadSession call will fail.
+     *
      * Setting this field to true, populates avro field names with a placeholder
      * value and populates a "displayName" attribute for every avro field with the
      * original column name.
@@ -488,10 +489,12 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
      *
      * <pre>
      * Enable displayName attribute in Avro schema.
+     *
      * The Avro specification requires field names to be alphanumeric.  By
      * default, in cases when column names do not conform to these requirements
      * (e.g. non-ascii unicode codepoints) and Avro is requested as an output
      * format, the CreateReadSession call will fail.
+     *
      * Setting this field to true, populates avro field names with a placeholder
      * value and populates a "displayName" attribute for every avro field with the
      * original column name.

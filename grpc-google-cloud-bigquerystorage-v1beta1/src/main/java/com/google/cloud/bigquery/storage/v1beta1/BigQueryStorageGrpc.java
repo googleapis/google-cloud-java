@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * BigQuery storage API.
  * The BigQuery storage API can be used to read data stored in BigQuery.
+ * The v1beta1 API is not yet officially deprecated, and will go through a full
+ * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+ * before the service is turned down. However, new code should use the v1 API
+ * going forward.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -330,6 +334,10 @@ public final class BigQueryStorageGrpc {
    * <pre>
    * BigQuery storage API.
    * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
    * </pre>
    */
   public interface AsyncService {
@@ -346,7 +354,7 @@ public final class BigQueryStorageGrpc {
      * A particular row can be read by at most one stream. When the caller has
      * reached the end of each stream in the session, then all the data in the
      * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
+     * Read sessions automatically expire 6 hours after they are created and do
      * not require manual clean-up by the caller.
      * </pre>
      */
@@ -404,7 +412,7 @@ public final class BigQueryStorageGrpc {
      *
      *
      * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
+     * Causes a single stream in a ReadSession to gracefully stop. This
      * API can be used to dynamically adjust the parallelism of a batch processing
      * task downwards without losing data.
      * This API does not delete the stream -- it remains visible in the
@@ -458,6 +466,10 @@ public final class BigQueryStorageGrpc {
    * <pre>
    * BigQuery storage API.
    * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
    * </pre>
    */
   public abstract static class BigQueryStorageImplBase
@@ -475,6 +487,10 @@ public final class BigQueryStorageGrpc {
    * <pre>
    * BigQuery storage API.
    * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
    * </pre>
    */
   public static final class BigQueryStorageStub
@@ -500,7 +516,7 @@ public final class BigQueryStorageGrpc {
      * A particular row can be read by at most one stream. When the caller has
      * reached the end of each stream in the session, then all the data in the
      * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
+     * Read sessions automatically expire 6 hours after they are created and do
      * not require manual clean-up by the caller.
      * </pre>
      */
@@ -563,7 +579,7 @@ public final class BigQueryStorageGrpc {
      *
      *
      * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
+     * Causes a single stream in a ReadSession to gracefully stop. This
      * API can be used to dynamically adjust the parallelism of a batch processing
      * task downwards without losing data.
      * This API does not delete the stream -- it remains visible in the
@@ -621,6 +637,10 @@ public final class BigQueryStorageGrpc {
    * <pre>
    * BigQuery storage API.
    * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
    * </pre>
    */
   public static final class BigQueryStorageBlockingStub
@@ -647,7 +667,7 @@ public final class BigQueryStorageGrpc {
      * A particular row can be read by at most one stream. When the caller has
      * reached the end of each stream in the session, then all the data in the
      * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
+     * Read sessions automatically expire 6 hours after they are created and do
      * not require manual clean-up by the caller.
      * </pre>
      */
@@ -698,7 +718,7 @@ public final class BigQueryStorageGrpc {
      *
      *
      * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
+     * Causes a single stream in a ReadSession to gracefully stop. This
      * API can be used to dynamically adjust the parallelism of a batch processing
      * task downwards without losing data.
      * This API does not delete the stream -- it remains visible in the
@@ -749,6 +769,10 @@ public final class BigQueryStorageGrpc {
    * <pre>
    * BigQuery storage API.
    * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
    * </pre>
    */
   public static final class BigQueryStorageFutureStub
@@ -775,7 +799,7 @@ public final class BigQueryStorageGrpc {
      * A particular row can be read by at most one stream. When the caller has
      * reached the end of each stream in the session, then all the data in the
      * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
+     * Read sessions automatically expire 6 hours after they are created and do
      * not require manual clean-up by the caller.
      * </pre>
      */
@@ -810,7 +834,7 @@ public final class BigQueryStorageGrpc {
      *
      *
      * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
+     * Causes a single stream in a ReadSession to gracefully stop. This
      * API can be used to dynamically adjust the parallelism of a batch processing
      * task downwards without losing data.
      * This API does not delete the stream -- it remains visible in the

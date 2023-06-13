@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return new ReadRowsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1beta2.StorageProto
         .internal_static_google_cloud_bigquery_storage_v1beta2_ReadRowsResponse_descriptor;
@@ -67,6 +62,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   private int rowsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rows_;
 
   public enum RowsCase
@@ -114,6 +111,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   private int schemaCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object schema_;
 
   public enum SchemaCase

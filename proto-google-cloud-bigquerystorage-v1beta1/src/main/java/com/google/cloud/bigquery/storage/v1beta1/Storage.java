@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,16 @@ public final class Storage {
      * <code>AVRO = 1;</code>
      */
     AVRO(1),
-    /** <code>ARROW = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Arrow is a standard open source column-based message format.
+     * See https://arrow.apache.org/ for more details.
+     * </pre>
+     *
+     * <code>ARROW = 3;</code>
+     */
     ARROW(3),
     UNRECOGNIZED(-1),
     ;
@@ -83,7 +92,16 @@ public final class Storage {
      * <code>AVRO = 1;</code>
      */
     public static final int AVRO_VALUE = 1;
-    /** <code>ARROW = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Arrow is a standard open source column-based message format.
+     * See https://arrow.apache.org/ for more details.
+     * </pre>
+     *
+     * <code>ARROW = 3;</code>
+     */
     public static final int ARROW_VALUE = 3;
 
     public final int getNumber() {
@@ -407,11 +425,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Stream();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1082,11 +1095,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StreamPosition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2157,7 +2165,7 @@ public final class Storage {
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy getShardingStrategy();
 
-    public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.SchemaCase getSchemaCase();
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.SchemaCase getSchemaCase();
   }
   /**
    *
@@ -2190,11 +2198,6 @@ public final class Storage {
       return new ReadSession();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta1.Storage
           .internal_static_google_cloud_bigquery_storage_v1beta1_ReadSession_descriptor;
@@ -2211,6 +2214,8 @@ public final class Storage {
     }
 
     private int schemaCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object schema_;
 
     public enum SchemaCase
@@ -5131,6 +5136,7 @@ public final class Storage {
      * non-negative. The number of streams may be lower than the requested number,
      * depending on the amount parallelism that is reasonable for the table and
      * the maximum amount of parallelism allowed by the system.
+     *
      * Streams must be read starting from offset 0.
      * </pre>
      *
@@ -5181,6 +5187,7 @@ public final class Storage {
      *
      * <pre>
      * Data output format. Currently default to Avro.
+     * DATA_FORMAT_UNSPECIFIED not supported.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -5193,6 +5200,7 @@ public final class Storage {
      *
      * <pre>
      * Data output format. Currently default to Avro.
+     * DATA_FORMAT_UNSPECIFIED not supported.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -5258,11 +5266,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreateReadSessionRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5467,6 +5470,7 @@ public final class Storage {
      * non-negative. The number of streams may be lower than the requested number,
      * depending on the amount parallelism that is reasonable for the table and
      * the maximum amount of parallelism allowed by the system.
+     *
      * Streams must be read starting from offset 0.
      * </pre>
      *
@@ -5539,6 +5543,7 @@ public final class Storage {
      *
      * <pre>
      * Data output format. Currently default to Avro.
+     * DATA_FORMAT_UNSPECIFIED not supported.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -5554,6 +5559,7 @@ public final class Storage {
      *
      * <pre>
      * Data output format. Currently default to Avro.
+     * DATA_FORMAT_UNSPECIFIED not supported.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -6698,6 +6704,7 @@ public final class Storage {
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
        * the maximum amount of parallelism allowed by the system.
+       *
        * Streams must be read starting from offset 0.
        * </pre>
        *
@@ -6718,6 +6725,7 @@ public final class Storage {
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
        * the maximum amount of parallelism allowed by the system.
+       *
        * Streams must be read starting from offset 0.
        * </pre>
        *
@@ -6742,6 +6750,7 @@ public final class Storage {
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
        * the maximum amount of parallelism allowed by the system.
+       *
        * Streams must be read starting from offset 0.
        * </pre>
        *
@@ -6956,6 +6965,7 @@ public final class Storage {
        *
        * <pre>
        * Data output format. Currently default to Avro.
+       * DATA_FORMAT_UNSPECIFIED not supported.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -6971,6 +6981,7 @@ public final class Storage {
        *
        * <pre>
        * Data output format. Currently default to Avro.
+       * DATA_FORMAT_UNSPECIFIED not supported.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -6989,6 +7000,7 @@ public final class Storage {
        *
        * <pre>
        * Data output format. Currently default to Avro.
+       * DATA_FORMAT_UNSPECIFIED not supported.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -7008,6 +7020,7 @@ public final class Storage {
        *
        * <pre>
        * Data output format. Currently default to Avro.
+       * DATA_FORMAT_UNSPECIFIED not supported.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -7029,6 +7042,7 @@ public final class Storage {
        *
        * <pre>
        * Data output format. Currently default to Avro.
+       * DATA_FORMAT_UNSPECIFIED not supported.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
@@ -7288,11 +7302,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReadRowsRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8060,6 +8069,7 @@ public final class Storage {
      * assigned to this stream that have been processed by the server. In the
      * presence of read filters, the server may process more rows than it returns,
      * so this value reflects progress through the pre-filtering rows.
+     *
      * This value is only populated for sessions created through the BALANCED
      * sharding strategy.
      * </pre>
@@ -8149,11 +8159,6 @@ public final class Storage {
       return new StreamStatus();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta1.Storage
           .internal_static_google_cloud_bigquery_storage_v1beta1_StreamStatus_descriptor;
@@ -8199,6 +8204,7 @@ public final class Storage {
      * assigned to this stream that have been processed by the server. In the
      * presence of read filters, the server may process more rows than it returns,
      * so this value reflects progress through the pre-filtering rows.
+     *
      * This value is only populated for sessions created through the BALANCED
      * sharding strategy.
      * </pre>
@@ -8778,6 +8784,7 @@ public final class Storage {
        * assigned to this stream that have been processed by the server. In the
        * presence of read filters, the server may process more rows than it returns,
        * so this value reflects progress through the pre-filtering rows.
+       *
        * This value is only populated for sessions created through the BALANCED
        * sharding strategy.
        * </pre>
@@ -8798,6 +8805,7 @@ public final class Storage {
        * assigned to this stream that have been processed by the server. In the
        * presence of read filters, the server may process more rows than it returns,
        * so this value reflects progress through the pre-filtering rows.
+       *
        * This value is only populated for sessions created through the BALANCED
        * sharding strategy.
        * </pre>
@@ -8822,6 +8830,7 @@ public final class Storage {
        * assigned to this stream that have been processed by the server. In the
        * presence of read filters, the server may process more rows than it returns,
        * so this value reflects progress through the pre-filtering rows.
+       *
        * This value is only populated for sessions created through the BALANCED
        * sharding strategy.
        * </pre>
@@ -9169,10 +9178,12 @@ public final class Storage {
      * <pre>
      * The fraction of rows assigned to the stream that have been processed by the
      * server so far, not including the rows in the current response message.
+     *
      * This value, along with `at_response_end`, can be used to interpolate the
      * progress made as the rows in the message are being processed using the
      * following formula: `at_response_start + (at_response_end -
      * at_response_start) * rows_processed_from_response / rows_in_response`.
+     *
      * Note that if a filter is provided, the `at_response_end` value of the
      * previous response may not necessarily be equal to the `at_response_start`
      * value of the current response.
@@ -9217,11 +9228,6 @@ public final class Storage {
       return new Progress();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta1.Storage
           .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor;
@@ -9245,10 +9251,12 @@ public final class Storage {
      * <pre>
      * The fraction of rows assigned to the stream that have been processed by the
      * server so far, not including the rows in the current response message.
+     *
      * This value, along with `at_response_end`, can be used to interpolate the
      * progress made as the rows in the message are being processed using the
      * following formula: `at_response_start + (at_response_end -
      * at_response_start) * rows_processed_from_response / rows_in_response`.
+     *
      * Note that if a filter is provided, the `at_response_end` value of the
      * previous response may not necessarily be equal to the `at_response_start`
      * value of the current response.
@@ -9653,10 +9661,12 @@ public final class Storage {
        * <pre>
        * The fraction of rows assigned to the stream that have been processed by the
        * server so far, not including the rows in the current response message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate the
        * progress made as the rows in the message are being processed using the
        * following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the `at_response_start`
        * value of the current response.
@@ -9676,10 +9686,12 @@ public final class Storage {
        * <pre>
        * The fraction of rows assigned to the stream that have been processed by the
        * server so far, not including the rows in the current response message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate the
        * progress made as the rows in the message are being processed using the
        * following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the `at_response_start`
        * value of the current response.
@@ -9703,10 +9715,12 @@ public final class Storage {
        * <pre>
        * The fraction of rows assigned to the stream that have been processed by the
        * server so far, not including the rows in the current response message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate the
        * progress made as the rows in the message are being processed using the
        * following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the `at_response_start`
        * value of the current response.
@@ -9888,11 +9902,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ThrottleStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10571,8 +10580,93 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatusOrBuilder
         getThrottleStatusOrBuilder();
 
-    public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse.RowsCase
-        getRowsCase();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the avroSchema field is set.
+     */
+    boolean hasAvroSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The avroSchema.
+     */
+    com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder
+        getAvroSchemaOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the arrowSchema field is set.
+     */
+    boolean hasArrowSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The arrowSchema.
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+        getArrowSchemaOrBuilder();
+
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse.RowsCase getRowsCase();
+
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse.SchemaCase getSchemaCase();
   }
   /**
    *
@@ -10602,11 +10696,6 @@ public final class Storage {
       return new ReadRowsResponse();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta1.Storage
           .internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_descriptor;
@@ -10623,6 +10712,8 @@ public final class Storage {
     }
 
     private int rowsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object rows_;
 
     public enum RowsCase
@@ -10667,6 +10758,55 @@ public final class Storage {
 
     public RowsCase getRowsCase() {
       return RowsCase.forNumber(rowsCase_);
+    }
+
+    private int schemaCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object schema_;
+
+    public enum SchemaCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      AVRO_SCHEMA(7),
+      ARROW_SCHEMA(8),
+      SCHEMA_NOT_SET(0);
+      private final int value;
+
+      private SchemaCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SchemaCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SchemaCase forNumber(int value) {
+        switch (value) {
+          case 7:
+            return AVRO_SCHEMA;
+          case 8:
+            return ARROW_SCHEMA;
+          case 0:
+            return SCHEMA_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SchemaCase getSchemaCase() {
+      return SchemaCase.forNumber(schemaCase_);
     }
 
     public static final int AVRO_ROWS_FIELD_NUMBER = 3;
@@ -10902,6 +11042,122 @@ public final class Storage {
           : throttleStatus_;
     }
 
+    public static final int AVRO_SCHEMA_FIELD_NUMBER = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the avroSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvroSchema() {
+      return schemaCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The avroSchema.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
+      if (schemaCase_ == 7) {
+        return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder
+        getAvroSchemaOrBuilder() {
+      if (schemaCase_ == 7) {
+        return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance();
+    }
+
+    public static final int ARROW_SCHEMA_FIELD_NUMBER = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the arrowSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasArrowSchema() {
+      return schemaCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The arrowSchema.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
+      if (schemaCase_ == 8) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+        getArrowSchemaOrBuilder() {
+      if (schemaCase_ == 8) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10933,6 +11189,14 @@ public final class Storage {
       if (rowCount_ != 0L) {
         output.writeInt64(6, rowCount_);
       }
+      if (schemaCase_ == 7) {
+        output.writeMessage(
+            7, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_);
+      }
+      if (schemaCase_ == 8) {
+        output.writeMessage(
+            8, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10960,6 +11224,16 @@ public final class Storage {
       }
       if (rowCount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, rowCount_);
+      }
+      if (schemaCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_);
+      }
+      if (schemaCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10997,6 +11271,17 @@ public final class Storage {
         case 0:
         default:
       }
+      if (!getSchemaCase().equals(other.getSchemaCase())) return false;
+      switch (schemaCase_) {
+        case 7:
+          if (!getAvroSchema().equals(other.getAvroSchema())) return false;
+          break;
+        case 8:
+          if (!getArrowSchema().equals(other.getArrowSchema())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -11026,6 +11311,18 @@ public final class Storage {
         case 4:
           hash = (37 * hash) + ARROW_RECORD_BATCH_FIELD_NUMBER;
           hash = (53 * hash) + getArrowRecordBatch().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      switch (schemaCase_) {
+        case 7:
+          hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
+          hash = (53 * hash) + getAvroSchema().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + ARROW_SCHEMA_FIELD_NUMBER;
+          hash = (53 * hash) + getArrowSchema().hashCode();
           break;
         case 0:
         default:
@@ -11192,8 +11489,16 @@ public final class Storage {
           throttleStatusBuilder_.dispose();
           throttleStatusBuilder_ = null;
         }
+        if (avroSchemaBuilder_ != null) {
+          avroSchemaBuilder_.clear();
+        }
+        if (arrowSchemaBuilder_ != null) {
+          arrowSchemaBuilder_.clear();
+        }
         rowsCase_ = 0;
         rows_ = null;
+        schemaCase_ = 0;
+        schema_ = null;
         return this;
       }
 
@@ -11255,6 +11560,14 @@ public final class Storage {
         }
         if (rowsCase_ == 4 && arrowRecordBatchBuilder_ != null) {
           result.rows_ = arrowRecordBatchBuilder_.build();
+        }
+        result.schemaCase_ = schemaCase_;
+        result.schema_ = this.schema_;
+        if (schemaCase_ == 7 && avroSchemaBuilder_ != null) {
+          result.schema_ = avroSchemaBuilder_.build();
+        }
+        if (schemaCase_ == 8 && arrowSchemaBuilder_ != null) {
+          result.schema_ = arrowSchemaBuilder_.build();
         }
       }
 
@@ -11334,6 +11647,22 @@ public final class Storage {
               break;
             }
         }
+        switch (other.getSchemaCase()) {
+          case AVRO_SCHEMA:
+            {
+              mergeAvroSchema(other.getAvroSchema());
+              break;
+            }
+          case ARROW_SCHEMA:
+            {
+              mergeArrowSchema(other.getArrowSchema());
+              break;
+            }
+          case SCHEMA_NOT_SET:
+            {
+              break;
+            }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -11392,6 +11721,18 @@ public final class Storage {
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 48
+              case 58:
+                {
+                  input.readMessage(getAvroSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                  schemaCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(getArrowSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                  schemaCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11419,6 +11760,20 @@ public final class Storage {
       public Builder clearRows() {
         rowsCase_ = 0;
         rows_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int schemaCase_ = 0;
+      private java.lang.Object schema_;
+
+      public SchemaCase getSchemaCase() {
+        return SchemaCase.forNumber(schemaCase_);
+      }
+
+      public Builder clearSchema() {
+        schemaCase_ = 0;
+        schema_ = null;
         onChanged();
         return this;
       }
@@ -12327,6 +12682,482 @@ public final class Storage {
         return throttleStatusBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder>
+          avroSchemaBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the avroSchema field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvroSchema() {
+        return schemaCase_ == 7;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The avroSchema.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
+        if (avroSchemaBuilder_ == null) {
+          if (schemaCase_ == 7) {
+            return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+              .getDefaultInstance();
+        } else {
+          if (schemaCase_ == 7) {
+            return avroSchemaBuilder_.getMessage();
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setAvroSchema(
+          com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema value) {
+        if (avroSchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          schema_ = value;
+          onChanged();
+        } else {
+          avroSchemaBuilder_.setMessage(value);
+        }
+        schemaCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setAvroSchema(
+          com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder builderForValue) {
+        if (avroSchemaBuilder_ == null) {
+          schema_ = builderForValue.build();
+          onChanged();
+        } else {
+          avroSchemaBuilder_.setMessage(builderForValue.build());
+        }
+        schemaCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeAvroSchema(
+          com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema value) {
+        if (avroSchemaBuilder_ == null) {
+          if (schemaCase_ == 7
+              && schema_
+                  != com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+                      .getDefaultInstance()) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.newBuilder(
+                        (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            schema_ = value;
+          }
+          onChanged();
+        } else {
+          if (schemaCase_ == 7) {
+            avroSchemaBuilder_.mergeFrom(value);
+          } else {
+            avroSchemaBuilder_.setMessage(value);
+          }
+        }
+        schemaCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearAvroSchema() {
+        if (avroSchemaBuilder_ == null) {
+          if (schemaCase_ == 7) {
+            schemaCase_ = 0;
+            schema_ = null;
+            onChanged();
+          }
+        } else {
+          if (schemaCase_ == 7) {
+            schemaCase_ = 0;
+            schema_ = null;
+          }
+          avroSchemaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder
+          getAvroSchemaBuilder() {
+        return getAvroSchemaFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder
+          getAvroSchemaOrBuilder() {
+        if ((schemaCase_ == 7) && (avroSchemaBuilder_ != null)) {
+          return avroSchemaBuilder_.getMessageOrBuilder();
+        } else {
+          if (schemaCase_ == 7) {
+            return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Avro schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder>
+          getAvroSchemaFieldBuilder() {
+        if (avroSchemaBuilder_ == null) {
+          if (!(schemaCase_ == 7)) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance();
+          }
+          avroSchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema,
+                  com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder,
+                  com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder>(
+                  (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_,
+                  getParentForChildren(),
+                  isClean());
+          schema_ = null;
+        }
+        schemaCase_ = 7;
+        onChanged();
+        return avroSchemaBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>
+          arrowSchemaBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the arrowSchema field is set.
+       */
+      @java.lang.Override
+      public boolean hasArrowSchema() {
+        return schemaCase_ == 8;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The arrowSchema.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 8) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        } else {
+          if (schemaCase_ == 8) {
+            return arrowSchemaBuilder_.getMessage();
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema value) {
+        if (arrowSchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          schema_ = value;
+          onChanged();
+        } else {
+          arrowSchemaBuilder_.setMessage(value);
+        }
+        schemaCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder
+              builderForValue) {
+        if (arrowSchemaBuilder_ == null) {
+          schema_ = builderForValue.build();
+          onChanged();
+        } else {
+          arrowSchemaBuilder_.setMessage(builderForValue.build());
+        }
+        schemaCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema value) {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 8
+              && schema_
+                  != com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+                      .getDefaultInstance()) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.newBuilder(
+                        (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            schema_ = value;
+          }
+          onChanged();
+        } else {
+          if (schemaCase_ == 8) {
+            arrowSchemaBuilder_.mergeFrom(value);
+          } else {
+            arrowSchemaBuilder_.setMessage(value);
+          }
+        }
+        schemaCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearArrowSchema() {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 8) {
+            schemaCase_ = 0;
+            schema_ = null;
+            onChanged();
+          }
+        } else {
+          if (schemaCase_ == 8) {
+            schemaCase_ = 0;
+            schema_ = null;
+          }
+          arrowSchemaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder
+          getArrowSchemaBuilder() {
+        return getArrowSchemaFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+          getArrowSchemaOrBuilder() {
+        if ((schemaCase_ == 8) && (arrowSchemaBuilder_ != null)) {
+          return arrowSchemaBuilder_.getMessageOrBuilder();
+        } else {
+          if (schemaCase_ == 8) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Arrow schema.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>
+          getArrowSchemaFieldBuilder() {
+        if (arrowSchemaBuilder_ == null) {
+          if (!(schemaCase_ == 8)) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+                    .getDefaultInstance();
+          }
+          arrowSchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>(
+                  (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_,
+                  getParentForChildren(),
+                  isClean());
+          schema_ = null;
+        }
+        schemaCase_ = 8;
+        onChanged();
+        return arrowSchemaBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12487,11 +13318,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BatchCreateReadSessionStreamsRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13449,11 +14275,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BatchCreateReadSessionStreamsResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14502,11 +15323,6 @@ public final class Storage {
       return new FinalizeStreamRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta1.Storage
           .internal_static_google_cloud_bigquery_storage_v1beta1_FinalizeStreamRequest_descriptor;
@@ -15309,11 +16125,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SplitReadStreamRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16266,11 +17077,6 @@ public final class Storage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SplitReadStreamResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17380,94 +18186,98 @@ public final class Storage {
           + "gStrategy:k\352Ah\n*bigquerystorage.googleap"
           + "is.com/ReadSession\022:projects/{project}/l"
           + "ocations/{location}/sessions/{session}B\010"
-          + "\n\006schema\"\205\004\n\030CreateReadSessionRequest\022S\n"
+          + "\n\006schema\"\207\004\n\030CreateReadSessionRequest\022T\n"
           + "\017table_reference\030\001 \001(\01325.google.cloud.bi"
-          + "gquery.storage.v1beta1.TableReferenceB\003\340"
-          + "A\002\022C\n\006parent\030\006 \001(\tB3\340A\002\372A-\n+cloudresourc"
-          + "emanager.googleapis.com/Project\022N\n\017table"
-          + "_modifiers\030\002 \001(\01325.google.cloud.bigquery"
-          + ".storage.v1beta1.TableModifiers\022\031\n\021reque"
-          + "sted_streams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\013"
-          + "27.google.cloud.bigquery.storage.v1beta1"
-          + ".TableReadOptions\022A\n\006format\030\005 \001(\01621.goog"
-          + "le.cloud.bigquery.storage.v1beta1.DataFo"
-          + "rmat\022R\n\021sharding_strategy\030\007 \001(\01627.google"
-          + ".cloud.bigquery.storage.v1beta1.Sharding"
-          + "Strategy\"d\n\017ReadRowsRequest\022Q\n\rread_posi"
-          + "tion\030\001 \001(\01325.google.cloud.bigquery.stora"
-          + "ge.v1beta1.StreamPositionB\003\340A\002\"\240\001\n\014Strea"
-          + "mStatus\022\033\n\023estimated_row_count\030\001 \001(\003\022\031\n\021"
-          + "fraction_consumed\030\002 \001(\002\022A\n\010progress\030\004 \001("
-          + "\0132/.google.cloud.bigquery.storage.v1beta"
-          + "1.Progress\022\025\n\ris_splittable\030\003 \001(\010\">\n\010Pro"
-          + "gress\022\031\n\021at_response_start\030\001 \001(\002\022\027\n\017at_r"
-          + "esponse_end\030\002 \001(\002\"*\n\016ThrottleStatus\022\030\n\020t"
-          + "hrottle_percent\030\001 \001(\005\"\337\002\n\020ReadRowsRespon"
-          + "se\022D\n\tavro_rows\030\003 \001(\0132/.google.cloud.big"
-          + "query.storage.v1beta1.AvroRowsH\000\022U\n\022arro"
-          + "w_record_batch\030\004 \001(\01327.google.cloud.bigq"
-          + "uery.storage.v1beta1.ArrowRecordBatchH\000\022"
-          + "\021\n\trow_count\030\006 \001(\003\022C\n\006status\030\002 \001(\01323.goo"
-          + "gle.cloud.bigquery.storage.v1beta1.Strea"
-          + "mStatus\022N\n\017throttle_status\030\005 \001(\01325.googl"
-          + "e.cloud.bigquery.storage.v1beta1.Throttl"
-          + "eStatusB\006\n\004rows\"\220\001\n$BatchCreateReadSessi"
-          + "onStreamsRequest\022H\n\007session\030\001 \001(\01322.goog"
-          + "le.cloud.bigquery.storage.v1beta1.ReadSe"
-          + "ssionB\003\340A\002\022\036\n\021requested_streams\030\002 \001(\005B\003\340"
-          + "A\002\"g\n%BatchCreateReadSessionStreamsRespo"
-          + "nse\022>\n\007streams\030\001 \003(\0132-.google.cloud.bigq"
-          + "uery.storage.v1beta1.Stream\"[\n\025FinalizeS"
-          + "treamRequest\022B\n\006stream\030\002 \001(\0132-.google.cl"
-          + "oud.bigquery.storage.v1beta1.StreamB\003\340A\002"
-          + "\"w\n\026SplitReadStreamRequest\022K\n\017original_s"
-          + "tream\030\001 \001(\0132-.google.cloud.bigquery.stor"
-          + "age.v1beta1.StreamB\003\340A\002\022\020\n\010fraction\030\002 \001("
-          + "\002\"\251\001\n\027SplitReadStreamResponse\022E\n\016primary"
-          + "_stream\030\001 \001(\0132-.google.cloud.bigquery.st"
-          + "orage.v1beta1.Stream\022G\n\020remainder_stream"
-          + "\030\002 \001(\0132-.google.cloud.bigquery.storage.v"
-          + "1beta1.Stream*>\n\nDataFormat\022\033\n\027DATA_FORM"
-          + "AT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n"
-          + "\020ShardingStrategy\022!\n\035SHARDING_STRATEGY_U"
-          + "NSPECIFIED\020\000\022\n\n\006LIQUID\020\001\022\014\n\010BALANCED\020\0022\267"
-          + "\n\n\017BigQueryStorage\022\263\002\n\021CreateReadSession"
-          + "\022?.google.cloud.bigquery.storage.v1beta1"
-          + ".CreateReadSessionRequest\0322.google.cloud"
-          + ".bigquery.storage.v1beta1.ReadSession\"\250\001"
-          + "\202\323\344\223\002w\"0/v1beta1/{table_reference.projec"
-          + "t_id=projects/*}:\001*Z@\";/v1beta1/{table_r"
-          + "eference.dataset_id=projects/*/datasets/"
-          + "*}:\001*\332A(table_reference,parent,requested"
-          + "_streams\022\320\001\n\010ReadRows\0226.google.cloud.big"
-          + "query.storage.v1beta1.ReadRowsRequest\0327."
-          + "google.cloud.bigquery.storage.v1beta1.Re"
-          + "adRowsResponse\"Q\202\323\344\223\002;\0229/v1beta1/{read_p"
-          + "osition.stream.name=projects/*/streams/*"
-          + "}\332A\rread_position0\001\022\220\002\n\035BatchCreateReadS"
-          + "essionStreams\022K.google.cloud.bigquery.st"
-          + "orage.v1beta1.BatchCreateReadSessionStre"
-          + "amsRequest\032L.google.cloud.bigquery.stora"
-          + "ge.v1beta1.BatchCreateReadSessionStreams"
-          + "Response\"T\202\323\344\223\0022\"-/v1beta1/{session.name"
-          + "=projects/*/sessions/*}:\001*\332A\031session,req"
-          + "uested_streams\022\247\001\n\016FinalizeStream\022<.goog"
-          + "le.cloud.bigquery.storage.v1beta1.Finali"
-          + "zeStreamRequest\032\026.google.protobuf.Empty\""
-          + "?\202\323\344\223\0020\"+/v1beta1/{stream.name=projects/"
-          + "*/streams/*}:\001*\332A\006stream\022\340\001\n\017SplitReadSt"
-          + "ream\022=.google.cloud.bigquery.storage.v1b"
-          + "eta1.SplitReadStreamRequest\032>.google.clo"
-          + "ud.bigquery.storage.v1beta1.SplitReadStr"
-          + "eamResponse\"N\202\323\344\223\0026\0224/v1beta1/{original_"
-          + "stream.name=projects/*/streams/*}\332A\017orig"
-          + "inal_stream\032{\312A\036bigquerystorage.googleap"
-          + "is.com\322AWhttps://www.googleapis.com/auth"
-          + "/bigquery,https://www.googleapis.com/aut"
-          + "h/cloud-platformBp\n)com.google.cloud.big"
-          + "query.storage.v1beta1ZCcloud.google.com/"
-          + "go/bigquery/storage/apiv1beta1/storagepb"
-          + ";storagepbb\006proto3"
+          + "gquery.storage.v1beta1.TableReferenceB\004\342"
+          + "A\001\002\022D\n\006parent\030\006 \001(\tB4\342A\001\002\372A-\n+cloudresou"
+          + "rcemanager.googleapis.com/Project\022N\n\017tab"
+          + "le_modifiers\030\002 \001(\01325.google.cloud.bigque"
+          + "ry.storage.v1beta1.TableModifiers\022\031\n\021req"
+          + "uested_streams\030\003 \001(\005\022M\n\014read_options\030\004 \001"
+          + "(\01327.google.cloud.bigquery.storage.v1bet"
+          + "a1.TableReadOptions\022A\n\006format\030\005 \001(\01621.go"
+          + "ogle.cloud.bigquery.storage.v1beta1.Data"
+          + "Format\022R\n\021sharding_strategy\030\007 \001(\01627.goog"
+          + "le.cloud.bigquery.storage.v1beta1.Shardi"
+          + "ngStrategy\"e\n\017ReadRowsRequest\022R\n\rread_po"
+          + "sition\030\001 \001(\01325.google.cloud.bigquery.sto"
+          + "rage.v1beta1.StreamPositionB\004\342A\001\002\"\240\001\n\014St"
+          + "reamStatus\022\033\n\023estimated_row_count\030\001 \001(\003\022"
+          + "\031\n\021fraction_consumed\030\002 \001(\002\022A\n\010progress\030\004"
+          + " \001(\0132/.google.cloud.bigquery.storage.v1b"
+          + "eta1.Progress\022\025\n\ris_splittable\030\003 \001(\010\">\n\010"
+          + "Progress\022\031\n\021at_response_start\030\001 \001(\002\022\027\n\017a"
+          + "t_response_end\030\002 \001(\002\"*\n\016ThrottleStatus\022\030"
+          + "\n\020throttle_percent\030\001 \001(\005\"\213\004\n\020ReadRowsRes"
+          + "ponse\022D\n\tavro_rows\030\003 \001(\0132/.google.cloud."
+          + "bigquery.storage.v1beta1.AvroRowsH\000\022U\n\022a"
+          + "rrow_record_batch\030\004 \001(\01327.google.cloud.b"
+          + "igquery.storage.v1beta1.ArrowRecordBatch"
+          + "H\000\022\021\n\trow_count\030\006 \001(\003\022C\n\006status\030\002 \001(\01323."
+          + "google.cloud.bigquery.storage.v1beta1.St"
+          + "reamStatus\022N\n\017throttle_status\030\005 \001(\01325.go"
+          + "ogle.cloud.bigquery.storage.v1beta1.Thro"
+          + "ttleStatus\022N\n\013avro_schema\030\007 \001(\01321.google"
+          + ".cloud.bigquery.storage.v1beta1.AvroSche"
+          + "maB\004\342A\001\003H\001\022P\n\014arrow_schema\030\010 \001(\01322.googl"
+          + "e.cloud.bigquery.storage.v1beta1.ArrowSc"
+          + "hemaB\004\342A\001\003H\001B\006\n\004rowsB\010\n\006schema\"\222\001\n$Batch"
+          + "CreateReadSessionStreamsRequest\022I\n\007sessi"
+          + "on\030\001 \001(\01322.google.cloud.bigquery.storage"
+          + ".v1beta1.ReadSessionB\004\342A\001\002\022\037\n\021requested_"
+          + "streams\030\002 \001(\005B\004\342A\001\002\"g\n%BatchCreateReadSe"
+          + "ssionStreamsResponse\022>\n\007streams\030\001 \003(\0132-."
+          + "google.cloud.bigquery.storage.v1beta1.St"
+          + "ream\"\\\n\025FinalizeStreamRequest\022C\n\006stream\030"
+          + "\002 \001(\0132-.google.cloud.bigquery.storage.v1"
+          + "beta1.StreamB\004\342A\001\002\"x\n\026SplitReadStreamReq"
+          + "uest\022L\n\017original_stream\030\001 \001(\0132-.google.c"
+          + "loud.bigquery.storage.v1beta1.StreamB\004\342A"
+          + "\001\002\022\020\n\010fraction\030\002 \001(\002\"\251\001\n\027SplitReadStream"
+          + "Response\022E\n\016primary_stream\030\001 \001(\0132-.googl"
+          + "e.cloud.bigquery.storage.v1beta1.Stream\022"
+          + "G\n\020remainder_stream\030\002 \001(\0132-.google.cloud"
+          + ".bigquery.storage.v1beta1.Stream*>\n\nData"
+          + "Format\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004A"
+          + "VRO\020\001\022\t\n\005ARROW\020\003*O\n\020ShardingStrategy\022!\n\035"
+          + "SHARDING_STRATEGY_UNSPECIFIED\020\000\022\n\n\006LIQUI"
+          + "D\020\001\022\014\n\010BALANCED\020\0022\267\n\n\017BigQueryStorage\022\263\002"
+          + "\n\021CreateReadSession\022?.google.cloud.bigqu"
+          + "ery.storage.v1beta1.CreateReadSessionReq"
+          + "uest\0322.google.cloud.bigquery.storage.v1b"
+          + "eta1.ReadSession\"\250\001\332A(table_reference,pa"
+          + "rent,requested_streams\202\323\344\223\002w\"0/v1beta1/{"
+          + "table_reference.project_id=projects/*}:\001"
+          + "*Z@\";/v1beta1/{table_reference.dataset_i"
+          + "d=projects/*/datasets/*}:\001*\022\320\001\n\010ReadRows"
+          + "\0226.google.cloud.bigquery.storage.v1beta1"
+          + ".ReadRowsRequest\0327.google.cloud.bigquery"
+          + ".storage.v1beta1.ReadRowsResponse\"Q\332A\rre"
+          + "ad_position\202\323\344\223\002;\0229/v1beta1/{read_positi"
+          + "on.stream.name=projects/*/streams/*}0\001\022\220"
+          + "\002\n\035BatchCreateReadSessionStreams\022K.googl"
+          + "e.cloud.bigquery.storage.v1beta1.BatchCr"
+          + "eateReadSessionStreamsRequest\032L.google.c"
+          + "loud.bigquery.storage.v1beta1.BatchCreat"
+          + "eReadSessionStreamsResponse\"T\332A\031session,"
+          + "requested_streams\202\323\344\223\0022\"-/v1beta1/{sessi"
+          + "on.name=projects/*/sessions/*}:\001*\022\247\001\n\016Fi"
+          + "nalizeStream\022<.google.cloud.bigquery.sto"
+          + "rage.v1beta1.FinalizeStreamRequest\032\026.goo"
+          + "gle.protobuf.Empty\"?\332A\006stream\202\323\344\223\0020\"+/v1"
+          + "beta1/{stream.name=projects/*/streams/*}"
+          + ":\001*\022\340\001\n\017SplitReadStream\022=.google.cloud.b"
+          + "igquery.storage.v1beta1.SplitReadStreamR"
+          + "equest\032>.google.cloud.bigquery.storage.v"
+          + "1beta1.SplitReadStreamResponse\"N\332A\017origi"
+          + "nal_stream\202\323\344\223\0026\0224/v1beta1/{original_str"
+          + "eam.name=projects/*/streams/*}\032{\312A\036bigqu"
+          + "erystorage.googleapis.com\322AWhttps://www."
+          + "googleapis.com/auth/bigquery,https://www"
+          + ".googleapis.com/auth/cloud-platformBp\n)c"
+          + "om.google.cloud.bigquery.storage.v1beta1"
+          + "ZCcloud.google.com/go/bigquery/storage/a"
+          + "piv1beta1/storagepb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -17568,7 +18378,15 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_descriptor,
             new java.lang.String[] {
-              "AvroRows", "ArrowRecordBatch", "RowCount", "Status", "ThrottleStatus", "Rows",
+              "AvroRows",
+              "ArrowRecordBatch",
+              "RowCount",
+              "Status",
+              "ThrottleStatus",
+              "AvroSchema",
+              "ArrowSchema",
+              "Rows",
+              "Schema",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsRequest_descriptor =
         getDescriptor().getMessageTypes().get(9);

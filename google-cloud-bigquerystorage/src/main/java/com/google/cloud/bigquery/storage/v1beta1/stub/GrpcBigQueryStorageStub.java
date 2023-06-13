@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.storage.v1beta1.Storage;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -172,14 +172,14 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                 .setMethodDescriptor(createReadSessionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "table_reference.dataset_id",
                           String.valueOf(request.getTableReference().getDatasetId()));
-                      params.put(
+                      builder.add(
                           "table_reference.project_id",
                           String.valueOf(request.getTableReference().getProjectId()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse> readRowsTransportSettings =
@@ -187,11 +187,11 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
             .setMethodDescriptor(readRowsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "read_position.stream.name",
                       String.valueOf(request.getReadPosition().getStream().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<
@@ -205,9 +205,9 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                 .setMethodDescriptor(batchCreateReadSessionStreamsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("session.name", String.valueOf(request.getSession().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("session.name", String.valueOf(request.getSession().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamTransportSettings =
@@ -215,9 +215,9 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
             .setMethodDescriptor(finalizeStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("stream.name", String.valueOf(request.getStream().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("stream.name", String.valueOf(request.getStream().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
@@ -227,11 +227,11 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                 .setMethodDescriptor(splitReadStreamMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "original_stream.name",
                           String.valueOf(request.getOriginalStream().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
 

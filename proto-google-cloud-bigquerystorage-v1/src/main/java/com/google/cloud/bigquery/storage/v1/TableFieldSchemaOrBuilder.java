@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,12 +207,16 @@ public interface TableFieldSchemaOrBuilder
    *
    * <pre>
    * Optional. Maximum length of values of this field for STRINGS or BYTES.
+   *
    * If max_length is not specified, no maximum length constraint is imposed
    * on this field.
+   *
    * If type = "STRING", then max_length represents the maximum UTF-8
    * length of strings in this field.
+   *
    * If type = "BYTES", then max_length represents the maximum number of
    * bytes in this field.
+   *
    * It is invalid to set this field if type is not "STRING" or "BYTES".
    * </pre>
    *
@@ -229,25 +233,34 @@ public interface TableFieldSchemaOrBuilder
    * Optional. Precision (maximum number of total digits in base 10) and scale
    * (maximum number of digits in the fractional part in base 10) constraints
    * for values of this field for NUMERIC or BIGNUMERIC.
+   *
    * It is invalid to set precision or scale if type is not "NUMERIC" or
    * "BIGNUMERIC".
+   *
    * If precision and scale are not specified, no value range constraint is
    * imposed on this field insofar as values are permitted by the type.
+   *
    * Values of this NUMERIC or BIGNUMERIC field must be in this range when:
+   *
    * * Precision (P) and scale (S) are specified:
    *   [-10^(P-S) + 10^(-S), 10^(P-S) - 10^(-S)]
    * * Precision (P) is specified but not scale (and thus scale is
    *   interpreted to be equal to zero):
    *   [-10^P + 1, 10^P - 1].
+   *
    * Acceptable values for precision and scale if both are specified:
+   *
    * * If type = "NUMERIC":
    *   1 &lt;= precision - scale &lt;= 29 and 0 &lt;= scale &lt;= 9.
    * * If type = "BIGNUMERIC":
    *   1 &lt;= precision - scale &lt;= 38 and 0 &lt;= scale &lt;= 38.
+   *
    * Acceptable values for precision if only precision is specified but not
    * scale (and thus scale is interpreted to be equal to zero):
+   *
    * * If type = "NUMERIC": 1 &lt;= precision &lt;= 29.
    * * If type = "BIGNUMERIC": 1 &lt;= precision &lt;= 38.
+   *
    * If scale is specified but not precision, then it is invalid.
    * </pre>
    *

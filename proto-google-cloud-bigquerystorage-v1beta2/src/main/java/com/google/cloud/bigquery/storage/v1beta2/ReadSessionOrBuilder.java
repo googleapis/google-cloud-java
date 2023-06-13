@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -325,6 +325,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -341,6 +342,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -357,6 +359,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -373,6 +376,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -390,6 +394,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -402,5 +407,5 @@ public interface ReadSessionOrBuilder
    */
   com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder getStreamsOrBuilder(int index);
 
-  public com.google.cloud.bigquery.storage.v1beta2.ReadSession.SchemaCase getSchemaCase();
+  com.google.cloud.bigquery.storage.v1beta2.ReadSession.SchemaCase getSchemaCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -333,6 +333,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -349,6 +350,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -365,6 +367,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -381,6 +384,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -398,6 +402,7 @@ public interface ReadSessionOrBuilder
    *
    * <pre>
    * Output only. A list of streams created with the session.
+   *
    * At least one stream is created with the session. In the future, larger
    * request_stream_count values *may* result in this list being unpopulated,
    * in that case, the user will need to use a List method to get the streams
@@ -449,6 +454,7 @@ public interface ReadSessionOrBuilder
    * need to be strictly unique, but instead the same ID should be used to group
    * logically connected sessions (e.g. All using the same ID for all sessions
    * needed to complete a Spark SQL query is reasonable).
+   *
    * Maximum length is 256 bytes.
    * </pre>
    *
@@ -465,6 +471,7 @@ public interface ReadSessionOrBuilder
    * need to be strictly unique, but instead the same ID should be used to group
    * logically connected sessions (e.g. All using the same ID for all sessions
    * needed to complete a Spark SQL query is reasonable).
+   *
    * Maximum length is 256 bytes.
    * </pre>
    *
@@ -474,5 +481,5 @@ public interface ReadSessionOrBuilder
    */
   com.google.protobuf.ByteString getTraceIdBytes();
 
-  public com.google.cloud.bigquery.storage.v1.ReadSession.SchemaCase getSchemaCase();
+  com.google.cloud.bigquery.storage.v1.ReadSession.SchemaCase getSchemaCase();
 }

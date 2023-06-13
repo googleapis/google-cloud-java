@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,10 @@ import javax.annotation.Generated;
  * Service Description: BigQuery storage API.
  *
  * <p>The BigQuery storage API can be used to read data stored in BigQuery.
+ *
+ * <p>The v1beta1 API is not yet officially deprecated, and will go through a full deprecation cycle
+ * (https://cloud.google.com/products#product-launch-stages) before the service is turned down.
+ * However, new code should use the v1 API going forward.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -172,7 +176,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>A particular row can be read by at most one stream. When the caller has reached the end of
    * each stream in the session, then all the data in the table has been read.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -224,7 +228,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>A particular row can be read by at most one stream. When the caller has reached the end of
    * each stream in the session, then all the data in the table has been read.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -276,7 +280,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>A particular row can be read by at most one stream. When the caller has reached the end of
    * each stream in the session, then all the data in the table has been read.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -319,7 +323,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>A particular row can be read by at most one stream. When the caller has reached the end of
    * each stream in the session, then all the data in the table has been read.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -494,8 +498,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
-   * dynamically adjust the parallelism of a batch processing task downwards without losing data.
+   * Causes a single stream in a ReadSession to gracefully stop. This API can be used to dynamically
+   * adjust the parallelism of a batch processing task downwards without losing data.
    *
    * <p>This API does not delete the stream -- it remains visible in the ReadSession, and any data
    * processed by the stream is not released to other streams. However, no additional data will be
@@ -531,8 +535,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
-   * dynamically adjust the parallelism of a batch processing task downwards without losing data.
+   * Causes a single stream in a ReadSession to gracefully stop. This API can be used to dynamically
+   * adjust the parallelism of a batch processing task downwards without losing data.
    *
    * <p>This API does not delete the stream -- it remains visible in the ReadSession, and any data
    * processed by the stream is not released to other streams. However, no additional data will be
@@ -569,8 +573,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
-   * dynamically adjust the parallelism of a batch processing task downwards without losing data.
+   * Causes a single stream in a ReadSession to gracefully stop. This API can be used to dynamically
+   * adjust the parallelism of a batch processing task downwards without losing data.
    *
    * <p>This API does not delete the stream -- it remains visible in the ReadSession, and any data
    * processed by the stream is not released to other streams. However, no additional data will be

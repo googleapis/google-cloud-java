@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,10 +36,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -51,10 +94,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -66,10 +152,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -82,10 +211,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -100,12 +272,15 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Aggregates are not supported.
+     * a SQL query. Aggregates are not supported.
+     *
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     *
+     * Restricted to a maximum length for 1 MB.
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -118,12 +293,15 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Aggregates are not supported.
+     * a SQL query. Aggregates are not supported.
+     *
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     *
+     * Restricted to a maximum length for 1 MB.
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -152,7 +330,7 @@ public final class ReadOptions {
     }
 
     private TableReadOptions() {
-      selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      selectedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       rowRestriction_ = "";
     }
 
@@ -160,11 +338,6 @@ public final class ReadOptions {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TableReadOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -185,15 +358,59 @@ public final class ReadOptions {
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList selectedFields_;
+    private com.google.protobuf.LazyStringArrayList selectedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -207,10 +424,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -224,10 +484,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -242,10 +545,53 @@ public final class ReadOptions {
      *
      *
      * <pre>
-     * Optional. Names of the fields in the table that should be read. If empty,
-     * all fields will be read. If the specified field is a nested field, all the
-     * sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     *
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     *
+     * As an example, consider a table with the following schema:
+     *
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     *
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     *
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *
+     *   struct_field {
+     *       string_field1
+     *   }
+     *
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -266,12 +612,15 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Aggregates are not supported.
+     * a SQL query. Aggregates are not supported.
+     *
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     *
+     * Restricted to a maximum length for 1 MB.
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -295,12 +644,15 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Aggregates are not supported.
+     * a SQL query. Aggregates are not supported.
+     *
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     *
+     * Restricted to a maximum length for 1 MB.
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -541,8 +893,7 @@ public final class ReadOptions {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        selectedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
         rowRestriction_ = "";
         return this;
       }
@@ -574,7 +925,6 @@ public final class ReadOptions {
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
             new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -582,18 +932,13 @@ public final class ReadOptions {
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          selectedFields_ = selectedFields_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.selectedFields_ = selectedFields_;
-      }
-
       private void buildPartial0(
           com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          selectedFields_.makeImmutable();
+          result.selectedFields_ = selectedFields_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.rowRestriction_ = rowRestriction_;
         }
@@ -654,7 +999,7 @@ public final class ReadOptions {
         if (!other.selectedFields_.isEmpty()) {
           if (selectedFields_.isEmpty()) {
             selectedFields_ = other.selectedFields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureSelectedFieldsIsMutable();
             selectedFields_.addAll(other.selectedFields_);
@@ -724,23 +1069,66 @@ public final class ReadOptions {
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList selectedFields_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList selectedFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSelectedFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!selectedFields_.isModifiable()) {
           selectedFields_ = new com.google.protobuf.LazyStringArrayList(selectedFields_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -748,16 +1136,60 @@ public final class ReadOptions {
        * @return A list containing the selectedFields.
        */
       public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
-        return selectedFields_.getUnmodifiableView();
+        selectedFields_.makeImmutable();
+        return selectedFields_;
       }
       /**
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -771,10 +1203,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -789,10 +1264,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -807,10 +1325,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -825,6 +1386,7 @@ public final class ReadOptions {
         }
         ensureSelectedFieldsIsMutable();
         selectedFields_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -832,10 +1394,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -849,6 +1454,7 @@ public final class ReadOptions {
         }
         ensureSelectedFieldsIsMutable();
         selectedFields_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -856,10 +1462,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -870,6 +1519,7 @@ public final class ReadOptions {
       public Builder addAllSelectedFields(java.lang.Iterable<java.lang.String> values) {
         ensureSelectedFieldsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, selectedFields_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -877,10 +1527,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -888,8 +1581,9 @@ public final class ReadOptions {
        * @return This builder for chaining.
        */
       public Builder clearSelectedFields() {
-        selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        selectedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -897,10 +1591,53 @@ public final class ReadOptions {
        *
        *
        * <pre>
-       * Optional. Names of the fields in the table that should be read. If empty,
-       * all fields will be read. If the specified field is a nested field, all the
-       * sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       *
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       *
+       * As an example, consider a table with the following schema:
+       *
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       *
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       *
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *
+       *   struct_field {
+       *       string_field1
+       *   }
+       *
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -915,6 +1652,7 @@ public final class ReadOptions {
         checkByteStringIsUtf8(value);
         ensureSelectedFieldsIsMutable();
         selectedFields_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -925,12 +1663,15 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Aggregates are not supported.
+       * a SQL query. Aggregates are not supported.
+       *
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
        *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
        *           "numeric_field BETWEEN 1.0 AND 5.0"
+       *
+       * Restricted to a maximum length for 1 MB.
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -953,12 +1694,15 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Aggregates are not supported.
+       * a SQL query. Aggregates are not supported.
+       *
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
        *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
        *           "numeric_field BETWEEN 1.0 AND 5.0"
+       *
+       * Restricted to a maximum length for 1 MB.
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -981,12 +1725,15 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Aggregates are not supported.
+       * a SQL query. Aggregates are not supported.
+       *
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
        *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
        *           "numeric_field BETWEEN 1.0 AND 5.0"
+       *
+       * Restricted to a maximum length for 1 MB.
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -1008,12 +1755,15 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Aggregates are not supported.
+       * a SQL query. Aggregates are not supported.
+       *
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
        *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
        *           "numeric_field BETWEEN 1.0 AND 5.0"
+       *
+       * Restricted to a maximum length for 1 MB.
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -1031,12 +1781,15 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Aggregates are not supported.
+       * a SQL query. Aggregates are not supported.
+       *
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
        *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
        *           "numeric_field BETWEEN 1.0 AND 5.0"
+       *
+       * Restricted to a maximum length for 1 MB.
        * </pre>
        *
        * <code>string row_restriction = 2;</code>

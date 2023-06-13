@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ProtoRowsOrBuilder
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>
@@ -42,6 +43,7 @@ public interface ProtoRowsOrBuilder
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>
@@ -56,6 +58,7 @@ public interface ProtoRowsOrBuilder
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>

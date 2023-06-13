@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,11 +39,6 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     return new ProtoRows();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1beta2.ProtoBufProto
         .internal_static_google_cloud_bigquery_storage_v1beta2_ProtoRows_descriptor;
@@ -68,6 +63,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>
@@ -85,6 +81,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>
@@ -101,6 +98,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A sequence of rows serialized as a Protocol Buffer.
+   *
    * See https://developers.google.com/protocol-buffers/docs/overview for more
    * information on deserializing this field.
    * </pre>
@@ -483,6 +481,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -501,6 +500,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -517,6 +517,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -534,6 +535,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -558,6 +560,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -581,6 +584,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>
@@ -602,6 +606,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A sequence of rows serialized as a Protocol Buffer.
+     *
      * See https://developers.google.com/protocol-buffers/docs/overview for more
      * information on deserializing this field.
      * </pre>

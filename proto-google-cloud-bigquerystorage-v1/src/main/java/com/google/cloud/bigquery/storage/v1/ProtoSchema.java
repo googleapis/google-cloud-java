@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     return new ProtoSchema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1.ProtoBufProto
         .internal_static_google_cloud_bigquery_storage_v1_ProtoSchema_descriptor;
@@ -77,6 +72,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>
@@ -99,6 +95,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>
@@ -123,6 +120,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
    * independent messages, this means the descriptor may need to be transformed
    * to only use nested types:
    * https://developers.google.com/protocol-buffers/docs/proto#nested
+   *
    * For additional information for how proto types and values map onto BigQuery
    * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
    * </pre>
@@ -514,6 +512,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -535,6 +534,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -562,6 +562,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -591,6 +592,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -618,6 +620,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -652,6 +655,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -678,6 +682,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -700,6 +705,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>
@@ -726,6 +732,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * independent messages, this means the descriptor may need to be transformed
      * to only use nested types:
      * https://developers.google.com/protocol-buffers/docs/proto#nested
+     *
      * For additional information for how proto types and values map onto BigQuery
      * see: https://cloud.google.com/bigquery/docs/write-api#data_type_conversions
      * </pre>

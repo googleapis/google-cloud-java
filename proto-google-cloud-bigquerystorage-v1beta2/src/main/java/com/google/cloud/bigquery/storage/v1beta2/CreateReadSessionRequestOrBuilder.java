@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,7 @@ public interface CreateReadSessionRequestOrBuilder
    * depending on the amount parallelism that is reasonable for the table. Error
    * will be returned if the max count is greater than the current system
    * max limit of 1,000.
+   *
    * Streams must be read starting from offset 0.
    * </pre>
    *

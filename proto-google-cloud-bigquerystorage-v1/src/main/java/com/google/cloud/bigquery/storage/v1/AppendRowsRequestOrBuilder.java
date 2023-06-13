@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,13 @@ public interface AppendRowsRequestOrBuilder
    * and only needs to be specified as part of the first request on the gRPC
    * connection. If provided for subsequent requests, it must match the value of
    * the first request.
+   *
    * For explicitly created write streams, the format is:
+   *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+   *
    * For the special default stream, the format is:
+   *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
    * </pre>
    *
@@ -52,9 +56,13 @@ public interface AppendRowsRequestOrBuilder
    * and only needs to be specified as part of the first request on the gRPC
    * connection. If provided for subsequent requests, it must match the value of
    * the first request.
+   *
    * For explicitly created write streams, the format is:
+   *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+   *
    * For the special default stream, the format is:
+   *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
    * </pre>
    *
@@ -180,14 +188,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -205,14 +217,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -236,14 +252,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -264,14 +284,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -295,14 +319,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -324,14 +352,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -349,14 +381,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -374,14 +410,18 @@ public interface AppendRowsRequestOrBuilder
    * values are fields present in user schema but missing in rows. The key is
    * the field name. The value is the interpretation of missing values for the
    * field.
+   *
    * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
    * missing values in field foo are interpreted as NULL, all missing values in
    * field bar are interpreted as the default value of field bar in table
    * schema.
+   *
    * If a field is not in this map and has missing values, the missing values
    * in this field are interpreted as NULL.
+   *
    * This field only applies to the current request, it won't affect other
    * requests on the connection.
+   *
    * Currently, field name can only be top-level column name, can't be a struct
    * field path like 'foo.bar'.
    * </pre>
@@ -392,5 +432,5 @@ public interface AppendRowsRequestOrBuilder
    */
   int getMissingValueInterpretationsValueOrThrow(java.lang.String key);
 
-  public com.google.cloud.bigquery.storage.v1.AppendRowsRequest.RowsCase getRowsCase();
+  com.google.cloud.bigquery.storage.v1.AppendRowsRequest.RowsCase getRowsCase();
 }

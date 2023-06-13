@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ public interface CreateReadSessionRequestOrBuilder
    * non-negative. The number of streams may be lower than the requested number,
    * depending on the amount parallelism that is reasonable for the table.
    * There is a default system max limit of 1,000.
+   *
    * This must be greater than or equal to preferred_min_stream_count.
    * Typically, clients should either leave this unset to let the system to
    * determine an upper bound OR set this a size for the maximum "units of work"
@@ -125,6 +126,7 @@ public interface CreateReadSessionRequestOrBuilder
    * This is typically a target parallelism of the client (e.g. a Spark
    * cluster with N-workers would set this to a low multiple of N to ensure
    * good cluster utilization).
+   *
    * The system will make a best effort to provide at least this number of
    * streams, but in some cases might provide less.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@
  * <p>Service Description: BigQuery storage API.
  *
  * <p>The BigQuery storage API can be used to read data stored in BigQuery.
+ *
+ * <p>The v1beta1 API is not yet officially deprecated, and will go through a full deprecation cycle
+ * (https://cloud.google.com/products#product-launch-stages) before the service is turned down.
+ * However, new code should use the v1 API going forward.
  *
  * <p>Sample for BaseBigQueryStorageClient:
  *

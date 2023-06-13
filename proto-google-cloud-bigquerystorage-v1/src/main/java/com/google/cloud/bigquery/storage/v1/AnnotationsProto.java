@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,11 +37,14 @@ public final class AnnotationsProto {
    * Setting the column_name extension allows users to reference
    * bigquery column independently of the field name in the protocol buffer
    * message.
+   *
    * The intended use of this annotation is to reference a destination column
    * named using characters unavailable for protobuf field names (e.g. unicode
    * characters).
+   *
    * More details about BigQuery naming limitations can be found here:
    * https://cloud.google.com/bigquery/docs/schemas#column_names
+   *
    * This extension is currently experimental.
    * </pre>
    *

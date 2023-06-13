@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     return new StreamStats();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1beta2.StorageProto
         .internal_static_google_cloud_bigquery_storage_v1beta2_StreamStats_descriptor;
@@ -77,10 +72,12 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      * The fraction of rows assigned to the stream that have been processed by
      * the server so far, not including the rows in the current response
      * message.
+     *
      * This value, along with `at_response_end`, can be used to interpolate
      * the progress made as the rows in the message are being processed using
      * the following formula: `at_response_start + (at_response_end -
      * at_response_start) * rows_processed_from_response / rows_in_response`.
+     *
      * Note that if a filter is provided, the `at_response_end` value of the
      * previous response may not necessarily be equal to the
      * `at_response_start` value of the current response.
@@ -125,11 +122,6 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       return new Progress();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.storage.v1beta2.StorageProto
           .internal_static_google_cloud_bigquery_storage_v1beta2_StreamStats_Progress_descriptor;
@@ -154,10 +146,12 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      * The fraction of rows assigned to the stream that have been processed by
      * the server so far, not including the rows in the current response
      * message.
+     *
      * This value, along with `at_response_end`, can be used to interpolate
      * the progress made as the rows in the message are being processed using
      * the following formula: `at_response_start + (at_response_end -
      * at_response_start) * rows_processed_from_response / rows_in_response`.
+     *
      * Note that if a filter is provided, the `at_response_end` value of the
      * previous response may not necessarily be equal to the
      * `at_response_start` value of the current response.
@@ -570,10 +564,12 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        * The fraction of rows assigned to the stream that have been processed by
        * the server so far, not including the rows in the current response
        * message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate
        * the progress made as the rows in the message are being processed using
        * the following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the
        * `at_response_start` value of the current response.
@@ -594,10 +590,12 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        * The fraction of rows assigned to the stream that have been processed by
        * the server so far, not including the rows in the current response
        * message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate
        * the progress made as the rows in the message are being processed using
        * the following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the
        * `at_response_start` value of the current response.
@@ -622,10 +620,12 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        * The fraction of rows assigned to the stream that have been processed by
        * the server so far, not including the rows in the current response
        * message.
+       *
        * This value, along with `at_response_end`, can be used to interpolate
        * the progress made as the rows in the message are being processed using
        * the following formula: `at_response_start + (at_response_end -
        * at_response_start) * rows_processed_from_response / rows_in_response`.
+       *
        * Note that if a filter is provided, the `at_response_end` value of the
        * previous response may not necessarily be equal to the
        * `at_response_start` value of the current response.

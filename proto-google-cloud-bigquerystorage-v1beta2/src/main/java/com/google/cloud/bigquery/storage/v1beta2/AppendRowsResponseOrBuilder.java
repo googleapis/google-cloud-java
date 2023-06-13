@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,15 +70,21 @@ public interface AppendRowsResponseOrBuilder
    * it indicates rows were not accepted into the system.
    * Users can retry or continue with other append requests within the
    * same connection.
+   *
    * Additional information about error signalling:
+   *
    * ALREADY_EXISTS: Happens when an append specified an offset, and the
    * backend already has received data at this offset.  Typically encountered
    * in retry scenarios, and can be ignored.
+   *
    * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
    * the current end of the stream.
+   *
    * INVALID_ARGUMENT: Indicates a malformed request or data.
+   *
    * ABORTED: Request processing is aborted because of prior failures.  The
    * request can be retried if previous failure is addressed.
+   *
    * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
@@ -95,15 +101,21 @@ public interface AppendRowsResponseOrBuilder
    * it indicates rows were not accepted into the system.
    * Users can retry or continue with other append requests within the
    * same connection.
+   *
    * Additional information about error signalling:
+   *
    * ALREADY_EXISTS: Happens when an append specified an offset, and the
    * backend already has received data at this offset.  Typically encountered
    * in retry scenarios, and can be ignored.
+   *
    * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
    * the current end of the stream.
+   *
    * INVALID_ARGUMENT: Indicates a malformed request or data.
+   *
    * ABORTED: Request processing is aborted because of prior failures.  The
    * request can be retried if previous failure is addressed.
+   *
    * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
@@ -120,15 +132,21 @@ public interface AppendRowsResponseOrBuilder
    * it indicates rows were not accepted into the system.
    * Users can retry or continue with other append requests within the
    * same connection.
+   *
    * Additional information about error signalling:
+   *
    * ALREADY_EXISTS: Happens when an append specified an offset, and the
    * backend already has received data at this offset.  Typically encountered
    * in retry scenarios, and can be ignored.
+   *
    * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
    * the current end of the stream.
+   *
    * INVALID_ARGUMENT: Indicates a malformed request or data.
+   *
    * ABORTED: Request processing is aborted because of prior failures.  The
    * request can be retried if previous failure is addressed.
+   *
    * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
@@ -177,6 +195,5 @@ public interface AppendRowsResponseOrBuilder
    */
   com.google.cloud.bigquery.storage.v1beta2.TableSchemaOrBuilder getUpdatedSchemaOrBuilder();
 
-  public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.ResponseCase
-      getResponseCase();
+  com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.ResponseCase getResponseCase();
 }

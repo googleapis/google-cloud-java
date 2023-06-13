@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.cloud.bigquery.storage.v1;
  * https://arrow.apache.org/docs/python/api/datatypes.html
  * and serialized to bytes using IPC:
  * https://arrow.apache.org/docs/format/Columnar.html#serialization-and-interprocess-communication-ipc
+ *
  * See code samples on how this message can be deserialized.
  * </pre>
  *
@@ -49,11 +50,6 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ArrowSchema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -256,6 +252,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
    * https://arrow.apache.org/docs/python/api/datatypes.html
    * and serialized to bytes using IPC:
    * https://arrow.apache.org/docs/format/Columnar.html#serialization-and-interprocess-communication-ipc
+   *
    * See code samples on how this message can be deserialized.
    * </pre>
    *

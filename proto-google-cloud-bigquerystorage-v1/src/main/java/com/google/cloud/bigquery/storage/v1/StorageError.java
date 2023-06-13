@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StorageError();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -186,6 +181,57 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>OFFSET_OUT_OF_RANGE = 9;</code>
      */
     OFFSET_OUT_OF_RANGE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key (CMEK) not provided for CMEK-enabled
+     * data.
+     * </pre>
+     *
+     * <code>CMEK_NOT_PROVIDED = 10;</code>
+     */
+    CMEK_NOT_PROVIDED(10),
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key (CMEK) was incorrectly provided.
+     * </pre>
+     *
+     * <code>INVALID_CMEK_PROVIDED = 11;</code>
+     */
+    INVALID_CMEK_PROVIDED(11),
+    /**
+     *
+     *
+     * <pre>
+     * There is an encryption error while using customer-managed encryption key.
+     * </pre>
+     *
+     * <code>CMEK_ENCRYPTION_ERROR = 12;</code>
+     */
+    CMEK_ENCRYPTION_ERROR(12),
+    /**
+     *
+     *
+     * <pre>
+     * Key Management Service (KMS) service returned an error.
+     * </pre>
+     *
+     * <code>KMS_SERVICE_ERROR = 13;</code>
+     */
+    KMS_SERVICE_ERROR(13),
+    /**
+     *
+     *
+     * <pre>
+     * Permission denied while using customer-managed encryption key.
+     * </pre>
+     *
+     * <code>KMS_PERMISSION_DENIED = 14;</code>
+     */
+    KMS_PERMISSION_DENIED(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -293,6 +339,57 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>OFFSET_OUT_OF_RANGE = 9;</code>
      */
     public static final int OFFSET_OUT_OF_RANGE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key (CMEK) not provided for CMEK-enabled
+     * data.
+     * </pre>
+     *
+     * <code>CMEK_NOT_PROVIDED = 10;</code>
+     */
+    public static final int CMEK_NOT_PROVIDED_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key (CMEK) was incorrectly provided.
+     * </pre>
+     *
+     * <code>INVALID_CMEK_PROVIDED = 11;</code>
+     */
+    public static final int INVALID_CMEK_PROVIDED_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * There is an encryption error while using customer-managed encryption key.
+     * </pre>
+     *
+     * <code>CMEK_ENCRYPTION_ERROR = 12;</code>
+     */
+    public static final int CMEK_ENCRYPTION_ERROR_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Key Management Service (KMS) service returned an error.
+     * </pre>
+     *
+     * <code>KMS_SERVICE_ERROR = 13;</code>
+     */
+    public static final int KMS_SERVICE_ERROR_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Permission denied while using customer-managed encryption key.
+     * </pre>
+     *
+     * <code>KMS_PERMISSION_DENIED = 14;</code>
+     */
+    public static final int KMS_PERMISSION_DENIED_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -338,6 +435,16 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
           return OFFSET_ALREADY_EXISTS;
         case 9:
           return OFFSET_OUT_OF_RANGE;
+        case 10:
+          return CMEK_NOT_PROVIDED;
+        case 11:
+          return INVALID_CMEK_PROVIDED;
+        case 12:
+          return CMEK_ENCRYPTION_ERROR;
+        case 13:
+          return KMS_SERVICE_ERROR;
+        case 14:
+          return KMS_PERMISSION_DENIED;
         default:
           return null;
       }
