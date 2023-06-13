@@ -1,8 +1,12 @@
 # Script to split a main release note into CHANGELOG.md in each module.
 
-# 1st argument: the path to a file that contains the main changelog
+# 1st argument: the path to a file that contains the main changelog. You can get
+#     the body of a pull request via `gh pr view
+#     https://github.com/googleapis/google-cloud-java/pull/9502 --json body
+#     --jq '.body'`
 # 2nd argument: the path to a directory that whose child directories contain
-#     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md"
+#     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md". It's the root directory
+#     of the google-cloud-java repository.
 # Example:
 # google-cloud-java$ python3 split_release_note.py change.txt .
 
