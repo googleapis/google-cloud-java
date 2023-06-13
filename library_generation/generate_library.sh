@@ -31,6 +31,9 @@ fi
 GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout "${GOOGLEAPIS_COMMIT}"
+# the order of services entries in gapic_metadata.json is relevant to the
+# order of proto file, sort the proto files with respect to their name to
+# get a fixed order.
 PROTO_FILES=$(find "${PROTO_PATH}" -type f  -name "*.proto" | sort)
 # pull proto files and protoc from protobuf repository
 # maven central doesn't have proto files
