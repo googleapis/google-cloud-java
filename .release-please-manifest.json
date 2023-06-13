@@ -1,6 +1,5 @@
 {
   ".": "1.13.0",
-  "pull-request-title-pattern": "test: pineapple",
   "pull-request-header": "test: updated PR header",
   "group-pull-request-title-pattern": "chore: release ${branch}: ${version}"
 }
