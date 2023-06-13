@@ -3,9 +3,7 @@ import unittest
 # Unit tests for split_release_note.py
 
 from split_release_note import LibraryModule, create_changelog_entry, group_changes_by_api
-import split_release_note as srn
 from pathlib import Path
-from datetime import date
 
 dummy_module = LibraryModule(
     Path('release-note-generation/test/java-analyics-admin'),
@@ -16,9 +14,9 @@ dummy_module = LibraryModule(
 class TestCase(unittest.TestCase):
 
     def test_create_changelog_entry(self):
-        srn.current_date = date(2023, 6, 10)
         # do something
         entry = create_changelog_entry(
+            '2023-06-10',
             dummy_module,
             ['Add support for disabling Pod overprovisioning',
              'Enhanced query generation performance']

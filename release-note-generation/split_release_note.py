@@ -18,8 +18,6 @@ from collections import defaultdict
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-
-current_date = date.today()
 # Returns the list of target modules that has CHANGELOG.md
 
 class LibraryModule:
@@ -78,7 +76,7 @@ def group_changes_by_api(main_changes: [str]):
 CHANGELOG_HEADER_MARK = '# Changelog'
 
 
-def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
+def create_changelog_entry(current_date: str, module: LibraryModule, changelog_lines: [str]):
     changelog_entry = f'## {module.version} ({current_date})' \
                       f'\n\n### Features\n\n'
     for line in changelog_lines:
@@ -86,7 +84,7 @@ def create_changelog_entry(module: LibraryModule, changelog_lines: [str]):
     return changelog_entry
 
 
-def write_changelog(module: LibraryModule, changelog_entries: [str]):
+def write_changelog(current_date:str, module: LibraryModule, changelog_entries: [str]):
     changelog_file = module.changelog
     if changelog_file.exists():
         with open(changelog_file, 'r') as file:
@@ -98,7 +96,7 @@ def write_changelog(module: LibraryModule, changelog_entries: [str]):
     if re.search(f'## {module.version}', changelog_content):
         return
 
-    entry = create_changelog_entry(module, changelog_entries)
+    entry = create_changelog_entry(current_date, module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                                          f'{CHANGELOG_HEADER_MARK}'
                                          f'\n\n{entry}')
@@ -115,9 +113,14 @@ def main():
     # Step 1: Reads the main changelog from standard input
     main_changes = []
     main_release_note_file = sys.argv[1]
+    current_date = None
     with open(main_release_note_file, 'r') as file:
         for line in file:
             main_changes.append(line.strip())
+            if not current_date:
+                match = re.search(r'## .* \((\d\d\d\d-\d\d-\d\d)\)', line)
+                if match:
+                    current_date = match.group(1)
 
     # Step 2: Detects target modules by .OwlBot.yaml for api-name: field.
     root_directory = sys.argv[2]
@@ -132,7 +135,7 @@ def main():
     for module in modules:
         changelog_entries = api_to_changelog_entries.get(module.api_name,
                                                          ['No change'])
-        write_changelog(module, changelog_entries)
+        write_changelog(current_date, module, changelog_entries)
 
 
 if __name__ == '__main__':

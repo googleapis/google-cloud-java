@@ -1,3 +1,9 @@
+:robot: I have created a release *beep* *boop*
+---
+
+
+<details><summary>1.13.0</summary>
+
 ## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
 
 
@@ -21,3 +27,7 @@
 ### Documentation
 
 * update discoveryengine v1 docs link ([#9512](https://github.com/googleapis/google-cloud-java/issues/9512)) ([f172c7e](https://github.com/googleapis/google-cloud-java/commit/f172c7e692c7991b878968256b3fe7c538de7c00))
+</details>
+
+---
+This PR was generated with [Release Please](https://github.com/googleapis/release-please). See [documentation](https://github.com/googleapis/release-please#release-please).
