@@ -3,6 +3,8 @@
 # 1st argument: the path to a file that contains the main changelog
 # 2nd argument: the path to a directory that whose child directories contain
 #     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md"
+# Example:
+# google-cloud-java$ python3 split_release_note.py change.txt .
 
 # This script inserts new entries to the CHANGELOG.md files by splitting the
 # main changelog.
@@ -91,6 +93,11 @@ def write_changelog(module: LibraryModule, changelog_entries: [str]):
             changelog_content = file.read()
     else:
         changelog_content = CHANGELOG_HEADER_MARK
+
+    # Avoid adding the same version twice
+    if re.search(f'## {module.version}', changelog_content):
+        return
+
     entry = create_changelog_entry(module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                                          f'{CHANGELOG_HEADER_MARK}'
@@ -100,6 +107,11 @@ def write_changelog(module: LibraryModule, changelog_entries: [str]):
 
 
 def main():
+    if len(sys.argv) != 3:
+        print("Please specify main changelog file and path to the repository "
+              "root")
+        sys.exit(1)
+
     # Step 1: Reads the main changelog from standard input
     main_changes = []
     main_release_note_file = sys.argv[1]
