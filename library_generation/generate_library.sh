@@ -8,7 +8,8 @@ GRPC_VERSION=$3
 GAPIC_GENERATOR_VERSION=$4
 PROTO_PATH=$5
 CONTAINS_CLOUD=$6
-JAVA_GAPIC_OPT=$7
+TRANSPORT=$7 # grpc+rest or grpc
+REST_NUMERIC_ENUMS=$8 # true or false
 OUT_LAYER_FOLDER="${PROTO_PATH////-}-java"
 if [ "${CONTAINS_CLOUD}" == true ]; then
   OUT_LAYER_FOLDER="${OUT_LAYER_FOLDER//google/google-cloud}"
@@ -107,6 +108,23 @@ search_additional_protos() {
   echo "${ADDITIONAL_PROTOS}"
 }
 
+get_gapic_opts() {
+  GAPIC_CONFIG=$(find "${PROTO_PATH}" -type f -name "*gapic.yaml")
+  if [ -z "${GAPIC_CONFIG}" ]; then
+    GAPIC_CONFIG=""
+  else
+    GAPIC_CONFIG="gapic-config=${GAPIC_CONFIG},"
+  fi
+  GRPC_SERVICE_CONFIG=$(find "${PROTO_PATH}" -type f -name "*service_config.json")
+  API_SERVICE_CONFIG=$(find "${PROTO_PATH}" -maxdepth 1 -type f \( -name "*.yaml" ! -name "*gapic.yaml" \))
+  if [ "${REST_NUMERIC_ENUMS}" == "true" ]; then
+    REST_NUMERIC_ENUMS="rest-numeric-enums,"
+  else
+    REST_NUMERIC_ENUMS=""
+  fi
+  echo "transport=${TRANSPORT},${REST_NUMERIC_ENUMS}grpc-service-config=${GRPC_SERVICE_CONFIG},${GAPIC_CONFIG}api-service-config=${API_SERVICE_CONFIG}"
+}
+
 ##################### Section 1 #####################
 # generate grpc-*/
 #####################################################
@@ -123,7 +141,7 @@ remove_empty_files "grpc"
 "${PROTOC_ROOT}"/protoc --experimental_allow_proto3_optional \
 "--plugin=protoc-gen-java_gapic=${REPO_ROOT}/library_generation/gapic-generator-java-wrapper" \
 "--java_gapic_out=metadata:${LIBRARY_GEN_OUT}/${PROTO_PATH}/java_gapic_srcjar_raw.srcjar.zip" \
-"--java_gapic_opt=${JAVA_GAPIC_OPT}" \
+"--java_gapic_opt=$(get_gapic_opts)" \
 ${PROTO_FILES} $(search_additional_protos)
 
 unzip -o -q "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/java_gapic_srcjar_raw.srcjar.zip -d "${LIBRARY_GEN_OUT}"/${PROTO_PATH}
