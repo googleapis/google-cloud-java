@@ -10,6 +10,10 @@ PROTO_PATH=$5
 CONTAINS_CLOUD=$6
 TRANSPORT=$7 # grpc+rest or grpc
 REST_NUMERIC_ENUMS=$8 # true or false
+INCLUDE_SAMPLES=$9 # true or false
+if [ -z "${INCLUDE_SAMPLES}" ]; then
+  INCLUDE_SAMPLES="true"
+fi
 OUT_LAYER_FOLDER="${PROTO_PATH////-}-java"
 if [ "${CONTAINS_CLOUD}" == true ]; then
   OUT_LAYER_FOLDER="${OUT_LAYER_FOLDER//google/google-cloud}"
@@ -165,8 +169,10 @@ mv_src_files "gapic" "main"
 remove_empty_files "gapic"
 # Test source files.
 mv_src_files "gapic" "test"
-# Sample source files.
-mv_src_files "samples" "main"
+if [ "${INCLUDE_SAMPLES}" == "true" ]; then
+  # Sample source files.
+  mv_src_files "samples" "main"
+fi
 ##################### Section 3 #####################
 # generate proto-*/
 #####################################################
