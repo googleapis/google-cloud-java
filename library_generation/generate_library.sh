@@ -19,14 +19,14 @@ if [ "${CONTAINS_CLOUD}" == true ]; then
   OUT_LAYER_FOLDER="${OUT_LAYER_FOLDER//google/google-cloud}"
 fi
 
-LIBRARY_GEN_OUT=$(pwd)/../library_gen_out
+LIBRARY_GEN_OUT=$(dirname "$(readlink -f "$0")")/../library_gen_out
+REPO_ROOT="${LIBRARY_GEN_OUT}"/..
 mkdir -p "${LIBRARY_GEN_OUT}/${PROTO_PATH}"
 
 ##################### Section 0 #####################
 # prepare tooling
 #####################################################
 # proto files from googleapis repository
-REPO_ROOT=$(pwd)/..
 cd "${REPO_ROOT}"
 
 if [ ! -d googleapis ]; then

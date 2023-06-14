@@ -8,7 +8,8 @@ if [ "${IS_CLOUD_SDK}" == true ]; then
   OUT_LAYER_FOLDER="${OUT_LAYER_FOLDER//google/google-cloud}"
 fi
 
-GOLDEN_ROOT=$(pwd)/golden
+GOLDEN_ROOT=$(dirname "$(readlink -f "$0")")/golden
+LIBRARY_GEN_OUT="${GOLDEN_ROOT}"/../../library_gen_out
 
 # exclude gradle files since we do not use them.
-diff -r "${GOLDEN_ROOT}"/"${OUT_LAYER_FOLDER}"/ ../library_gen_out/"${PROTO_PATH}"/"${OUT_LAYER_FOLDER}" -x "*gradle*"
+diff -r "${GOLDEN_ROOT}"/"${OUT_LAYER_FOLDER}"/ "${LIBRARY_GEN_OUT}"/"${PROTO_PATH}"/"${OUT_LAYER_FOLDER}" -x "*gradle*"
