@@ -411,7 +411,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   }
                 },
                 getOptions().getRetrySettings(),
-                EXCEPTION_HANDLER,
+                BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
                 getOptions().getClock(),
                 DEFAULT_RETRY_CONFIG));
       } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
@@ -1334,7 +1334,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       List<BigQueryError> bigQueryErrors =
           Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION);
       // Throwing BigQueryException since there may be no JobId and we want to stay consistent
-      // with the case where there there is a HTTP error
+      // with the case where there is an HTTP error
       throw new BigQueryException(bigQueryErrors);
     }
 
@@ -1369,7 +1369,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
               cursor,
               // cache first page of result
-              transformTableData(results.getRows(), schema)));
+              transformTableData(results.getRows(), schema)),
+          // Return the JobID of the successful job
+          jobId);
     }
     // only 1 page of result
     return new TableResult(
@@ -1378,7 +1380,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         new PageImpl<>(
             new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
             null,
-            transformTableData(results.getRows(), schema)));
+            transformTableData(results.getRows(), schema)),
+        // Return the JobID of the successful job
+        results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null);
   }
 
   @Override

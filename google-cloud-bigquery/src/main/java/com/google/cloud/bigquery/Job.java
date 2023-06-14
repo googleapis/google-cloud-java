@@ -311,15 +311,20 @@ public class Job extends JobInfo {
     // Listing table data might fail, such as with CREATE VIEW queries.
     // Avoid a tabledata.list API request by returning an empty TableResult.
     if (response.getTotalRows() == 0) {
-      return new EmptyTableResult(response.getSchema());
+      TableResult emptyTableResult = new EmptyTableResult(response.getSchema());
+      emptyTableResult.setJobId(job.getJobId());
+      return emptyTableResult;
     }
 
     TableId table =
         ((QueryJobConfiguration) getConfiguration()).getDestinationTable() == null
             ? ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable()
             : ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
-    return bigquery.listTableData(
-        table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
+    TableResult tableResult =
+        bigquery.listTableData(
+            table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
+    tableResult.setJobId(job.getJobId());
+    return tableResult;
   }
 
   private QueryResponse waitForQueryResults(
