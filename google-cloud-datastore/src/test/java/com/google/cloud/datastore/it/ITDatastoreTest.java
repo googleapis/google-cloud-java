@@ -194,6 +194,7 @@ public class ITDatastoreTest {
         FullEntity.newBuilder(PARTIAL_ENTITY1)
             .setKey(
                 IncompleteKey.newBuilder(PROJECT_ID, KIND3)
+                    .setNamespace(NAMESPACE)
                     .setDatabaseId(options.getDatabaseId())
                     .build())
             .build();
