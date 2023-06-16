@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddCatalogAttributeRequest;
 import com.google.cloud.retail.v2beta.AttributesConfig;
@@ -605,58 +606,124 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
         HttpJsonCallSettings.<ListCatalogsRequest, ListCatalogsResponse>newBuilder()
             .setMethodDescriptor(listCatalogsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCatalogRequest, Catalog> updateCatalogTransportSettings =
         HttpJsonCallSettings.<UpdateCatalogRequest, Catalog>newBuilder()
             .setMethodDescriptor(updateCatalogMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("catalog.name", String.valueOf(request.getCatalog().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchTransportSettings =
         HttpJsonCallSettings.<SetDefaultBranchRequest, Empty>newBuilder()
             .setMethodDescriptor(setDefaultBranchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("catalog", String.valueOf(request.getCatalog()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchTransportSettings =
             HttpJsonCallSettings.<GetDefaultBranchRequest, GetDefaultBranchResponse>newBuilder()
                 .setMethodDescriptor(getDefaultBranchMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("catalog", String.valueOf(request.getCatalog()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCompletionConfigRequest, CompletionConfig>
         getCompletionConfigTransportSettings =
             HttpJsonCallSettings.<GetCompletionConfigRequest, CompletionConfig>newBuilder()
                 .setMethodDescriptor(getCompletionConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
         updateCompletionConfigTransportSettings =
             HttpJsonCallSettings.<UpdateCompletionConfigRequest, CompletionConfig>newBuilder()
                 .setMethodDescriptor(updateCompletionConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "completion_config.name",
+                          String.valueOf(request.getCompletionConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAttributesConfigRequest, AttributesConfig>
         getAttributesConfigTransportSettings =
             HttpJsonCallSettings.<GetAttributesConfigRequest, AttributesConfig>newBuilder()
                 .setMethodDescriptor(getAttributesConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
         updateAttributesConfigTransportSettings =
             HttpJsonCallSettings.<UpdateAttributesConfigRequest, AttributesConfig>newBuilder()
                 .setMethodDescriptor(updateAttributesConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attributes_config.name",
+                          String.valueOf(request.getAttributesConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddCatalogAttributeRequest, AttributesConfig>
         addCatalogAttributeTransportSettings =
             HttpJsonCallSettings.<AddCatalogAttributeRequest, AttributesConfig>newBuilder()
                 .setMethodDescriptor(addCatalogAttributeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeTransportSettings =
             HttpJsonCallSettings.<RemoveCatalogAttributeRequest, AttributesConfig>newBuilder()
                 .setMethodDescriptor(removeCatalogAttributeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
         batchRemoveCatalogAttributesTransportSettings =
@@ -665,12 +732,26 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                     newBuilder()
                 .setMethodDescriptor(batchRemoveCatalogAttributesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeTransportSettings =
             HttpJsonCallSettings.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
                 .setMethodDescriptor(replaceCatalogAttributeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listCatalogsCallable =

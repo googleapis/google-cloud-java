@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.resourcesettings.v1.GetSettingRequest;
 import com.google.cloud.resourcesettings.v1.ListSettingsRequest;
@@ -228,16 +229,34 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
         HttpJsonCallSettings.<ListSettingsRequest, ListSettingsResponse>newBuilder()
             .setMethodDescriptor(listSettingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSettingRequest, Setting> getSettingTransportSettings =
         HttpJsonCallSettings.<GetSettingRequest, Setting>newBuilder()
             .setMethodDescriptor(getSettingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateSettingRequest, Setting> updateSettingTransportSettings =
         HttpJsonCallSettings.<UpdateSettingRequest, Setting>newBuilder()
             .setMethodDescriptor(updateSettingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("setting.name", String.valueOf(request.getSetting().getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listSettingsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CatalogItem;
 import com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest;
@@ -384,32 +385,68 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
         HttpJsonCallSettings.<CreateCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(createCatalogItemMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
         HttpJsonCallSettings.<GetCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(getCatalogItemMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
         listCatalogItemsTransportSettings =
             HttpJsonCallSettings.<ListCatalogItemsRequest, ListCatalogItemsResponse>newBuilder()
                 .setMethodDescriptor(listCatalogItemsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
         HttpJsonCallSettings.<UpdateCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(updateCatalogItemMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
         HttpJsonCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCatalogItemMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         HttpJsonCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
             .setMethodDescriptor(importCatalogItemsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.createCatalogItemCallable =

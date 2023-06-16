@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest;
@@ -769,18 +770,38 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
             HttpJsonCallSettings.<CreateOSPolicyAssignmentRequest, Operation>newBuilder()
                 .setMethodDescriptor(createOSPolicyAssignmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
         updateOSPolicyAssignmentTransportSettings =
             HttpJsonCallSettings.<UpdateOSPolicyAssignmentRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateOSPolicyAssignmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "os_policy_assignment.name",
+                          String.valueOf(request.getOsPolicyAssignment().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
         getOSPolicyAssignmentTransportSettings =
             HttpJsonCallSettings.<GetOSPolicyAssignmentRequest, OSPolicyAssignment>newBuilder()
                 .setMethodDescriptor(getOSPolicyAssignmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
         listOSPolicyAssignmentsTransportSettings =
@@ -788,6 +809,12 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>newBuilder()
                 .setMethodDescriptor(listOSPolicyAssignmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
@@ -797,12 +824,24 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listOSPolicyAssignmentRevisionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
         deleteOSPolicyAssignmentTransportSettings =
             HttpJsonCallSettings.<DeleteOSPolicyAssignmentRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteOSPolicyAssignmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesComplianceTransportSettings =
@@ -810,6 +849,12 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>newBuilder()
                 .setMethodDescriptor(getInstanceOSPoliciesComplianceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesResponse>
@@ -820,6 +865,12 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listInstanceOSPoliciesCompliancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
         getOSPolicyAssignmentReportTransportSettings =
@@ -827,6 +878,12 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>newBuilder()
                 .setMethodDescriptor(getOSPolicyAssignmentReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
@@ -836,23 +893,47 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listOSPolicyAssignmentReportsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         HttpJsonCallSettings.<GetInventoryRequest, Inventory>newBuilder()
             .setMethodDescriptor(getInventoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListInventoriesRequest, ListInventoriesResponse>
         listInventoriesTransportSettings =
             HttpJsonCallSettings.<ListInventoriesRequest, ListInventoriesResponse>newBuilder()
                 .setMethodDescriptor(listInventoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVulnerabilityReportRequest, VulnerabilityReport>
         getVulnerabilityReportTransportSettings =
             HttpJsonCallSettings.<GetVulnerabilityReportRequest, VulnerabilityReport>newBuilder()
                 .setMethodDescriptor(getVulnerabilityReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>
         listVulnerabilityReportsTransportSettings =
@@ -860,6 +941,12 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>newBuilder()
                 .setMethodDescriptor(listVulnerabilityReportsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createOSPolicyAssignmentCallable =

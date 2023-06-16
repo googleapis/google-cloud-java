@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.Control;
 import com.google.cloud.retail.v2beta.CreateControlRequest;
@@ -293,26 +294,56 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
         HttpJsonCallSettings.<CreateControlRequest, Control>newBuilder()
             .setMethodDescriptor(createControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteControlRequest, Empty> deleteControlTransportSettings =
         HttpJsonCallSettings.<DeleteControlRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateControlRequest, Control> updateControlTransportSettings =
         HttpJsonCallSettings.<UpdateControlRequest, Control>newBuilder()
             .setMethodDescriptor(updateControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("control.name", String.valueOf(request.getControl().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetControlRequest, Control> getControlTransportSettings =
         HttpJsonCallSettings.<GetControlRequest, Control>newBuilder()
             .setMethodDescriptor(getControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         HttpJsonCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
             .setMethodDescriptor(listControlsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.createControlCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
@@ -632,16 +633,34 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
         HttpJsonCallSettings.<ListInsightsRequest, ListInsightsResponse>newBuilder()
             .setMethodDescriptor(listInsightsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
         HttpJsonCallSettings.<GetInsightRequest, Insight>newBuilder()
             .setMethodDescriptor(getInsightMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
         HttpJsonCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
             .setMethodDescriptor(markInsightAcceptedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
         listRecommendationsTransportSettings =
@@ -649,54 +668,112 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                 .<ListRecommendationsRequest, ListRecommendationsResponse>newBuilder()
                 .setMethodDescriptor(listRecommendationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRecommendationRequest, Recommendation>
         getRecommendationTransportSettings =
             HttpJsonCallSettings.<GetRecommendationRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(getRecommendationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
             HttpJsonCallSettings.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationClaimedMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MarkRecommendationSucceededRequest, Recommendation>
         markRecommendationSucceededTransportSettings =
             HttpJsonCallSettings.<MarkRecommendationSucceededRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationSucceededMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedTransportSettings =
             HttpJsonCallSettings.<MarkRecommendationFailedRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationFailedMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
         getRecommenderConfigTransportSettings =
             HttpJsonCallSettings.<GetRecommenderConfigRequest, RecommenderConfig>newBuilder()
                 .setMethodDescriptor(getRecommenderConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
         updateRecommenderConfigTransportSettings =
             HttpJsonCallSettings.<UpdateRecommenderConfigRequest, RecommenderConfig>newBuilder()
                 .setMethodDescriptor(updateRecommenderConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "recommender_config.name",
+                          String.valueOf(request.getRecommenderConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
         getInsightTypeConfigTransportSettings =
             HttpJsonCallSettings.<GetInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
                 .setMethodDescriptor(getInsightTypeConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigTransportSettings =
             HttpJsonCallSettings.<UpdateInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
                 .setMethodDescriptor(updateInsightTypeConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "insight_type_config.name",
+                          String.valueOf(request.getInsightTypeConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listInsightsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest;
 import com.google.cloud.recommendationengine.v1beta1.ImportMetadata;
@@ -38,7 +39,6 @@ import com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest;
 import com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse;
 import com.google.cloud.recommendationengine.v1beta1.UserEvent;
 import com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -174,9 +174,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             .setMethodDescriptor(writeUserEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
@@ -184,9 +184,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             .setMethodDescriptor(collectUserEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListUserEventsRequest, ListUserEventsResponse>
@@ -195,9 +195,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                 .setMethodDescriptor(listUserEventsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
@@ -205,9 +205,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             .setMethodDescriptor(purgeUserEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
@@ -215,9 +215,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             .setMethodDescriptor(importUserEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

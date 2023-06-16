@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto;
 import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
@@ -369,39 +370,81 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
             HttpJsonCallSettings.<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
                 .setMethodDescriptor(createSshPublicKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         HttpJsonCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePosixAccountMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyTransportSettings =
         HttpJsonCallSettings.<DeleteSshPublicKeyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSshPublicKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
         HttpJsonCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
             .setMethodDescriptor(getLoginProfileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         getSshPublicKeyTransportSettings =
             HttpJsonCallSettings.<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
                 .setMethodDescriptor(getSshPublicKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeyTransportSettings =
             HttpJsonCallSettings.<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>newBuilder()
                 .setMethodDescriptor(importSshPublicKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         updateSshPublicKeyTransportSettings =
             HttpJsonCallSettings.<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
                 .setMethodDescriptor(updateSshPublicKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createSshPublicKeyCallable =

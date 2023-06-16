@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.CreateModelMetadata;
 import com.google.cloud.retail.v2beta.CreateModelRequest;
@@ -39,7 +40,6 @@ import com.google.cloud.retail.v2beta.TuneModelMetadata;
 import com.google.cloud.retail.v2beta.TuneModelRequest;
 import com.google.cloud.retail.v2beta.TuneModelResponse;
 import com.google.cloud.retail.v2beta.UpdateModelRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -184,9 +184,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(createModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
@@ -194,9 +194,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(getModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
@@ -204,9 +204,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(pauseModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResumeModelRequest, Model> resumeModelTransportSettings =
@@ -214,9 +214,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(resumeModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteModelRequest, Empty> deleteModelTransportSettings =
@@ -224,9 +224,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(deleteModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
@@ -234,9 +234,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(listModelsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
@@ -244,9 +244,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(updateModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("model.name", String.valueOf(request.getModel().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model.name", String.valueOf(request.getModel().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TuneModelRequest, Operation> tuneModelTransportSettings =
@@ -254,9 +254,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(tuneModelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

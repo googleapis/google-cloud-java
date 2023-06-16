@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -657,63 +658,135 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
         HttpJsonCallSettings.<CreateCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(createCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateAnnotationRequest, Operation> createAnnotationTransportSettings =
         HttpJsonCallSettings.<CreateAnnotationRequest, Operation>newBuilder()
             .setMethodDescriptor(createAnnotationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         HttpJsonCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
             .setMethodDescriptor(getAnnotationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCollectorsRequest, ListCollectorsResponse>
         listCollectorsTransportSettings =
             HttpJsonCallSettings.<ListCollectorsRequest, ListCollectorsResponse>newBuilder()
                 .setMethodDescriptor(listCollectorsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCollectorRequest, Collector> getCollectorTransportSettings =
         HttpJsonCallSettings.<GetCollectorRequest, Collector>newBuilder()
             .setMethodDescriptor(getCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCollectorRequest, Operation> updateCollectorTransportSettings =
         HttpJsonCallSettings.<UpdateCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(updateCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("collector.name", String.valueOf(request.getCollector().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCollectorRequest, Operation> deleteCollectorTransportSettings =
         HttpJsonCallSettings.<DeleteCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ResumeCollectorRequest, Operation> resumeCollectorTransportSettings =
         HttpJsonCallSettings.<ResumeCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(resumeCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RegisterCollectorRequest, Operation> registerCollectorTransportSettings =
         HttpJsonCallSettings.<RegisterCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(registerCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PauseCollectorRequest, Operation> pauseCollectorTransportSettings =
         HttpJsonCallSettings.<PauseCollectorRequest, Operation>newBuilder()
             .setMethodDescriptor(pauseCollectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createCollectorCallable =

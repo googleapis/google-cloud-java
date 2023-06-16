@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,13 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.CompleteQueryRequest;
 import com.google.cloud.retail.v2beta.CompleteQueryResponse;
 import com.google.cloud.retail.v2beta.ImportCompletionDataRequest;
 import com.google.cloud.retail.v2beta.ImportCompletionDataResponse;
 import com.google.cloud.retail.v2beta.ImportMetadata;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -124,9 +124,9 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
             .setMethodDescriptor(completeQueryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("catalog", String.valueOf(request.getCatalog()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("catalog", String.valueOf(request.getCatalog()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportCompletionDataRequest, Operation> importCompletionDataTransportSettings =
@@ -134,9 +134,9 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
             .setMethodDescriptor(importCompletionDataMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

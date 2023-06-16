@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -44,7 +45,6 @@ import com.google.cloud.rapidmigrationassessment.v1.PauseCollectorRequest;
 import com.google.cloud.rapidmigrationassessment.v1.RegisterCollectorRequest;
 import com.google.cloud.rapidmigrationassessment.v1.ResumeCollectorRequest;
 import com.google.cloud.rapidmigrationassessment.v1.UpdateCollectorRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -271,9 +271,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(createCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAnnotationRequest, Operation> createAnnotationTransportSettings =
@@ -281,9 +281,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(createAnnotationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
@@ -291,9 +291,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(getAnnotationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCollectorsRequest, ListCollectorsResponse>
@@ -302,9 +302,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                 .setMethodDescriptor(listCollectorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCollectorRequest, Collector> getCollectorTransportSettings =
@@ -312,9 +312,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(getCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCollectorRequest, Operation> updateCollectorTransportSettings =
@@ -322,9 +322,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(updateCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("collector.name", String.valueOf(request.getCollector().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("collector.name", String.valueOf(request.getCollector().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCollectorRequest, Operation> deleteCollectorTransportSettings =
@@ -332,9 +332,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(deleteCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResumeCollectorRequest, Operation> resumeCollectorTransportSettings =
@@ -342,9 +342,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(resumeCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RegisterCollectorRequest, Operation> registerCollectorTransportSettings =
@@ -352,9 +352,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(registerCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PauseCollectorRequest, Operation> pauseCollectorTransportSettings =
@@ -362,9 +362,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(pauseCollectorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -372,9 +372,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -382,9 +382,9 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CreateMerchantCenterAccountLinkMetadata;
 import com.google.cloud.retail.v2alpha.CreateMerchantCenterAccountLinkRequest;
@@ -30,7 +31,6 @@ import com.google.cloud.retail.v2alpha.DeleteMerchantCenterAccountLinkRequest;
 import com.google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksRequest;
 import com.google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksResponse;
 import com.google.cloud.retail.v2alpha.MerchantCenterAccountLink;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -157,9 +157,9 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                 .setMethodDescriptor(listMerchantCenterAccountLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateMerchantCenterAccountLinkRequest, Operation>
@@ -168,9 +168,9 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                 .setMethodDescriptor(createMerchantCenterAccountLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMerchantCenterAccountLinkRequest, Empty>
@@ -179,9 +179,9 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                 .setMethodDescriptor(deleteMerchantCenterAccountLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest;
 import com.google.devtools.cloudprofiler.v2.CreateProfileRequest;
@@ -216,17 +217,35 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
         HttpJsonCallSettings.<CreateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(createProfileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateOfflineProfileRequest, Profile>
         createOfflineProfileTransportSettings =
             HttpJsonCallSettings.<CreateOfflineProfileRequest, Profile>newBuilder()
                 .setMethodDescriptor(createOfflineProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         HttpJsonCallSettings.<UpdateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(updateProfileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("profile.name", String.valueOf(request.getProfile().getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createProfileCallable =

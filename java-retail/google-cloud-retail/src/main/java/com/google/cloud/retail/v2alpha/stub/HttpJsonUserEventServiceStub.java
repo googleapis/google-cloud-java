@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CollectUserEventRequest;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
@@ -377,26 +378,56 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
         HttpJsonCallSettings.<WriteUserEventRequest, UserEvent>newBuilder()
             .setMethodDescriptor(writeUserEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         HttpJsonCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
             .setMethodDescriptor(collectUserEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         HttpJsonCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(purgeUserEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         HttpJsonCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(importUserEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsTransportSettings =
         HttpJsonCallSettings.<RejoinUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(rejoinUserEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.writeUserEventCallable =

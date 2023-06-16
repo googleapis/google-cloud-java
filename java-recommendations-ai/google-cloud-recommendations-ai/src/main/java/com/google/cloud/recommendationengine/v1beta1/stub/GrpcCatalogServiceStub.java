@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CatalogItem;
 import com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest;
@@ -36,7 +37,6 @@ import com.google.cloud.recommendationengine.v1beta1.ImportMetadata;
 import com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest;
 import com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse;
 import com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -184,9 +184,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             .setMethodDescriptor(createCatalogItemMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
@@ -194,9 +194,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             .setMethodDescriptor(getCatalogItemMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
@@ -205,9 +205,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                 .setMethodDescriptor(listCatalogItemsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
@@ -215,9 +215,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             .setMethodDescriptor(updateCatalogItemMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
@@ -225,9 +225,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             .setMethodDescriptor(deleteCatalogItemMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
@@ -235,9 +235,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             .setMethodDescriptor(importCatalogItemsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 
