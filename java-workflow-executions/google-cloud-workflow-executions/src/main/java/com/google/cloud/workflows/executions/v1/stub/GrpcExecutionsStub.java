@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.workflows.executions.v1.CancelExecutionRequest;
 import com.google.cloud.workflows.executions.v1.CreateExecutionRequest;
@@ -30,7 +31,6 @@ import com.google.cloud.workflows.executions.v1.Execution;
 import com.google.cloud.workflows.executions.v1.GetExecutionRequest;
 import com.google.cloud.workflows.executions.v1.ListExecutionsRequest;
 import com.google.cloud.workflows.executions.v1.ListExecutionsResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -141,9 +141,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
@@ -151,9 +151,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             .setMethodDescriptor(createExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
@@ -161,9 +161,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
@@ -171,9 +171,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             .setMethodDescriptor(cancelExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
