@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest;
@@ -1142,66 +1143,138 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
         HttpJsonCallSettings.<CreateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(createSourceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         HttpJsonCallSettings.<CreateFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(createFindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
             HttpJsonCallSettings.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(createNotificationConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
             HttpJsonCallSettings.<DeleteNotificationConfigRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteNotificationConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigTransportSettings =
             HttpJsonCallSettings.<GetNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(getNotificationConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
             HttpJsonCallSettings.<GetOrganizationSettingsRequest, OrganizationSettings>newBuilder()
                 .setMethodDescriptor(getOrganizationSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
             .setMethodDescriptor(getSourceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         HttpJsonCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
             .setMethodDescriptor(groupAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GroupFindingsRequest, GroupFindingsResponse>
         groupFindingsTransportSettings =
             HttpJsonCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
                 .setMethodDescriptor(groupFindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
             .setMethodDescriptor(listAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
@@ -1209,43 +1282,93 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                 .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
                 .setMethodDescriptor(listNotificationConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         HttpJsonCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
             .setMethodDescriptor(listSourcesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         HttpJsonCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
             .setMethodDescriptor(runAssetDiscoveryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         HttpJsonCallSettings.<SetFindingStateRequest, Finding>newBuilder()
             .setMethodDescriptor(setFindingStateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateFindingRequest, Finding> updateFindingTransportSettings =
         HttpJsonCallSettings.<UpdateFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(updateFindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("finding.name", String.valueOf(request.getFinding().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
         updateNotificationConfigTransportSettings =
             HttpJsonCallSettings.<UpdateNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(updateNotificationConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "notification_config.name",
+                          String.valueOf(request.getNotificationConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsTransportSettings =
@@ -1253,17 +1376,39 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                 .<UpdateOrganizationSettingsRequest, OrganizationSettings>newBuilder()
                 .setMethodDescriptor(updateOrganizationSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "organization_settings.name",
+                          String.valueOf(request.getOrganizationSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateSourceRequest, Source> updateSourceTransportSettings =
         HttpJsonCallSettings.<UpdateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(updateSourceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("source.name", String.valueOf(request.getSource().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateSecurityMarksRequest, SecurityMarks>
         updateSecurityMarksTransportSettings =
             HttpJsonCallSettings.<UpdateSecurityMarksRequest, SecurityMarks>newBuilder()
                 .setMethodDescriptor(updateSecurityMarksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "security_marks.name",
+                          String.valueOf(request.getSecurityMarks().getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createSourceCallable =

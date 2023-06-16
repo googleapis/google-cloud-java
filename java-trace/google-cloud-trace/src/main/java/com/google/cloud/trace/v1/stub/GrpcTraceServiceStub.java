@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -123,9 +123,9 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
             .setMethodDescriptor(listTracesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
@@ -133,10 +133,10 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
             .setMethodDescriptor(getTraceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("trace_id", String.valueOf(request.getTraceId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("trace_id", String.valueOf(request.getTraceId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
@@ -144,9 +144,9 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
             .setMethodDescriptor(patchTracesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
 

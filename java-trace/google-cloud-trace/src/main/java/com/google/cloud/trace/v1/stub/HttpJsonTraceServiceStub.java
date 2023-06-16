@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
@@ -217,16 +218,35 @@ public class HttpJsonTraceServiceStub extends TraceServiceStub {
         HttpJsonCallSettings.<ListTracesRequest, ListTracesResponse>newBuilder()
             .setMethodDescriptor(listTracesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
         HttpJsonCallSettings.<GetTraceRequest, Trace>newBuilder()
             .setMethodDescriptor(getTraceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("trace_id", String.valueOf(request.getTraceId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
         HttpJsonCallSettings.<PatchTracesRequest, Empty>newBuilder()
             .setMethodDescriptor(patchTracesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
 
     this.listTracesCallable =

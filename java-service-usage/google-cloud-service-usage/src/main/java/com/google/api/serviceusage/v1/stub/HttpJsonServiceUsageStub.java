@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.serviceusage.v1.BatchEnableServicesRequest;
 import com.google.api.serviceusage.v1.BatchEnableServicesResponse;
@@ -377,33 +378,69 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
         HttpJsonCallSettings.<EnableServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(enableServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DisableServiceRequest, Operation> disableServiceTransportSettings =
         HttpJsonCallSettings.<DisableServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(disableServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchEnableServicesRequest, Operation>
         batchEnableServicesTransportSettings =
             HttpJsonCallSettings.<BatchEnableServicesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchEnableServicesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchGetServicesRequest, BatchGetServicesResponse>
         batchGetServicesTransportSettings =
             HttpJsonCallSettings.<BatchGetServicesRequest, BatchGetServicesResponse>newBuilder()
                 .setMethodDescriptor(batchGetServicesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.enableServiceCallable =

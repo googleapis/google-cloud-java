@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -715,6 +716,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                     newBuilder()
                 .setMethodDescriptor(getGoogleServiceAccountMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.CreateTransferJobRequest, TransferTypes.TransferJob>
         createTransferJobTransportSettings =
@@ -729,6 +736,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .<TransferProto.UpdateTransferJobRequest, TransferTypes.TransferJob>newBuilder()
                 .setMethodDescriptor(updateTransferJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.GetTransferJobRequest, TransferTypes.TransferJob>
         getTransferJobTransportSettings =
@@ -736,6 +749,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .<TransferProto.GetTransferJobRequest, TransferTypes.TransferJob>newBuilder()
                 .setMethodDescriptor(getTransferJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             TransferProto.ListTransferJobsRequest, TransferProto.ListTransferJobsResponse>
@@ -751,24 +770,48 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
             HttpJsonCallSettings.<TransferProto.PauseTransferOperationRequest, Empty>newBuilder()
                 .setMethodDescriptor(pauseTransferOperationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.ResumeTransferOperationRequest, Empty>
         resumeTransferOperationTransportSettings =
             HttpJsonCallSettings.<TransferProto.ResumeTransferOperationRequest, Empty>newBuilder()
                 .setMethodDescriptor(resumeTransferOperationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.RunTransferJobRequest, Operation>
         runTransferJobTransportSettings =
             HttpJsonCallSettings.<TransferProto.RunTransferJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(runTransferJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
         deleteTransferJobTransportSettings =
             HttpJsonCallSettings.<TransferProto.DeleteTransferJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteTransferJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
         createAgentPoolTransportSettings =
@@ -776,6 +819,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
                 .setMethodDescriptor(createAgentPoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
         updateAgentPoolTransportSettings =
@@ -783,6 +832,13 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
                 .setMethodDescriptor(updateAgentPoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "agent_pool.name", String.valueOf(request.getAgentPool().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
         getAgentPoolTransportSettings =
@@ -790,6 +846,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
                 .setMethodDescriptor(getAgentPoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
         listAgentPoolsTransportSettings =
@@ -798,12 +860,24 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                     newBuilder()
                 .setMethodDescriptor(listAgentPoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferProto.DeleteAgentPoolRequest, Empty>
         deleteAgentPoolTransportSettings =
             HttpJsonCallSettings.<TransferProto.DeleteAgentPoolRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteAgentPoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getGoogleServiceAccountCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicecontrol.v1.AllocateQuotaRequest;
 import com.google.api.servicecontrol.v1.AllocateQuotaResponse;
@@ -138,6 +139,12 @@ public class HttpJsonQuotaControllerStub extends QuotaControllerStub {
             HttpJsonCallSettings.<AllocateQuotaRequest, AllocateQuotaResponse>newBuilder()
                 .setMethodDescriptor(allocateQuotaMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.allocateQuotaCallable =

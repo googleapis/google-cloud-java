@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicecontrol.v2.CheckRequest;
 import com.google.api.servicecontrol.v2.CheckResponse;
 import com.google.api.servicecontrol.v2.ReportRequest;
 import com.google.api.servicecontrol.v2.ReportResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -110,9 +110,9 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
             .setMethodDescriptor(checkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReportRequest, ReportResponse> reportTransportSettings =
@@ -120,9 +120,9 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
             .setMethodDescriptor(reportMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
 

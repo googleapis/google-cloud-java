@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -889,92 +890,200 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
         HttpJsonCallSettings.<CreateChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(createChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         HttpJsonCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
             .setMethodDescriptor(listChannelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         HttpJsonCallSettings.<GetChannelRequest, Channel>newBuilder()
             .setMethodDescriptor(getChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
         HttpJsonCallSettings.<DeleteChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         HttpJsonCallSettings.<UpdateChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(updateChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("channel.name", String.valueOf(request.getChannel().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartChannelRequest, Operation> startChannelTransportSettings =
         HttpJsonCallSettings.<StartChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(startChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
         HttpJsonCallSettings.<StopChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(stopChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         HttpJsonCallSettings.<CreateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(createInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
         HttpJsonCallSettings.<ListInputsRequest, ListInputsResponse>newBuilder()
             .setMethodDescriptor(listInputsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetInputRequest, Input> getInputTransportSettings =
         HttpJsonCallSettings.<GetInputRequest, Input>newBuilder()
             .setMethodDescriptor(getInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
         HttpJsonCallSettings.<DeleteInputRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
         HttpJsonCallSettings.<UpdateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("input.name", String.valueOf(request.getInput().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEventRequest, Event> createEventTransportSettings =
         HttpJsonCallSettings.<CreateEventRequest, Event>newBuilder()
             .setMethodDescriptor(createEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         HttpJsonCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
             .setMethodDescriptor(listEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
             .setMethodDescriptor(getEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
         HttpJsonCallSettings.<DeleteEventRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createChannelCallable =

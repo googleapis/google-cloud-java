@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1.CreateCustomClassRequest;
 import com.google.cloud.speech.v1.CreatePhraseSetRequest;
@@ -39,7 +40,6 @@ import com.google.cloud.speech.v1.ListPhraseSetResponse;
 import com.google.cloud.speech.v1.PhraseSet;
 import com.google.cloud.speech.v1.UpdateCustomClassRequest;
 import com.google.cloud.speech.v1.UpdatePhraseSetRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -220,9 +220,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(createPhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
@@ -230,9 +230,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(getPhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListPhraseSetRequest, ListPhraseSetResponse> listPhraseSetTransportSettings =
@@ -240,9 +240,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(listPhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
@@ -250,9 +250,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(updatePhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeletePhraseSetRequest, Empty> deletePhraseSetTransportSettings =
@@ -260,9 +260,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(deletePhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
@@ -270,9 +270,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(createCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
@@ -280,9 +280,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(getCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -291,9 +291,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
                 .setMethodDescriptor(listCustomClassesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
@@ -301,10 +301,10 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(updateCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "custom_class.name", String.valueOf(request.getCustomClass().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCustomClassRequest, Empty> deleteCustomClassTransportSettings =
@@ -312,9 +312,9 @@ public class GrpcAdaptationStub extends AdaptationStub {
             .setMethodDescriptor(deleteCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

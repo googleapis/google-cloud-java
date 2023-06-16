@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
@@ -689,6 +690,12 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
         HttpJsonCallSettings.<GetServiceRequest, ManagedService>newBuilder()
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -699,32 +706,69 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
         HttpJsonCallSettings.<DeleteServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UndeleteServiceRequest, Operation> undeleteServiceTransportSettings =
         HttpJsonCallSettings.<UndeleteServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(undeleteServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServiceConfigsRequest, ListServiceConfigsResponse>
         listServiceConfigsTransportSettings =
             HttpJsonCallSettings.<ListServiceConfigsRequest, ListServiceConfigsResponse>newBuilder()
                 .setMethodDescriptor(listServiceConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetServiceConfigRequest, Service> getServiceConfigTransportSettings =
         HttpJsonCallSettings.<GetServiceConfigRequest, Service>newBuilder()
             .setMethodDescriptor(getServiceConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config_id", String.valueOf(request.getConfigId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateServiceConfigRequest, Service> createServiceConfigTransportSettings =
         HttpJsonCallSettings.<CreateServiceConfigRequest, Service>newBuilder()
             .setMethodDescriptor(createServiceConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SubmitConfigSourceRequest, Operation> submitConfigSourceTransportSettings =
         HttpJsonCallSettings.<SubmitConfigSourceRequest, Operation>newBuilder()
             .setMethodDescriptor(submitConfigSourceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
         listServiceRolloutsTransportSettings =
@@ -732,17 +776,36 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                 .<ListServiceRolloutsRequest, ListServiceRolloutsResponse>newBuilder()
                 .setMethodDescriptor(listServiceRolloutsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetServiceRolloutRequest, Rollout> getServiceRolloutTransportSettings =
         HttpJsonCallSettings.<GetServiceRolloutRequest, Rollout>newBuilder()
             .setMethodDescriptor(getServiceRolloutMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rollout_id", String.valueOf(request.getRolloutId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateServiceRolloutRequest, Operation>
         createServiceRolloutTransportSettings =
             HttpJsonCallSettings.<CreateServiceRolloutRequest, Operation>newBuilder()
                 .setMethodDescriptor(createServiceRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportTransportSettings =

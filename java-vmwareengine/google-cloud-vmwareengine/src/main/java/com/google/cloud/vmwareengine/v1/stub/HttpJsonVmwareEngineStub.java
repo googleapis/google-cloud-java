@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -1712,103 +1713,218 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
             HttpJsonCallSettings.<ListPrivateCloudsRequest, ListPrivateCloudsResponse>newBuilder()
                 .setMethodDescriptor(listPrivateCloudsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetPrivateCloudRequest, PrivateCloud> getPrivateCloudTransportSettings =
         HttpJsonCallSettings.<GetPrivateCloudRequest, PrivateCloud>newBuilder()
             .setMethodDescriptor(getPrivateCloudMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreatePrivateCloudRequest, Operation> createPrivateCloudTransportSettings =
         HttpJsonCallSettings.<CreatePrivateCloudRequest, Operation>newBuilder()
             .setMethodDescriptor(createPrivateCloudMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdatePrivateCloudRequest, Operation> updatePrivateCloudTransportSettings =
         HttpJsonCallSettings.<UpdatePrivateCloudRequest, Operation>newBuilder()
             .setMethodDescriptor(updatePrivateCloudMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "private_cloud.name", String.valueOf(request.getPrivateCloud().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePrivateCloudRequest, Operation> deletePrivateCloudTransportSettings =
         HttpJsonCallSettings.<DeletePrivateCloudRequest, Operation>newBuilder()
             .setMethodDescriptor(deletePrivateCloudMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UndeletePrivateCloudRequest, Operation>
         undeletePrivateCloudTransportSettings =
             HttpJsonCallSettings.<UndeletePrivateCloudRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeletePrivateCloudMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         HttpJsonCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         HttpJsonCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
             .setMethodDescriptor(listSubnetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNodeTypesRequest, ListNodeTypesResponse>
         listNodeTypesTransportSettings =
             HttpJsonCallSettings.<ListNodeTypesRequest, ListNodeTypesResponse>newBuilder()
                 .setMethodDescriptor(listNodeTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNodeTypeRequest, NodeType> getNodeTypeTransportSettings =
         HttpJsonCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
             .setMethodDescriptor(getNodeTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ShowNsxCredentialsRequest, Credentials>
         showNsxCredentialsTransportSettings =
             HttpJsonCallSettings.<ShowNsxCredentialsRequest, Credentials>newBuilder()
                 .setMethodDescriptor(showNsxCredentialsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ShowVcenterCredentialsRequest, Credentials>
         showVcenterCredentialsTransportSettings =
             HttpJsonCallSettings.<ShowVcenterCredentialsRequest, Credentials>newBuilder()
                 .setMethodDescriptor(showVcenterCredentialsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResetNsxCredentialsRequest, Operation>
         resetNsxCredentialsTransportSettings =
             HttpJsonCallSettings.<ResetNsxCredentialsRequest, Operation>newBuilder()
                 .setMethodDescriptor(resetNsxCredentialsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResetVcenterCredentialsRequest, Operation>
         resetVcenterCredentialsTransportSettings =
             HttpJsonCallSettings.<ResetVcenterCredentialsRequest, Operation>newBuilder()
                 .setMethodDescriptor(resetVcenterCredentialsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateHcxActivationKeyRequest, Operation>
         createHcxActivationKeyTransportSettings =
             HttpJsonCallSettings.<CreateHcxActivationKeyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createHcxActivationKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
         listHcxActivationKeysTransportSettings =
@@ -1816,17 +1932,35 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                 .<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>newBuilder()
                 .setMethodDescriptor(listHcxActivationKeysMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetHcxActivationKeyRequest, HcxActivationKey>
         getHcxActivationKeyTransportSettings =
             HttpJsonCallSettings.<GetHcxActivationKeyRequest, HcxActivationKey>newBuilder()
                 .setMethodDescriptor(getHcxActivationKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNetworkPolicyRequest, NetworkPolicy> getNetworkPolicyTransportSettings =
         HttpJsonCallSettings.<GetNetworkPolicyRequest, NetworkPolicy>newBuilder()
             .setMethodDescriptor(getNetworkPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
         listNetworkPoliciesTransportSettings =
@@ -1834,48 +1968,100 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                 .<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listNetworkPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateNetworkPolicyRequest, Operation>
         createNetworkPolicyTransportSettings =
             HttpJsonCallSettings.<CreateNetworkPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createNetworkPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateNetworkPolicyRequest, Operation>
         updateNetworkPolicyTransportSettings =
             HttpJsonCallSettings.<UpdateNetworkPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateNetworkPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_policy.name",
+                          String.valueOf(request.getNetworkPolicy().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkPolicyRequest, Operation>
         deleteNetworkPolicyTransportSettings =
             HttpJsonCallSettings.<DeleteNetworkPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteNetworkPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateVmwareEngineNetworkRequest, Operation>
         createVmwareEngineNetworkTransportSettings =
             HttpJsonCallSettings.<CreateVmwareEngineNetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(createVmwareEngineNetworkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateVmwareEngineNetworkRequest, Operation>
         updateVmwareEngineNetworkTransportSettings =
             HttpJsonCallSettings.<UpdateVmwareEngineNetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateVmwareEngineNetworkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "vmware_engine_network.name",
+                          String.valueOf(request.getVmwareEngineNetwork().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVmwareEngineNetworkRequest, Operation>
         deleteVmwareEngineNetworkTransportSettings =
             HttpJsonCallSettings.<DeleteVmwareEngineNetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteVmwareEngineNetworkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
         getVmwareEngineNetworkTransportSettings =
             HttpJsonCallSettings.<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>newBuilder()
                 .setMethodDescriptor(getVmwareEngineNetworkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
         listVmwareEngineNetworksTransportSettings =
@@ -1883,33 +2069,69 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                 .<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>newBuilder()
                 .setMethodDescriptor(listVmwareEngineNetworksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listPrivateCloudsCallable =

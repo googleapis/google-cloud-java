@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -82,7 +83,6 @@ import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -620,9 +620,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listPrivateCloudsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetPrivateCloudRequest, PrivateCloud> getPrivateCloudTransportSettings =
@@ -630,9 +630,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getPrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreatePrivateCloudRequest, Operation> createPrivateCloudTransportSettings =
@@ -640,9 +640,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createPrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePrivateCloudRequest, Operation> updatePrivateCloudTransportSettings =
@@ -650,10 +650,10 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updatePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "private_cloud.name", String.valueOf(request.getPrivateCloud().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeletePrivateCloudRequest, Operation> deletePrivateCloudTransportSettings =
@@ -661,9 +661,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deletePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeletePrivateCloudRequest, Operation> undeletePrivateCloudTransportSettings =
@@ -671,9 +671,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(undeletePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
@@ -681,9 +681,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
@@ -691,9 +691,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
@@ -701,9 +701,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
@@ -711,9 +711,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("cluster.name", String.valueOf(request.getCluster().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
@@ -721,9 +721,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
@@ -731,9 +731,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listSubnetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesTransportSettings =
@@ -741,9 +741,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listNodeTypesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetNodeTypeRequest, NodeType> getNodeTypeTransportSettings =
@@ -751,9 +751,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getNodeTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ShowNsxCredentialsRequest, Credentials> showNsxCredentialsTransportSettings =
@@ -761,9 +761,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(showNsxCredentialsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ShowVcenterCredentialsRequest, Credentials>
@@ -772,9 +772,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(showVcenterCredentialsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ResetNsxCredentialsRequest, Operation> resetNsxCredentialsTransportSettings =
@@ -782,9 +782,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(resetNsxCredentialsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetVcenterCredentialsRequest, Operation>
@@ -793,9 +793,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(resetVcenterCredentialsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateHcxActivationKeyRequest, Operation>
@@ -804,9 +804,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(createHcxActivationKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
@@ -816,9 +816,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listHcxActivationKeysMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetHcxActivationKeyRequest, HcxActivationKey>
@@ -827,9 +827,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(getHcxActivationKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetNetworkPolicyRequest, NetworkPolicy> getNetworkPolicyTransportSettings =
@@ -837,9 +837,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
@@ -848,9 +848,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listNetworkPoliciesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateNetworkPolicyRequest, Operation> createNetworkPolicyTransportSettings =
@@ -858,9 +858,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNetworkPolicyRequest, Operation> updateNetworkPolicyTransportSettings =
@@ -868,10 +868,10 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updateNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "network_policy.name", String.valueOf(request.getNetworkPolicy().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteNetworkPolicyRequest, Operation> deleteNetworkPolicyTransportSettings =
@@ -879,9 +879,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deleteNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateVmwareEngineNetworkRequest, Operation>
@@ -890,9 +890,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(createVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateVmwareEngineNetworkRequest, Operation>
@@ -901,11 +901,11 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(updateVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "vmware_engine_network.name",
                           String.valueOf(request.getVmwareEngineNetwork().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteVmwareEngineNetworkRequest, Operation>
@@ -914,9 +914,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(deleteVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
@@ -925,9 +925,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(getVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
@@ -937,9 +937,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listVmwareEngineNetworksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -947,9 +947,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -957,9 +957,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -967,9 +967,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -977,9 +977,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -988,9 +988,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

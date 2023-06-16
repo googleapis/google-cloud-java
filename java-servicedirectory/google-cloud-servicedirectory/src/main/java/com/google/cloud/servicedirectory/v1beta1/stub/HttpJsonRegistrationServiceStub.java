@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.servicedirectory.v1beta1.CreateEndpointRequest;
 import com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest;
@@ -836,94 +837,202 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
         HttpJsonCallSettings.<CreateNamespaceRequest, Namespace>newBuilder()
             .setMethodDescriptor(createNamespaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNamespacesRequest, ListNamespacesResponse>
         listNamespacesTransportSettings =
             HttpJsonCallSettings.<ListNamespacesRequest, ListNamespacesResponse>newBuilder()
                 .setMethodDescriptor(listNamespacesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNamespaceRequest, Namespace> getNamespaceTransportSettings =
         HttpJsonCallSettings.<GetNamespaceRequest, Namespace>newBuilder()
             .setMethodDescriptor(getNamespaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateNamespaceRequest, Namespace> updateNamespaceTransportSettings =
         HttpJsonCallSettings.<UpdateNamespaceRequest, Namespace>newBuilder()
             .setMethodDescriptor(updateNamespaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("namespace.name", String.valueOf(request.getNamespace().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteNamespaceRequest, Empty> deleteNamespaceTransportSettings =
         HttpJsonCallSettings.<DeleteNamespaceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteNamespaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Service>newBuilder()
             .setMethodDescriptor(createServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         HttpJsonCallSettings.<UpdateServiceRequest, Service>newBuilder()
             .setMethodDescriptor(updateServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service.name", String.valueOf(request.getService().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteServiceRequest, Empty> deleteServiceTransportSettings =
         HttpJsonCallSettings.<DeleteServiceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEndpointRequest, Endpoint> createEndpointTransportSettings =
         HttpJsonCallSettings.<CreateEndpointRequest, Endpoint>newBuilder()
             .setMethodDescriptor(createEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEndpointsRequest, ListEndpointsResponse>
         listEndpointsTransportSettings =
             HttpJsonCallSettings.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
                 .setMethodDescriptor(listEndpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         HttpJsonCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
             .setMethodDescriptor(getEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
         HttpJsonCallSettings.<UpdateEndpointRequest, Endpoint>newBuilder()
             .setMethodDescriptor(updateEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint.name", String.valueOf(request.getEndpoint().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEndpointRequest, Empty> deleteEndpointTransportSettings =
         HttpJsonCallSettings.<DeleteEndpointRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createNamespaceCallable =

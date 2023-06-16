@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.shell.v1.AddPublicKeyMetadata;
 import com.google.cloud.shell.v1.AddPublicKeyRequest;
@@ -340,27 +341,57 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
         HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartEnvironmentRequest, Operation> startEnvironmentTransportSettings =
         HttpJsonCallSettings.<StartEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(startEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AuthorizeEnvironmentRequest, Operation>
         authorizeEnvironmentTransportSettings =
             HttpJsonCallSettings.<AuthorizeEnvironmentRequest, Operation>newBuilder()
                 .setMethodDescriptor(authorizeEnvironmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddPublicKeyRequest, Operation> addPublicKeyTransportSettings =
         HttpJsonCallSettings.<AddPublicKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(addPublicKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemovePublicKeyRequest, Operation> removePublicKeyTransportSettings =
         HttpJsonCallSettings.<RemovePublicKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(removePublicKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
 
     this.getEnvironmentCallable =

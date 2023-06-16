@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -67,7 +68,6 @@ import com.google.cloud.speech.v2.UpdateConfigRequest;
 import com.google.cloud.speech.v2.UpdateCustomClassRequest;
 import com.google.cloud.speech.v2.UpdatePhraseSetRequest;
 import com.google.cloud.speech.v2.UpdateRecognizerRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -438,9 +438,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(createRecognizerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRecognizersRequest, ListRecognizersResponse>
@@ -449,9 +449,9 @@ public class GrpcSpeechStub extends SpeechStub {
                 .setMethodDescriptor(listRecognizersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRecognizerRequest, Recognizer> getRecognizerTransportSettings =
@@ -459,9 +459,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(getRecognizerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRecognizerRequest, Operation> updateRecognizerTransportSettings =
@@ -469,9 +469,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(updateRecognizerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("recognizer.name", String.valueOf(request.getRecognizer().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("recognizer.name", String.valueOf(request.getRecognizer().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRecognizerRequest, Operation> deleteRecognizerTransportSettings =
@@ -479,9 +479,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(deleteRecognizerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeleteRecognizerRequest, Operation> undeleteRecognizerTransportSettings =
@@ -489,9 +489,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(undeleteRecognizerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
@@ -499,9 +499,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(recognizeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("recognizer", String.valueOf(request.getRecognizer()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("recognizer", String.valueOf(request.getRecognizer()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -514,9 +514,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(batchRecognizeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("recognizer", String.valueOf(request.getRecognizer()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("recognizer", String.valueOf(request.getRecognizer()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
@@ -524,9 +524,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(getConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
@@ -534,9 +534,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(updateConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("config.name", String.valueOf(request.getConfig().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config.name", String.valueOf(request.getConfig().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateCustomClassRequest, Operation> createCustomClassTransportSettings =
@@ -544,9 +544,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(createCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -555,9 +555,9 @@ public class GrpcSpeechStub extends SpeechStub {
                 .setMethodDescriptor(listCustomClassesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
@@ -565,9 +565,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(getCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCustomClassRequest, Operation> updateCustomClassTransportSettings =
@@ -575,10 +575,10 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(updateCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "custom_class.name", String.valueOf(request.getCustomClass().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCustomClassRequest, Operation> deleteCustomClassTransportSettings =
@@ -586,9 +586,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(deleteCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeleteCustomClassRequest, Operation> undeleteCustomClassTransportSettings =
@@ -596,9 +596,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(undeleteCustomClassMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreatePhraseSetRequest, Operation> createPhraseSetTransportSettings =
@@ -606,9 +606,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(createPhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListPhraseSetsRequest, ListPhraseSetsResponse>
@@ -617,9 +617,9 @@ public class GrpcSpeechStub extends SpeechStub {
                 .setMethodDescriptor(listPhraseSetsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
@@ -627,9 +627,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(getPhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, Operation> updatePhraseSetTransportSettings =
@@ -637,9 +637,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(updatePhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeletePhraseSetRequest, Operation> deletePhraseSetTransportSettings =
@@ -647,9 +647,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(deletePhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeletePhraseSetRequest, Operation> undeletePhraseSetTransportSettings =
@@ -657,9 +657,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(undeletePhraseSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -667,9 +667,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -677,9 +677,9 @@ public class GrpcSpeechStub extends SpeechStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.servicedirectory.v1beta1.CreateEndpointRequest;
 import com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest;
@@ -48,7 +49,6 @@ import com.google.cloud.servicedirectory.v1beta1.Service;
 import com.google.cloud.servicedirectory.v1beta1.UpdateEndpointRequest;
 import com.google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest;
 import com.google.cloud.servicedirectory.v1beta1.UpdateServiceRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -335,9 +335,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(createNamespaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNamespacesRequest, ListNamespacesResponse>
@@ -346,9 +346,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                 .setMethodDescriptor(listNamespacesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetNamespaceRequest, Namespace> getNamespaceTransportSettings =
@@ -356,9 +356,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(getNamespaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNamespaceRequest, Namespace> updateNamespaceTransportSettings =
@@ -366,9 +366,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(updateNamespaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("namespace.name", String.valueOf(request.getNamespace().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("namespace.name", String.valueOf(request.getNamespace().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteNamespaceRequest, Empty> deleteNamespaceTransportSettings =
@@ -376,9 +376,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(deleteNamespaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
@@ -386,9 +386,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(createServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
@@ -396,9 +396,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
@@ -406,9 +406,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
@@ -416,9 +416,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(updateServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service.name", String.valueOf(request.getService().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service.name", String.valueOf(request.getService().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteServiceRequest, Empty> deleteServiceTransportSettings =
@@ -426,9 +426,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEndpointRequest, Endpoint> createEndpointTransportSettings =
@@ -436,9 +436,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(createEndpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEndpointsRequest, ListEndpointsResponse> listEndpointsTransportSettings =
@@ -446,9 +446,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(listEndpointsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
@@ -456,9 +456,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(getEndpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
@@ -466,9 +466,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(updateEndpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("endpoint.name", String.valueOf(request.getEndpoint().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint.name", String.valueOf(request.getEndpoint().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEndpointRequest, Empty> deleteEndpointTransportSettings =
@@ -476,9 +476,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -486,9 +486,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -496,9 +496,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -507,9 +507,9 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

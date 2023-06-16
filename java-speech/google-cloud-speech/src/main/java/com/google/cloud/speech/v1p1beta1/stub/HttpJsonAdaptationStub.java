@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest;
 import com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest;
@@ -488,53 +489,114 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
         HttpJsonCallSettings.<CreatePhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(createPhraseSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         HttpJsonCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(getPhraseSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPhraseSetRequest, ListPhraseSetResponse>
         listPhraseSetTransportSettings =
             HttpJsonCallSettings.<ListPhraseSetRequest, ListPhraseSetResponse>newBuilder()
                 .setMethodDescriptor(listPhraseSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
         HttpJsonCallSettings.<UpdatePhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(updatePhraseSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePhraseSetRequest, Empty> deletePhraseSetTransportSettings =
         HttpJsonCallSettings.<DeletePhraseSetRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePhraseSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
         HttpJsonCallSettings.<CreateCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(createCustomClassMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         HttpJsonCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(getCustomClassMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
             HttpJsonCallSettings.<ListCustomClassesRequest, ListCustomClassesResponse>newBuilder()
                 .setMethodDescriptor(listCustomClassesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
         HttpJsonCallSettings.<UpdateCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(updateCustomClassMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "custom_class.name", String.valueOf(request.getCustomClass().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCustomClassRequest, Empty> deleteCustomClassTransportSettings =
         HttpJsonCallSettings.<DeleteCustomClassRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCustomClassMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createPhraseSetCallable =

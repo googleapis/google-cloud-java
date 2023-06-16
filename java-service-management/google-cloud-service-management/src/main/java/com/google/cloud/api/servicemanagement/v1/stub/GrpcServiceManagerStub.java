@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
@@ -50,7 +51,6 @@ import com.google.api.servicemanagement.v1.SubmitConfigSourceRequest;
 import com.google.api.servicemanagement.v1.SubmitConfigSourceResponse;
 import com.google.api.servicemanagement.v1.UndeleteServiceRequest;
 import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -294,9 +294,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
@@ -308,9 +308,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeleteServiceRequest, Operation> undeleteServiceTransportSettings =
@@ -318,9 +318,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(undeleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServiceConfigsRequest, ListServiceConfigsResponse>
@@ -329,9 +329,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                 .setMethodDescriptor(listServiceConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("service_name", String.valueOf(request.getServiceName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceConfigRequest, Service> getServiceConfigTransportSettings =
@@ -339,10 +339,10 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("config_id", String.valueOf(request.getConfigId()));
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config_id", String.valueOf(request.getConfigId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceConfigRequest, Service> createServiceConfigTransportSettings =
@@ -350,9 +350,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(createServiceConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SubmitConfigSourceRequest, Operation> submitConfigSourceTransportSettings =
@@ -360,9 +360,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(submitConfigSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
@@ -371,9 +371,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                 .setMethodDescriptor(listServiceRolloutsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("service_name", String.valueOf(request.getServiceName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceRolloutRequest, Rollout> getServiceRolloutTransportSettings =
@@ -381,10 +381,10 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceRolloutMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("rollout_id", String.valueOf(request.getRolloutId()));
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rollout_id", String.valueOf(request.getRolloutId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRolloutRequest, Operation> createServiceRolloutTransportSettings =
@@ -392,9 +392,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(createServiceRolloutMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
