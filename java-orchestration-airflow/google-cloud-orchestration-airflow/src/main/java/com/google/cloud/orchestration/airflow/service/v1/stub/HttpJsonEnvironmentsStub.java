@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
@@ -445,37 +446,79 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
         HttpJsonCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(createEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
         listEnvironmentsTransportSettings =
             HttpJsonCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
                 .setMethodDescriptor(listEnvironmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
         HttpJsonCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentTransportSettings =
         HttpJsonCallSettings.<DeleteEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(saveSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<LoadSnapshotRequest, Operation> loadSnapshotTransportSettings =
         HttpJsonCallSettings.<LoadSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(loadSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
 
     this.createEnvironmentCallable =

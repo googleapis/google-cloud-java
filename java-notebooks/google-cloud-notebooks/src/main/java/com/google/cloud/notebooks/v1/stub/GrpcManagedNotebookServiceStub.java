@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -47,7 +48,6 @@ import com.google.cloud.notebooks.v1.StopRuntimeRequest;
 import com.google.cloud.notebooks.v1.SwitchRuntimeRequest;
 import com.google.cloud.notebooks.v1.UpdateRuntimeRequest;
 import com.google.cloud.notebooks.v1.UpgradeRuntimeRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -340,9 +340,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(listRuntimesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetRuntimeRequest, Runtime> getRuntimeTransportSettings =
@@ -350,9 +350,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(getRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRuntimeRequest, Operation> createRuntimeTransportSettings =
@@ -360,9 +360,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(createRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRuntimeRequest, Operation> updateRuntimeTransportSettings =
@@ -370,9 +370,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(updateRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("runtime.name", String.valueOf(request.getRuntime().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("runtime.name", String.valueOf(request.getRuntime().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRuntimeRequest, Operation> deleteRuntimeTransportSettings =
@@ -380,9 +380,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(deleteRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartRuntimeRequest, Operation> startRuntimeTransportSettings =
@@ -390,9 +390,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(startRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopRuntimeRequest, Operation> stopRuntimeTransportSettings =
@@ -400,9 +400,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(stopRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SwitchRuntimeRequest, Operation> switchRuntimeTransportSettings =
@@ -410,9 +410,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(switchRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetRuntimeRequest, Operation> resetRuntimeTransportSettings =
@@ -420,9 +420,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(resetRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpgradeRuntimeRequest, Operation> upgradeRuntimeTransportSettings =
@@ -430,9 +430,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(upgradeRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReportRuntimeEventRequest, Operation> reportRuntimeEventTransportSettings =
@@ -440,9 +440,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(reportRuntimeEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
@@ -453,9 +453,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                 .setMethodDescriptor(refreshRuntimeTokenInternalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeTransportSettings =
@@ -463,9 +463,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(diagnoseRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -473,9 +473,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -483,9 +483,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -493,9 +493,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -503,9 +503,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -514,9 +514,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

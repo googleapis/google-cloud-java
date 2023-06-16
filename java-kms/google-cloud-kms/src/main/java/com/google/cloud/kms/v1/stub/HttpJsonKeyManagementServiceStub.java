@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
 import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
@@ -1368,12 +1369,24 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
         HttpJsonCallSettings.<ListKeyRingsRequest, ListKeyRingsResponse>newBuilder()
             .setMethodDescriptor(listKeyRingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCryptoKeysRequest, ListCryptoKeysResponse>
         listCryptoKeysTransportSettings =
             HttpJsonCallSettings.<ListCryptoKeysRequest, ListCryptoKeysResponse>newBuilder()
                 .setMethodDescriptor(listCryptoKeysMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
         listCryptoKeyVersionsTransportSettings =
@@ -1381,126 +1394,266 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                 .<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>newBuilder()
                 .setMethodDescriptor(listCryptoKeyVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListImportJobsRequest, ListImportJobsResponse>
         listImportJobsTransportSettings =
             HttpJsonCallSettings.<ListImportJobsRequest, ListImportJobsResponse>newBuilder()
                 .setMethodDescriptor(listImportJobsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
         HttpJsonCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
             .setMethodDescriptor(getKeyRingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeyTransportSettings =
         HttpJsonCallSettings.<GetCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(getCryptoKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<GetCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(getCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
         HttpJsonCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
             .setMethodDescriptor(getPublicKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         HttpJsonCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
             .setMethodDescriptor(getImportJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingTransportSettings =
         HttpJsonCallSettings.<CreateKeyRingRequest, KeyRing>newBuilder()
             .setMethodDescriptor(createKeyRingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
         HttpJsonCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(createCryptoKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<CreateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(createCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<ImportCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(importCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         HttpJsonCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
             .setMethodDescriptor(createImportJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         HttpJsonCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(updateCryptoKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("crypto_key.name", String.valueOf(request.getCryptoKey().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
         updateCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(updateCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "crypto_key_version.name",
+                          String.valueOf(request.getCryptoKeyVersion().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionTransportSettings =
             HttpJsonCallSettings.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
                 .setMethodDescriptor(updateCryptoKeyPrimaryVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(destroyCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionTransportSettings =
             HttpJsonCallSettings.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(restoreCryptoKeyVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         HttpJsonCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
             .setMethodDescriptor(encryptMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DecryptRequest, DecryptResponse> decryptTransportSettings =
         HttpJsonCallSettings.<DecryptRequest, DecryptResponse>newBuilder()
             .setMethodDescriptor(decryptMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
         asymmetricSignTransportSettings =
             HttpJsonCallSettings.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
                 .setMethodDescriptor(asymmetricSignMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
         asymmetricDecryptTransportSettings =
             HttpJsonCallSettings.<AsymmetricDecryptRequest, AsymmetricDecryptResponse>newBuilder()
                 .setMethodDescriptor(asymmetricDecryptMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MacSignRequest, MacSignResponse> macSignTransportSettings =
         HttpJsonCallSettings.<MacSignRequest, MacSignResponse>newBuilder()
             .setMethodDescriptor(macSignMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifyTransportSettings =
         HttpJsonCallSettings.<MacVerifyRequest, MacVerifyResponse>newBuilder()
             .setMethodDescriptor(macVerifyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesTransportSettings =
@@ -1508,33 +1661,69 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                 .<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
                 .setMethodDescriptor(generateRandomBytesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listKeyRingsCallable =

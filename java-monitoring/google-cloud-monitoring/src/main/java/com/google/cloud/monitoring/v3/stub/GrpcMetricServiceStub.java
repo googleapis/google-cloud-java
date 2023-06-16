@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -233,9 +233,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(listMonitoredResourceDescriptorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
@@ -245,9 +245,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(getMonitoredResourceDescriptorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
@@ -257,9 +257,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(listMetricDescriptorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
@@ -268,9 +268,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(getMetricDescriptorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
@@ -279,9 +279,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(createMetricDescriptorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorTransportSettings =
@@ -289,9 +289,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
             .setMethodDescriptor(deleteMetricDescriptorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse>
@@ -300,9 +300,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .setMethodDescriptor(listTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesTransportSettings =
@@ -310,9 +310,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
             .setMethodDescriptor(createTimeSeriesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesTransportSettings =
@@ -320,9 +320,9 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
             .setMethodDescriptor(createServiceTimeSeriesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

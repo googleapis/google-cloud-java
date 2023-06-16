@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.lifesciences.v2beta.Metadata;
 import com.google.cloud.lifesciences.v2beta.RunPipelineRequest;
@@ -255,17 +256,35 @@ public class HttpJsonWorkflowsServiceV2BetaStub extends WorkflowsServiceV2BetaSt
         HttpJsonCallSettings.<RunPipelineRequest, Operation>newBuilder()
             .setMethodDescriptor(runPipelineMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.runPipelineCallable =

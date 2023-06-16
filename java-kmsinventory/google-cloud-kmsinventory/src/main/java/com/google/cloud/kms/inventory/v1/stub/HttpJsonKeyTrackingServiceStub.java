@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest;
 import com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary;
@@ -189,6 +190,12 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                 .<GetProtectedResourcesSummaryRequest, ProtectedResourcesSummary>newBuilder()
                 .setMethodDescriptor(getProtectedResourcesSummaryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchProtectedResourcesRequest, SearchProtectedResourcesResponse>
         searchProtectedResourcesTransportSettings =
@@ -196,6 +203,12 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                 .<SearchProtectedResourcesRequest, SearchProtectedResourcesResponse>newBuilder()
                 .setMethodDescriptor(searchProtectedResourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getProtectedResourcesSummaryCallable =

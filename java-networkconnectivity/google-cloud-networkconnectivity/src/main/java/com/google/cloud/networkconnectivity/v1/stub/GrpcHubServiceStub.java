@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
@@ -41,7 +42,6 @@ import com.google.cloud.networkconnectivity.v1.OperationMetadata;
 import com.google.cloud.networkconnectivity.v1.Spoke;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -213,9 +213,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(listHubsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetHubRequest, Hub> getHubTransportSettings =
@@ -223,9 +223,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(getHubMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateHubRequest, Operation> createHubTransportSettings =
@@ -233,9 +233,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(createHubMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateHubRequest, Operation> updateHubTransportSettings =
@@ -243,9 +243,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(updateHubMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("hub.name", String.valueOf(request.getHub().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("hub.name", String.valueOf(request.getHub().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteHubRequest, Operation> deleteHubTransportSettings =
@@ -253,9 +253,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(deleteHubMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSpokesRequest, ListSpokesResponse> listSpokesTransportSettings =
@@ -263,9 +263,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(listSpokesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSpokeRequest, Spoke> getSpokeTransportSettings =
@@ -273,9 +273,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(getSpokeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateSpokeRequest, Operation> createSpokeTransportSettings =
@@ -283,9 +283,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(createSpokeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSpokeRequest, Operation> updateSpokeTransportSettings =
@@ -293,9 +293,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(updateSpokeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("spoke.name", String.valueOf(request.getSpoke().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("spoke.name", String.valueOf(request.getSpoke().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteSpokeRequest, Operation> deleteSpokeTransportSettings =
@@ -303,9 +303,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
             .setMethodDescriptor(deleteSpokeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
@@ -155,9 +155,9 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
             .setMethodDescriptor(createDashboardMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDashboardsRequest, ListDashboardsResponse>
@@ -166,9 +166,9 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                 .setMethodDescriptor(listDashboardsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDashboardRequest, Dashboard> getDashboardTransportSettings =
@@ -176,9 +176,9 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
             .setMethodDescriptor(getDashboardMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDashboardRequest, Empty> deleteDashboardTransportSettings =
@@ -186,9 +186,9 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
             .setMethodDescriptor(deleteDashboardMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDashboardRequest, Dashboard> updateDashboardTransportSettings =
@@ -196,9 +196,9 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
             .setMethodDescriptor(updateDashboardMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("dashboard.name", String.valueOf(request.getDashboard().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dashboard.name", String.valueOf(request.getDashboard().getName()));
+                  return builder.build();
                 })
             .build();
 

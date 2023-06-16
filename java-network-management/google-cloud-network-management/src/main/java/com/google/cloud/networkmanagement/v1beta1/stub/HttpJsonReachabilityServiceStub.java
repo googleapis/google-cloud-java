@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networkmanagement.v1beta1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest;
@@ -414,36 +415,72 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                 .<ListConnectivityTestsRequest, ListConnectivityTestsResponse>newBuilder()
                 .setMethodDescriptor(listConnectivityTestsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConnectivityTestRequest, ConnectivityTest>
         getConnectivityTestTransportSettings =
             HttpJsonCallSettings.<GetConnectivityTestRequest, ConnectivityTest>newBuilder()
                 .setMethodDescriptor(getConnectivityTestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConnectivityTestRequest, Operation>
         createConnectivityTestTransportSettings =
             HttpJsonCallSettings.<CreateConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConnectivityTestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateConnectivityTestRequest, Operation>
         updateConnectivityTestTransportSettings =
             HttpJsonCallSettings.<UpdateConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConnectivityTestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource.name", String.valueOf(request.getResource().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RerunConnectivityTestRequest, Operation>
         rerunConnectivityTestTransportSettings =
             HttpJsonCallSettings.<RerunConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(rerunConnectivityTestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConnectivityTestRequest, Operation>
         deleteConnectivityTestTransportSettings =
             HttpJsonCallSettings.<DeleteConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConnectivityTestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listConnectivityTestsCallable =
