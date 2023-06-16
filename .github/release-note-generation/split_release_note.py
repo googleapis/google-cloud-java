@@ -8,21 +8,15 @@
 #     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md". It's the root directory
 #     of the google-cloud-java repository.
 # Example:
-# google-cloud-java$ python3 split_release_note.py change.txt .
-
-# This script inserts new entries to the CHANGELOG.md files by splitting the
-# main changelog.
+#   google-cloud-java$ python3 split_release_note.py main_changelog.txt .
+# where the last "." indicates the root of the repository copy.
 
 import sys
-import pdb
-import fileinput
-from datetime import date
 import re
 from collections import defaultdict
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-# Returns the list of target modules that has CHANGELOG.md
 
 class LibraryModule:
     def __init__(self, path: Path, api_name: str, version: str,
@@ -42,6 +36,7 @@ class LibraryModule:
 POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
 
 
+# Returns the list of target modules that has CHANGELOG.md
 def detect_modules(root_directory: Path):
     modules = []
     for owlbot_yaml_path in root_directory.rglob('.OwlBot.yaml'):
@@ -80,7 +75,8 @@ def group_changes_by_api(main_changes: [str]):
 CHANGELOG_HEADER_MARK = '# Changelog'
 
 
-def create_changelog_entry(current_date: str, module: LibraryModule, changelog_lines: [str]):
+def create_changelog_entry(current_date: str, module: LibraryModule,
+    changelog_lines: [str]):
     changelog_entry = f'## {module.version} ({current_date})' \
                       f'\n\n### Features\n\n'
     for line in changelog_lines:
@@ -88,7 +84,8 @@ def create_changelog_entry(current_date: str, module: LibraryModule, changelog_l
     return changelog_entry
 
 
-def write_changelog(current_date:str, module: LibraryModule, changelog_entries: [str]):
+def write_changelog(current_date: str, module: LibraryModule,
+    changelog_entries: [str]):
     changelog_file = module.changelog
     if changelog_file.exists():
         with open(changelog_file, 'r') as file:
