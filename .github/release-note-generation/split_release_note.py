@@ -39,12 +39,14 @@ POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
 # Returns the list of target modules that has CHANGELOG.md
 def detect_modules(root_directory: Path):
     modules = []
-    for owlbot_yaml_path in root_directory.rglob('.OwlBot.yaml'):
+    for owlbot_yaml_path in root_directory.rglob('*/.OwlBot.yaml'):
 
         # This CHANGELOG.md might not exist for newly created libraries
         changelog = owlbot_yaml_path.parent / 'CHANGELOG.md'
 
         module_pom_xml = owlbot_yaml_path.parent / 'pom.xml'
+        if not module_pom_xml.exists():
+            continue
         tree = ET.parse(module_pom_xml)
         root = tree.getroot()
         version = root.find('mvn:version', POM_NAMESPACES).text
