@@ -2,9 +2,9 @@ on:
   pull_request:
     types:
       - synchronize
-name: Module specific CHANGELOG.md generation
+name: CHANGELOG.md generation upon Release Please pull requests
 jobs:
-  changelog_generation:
+  changelog-generation:
     runs-on: ubuntu-latest
     if: |
       github.event.sender.login == 'release-please-bot' && github.event.pull_request.head.ref == 'release-please--branches--main' &&
@@ -21,7 +21,7 @@ jobs:
         head pr_body.txt
     - name: Split the main changelog into CHANGELOG.md files in modules
       run: |
-        python3 release-note-generation/split_release_note.py pr_body.txt .
+        python3 .github/release-note-generation/split_release_note.py pr_body.txt .
     - name: Commit the change and push to the pull request branch
       run: |
         git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
