@@ -503,4 +503,33 @@ public interface PrivateCloudOrBuilder
    * @return The bytes for uid.
    */
   com.google.protobuf.ByteString getUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.vmwareengine.v1.PrivateCloud.Type getType();
 }

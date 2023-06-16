@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -51,17 +53,21 @@ import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
@@ -74,6 +80,10 @@ import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse;
 import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
@@ -82,14 +92,18 @@ import com.google.cloud.vmwareengine.v1.NetworkPolicy;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
+import com.google.cloud.vmwareengine.v1.PrivateConnection;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest;
+import com.google.cloud.vmwareengine.v1.Subnet;
 import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.UpdateSubnetRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
 import com.google.common.collect.ImmutableMap;
@@ -122,6 +136,8 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
       TypeRegistry.newBuilder()
           .add(Cluster.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(Subnet.getDescriptor())
+          .add(PrivateConnection.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(PrivateCloud.getDescriptor())
           .add(HcxActivationKey.getDescriptor())
@@ -604,6 +620,81 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       .setDefaultInstance(ListSubnetsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSubnetRequest, Subnet> getSubnetMethodDescriptor =
+      ApiMethodDescriptor.<GetSubnetRequest, Subnet>newBuilder()
+          .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetSubnet")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetSubnetRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/privateClouds/*/subnets/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetSubnetRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetSubnetRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Subnet>newBuilder()
+                  .setDefaultInstance(Subnet.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateSubnetRequest, Operation>
+      updateSubnetMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSubnetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateSubnet")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSubnetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{subnet.name=projects/*/locations/*/privateClouds/*/subnets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubnetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "subnet.name", request.getSubnet().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubnetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("subnet", request.getSubnet(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateSubnetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ListNodeTypesRequest, ListNodeTypesResponse>
@@ -1356,6 +1447,255 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<CreatePrivateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/CreatePrivateConnection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreatePrivateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/privateConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreatePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreatePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "privateConnectionId", request.getPrivateConnectionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "privateConnection", request.getPrivateConnection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreatePrivateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetPrivateConnection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetPrivateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/privateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PrivateConnection>newBuilder()
+                      .setDefaultInstance(PrivateConnection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListPrivateConnections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListPrivateConnectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/privateConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPrivateConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPrivateConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListPrivateConnectionsResponse>newBuilder()
+                      .setDefaultInstance(ListPrivateConnectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdatePrivateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/UpdatePrivateConnection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdatePrivateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{privateConnection.name=projects/*/locations/*/privateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "privateConnection.name",
+                                request.getPrivateConnection().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "privateConnection", request.getPrivateConnection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdatePrivateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<DeletePrivateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/DeletePrivateConnection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeletePrivateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/privateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePrivateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeletePrivateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListPrivateConnectionPeeringRoutesRequest,
+                  ListPrivateConnectionPeeringRoutesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/ListPrivateConnectionPeeringRoutes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListPrivateConnectionPeeringRoutesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/privateConnections/*}/peeringRoutes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPrivateConnectionPeeringRoutesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPrivateConnectionPeeringRoutesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListPrivateConnectionPeeringRoutesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListPrivateConnectionPeeringRoutesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1574,6 +1914,10 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable;
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse>
       listSubnetsPagedCallable;
+  private final UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable;
+  private final UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable;
+  private final OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesPagedResponse>
       listNodeTypesPagedCallable;
@@ -1634,6 +1978,33 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<
           ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksPagedCallable;
+  private final UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable;
+  private final OperationCallable<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable;
+  private final UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable;
+  private final UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable;
+  private final OperationCallable<
+          UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable;
+  private final UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable;
+  private final OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable;
+  private final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable;
+  private final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1840,6 +2211,28 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
+        HttpJsonCallSettings.<GetSubnetRequest, Subnet>newBuilder()
+            .setMethodDescriptor(getSubnetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
+        HttpJsonCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSubnetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subnet.name", String.valueOf(request.getSubnet().getName()));
                   return builder.build();
                 })
             .build();
@@ -2076,6 +2469,85 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionTransportSettings =
+            HttpJsonCallSettings.<CreatePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createPrivateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionTransportSettings =
+            HttpJsonCallSettings.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+                .setMethodDescriptor(getPrivateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+        listPrivateConnectionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listPrivateConnectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdatePrivateConnectionRequest, Operation>
+        updatePrivateConnectionTransportSettings =
+            HttpJsonCallSettings.<UpdatePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updatePrivateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "private_connection.name",
+                          String.valueOf(request.getPrivateConnection().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionTransportSettings =
+            HttpJsonCallSettings.<DeletePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deletePrivateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+        listPrivateConnectionPeeringRoutesTransportSettings =
+            HttpJsonCallSettings
+                .<ListPrivateConnectionPeeringRoutesRequest,
+                    ListPrivateConnectionPeeringRoutesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listPrivateConnectionPeeringRoutesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2233,6 +2705,18 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
     this.listSubnetsPagedCallable =
         callableFactory.createPagedCallable(
             listSubnetsTransportSettings, settings.listSubnetsSettings(), clientContext);
+    this.getSubnetCallable =
+        callableFactory.createUnaryCallable(
+            getSubnetTransportSettings, settings.getSubnetSettings(), clientContext);
+    this.updateSubnetCallable =
+        callableFactory.createUnaryCallable(
+            updateSubnetTransportSettings, settings.updateSubnetSettings(), clientContext);
+    this.updateSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSubnetTransportSettings,
+            settings.updateSubnetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listNodeTypesCallable =
         callableFactory.createUnaryCallable(
             listNodeTypesTransportSettings, settings.listNodeTypesSettings(), clientContext);
@@ -2394,6 +2878,64 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
             listVmwareEngineNetworksTransportSettings,
             settings.listVmwareEngineNetworksSettings(),
             clientContext);
+    this.createPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionSettings(),
+            clientContext);
+    this.createPrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getPrivateConnectionTransportSettings,
+            settings.getPrivateConnectionSettings(),
+            clientContext);
+    this.listPrivateConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.listPrivateConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.updatePrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updatePrivateConnectionTransportSettings,
+            settings.updatePrivateConnectionSettings(),
+            clientContext);
+    this.updatePrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePrivateConnectionTransportSettings,
+            settings.updatePrivateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deletePrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionSettings(),
+            clientContext);
+    this.deletePrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listPrivateConnectionPeeringRoutesCallable =
+        callableFactory.createUnaryCallable(
+            listPrivateConnectionPeeringRoutesTransportSettings,
+            settings.listPrivateConnectionPeeringRoutesSettings(),
+            clientContext);
+    this.listPrivateConnectionPeeringRoutesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPrivateConnectionPeeringRoutesTransportSettings,
+            settings.listPrivateConnectionPeeringRoutesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2434,6 +2976,8 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
     methodDescriptors.add(updateClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(listSubnetsMethodDescriptor);
+    methodDescriptors.add(getSubnetMethodDescriptor);
+    methodDescriptors.add(updateSubnetMethodDescriptor);
     methodDescriptors.add(listNodeTypesMethodDescriptor);
     methodDescriptors.add(getNodeTypeMethodDescriptor);
     methodDescriptors.add(showNsxCredentialsMethodDescriptor);
@@ -2453,6 +2997,12 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
     methodDescriptors.add(deleteVmwareEngineNetworkMethodDescriptor);
     methodDescriptors.add(getVmwareEngineNetworkMethodDescriptor);
     methodDescriptors.add(listVmwareEngineNetworksMethodDescriptor);
+    methodDescriptors.add(createPrivateConnectionMethodDescriptor);
+    methodDescriptors.add(getPrivateConnectionMethodDescriptor);
+    methodDescriptors.add(listPrivateConnectionsMethodDescriptor);
+    methodDescriptors.add(updatePrivateConnectionMethodDescriptor);
+    methodDescriptors.add(deletePrivateConnectionMethodDescriptor);
+    methodDescriptors.add(listPrivateConnectionPeeringRoutesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2582,6 +3132,22 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
   @Override
   public UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse> listSubnetsPagedCallable() {
     return listSubnetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable() {
+    return getSubnetCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
+    return updateSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable() {
+    return updateSubnetOperationCallable;
   }
 
   @Override
@@ -2764,6 +3330,75 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
   public UnaryCallable<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksPagedCallable() {
     return listVmwareEngineNetworksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable() {
+    return createPrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable() {
+    return createPrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable() {
+    return getPrivateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable() {
+    return listPrivateConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable() {
+    return listPrivateConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable() {
+    return updatePrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable() {
+    return updatePrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable() {
+    return deletePrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable() {
+    return deletePrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable() {
+    return listPrivateConnectionPeeringRoutesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable() {
+    return listPrivateConnectionPeeringRoutesPagedCallable;
   }
 
   @Override
