@@ -19,7 +19,8 @@ class TestCase(unittest.TestCase):
             '2023-06-10',
             dummy_module,
             ['Add support for disabling Pod overprovisioning',
-             'Enhanced query generation performance']
+             'Enhanced query generation performance'],
+            ['update google-cloud-shared-dependencies to 1.2.3']
         )
         self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
 
@@ -27,6 +28,10 @@ class TestCase(unittest.TestCase):
 
 * Add support for disabling Pod overprovisioning
 * Enhanced query generation performance
+
+### Dependencies
+
+* update google-cloud-shared-dependencies to 1.2.3
 ''')
 
 

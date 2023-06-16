@@ -73,21 +73,36 @@ def group_changes_by_api(main_changes: [str]):
             api_to_changelog[api_name].append(note)
     return api_to_changelog
 
+def find_repo_wide_dependency_changes(main_changes: [str]):
+    repo_wide_changes = []
+    for changelog in main_changes:
+        match = re.search(r'\* (.+com\.google\.cloud:google-cloud-shared.+)',
+                          changelog)
+        if match:
+            note = match.group(1)
+            repo_wide_changes.append(note)
+    return repo_wide_changes
+
 
 CHANGELOG_HEADER_MARK = '# Changelog'
 
 
 def create_changelog_entry(current_date: str, module: LibraryModule,
-    changelog_lines: [str]):
-    changelog_entry = f'## {module.version} ({current_date})' \
-                      f'\n\n### Features\n\n'
-    for line in changelog_lines:
-        changelog_entry += f'* {line}\n'
+    changelog_lines: [str], dependency_changes: [str]):
+    changelog_entry = f'## {module.version} ({current_date})\n\n'
+    if changelog_lines:
+        changelog_entry += '### Features\n\n'
+        for line in changelog_lines:
+            changelog_entry += f'* {line}\n'
+    if dependency_changes:
+        changelog_entry += "\n### Dependencies\n\n"
+        for line in dependency_changes:
+            changelog_entry += f'* {line}\n'
     return changelog_entry
 
 
 def write_changelog(current_date: str, module: LibraryModule,
-    changelog_entries: [str]):
+    changelog_entries: [str], dependency_changes: [str]):
     changelog_file = module.changelog
     if changelog_file.exists():
         with open(changelog_file, 'r') as file:
@@ -99,7 +114,8 @@ def write_changelog(current_date: str, module: LibraryModule,
     if re.search(f'## {module.version}', changelog_content):
         return
 
-    entry = create_changelog_entry(current_date, module, changelog_entries)
+    entry = create_changelog_entry(current_date, module, changelog_entries,
+                                   dependency_changes)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                                          f'{CHANGELOG_HEADER_MARK}'
                                          f'\n\n{entry}')
@@ -113,17 +129,20 @@ def main():
               "root")
         sys.exit(1)
 
-    # Step 1: Reads the main changelog from standard input
+    # Step 1: Reads the main changelog from the argument
     main_changes = []
     main_release_note_file = sys.argv[1]
-    current_date = None
     with open(main_release_note_file, 'r') as file:
         for line in file:
             main_changes.append(line.strip())
-            if not current_date:
-                match = re.search(r'## .* \((\d\d\d\d-\d\d-\d\d)\)', line)
-                if match:
-                    current_date = match.group(1)
+
+    release_date = None
+    for line in main_changes:
+        match = re.search(r'## .* \((\d\d\d\d-\d\d-\d\d)\)', line)
+        if match:
+            release_date = match.group(1)
+            break
+
 
     # Step 2: Detects target modules by .OwlBot.yaml for api-name: field.
     root_directory = sys.argv[2]
@@ -132,13 +151,14 @@ def main():
 
     # Step 3: Splits the changelog to ~100 modules
     api_to_changelog_entries = group_changes_by_api(main_changes)
+    dependency_change_entries = find_repo_wide_dependency_changes(main_changes)
 
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
     # modules
     for module in modules:
-        changelog_entries = api_to_changelog_entries.get(module.api_name,
-                                                         ['No change'])
-        write_changelog(current_date, module, changelog_entries)
+        changelog_entries = api_to_changelog_entries.get(module.api_name, [])
+        write_changelog(release_date, module, changelog_entries,
+                        dependency_change_entries)
 
 
 if __name__ == '__main__':

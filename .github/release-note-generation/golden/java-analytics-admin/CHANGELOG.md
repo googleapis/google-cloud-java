@@ -11,6 +11,7 @@
 * **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.6 ([#9494](https://github.com/googleapis/google-cloud-java/issues/9494)) ([739763f](https://github.com/googleapis/google-cloud-java/commit/739763f15ffa2434d7fa089899165f1e8fa5f870))
 * **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#9505](https://github.com/googleapis/google-cloud-java/issues/9505)) ([30bc6f0](https://github.com/googleapis/google-cloud-java/commit/30bc6f0aef5b95549230dbd5b5246f2a8dab4ba4))
 
+
 ## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-admin-v0.14.1-SNAPSHOT...google-analytics-admin-v0.15.0) (2022-10-24)
 
 
