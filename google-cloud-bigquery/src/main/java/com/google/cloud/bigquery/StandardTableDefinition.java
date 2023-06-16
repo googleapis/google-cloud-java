@@ -161,6 +161,8 @@ public abstract class StandardTableDefinition extends TableDefinition {
      */
     public abstract Builder setClustering(Clustering clustering);
 
+    public abstract Builder setTableConstraints(TableConstraints tableConstraints);
+
     /** Creates a {@code StandardTableDefinition} object. */
     public abstract StandardTableDefinition build();
   }
@@ -221,6 +223,13 @@ public abstract class StandardTableDefinition extends TableDefinition {
   @Nullable
   public abstract Clustering getClustering();
 
+  /**
+   * Returns the table constraints for this table. Returns {@code null} if no table constraints are
+   * set for this table.
+   */
+  @Nullable
+  public abstract TableConstraints getTableConstraints();
+
   /** Returns a builder for a BigQuery standard table definition. */
   public static Builder newBuilder() {
     return new AutoValue_StandardTableDefinition.Builder().setType(Type.TABLE);
@@ -259,6 +268,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     if (getClustering() != null) {
       tablePb.setClustering(getClustering().toPb());
     }
+    if (getTableConstraints() != null) {
+      tablePb.setTableConstraints(getTableConstraints().toPb());
+    }
     return tablePb;
   }
 
@@ -295,6 +307,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
     if (tablePb.getNumLongTermBytes() != null) {
       builder.setNumLongTermBytes(tablePb.getNumLongTermBytes());
+    }
+    if (tablePb.getTableConstraints() != null) {
+      builder.setTableConstraints(TableConstraints.fromPb(tablePb.getTableConstraints()));
     }
     return builder.setNumBytes(tablePb.getNumBytes()).setLocation(tablePb.getLocation()).build();
   }

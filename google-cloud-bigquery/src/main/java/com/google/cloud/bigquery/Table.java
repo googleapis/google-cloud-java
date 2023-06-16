@@ -169,6 +169,12 @@ public class Table extends TableInfo {
     }
 
     @Override
+    public Builder setTableConstraints(TableConstraints tableConstraints) {
+      infoBuilder.setTableConstraints(tableConstraints);
+      return this;
+    }
+
+    @Override
     public Table build() {
       return new Table(bigquery, infoBuilder);
     }
