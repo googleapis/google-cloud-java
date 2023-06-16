@@ -47,11 +47,6 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
     return new PullRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_descriptor;
   }
@@ -66,7 +61,9 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -121,7 +118,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETURN_IMMEDIATELY_FIELD_NUMBER = 2;
-  private boolean returnImmediately_;
+  private boolean returnImmediately_ = false;
   /**
    *
    *
@@ -139,7 +136,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=1117
+   *     google/pubsub/v1/pubsub.proto;l=1221
    * @return The returnImmediately.
    */
   @java.lang.Override
@@ -149,7 +146,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_MESSAGES_FIELD_NUMBER = 3;
-  private int maxMessages_;
+  private int maxMessages_ = 0;
   /**
    *
    *
@@ -381,12 +378,10 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
       returnImmediately_ = false;
-
       maxMessages_ = 0;
-
       return this;
     }
 
@@ -413,11 +408,24 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.PullRequest buildPartial() {
       com.google.pubsub.v1.PullRequest result = new com.google.pubsub.v1.PullRequest(this);
-      result.subscription_ = subscription_;
-      result.returnImmediately_ = returnImmediately_;
-      result.maxMessages_ = maxMessages_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PullRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.returnImmediately_ = returnImmediately_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxMessages_ = maxMessages_;
+      }
     }
 
     @java.lang.Override
@@ -467,6 +475,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.PullRequest.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getReturnImmediately() != false) {
@@ -504,19 +513,19 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 returnImmediately_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxMessages_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -535,6 +544,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subscription_ = "";
     /**
@@ -606,8 +617,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,8 +637,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +662,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,7 +687,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1117
+     *     google/pubsub/v1/pubsub.proto;l=1221
      * @return The returnImmediately.
      */
     @java.lang.Override
@@ -702,7 +713,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1117
+     *     google/pubsub/v1/pubsub.proto;l=1221
      * @param value The returnImmediately to set.
      * @return This builder for chaining.
      */
@@ -710,6 +721,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setReturnImmediately(boolean value) {
 
       returnImmediately_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -731,12 +743,12 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1117
+     *     google/pubsub/v1/pubsub.proto;l=1221
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearReturnImmediately() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       returnImmediately_ = false;
       onChanged();
       return this;
@@ -777,6 +789,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxMessages(int value) {
 
       maxMessages_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -794,7 +807,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxMessages() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxMessages_ = 0;
       onChanged();
       return this;

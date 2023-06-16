@@ -48,11 +48,6 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
     return new DeleteSchemaRevisionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
         .internal_static_google_pubsub_v1_DeleteSchemaRevisionRequest_descriptor;
@@ -69,14 +64,17 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
    * Required. The name of the schema revision to be deleted, with a revision ID
    * explicitly included.
-   * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+   *
+   * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
    * </pre>
    *
    * <code>
@@ -103,7 +101,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The name of the schema revision to be deleted, with a revision ID
    * explicitly included.
-   * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+   *
+   * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
    * </pre>
    *
    * <code>
@@ -126,21 +125,27 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object revisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The revision ID to roll back to.
-   * It must be a revision of the same schema.
-   *   Example: c7cfa2a8
+   * Optional. This field is deprecated and should not be used for specifying
+   * the revision ID. The revision ID should be specified via the `name`
+   * parameter.
    * </pre>
    *
-   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+   *     google/pubsub/v1/schema.proto;l=331
    * @return The revisionId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getRevisionId() {
     java.lang.Object ref = revisionId_;
     if (ref instanceof java.lang.String) {
@@ -156,16 +161,20 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The revision ID to roll back to.
-   * It must be a revision of the same schema.
-   *   Example: c7cfa2a8
+   * Optional. This field is deprecated and should not be used for specifying
+   * the revision ID. The revision ID should be specified via the `name`
+   * parameter.
    * </pre>
    *
-   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+   *     google/pubsub/v1/schema.proto;l=331
    * @return The bytes for revisionId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getRevisionIdBytes() {
     java.lang.Object ref = revisionId_;
     if (ref instanceof java.lang.String) {
@@ -384,10 +393,9 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       revisionId_ = "";
-
       return this;
     }
 
@@ -415,10 +423,21 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
     public com.google.pubsub.v1.DeleteSchemaRevisionRequest buildPartial() {
       com.google.pubsub.v1.DeleteSchemaRevisionRequest result =
           new com.google.pubsub.v1.DeleteSchemaRevisionRequest(this);
-      result.name_ = name_;
-      result.revisionId_ = revisionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.DeleteSchemaRevisionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revisionId_ = revisionId_;
+      }
     }
 
     @java.lang.Override
@@ -469,10 +488,12 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRevisionId().isEmpty()) {
         revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -504,13 +525,13 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 revisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +551,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -537,7 +560,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the schema revision to be deleted, with a revision ID
      * explicitly included.
-     * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+     *
+     * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
      * </pre>
      *
      * <code>
@@ -563,7 +587,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the schema revision to be deleted, with a revision ID
      * explicitly included.
-     * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+     *
+     * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
      * </pre>
      *
      * <code>
@@ -589,7 +614,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the schema revision to be deleted, with a revision ID
      * explicitly included.
-     * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+     *
+     * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
      * </pre>
      *
      * <code>
@@ -603,8 +629,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -614,7 +640,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the schema revision to be deleted, with a revision ID
      * explicitly included.
-     * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+     *
+     * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
      * </pre>
      *
      * <code>
@@ -624,8 +651,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,7 +662,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the schema revision to be deleted, with a revision ID
      * explicitly included.
-     * Example: projects/123/schemas/my-schema&#64;c7cfa2a8
+     *
+     * Example: `projects/123/schemas/my-schema&#64;c7cfa2a8`
      * </pre>
      *
      * <code>
@@ -650,8 +678,8 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,15 +689,19 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The revision ID to roll back to.
-     * It must be a revision of the same schema.
-     *   Example: c7cfa2a8
+     * Optional. This field is deprecated and should not be used for specifying
+     * the revision ID. The revision ID should be specified via the `name`
+     * parameter.
      * </pre>
      *
-     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+     *     google/pubsub/v1/schema.proto;l=331
      * @return The revisionId.
      */
+    @java.lang.Deprecated
     public java.lang.String getRevisionId() {
       java.lang.Object ref = revisionId_;
       if (!(ref instanceof java.lang.String)) {
@@ -685,15 +717,19 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The revision ID to roll back to.
-     * It must be a revision of the same schema.
-     *   Example: c7cfa2a8
+     * Optional. This field is deprecated and should not be used for specifying
+     * the revision ID. The revision ID should be specified via the `name`
+     * parameter.
      * </pre>
      *
-     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+     *     google/pubsub/v1/schema.proto;l=331
      * @return The bytes for revisionId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getRevisionIdBytes() {
       java.lang.Object ref = revisionId_;
       if (ref instanceof String) {
@@ -709,22 +745,26 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The revision ID to roll back to.
-     * It must be a revision of the same schema.
-     *   Example: c7cfa2a8
+     * Optional. This field is deprecated and should not be used for specifying
+     * the revision ID. The revision ID should be specified via the `name`
+     * parameter.
      * </pre>
      *
-     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+     *     google/pubsub/v1/schema.proto;l=331
      * @param value The revisionId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRevisionId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,18 +772,22 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The revision ID to roll back to.
-     * It must be a revision of the same schema.
-     *   Example: c7cfa2a8
+     * Optional. This field is deprecated and should not be used for specifying
+     * the revision ID. The revision ID should be specified via the `name`
+     * parameter.
      * </pre>
      *
-     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+     *     google/pubsub/v1/schema.proto;l=331
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRevisionId() {
-
       revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -751,23 +795,27 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The revision ID to roll back to.
-     * It must be a revision of the same schema.
-     *   Example: c7cfa2a8
+     * Optional. This field is deprecated and should not be used for specifying
+     * the revision ID. The revision ID should be specified via the `name`
+     * parameter.
      * </pre>
      *
-     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string revision_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
+     *     google/pubsub/v1/schema.proto;l=331
      * @param value The bytes for revisionId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

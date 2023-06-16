@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ import com.google.pubsub.v1.SchemaSettings;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
-import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -219,22 +218,19 @@ public class TopicAdminClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    UpdateTopicRequest request =
-        UpdateTopicRequest.newBuilder()
-            .setTopic(
-                Topic.newBuilder()
-                    .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
-                    .putAllLabels(new HashMap<String, String>())
-                    .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-                    .setKmsKeyName("kmsKeyName412586233")
-                    .setSchemaSettings(SchemaSettings.newBuilder().build())
-                    .setSatisfiesPzs(true)
-                    .setMessageRetentionDuration(Duration.newBuilder().build())
-                    .build())
-            .setUpdateMask(FieldMask.newBuilder().build())
+    Topic topic =
+        Topic.newBuilder()
+            .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
+            .putAllLabels(new HashMap<String, String>())
+            .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setSchemaSettings(SchemaSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Topic actualResponse = client.updateTopic(request);
+    Topic actualResponse = client.updateTopic(topic, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -260,21 +256,18 @@ public class TopicAdminClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      UpdateTopicRequest request =
-          UpdateTopicRequest.newBuilder()
-              .setTopic(
-                  Topic.newBuilder()
-                      .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
-                      .putAllLabels(new HashMap<String, String>())
-                      .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-                      .setKmsKeyName("kmsKeyName412586233")
-                      .setSchemaSettings(SchemaSettings.newBuilder().build())
-                      .setSatisfiesPzs(true)
-                      .setMessageRetentionDuration(Duration.newBuilder().build())
-                      .build())
-              .setUpdateMask(FieldMask.newBuilder().build())
+      Topic topic =
+          Topic.newBuilder()
+              .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
+              .putAllLabels(new HashMap<String, String>())
+              .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
+              .setKmsKeyName("kmsKeyName412586233")
+              .setSchemaSettings(SchemaSettings.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setMessageRetentionDuration(Duration.newBuilder().build())
               .build();
-      client.updateTopic(request);
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTopic(topic, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

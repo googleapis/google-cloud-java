@@ -39,7 +39,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
   }
 
   private ListTopicSubscriptionsResponse() {
-    subscriptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subscriptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTopicSubscriptionsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,10 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
   }
 
   public static final int SUBSCRIPTIONS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList subscriptions_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList subscriptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -131,7 +129,9 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -396,10 +396,9 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      subscriptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = 0;
+      subscriptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -427,15 +426,22 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
     public com.google.pubsub.v1.ListTopicSubscriptionsResponse buildPartial() {
       com.google.pubsub.v1.ListTopicSubscriptionsResponse result =
           new com.google.pubsub.v1.ListTopicSubscriptionsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        subscriptions_ = subscriptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.subscriptions_ = subscriptions_;
-      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ListTopicSubscriptionsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        subscriptions_.makeImmutable();
+        result.subscriptions_ = subscriptions_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -487,7 +493,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       if (!other.subscriptions_.isEmpty()) {
         if (subscriptions_.isEmpty()) {
           subscriptions_ = other.subscriptions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureSubscriptionsIsMutable();
           subscriptions_.addAll(other.subscriptions_);
@@ -496,6 +502,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -534,7 +541,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -556,14 +563,14 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList subscriptions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subscriptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubscriptionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!subscriptions_.isModifiable()) {
         subscriptions_ = new com.google.protobuf.LazyStringArrayList(subscriptions_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -577,7 +584,8 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * @return A list containing the subscriptions.
      */
     public com.google.protobuf.ProtocolStringList getSubscriptionsList() {
-      return subscriptions_.getUnmodifiableView();
+      subscriptions_.makeImmutable();
+      return subscriptions_;
     }
     /**
      *
@@ -642,6 +650,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       }
       ensureSubscriptionsIsMutable();
       subscriptions_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,6 +672,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       }
       ensureSubscriptionsIsMutable();
       subscriptions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,6 +691,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
     public Builder addAllSubscriptions(java.lang.Iterable<java.lang.String> values) {
       ensureSubscriptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subscriptions_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +707,9 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSubscriptions() {
-      subscriptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subscriptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -720,6 +732,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureSubscriptionsIsMutable();
       subscriptions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +804,8 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -810,8 +823,8 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -834,8 +847,8 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

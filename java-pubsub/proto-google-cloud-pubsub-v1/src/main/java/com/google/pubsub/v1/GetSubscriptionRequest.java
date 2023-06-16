@@ -47,11 +47,6 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     return new GetSubscriptionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_GetSubscriptionRequest_descriptor;
@@ -68,7 +63,9 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -319,8 +316,8 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
       return this;
     }
 
@@ -348,9 +345,18 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     public com.google.pubsub.v1.GetSubscriptionRequest buildPartial() {
       com.google.pubsub.v1.GetSubscriptionRequest result =
           new com.google.pubsub.v1.GetSubscriptionRequest(this);
-      result.subscription_ = subscription_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.GetSubscriptionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +406,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.pubsub.v1.GetSubscriptionRequest.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +438,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +457,8 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subscription_ = "";
     /**
@@ -521,8 +530,8 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,8 +550,8 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -566,8 +575,8 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

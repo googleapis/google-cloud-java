@@ -38,18 +38,13 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   }
 
   private MessageStoragePolicy() {
-    allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MessageStoragePolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,7 +63,10 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ALLOWED_PERSISTENCE_REGIONS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList allowedPersistenceRegions_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList allowedPersistenceRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -350,8 +348,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = 0;
+      allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -379,14 +377,19 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public com.google.pubsub.v1.MessageStoragePolicy buildPartial() {
       com.google.pubsub.v1.MessageStoragePolicy result =
           new com.google.pubsub.v1.MessageStoragePolicy(this);
-      int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedPersistenceRegions_ = allowedPersistenceRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.allowedPersistenceRegions_ = allowedPersistenceRegions_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.MessageStoragePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowedPersistenceRegions_.makeImmutable();
+        result.allowedPersistenceRegions_ = allowedPersistenceRegions_;
+      }
     }
 
     @java.lang.Override
@@ -437,7 +440,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       if (!other.allowedPersistenceRegions_.isEmpty()) {
         if (allowedPersistenceRegions_.isEmpty()) {
           allowedPersistenceRegions_ = other.allowedPersistenceRegions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowedPersistenceRegionsIsMutable();
           allowedPersistenceRegions_.addAll(other.allowedPersistenceRegions_);
@@ -496,15 +499,15 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowedPersistenceRegions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedPersistenceRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedPersistenceRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowedPersistenceRegions_.isModifiable()) {
         allowedPersistenceRegions_ =
             new com.google.protobuf.LazyStringArrayList(allowedPersistenceRegions_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -522,7 +525,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * @return A list containing the allowedPersistenceRegions.
      */
     public com.google.protobuf.ProtocolStringList getAllowedPersistenceRegionsList() {
-      return allowedPersistenceRegions_.getUnmodifiableView();
+      allowedPersistenceRegions_.makeImmutable();
+      return allowedPersistenceRegions_;
     }
     /**
      *
@@ -603,6 +607,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       }
       ensureAllowedPersistenceRegionsIsMutable();
       allowedPersistenceRegions_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,6 +633,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       }
       ensureAllowedPersistenceRegionsIsMutable();
       allowedPersistenceRegions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -650,6 +656,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public Builder addAllAllowedPersistenceRegions(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedPersistenceRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedPersistenceRegions_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,8 +676,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowedPersistenceRegions() {
-      allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -697,6 +705,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureAllowedPersistenceRegionsIsMutable();
       allowedPersistenceRegions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

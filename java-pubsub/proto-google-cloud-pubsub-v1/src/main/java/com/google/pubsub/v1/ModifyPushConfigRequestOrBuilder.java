@@ -59,6 +59,7 @@ public interface ModifyPushConfigRequestOrBuilder
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
@@ -76,6 +77,7 @@ public interface ModifyPushConfigRequestOrBuilder
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
@@ -93,6 +95,7 @@ public interface ModifyPushConfigRequestOrBuilder
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing

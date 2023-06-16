@@ -48,11 +48,6 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     return new BigQueryConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_BigQueryConfig_descriptor;
@@ -103,6 +98,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cannot write to the BigQuery table because of permission denied errors.
+     * This can happen if
+     * - Pub/Sub SA has not been granted the [appropriate BigQuery IAM
+     * permissions](https://cloud.google.com/pubsub/docs/create-subscription#assign_bigquery_service_account)
+     * - bigquery.googleapis.com API is not enabled for the project
+     * ([instructions](https://cloud.google.com/service-usage/docs/enable-disable))
      * </pre>
      *
      * <code>PERMISSION_DENIED = 2;</code>
@@ -156,6 +156,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cannot write to the BigQuery table because of permission denied errors.
+     * This can happen if
+     * - Pub/Sub SA has not been granted the [appropriate BigQuery IAM
+     * permissions](https://cloud.google.com/pubsub/docs/create-subscription#assign_bigquery_service_account)
+     * - bigquery.googleapis.com API is not enabled for the project
+     * ([instructions](https://cloud.google.com/service-usage/docs/enable-disable))
      * </pre>
      *
      * <code>PERMISSION_DENIED = 2;</code>
@@ -270,13 +275,15 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object table_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object table_ = "";
   /**
    *
    *
    * <pre>
    * The name of the table to which to write data, of the form
-   * {projectId}:{datasetId}.{tableId}
+   * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
    * <code>string table = 1;</code>
@@ -300,7 +307,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the table to which to write data, of the form
-   * {projectId}:{datasetId}.{tableId}
+   * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
    * <code>string table = 1;</code>
@@ -321,7 +328,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USE_TOPIC_SCHEMA_FIELD_NUMBER = 2;
-  private boolean useTopicSchema_;
+  private boolean useTopicSchema_ = false;
   /**
    *
    *
@@ -340,7 +347,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WRITE_METADATA_FIELD_NUMBER = 3;
-  private boolean writeMetadata_;
+  private boolean writeMetadata_ = false;
   /**
    *
    *
@@ -362,7 +369,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DROP_UNKNOWN_FIELDS_FIELD_NUMBER = 4;
-  private boolean dropUnknownFields_;
+  private boolean dropUnknownFields_ = false;
   /**
    *
    *
@@ -384,7 +391,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -419,9 +426,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.pubsub.v1.BigQueryConfig.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.pubsub.v1.BigQueryConfig.State result =
-        com.google.pubsub.v1.BigQueryConfig.State.valueOf(state_);
+        com.google.pubsub.v1.BigQueryConfig.State.forNumber(state_);
     return result == null ? com.google.pubsub.v1.BigQueryConfig.State.UNRECOGNIZED : result;
   }
 
@@ -656,16 +662,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       table_ = "";
-
       useTopicSchema_ = false;
-
       writeMetadata_ = false;
-
       dropUnknownFields_ = false;
-
       state_ = 0;
-
       return this;
     }
 
@@ -692,13 +694,30 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.BigQueryConfig buildPartial() {
       com.google.pubsub.v1.BigQueryConfig result = new com.google.pubsub.v1.BigQueryConfig(this);
-      result.table_ = table_;
-      result.useTopicSchema_ = useTopicSchema_;
-      result.writeMetadata_ = writeMetadata_;
-      result.dropUnknownFields_ = dropUnknownFields_;
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.BigQueryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.table_ = table_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useTopicSchema_ = useTopicSchema_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.writeMetadata_ = writeMetadata_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dropUnknownFields_ = dropUnknownFields_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -748,6 +767,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()) return this;
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getUseTopicSchema() != false) {
@@ -791,31 +811,31 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 table_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 useTopicSchema_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 writeMetadata_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 dropUnknownFields_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -835,13 +855,15 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object table_ = "";
     /**
      *
      *
      * <pre>
      * The name of the table to which to write data, of the form
-     * {projectId}:{datasetId}.{tableId}
+     * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
      * <code>string table = 1;</code>
@@ -864,7 +886,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the table to which to write data, of the form
-     * {projectId}:{datasetId}.{tableId}
+     * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
      * <code>string table = 1;</code>
@@ -887,7 +909,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the table to which to write data, of the form
-     * {projectId}:{datasetId}.{tableId}
+     * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
      * <code>string table = 1;</code>
@@ -899,8 +921,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       table_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -909,7 +931,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the table to which to write data, of the form
-     * {projectId}:{datasetId}.{tableId}
+     * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
      * <code>string table = 1;</code>
@@ -917,8 +939,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTable() {
-
       table_ = getDefaultInstance().getTable();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -927,7 +949,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the table to which to write data, of the form
-     * {projectId}:{datasetId}.{tableId}
+     * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
      * <code>string table = 1;</code>
@@ -940,8 +962,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       table_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -979,6 +1001,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setUseTopicSchema(boolean value) {
 
       useTopicSchema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -995,7 +1018,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUseTopicSchema() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       useTopicSchema_ = false;
       onChanged();
       return this;
@@ -1040,6 +1063,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setWriteMetadata(boolean value) {
 
       writeMetadata_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1059,7 +1083,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWriteMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       writeMetadata_ = false;
       onChanged();
       return this;
@@ -1104,6 +1128,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setDropUnknownFields(boolean value) {
 
       dropUnknownFields_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1123,7 +1148,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDropUnknownFields() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       dropUnknownFields_ = false;
       onChanged();
       return this;
@@ -1164,8 +1189,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1185,9 +1210,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.pubsub.v1.BigQueryConfig.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.pubsub.v1.BigQueryConfig.State result =
-          com.google.pubsub.v1.BigQueryConfig.State.valueOf(state_);
+          com.google.pubsub.v1.BigQueryConfig.State.forNumber(state_);
       return result == null ? com.google.pubsub.v1.BigQueryConfig.State.UNRECOGNIZED : result;
     }
     /**
@@ -1209,7 +1233,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1229,7 +1253,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;

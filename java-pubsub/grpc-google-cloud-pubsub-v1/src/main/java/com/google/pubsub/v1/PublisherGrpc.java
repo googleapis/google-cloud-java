@@ -458,7 +458,7 @@ public final class PublisherGrpc {
    * messages to a topic.
    * </pre>
    */
-  public abstract static class PublisherImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -468,7 +468,7 @@ public final class PublisherGrpc {
      * (https://cloud.google.com/pubsub/docs/admin#resource_names).
      * </pre>
      */
-    public void createTopic(
+    default void createTopic(
         com.google.pubsub.v1.Topic request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Topic> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -483,7 +483,7 @@ public final class PublisherGrpc {
      * topic are not modifiable.
      * </pre>
      */
-    public void updateTopic(
+    default void updateTopic(
         com.google.pubsub.v1.UpdateTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Topic> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -498,7 +498,7 @@ public final class PublisherGrpc {
      * does not exist.
      * </pre>
      */
-    public void publish(
+    default void publish(
         com.google.pubsub.v1.PublishRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.PublishResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPublishMethod(), responseObserver);
@@ -511,7 +511,7 @@ public final class PublisherGrpc {
      * Gets the configuration of a topic.
      * </pre>
      */
-    public void getTopic(
+    default void getTopic(
         com.google.pubsub.v1.GetTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Topic> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTopicMethod(), responseObserver);
@@ -524,7 +524,7 @@ public final class PublisherGrpc {
      * Lists matching topics.
      * </pre>
      */
-    public void listTopics(
+    default void listTopics(
         com.google.pubsub.v1.ListTopicsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTopicsMethod(), responseObserver);
@@ -537,7 +537,7 @@ public final class PublisherGrpc {
      * Lists the names of the attached subscriptions on this topic.
      * </pre>
      */
-    public void listTopicSubscriptions(
+    default void listTopicSubscriptions(
         com.google.pubsub.v1.ListTopicSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSubscriptionsResponse>
             responseObserver) {
@@ -556,7 +556,7 @@ public final class PublisherGrpc {
      * state captured by a snapshot.
      * </pre>
      */
-    public void listTopicSnapshots(
+    default void listTopicSnapshots(
         com.google.pubsub.v1.ListTopicSnapshotsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSnapshotsResponse>
             responseObserver) {
@@ -575,7 +575,7 @@ public final class PublisherGrpc {
      * not deleted, but their `topic` field is set to `_deleted-topic_`.
      * </pre>
      */
-    public void deleteTopic(
+    default void deleteTopic(
         com.google.pubsub.v1.DeleteTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -592,79 +592,33 @@ public final class PublisherGrpc {
      * subscription, pushes to the endpoint will stop.
      * </pre>
      */
-    public void detachSubscription(
+    default void detachSubscription(
         com.google.pubsub.v1.DetachSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.DetachSubscriptionResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDetachSubscriptionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Publisher.
+   *
+   * <pre>
+   * The service that an application uses to manipulate topics, and to send
+   * messages to a topic.
+   * </pre>
+   */
+  public abstract static class PublisherImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateTopicMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.pubsub.v1.Topic, com.google.pubsub.v1.Topic>(
-                      this, METHODID_CREATE_TOPIC)))
-          .addMethod(
-              getUpdateTopicMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.UpdateTopicRequest, com.google.pubsub.v1.Topic>(
-                      this, METHODID_UPDATE_TOPIC)))
-          .addMethod(
-              getPublishMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.PublishRequest, com.google.pubsub.v1.PublishResponse>(
-                      this, METHODID_PUBLISH)))
-          .addMethod(
-              getGetTopicMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.GetTopicRequest, com.google.pubsub.v1.Topic>(
-                      this, METHODID_GET_TOPIC)))
-          .addMethod(
-              getListTopicsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ListTopicsRequest,
-                      com.google.pubsub.v1.ListTopicsResponse>(this, METHODID_LIST_TOPICS)))
-          .addMethod(
-              getListTopicSubscriptionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ListTopicSubscriptionsRequest,
-                      com.google.pubsub.v1.ListTopicSubscriptionsResponse>(
-                      this, METHODID_LIST_TOPIC_SUBSCRIPTIONS)))
-          .addMethod(
-              getListTopicSnapshotsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ListTopicSnapshotsRequest,
-                      com.google.pubsub.v1.ListTopicSnapshotsResponse>(
-                      this, METHODID_LIST_TOPIC_SNAPSHOTS)))
-          .addMethod(
-              getDeleteTopicMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.DeleteTopicRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_TOPIC)))
-          .addMethod(
-              getDetachSubscriptionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.DetachSubscriptionRequest,
-                      com.google.pubsub.v1.DetachSubscriptionResponse>(
-                      this, METHODID_DETACH_SUBSCRIPTION)))
-          .build();
+      return PublisherGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Publisher.
    *
    * <pre>
    * The service that an application uses to manipulate topics, and to send
@@ -838,7 +792,7 @@ public final class PublisherGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Publisher.
    *
    * <pre>
    * The service that an application uses to manipulate topics, and to send
@@ -986,7 +940,7 @@ public final class PublisherGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Publisher.
    *
    * <pre>
    * The service that an application uses to manipulate topics, and to send
@@ -1155,10 +1109,10 @@ public final class PublisherGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PublisherImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PublisherImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1230,6 +1184,67 @@ public final class PublisherGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateTopicMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.pubsub.v1.Topic, com.google.pubsub.v1.Topic>(
+                    service, METHODID_CREATE_TOPIC)))
+        .addMethod(
+            getUpdateTopicMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.UpdateTopicRequest, com.google.pubsub.v1.Topic>(
+                    service, METHODID_UPDATE_TOPIC)))
+        .addMethod(
+            getPublishMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.PublishRequest, com.google.pubsub.v1.PublishResponse>(
+                    service, METHODID_PUBLISH)))
+        .addMethod(
+            getGetTopicMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.GetTopicRequest, com.google.pubsub.v1.Topic>(
+                    service, METHODID_GET_TOPIC)))
+        .addMethod(
+            getListTopicsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ListTopicsRequest,
+                    com.google.pubsub.v1.ListTopicsResponse>(service, METHODID_LIST_TOPICS)))
+        .addMethod(
+            getListTopicSubscriptionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ListTopicSubscriptionsRequest,
+                    com.google.pubsub.v1.ListTopicSubscriptionsResponse>(
+                    service, METHODID_LIST_TOPIC_SUBSCRIPTIONS)))
+        .addMethod(
+            getListTopicSnapshotsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ListTopicSnapshotsRequest,
+                    com.google.pubsub.v1.ListTopicSnapshotsResponse>(
+                    service, METHODID_LIST_TOPIC_SNAPSHOTS)))
+        .addMethod(
+            getDeleteTopicMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.DeleteTopicRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_TOPIC)))
+        .addMethod(
+            getDetachSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.DetachSubscriptionRequest,
+                    com.google.pubsub.v1.DetachSubscriptionResponse>(
+                    service, METHODID_DETACH_SUBSCRIPTION)))
+        .build();
   }
 
   private abstract static class PublisherBaseDescriptorSupplier

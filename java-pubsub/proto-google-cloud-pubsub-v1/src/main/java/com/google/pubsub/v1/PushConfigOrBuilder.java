@@ -56,20 +56,25 @@ public interface PushConfigOrBuilder
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -81,20 +86,25 @@ public interface PushConfigOrBuilder
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -109,20 +119,25 @@ public interface PushConfigOrBuilder
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -134,25 +149,29 @@ public interface PushConfigOrBuilder
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
   /* nullable */
   java.lang.String getAttributesOrDefault(
       java.lang.String key,
@@ -164,20 +183,25 @@ public interface PushConfigOrBuilder
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -222,5 +246,83 @@ public interface PushConfigOrBuilder
    */
   com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder();
 
-  public com.google.pubsub.v1.PushConfig.AuthenticationMethodCase getAuthenticationMethodCase();
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   *
+   * @return Whether the pubsubWrapper field is set.
+   */
+  boolean hasPubsubWrapper();
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   *
+   * @return The pubsubWrapper.
+   */
+  com.google.pubsub.v1.PushConfig.PubsubWrapper getPubsubWrapper();
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   */
+  com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   *
+   * @return Whether the noWrapper field is set.
+   */
+  boolean hasNoWrapper();
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   *
+   * @return The noWrapper.
+   */
+  com.google.pubsub.v1.PushConfig.NoWrapper getNoWrapper();
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   */
+  com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder();
+
+  com.google.pubsub.v1.PushConfig.AuthenticationMethodCase getAuthenticationMethodCase();
+
+  com.google.pubsub.v1.PushConfig.WrapperCase getWrapperCase();
 }

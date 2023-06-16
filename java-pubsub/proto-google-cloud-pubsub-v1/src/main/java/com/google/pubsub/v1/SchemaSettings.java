@@ -50,11 +50,6 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
     return new SchemaSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_SchemaSettings_descriptor;
@@ -71,7 +66,9 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 1;
-  private volatile java.lang.Object schema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schema_ = "";
   /**
    *
    *
@@ -130,7 +127,7 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENCODING_FIELD_NUMBER = 2;
-  private int encoding_;
+  private int encoding_ = 0;
   /**
    *
    *
@@ -159,13 +156,14 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.pubsub.v1.Encoding getEncoding() {
-    @SuppressWarnings("deprecation")
-    com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.valueOf(encoding_);
+    com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.forNumber(encoding_);
     return result == null ? com.google.pubsub.v1.Encoding.UNRECOGNIZED : result;
   }
 
   public static final int FIRST_REVISION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object firstRevisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firstRevisionId_ = "";
   /**
    *
    *
@@ -218,7 +216,9 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_REVISION_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object lastRevisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastRevisionId_ = "";
   /**
    *
    *
@@ -492,14 +492,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       schema_ = "";
-
       encoding_ = 0;
-
       firstRevisionId_ = "";
-
       lastRevisionId_ = "";
-
       return this;
     }
 
@@ -526,12 +523,27 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.SchemaSettings buildPartial() {
       com.google.pubsub.v1.SchemaSettings result = new com.google.pubsub.v1.SchemaSettings(this);
-      result.schema_ = schema_;
-      result.encoding_ = encoding_;
-      result.firstRevisionId_ = firstRevisionId_;
-      result.lastRevisionId_ = lastRevisionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.SchemaSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.schema_ = schema_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.encoding_ = encoding_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.firstRevisionId_ = firstRevisionId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastRevisionId_ = lastRevisionId_;
+      }
     }
 
     @java.lang.Override
@@ -581,6 +593,7 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.SchemaSettings.getDefaultInstance()) return this;
       if (!other.getSchema().isEmpty()) {
         schema_ = other.schema_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.encoding_ != 0) {
@@ -588,10 +601,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFirstRevisionId().isEmpty()) {
         firstRevisionId_ = other.firstRevisionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLastRevisionId().isEmpty()) {
         lastRevisionId_ = other.lastRevisionId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -623,25 +638,25 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 schema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 encoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 firstRevisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 lastRevisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -660,6 +675,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object schema_ = "";
     /**
@@ -737,8 +754,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +776,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchema() {
-
       schema_ = getDefaultInstance().getSchema();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -786,8 +803,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +838,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEncodingValue(int value) {
-
       encoding_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -839,8 +856,7 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.pubsub.v1.Encoding getEncoding() {
-      @SuppressWarnings("deprecation")
-      com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.valueOf(encoding_);
+      com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.forNumber(encoding_);
       return result == null ? com.google.pubsub.v1.Encoding.UNRECOGNIZED : result;
     }
     /**
@@ -859,7 +875,7 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       encoding_ = value.getNumber();
       onChanged();
       return this;
@@ -876,7 +892,7 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       encoding_ = 0;
       onChanged();
       return this;
@@ -949,8 +965,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       firstRevisionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -968,8 +984,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirstRevisionId() {
-
       firstRevisionId_ = getDefaultInstance().getFirstRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -992,8 +1008,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firstRevisionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1065,8 +1081,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lastRevisionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1084,8 +1100,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastRevisionId() {
-
       lastRevisionId_ = getDefaultInstance().getLastRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1108,8 +1124,8 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lastRevisionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

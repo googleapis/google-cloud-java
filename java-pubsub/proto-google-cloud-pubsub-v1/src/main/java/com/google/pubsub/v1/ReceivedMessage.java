@@ -47,11 +47,6 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     return new ReceivedMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_ReceivedMessage_descriptor;
@@ -68,7 +63,9 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ACK_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ackId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ackId_ = "";
   /**
    *
    *
@@ -159,26 +156,30 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessageOrBuilder() {
-    return getMessage();
+    return message_ == null ? com.google.pubsub.v1.PubsubMessage.getDefaultInstance() : message_;
   }
 
   public static final int DELIVERY_ATTEMPT_FIELD_NUMBER = 3;
-  private int deliveryAttempt_;
+  private int deliveryAttempt_ = 0;
   /**
    *
    *
    * <pre>
    * The approximate number of times that Cloud Pub/Sub has attempted to deliver
    * the associated message to a subscriber.
+   *
    * More precisely, this is 1 + (number of NACKs) +
    * (number of ack_deadline exceeds) for this message.
+   *
    * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
    * exceeds event is whenever a message is not acknowledged within
    * ack_deadline. Note that ack_deadline is initially
    * Subscription.ackDeadlineSeconds, but may get extended automatically by
    * the client library.
+   *
    * Upon the first delivery of a given message, `delivery_attempt` will have a
    * value of 1. The value is calculated at best effort and is approximate.
+   *
    * If a DeadLetterPolicy is not set on the subscription, this will be 0.
    * </pre>
    *
@@ -409,16 +410,14 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ackId_ = "";
-
-      if (messageBuilder_ == null) {
-        message_ = null;
-      } else {
-        message_ = null;
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
       deliveryAttempt_ = 0;
-
       return this;
     }
 
@@ -445,15 +444,24 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.pubsub.v1.ReceivedMessage buildPartial() {
       com.google.pubsub.v1.ReceivedMessage result = new com.google.pubsub.v1.ReceivedMessage(this);
-      result.ackId_ = ackId_;
-      if (messageBuilder_ == null) {
-        result.message_ = message_;
-      } else {
-        result.message_ = messageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deliveryAttempt_ = deliveryAttempt_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ReceivedMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ackId_ = ackId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = messageBuilder_ == null ? message_ : messageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deliveryAttempt_ = deliveryAttempt_;
+      }
     }
 
     @java.lang.Override
@@ -503,6 +511,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.pubsub.v1.ReceivedMessage.getDefaultInstance()) return this;
       if (!other.getAckId().isEmpty()) {
         ackId_ = other.ackId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMessage()) {
@@ -540,19 +549,19 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 ackId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMessageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 deliveryAttempt_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -571,6 +580,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ackId_ = "";
     /**
@@ -633,8 +644,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       ackId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -650,8 +661,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAckId() {
-
       ackId_ = getDefaultInstance().getAckId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -672,8 +683,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ackId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,7 +707,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * @return Whether the message field is set.
      */
     public boolean hasMessage() {
-      return messageBuilder_ != null || message_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -733,11 +744,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         message_ = value;
-        onChanged();
       } else {
         messageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -752,11 +763,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     public Builder setMessage(com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
       if (messageBuilder_ == null) {
         message_ = builderForValue.build();
-        onChanged();
       } else {
         messageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -770,19 +781,18 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMessage(com.google.pubsub.v1.PubsubMessage value) {
       if (messageBuilder_ == null) {
-        if (message_ != null) {
-          message_ =
-              com.google.pubsub.v1.PubsubMessage.newBuilder(message_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && message_ != null
+            && message_ != com.google.pubsub.v1.PubsubMessage.getDefaultInstance()) {
+          getMessageBuilder().mergeFrom(value);
         } else {
           message_ = value;
         }
-        onChanged();
       } else {
         messageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,14 +805,13 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
      */
     public Builder clearMessage() {
-      if (messageBuilder_ == null) {
-        message_ = null;
-        onChanged();
-      } else {
-        message_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -815,7 +824,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder getMessageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
@@ -870,15 +879,19 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The approximate number of times that Cloud Pub/Sub has attempted to deliver
      * the associated message to a subscriber.
+     *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
      * exceeds event is whenever a message is not acknowledged within
      * ack_deadline. Note that ack_deadline is initially
      * Subscription.ackDeadlineSeconds, but may get extended automatically by
      * the client library.
+     *
      * Upon the first delivery of a given message, `delivery_attempt` will have a
      * value of 1. The value is calculated at best effort and is approximate.
+     *
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
@@ -896,15 +909,19 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The approximate number of times that Cloud Pub/Sub has attempted to deliver
      * the associated message to a subscriber.
+     *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
      * exceeds event is whenever a message is not acknowledged within
      * ack_deadline. Note that ack_deadline is initially
      * Subscription.ackDeadlineSeconds, but may get extended automatically by
      * the client library.
+     *
      * Upon the first delivery of a given message, `delivery_attempt` will have a
      * value of 1. The value is calculated at best effort and is approximate.
+     *
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
@@ -916,6 +933,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     public Builder setDeliveryAttempt(int value) {
 
       deliveryAttempt_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -925,15 +943,19 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The approximate number of times that Cloud Pub/Sub has attempted to deliver
      * the associated message to a subscriber.
+     *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
      * exceeds event is whenever a message is not acknowledged within
      * ack_deadline. Note that ack_deadline is initially
      * Subscription.ackDeadlineSeconds, but may get extended automatically by
      * the client library.
+     *
      * Upon the first delivery of a given message, `delivery_attempt` will have a
      * value of 1. The value is calculated at best effort and is approximate.
+     *
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
@@ -942,7 +964,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDeliveryAttempt() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       deliveryAttempt_ = 0;
       onChanged();
       return this;

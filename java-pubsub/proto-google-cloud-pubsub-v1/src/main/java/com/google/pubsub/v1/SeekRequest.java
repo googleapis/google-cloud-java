@@ -47,11 +47,6 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
     return new SeekRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_descriptor;
   }
@@ -66,6 +61,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int targetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object target_;
 
   public enum TargetCase
@@ -113,7 +110,9 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -554,8 +553,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
       if (timeBuilder_ != null) {
         timeBuilder_.clear();
       }
@@ -587,20 +586,27 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.SeekRequest buildPartial() {
       com.google.pubsub.v1.SeekRequest result = new com.google.pubsub.v1.SeekRequest(this);
-      result.subscription_ = subscription_;
-      if (targetCase_ == 2) {
-        if (timeBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = timeBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 3) {
-        result.target_ = target_;
-      }
-      result.targetCase_ = targetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.SeekRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.pubsub.v1.SeekRequest result) {
+      result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
+      if (targetCase_ == 2 && timeBuilder_ != null) {
+        result.target_ = timeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -650,6 +656,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.SeekRequest.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getTargetCase()) {
@@ -699,7 +706,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -745,6 +752,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subscription_ = "";
     /**
@@ -813,8 +822,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -832,8 +841,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -856,8 +865,8 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1153,7 +1162,6 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
       }
       targetCase_ = 2;
       onChanged();
-      ;
       return timeBuilder_;
     }
 

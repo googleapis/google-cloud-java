@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -55,6 +57,8 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.SeekRequest;
 import com.google.pubsub.v1.SeekResponse;
 import com.google.pubsub.v1.Snapshot;
+import com.google.pubsub.v1.StreamingPullRequest;
+import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
@@ -810,95 +814,204 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
         HttpJsonCallSettings.<Subscription, Subscription>newBuilder()
             .setMethodDescriptor(createSubscriptionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         HttpJsonCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
             .setMethodDescriptor(getSubscriptionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionTransportSettings =
             HttpJsonCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
                 .setMethodDescriptor(updateSubscriptionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subscription.name", String.valueOf(request.getSubscription().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
             HttpJsonCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
                 .setMethodDescriptor(listSubscriptionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
         HttpJsonCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineTransportSettings =
         HttpJsonCallSettings.<ModifyAckDeadlineRequest, Empty>newBuilder()
             .setMethodDescriptor(modifyAckDeadlineMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AcknowledgeRequest, Empty> acknowledgeTransportSettings =
         HttpJsonCallSettings.<AcknowledgeRequest, Empty>newBuilder()
             .setMethodDescriptor(acknowledgeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PullRequest, PullResponse> pullTransportSettings =
         HttpJsonCallSettings.<PullRequest, PullResponse>newBuilder()
             .setMethodDescriptor(pullMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigTransportSettings =
         HttpJsonCallSettings.<ModifyPushConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(modifyPushConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("snapshot", String.valueOf(request.getSnapshot()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSnapshotsRequest, ListSnapshotsResponse>
         listSnapshotsTransportSettings =
             HttpJsonCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
                 .setMethodDescriptor(listSnapshotsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotTransportSettings =
         HttpJsonCallSettings.<CreateSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(createSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotTransportSettings =
         HttpJsonCallSettings.<UpdateSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(updateSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("snapshot.name", String.valueOf(request.getSnapshot().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotTransportSettings =
         HttpJsonCallSettings.<DeleteSnapshotRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("snapshot", String.valueOf(request.getSnapshot()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SeekRequest, SeekResponse> seekTransportSettings =
         HttpJsonCallSettings.<SeekRequest, SeekResponse>newBuilder()
             .setMethodDescriptor(seekMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subscription", String.valueOf(request.getSubscription()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createSubscriptionCallable =
@@ -1106,6 +1219,13 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
+      streamingPullCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingPullCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

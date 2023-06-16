@@ -47,11 +47,6 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
     return new PullResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_PullResponse_descriptor;
@@ -68,13 +63,16 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RECEIVED_MESSAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.pubsub.v1.ReceivedMessage> receivedMessages_;
   /**
    *
    *
    * <pre>
    * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog. For JSON, the response can be entirely
+   * messages available in the backlog, or if no messages could be returned
+   * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
@@ -90,7 +88,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog. For JSON, the response can be entirely
+   * messages available in the backlog, or if no messages could be returned
+   * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
@@ -107,7 +106,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog. For JSON, the response can be entirely
+   * messages available in the backlog, or if no messages could be returned
+   * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
@@ -123,7 +123,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog. For JSON, the response can be entirely
+   * messages available in the backlog, or if no messages could be returned
+   * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
@@ -139,7 +140,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog. For JSON, the response can be entirely
+   * messages available in the backlog, or if no messages could be returned
+   * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
@@ -348,6 +350,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (receivedMessagesBuilder_ == null) {
         receivedMessages_ = java.util.Collections.emptyList();
       } else {
@@ -381,7 +384,15 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.PullResponse buildPartial() {
       com.google.pubsub.v1.PullResponse result = new com.google.pubsub.v1.PullResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.pubsub.v1.PullResponse result) {
       if (receivedMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
@@ -391,8 +402,10 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.receivedMessages_ = receivedMessagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PullResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -547,7 +560,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -566,7 +580,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -585,7 +600,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -604,7 +620,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -629,7 +646,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -652,7 +670,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -677,7 +696,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -702,7 +722,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -725,7 +746,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -748,7 +770,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -771,7 +794,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -793,7 +817,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -815,7 +840,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -830,7 +856,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -849,7 +876,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -869,7 +897,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -885,7 +914,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>
@@ -901,7 +931,8 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Received Pub/Sub messages. The list will be empty if there are no more
-     * messages available in the backlog. For JSON, the response can be entirely
+     * messages available in the backlog, or if no messages could be returned
+     * before the request timeout. For JSON, the response can be entirely
      * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
      * even if there are more messages available in the backlog.
      * </pre>

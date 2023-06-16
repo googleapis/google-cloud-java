@@ -47,11 +47,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     return new PushConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_descriptor;
   }
@@ -87,9 +82,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
-     * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-     * have the iam.serviceAccounts.actAs permission for the service account.
+     * used for generating the OIDC token. For more information
+     * on setting up authentication, see
+     * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -103,9 +98,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
-     * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-     * have the iam.serviceAccounts.actAs permission for the service account.
+     * used for generating the OIDC token. For more information
+     * on setting up authentication, see
+     * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -181,11 +176,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       return new OidcToken();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.PubsubProto
           .internal_static_google_pubsub_v1_PushConfig_OidcToken_descriptor;
@@ -202,16 +192,18 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object serviceAccountEmail_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAccountEmail_ = "";
     /**
      *
      *
      * <pre>
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
-     * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-     * have the iam.serviceAccounts.actAs permission for the service account.
+     * used for generating the OIDC token. For more information
+     * on setting up authentication, see
+     * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -236,9 +228,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
-     * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-     * have the iam.serviceAccounts.actAs permission for the service account.
+     * used for generating the OIDC token. For more information
+     * on setting up authentication, see
+     * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -259,7 +251,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AUDIENCE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object audience_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object audience_ = "";
     /**
      *
      *
@@ -527,10 +521,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         serviceAccountEmail_ = "";
-
         audience_ = "";
-
         return this;
       }
 
@@ -558,10 +551,21 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.pubsub.v1.PushConfig.OidcToken buildPartial() {
         com.google.pubsub.v1.PushConfig.OidcToken result =
             new com.google.pubsub.v1.PushConfig.OidcToken(this);
-        result.serviceAccountEmail_ = serviceAccountEmail_;
-        result.audience_ = audience_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.pubsub.v1.PushConfig.OidcToken result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceAccountEmail_ = serviceAccountEmail_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.audience_ = audience_;
+        }
       }
 
       @java.lang.Override
@@ -613,10 +617,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance()) return this;
         if (!other.getServiceAccountEmail().isEmpty()) {
           serviceAccountEmail_ = other.serviceAccountEmail_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getAudience().isEmpty()) {
           audience_ = other.audience_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -648,13 +654,13 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   audience_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -674,6 +680,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object serviceAccountEmail_ = "";
       /**
        *
@@ -681,9 +689,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
-       * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-       * have the iam.serviceAccounts.actAs permission for the service account.
+       * used for generating the OIDC token. For more information
+       * on setting up authentication, see
+       * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -707,9 +715,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
-       * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-       * have the iam.serviceAccounts.actAs permission for the service account.
+       * used for generating the OIDC token. For more information
+       * on setting up authentication, see
+       * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -733,9 +741,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
-       * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-       * have the iam.serviceAccounts.actAs permission for the service account.
+       * used for generating the OIDC token. For more information
+       * on setting up authentication, see
+       * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -747,8 +755,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         serviceAccountEmail_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -758,9 +766,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
-       * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-       * have the iam.serviceAccounts.actAs permission for the service account.
+       * used for generating the OIDC token. For more information
+       * on setting up authentication, see
+       * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -768,8 +776,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearServiceAccountEmail() {
-
         serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -779,9 +787,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
-       * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
-       * have the iam.serviceAccounts.actAs permission for the service account.
+       * used for generating the OIDC token. For more information
+       * on setting up authentication, see
+       * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -794,8 +802,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         serviceAccountEmail_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -876,8 +884,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         audience_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -898,8 +906,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAudience() {
-
         audience_ = getDefaultInstance().getAudience();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -925,8 +933,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         audience_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -995,7 +1003,983 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PubsubWrapperOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PushConfig.PubsubWrapper)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * The payload to the push endpoint is in the form of the JSON representation
+   * of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.PushConfig.PubsubWrapper}
+   */
+  public static final class PubsubWrapper extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.PushConfig.PubsubWrapper)
+      PubsubWrapperOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PubsubWrapper.newBuilder() to construct.
+    private PubsubWrapper(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PubsubWrapper() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PubsubWrapper();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_PubsubWrapper_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_PubsubWrapper_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.PushConfig.PubsubWrapper.class,
+              com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.PushConfig.PubsubWrapper)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.PushConfig.PubsubWrapper other =
+          (com.google.pubsub.v1.PushConfig.PubsubWrapper) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.pubsub.v1.PushConfig.PubsubWrapper prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The payload to the push endpoint is in the form of the JSON representation
+     * of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.PushConfig.PubsubWrapper}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PushConfig.PubsubWrapper)
+        com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_PubsubWrapper_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_PubsubWrapper_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.PushConfig.PubsubWrapper.class,
+                com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.PushConfig.PubsubWrapper.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_PubsubWrapper_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.PubsubWrapper getDefaultInstanceForType() {
+        return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.PubsubWrapper build() {
+        com.google.pubsub.v1.PushConfig.PubsubWrapper result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.PubsubWrapper buildPartial() {
+        com.google.pubsub.v1.PushConfig.PubsubWrapper result =
+            new com.google.pubsub.v1.PushConfig.PubsubWrapper(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.PushConfig.PubsubWrapper) {
+          return mergeFrom((com.google.pubsub.v1.PushConfig.PubsubWrapper) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.pubsub.v1.PushConfig.PubsubWrapper other) {
+        if (other == com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PushConfig.PubsubWrapper)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.PushConfig.PubsubWrapper)
+    private static final com.google.pubsub.v1.PushConfig.PubsubWrapper DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.PushConfig.PubsubWrapper();
+    }
+
+    public static com.google.pubsub.v1.PushConfig.PubsubWrapper getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PubsubWrapper> PARSER =
+        new com.google.protobuf.AbstractParser<PubsubWrapper>() {
+          @java.lang.Override
+          public PubsubWrapper parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PubsubWrapper> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PubsubWrapper> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.PubsubWrapper getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface NoWrapperOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PushConfig.NoWrapper)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * When true, writes the Pub/Sub message metadata to
+     * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
+     * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
+     * </pre>
+     *
+     * <code>bool write_metadata = 1;</code>
+     *
+     * @return The writeMetadata.
+     */
+    boolean getWriteMetadata();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets the `data` field as the HTTP body for delivery.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.PushConfig.NoWrapper}
+   */
+  public static final class NoWrapper extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.PushConfig.NoWrapper)
+      NoWrapperOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NoWrapper.newBuilder() to construct.
+    private NoWrapper(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NoWrapper() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NoWrapper();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_NoWrapper_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_NoWrapper_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.PushConfig.NoWrapper.class,
+              com.google.pubsub.v1.PushConfig.NoWrapper.Builder.class);
+    }
+
+    public static final int WRITE_METADATA_FIELD_NUMBER = 1;
+    private boolean writeMetadata_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * When true, writes the Pub/Sub message metadata to
+     * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
+     * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
+     * </pre>
+     *
+     * <code>bool write_metadata = 1;</code>
+     *
+     * @return The writeMetadata.
+     */
+    @java.lang.Override
+    public boolean getWriteMetadata() {
+      return writeMetadata_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (writeMetadata_ != false) {
+        output.writeBool(1, writeMetadata_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (writeMetadata_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, writeMetadata_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.PushConfig.NoWrapper)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.PushConfig.NoWrapper other =
+          (com.google.pubsub.v1.PushConfig.NoWrapper) obj;
+
+      if (getWriteMetadata() != other.getWriteMetadata()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WRITE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWriteMetadata());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.pubsub.v1.PushConfig.NoWrapper prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the `data` field as the HTTP body for delivery.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.PushConfig.NoWrapper}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PushConfig.NoWrapper)
+        com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_NoWrapper_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_NoWrapper_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.PushConfig.NoWrapper.class,
+                com.google.pubsub.v1.PushConfig.NoWrapper.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.PushConfig.NoWrapper.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        writeMetadata_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_NoWrapper_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.NoWrapper getDefaultInstanceForType() {
+        return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.NoWrapper build() {
+        com.google.pubsub.v1.PushConfig.NoWrapper result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.NoWrapper buildPartial() {
+        com.google.pubsub.v1.PushConfig.NoWrapper result =
+            new com.google.pubsub.v1.PushConfig.NoWrapper(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.pubsub.v1.PushConfig.NoWrapper result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.writeMetadata_ = writeMetadata_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.PushConfig.NoWrapper) {
+          return mergeFrom((com.google.pubsub.v1.PushConfig.NoWrapper) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.pubsub.v1.PushConfig.NoWrapper other) {
+        if (other == com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance()) return this;
+        if (other.getWriteMetadata() != false) {
+          setWriteMetadata(other.getWriteMetadata());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  writeMetadata_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean writeMetadata_;
+      /**
+       *
+       *
+       * <pre>
+       * When true, writes the Pub/Sub message metadata to
+       * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
+       * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
+       * </pre>
+       *
+       * <code>bool write_metadata = 1;</code>
+       *
+       * @return The writeMetadata.
+       */
+      @java.lang.Override
+      public boolean getWriteMetadata() {
+        return writeMetadata_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * When true, writes the Pub/Sub message metadata to
+       * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
+       * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
+       * </pre>
+       *
+       * <code>bool write_metadata = 1;</code>
+       *
+       * @param value The writeMetadata to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteMetadata(boolean value) {
+
+        writeMetadata_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * When true, writes the Pub/Sub message metadata to
+       * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
+       * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
+       * </pre>
+       *
+       * <code>bool write_metadata = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWriteMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        writeMetadata_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PushConfig.NoWrapper)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.PushConfig.NoWrapper)
+    private static final com.google.pubsub.v1.PushConfig.NoWrapper DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.PushConfig.NoWrapper();
+    }
+
+    public static com.google.pubsub.v1.PushConfig.NoWrapper getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NoWrapper> PARSER =
+        new com.google.protobuf.AbstractParser<NoWrapper>() {
+          @java.lang.Override
+          public NoWrapper parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NoWrapper> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NoWrapper> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.NoWrapper getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int authenticationMethodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object authenticationMethod_;
 
   public enum AuthenticationMethodCase
@@ -1039,8 +2023,59 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     return AuthenticationMethodCase.forNumber(authenticationMethodCase_);
   }
 
+  private int wrapperCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object wrapper_;
+
+  public enum WrapperCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PUBSUB_WRAPPER(4),
+    NO_WRAPPER(5),
+    WRAPPER_NOT_SET(0);
+    private final int value;
+
+    private WrapperCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WrapperCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WrapperCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return PUBSUB_WRAPPER;
+        case 5:
+          return NO_WRAPPER;
+        case 0:
+          return WRAPPER_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public WrapperCase getWrapperCase() {
+    return WrapperCase.forNumber(wrapperCase_);
+  }
+
   public static final int PUSH_ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pushEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pushEndpoint_ = "";
   /**
    *
    *
@@ -1103,6 +2138,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAttributes() {
@@ -1121,20 +2157,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1158,20 +2199,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1186,27 +2232,34 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1219,20 +2272,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Endpoint configuration attributes that can be used to control different
    * aspects of the message delivery.
+   *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
    * indicates the version of the data expected by the endpoint. This
    * controls the shape of the pushed message (i.e., its fields and metadata).
+   *
    * If not present during the `CreateSubscription` call, it will default to
    * the version of the Pub/Sub API used to make such call. If not present in a
    * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
    * calls will always return a valid version, even if the subscription was
    * created without this attribute.
+   *
    * The only supported values for the `x-goog-version` attribute are:
+   *
    * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
    * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   *
    * For example:
-   * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+   * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1303,6 +2361,114 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
   }
 
+  public static final int PUBSUB_WRAPPER_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   *
+   * @return Whether the pubsubWrapper field is set.
+   */
+  @java.lang.Override
+  public boolean hasPubsubWrapper() {
+    return wrapperCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   *
+   * @return The pubsubWrapper.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.PushConfig.PubsubWrapper getPubsubWrapper() {
+    if (wrapperCase_ == 4) {
+      return (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_;
+    }
+    return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is in the form of the JSON
+   * representation of a PubsubMessage
+   * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder() {
+    if (wrapperCase_ == 4) {
+      return (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_;
+    }
+    return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+  }
+
+  public static final int NO_WRAPPER_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   *
+   * @return Whether the noWrapper field is set.
+   */
+  @java.lang.Override
+  public boolean hasNoWrapper() {
+    return wrapperCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   *
+   * @return The noWrapper.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.PushConfig.NoWrapper getNoWrapper() {
+    if (wrapperCase_ == 5) {
+      return (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_;
+    }
+    return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When set, the payload to the push endpoint is not wrapped.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder() {
+    if (wrapperCase_ == 5) {
+      return (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_;
+    }
+    return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1324,6 +2490,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 2);
     if (authenticationMethodCase_ == 3) {
       output.writeMessage(3, (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_);
+    }
+    if (wrapperCase_ == 4) {
+      output.writeMessage(4, (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_);
+    }
+    if (wrapperCase_ == 5) {
+      output.writeMessage(5, (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1352,6 +2524,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_);
     }
+    if (wrapperCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_);
+    }
+    if (wrapperCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1377,6 +2559,17 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
+    if (!getWrapperCase().equals(other.getWrapperCase())) return false;
+    switch (wrapperCase_) {
+      case 4:
+        if (!getPubsubWrapper().equals(other.getPubsubWrapper())) return false;
+        break;
+      case 5:
+        if (!getNoWrapper().equals(other.getNoWrapper())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1398,6 +2591,18 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + OIDC_TOKEN_FIELD_NUMBER;
         hash = (53 * hash) + getOidcToken().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (wrapperCase_) {
+      case 4:
+        hash = (37 * hash) + PUBSUB_WRAPPER_FIELD_NUMBER;
+        hash = (53 * hash) + getPubsubWrapper().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + NO_WRAPPER_FIELD_NUMBER;
+        hash = (53 * hash) + getNoWrapper().hashCode();
         break;
       case 0:
       default:
@@ -1558,14 +2763,22 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pushEndpoint_ = "";
-
       internalGetMutableAttributes().clear();
       if (oidcTokenBuilder_ != null) {
         oidcTokenBuilder_.clear();
       }
+      if (pubsubWrapperBuilder_ != null) {
+        pubsubWrapperBuilder_.clear();
+      }
+      if (noWrapperBuilder_ != null) {
+        noWrapperBuilder_.clear();
+      }
       authenticationMethodCase_ = 0;
       authenticationMethod_ = null;
+      wrapperCase_ = 0;
+      wrapper_ = null;
       return this;
     }
 
@@ -1592,20 +2805,39 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.PushConfig buildPartial() {
       com.google.pubsub.v1.PushConfig result = new com.google.pubsub.v1.PushConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.pushEndpoint_ = pushEndpoint_;
-      result.attributes_ = internalGetAttributes();
-      result.attributes_.makeImmutable();
-      if (authenticationMethodCase_ == 3) {
-        if (oidcTokenBuilder_ == null) {
-          result.authenticationMethod_ = authenticationMethod_;
-        } else {
-          result.authenticationMethod_ = oidcTokenBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.authenticationMethodCase_ = authenticationMethodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PushConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pushEndpoint_ = pushEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.pubsub.v1.PushConfig result) {
+      result.authenticationMethodCase_ = authenticationMethodCase_;
+      result.authenticationMethod_ = this.authenticationMethod_;
+      if (authenticationMethodCase_ == 3 && oidcTokenBuilder_ != null) {
+        result.authenticationMethod_ = oidcTokenBuilder_.build();
+      }
+      result.wrapperCase_ = wrapperCase_;
+      result.wrapper_ = this.wrapper_;
+      if (wrapperCase_ == 4 && pubsubWrapperBuilder_ != null) {
+        result.wrapper_ = pubsubWrapperBuilder_.build();
+      }
+      if (wrapperCase_ == 5 && noWrapperBuilder_ != null) {
+        result.wrapper_ = noWrapperBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1655,9 +2887,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.PushConfig.getDefaultInstance()) return this;
       if (!other.getPushEndpoint().isEmpty()) {
         pushEndpoint_ = other.pushEndpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      bitField0_ |= 0x00000002;
       switch (other.getAuthenticationMethodCase()) {
         case OIDC_TOKEN:
           {
@@ -1665,6 +2899,22 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           }
         case AUTHENTICATIONMETHOD_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getWrapperCase()) {
+        case PUBSUB_WRAPPER:
+          {
+            mergePubsubWrapper(other.getPubsubWrapper());
+            break;
+          }
+        case NO_WRAPPER:
+          {
+            mergeNoWrapper(other.getNoWrapper());
+            break;
+          }
+        case WRAPPER_NOT_SET:
           {
             break;
           }
@@ -1698,7 +2948,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 pushEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1710,6 +2960,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAttributes()
                     .getMutableMap()
                     .put(attributes__.getKey(), attributes__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1718,6 +2969,18 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
                 authenticationMethodCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getPubsubWrapperFieldBuilder().getBuilder(), extensionRegistry);
+                wrapperCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getNoWrapperFieldBuilder().getBuilder(), extensionRegistry);
+                wrapperCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1745,6 +3008,20 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAuthenticationMethod() {
       authenticationMethodCase_ = 0;
       authenticationMethod_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int wrapperCase_ = 0;
+    private java.lang.Object wrapper_;
+
+    public WrapperCase getWrapperCase() {
+      return WrapperCase.forNumber(wrapperCase_);
+    }
+
+    public Builder clearWrapper() {
+      wrapperCase_ = 0;
+      wrapper_ = null;
       onChanged();
       return this;
     }
@@ -1815,8 +3092,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pushEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1833,8 +3110,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPushEndpoint() {
-
       pushEndpoint_ = getDefaultInstance().getPushEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1856,8 +3133,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pushEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1875,8 +3152,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAttributes() {
-      onChanged();
-      ;
       if (attributes_ == null) {
         attributes_ =
             com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
@@ -1884,6 +3159,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (!attributes_.isMutable()) {
         attributes_ = attributes_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return attributes_;
     }
 
@@ -1896,20 +3173,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1933,20 +3215,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1961,27 +3248,34 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getAttributesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1994,20 +3288,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -2025,6 +3324,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
@@ -2034,20 +3334,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -2062,6 +3367,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableAttributes().getMutableMap();
     }
     /**
@@ -2070,20 +3376,25 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -2095,8 +3406,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2105,26 +3416,32 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Endpoint configuration attributes that can be used to control different
      * aspects of the message delivery.
+     *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
      * indicates the version of the data expected by the endpoint. This
      * controls the shape of the pushed message (i.e., its fields and metadata).
+     *
      * If not present during the `CreateSubscription` call, it will default to
      * the version of the Pub/Sub API used to make such call. If not present in a
      * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
      * calls will always return a valid version, even if the subscription was
      * created without this attribute.
+     *
      * The only supported values for the `x-goog-version` attribute are:
+     *
      * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
      * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+     *
      * For example:
-     * &lt;pre&gt;&lt;code&gt;attributes { "x-goog-version": "v1" } &lt;/code&gt;&lt;/pre&gt;
+     * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -2343,8 +3660,442 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
       authenticationMethodCase_ = 3;
       onChanged();
-      ;
       return oidcTokenBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.PubsubWrapper,
+            com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder,
+            com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder>
+        pubsubWrapperBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     *
+     * @return Whether the pubsubWrapper field is set.
+     */
+    @java.lang.Override
+    public boolean hasPubsubWrapper() {
+      return wrapperCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     *
+     * @return The pubsubWrapper.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.PubsubWrapper getPubsubWrapper() {
+      if (pubsubWrapperBuilder_ == null) {
+        if (wrapperCase_ == 4) {
+          return (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_;
+        }
+        return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+      } else {
+        if (wrapperCase_ == 4) {
+          return pubsubWrapperBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    public Builder setPubsubWrapper(com.google.pubsub.v1.PushConfig.PubsubWrapper value) {
+      if (pubsubWrapperBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wrapper_ = value;
+        onChanged();
+      } else {
+        pubsubWrapperBuilder_.setMessage(value);
+      }
+      wrapperCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    public Builder setPubsubWrapper(
+        com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder builderForValue) {
+      if (pubsubWrapperBuilder_ == null) {
+        wrapper_ = builderForValue.build();
+        onChanged();
+      } else {
+        pubsubWrapperBuilder_.setMessage(builderForValue.build());
+      }
+      wrapperCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    public Builder mergePubsubWrapper(com.google.pubsub.v1.PushConfig.PubsubWrapper value) {
+      if (pubsubWrapperBuilder_ == null) {
+        if (wrapperCase_ == 4
+            && wrapper_ != com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance()) {
+          wrapper_ =
+              com.google.pubsub.v1.PushConfig.PubsubWrapper.newBuilder(
+                      (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wrapper_ = value;
+        }
+        onChanged();
+      } else {
+        if (wrapperCase_ == 4) {
+          pubsubWrapperBuilder_.mergeFrom(value);
+        } else {
+          pubsubWrapperBuilder_.setMessage(value);
+        }
+      }
+      wrapperCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    public Builder clearPubsubWrapper() {
+      if (pubsubWrapperBuilder_ == null) {
+        if (wrapperCase_ == 4) {
+          wrapperCase_ = 0;
+          wrapper_ = null;
+          onChanged();
+        }
+      } else {
+        if (wrapperCase_ == 4) {
+          wrapperCase_ = 0;
+          wrapper_ = null;
+        }
+        pubsubWrapperBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    public com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder getPubsubWrapperBuilder() {
+      return getPubsubWrapperFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder() {
+      if ((wrapperCase_ == 4) && (pubsubWrapperBuilder_ != null)) {
+        return pubsubWrapperBuilder_.getMessageOrBuilder();
+      } else {
+        if (wrapperCase_ == 4) {
+          return (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_;
+        }
+        return com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is in the form of the JSON
+     * representation of a PubsubMessage
+     * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.PubsubWrapper,
+            com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder,
+            com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder>
+        getPubsubWrapperFieldBuilder() {
+      if (pubsubWrapperBuilder_ == null) {
+        if (!(wrapperCase_ == 4)) {
+          wrapper_ = com.google.pubsub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
+        }
+        pubsubWrapperBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.PushConfig.PubsubWrapper,
+                com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder,
+                com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder>(
+                (com.google.pubsub.v1.PushConfig.PubsubWrapper) wrapper_,
+                getParentForChildren(),
+                isClean());
+        wrapper_ = null;
+      }
+      wrapperCase_ = 4;
+      onChanged();
+      return pubsubWrapperBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.NoWrapper,
+            com.google.pubsub.v1.PushConfig.NoWrapper.Builder,
+            com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder>
+        noWrapperBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     *
+     * @return Whether the noWrapper field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoWrapper() {
+      return wrapperCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     *
+     * @return The noWrapper.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.NoWrapper getNoWrapper() {
+      if (noWrapperBuilder_ == null) {
+        if (wrapperCase_ == 5) {
+          return (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_;
+        }
+        return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+      } else {
+        if (wrapperCase_ == 5) {
+          return noWrapperBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    public Builder setNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper value) {
+      if (noWrapperBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wrapper_ = value;
+        onChanged();
+      } else {
+        noWrapperBuilder_.setMessage(value);
+      }
+      wrapperCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    public Builder setNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper.Builder builderForValue) {
+      if (noWrapperBuilder_ == null) {
+        wrapper_ = builderForValue.build();
+        onChanged();
+      } else {
+        noWrapperBuilder_.setMessage(builderForValue.build());
+      }
+      wrapperCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    public Builder mergeNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper value) {
+      if (noWrapperBuilder_ == null) {
+        if (wrapperCase_ == 5
+            && wrapper_ != com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance()) {
+          wrapper_ =
+              com.google.pubsub.v1.PushConfig.NoWrapper.newBuilder(
+                      (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wrapper_ = value;
+        }
+        onChanged();
+      } else {
+        if (wrapperCase_ == 5) {
+          noWrapperBuilder_.mergeFrom(value);
+        } else {
+          noWrapperBuilder_.setMessage(value);
+        }
+      }
+      wrapperCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    public Builder clearNoWrapper() {
+      if (noWrapperBuilder_ == null) {
+        if (wrapperCase_ == 5) {
+          wrapperCase_ = 0;
+          wrapper_ = null;
+          onChanged();
+        }
+      } else {
+        if (wrapperCase_ == 5) {
+          wrapperCase_ = 0;
+          wrapper_ = null;
+        }
+        noWrapperBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    public com.google.pubsub.v1.PushConfig.NoWrapper.Builder getNoWrapperBuilder() {
+      return getNoWrapperFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder() {
+      if ((wrapperCase_ == 5) && (noWrapperBuilder_ != null)) {
+        return noWrapperBuilder_.getMessageOrBuilder();
+      } else {
+        if (wrapperCase_ == 5) {
+          return (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_;
+        }
+        return com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When set, the payload to the push endpoint is not wrapped.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.NoWrapper,
+            com.google.pubsub.v1.PushConfig.NoWrapper.Builder,
+            com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder>
+        getNoWrapperFieldBuilder() {
+      if (noWrapperBuilder_ == null) {
+        if (!(wrapperCase_ == 5)) {
+          wrapper_ = com.google.pubsub.v1.PushConfig.NoWrapper.getDefaultInstance();
+        }
+        noWrapperBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.PushConfig.NoWrapper,
+                com.google.pubsub.v1.PushConfig.NoWrapper.Builder,
+                com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder>(
+                (com.google.pubsub.v1.PushConfig.NoWrapper) wrapper_,
+                getParentForChildren(),
+                isClean());
+        wrapper_ = null;
+      }
+      wrapperCase_ = 5;
+      onChanged();
+      return noWrapperBuilder_;
     }
 
     @java.lang.Override

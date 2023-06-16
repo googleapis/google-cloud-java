@@ -47,11 +47,6 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
     return new GetTopicRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_GetTopicRequest_descriptor;
@@ -68,7 +63,9 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -317,8 +314,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       return this;
     }
 
@@ -345,9 +342,18 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.pubsub.v1.GetTopicRequest buildPartial() {
       com.google.pubsub.v1.GetTopicRequest result = new com.google.pubsub.v1.GetTopicRequest(this);
-      result.topic_ = topic_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.GetTopicRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
     }
 
     @java.lang.Override
@@ -397,6 +403,7 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.pubsub.v1.GetTopicRequest.getDefaultInstance()) return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,7 +435,7 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -447,6 +454,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object topic_ = "";
     /**
@@ -518,8 +527,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,8 +547,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -563,8 +572,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

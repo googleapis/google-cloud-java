@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -220,21 +220,18 @@ public class TopicAdminClientTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    UpdateTopicRequest request =
-        UpdateTopicRequest.newBuilder()
-            .setTopic(Topic.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
+    Topic topic = Topic.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Topic actualResponse = client.updateTopic(request);
+    Topic actualResponse = client.updateTopic(topic, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateTopicRequest actualRequest = ((UpdateTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getTopic(), actualRequest.getTopic());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(topic, actualRequest.getTopic());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -247,12 +244,9 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      UpdateTopicRequest request =
-          UpdateTopicRequest.newBuilder()
-              .setTopic(Topic.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.updateTopic(request);
+      Topic topic = Topic.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTopic(topic, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

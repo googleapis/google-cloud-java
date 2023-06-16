@@ -28,7 +28,7 @@ public interface BigQueryConfigOrBuilder
    *
    * <pre>
    * The name of the table to which to write data, of the form
-   * {projectId}:{datasetId}.{tableId}
+   * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
    * <code>string table = 1;</code>
@@ -41,7 +41,7 @@ public interface BigQueryConfigOrBuilder
    *
    * <pre>
    * The name of the table to which to write data, of the form
-   * {projectId}:{datasetId}.{tableId}
+   * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
    * <code>string table = 1;</code>

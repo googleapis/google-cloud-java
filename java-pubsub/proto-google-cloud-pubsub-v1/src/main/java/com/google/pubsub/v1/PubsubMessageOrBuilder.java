@@ -87,7 +87,6 @@ public interface PubsubMessageOrBuilder
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
   /* nullable */
   java.lang.String getAttributesOrDefault(
       java.lang.String key,
@@ -188,6 +187,8 @@ public interface PubsubMessageOrBuilder
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
+   * For more information, see [ordering
+   * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -205,6 +206,8 @@ public interface PubsubMessageOrBuilder
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
+   * For more information, see [ordering
+   * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
    * <code>string ordering_key = 5;</code>

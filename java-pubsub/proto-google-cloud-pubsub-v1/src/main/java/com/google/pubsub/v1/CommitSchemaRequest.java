@@ -47,11 +47,6 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
     return new CommitSchemaRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
         .internal_static_google_pubsub_v1_CommitSchemaRequest_descriptor;
@@ -68,7 +63,9 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -165,7 +162,7 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.pubsub.v1.SchemaOrBuilder getSchemaOrBuilder() {
-    return getSchema();
+    return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +375,11 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (schemaBuilder_ == null) {
-        schema_ = null;
-      } else {
-        schema_ = null;
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
         schemaBuilder_ = null;
       }
       return this;
@@ -413,14 +409,21 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
     public com.google.pubsub.v1.CommitSchemaRequest buildPartial() {
       com.google.pubsub.v1.CommitSchemaRequest result =
           new com.google.pubsub.v1.CommitSchemaRequest(this);
-      result.name_ = name_;
-      if (schemaBuilder_ == null) {
-        result.schema_ = schema_;
-      } else {
-        result.schema_ = schemaBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.CommitSchemaRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -470,6 +473,7 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.pubsub.v1.CommitSchemaRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSchema()) {
@@ -504,13 +508,13 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +533,8 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -600,8 +606,8 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +626,8 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +651,8 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,7 +675,7 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return schemaBuilder_ != null || schema_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -704,11 +710,11 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         schema_ = value;
-        onChanged();
       } else {
         schemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -723,11 +729,11 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
     public Builder setSchema(com.google.pubsub.v1.Schema.Builder builderForValue) {
       if (schemaBuilder_ == null) {
         schema_ = builderForValue.build();
-        onChanged();
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,16 +747,18 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSchema(com.google.pubsub.v1.Schema value) {
       if (schemaBuilder_ == null) {
-        if (schema_ != null) {
-          schema_ = com.google.pubsub.v1.Schema.newBuilder(schema_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && schema_ != null
+            && schema_ != com.google.pubsub.v1.Schema.getDefaultInstance()) {
+          getSchemaBuilder().mergeFrom(value);
         } else {
           schema_ = value;
         }
-        onChanged();
       } else {
         schemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,14 +771,13 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSchema() {
-      if (schemaBuilder_ == null) {
-        schema_ = null;
-        onChanged();
-      } else {
-        schema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
         schemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -783,7 +790,7 @@ public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.Schema.Builder getSchemaBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }

@@ -38,18 +38,13 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   private PublishResponse() {
-    messageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    messageIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PublishResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,7 +63,10 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MESSAGE_IDS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList messageIds_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList messageIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -338,8 +336,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      messageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = 0;
+      messageIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -366,14 +364,19 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.pubsub.v1.PublishResponse buildPartial() {
       com.google.pubsub.v1.PublishResponse result = new com.google.pubsub.v1.PublishResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        messageIds_ = messageIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.messageIds_ = messageIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PublishResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        messageIds_.makeImmutable();
+        result.messageIds_ = messageIds_;
+      }
     }
 
     @java.lang.Override
@@ -424,7 +427,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       if (!other.messageIds_.isEmpty()) {
         if (messageIds_.isEmpty()) {
           messageIds_ = other.messageIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureMessageIdsIsMutable();
           messageIds_.addAll(other.messageIds_);
@@ -483,14 +486,14 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList messageIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList messageIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMessageIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!messageIds_.isModifiable()) {
         messageIds_ = new com.google.protobuf.LazyStringArrayList(messageIds_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -506,7 +509,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the messageIds.
      */
     public com.google.protobuf.ProtocolStringList getMessageIdsList() {
-      return messageIds_.getUnmodifiableView();
+      messageIds_.makeImmutable();
+      return messageIds_;
     }
     /**
      *
@@ -579,6 +583,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureMessageIdsIsMutable();
       messageIds_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -602,6 +607,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureMessageIdsIsMutable();
       messageIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,6 +628,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     public Builder addAllMessageIds(java.lang.Iterable<java.lang.String> values) {
       ensureMessageIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, messageIds_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +646,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMessageIds() {
-      messageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      messageIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -665,6 +673,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureMessageIdsIsMutable();
       messageIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

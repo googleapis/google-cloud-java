@@ -104,7 +104,6 @@ public interface TopicOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -169,6 +168,7 @@ public interface TopicOrBuilder
    * <pre>
    * The resource name of the Cloud KMS CryptoKey to be used to protect access
    * to messages published on this topic.
+   *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
@@ -183,6 +183,7 @@ public interface TopicOrBuilder
    * <pre>
    * The resource name of the Cloud KMS CryptoKey to be used to protect access
    * to messages published on this topic.
+   *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
@@ -252,7 +253,7 @@ public interface TopicOrBuilder
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
-   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
@@ -271,7 +272,7 @@ public interface TopicOrBuilder
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
-   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
@@ -290,7 +291,7 @@ public interface TopicOrBuilder
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
-   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>

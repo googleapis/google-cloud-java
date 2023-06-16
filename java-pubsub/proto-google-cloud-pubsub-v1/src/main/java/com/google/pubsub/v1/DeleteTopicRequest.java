@@ -47,11 +47,6 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteTopicRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_DeleteTopicRequest_descriptor;
@@ -68,7 +63,9 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -318,8 +315,8 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       return this;
     }
 
@@ -347,9 +344,18 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
     public com.google.pubsub.v1.DeleteTopicRequest buildPartial() {
       com.google.pubsub.v1.DeleteTopicRequest result =
           new com.google.pubsub.v1.DeleteTopicRequest(this);
-      result.topic_ = topic_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.DeleteTopicRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +405,7 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.pubsub.v1.DeleteTopicRequest.getDefaultInstance()) return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +437,7 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +456,8 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object topic_ = "";
     /**
@@ -520,8 +529,8 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -540,8 +549,8 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -565,8 +574,8 @@ public final class DeleteTopicRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

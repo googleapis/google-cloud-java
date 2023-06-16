@@ -59,6 +59,7 @@ public interface ValidateMessageRequestOrBuilder
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -72,6 +73,7 @@ public interface ValidateMessageRequestOrBuilder
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -85,6 +87,7 @@ public interface ValidateMessageRequestOrBuilder
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -167,5 +170,5 @@ public interface ValidateMessageRequestOrBuilder
    */
   com.google.pubsub.v1.Encoding getEncoding();
 
-  public com.google.pubsub.v1.ValidateMessageRequest.SchemaSpecCase getSchemaSpecCase();
+  com.google.pubsub.v1.ValidateMessageRequest.SchemaSpecCase getSchemaSpecCase();
 }

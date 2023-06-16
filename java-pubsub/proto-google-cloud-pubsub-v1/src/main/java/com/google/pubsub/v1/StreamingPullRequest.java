@@ -41,9 +41,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
 
   private StreamingPullRequest() {
     subscription_ = "";
-    ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ackIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     modifyDeadlineSeconds_ = emptyIntList();
-    modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     clientId_ = "";
   }
 
@@ -51,11 +51,6 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingPullRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,7 +69,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -133,7 +130,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ACK_IDS_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList ackIds_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList ackIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -210,6 +210,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MODIFY_DEADLINE_SECONDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList modifyDeadlineSeconds_;
   /**
    *
@@ -289,7 +291,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   private int modifyDeadlineSecondsMemoizedSerializedSize = -1;
 
   public static final int MODIFY_DEADLINE_ACK_IDS_FIELD_NUMBER = 4;
-  private com.google.protobuf.LazyStringList modifyDeadlineAckIds_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList modifyDeadlineAckIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -366,7 +371,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STREAM_ACK_DEADLINE_SECONDS_FIELD_NUMBER = 5;
-  private int streamAckDeadlineSeconds_;
+  private int streamAckDeadlineSeconds_ = 0;
   /**
    *
    *
@@ -387,7 +392,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLIENT_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object clientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
   /**
    *
    *
@@ -446,7 +453,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_OUTSTANDING_MESSAGES_FIELD_NUMBER = 7;
-  private long maxOutstandingMessages_;
+  private long maxOutstandingMessages_ = 0L;
   /**
    *
    *
@@ -472,7 +479,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_OUTSTANDING_BYTES_FIELD_NUMBER = 8;
-  private long maxOutstandingBytes_;
+  private long maxOutstandingBytes_ = 0L;
   /**
    *
    *
@@ -792,22 +799,15 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
-      ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ackIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       modifyDeadlineSeconds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       streamAckDeadlineSeconds_ = 0;
-
       clientId_ = "";
-
       maxOutstandingMessages_ = 0L;
-
       maxOutstandingBytes_ = 0L;
-
       return this;
     }
 
@@ -835,29 +835,47 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public com.google.pubsub.v1.StreamingPullRequest buildPartial() {
       com.google.pubsub.v1.StreamingPullRequest result =
           new com.google.pubsub.v1.StreamingPullRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.subscription_ = subscription_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ackIds_ = ackIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ackIds_ = ackIds_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        modifyDeadlineSeconds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.modifyDeadlineSeconds_ = modifyDeadlineSeconds_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        modifyDeadlineAckIds_ = modifyDeadlineAckIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.modifyDeadlineAckIds_ = modifyDeadlineAckIds_;
-      result.streamAckDeadlineSeconds_ = streamAckDeadlineSeconds_;
-      result.clientId_ = clientId_;
-      result.maxOutstandingMessages_ = maxOutstandingMessages_;
-      result.maxOutstandingBytes_ = maxOutstandingBytes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.pubsub.v1.StreamingPullRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        modifyDeadlineSeconds_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.modifyDeadlineSeconds_ = modifyDeadlineSeconds_;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.StreamingPullRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        ackIds_.makeImmutable();
+        result.ackIds_ = ackIds_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        modifyDeadlineAckIds_.makeImmutable();
+        result.modifyDeadlineAckIds_ = modifyDeadlineAckIds_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.streamAckDeadlineSeconds_ = streamAckDeadlineSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.clientId_ = clientId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.maxOutstandingMessages_ = maxOutstandingMessages_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.maxOutstandingBytes_ = maxOutstandingBytes_;
+      }
     }
 
     @java.lang.Override
@@ -907,12 +925,13 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (other == com.google.pubsub.v1.StreamingPullRequest.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.ackIds_.isEmpty()) {
         if (ackIds_.isEmpty()) {
           ackIds_ = other.ackIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAckIdsIsMutable();
           ackIds_.addAll(other.ackIds_);
@@ -922,7 +941,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (!other.modifyDeadlineSeconds_.isEmpty()) {
         if (modifyDeadlineSeconds_.isEmpty()) {
           modifyDeadlineSeconds_ = other.modifyDeadlineSeconds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureModifyDeadlineSecondsIsMutable();
           modifyDeadlineSeconds_.addAll(other.modifyDeadlineSeconds_);
@@ -932,7 +951,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (!other.modifyDeadlineAckIds_.isEmpty()) {
         if (modifyDeadlineAckIds_.isEmpty()) {
           modifyDeadlineAckIds_ = other.modifyDeadlineAckIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000008;
         } else {
           ensureModifyDeadlineAckIdsIsMutable();
           modifyDeadlineAckIds_.addAll(other.modifyDeadlineAckIds_);
@@ -944,6 +963,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getClientId().isEmpty()) {
         clientId_ = other.clientId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getMaxOutstandingMessages() != 0L) {
@@ -981,7 +1001,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1019,25 +1039,25 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
             case 40:
               {
                 streamAckDeadlineSeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 clientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 maxOutstandingMessages_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 maxOutstandingBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             default:
@@ -1135,8 +1155,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1157,8 +1177,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1184,20 +1204,20 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ackIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ackIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!ackIds_.isModifiable()) {
         ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1215,7 +1235,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the ackIds.
      */
     public com.google.protobuf.ProtocolStringList getAckIdsList() {
-      return ackIds_.getUnmodifiableView();
+      ackIds_.makeImmutable();
+      return ackIds_;
     }
     /**
      *
@@ -1296,6 +1317,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       ensureAckIdsIsMutable();
       ackIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1321,6 +1343,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       ensureAckIdsIsMutable();
       ackIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1343,6 +1366,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder addAllAckIds(java.lang.Iterable<java.lang.String> values) {
       ensureAckIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ackIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1362,8 +1386,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAckIds() {
-      ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ackIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1390,6 +1415,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureAckIdsIsMutable();
       ackIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1397,9 +1423,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.Internal.IntList modifyDeadlineSeconds_ = emptyIntList();
 
     private void ensureModifyDeadlineSecondsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         modifyDeadlineSeconds_ = mutableCopy(modifyDeadlineSeconds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1424,7 +1450,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the modifyDeadlineSeconds.
      */
     public java.util.List<java.lang.Integer> getModifyDeadlineSecondsList() {
-      return ((bitField0_ & 0x00000002) != 0)
+      return ((bitField0_ & 0x00000004) != 0)
           ? java.util.Collections.unmodifiableList(modifyDeadlineSeconds_)
           : modifyDeadlineSeconds_;
     }
@@ -1501,6 +1527,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setModifyDeadlineSeconds(int index, int value) {
+
       ensureModifyDeadlineSecondsIsMutable();
       modifyDeadlineSeconds_.setInt(index, value);
       onChanged();
@@ -1529,6 +1556,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder addModifyDeadlineSeconds(int value) {
+
       ensureModifyDeadlineSecondsIsMutable();
       modifyDeadlineSeconds_.addInt(value);
       onChanged();
@@ -1586,19 +1614,19 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearModifyDeadlineSeconds() {
       modifyDeadlineSeconds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList modifyDeadlineAckIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList modifyDeadlineAckIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureModifyDeadlineAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!modifyDeadlineAckIds_.isModifiable()) {
         modifyDeadlineAckIds_ = new com.google.protobuf.LazyStringArrayList(modifyDeadlineAckIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1616,7 +1644,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the modifyDeadlineAckIds.
      */
     public com.google.protobuf.ProtocolStringList getModifyDeadlineAckIdsList() {
-      return modifyDeadlineAckIds_.getUnmodifiableView();
+      modifyDeadlineAckIds_.makeImmutable();
+      return modifyDeadlineAckIds_;
     }
     /**
      *
@@ -1697,6 +1726,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       ensureModifyDeadlineAckIdsIsMutable();
       modifyDeadlineAckIds_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1722,6 +1752,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       ensureModifyDeadlineAckIdsIsMutable();
       modifyDeadlineAckIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1744,6 +1775,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder addAllModifyDeadlineAckIds(java.lang.Iterable<java.lang.String> values) {
       ensureModifyDeadlineAckIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, modifyDeadlineAckIds_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1763,8 +1795,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearModifyDeadlineAckIds() {
-      modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1791,6 +1824,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureModifyDeadlineAckIdsIsMutable();
       modifyDeadlineAckIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1832,6 +1866,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder setStreamAckDeadlineSeconds(int value) {
 
       streamAckDeadlineSeconds_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1850,7 +1885,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStreamAckDeadlineSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       streamAckDeadlineSeconds_ = 0;
       onChanged();
       return this;
@@ -1932,8 +1967,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1954,8 +1989,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClientId() {
-
       clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1981,8 +2016,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2034,6 +2069,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder setMaxOutstandingMessages(long value) {
 
       maxOutstandingMessages_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2057,7 +2093,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxOutstandingMessages() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxOutstandingMessages_ = 0L;
       onChanged();
       return this;
@@ -2110,6 +2146,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder setMaxOutstandingBytes(long value) {
 
       maxOutstandingBytes_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2133,7 +2170,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxOutstandingBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxOutstandingBytes_ = 0L;
       onChanged();
       return this;

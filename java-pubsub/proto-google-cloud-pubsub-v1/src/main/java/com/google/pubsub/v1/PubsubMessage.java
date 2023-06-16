@@ -56,11 +56,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     return new PubsubMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_PubsubMessage_descriptor;
@@ -88,7 +83,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -119,6 +114,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAttributes() {
@@ -182,8 +178,10 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -214,7 +212,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object messageId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object messageId_ = "";
   /**
    *
    *
@@ -317,11 +317,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
-    return getPublishTime();
+    return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
   }
 
   public static final int ORDERING_KEY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object orderingKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderingKey_ = "";
   /**
    *
    *
@@ -332,6 +334,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
+   * For more information, see [ordering
+   * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -360,6 +364,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
+   * For more information, see [ordering
+   * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -650,19 +656,16 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
-
       internalGetMutableAttributes().clear();
       messageId_ = "";
-
-      if (publishTimeBuilder_ == null) {
-        publishTime_ = null;
-      } else {
-        publishTime_ = null;
+      publishTime_ = null;
+      if (publishTimeBuilder_ != null) {
+        publishTimeBuilder_.dispose();
         publishTimeBuilder_ = null;
       }
       orderingKey_ = "";
-
       return this;
     }
 
@@ -689,19 +692,32 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.PubsubMessage buildPartial() {
       com.google.pubsub.v1.PubsubMessage result = new com.google.pubsub.v1.PubsubMessage(this);
-      int from_bitField0_ = bitField0_;
-      result.data_ = data_;
-      result.attributes_ = internalGetAttributes();
-      result.attributes_.makeImmutable();
-      result.messageId_ = messageId_;
-      if (publishTimeBuilder_ == null) {
-        result.publishTime_ = publishTime_;
-      } else {
-        result.publishTime_ = publishTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.orderingKey_ = orderingKey_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PubsubMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.data_ = data_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.messageId_ = messageId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.publishTime_ =
+            publishTimeBuilder_ == null ? publishTime_ : publishTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderingKey_ = orderingKey_;
+      }
     }
 
     @java.lang.Override
@@ -753,8 +769,10 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         setData(other.getData());
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      bitField0_ |= 0x00000002;
       if (!other.getMessageId().isEmpty()) {
         messageId_ = other.messageId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPublishTime()) {
@@ -762,6 +780,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOrderingKey().isEmpty()) {
         orderingKey_ = other.orderingKey_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -793,7 +812,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -805,24 +824,25 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAttributes()
                     .getMutableMap()
                     .put(attributes__.getKey(), attributes__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 messageId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getPublishTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 orderingKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -878,8 +898,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -896,7 +916,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;
@@ -915,8 +935,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAttributes() {
-      onChanged();
-      ;
       if (attributes_ == null) {
         attributes_ =
             com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
@@ -924,6 +942,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       if (!attributes_.isMutable()) {
         attributes_ = attributes_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return attributes_;
     }
 
@@ -981,8 +1001,10 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getAttributesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1013,6 +1035,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
@@ -1037,6 +1060,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableAttributes().getMutableMap();
     }
     /**
@@ -1057,8 +1081,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1074,6 +1098,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1147,8 +1172,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       messageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1167,8 +1192,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessageId() {
-
       messageId_ = getDefaultInstance().getMessageId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1192,8 +1217,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       messageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,7 +1243,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the publishTime field is set.
      */
     public boolean hasPublishTime() {
-      return publishTimeBuilder_ != null || publishTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1259,11 +1284,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         publishTime_ = value;
-        onChanged();
       } else {
         publishTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1280,11 +1305,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     public Builder setPublishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (publishTimeBuilder_ == null) {
         publishTime_ = builderForValue.build();
-        onChanged();
       } else {
         publishTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1300,19 +1325,18 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePublishTime(com.google.protobuf.Timestamp value) {
       if (publishTimeBuilder_ == null) {
-        if (publishTime_ != null) {
-          publishTime_ =
-              com.google.protobuf.Timestamp.newBuilder(publishTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && publishTime_ != null
+            && publishTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPublishTimeBuilder().mergeFrom(value);
         } else {
           publishTime_ = value;
         }
-        onChanged();
       } else {
         publishTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1327,14 +1351,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
      */
     public Builder clearPublishTime() {
-      if (publishTimeBuilder_ == null) {
-        publishTime_ = null;
-        onChanged();
-      } else {
-        publishTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      publishTime_ = null;
+      if (publishTimeBuilder_ != null) {
+        publishTimeBuilder_.dispose();
         publishTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1349,7 +1372,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPublishTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPublishTimeFieldBuilder().getBuilder();
     }
@@ -1412,6 +1435,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
+     * For more information, see [ordering
+     * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1439,6 +1464,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
+     * For more information, see [ordering
+     * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1466,6 +1493,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
+     * For more information, see [ordering
+     * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1477,8 +1506,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderingKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1492,6 +1521,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
+     * For more information, see [ordering
+     * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1499,8 +1530,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrderingKey() {
-
       orderingKey_ = getDefaultInstance().getOrderingKey();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1514,6 +1545,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
+     * For more information, see [ordering
+     * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1526,8 +1559,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderingKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

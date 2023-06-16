@@ -22,7 +22,9 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * A subscription resource.
+ * A subscription resource. If none of `push_config`, `bigquery_config`, or
+ * `cloud_storage_config` is set, then the subscriber will pull and ack messages
+ * using API methods. At most one of these fields may be set.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Subscription}
@@ -48,11 +50,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Subscription();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -243,7 +240,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -302,7 +301,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOPIC_FIELD_NUMBER = 2;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -365,9 +366,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -383,9 +382,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -401,16 +398,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
-    return getPushConfig();
+    return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
   }
 
   public static final int BIGQUERY_CONFIG_FIELD_NUMBER = 18;
@@ -420,9 +415,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -438,9 +431,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -458,20 +449,73 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.BigQueryConfigOrBuilder getBigqueryConfigOrBuilder() {
-    return getBigqueryConfig();
+    return bigqueryConfig_ == null
+        ? com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()
+        : bigqueryConfig_;
+  }
+
+  public static final int CLOUD_STORAGE_CONFIG_FIELD_NUMBER = 22;
+  private com.google.pubsub.v1.CloudStorageConfig cloudStorageConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   *
+   * @return Whether the cloudStorageConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudStorageConfig() {
+    return cloudStorageConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   *
+   * @return The cloudStorageConfig.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.CloudStorageConfig getCloudStorageConfig() {
+    return cloudStorageConfig_ == null
+        ? com.google.pubsub.v1.CloudStorageConfig.getDefaultInstance()
+        : cloudStorageConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.CloudStorageConfigOrBuilder getCloudStorageConfigOrBuilder() {
+    return cloudStorageConfig_ == null
+        ? com.google.pubsub.v1.CloudStorageConfig.getDefaultInstance()
+        : cloudStorageConfig_;
   }
 
   public static final int ACK_DEADLINE_SECONDS_FIELD_NUMBER = 5;
-  private int ackDeadlineSeconds_;
+  private int ackDeadlineSeconds_ = 0;
   /**
    *
    *
@@ -479,8 +523,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
    * the subscriber to acknowledge receipt before resending the message. In the
    * interval after the message is delivered and before it is acknowledged, it
-   * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+   * is considered to be _outstanding_. During that time period, the
    * message will not be redelivered (on a best-effort basis).
+   *
    * For pull subscriptions, this value is used as the initial value for the ack
    * deadline. To override this value for a given message, call
    * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -489,8 +534,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * The minimum custom deadline you can specify is 10 seconds.
    * The maximum custom deadline you can specify is 600 seconds (10 minutes).
    * If this parameter is 0, a default value of 10 seconds is used.
+   *
    * For push delivery, this value is also used to set the request timeout for
    * the call to the push endpoint.
+   *
    * If the subscriber never acknowledges the message, the Pub/Sub
    * system will eventually redeliver the message.
    * </pre>
@@ -505,7 +552,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETAIN_ACKED_MESSAGES_FIELD_NUMBER = 7;
-  private boolean retainAckedMessages_;
+  private boolean retainAckedMessages_ = false;
   /**
    *
    *
@@ -587,7 +634,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
-    return getMessageRetentionDuration();
+    return messageRetentionDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : messageRetentionDuration_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 9;
@@ -603,6 +652,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -619,8 +669,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -642,8 +692,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -656,14 +706,17 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -674,8 +727,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -693,7 +746,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_MESSAGE_ORDERING_FIELD_NUMBER = 10;
-  private boolean enableMessageOrdering_;
+  private boolean enableMessageOrdering_ = false;
   /**
    *
    *
@@ -724,7 +777,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -744,7 +798,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -766,18 +821,23 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
-    return getExpirationPolicy();
+    return expirationPolicy_ == null
+        ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()
+        : expirationPolicy_;
   }
 
   public static final int FILTER_FIELD_NUMBER = 12;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -842,6 +902,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -863,6 +924,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -886,6 +948,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -896,7 +959,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder() {
-    return getDeadLetterPolicy();
+    return deadLetterPolicy_ == null
+        ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()
+        : deadLetterPolicy_;
   }
 
   public static final int RETRY_POLICY_FIELD_NUMBER = 14;
@@ -907,6 +972,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -927,6 +993,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -949,6 +1016,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -959,11 +1027,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
-    return getRetryPolicy();
+    return retryPolicy_ == null
+        ? com.google.pubsub.v1.RetryPolicy.getDefaultInstance()
+        : retryPolicy_;
   }
 
   public static final int DETACHED_FIELD_NUMBER = 15;
-  private boolean detached_;
+  private boolean detached_ = false;
   /**
    *
    *
@@ -985,16 +1055,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_EXACTLY_ONCE_DELIVERY_FIELD_NUMBER = 16;
-  private boolean enableExactlyOnceDelivery_;
+  private boolean enableExactlyOnceDelivery_ = false;
   /**
    *
    *
    * <pre>
    * If true, Pub/Sub provides the following guarantees for the delivery of
    * a message with a given value of `message_id` on this subscription:
+   *
    * * The message sent to a subscriber is guaranteed not to be resent
    * before the message's acknowledgement deadline expires.
    * * An acknowledged message will not be resent to a subscriber.
+   *
    * Note that subscribers may still receive multiple copies of a message
    * when `enable_exactly_once_delivery` is true if the message was published
    * multiple times by a publisher client. These copies are  considered distinct
@@ -1076,11 +1148,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTopicMessageRetentionDurationOrBuilder() {
-    return getTopicMessageRetentionDuration();
+    return topicMessageRetentionDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : topicMessageRetentionDuration_;
   }
 
   public static final int STATE_FIELD_NUMBER = 19;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1115,9 +1189,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.pubsub.v1.Subscription.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.pubsub.v1.Subscription.State result =
-        com.google.pubsub.v1.Subscription.State.valueOf(state_);
+        com.google.pubsub.v1.Subscription.State.forNumber(state_);
     return result == null ? com.google.pubsub.v1.Subscription.State.UNRECOGNIZED : result;
   }
 
@@ -1184,6 +1257,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (state_ != com.google.pubsub.v1.Subscription.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(19, state_);
+    }
+    if (cloudStorageConfig_ != null) {
+      output.writeMessage(22, getCloudStorageConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1256,6 +1332,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.pubsub.v1.Subscription.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, state_);
     }
+    if (cloudStorageConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getCloudStorageConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1280,6 +1359,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasBigqueryConfig() != other.hasBigqueryConfig()) return false;
     if (hasBigqueryConfig()) {
       if (!getBigqueryConfig().equals(other.getBigqueryConfig())) return false;
+    }
+    if (hasCloudStorageConfig() != other.hasCloudStorageConfig()) return false;
+    if (hasCloudStorageConfig()) {
+      if (!getCloudStorageConfig().equals(other.getCloudStorageConfig())) return false;
     }
     if (getAckDeadlineSeconds() != other.getAckDeadlineSeconds()) return false;
     if (getRetainAckedMessages() != other.getRetainAckedMessages()) return false;
@@ -1333,6 +1416,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasBigqueryConfig()) {
       hash = (37 * hash) + BIGQUERY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getBigqueryConfig().hashCode();
+    }
+    if (hasCloudStorageConfig()) {
+      hash = (37 * hash) + CLOUD_STORAGE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudStorageConfig().hashCode();
     }
     hash = (37 * hash) + ACK_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getAckDeadlineSeconds();
@@ -1475,7 +1562,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A subscription resource.
+   * A subscription resource. If none of `push_config`, `bigquery_config`, or
+   * `cloud_storage_config` is set, then the subscriber will pull and ack messages
+   * using API methods. At most one of these fields may be set.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Subscription}
@@ -1529,67 +1618,57 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       topic_ = "";
-
-      if (pushConfigBuilder_ == null) {
-        pushConfig_ = null;
-      } else {
-        pushConfig_ = null;
+      pushConfig_ = null;
+      if (pushConfigBuilder_ != null) {
+        pushConfigBuilder_.dispose();
         pushConfigBuilder_ = null;
       }
-      if (bigqueryConfigBuilder_ == null) {
-        bigqueryConfig_ = null;
-      } else {
-        bigqueryConfig_ = null;
+      bigqueryConfig_ = null;
+      if (bigqueryConfigBuilder_ != null) {
+        bigqueryConfigBuilder_.dispose();
         bigqueryConfigBuilder_ = null;
       }
+      cloudStorageConfig_ = null;
+      if (cloudStorageConfigBuilder_ != null) {
+        cloudStorageConfigBuilder_.dispose();
+        cloudStorageConfigBuilder_ = null;
+      }
       ackDeadlineSeconds_ = 0;
-
       retainAckedMessages_ = false;
-
-      if (messageRetentionDurationBuilder_ == null) {
-        messageRetentionDuration_ = null;
-      } else {
-        messageRetentionDuration_ = null;
+      messageRetentionDuration_ = null;
+      if (messageRetentionDurationBuilder_ != null) {
+        messageRetentionDurationBuilder_.dispose();
         messageRetentionDurationBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       enableMessageOrdering_ = false;
-
-      if (expirationPolicyBuilder_ == null) {
-        expirationPolicy_ = null;
-      } else {
-        expirationPolicy_ = null;
+      expirationPolicy_ = null;
+      if (expirationPolicyBuilder_ != null) {
+        expirationPolicyBuilder_.dispose();
         expirationPolicyBuilder_ = null;
       }
       filter_ = "";
-
-      if (deadLetterPolicyBuilder_ == null) {
-        deadLetterPolicy_ = null;
-      } else {
-        deadLetterPolicy_ = null;
+      deadLetterPolicy_ = null;
+      if (deadLetterPolicyBuilder_ != null) {
+        deadLetterPolicyBuilder_.dispose();
         deadLetterPolicyBuilder_ = null;
       }
-      if (retryPolicyBuilder_ == null) {
-        retryPolicy_ = null;
-      } else {
-        retryPolicy_ = null;
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
         retryPolicyBuilder_ = null;
       }
       detached_ = false;
-
       enableExactlyOnceDelivery_ = false;
-
-      if (topicMessageRetentionDurationBuilder_ == null) {
-        topicMessageRetentionDuration_ = null;
-      } else {
-        topicMessageRetentionDuration_ = null;
+      topicMessageRetentionDuration_ = null;
+      if (topicMessageRetentionDurationBuilder_ != null) {
+        topicMessageRetentionDurationBuilder_.dispose();
         topicMessageRetentionDurationBuilder_ = null;
       }
       state_ = 0;
-
       return this;
     }
 
@@ -1616,55 +1695,83 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.Subscription buildPartial() {
       com.google.pubsub.v1.Subscription result = new com.google.pubsub.v1.Subscription(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.topic_ = topic_;
-      if (pushConfigBuilder_ == null) {
-        result.pushConfig_ = pushConfig_;
-      } else {
-        result.pushConfig_ = pushConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (bigqueryConfigBuilder_ == null) {
-        result.bigqueryConfig_ = bigqueryConfig_;
-      } else {
-        result.bigqueryConfig_ = bigqueryConfigBuilder_.build();
-      }
-      result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
-      result.retainAckedMessages_ = retainAckedMessages_;
-      if (messageRetentionDurationBuilder_ == null) {
-        result.messageRetentionDuration_ = messageRetentionDuration_;
-      } else {
-        result.messageRetentionDuration_ = messageRetentionDurationBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.enableMessageOrdering_ = enableMessageOrdering_;
-      if (expirationPolicyBuilder_ == null) {
-        result.expirationPolicy_ = expirationPolicy_;
-      } else {
-        result.expirationPolicy_ = expirationPolicyBuilder_.build();
-      }
-      result.filter_ = filter_;
-      if (deadLetterPolicyBuilder_ == null) {
-        result.deadLetterPolicy_ = deadLetterPolicy_;
-      } else {
-        result.deadLetterPolicy_ = deadLetterPolicyBuilder_.build();
-      }
-      if (retryPolicyBuilder_ == null) {
-        result.retryPolicy_ = retryPolicy_;
-      } else {
-        result.retryPolicy_ = retryPolicyBuilder_.build();
-      }
-      result.detached_ = detached_;
-      result.enableExactlyOnceDelivery_ = enableExactlyOnceDelivery_;
-      if (topicMessageRetentionDurationBuilder_ == null) {
-        result.topicMessageRetentionDuration_ = topicMessageRetentionDuration_;
-      } else {
-        result.topicMessageRetentionDuration_ = topicMessageRetentionDurationBuilder_.build();
-      }
-      result.state_ = state_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.Subscription result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pushConfig_ = pushConfigBuilder_ == null ? pushConfig_ : pushConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.bigqueryConfig_ =
+            bigqueryConfigBuilder_ == null ? bigqueryConfig_ : bigqueryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cloudStorageConfig_ =
+            cloudStorageConfigBuilder_ == null
+                ? cloudStorageConfig_
+                : cloudStorageConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.retainAckedMessages_ = retainAckedMessages_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.messageRetentionDuration_ =
+            messageRetentionDurationBuilder_ == null
+                ? messageRetentionDuration_
+                : messageRetentionDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableMessageOrdering_ = enableMessageOrdering_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.expirationPolicy_ =
+            expirationPolicyBuilder_ == null ? expirationPolicy_ : expirationPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.deadLetterPolicy_ =
+            deadLetterPolicyBuilder_ == null ? deadLetterPolicy_ : deadLetterPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.detached_ = detached_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.enableExactlyOnceDelivery_ = enableExactlyOnceDelivery_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.topicMessageRetentionDuration_ =
+            topicMessageRetentionDurationBuilder_ == null
+                ? topicMessageRetentionDuration_
+                : topicMessageRetentionDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -1714,10 +1821,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.Subscription.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPushConfig()) {
@@ -1725,6 +1834,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBigqueryConfig()) {
         mergeBigqueryConfig(other.getBigqueryConfig());
+      }
+      if (other.hasCloudStorageConfig()) {
+        mergeCloudStorageConfig(other.getCloudStorageConfig());
       }
       if (other.getAckDeadlineSeconds() != 0) {
         setAckDeadlineSeconds(other.getAckDeadlineSeconds());
@@ -1736,6 +1848,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       if (other.getEnableMessageOrdering() != false) {
         setEnableMessageOrdering(other.getEnableMessageOrdering());
       }
@@ -1744,6 +1857,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDeadLetterPolicy()) {
@@ -1793,38 +1907,38 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getPushConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 40:
               {
                 ackDeadlineSeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 56:
               {
                 retainAckedMessages_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getMessageRetentionDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1836,71 +1950,79 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 enableMessageOrdering_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(
                     getExpirationPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getDeadLetterPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getRetryPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 120:
               {
                 detached_ = input.readBool();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 128:
               {
                 enableExactlyOnceDelivery_ = input.readBool();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 128
             case 138:
               {
                 input.readMessage(
                     getTopicMessageRetentionDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getBigqueryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 146
             case 152:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 152
+            case 178:
+              {
+                input.readMessage(
+                    getCloudStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1996,8 +2118,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2018,8 +2140,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2045,8 +2167,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2124,8 +2246,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2145,8 +2267,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2171,8 +2293,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2188,9 +2310,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2198,16 +2318,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pushConfig field is set.
      */
     public boolean hasPushConfig() {
-      return pushConfigBuilder_ != null || pushConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2228,9 +2346,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2241,11 +2357,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pushConfig_ = value;
-        onChanged();
       } else {
         pushConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2253,9 +2369,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2263,11 +2377,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setPushConfig(com.google.pubsub.v1.PushConfig.Builder builderForValue) {
       if (pushConfigBuilder_ == null) {
         pushConfig_ = builderForValue.build();
-        onChanged();
       } else {
         pushConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2275,28 +2389,25 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
     public Builder mergePushConfig(com.google.pubsub.v1.PushConfig value) {
       if (pushConfigBuilder_ == null) {
-        if (pushConfig_ != null) {
-          pushConfig_ =
-              com.google.pubsub.v1.PushConfig.newBuilder(pushConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && pushConfig_ != null
+            && pushConfig_ != com.google.pubsub.v1.PushConfig.getDefaultInstance()) {
+          getPushConfigBuilder().mergeFrom(value);
         } else {
           pushConfig_ = value;
         }
-        onChanged();
       } else {
         pushConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2304,22 +2415,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
     public Builder clearPushConfig() {
-      if (pushConfigBuilder_ == null) {
-        pushConfig_ = null;
-        onChanged();
-      } else {
-        pushConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pushConfig_ = null;
+      if (pushConfigBuilder_ != null) {
+        pushConfigBuilder_.dispose();
         pushConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2327,15 +2435,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
     public com.google.pubsub.v1.PushConfig.Builder getPushConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPushConfigFieldBuilder().getBuilder();
     }
@@ -2344,9 +2450,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2365,9 +2469,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2400,9 +2502,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2410,16 +2510,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bigqueryConfig field is set.
      */
     public boolean hasBigqueryConfig() {
-      return bigqueryConfigBuilder_ != null || bigqueryConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2440,9 +2538,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2453,11 +2549,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         bigqueryConfig_ = value;
-        onChanged();
       } else {
         bigqueryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2465,9 +2561,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2475,11 +2569,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setBigqueryConfig(com.google.pubsub.v1.BigQueryConfig.Builder builderForValue) {
       if (bigqueryConfigBuilder_ == null) {
         bigqueryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2487,28 +2581,25 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
      */
     public Builder mergeBigqueryConfig(com.google.pubsub.v1.BigQueryConfig value) {
       if (bigqueryConfigBuilder_ == null) {
-        if (bigqueryConfig_ != null) {
-          bigqueryConfig_ =
-              com.google.pubsub.v1.BigQueryConfig.newBuilder(bigqueryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && bigqueryConfig_ != null
+            && bigqueryConfig_ != com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()) {
+          getBigqueryConfigBuilder().mergeFrom(value);
         } else {
           bigqueryConfig_ = value;
         }
-        onChanged();
       } else {
         bigqueryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2516,22 +2607,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
      */
     public Builder clearBigqueryConfig() {
-      if (bigqueryConfigBuilder_ == null) {
-        bigqueryConfig_ = null;
-        onChanged();
-      } else {
-        bigqueryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      bigqueryConfig_ = null;
+      if (bigqueryConfigBuilder_ != null) {
+        bigqueryConfigBuilder_.dispose();
         bigqueryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2539,15 +2627,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
      */
     public com.google.pubsub.v1.BigQueryConfig.Builder getBigqueryConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getBigqueryConfigFieldBuilder().getBuilder();
     }
@@ -2556,9 +2642,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2577,9 +2661,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If delivery to BigQuery is used with this subscription, this field is
-     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-     * but not both. If both are empty, then the subscriber will pull and ack
-     * messages using API methods.
+     * used to configure it.
      * </pre>
      *
      * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -2601,6 +2683,200 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return bigqueryConfigBuilder_;
     }
 
+    private com.google.pubsub.v1.CloudStorageConfig cloudStorageConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.CloudStorageConfig,
+            com.google.pubsub.v1.CloudStorageConfig.Builder,
+            com.google.pubsub.v1.CloudStorageConfigOrBuilder>
+        cloudStorageConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     *
+     * @return Whether the cloudStorageConfig field is set.
+     */
+    public boolean hasCloudStorageConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     *
+     * @return The cloudStorageConfig.
+     */
+    public com.google.pubsub.v1.CloudStorageConfig getCloudStorageConfig() {
+      if (cloudStorageConfigBuilder_ == null) {
+        return cloudStorageConfig_ == null
+            ? com.google.pubsub.v1.CloudStorageConfig.getDefaultInstance()
+            : cloudStorageConfig_;
+      } else {
+        return cloudStorageConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public Builder setCloudStorageConfig(com.google.pubsub.v1.CloudStorageConfig value) {
+      if (cloudStorageConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudStorageConfig_ = value;
+      } else {
+        cloudStorageConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public Builder setCloudStorageConfig(
+        com.google.pubsub.v1.CloudStorageConfig.Builder builderForValue) {
+      if (cloudStorageConfigBuilder_ == null) {
+        cloudStorageConfig_ = builderForValue.build();
+      } else {
+        cloudStorageConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public Builder mergeCloudStorageConfig(com.google.pubsub.v1.CloudStorageConfig value) {
+      if (cloudStorageConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && cloudStorageConfig_ != null
+            && cloudStorageConfig_
+                != com.google.pubsub.v1.CloudStorageConfig.getDefaultInstance()) {
+          getCloudStorageConfigBuilder().mergeFrom(value);
+        } else {
+          cloudStorageConfig_ = value;
+        }
+      } else {
+        cloudStorageConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public Builder clearCloudStorageConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      cloudStorageConfig_ = null;
+      if (cloudStorageConfigBuilder_ != null) {
+        cloudStorageConfigBuilder_.dispose();
+        cloudStorageConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public com.google.pubsub.v1.CloudStorageConfig.Builder getCloudStorageConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getCloudStorageConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    public com.google.pubsub.v1.CloudStorageConfigOrBuilder getCloudStorageConfigOrBuilder() {
+      if (cloudStorageConfigBuilder_ != null) {
+        return cloudStorageConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudStorageConfig_ == null
+            ? com.google.pubsub.v1.CloudStorageConfig.getDefaultInstance()
+            : cloudStorageConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to Google Cloud Storage is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.CloudStorageConfig,
+            com.google.pubsub.v1.CloudStorageConfig.Builder,
+            com.google.pubsub.v1.CloudStorageConfigOrBuilder>
+        getCloudStorageConfigFieldBuilder() {
+      if (cloudStorageConfigBuilder_ == null) {
+        cloudStorageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.CloudStorageConfig,
+                com.google.pubsub.v1.CloudStorageConfig.Builder,
+                com.google.pubsub.v1.CloudStorageConfigOrBuilder>(
+                getCloudStorageConfig(), getParentForChildren(), isClean());
+        cloudStorageConfig_ = null;
+      }
+      return cloudStorageConfigBuilder_;
+    }
+
     private int ackDeadlineSeconds_;
     /**
      *
@@ -2609,8 +2885,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
      * the subscriber to acknowledge receipt before resending the message. In the
      * interval after the message is delivered and before it is acknowledged, it
-     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * is considered to be _outstanding_. During that time period, the
      * message will not be redelivered (on a best-effort basis).
+     *
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -2619,8 +2896,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The minimum custom deadline you can specify is 10 seconds.
      * The maximum custom deadline you can specify is 600 seconds (10 minutes).
      * If this parameter is 0, a default value of 10 seconds is used.
+     *
      * For push delivery, this value is also used to set the request timeout for
      * the call to the push endpoint.
+     *
      * If the subscriber never acknowledges the message, the Pub/Sub
      * system will eventually redeliver the message.
      * </pre>
@@ -2640,8 +2919,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
      * the subscriber to acknowledge receipt before resending the message. In the
      * interval after the message is delivered and before it is acknowledged, it
-     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * is considered to be _outstanding_. During that time period, the
      * message will not be redelivered (on a best-effort basis).
+     *
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -2650,8 +2930,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The minimum custom deadline you can specify is 10 seconds.
      * The maximum custom deadline you can specify is 600 seconds (10 minutes).
      * If this parameter is 0, a default value of 10 seconds is used.
+     *
      * For push delivery, this value is also used to set the request timeout for
      * the call to the push endpoint.
+     *
      * If the subscriber never acknowledges the message, the Pub/Sub
      * system will eventually redeliver the message.
      * </pre>
@@ -2664,6 +2946,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setAckDeadlineSeconds(int value) {
 
       ackDeadlineSeconds_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2674,8 +2957,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
      * the subscriber to acknowledge receipt before resending the message. In the
      * interval after the message is delivered and before it is acknowledged, it
-     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * is considered to be _outstanding_. During that time period, the
      * message will not be redelivered (on a best-effort basis).
+     *
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -2684,8 +2968,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * The minimum custom deadline you can specify is 10 seconds.
      * The maximum custom deadline you can specify is 600 seconds (10 minutes).
      * If this parameter is 0, a default value of 10 seconds is used.
+     *
      * For push delivery, this value is also used to set the request timeout for
      * the call to the push endpoint.
+     *
      * If the subscriber never acknowledges the message, the Pub/Sub
      * system will eventually redeliver the message.
      * </pre>
@@ -2695,7 +2981,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAckDeadlineSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       ackDeadlineSeconds_ = 0;
       onChanged();
       return this;
@@ -2742,6 +3028,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setRetainAckedMessages(boolean value) {
 
       retainAckedMessages_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2762,7 +3049,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRetainAckedMessages() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       retainAckedMessages_ = false;
       onChanged();
       return this;
@@ -2791,7 +3078,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the messageRetentionDuration field is set.
      */
     public boolean hasMessageRetentionDuration() {
-      return messageRetentionDurationBuilder_ != null || messageRetentionDuration_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2838,11 +3125,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         messageRetentionDuration_ = value;
-        onChanged();
       } else {
         messageRetentionDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2863,11 +3150,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Duration.Builder builderForValue) {
       if (messageRetentionDurationBuilder_ == null) {
         messageRetentionDuration_ = builderForValue.build();
-        onChanged();
       } else {
         messageRetentionDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2886,19 +3173,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (messageRetentionDurationBuilder_ == null) {
-        if (messageRetentionDuration_ != null) {
-          messageRetentionDuration_ =
-              com.google.protobuf.Duration.newBuilder(messageRetentionDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && messageRetentionDuration_ != null
+            && messageRetentionDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMessageRetentionDurationBuilder().mergeFrom(value);
         } else {
           messageRetentionDuration_ = value;
         }
-        onChanged();
       } else {
         messageRetentionDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2916,14 +3202,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
      */
     public Builder clearMessageRetentionDuration() {
-      if (messageRetentionDurationBuilder_ == null) {
-        messageRetentionDuration_ = null;
-        onChanged();
-      } else {
-        messageRetentionDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      messageRetentionDuration_ = null;
+      if (messageRetentionDurationBuilder_ != null) {
+        messageRetentionDurationBuilder_.dispose();
         messageRetentionDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2941,7 +3226,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getMessageRetentionDurationBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getMessageRetentionDurationFieldBuilder().getBuilder();
     }
@@ -3010,14 +3295,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -3028,8 +3313,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -3051,8 +3336,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -3065,15 +3350,17 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3084,8 +3371,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -3103,6 +3390,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3110,8 +3398,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -3126,14 +3414,15 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -3145,22 +3434,23 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-     * managing labels&lt;/a&gt;.
+     * See [Creating and managing
+     * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3201,6 +3491,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableMessageOrdering(boolean value) {
 
       enableMessageOrdering_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3219,7 +3510,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableMessageOrdering() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableMessageOrdering_ = false;
       onChanged();
       return this;
@@ -3240,7 +3531,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3248,7 +3540,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expirationPolicy field is set.
      */
     public boolean hasExpirationPolicy() {
-      return expirationPolicyBuilder_ != null || expirationPolicy_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3259,7 +3551,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3284,7 +3577,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3295,11 +3589,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expirationPolicy_ = value;
-        onChanged();
       } else {
         expirationPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3311,7 +3605,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3320,11 +3615,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         com.google.pubsub.v1.ExpirationPolicy.Builder builderForValue) {
       if (expirationPolicyBuilder_ == null) {
         expirationPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         expirationPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3336,26 +3631,26 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
      */
     public Builder mergeExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
       if (expirationPolicyBuilder_ == null) {
-        if (expirationPolicy_ != null) {
-          expirationPolicy_ =
-              com.google.pubsub.v1.ExpirationPolicy.newBuilder(expirationPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && expirationPolicy_ != null
+            && expirationPolicy_ != com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()) {
+          getExpirationPolicyBuilder().mergeFrom(value);
         } else {
           expirationPolicy_ = value;
         }
-        onChanged();
       } else {
         expirationPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3367,20 +3662,20 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
      */
     public Builder clearExpirationPolicy() {
-      if (expirationPolicyBuilder_ == null) {
-        expirationPolicy_ = null;
-        onChanged();
-      } else {
-        expirationPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      expirationPolicy_ = null;
+      if (expirationPolicyBuilder_ != null) {
+        expirationPolicyBuilder_.dispose();
         expirationPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3392,13 +3687,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
      */
     public com.google.pubsub.v1.ExpirationPolicy.Builder getExpirationPolicyBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getExpirationPolicyFieldBuilder().getBuilder();
     }
@@ -3411,7 +3707,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3434,7 +3731,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * successfully consuming messages from the subscription or is issuing
      * operations on the subscription. If `expiration_policy` is not set, a
      * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-     * value for `expiration_policy.ttl` is 1 day.
+     * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+     * but `expiration_policy.ttl` is not set, the subscription never expires.
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -3529,8 +3827,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3550,8 +3848,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3576,8 +3874,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3595,6 +3893,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3606,7 +3905,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deadLetterPolicy field is set.
      */
     public boolean hasDeadLetterPolicy() {
-      return deadLetterPolicyBuilder_ != null || deadLetterPolicy_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3615,6 +3914,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3641,6 +3941,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3655,11 +3956,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deadLetterPolicy_ = value;
-        onChanged();
       } else {
         deadLetterPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3669,6 +3970,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3681,11 +3983,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         com.google.pubsub.v1.DeadLetterPolicy.Builder builderForValue) {
       if (deadLetterPolicyBuilder_ == null) {
         deadLetterPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         deadLetterPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3695,6 +3997,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3705,19 +4008,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeadLetterPolicy(com.google.pubsub.v1.DeadLetterPolicy value) {
       if (deadLetterPolicyBuilder_ == null) {
-        if (deadLetterPolicy_ != null) {
-          deadLetterPolicy_ =
-              com.google.pubsub.v1.DeadLetterPolicy.newBuilder(deadLetterPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && deadLetterPolicy_ != null
+            && deadLetterPolicy_ != com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()) {
+          getDeadLetterPolicyBuilder().mergeFrom(value);
         } else {
           deadLetterPolicy_ = value;
         }
-        onChanged();
       } else {
         deadLetterPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3727,6 +4029,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3736,14 +4039,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
      */
     public Builder clearDeadLetterPolicy() {
-      if (deadLetterPolicyBuilder_ == null) {
-        deadLetterPolicy_ = null;
-        onChanged();
-      } else {
-        deadLetterPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      deadLetterPolicy_ = null;
+      if (deadLetterPolicyBuilder_ != null) {
+        deadLetterPolicyBuilder_.dispose();
         deadLetterPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3753,6 +4055,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3762,7 +4065,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
      */
     public com.google.pubsub.v1.DeadLetterPolicy.Builder getDeadLetterPolicyBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getDeadLetterPolicyFieldBuilder().getBuilder();
     }
@@ -3773,6 +4076,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3797,6 +4101,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * A policy that specifies the conditions for dead lettering messages in
      * this subscription. If dead_letter_policy is not set, dead lettering
      * is disabled.
+     *
      * The Cloud Pub/Sub service account associated with this subscriptions's
      * parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -3834,6 +4139,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3845,7 +4151,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the retryPolicy field is set.
      */
     public boolean hasRetryPolicy() {
-      return retryPolicyBuilder_ != null || retryPolicy_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3853,6 +4159,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3878,6 +4185,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3892,11 +4200,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         retryPolicy_ = value;
-        onChanged();
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3905,6 +4213,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3916,11 +4225,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setRetryPolicy(com.google.pubsub.v1.RetryPolicy.Builder builderForValue) {
       if (retryPolicyBuilder_ == null) {
         retryPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3929,6 +4238,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3939,19 +4249,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRetryPolicy(com.google.pubsub.v1.RetryPolicy value) {
       if (retryPolicyBuilder_ == null) {
-        if (retryPolicy_ != null) {
-          retryPolicy_ =
-              com.google.pubsub.v1.RetryPolicy.newBuilder(retryPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && retryPolicy_ != null
+            && retryPolicy_ != com.google.pubsub.v1.RetryPolicy.getDefaultInstance()) {
+          getRetryPolicyBuilder().mergeFrom(value);
         } else {
           retryPolicy_ = value;
         }
-        onChanged();
       } else {
         retryPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3960,6 +4269,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3969,14 +4279,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
      */
     public Builder clearRetryPolicy() {
-      if (retryPolicyBuilder_ == null) {
-        retryPolicy_ = null;
-        onChanged();
-      } else {
-        retryPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
         retryPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3985,6 +4294,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -3994,7 +4304,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
      */
     public com.google.pubsub.v1.RetryPolicy.Builder getRetryPolicyBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRetryPolicyFieldBuilder().getBuilder();
     }
@@ -4004,6 +4314,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -4027,6 +4338,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
+     *
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -4091,6 +4403,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setDetached(boolean value) {
 
       detached_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4110,7 +4423,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetached() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       detached_ = false;
       onChanged();
       return this;
@@ -4123,9 +4436,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, Pub/Sub provides the following guarantees for the delivery of
      * a message with a given value of `message_id` on this subscription:
+     *
      * * The message sent to a subscriber is guaranteed not to be resent
      * before the message's acknowledgement deadline expires.
      * * An acknowledged message will not be resent to a subscriber.
+     *
      * Note that subscribers may still receive multiple copies of a message
      * when `enable_exactly_once_delivery` is true if the message was published
      * multiple times by a publisher client. These copies are  considered distinct
@@ -4146,9 +4461,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, Pub/Sub provides the following guarantees for the delivery of
      * a message with a given value of `message_id` on this subscription:
+     *
      * * The message sent to a subscriber is guaranteed not to be resent
      * before the message's acknowledgement deadline expires.
      * * An acknowledged message will not be resent to a subscriber.
+     *
      * Note that subscribers may still receive multiple copies of a message
      * when `enable_exactly_once_delivery` is true if the message was published
      * multiple times by a publisher client. These copies are  considered distinct
@@ -4163,6 +4480,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableExactlyOnceDelivery(boolean value) {
 
       enableExactlyOnceDelivery_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4172,9 +4490,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, Pub/Sub provides the following guarantees for the delivery of
      * a message with a given value of `message_id` on this subscription:
+     *
      * * The message sent to a subscriber is guaranteed not to be resent
      * before the message's acknowledgement deadline expires.
      * * An acknowledged message will not be resent to a subscriber.
+     *
      * Note that subscribers may still receive multiple copies of a message
      * when `enable_exactly_once_delivery` is true if the message was published
      * multiple times by a publisher client. These copies are  considered distinct
@@ -4186,7 +4506,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableExactlyOnceDelivery() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       enableExactlyOnceDelivery_ = false;
       onChanged();
       return this;
@@ -4217,8 +4537,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the topicMessageRetentionDuration field is set.
      */
     public boolean hasTopicMessageRetentionDuration() {
-      return topicMessageRetentionDurationBuilder_ != null
-          || topicMessageRetentionDuration_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4269,11 +4588,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         topicMessageRetentionDuration_ = value;
-        onChanged();
       } else {
         topicMessageRetentionDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4296,11 +4615,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Duration.Builder builderForValue) {
       if (topicMessageRetentionDurationBuilder_ == null) {
         topicMessageRetentionDuration_ = builderForValue.build();
-        onChanged();
       } else {
         topicMessageRetentionDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4321,19 +4640,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTopicMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (topicMessageRetentionDurationBuilder_ == null) {
-        if (topicMessageRetentionDuration_ != null) {
-          topicMessageRetentionDuration_ =
-              com.google.protobuf.Duration.newBuilder(topicMessageRetentionDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && topicMessageRetentionDuration_ != null
+            && topicMessageRetentionDuration_
+                != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTopicMessageRetentionDurationBuilder().mergeFrom(value);
         } else {
           topicMessageRetentionDuration_ = value;
         }
-        onChanged();
       } else {
         topicMessageRetentionDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4353,14 +4672,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTopicMessageRetentionDuration() {
-      if (topicMessageRetentionDurationBuilder_ == null) {
-        topicMessageRetentionDuration_ = null;
-        onChanged();
-      } else {
-        topicMessageRetentionDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      topicMessageRetentionDuration_ = null;
+      if (topicMessageRetentionDurationBuilder_ != null) {
+        topicMessageRetentionDurationBuilder_.dispose();
         topicMessageRetentionDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4380,7 +4698,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getTopicMessageRetentionDurationBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getTopicMessageRetentionDurationFieldBuilder().getBuilder();
     }
@@ -4477,8 +4795,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4498,9 +4816,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.pubsub.v1.Subscription.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.pubsub.v1.Subscription.State result =
-          com.google.pubsub.v1.Subscription.State.valueOf(state_);
+          com.google.pubsub.v1.Subscription.State.forNumber(state_);
       return result == null ? com.google.pubsub.v1.Subscription.State.UNRECOGNIZED : result;
     }
     /**
@@ -4522,7 +4839,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00020000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4542,7 +4859,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       state_ = 0;
       onChanged();
       return this;

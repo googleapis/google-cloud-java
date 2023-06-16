@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.DetachSubscriptionRequest;
 import com.google.pubsub.v1.DetachSubscriptionResponse;
@@ -351,6 +352,38 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<Topic, Topic> createTopicCallable() {
     return stub.createTopicCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   Topic topic = Topic.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Topic response = topicAdminClient.updateTopic(topic, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param topic Required. The updated topic object.
+   * @param updateMask Required. Indicates which fields in the provided topic to update. Must be
+   *     specified and non-empty. Note that if `update_mask` contains "message_storage_policy" but
+   *     the `message_storage_policy` is not set in the `topic` provided above, then the updated
+   *     value is determined by the policy configured at the project or organization level.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Topic updateTopic(Topic topic, FieldMask updateMask) {
+    UpdateTopicRequest request =
+        UpdateTopicRequest.newBuilder().setTopic(topic).setUpdateMask(updateMask).build();
+    return updateTopic(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

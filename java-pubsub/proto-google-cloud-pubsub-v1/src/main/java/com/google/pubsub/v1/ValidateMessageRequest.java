@@ -49,11 +49,6 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     return new ValidateMessageRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
         .internal_static_google_pubsub_v1_ValidateMessageRequest_descriptor;
@@ -70,6 +65,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   private int schemaSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object schemaSpec_;
 
   public enum SchemaSpecCase
@@ -117,7 +114,9 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,6 +176,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -192,6 +192,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -220,6 +221,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Name of the schema against which to validate.
+   *
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -296,7 +298,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString message_;
+  private com.google.protobuf.ByteString message_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -314,7 +316,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENCODING_FIELD_NUMBER = 5;
-  private int encoding_;
+  private int encoding_ = 0;
   /**
    *
    *
@@ -343,8 +345,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.pubsub.v1.Encoding getEncoding() {
-    @SuppressWarnings("deprecation")
-    com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.valueOf(encoding_);
+    com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.forNumber(encoding_);
     return result == null ? com.google.pubsub.v1.Encoding.UNRECOGNIZED : result;
   }
 
@@ -600,15 +601,13 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (schemaBuilder_ != null) {
         schemaBuilder_.clear();
       }
       message_ = com.google.protobuf.ByteString.EMPTY;
-
       encoding_ = 0;
-
       schemaSpecCase_ = 0;
       schemaSpec_ = null;
       return this;
@@ -638,22 +637,33 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.pubsub.v1.ValidateMessageRequest buildPartial() {
       com.google.pubsub.v1.ValidateMessageRequest result =
           new com.google.pubsub.v1.ValidateMessageRequest(this);
-      result.parent_ = parent_;
-      if (schemaSpecCase_ == 2) {
-        result.schemaSpec_ = schemaSpec_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (schemaSpecCase_ == 3) {
-        if (schemaBuilder_ == null) {
-          result.schemaSpec_ = schemaSpec_;
-        } else {
-          result.schemaSpec_ = schemaBuilder_.build();
-        }
-      }
-      result.message_ = message_;
-      result.encoding_ = encoding_;
-      result.schemaSpecCase_ = schemaSpecCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ValidateMessageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.encoding_ = encoding_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.pubsub.v1.ValidateMessageRequest result) {
+      result.schemaSpecCase_ = schemaSpecCase_;
+      result.schemaSpec_ = this.schemaSpec_;
+      if (schemaSpecCase_ == 3 && schemaBuilder_ != null) {
+        result.schemaSpec_ = schemaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -703,6 +713,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.pubsub.v1.ValidateMessageRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMessage() != com.google.protobuf.ByteString.EMPTY) {
@@ -758,7 +769,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -777,13 +788,13 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
             case 34:
               {
                 message_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 encoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -816,6 +827,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -887,8 +900,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -907,8 +920,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -932,8 +945,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -943,6 +956,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -959,6 +973,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -988,6 +1003,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -1017,6 +1033,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -1039,6 +1056,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -1059,6 +1077,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Name of the schema against which to validate.
+     *
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -1280,7 +1299,6 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       }
       schemaSpecCase_ = 3;
       onChanged();
-      ;
       return schemaBuilder_;
     }
 
@@ -1316,8 +1334,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1333,7 +1351,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
@@ -1368,8 +1386,8 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEncodingValue(int value) {
-
       encoding_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1386,8 +1404,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.pubsub.v1.Encoding getEncoding() {
-      @SuppressWarnings("deprecation")
-      com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.valueOf(encoding_);
+      com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.forNumber(encoding_);
       return result == null ? com.google.pubsub.v1.Encoding.UNRECOGNIZED : result;
     }
     /**
@@ -1406,7 +1423,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       encoding_ = value.getNumber();
       onChanged();
       return this;
@@ -1423,7 +1440,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       encoding_ = 0;
       onChanged();
       return this;

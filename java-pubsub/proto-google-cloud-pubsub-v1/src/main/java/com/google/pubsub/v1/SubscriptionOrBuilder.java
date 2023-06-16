@@ -96,9 +96,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -111,9 +109,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -126,9 +122,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -140,9 +134,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -155,9 +147,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -170,9 +160,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
-   * but not both. If both are empty, then the subscriber will pull and ack
-   * messages using API methods.
+   * used to configure it.
    * </pre>
    *
    * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
@@ -183,11 +171,50 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   *
+   * @return Whether the cloudStorageConfig field is set.
+   */
+  boolean hasCloudStorageConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   *
+   * @return The cloudStorageConfig.
+   */
+  com.google.pubsub.v1.CloudStorageConfig getCloudStorageConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to Google Cloud Storage is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   */
+  com.google.pubsub.v1.CloudStorageConfigOrBuilder getCloudStorageConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
    * the subscriber to acknowledge receipt before resending the message. In the
    * interval after the message is delivered and before it is acknowledged, it
-   * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+   * is considered to be _outstanding_. During that time period, the
    * message will not be redelivered (on a best-effort basis).
+   *
    * For pull subscriptions, this value is used as the initial value for the ack
    * deadline. To override this value for a given message, call
    * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -196,8 +223,10 @@ public interface SubscriptionOrBuilder
    * The minimum custom deadline you can specify is 10 seconds.
    * The maximum custom deadline you can specify is 600 seconds (10 minutes).
    * If this parameter is 0, a default value of 10 seconds is used.
+   *
    * For push delivery, this value is also used to set the request timeout for
    * the call to the push endpoint.
+   *
    * If the subscriber never acknowledges the message, the Pub/Sub
    * system will eventually redeliver the message.
    * </pre>
@@ -280,8 +309,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -291,8 +320,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -305,8 +334,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -316,13 +345,12 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -332,8 +360,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -365,7 +393,8 @@ public interface SubscriptionOrBuilder
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -382,7 +411,8 @@ public interface SubscriptionOrBuilder
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -399,7 +429,8 @@ public interface SubscriptionOrBuilder
    * successfully consuming messages from the subscription or is issuing
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
-   * value for `expiration_policy.ttl` is 1 day.
+   * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
+   * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -446,6 +477,7 @@ public interface SubscriptionOrBuilder
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -464,6 +496,7 @@ public interface SubscriptionOrBuilder
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -482,6 +515,7 @@ public interface SubscriptionOrBuilder
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
+   *
    * The Cloud Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
@@ -498,6 +532,7 @@ public interface SubscriptionOrBuilder
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -515,6 +550,7 @@ public interface SubscriptionOrBuilder
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -532,6 +568,7 @@ public interface SubscriptionOrBuilder
    * <pre>
    * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
+   *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
@@ -565,9 +602,11 @@ public interface SubscriptionOrBuilder
    * <pre>
    * If true, Pub/Sub provides the following guarantees for the delivery of
    * a message with a given value of `message_id` on this subscription:
+   *
    * * The message sent to a subscriber is guaranteed not to be resent
    * before the message's acknowledgement deadline expires.
    * * An acknowledged message will not be resent to a subscriber.
+   *
    * Note that subscribers may still receive multiple copies of a message
    * when `enable_exactly_once_delivery` is true if the message was published
    * multiple times by a publisher client. These copies are  considered distinct

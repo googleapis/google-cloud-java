@@ -24,6 +24,7 @@ package com.google.pubsub.v1;
  * <pre>
  * Dead lettering is done on a best effort basis. The same message might be
  * dead lettered multiple times.
+ *
  * If validation on any of the fields fails at subscription creation/updation,
  * the create/update subscription request will fail.
  * </pre>
@@ -50,11 +51,6 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     return new DeadLetterPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_DeadLetterPolicy_descriptor;
@@ -71,7 +67,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DEAD_LETTER_TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object deadLetterTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deadLetterTopic_ = "";
   /**
    *
    *
@@ -81,6 +79,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * account associated with the enclosing subscription's parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Publish() to this topic.
+   *
    * The operation will fail if the topic does not exist.
    * Users should ensure that there is a subscription attached to this topic
    * since messages published to a topic with no subscriptions are lost.
@@ -111,6 +110,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * account associated with the enclosing subscription's parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Publish() to this topic.
+   *
    * The operation will fail if the topic does not exist.
    * Users should ensure that there is a subscription attached to this topic
    * since messages published to a topic with no subscriptions are lost.
@@ -134,19 +134,23 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MAX_DELIVERY_ATTEMPTS_FIELD_NUMBER = 2;
-  private int maxDeliveryAttempts_;
+  private int maxDeliveryAttempts_ = 0;
   /**
    *
    *
    * <pre>
    * The maximum number of delivery attempts for any message. The value must be
    * between 5 and 100.
+   *
    * The number of delivery attempts is defined as 1 + (the sum of number of
    * NACKs and number of times the acknowledgement deadline has been exceeded
    * for the message).
+   *
    * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
    * client libraries may automatically extend ack_deadlines.
+   *
    * This field will be honored on a best effort basis.
+   *
    * If this parameter is 0, a default value of 5 is used.
    * </pre>
    *
@@ -331,6 +335,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Dead lettering is done on a best effort basis. The same message might be
    * dead lettered multiple times.
+   *
    * If validation on any of the fields fails at subscription creation/updation,
    * the create/update subscription request will fail.
    * </pre>
@@ -366,10 +371,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deadLetterTopic_ = "";
-
       maxDeliveryAttempts_ = 0;
-
       return this;
     }
 
@@ -397,10 +401,21 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.pubsub.v1.DeadLetterPolicy buildPartial() {
       com.google.pubsub.v1.DeadLetterPolicy result =
           new com.google.pubsub.v1.DeadLetterPolicy(this);
-      result.deadLetterTopic_ = deadLetterTopic_;
-      result.maxDeliveryAttempts_ = maxDeliveryAttempts_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.DeadLetterPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deadLetterTopic_ = deadLetterTopic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxDeliveryAttempts_ = maxDeliveryAttempts_;
+      }
     }
 
     @java.lang.Override
@@ -450,6 +465,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       if (other == com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()) return this;
       if (!other.getDeadLetterTopic().isEmpty()) {
         deadLetterTopic_ = other.deadLetterTopic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMaxDeliveryAttempts() != 0) {
@@ -484,13 +500,13 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 deadLetterTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxDeliveryAttempts_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -510,6 +526,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object deadLetterTopic_ = "";
     /**
      *
@@ -520,6 +538,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * account associated with the enclosing subscription's parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
      * permission to Publish() to this topic.
+     *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
@@ -549,6 +568,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * account associated with the enclosing subscription's parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
      * permission to Publish() to this topic.
+     *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
@@ -578,6 +598,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * account associated with the enclosing subscription's parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
      * permission to Publish() to this topic.
+     *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
@@ -592,8 +613,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       deadLetterTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -606,6 +627,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * account associated with the enclosing subscription's parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
      * permission to Publish() to this topic.
+     *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
@@ -616,8 +638,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDeadLetterTopic() {
-
       deadLetterTopic_ = getDefaultInstance().getDeadLetterTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -630,6 +652,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * account associated with the enclosing subscription's parent project (i.e.,
      * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
      * permission to Publish() to this topic.
+     *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
@@ -645,8 +668,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deadLetterTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,12 +681,16 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The maximum number of delivery attempts for any message. The value must be
      * between 5 and 100.
+     *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
      * for the message).
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
      * client libraries may automatically extend ack_deadlines.
+     *
      * This field will be honored on a best effort basis.
+     *
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
@@ -681,12 +708,16 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The maximum number of delivery attempts for any message. The value must be
      * between 5 and 100.
+     *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
      * for the message).
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
      * client libraries may automatically extend ack_deadlines.
+     *
      * This field will be honored on a best effort basis.
+     *
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
@@ -698,6 +729,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     public Builder setMaxDeliveryAttempts(int value) {
 
       maxDeliveryAttempts_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,12 +739,16 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The maximum number of delivery attempts for any message. The value must be
      * between 5 and 100.
+     *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
      * for the message).
+     *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
      * client libraries may automatically extend ack_deadlines.
+     *
      * This field will be honored on a best effort basis.
+     *
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
@@ -721,7 +757,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxDeliveryAttempts() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxDeliveryAttempts_ = 0;
       onChanged();
       return this;

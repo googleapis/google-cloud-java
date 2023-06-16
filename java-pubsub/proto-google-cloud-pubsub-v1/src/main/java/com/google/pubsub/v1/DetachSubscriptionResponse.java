@@ -46,11 +46,6 @@ public final class DetachSubscriptionResponse extends com.google.protobuf.Genera
     return new DetachSubscriptionResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_DetachSubscriptionResponse_descriptor;

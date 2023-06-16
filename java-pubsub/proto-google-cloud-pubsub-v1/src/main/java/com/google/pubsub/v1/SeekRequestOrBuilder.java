@@ -160,5 +160,5 @@ public interface SeekRequestOrBuilder
    */
   com.google.protobuf.ByteString getSnapshotBytes();
 
-  public com.google.pubsub.v1.SeekRequest.TargetCase getTargetCase();
+  com.google.pubsub.v1.SeekRequest.TargetCase getTargetCase();
 }

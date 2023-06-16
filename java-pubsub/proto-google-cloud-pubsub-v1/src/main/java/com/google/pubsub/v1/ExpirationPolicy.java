@@ -46,11 +46,6 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     return new ExpirationPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
@@ -124,7 +119,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
-    return getTtl();
+    return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -328,10 +323,10 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ttlBuilder_ == null) {
-        ttl_ = null;
-      } else {
-        ttl_ = null;
+      bitField0_ = 0;
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
         ttlBuilder_ = null;
       }
       return this;
@@ -361,13 +356,18 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.pubsub.v1.ExpirationPolicy buildPartial() {
       com.google.pubsub.v1.ExpirationPolicy result =
           new com.google.pubsub.v1.ExpirationPolicy(this);
-      if (ttlBuilder_ == null) {
-        result.ttl_ = ttl_;
-      } else {
-        result.ttl_ = ttlBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ExpirationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ttl_ = ttlBuilder_ == null ? ttl_ : ttlBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -447,7 +447,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getTtlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +466,8 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration ttl_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -490,7 +492,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the ttl field is set.
      */
     public boolean hasTtl() {
-      return ttlBuilder_ != null || ttl_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -535,11 +537,11 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         ttl_ = value;
-        onChanged();
       } else {
         ttlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,11 +561,11 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (ttlBuilder_ == null) {
         ttl_ = builderForValue.build();
-        onChanged();
       } else {
         ttlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,16 +584,18 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTtl(com.google.protobuf.Duration value) {
       if (ttlBuilder_ == null) {
-        if (ttl_ != null) {
-          ttl_ = com.google.protobuf.Duration.newBuilder(ttl_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && ttl_ != null
+            && ttl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTtlBuilder().mergeFrom(value);
         } else {
           ttl_ = value;
         }
-        onChanged();
       } else {
         ttlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -609,14 +613,13 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration ttl = 1;</code>
      */
     public Builder clearTtl() {
-      if (ttlBuilder_ == null) {
-        ttl_ = null;
-        onChanged();
-      } else {
-        ttl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
         ttlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -634,7 +637,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration ttl = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }

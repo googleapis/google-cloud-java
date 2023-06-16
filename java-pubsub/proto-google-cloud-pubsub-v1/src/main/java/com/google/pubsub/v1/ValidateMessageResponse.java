@@ -46,11 +46,6 @@ public final class ValidateMessageResponse extends com.google.protobuf.Generated
     return new ValidateMessageResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
         .internal_static_google_pubsub_v1_ValidateMessageResponse_descriptor;

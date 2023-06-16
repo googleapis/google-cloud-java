@@ -44,7 +44,7 @@
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateTopic": {
-              "methods": ["updateTopic", "updateTopicCallable"]
+              "methods": ["updateTopic", "updateTopic", "updateTopicCallable"]
             }
           }
         }
@@ -107,10 +107,10 @@
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateSnapshot": {
-              "methods": ["updateSnapshot", "updateSnapshotCallable"]
+              "methods": ["updateSnapshot", "updateSnapshot", "updateSnapshotCallable"]
             },
             "UpdateSubscription": {
-              "methods": ["updateSubscription", "updateSubscriptionCallable"]
+              "methods": ["updateSubscription", "updateSubscription", "updateSubscriptionCallable"]
             }
           }
         }

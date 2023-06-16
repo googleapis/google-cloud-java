@@ -47,11 +47,6 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
     return new ModifyPushConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_ModifyPushConfigRequest_descriptor;
@@ -68,7 +63,9 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -129,6 +126,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
@@ -149,6 +147,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
@@ -169,6 +168,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The push configuration for future deliveries.
+   *
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
@@ -180,7 +180,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
-    return getPushConfig();
+    return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,12 +394,11 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
-      if (pushConfigBuilder_ == null) {
-        pushConfig_ = null;
-      } else {
-        pushConfig_ = null;
+      pushConfig_ = null;
+      if (pushConfigBuilder_ != null) {
+        pushConfigBuilder_.dispose();
         pushConfigBuilder_ = null;
       }
       return this;
@@ -429,14 +428,21 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
     public com.google.pubsub.v1.ModifyPushConfigRequest buildPartial() {
       com.google.pubsub.v1.ModifyPushConfigRequest result =
           new com.google.pubsub.v1.ModifyPushConfigRequest(this);
-      result.subscription_ = subscription_;
-      if (pushConfigBuilder_ == null) {
-        result.pushConfig_ = pushConfig_;
-      } else {
-        result.pushConfig_ = pushConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ModifyPushConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pushConfig_ = pushConfigBuilder_ == null ? pushConfig_ : pushConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -486,6 +492,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
       if (other == com.google.pubsub.v1.ModifyPushConfigRequest.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPushConfig()) {
@@ -520,13 +527,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPushConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +552,8 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subscription_ = "";
     /**
@@ -616,8 +625,8 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +645,8 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -661,8 +670,8 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,6 +687,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -690,13 +700,14 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      * @return Whether the pushConfig field is set.
      */
     public boolean hasPushConfig() {
-      return pushConfigBuilder_ != null || pushConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -722,6 +733,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -737,11 +749,11 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         pushConfig_ = value;
-        onChanged();
       } else {
         pushConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -749,6 +761,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -761,11 +774,11 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
     public Builder setPushConfig(com.google.pubsub.v1.PushConfig.Builder builderForValue) {
       if (pushConfigBuilder_ == null) {
         pushConfig_ = builderForValue.build();
-        onChanged();
       } else {
         pushConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -773,6 +786,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -784,19 +798,18 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergePushConfig(com.google.pubsub.v1.PushConfig value) {
       if (pushConfigBuilder_ == null) {
-        if (pushConfig_ != null) {
-          pushConfig_ =
-              com.google.pubsub.v1.PushConfig.newBuilder(pushConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && pushConfig_ != null
+            && pushConfig_ != com.google.pubsub.v1.PushConfig.getDefaultInstance()) {
+          getPushConfigBuilder().mergeFrom(value);
         } else {
           pushConfig_ = value;
         }
-        onChanged();
       } else {
         pushConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -804,6 +817,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -814,14 +828,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearPushConfig() {
-      if (pushConfigBuilder_ == null) {
-        pushConfig_ = null;
-        onChanged();
-      } else {
-        pushConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      pushConfig_ = null;
+      if (pushConfigBuilder_ != null) {
+        pushConfigBuilder_.dispose();
         pushConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -829,6 +842,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -839,7 +853,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.pubsub.v1.PushConfig.Builder getPushConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPushConfigFieldBuilder().getBuilder();
     }
@@ -848,6 +862,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
@@ -871,6 +886,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The push configuration for future deliveries.
+     *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing

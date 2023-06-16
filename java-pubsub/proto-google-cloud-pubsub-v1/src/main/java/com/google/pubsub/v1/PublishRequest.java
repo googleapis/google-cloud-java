@@ -48,11 +48,6 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     return new PublishRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_PublishRequest_descriptor;
@@ -69,7 +64,9 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -124,6 +121,8 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.pubsub.v1.PubsubMessage> messages_;
   /**
    *
@@ -408,15 +407,15 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
       } else {
         messages_ = null;
         messagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +442,31 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.PublishRequest buildPartial() {
       com.google.pubsub.v1.PublishRequest result = new com.google.pubsub.v1.PublishRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.topic_ = topic_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.pubsub.v1.PublishRequest result) {
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.PublishRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
     }
 
     @java.lang.Override
@@ -505,13 +516,14 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.pubsub.v1.PublishRequest.getDefaultInstance()) return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (messagesBuilder_ == null) {
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -524,7 +536,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessagesFieldBuilder()
@@ -563,7 +575,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -668,8 +680,8 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +700,8 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -713,8 +725,8 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,9 +735,9 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         messages_ = new java.util.ArrayList<com.google.pubsub.v1.PubsubMessage>(messages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -962,7 +974,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -1097,7 +1109,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.pubsub.v1.PubsubMessage,
                 com.google.pubsub.v1.PubsubMessage.Builder,
                 com.google.pubsub.v1.PubsubMessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;

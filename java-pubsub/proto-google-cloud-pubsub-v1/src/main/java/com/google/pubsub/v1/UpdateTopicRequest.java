@@ -45,11 +45,6 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateTopicRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_UpdateTopicRequest_descriptor;
@@ -108,7 +103,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.pubsub.v1.TopicOrBuilder getTopicOrBuilder() {
-    return getTopic();
+    return topic_ == null ? com.google.pubsub.v1.Topic.getDefaultInstance() : topic_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -169,7 +164,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +382,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (topicBuilder_ == null) {
-        topic_ = null;
-      } else {
-        topic_ = null;
+      bitField0_ = 0;
+      topic_ = null;
+      if (topicBuilder_ != null) {
+        topicBuilder_.dispose();
         topicBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -426,18 +420,21 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
     public com.google.pubsub.v1.UpdateTopicRequest buildPartial() {
       com.google.pubsub.v1.UpdateTopicRequest result =
           new com.google.pubsub.v1.UpdateTopicRequest(this);
-      if (topicBuilder_ == null) {
-        result.topic_ = topic_;
-      } else {
-        result.topic_ = topicBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.UpdateTopicRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topicBuilder_ == null ? topic_ : topicBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -520,13 +517,13 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getTopicFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +543,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.pubsub.v1.Topic topic_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.Topic,
@@ -564,7 +563,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the topic field is set.
      */
     public boolean hasTopic() {
-      return topicBuilder_ != null || topic_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -599,11 +598,11 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         topic_ = value;
-        onChanged();
       } else {
         topicBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -618,11 +617,11 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
     public Builder setTopic(com.google.pubsub.v1.Topic.Builder builderForValue) {
       if (topicBuilder_ == null) {
         topic_ = builderForValue.build();
-        onChanged();
       } else {
         topicBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,16 +635,18 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTopic(com.google.pubsub.v1.Topic value) {
       if (topicBuilder_ == null) {
-        if (topic_ != null) {
-          topic_ = com.google.pubsub.v1.Topic.newBuilder(topic_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && topic_ != null
+            && topic_ != com.google.pubsub.v1.Topic.getDefaultInstance()) {
+          getTopicBuilder().mergeFrom(value);
         } else {
           topic_ = value;
         }
-        onChanged();
       } else {
         topicBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -658,14 +659,13 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTopic() {
-      if (topicBuilder_ == null) {
-        topic_ = null;
-        onChanged();
-      } else {
-        topic_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      topic_ = null;
+      if (topicBuilder_ != null) {
+        topicBuilder_.dispose();
         topicBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -678,7 +678,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.Topic.Builder getTopicBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTopicFieldBuilder().getBuilder();
     }
@@ -746,7 +746,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -793,11 +793,11 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,11 +817,11 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,17 +840,18 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,14 +869,13 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +893,7 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

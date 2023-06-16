@@ -30,9 +30,9 @@ public interface CreateSnapshotRequestOrBuilder
    * Required. User-provided name for this snapshot. If the name is not provided
    * in the request, the server will assign a random name for this snapshot on
    * the same project as the subscription. Note that for REST API requests, you
-   * must specify a name.  See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
-   * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
+   * must specify a name.  See the [resource name
+   * rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format
+   * is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
@@ -49,9 +49,9 @@ public interface CreateSnapshotRequestOrBuilder
    * Required. User-provided name for this snapshot. If the name is not provided
    * in the request, the server will assign a random name for this snapshot on
    * the same project as the subscription. Note that for REST API requests, you
-   * must specify a name.  See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
-   * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
+   * must specify a name.  See the [resource name
+   * rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format
+   * is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
@@ -111,8 +111,8 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -122,8 +122,8 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -136,8 +136,8 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -147,13 +147,12 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -163,8 +162,8 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing
+   * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>

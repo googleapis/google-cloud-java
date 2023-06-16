@@ -48,11 +48,6 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
     return new ListTopicSubscriptionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_ListTopicSubscriptionsRequest_descriptor;
@@ -69,7 +64,9 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -124,7 +121,7 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -142,7 +139,9 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -409,12 +408,10 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -442,11 +439,24 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
     public com.google.pubsub.v1.ListTopicSubscriptionsRequest buildPartial() {
       com.google.pubsub.v1.ListTopicSubscriptionsRequest result =
           new com.google.pubsub.v1.ListTopicSubscriptionsRequest(this);
-      result.topic_ = topic_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ListTopicSubscriptionsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -497,6 +507,7 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -504,6 +515,7 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -535,19 +547,19 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -566,6 +578,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object topic_ = "";
     /**
@@ -637,8 +651,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,8 +671,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -682,8 +696,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,6 +733,7 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -734,7 +749,7 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -807,8 +822,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -826,8 +841,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -850,8 +865,8 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

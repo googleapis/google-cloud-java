@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1047,10 +1047,9 @@ public class SchemaServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the schema revision to be deleted, with a revision ID
    *     explicitly included.
-   *     <p>Example: projects/123/schemas/my-schema{@literal @}c7cfa2a8
-   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
-   *     schema.
-   *     <p>Example: c7cfa2a8
+   *     <p>Example: `projects/123/schemas/my-schema{@literal @}c7cfa2a8`
+   * @param revisionId Optional. This field is deprecated and should not be used for specifying the
+   *     revision ID. The revision ID should be specified via the `name` parameter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Schema deleteSchemaRevision(SchemaName name, String revisionId) {
@@ -1083,10 +1082,9 @@ public class SchemaServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the schema revision to be deleted, with a revision ID
    *     explicitly included.
-   *     <p>Example: projects/123/schemas/my-schema{@literal @}c7cfa2a8
-   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
-   *     schema.
-   *     <p>Example: c7cfa2a8
+   *     <p>Example: `projects/123/schemas/my-schema{@literal @}c7cfa2a8`
+   * @param revisionId Optional. This field is deprecated and should not be used for specifying the
+   *     revision ID. The revision ID should be specified via the `name` parameter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Schema deleteSchemaRevision(String name, String revisionId) {

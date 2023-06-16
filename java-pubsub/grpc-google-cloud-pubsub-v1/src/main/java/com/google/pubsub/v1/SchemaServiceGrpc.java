@@ -502,7 +502,7 @@ public final class SchemaServiceGrpc {
    * Service for doing schema-related operations.
    * </pre>
    */
-  public abstract static class SchemaServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -511,7 +511,7 @@ public final class SchemaServiceGrpc {
      * Creates a schema.
      * </pre>
      */
-    public void createSchema(
+    default void createSchema(
         com.google.pubsub.v1.CreateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -525,7 +525,7 @@ public final class SchemaServiceGrpc {
      * Gets a schema.
      * </pre>
      */
-    public void getSchema(
+    default void getSchema(
         com.google.pubsub.v1.GetSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSchemaMethod(), responseObserver);
@@ -538,7 +538,7 @@ public final class SchemaServiceGrpc {
      * Lists schemas in a project.
      * </pre>
      */
-    public void listSchemas(
+    default void listSchemas(
         com.google.pubsub.v1.ListSchemasRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemasResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -552,7 +552,7 @@ public final class SchemaServiceGrpc {
      * Lists all schema revisions for the named schema.
      * </pre>
      */
-    public void listSchemaRevisions(
+    default void listSchemaRevisions(
         com.google.pubsub.v1.ListSchemaRevisionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemaRevisionsResponse>
             responseObserver) {
@@ -567,7 +567,7 @@ public final class SchemaServiceGrpc {
      * Commits a new schema revision to an existing schema.
      * </pre>
      */
-    public void commitSchema(
+    default void commitSchema(
         com.google.pubsub.v1.CommitSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -581,7 +581,7 @@ public final class SchemaServiceGrpc {
      * Creates a new schema revision that is a copy of the provided revision_id.
      * </pre>
      */
-    public void rollbackSchema(
+    default void rollbackSchema(
         com.google.pubsub.v1.RollbackSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -595,7 +595,7 @@ public final class SchemaServiceGrpc {
      * Deletes a specific schema revision.
      * </pre>
      */
-    public void deleteSchemaRevision(
+    default void deleteSchemaRevision(
         com.google.pubsub.v1.DeleteSchemaRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -609,7 +609,7 @@ public final class SchemaServiceGrpc {
      * Deletes a schema.
      * </pre>
      */
-    public void deleteSchema(
+    default void deleteSchema(
         com.google.pubsub.v1.DeleteSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -623,7 +623,7 @@ public final class SchemaServiceGrpc {
      * Validates a schema.
      * </pre>
      */
-    public void validateSchema(
+    default void validateSchema(
         com.google.pubsub.v1.ValidateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateSchemaResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -637,85 +637,33 @@ public final class SchemaServiceGrpc {
      * Validates a message against a schema.
      * </pre>
      */
-    public void validateMessage(
+    default void validateMessage(
         com.google.pubsub.v1.ValidateMessageRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateMessageResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getValidateMessageMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SchemaService.
+   *
+   * <pre>
+   * Service for doing schema-related operations.
+   * </pre>
+   */
+  public abstract static class SchemaServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.CreateSchemaRequest, com.google.pubsub.v1.Schema>(
-                      this, METHODID_CREATE_SCHEMA)))
-          .addMethod(
-              getGetSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.GetSchemaRequest, com.google.pubsub.v1.Schema>(
-                      this, METHODID_GET_SCHEMA)))
-          .addMethod(
-              getListSchemasMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ListSchemasRequest,
-                      com.google.pubsub.v1.ListSchemasResponse>(this, METHODID_LIST_SCHEMAS)))
-          .addMethod(
-              getListSchemaRevisionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ListSchemaRevisionsRequest,
-                      com.google.pubsub.v1.ListSchemaRevisionsResponse>(
-                      this, METHODID_LIST_SCHEMA_REVISIONS)))
-          .addMethod(
-              getCommitSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>(
-                      this, METHODID_COMMIT_SCHEMA)))
-          .addMethod(
-              getRollbackSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>(
-                      this, METHODID_ROLLBACK_SCHEMA)))
-          .addMethod(
-              getDeleteSchemaRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.DeleteSchemaRevisionRequest,
-                      com.google.pubsub.v1.Schema>(this, METHODID_DELETE_SCHEMA_REVISION)))
-          .addMethod(
-              getDeleteSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.DeleteSchemaRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_SCHEMA)))
-          .addMethod(
-              getValidateSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ValidateSchemaRequest,
-                      com.google.pubsub.v1.ValidateSchemaResponse>(this, METHODID_VALIDATE_SCHEMA)))
-          .addMethod(
-              getValidateMessageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.pubsub.v1.ValidateMessageRequest,
-                      com.google.pubsub.v1.ValidateMessageResponse>(
-                      this, METHODID_VALIDATE_MESSAGE)))
-          .build();
+      return SchemaServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SchemaService.
    *
    * <pre>
    * Service for doing schema-related operations.
@@ -894,7 +842,7 @@ public final class SchemaServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SchemaService.
    *
    * <pre>
    * Service for doing schema-related operations.
@@ -1043,7 +991,7 @@ public final class SchemaServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SchemaService.
    *
    * <pre>
    * Service for doing schema-related operations.
@@ -1212,10 +1160,10 @@ public final class SchemaServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SchemaServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SchemaServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1292,6 +1240,74 @@ public final class SchemaServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.CreateSchemaRequest, com.google.pubsub.v1.Schema>(
+                    service, METHODID_CREATE_SCHEMA)))
+        .addMethod(
+            getGetSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.GetSchemaRequest, com.google.pubsub.v1.Schema>(
+                    service, METHODID_GET_SCHEMA)))
+        .addMethod(
+            getListSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ListSchemasRequest,
+                    com.google.pubsub.v1.ListSchemasResponse>(service, METHODID_LIST_SCHEMAS)))
+        .addMethod(
+            getListSchemaRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ListSchemaRevisionsRequest,
+                    com.google.pubsub.v1.ListSchemaRevisionsResponse>(
+                    service, METHODID_LIST_SCHEMA_REVISIONS)))
+        .addMethod(
+            getCommitSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>(
+                    service, METHODID_COMMIT_SCHEMA)))
+        .addMethod(
+            getRollbackSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>(
+                    service, METHODID_ROLLBACK_SCHEMA)))
+        .addMethod(
+            getDeleteSchemaRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.DeleteSchemaRevisionRequest, com.google.pubsub.v1.Schema>(
+                    service, METHODID_DELETE_SCHEMA_REVISION)))
+        .addMethod(
+            getDeleteSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.DeleteSchemaRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_SCHEMA)))
+        .addMethod(
+            getValidateSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ValidateSchemaRequest,
+                    com.google.pubsub.v1.ValidateSchemaResponse>(
+                    service, METHODID_VALIDATE_SCHEMA)))
+        .addMethod(
+            getValidateMessageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.pubsub.v1.ValidateMessageRequest,
+                    com.google.pubsub.v1.ValidateMessageResponse>(
+                    service, METHODID_VALIDATE_MESSAGE)))
+        .build();
   }
 
   private abstract static class SchemaServiceBaseDescriptorSupplier

@@ -38,7 +38,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   }
 
   private ListTopicSnapshotsResponse() {
-    snapshots_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    snapshots_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTopicSnapshotsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,7 +64,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   }
 
   public static final int SNAPSHOTS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList snapshots_;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList snapshots_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -130,7 +128,9 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -395,10 +395,9 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      snapshots_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = 0;
+      snapshots_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -426,15 +425,22 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     public com.google.pubsub.v1.ListTopicSnapshotsResponse buildPartial() {
       com.google.pubsub.v1.ListTopicSnapshotsResponse result =
           new com.google.pubsub.v1.ListTopicSnapshotsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        snapshots_ = snapshots_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.snapshots_ = snapshots_;
-      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.pubsub.v1.ListTopicSnapshotsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        snapshots_.makeImmutable();
+        result.snapshots_ = snapshots_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -486,7 +492,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       if (!other.snapshots_.isEmpty()) {
         if (snapshots_.isEmpty()) {
           snapshots_ = other.snapshots_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureSnapshotsIsMutable();
           snapshots_.addAll(other.snapshots_);
@@ -495,6 +501,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -533,7 +540,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -555,14 +562,14 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList snapshots_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList snapshots_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSnapshotsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!snapshots_.isModifiable()) {
         snapshots_ = new com.google.protobuf.LazyStringArrayList(snapshots_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -576,7 +583,8 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      * @return A list containing the snapshots.
      */
     public com.google.protobuf.ProtocolStringList getSnapshotsList() {
-      return snapshots_.getUnmodifiableView();
+      snapshots_.makeImmutable();
+      return snapshots_;
     }
     /**
      *
@@ -641,6 +649,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       }
       ensureSnapshotsIsMutable();
       snapshots_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,6 +671,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       }
       ensureSnapshotsIsMutable();
       snapshots_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,6 +690,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     public Builder addAllSnapshots(java.lang.Iterable<java.lang.String> values) {
       ensureSnapshotsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, snapshots_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,8 +706,9 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearSnapshots() {
-      snapshots_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      snapshots_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -719,6 +731,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureSnapshotsIsMutable();
       snapshots_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -790,8 +803,8 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -809,8 +822,8 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -833,8 +846,8 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
