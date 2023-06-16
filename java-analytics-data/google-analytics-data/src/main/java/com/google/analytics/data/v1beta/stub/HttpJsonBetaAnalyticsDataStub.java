@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -380,18 +381,36 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
         HttpJsonCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
             .setMethodDescriptor(runReportMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property", String.valueOf(request.getProperty()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RunPivotReportRequest, RunPivotReportResponse>
         runPivotReportTransportSettings =
             HttpJsonCallSettings.<RunPivotReportRequest, RunPivotReportResponse>newBuilder()
                 .setMethodDescriptor(runPivotReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchRunReportsRequest, BatchRunReportsResponse>
         batchRunReportsTransportSettings =
             HttpJsonCallSettings.<BatchRunReportsRequest, BatchRunReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunReportsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
         batchRunPivotReportsTransportSettings =
@@ -399,23 +418,47 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                 .<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunPivotReportsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
         HttpJsonCallSettings.<GetMetadataRequest, Metadata>newBuilder()
             .setMethodDescriptor(getMetadataMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportTransportSettings =
             HttpJsonCallSettings.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
                 .setMethodDescriptor(runRealtimeReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
         checkCompatibilityTransportSettings =
             HttpJsonCallSettings.<CheckCompatibilityRequest, CheckCompatibilityResponse>newBuilder()
                 .setMethodDescriptor(checkCompatibilityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
 
     this.runReportCallable =

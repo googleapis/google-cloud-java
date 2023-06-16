@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
@@ -190,6 +191,12 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
             HttpJsonCallSettings.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
                 .setMethodDescriptor(searchAllResourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
         searchAllIamPoliciesTransportSettings =
@@ -197,6 +204,12 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                 .<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
                 .setMethodDescriptor(searchAllIamPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
 
     this.searchAllResourcesCallable =

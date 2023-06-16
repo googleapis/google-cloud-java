@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
@@ -64,7 +65,6 @@ import com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.Volume;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -374,9 +374,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
@@ -384,9 +384,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
@@ -394,9 +394,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("instance.name", String.valueOf(request.getInstance().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance.name", String.valueOf(request.getInstance().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
@@ -404,9 +404,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(resetInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
@@ -414,9 +414,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(startInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
@@ -424,9 +424,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(stopInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
@@ -434,9 +434,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(detachLunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("instance", String.valueOf(request.getInstance()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
@@ -444,9 +444,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listVolumesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
@@ -454,9 +454,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
@@ -464,9 +464,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("volume.name", String.valueOf(request.getVolume().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume.name", String.valueOf(request.getVolume().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
@@ -474,9 +474,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(resizeVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("volume", String.valueOf(request.getVolume()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume", String.valueOf(request.getVolume()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
@@ -484,9 +484,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
@@ -495,9 +495,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                 .setMethodDescriptor(listNetworkUsageMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("location", String.valueOf(request.getLocation()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
@@ -505,9 +505,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getNetworkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
@@ -515,9 +515,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateNetworkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("network.name", String.valueOf(request.getNetwork().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network.name", String.valueOf(request.getNetwork().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLunRequest, Lun> getLunTransportSettings =
@@ -525,9 +525,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getLunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLunsRequest, ListLunsResponse> listLunsTransportSettings =
@@ -535,9 +535,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listLunsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
@@ -545,9 +545,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getNfsShareMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesTransportSettings =
@@ -555,9 +555,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listNfsSharesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
@@ -565,9 +565,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateNfsShareMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
+                  return builder.build();
                 })
             .build();
 

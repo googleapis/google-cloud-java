@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest;
 import com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse;
@@ -90,7 +91,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -623,9 +623,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(createMetadataStoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetMetadataStoreRequest, MetadataStore> getMetadataStoreTransportSettings =
@@ -633,9 +633,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getMetadataStoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListMetadataStoresRequest, ListMetadataStoresResponse>
@@ -644,9 +644,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(listMetadataStoresMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMetadataStoreRequest, Operation> deleteMetadataStoreTransportSettings =
@@ -654,9 +654,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(deleteMetadataStoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
@@ -664,9 +664,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(createArtifactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
@@ -674,9 +674,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getArtifactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
@@ -684,9 +684,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(listArtifactsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateArtifactRequest, Artifact> updateArtifactTransportSettings =
@@ -694,9 +694,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(updateArtifactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("artifact.name", String.valueOf(request.getArtifact().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("artifact.name", String.valueOf(request.getArtifact().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteArtifactRequest, Operation> deleteArtifactTransportSettings =
@@ -704,9 +704,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(deleteArtifactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsTransportSettings =
@@ -714,9 +714,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(purgeArtifactsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
@@ -724,9 +724,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(createContextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
@@ -734,9 +734,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getContextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
@@ -744,9 +744,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(listContextsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
@@ -754,9 +754,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(updateContextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("context.name", String.valueOf(request.getContext().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("context.name", String.valueOf(request.getContext().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteContextRequest, Operation> deleteContextTransportSettings =
@@ -764,9 +764,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(deleteContextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PurgeContextsRequest, Operation> purgeContextsTransportSettings =
@@ -774,9 +774,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(purgeContextsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<
@@ -788,9 +788,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(addContextArtifactsAndExecutionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("context", String.valueOf(request.getContext()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("context", String.valueOf(request.getContext()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
@@ -799,9 +799,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(addContextChildrenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("context", String.valueOf(request.getContext()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("context", String.valueOf(request.getContext()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
@@ -811,9 +811,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(removeContextChildrenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("context", String.valueOf(request.getContext()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("context", String.valueOf(request.getContext()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
@@ -822,9 +822,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(queryContextLineageSubgraphMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("context", String.valueOf(request.getContext()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("context", String.valueOf(request.getContext()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
@@ -832,9 +832,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(createExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
@@ -842,9 +842,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
@@ -853,9 +853,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateExecutionRequest, Execution> updateExecutionTransportSettings =
@@ -863,9 +863,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(updateExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("execution.name", String.valueOf(request.getExecution().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("execution.name", String.valueOf(request.getExecution().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
@@ -873,9 +873,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(deleteExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsTransportSettings =
@@ -883,9 +883,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(purgeExecutionsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -894,9 +894,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(addExecutionEventsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("execution", String.valueOf(request.getExecution()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("execution", String.valueOf(request.getExecution()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -905,9 +905,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(queryExecutionInputsAndOutputsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("execution", String.valueOf(request.getExecution()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("execution", String.valueOf(request.getExecution()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateMetadataSchemaRequest, MetadataSchema>
@@ -916,9 +916,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(createMetadataSchemaMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMetadataSchemaRequest, MetadataSchema> getMetadataSchemaTransportSettings =
@@ -926,9 +926,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getMetadataSchemaMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
@@ -937,9 +937,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(listMetadataSchemasMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
@@ -948,9 +948,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(queryArtifactLineageSubgraphMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("artifact", String.valueOf(request.getArtifact()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("artifact", String.valueOf(request.getArtifact()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -958,9 +958,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -968,9 +968,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -978,9 +978,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -988,9 +988,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -999,9 +999,9 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

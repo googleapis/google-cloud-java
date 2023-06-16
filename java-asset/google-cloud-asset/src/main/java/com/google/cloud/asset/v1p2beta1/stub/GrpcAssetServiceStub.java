@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p2beta1.CreateFeedRequest;
 import com.google.cloud.asset.v1p2beta1.DeleteFeedRequest;
@@ -30,7 +31,6 @@ import com.google.cloud.asset.v1p2beta1.GetFeedRequest;
 import com.google.cloud.asset.v1p2beta1.ListFeedsRequest;
 import com.google.cloud.asset.v1p2beta1.ListFeedsResponse;
 import com.google.cloud.asset.v1p2beta1.UpdateFeedRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -142,9 +142,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(createFeedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetFeedRequest, Feed> getFeedTransportSettings =
@@ -152,9 +152,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(getFeedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
@@ -162,9 +162,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(listFeedsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateFeedRequest, Feed> updateFeedTransportSettings =
@@ -172,9 +172,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(updateFeedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("feed.name", String.valueOf(request.getFeed().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("feed.name", String.valueOf(request.getFeed().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
@@ -182,9 +182,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(deleteFeedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

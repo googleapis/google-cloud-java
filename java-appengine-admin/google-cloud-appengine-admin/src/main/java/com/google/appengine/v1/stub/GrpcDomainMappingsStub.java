@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.CreateDomainMappingRequest;
 import com.google.appengine.v1.DeleteDomainMappingRequest;
@@ -33,7 +34,6 @@ import com.google.appengine.v1.ListDomainMappingsRequest;
 import com.google.appengine.v1.ListDomainMappingsResponse;
 import com.google.appengine.v1.OperationMetadataV1;
 import com.google.appengine.v1.UpdateDomainMappingRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -167,9 +167,9 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
                 .setMethodDescriptor(listDomainMappingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDomainMappingRequest, DomainMapping> getDomainMappingTransportSettings =
@@ -177,9 +177,9 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
             .setMethodDescriptor(getDomainMappingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateDomainMappingRequest, Operation> createDomainMappingTransportSettings =
@@ -187,9 +187,9 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
             .setMethodDescriptor(createDomainMappingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDomainMappingRequest, Operation> updateDomainMappingTransportSettings =
@@ -197,9 +197,9 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
             .setMethodDescriptor(updateDomainMappingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDomainMappingRequest, Operation> deleteDomainMappingTransportSettings =
@@ -207,9 +207,9 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
             .setMethodDescriptor(deleteDomainMappingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

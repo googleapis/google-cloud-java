@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
@@ -562,6 +563,12 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
         HttpJsonCallSettings.<GetTableRequest, Table>newBuilder()
             .setMethodDescriptor(getTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         HttpJsonCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -572,6 +579,12 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
         HttpJsonCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
             .setMethodDescriptor(getWorkspaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
@@ -583,43 +596,91 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
         HttpJsonCallSettings.<GetRowRequest, Row>newBuilder()
             .setMethodDescriptor(getRowMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRowsRequest, ListRowsResponse> listRowsTransportSettings =
         HttpJsonCallSettings.<ListRowsRequest, ListRowsResponse>newBuilder()
             .setMethodDescriptor(listRowsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRowRequest, Row> createRowTransportSettings =
         HttpJsonCallSettings.<CreateRowRequest, Row>newBuilder()
             .setMethodDescriptor(createRowMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchCreateRowsRequest, BatchCreateRowsResponse>
         batchCreateRowsTransportSettings =
             HttpJsonCallSettings.<BatchCreateRowsRequest, BatchCreateRowsResponse>newBuilder()
                 .setMethodDescriptor(batchCreateRowsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateRowRequest, Row> updateRowTransportSettings =
         HttpJsonCallSettings.<UpdateRowRequest, Row>newBuilder()
             .setMethodDescriptor(updateRowMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("row.name", String.valueOf(request.getRow().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
         batchUpdateRowsTransportSettings =
             HttpJsonCallSettings.<BatchUpdateRowsRequest, BatchUpdateRowsResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateRowsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRowRequest, Empty> deleteRowTransportSettings =
         HttpJsonCallSettings.<DeleteRowRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteRowMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsTransportSettings =
         HttpJsonCallSettings.<BatchDeleteRowsRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteRowsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.getTableCallable =

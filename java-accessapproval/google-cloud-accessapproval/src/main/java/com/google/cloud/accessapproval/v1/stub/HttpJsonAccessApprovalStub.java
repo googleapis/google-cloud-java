@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
@@ -497,30 +498,60 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                 .<ListApprovalRequestsMessage, ListApprovalRequestsResponse>newBuilder()
                 .setMethodDescriptor(listApprovalRequestsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetApprovalRequestMessage, ApprovalRequest>
         getApprovalRequestTransportSettings =
             HttpJsonCallSettings.<GetApprovalRequestMessage, ApprovalRequest>newBuilder()
                 .setMethodDescriptor(getApprovalRequestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ApproveApprovalRequestMessage, ApprovalRequest>
         approveApprovalRequestTransportSettings =
             HttpJsonCallSettings.<ApproveApprovalRequestMessage, ApprovalRequest>newBuilder()
                 .setMethodDescriptor(approveApprovalRequestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
         dismissApprovalRequestTransportSettings =
             HttpJsonCallSettings.<DismissApprovalRequestMessage, ApprovalRequest>newBuilder()
                 .setMethodDescriptor(dismissApprovalRequestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
         invalidateApprovalRequestTransportSettings =
             HttpJsonCallSettings.<InvalidateApprovalRequestMessage, ApprovalRequest>newBuilder()
                 .setMethodDescriptor(invalidateApprovalRequestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsTransportSettings =
@@ -528,6 +559,12 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                 .<GetAccessApprovalSettingsMessage, AccessApprovalSettings>newBuilder()
                 .setMethodDescriptor(getAccessApprovalSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
         updateAccessApprovalSettingsTransportSettings =
@@ -535,12 +572,24 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                 .<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>newBuilder()
                 .setMethodDescriptor(updateAccessApprovalSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("settings.name", String.valueOf(request.getSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
         deleteAccessApprovalSettingsTransportSettings =
             HttpJsonCallSettings.<DeleteAccessApprovalSettingsMessage, Empty>newBuilder()
                 .setMethodDescriptor(deleteAccessApprovalSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
         getAccessApprovalServiceAccountTransportSettings =
@@ -548,6 +597,12 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                 .<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>newBuilder()
                 .setMethodDescriptor(getAccessApprovalServiceAccountMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listApprovalRequestsCallable =

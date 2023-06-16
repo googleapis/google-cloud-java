@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.BatchUpdateIngressRulesRequest;
 import com.google.appengine.v1.BatchUpdateIngressRulesResponse;
@@ -335,6 +336,12 @@ public class HttpJsonFirewallStub extends FirewallStub {
             HttpJsonCallSettings.<ListIngressRulesRequest, ListIngressRulesResponse>newBuilder()
                 .setMethodDescriptor(listIngressRulesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchUpdateIngressRulesRequest, BatchUpdateIngressRulesResponse>
         batchUpdateIngressRulesTransportSettings =
@@ -342,28 +349,58 @@ public class HttpJsonFirewallStub extends FirewallStub {
                 .<BatchUpdateIngressRulesRequest, BatchUpdateIngressRulesResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateIngressRulesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateIngressRuleRequest, FirewallRule>
         createIngressRuleTransportSettings =
             HttpJsonCallSettings.<CreateIngressRuleRequest, FirewallRule>newBuilder()
                 .setMethodDescriptor(createIngressRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIngressRuleRequest, FirewallRule> getIngressRuleTransportSettings =
         HttpJsonCallSettings.<GetIngressRuleRequest, FirewallRule>newBuilder()
             .setMethodDescriptor(getIngressRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateIngressRuleRequest, FirewallRule>
         updateIngressRuleTransportSettings =
             HttpJsonCallSettings.<UpdateIngressRuleRequest, FirewallRule>newBuilder()
                 .setMethodDescriptor(updateIngressRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteIngressRuleRequest, Empty> deleteIngressRuleTransportSettings =
         HttpJsonCallSettings.<DeleteIngressRuleRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteIngressRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listIngressRulesCallable =

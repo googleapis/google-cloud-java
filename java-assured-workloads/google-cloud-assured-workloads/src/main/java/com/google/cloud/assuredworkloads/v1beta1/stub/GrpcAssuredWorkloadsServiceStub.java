@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest;
 import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse;
@@ -38,7 +39,6 @@ import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -201,9 +201,9 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
             .setMethodDescriptor(createWorkloadMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
@@ -217,9 +217,9 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                 .setMethodDescriptor(restrictAllowedResourcesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
@@ -227,9 +227,9 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =

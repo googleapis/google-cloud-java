@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,6 +237,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -5281,6 +5282,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<GetAccountRequest, Account>newBuilder()
             .setMethodDescriptor(getAccountMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
         HttpJsonCallSettings.<ListAccountsRequest, ListAccountsResponse>newBuilder()
@@ -5291,11 +5298,23 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<DeleteAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccountMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         HttpJsonCallSettings.<UpdateAccountRequest, Account>newBuilder()
             .setMethodDescriptor(updateAccountMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account.name", String.valueOf(request.getAccount().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
         provisionAccountTicketTransportSettings =
@@ -5315,6 +5334,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<GetPropertyRequest, Property>newBuilder()
             .setMethodDescriptor(getPropertyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPropertiesRequest, ListPropertiesResponse>
         listPropertiesTransportSettings =
@@ -5331,39 +5356,81 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<DeletePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(deletePropertyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
         HttpJsonCallSettings.<UpdatePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(updatePropertyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property.name", String.valueOf(request.getProperty().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetUserLinkRequest, UserLink> getUserLinkTransportSettings =
         HttpJsonCallSettings.<GetUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(getUserLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
         batchGetUserLinksTransportSettings =
             HttpJsonCallSettings.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchGetUserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListUserLinksRequest, ListUserLinksResponse>
         listUserLinksTransportSettings =
             HttpJsonCallSettings.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
                 .setMethodDescriptor(listUserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AuditUserLinksRequest, AuditUserLinksResponse>
         auditUserLinksTransportSettings =
             HttpJsonCallSettings.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
                 .setMethodDescriptor(auditUserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateUserLinkRequest, UserLink> createUserLinkTransportSettings =
         HttpJsonCallSettings.<CreateUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(createUserLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
         batchCreateUserLinksTransportSettings =
@@ -5371,11 +5438,23 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchCreateUserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkTransportSettings =
         HttpJsonCallSettings.<UpdateUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(updateUserLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("user_link.name", String.valueOf(request.getUserLink().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
         batchUpdateUserLinksTransportSettings =
@@ -5383,67 +5462,141 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateUserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkTransportSettings =
         HttpJsonCallSettings.<DeleteUserLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteUserLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksTransportSettings =
         HttpJsonCallSettings.<BatchDeleteUserLinksRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteUserLinksMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkTransportSettings =
             HttpJsonCallSettings.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
                 .setMethodDescriptor(createFirebaseLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         HttpJsonCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFirebaseLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
         listFirebaseLinksTransportSettings =
             HttpJsonCallSettings.<ListFirebaseLinksRequest, ListFirebaseLinksResponse>newBuilder()
                 .setMethodDescriptor(listFirebaseLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagTransportSettings =
         HttpJsonCallSettings.<GetGlobalSiteTagRequest, GlobalSiteTag>newBuilder()
             .setMethodDescriptor(getGlobalSiteTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
         createGoogleAdsLinkTransportSettings =
             HttpJsonCallSettings.<CreateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
                 .setMethodDescriptor(createGoogleAdsLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
         updateGoogleAdsLinkTransportSettings =
             HttpJsonCallSettings.<UpdateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
                 .setMethodDescriptor(updateGoogleAdsLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "google_ads_link.name",
+                          String.valueOf(request.getGoogleAdsLink().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGoogleAdsLinkRequest, Empty> deleteGoogleAdsLinkTransportSettings =
         HttpJsonCallSettings.<DeleteGoogleAdsLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteGoogleAdsLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
         listGoogleAdsLinksTransportSettings =
             HttpJsonCallSettings.<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>newBuilder()
                 .setMethodDescriptor(listGoogleAdsLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsTransportSettings =
             HttpJsonCallSettings.<GetDataSharingSettingsRequest, DataSharingSettings>newBuilder()
                 .setMethodDescriptor(getDataSharingSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         getMeasurementProtocolSecretTransportSettings =
@@ -5451,6 +5604,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(getMeasurementProtocolSecretMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
@@ -5460,6 +5619,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(listMeasurementProtocolSecretsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         createMeasurementProtocolSecretTransportSettings =
@@ -5467,12 +5632,24 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(createMeasurementProtocolSecretMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
         deleteMeasurementProtocolSecretTransportSettings =
             HttpJsonCallSettings.<DeleteMeasurementProtocolSecretRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteMeasurementProtocolSecretMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretTransportSettings =
@@ -5480,6 +5657,14 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(updateMeasurementProtocolSecretMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "measurement_protocol_secret.name",
+                          String.valueOf(request.getMeasurementProtocolSecret().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
@@ -5489,6 +5674,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(acknowledgeUserDataCollectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
@@ -5496,6 +5687,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>newBuilder()
                 .setMethodDescriptor(searchChangeHistoryEventsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
         getGoogleSignalsSettingsTransportSettings =
@@ -5503,6 +5700,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
                 .setMethodDescriptor(getGoogleSignalsSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
         updateGoogleSignalsSettingsTransportSettings =
@@ -5510,24 +5713,50 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
                 .setMethodDescriptor(updateGoogleSignalsSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "google_signals_settings.name",
+                          String.valueOf(request.getGoogleSignalsSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConversionEventRequest, ConversionEvent>
         createConversionEventTransportSettings =
             HttpJsonCallSettings.<CreateConversionEventRequest, ConversionEvent>newBuilder()
                 .setMethodDescriptor(createConversionEventMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConversionEventRequest, ConversionEvent>
         getConversionEventTransportSettings =
             HttpJsonCallSettings.<GetConversionEventRequest, ConversionEvent>newBuilder()
                 .setMethodDescriptor(getConversionEventMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConversionEventRequest, Empty>
         deleteConversionEventTransportSettings =
             HttpJsonCallSettings.<DeleteConversionEventRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteConversionEventMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
         listConversionEventsTransportSettings =
@@ -5535,6 +5764,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<ListConversionEventsRequest, ListConversionEventsResponse>newBuilder()
                 .setMethodDescriptor(listConversionEventsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
         getDisplayVideo360AdvertiserLinkTransportSettings =
@@ -5543,6 +5778,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(getDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
@@ -5553,6 +5794,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(listDisplayVideo360AdvertiserLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
         createDisplayVideo360AdvertiserLinkTransportSettings =
@@ -5561,12 +5808,24 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(createDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
         deleteDisplayVideo360AdvertiserLinkTransportSettings =
             HttpJsonCallSettings.<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
         updateDisplayVideo360AdvertiserLinkTransportSettings =
@@ -5575,6 +5834,14 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(updateDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "display_video_360_advertiser_link.name",
+                          String.valueOf(request.getDisplayVideo360AdvertiserLink().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
@@ -5585,6 +5852,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(getDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListDisplayVideo360AdvertiserLinkProposalsRequest,
@@ -5596,6 +5869,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(listDisplayVideo360AdvertiserLinkProposalsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             CreateDisplayVideo360AdvertiserLinkProposalRequest,
@@ -5607,6 +5886,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(createDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
         deleteDisplayVideo360AdvertiserLinkProposalTransportSettings =
@@ -5614,6 +5899,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ApproveDisplayVideo360AdvertiserLinkProposalRequest,
@@ -5625,6 +5916,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(approveDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             CancelDisplayVideo360AdvertiserLinkProposalRequest,
@@ -5636,18 +5933,38 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     newBuilder()
                 .setMethodDescriptor(cancelDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
             HttpJsonCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(createCustomDimensionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCustomDimensionRequest, CustomDimension>
         updateCustomDimensionTransportSettings =
             HttpJsonCallSettings.<UpdateCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(updateCustomDimensionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_dimension.name",
+                          String.valueOf(request.getCustomDimension().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
         listCustomDimensionsTransportSettings =
@@ -5655,46 +5972,96 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<ListCustomDimensionsRequest, ListCustomDimensionsResponse>newBuilder()
                 .setMethodDescriptor(listCustomDimensionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ArchiveCustomDimensionRequest, Empty>
         archiveCustomDimensionTransportSettings =
             HttpJsonCallSettings.<ArchiveCustomDimensionRequest, Empty>newBuilder()
                 .setMethodDescriptor(archiveCustomDimensionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCustomDimensionRequest, CustomDimension>
         getCustomDimensionTransportSettings =
             HttpJsonCallSettings.<GetCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(getCustomDimensionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCustomMetricRequest, CustomMetric>
         createCustomMetricTransportSettings =
             HttpJsonCallSettings.<CreateCustomMetricRequest, CustomMetric>newBuilder()
                 .setMethodDescriptor(createCustomMetricMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCustomMetricRequest, CustomMetric>
         updateCustomMetricTransportSettings =
             HttpJsonCallSettings.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
                 .setMethodDescriptor(updateCustomMetricMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_metric.name",
+                          String.valueOf(request.getCustomMetric().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCustomMetricsRequest, ListCustomMetricsResponse>
         listCustomMetricsTransportSettings =
             HttpJsonCallSettings.<ListCustomMetricsRequest, ListCustomMetricsResponse>newBuilder()
                 .setMethodDescriptor(listCustomMetricsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
         HttpJsonCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
             .setMethodDescriptor(archiveCustomMetricMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
         HttpJsonCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
             .setMethodDescriptor(getCustomMetricMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
         getDataRetentionSettingsTransportSettings =
@@ -5702,6 +6069,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<GetDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
                 .setMethodDescriptor(getDataRetentionSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsTransportSettings =
@@ -5709,64 +6082,139 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<UpdateDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
                 .setMethodDescriptor(updateDataRetentionSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "data_retention_settings.name",
+                          String.valueOf(request.getDataRetentionSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDataStreamRequest, DataStream> createDataStreamTransportSettings =
         HttpJsonCallSettings.<CreateDataStreamRequest, DataStream>newBuilder()
             .setMethodDescriptor(createDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
         HttpJsonCallSettings.<DeleteDataStreamRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
         HttpJsonCallSettings.<UpdateDataStreamRequest, DataStream>newBuilder()
             .setMethodDescriptor(updateDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "data_stream.name", String.valueOf(request.getDataStream().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDataStreamsRequest, ListDataStreamsResponse>
         listDataStreamsTransportSettings =
             HttpJsonCallSettings.<ListDataStreamsRequest, ListDataStreamsResponse>newBuilder()
                 .setMethodDescriptor(listDataStreamsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
         HttpJsonCallSettings.<GetDataStreamRequest, DataStream>newBuilder()
             .setMethodDescriptor(getDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAudienceRequest, Audience> getAudienceTransportSettings =
         HttpJsonCallSettings.<GetAudienceRequest, Audience>newBuilder()
             .setMethodDescriptor(getAudienceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAudiencesRequest, ListAudiencesResponse>
         listAudiencesTransportSettings =
             HttpJsonCallSettings.<ListAudiencesRequest, ListAudiencesResponse>newBuilder()
                 .setMethodDescriptor(listAudiencesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAudienceRequest, Audience> createAudienceTransportSettings =
         HttpJsonCallSettings.<CreateAudienceRequest, Audience>newBuilder()
             .setMethodDescriptor(createAudienceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAudienceRequest, Audience> updateAudienceTransportSettings =
         HttpJsonCallSettings.<UpdateAudienceRequest, Audience>newBuilder()
             .setMethodDescriptor(updateAudienceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("audience.name", String.valueOf(request.getAudience().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceTransportSettings =
         HttpJsonCallSettings.<ArchiveAudienceRequest, Empty>newBuilder()
             .setMethodDescriptor(archiveAudienceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
         getSearchAds360LinkTransportSettings =
             HttpJsonCallSettings.<GetSearchAds360LinkRequest, SearchAds360Link>newBuilder()
                 .setMethodDescriptor(getSearchAds360LinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
         listSearchAds360LinksTransportSettings =
@@ -5774,70 +6222,148 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>newBuilder()
                 .setMethodDescriptor(listSearchAds360LinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
         createSearchAds360LinkTransportSettings =
             HttpJsonCallSettings.<CreateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
                 .setMethodDescriptor(createSearchAds360LinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSearchAds360LinkRequest, Empty>
         deleteSearchAds360LinkTransportSettings =
             HttpJsonCallSettings.<DeleteSearchAds360LinkRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteSearchAds360LinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
         updateSearchAds360LinkTransportSettings =
             HttpJsonCallSettings.<UpdateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
                 .setMethodDescriptor(updateSearchAds360LinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "search_ads_360_link.name",
+                          String.valueOf(request.getSearchAds360Link().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAttributionSettingsRequest, AttributionSettings>
         getAttributionSettingsTransportSettings =
             HttpJsonCallSettings.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
                 .setMethodDescriptor(getAttributionSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
         updateAttributionSettingsTransportSettings =
             HttpJsonCallSettings.<UpdateAttributionSettingsRequest, AttributionSettings>newBuilder()
                 .setMethodDescriptor(updateAttributionSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attribution_settings.name",
+                          String.valueOf(request.getAttributionSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportTransportSettings =
             HttpJsonCallSettings.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
                 .setMethodDescriptor(runAccessReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("entity", String.valueOf(request.getEntity()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAccessBindingRequest, AccessBinding>
         createAccessBindingTransportSettings =
             HttpJsonCallSettings.<CreateAccessBindingRequest, AccessBinding>newBuilder()
                 .setMethodDescriptor(createAccessBindingMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingTransportSettings =
         HttpJsonCallSettings.<GetAccessBindingRequest, AccessBinding>newBuilder()
             .setMethodDescriptor(getAccessBindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAccessBindingRequest, AccessBinding>
         updateAccessBindingTransportSettings =
             HttpJsonCallSettings.<UpdateAccessBindingRequest, AccessBinding>newBuilder()
                 .setMethodDescriptor(updateAccessBindingMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "access_binding.name",
+                          String.valueOf(request.getAccessBinding().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingTransportSettings =
         HttpJsonCallSettings.<DeleteAccessBindingRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccessBindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAccessBindingsRequest, ListAccessBindingsResponse>
         listAccessBindingsTransportSettings =
             HttpJsonCallSettings.<ListAccessBindingsRequest, ListAccessBindingsResponse>newBuilder()
                 .setMethodDescriptor(listAccessBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
         batchCreateAccessBindingsTransportSettings =
@@ -5845,6 +6371,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>newBuilder()
                 .setMethodDescriptor(batchCreateAccessBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
         batchGetAccessBindingsTransportSettings =
@@ -5852,6 +6384,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>newBuilder()
                 .setMethodDescriptor(batchGetAccessBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
         batchUpdateAccessBindingsTransportSettings =
@@ -5859,18 +6397,36 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateAccessBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchDeleteAccessBindingsRequest, Empty>
         batchDeleteAccessBindingsTransportSettings =
             HttpJsonCallSettings.<BatchDeleteAccessBindingsRequest, Empty>newBuilder()
                 .setMethodDescriptor(batchDeleteAccessBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
         getExpandedDataSetTransportSettings =
             HttpJsonCallSettings.<GetExpandedDataSetRequest, ExpandedDataSet>newBuilder()
                 .setMethodDescriptor(getExpandedDataSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
         listExpandedDataSetsTransportSettings =
@@ -5878,52 +6434,110 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>newBuilder()
                 .setMethodDescriptor(listExpandedDataSetsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
         createExpandedDataSetTransportSettings =
             HttpJsonCallSettings.<CreateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
                 .setMethodDescriptor(createExpandedDataSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
         updateExpandedDataSetTransportSettings =
             HttpJsonCallSettings.<UpdateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
                 .setMethodDescriptor(updateExpandedDataSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "expanded_data_set.name",
+                          String.valueOf(request.getExpandedDataSet().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteExpandedDataSetRequest, Empty>
         deleteExpandedDataSetTransportSettings =
             HttpJsonCallSettings.<DeleteExpandedDataSetRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteExpandedDataSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupTransportSettings =
         HttpJsonCallSettings.<GetChannelGroupRequest, ChannelGroup>newBuilder()
             .setMethodDescriptor(getChannelGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListChannelGroupsRequest, ListChannelGroupsResponse>
         listChannelGroupsTransportSettings =
             HttpJsonCallSettings.<ListChannelGroupsRequest, ListChannelGroupsResponse>newBuilder()
                 .setMethodDescriptor(listChannelGroupsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateChannelGroupRequest, ChannelGroup>
         createChannelGroupTransportSettings =
             HttpJsonCallSettings.<CreateChannelGroupRequest, ChannelGroup>newBuilder()
                 .setMethodDescriptor(createChannelGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateChannelGroupRequest, ChannelGroup>
         updateChannelGroupTransportSettings =
             HttpJsonCallSettings.<UpdateChannelGroupRequest, ChannelGroup>newBuilder()
                 .setMethodDescriptor(updateChannelGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "channel_group.name",
+                          String.valueOf(request.getChannelGroup().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupTransportSettings =
         HttpJsonCallSettings.<DeleteChannelGroupRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteChannelGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
@@ -5950,12 +6564,24 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<GetBigQueryLinkRequest, BigQueryLink>newBuilder()
             .setMethodDescriptor(getBigQueryLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
         listBigQueryLinksTransportSettings =
             HttpJsonCallSettings.<ListBigQueryLinksRequest, ListBigQueryLinksResponse>newBuilder()
                 .setMethodDescriptor(listBigQueryLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         getEnhancedMeasurementSettingsTransportSettings =
@@ -5963,6 +6589,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
                 .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         updateEnhancedMeasurementSettingsTransportSettings =
@@ -5970,6 +6602,14 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
                 .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "enhanced_measurement_settings.name",
+                          String.valueOf(request.getEnhancedMeasurementSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
         createConnectedSiteTagTransportSettings =
@@ -6002,28 +6642,58 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         HttpJsonCallSettings.<GetAdSenseLinkRequest, AdSenseLink>newBuilder()
             .setMethodDescriptor(getAdSenseLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkTransportSettings =
         HttpJsonCallSettings.<CreateAdSenseLinkRequest, AdSenseLink>newBuilder()
             .setMethodDescriptor(createAdSenseLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkTransportSettings =
         HttpJsonCallSettings.<DeleteAdSenseLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAdSenseLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
         listAdSenseLinksTransportSettings =
             HttpJsonCallSettings.<ListAdSenseLinksRequest, ListAdSenseLinksResponse>newBuilder()
                 .setMethodDescriptor(listAdSenseLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEventCreateRuleRequest, EventCreateRule>
         getEventCreateRuleTransportSettings =
             HttpJsonCallSettings.<GetEventCreateRuleRequest, EventCreateRule>newBuilder()
                 .setMethodDescriptor(getEventCreateRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
         listEventCreateRulesTransportSettings =
@@ -6031,24 +6701,50 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .<ListEventCreateRulesRequest, ListEventCreateRulesResponse>newBuilder()
                 .setMethodDescriptor(listEventCreateRulesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateEventCreateRuleRequest, EventCreateRule>
         createEventCreateRuleTransportSettings =
             HttpJsonCallSettings.<CreateEventCreateRuleRequest, EventCreateRule>newBuilder()
                 .setMethodDescriptor(createEventCreateRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateEventCreateRuleRequest, EventCreateRule>
         updateEventCreateRuleTransportSettings =
             HttpJsonCallSettings.<UpdateEventCreateRuleRequest, EventCreateRule>newBuilder()
                 .setMethodDescriptor(updateEventCreateRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "event_create_rule.name",
+                          String.valueOf(request.getEventCreateRule().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteEventCreateRuleRequest, Empty>
         deleteEventCreateRuleTransportSettings =
             HttpJsonCallSettings.<DeleteEventCreateRuleRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteEventCreateRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getAccountCallable =

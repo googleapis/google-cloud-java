@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
@@ -962,103 +963,223 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
             HttpJsonCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
                 .setMethodDescriptor(listInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance.name", String.valueOf(request.getInstance().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
         HttpJsonCallSettings.<ResetInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(resetInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
         HttpJsonCallSettings.<StartInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(startInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
         HttpJsonCallSettings.<StopInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(stopInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
         HttpJsonCallSettings.<DetachLunRequest, Operation>newBuilder()
             .setMethodDescriptor(detachLunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         HttpJsonCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
             .setMethodDescriptor(listVolumesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         HttpJsonCallSettings.<GetVolumeRequest, Volume>newBuilder()
             .setMethodDescriptor(getVolumeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         HttpJsonCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
             .setMethodDescriptor(updateVolumeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume.name", String.valueOf(request.getVolume().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
         HttpJsonCallSettings.<ResizeVolumeRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeVolumeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume", String.valueOf(request.getVolume()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
         listNetworkUsageTransportSettings =
             HttpJsonCallSettings.<ListNetworkUsageRequest, ListNetworkUsageResponse>newBuilder()
                 .setMethodDescriptor(listNetworkUsageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
             .setMethodDescriptor(getNetworkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
         HttpJsonCallSettings.<UpdateNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(updateNetworkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network.name", String.valueOf(request.getNetwork().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetLunRequest, Lun> getLunTransportSettings =
         HttpJsonCallSettings.<GetLunRequest, Lun>newBuilder()
             .setMethodDescriptor(getLunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLunsRequest, ListLunsResponse> listLunsTransportSettings =
         HttpJsonCallSettings.<ListLunsRequest, ListLunsResponse>newBuilder()
             .setMethodDescriptor(listLunsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
         HttpJsonCallSettings.<GetNfsShareRequest, NfsShare>newBuilder()
             .setMethodDescriptor(getNfsShareMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNfsSharesRequest, ListNfsSharesResponse>
         listNfsSharesTransportSettings =
             HttpJsonCallSettings.<ListNfsSharesRequest, ListNfsSharesResponse>newBuilder()
                 .setMethodDescriptor(listNfsSharesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
         HttpJsonCallSettings.<UpdateNfsShareRequest, Operation>newBuilder()
             .setMethodDescriptor(updateNfsShareMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listInstancesCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.AuthorizedCertificate;
 import com.google.appengine.v1.CreateAuthorizedCertificateRequest;
@@ -314,6 +315,12 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                 .<ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse>newBuilder()
                 .setMethodDescriptor(listAuthorizedCertificatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAuthorizedCertificateRequest, AuthorizedCertificate>
         getAuthorizedCertificateTransportSettings =
@@ -321,6 +328,12 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                 .<GetAuthorizedCertificateRequest, AuthorizedCertificate>newBuilder()
                 .setMethodDescriptor(getAuthorizedCertificateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAuthorizedCertificateRequest, AuthorizedCertificate>
         createAuthorizedCertificateTransportSettings =
@@ -328,6 +341,12 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                 .<CreateAuthorizedCertificateRequest, AuthorizedCertificate>newBuilder()
                 .setMethodDescriptor(createAuthorizedCertificateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAuthorizedCertificateRequest, AuthorizedCertificate>
         updateAuthorizedCertificateTransportSettings =
@@ -335,12 +354,24 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                 .<UpdateAuthorizedCertificateRequest, AuthorizedCertificate>newBuilder()
                 .setMethodDescriptor(updateAuthorizedCertificateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAuthorizedCertificateRequest, Empty>
         deleteAuthorizedCertificateTransportSettings =
             HttpJsonCallSettings.<DeleteAuthorizedCertificateRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteAuthorizedCertificateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listAuthorizedCertificatesCallable =
