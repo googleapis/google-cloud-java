@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1beta.CreateRealmRequest;
 import com.google.cloud.gaming.v1beta.DeleteRealmRequest;
@@ -393,32 +394,68 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
         HttpJsonCallSettings.<ListRealmsRequest, ListRealmsResponse>newBuilder()
             .setMethodDescriptor(listRealmsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRealmRequest, Realm> getRealmTransportSettings =
         HttpJsonCallSettings.<GetRealmRequest, Realm>newBuilder()
             .setMethodDescriptor(getRealmMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRealmRequest, Operation> createRealmTransportSettings =
         HttpJsonCallSettings.<CreateRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(createRealmMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRealmRequest, Operation> deleteRealmTransportSettings =
         HttpJsonCallSettings.<DeleteRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRealmMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRealmRequest, Operation> updateRealmTransportSettings =
         HttpJsonCallSettings.<UpdateRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRealmMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("realm.name", String.valueOf(request.getRealm().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
         previewRealmUpdateTransportSettings =
             HttpJsonCallSettings.<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>newBuilder()
                 .setMethodDescriptor(previewRealmUpdateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("realm.name", String.valueOf(request.getRealm().getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listRealmsCallable =

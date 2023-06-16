@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1.BatchProcessMetadata;
 import com.google.cloud.documentai.v1.BatchProcessRequest;
@@ -1243,11 +1244,23 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
         HttpJsonCallSettings.<ProcessRequest, ProcessResponse>newBuilder()
             .setMethodDescriptor(processDocumentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         HttpJsonCallSettings.<BatchProcessRequest, Operation>newBuilder()
             .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
         fetchProcessorTypesTransportSettings =
@@ -1255,40 +1268,82 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                 .<FetchProcessorTypesRequest, FetchProcessorTypesResponse>newBuilder()
                 .setMethodDescriptor(fetchProcessorTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListProcessorTypesRequest, ListProcessorTypesResponse>
         listProcessorTypesTransportSettings =
             HttpJsonCallSettings.<ListProcessorTypesRequest, ListProcessorTypesResponse>newBuilder()
                 .setMethodDescriptor(listProcessorTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
         HttpJsonCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
             .setMethodDescriptor(getProcessorTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
             HttpJsonCallSettings.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
                 .setMethodDescriptor(listProcessorsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         HttpJsonCallSettings.<GetProcessorRequest, Processor>newBuilder()
             .setMethodDescriptor(getProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TrainProcessorVersionRequest, Operation>
         trainProcessorVersionTransportSettings =
             HttpJsonCallSettings.<TrainProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(trainProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionTransportSettings =
             HttpJsonCallSettings.<GetProcessorVersionRequest, ProcessorVersion>newBuilder()
                 .setMethodDescriptor(getProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
         listProcessorVersionsTransportSettings =
@@ -1296,83 +1351,175 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                 .<ListProcessorVersionsRequest, ListProcessorVersionsResponse>newBuilder()
                 .setMethodDescriptor(listProcessorVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteProcessorVersionRequest, Operation>
         deleteProcessorVersionTransportSettings =
             HttpJsonCallSettings.<DeleteProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeployProcessorVersionRequest, Operation>
         deployProcessorVersionTransportSettings =
             HttpJsonCallSettings.<DeployProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(deployProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UndeployProcessorVersionRequest, Operation>
         undeployProcessorVersionTransportSettings =
             HttpJsonCallSettings.<UndeployProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeployProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
         HttpJsonCallSettings.<CreateProcessorRequest, Processor>newBuilder()
             .setMethodDescriptor(createProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
         HttpJsonCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
         HttpJsonCallSettings.<EnableProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(enableProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
         HttpJsonCallSettings.<DisableProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(disableProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetDefaultProcessorVersionRequest, Operation>
         setDefaultProcessorVersionTransportSettings =
             HttpJsonCallSettings.<SetDefaultProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDefaultProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("processor", String.valueOf(request.getProcessor()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         HttpJsonCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "human_review_config", String.valueOf(request.getHumanReviewConfig()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<EvaluateProcessorVersionRequest, Operation>
         evaluateProcessorVersionTransportSettings =
             HttpJsonCallSettings.<EvaluateProcessorVersionRequest, Operation>newBuilder()
                 .setMethodDescriptor(evaluateProcessorVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "processor_version", String.valueOf(request.getProcessorVersion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         HttpJsonCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
             .setMethodDescriptor(getEvaluationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
             HttpJsonCallSettings.<ListEvaluationsRequest, ListEvaluationsResponse>newBuilder()
                 .setMethodDescriptor(listEvaluationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.processDocumentCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -139,9 +139,9 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                 .setMethodDescriptor(listGroupStatsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("project_name", String.valueOf(request.getProjectName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_name", String.valueOf(request.getProjectName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
@@ -149,9 +149,9 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
             .setMethodDescriptor(listEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_name", String.valueOf(request.getProjectName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_name", String.valueOf(request.getProjectName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
@@ -159,9 +159,9 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
             .setMethodDescriptor(deleteEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_name", String.valueOf(request.getProjectName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_name", String.valueOf(request.getProjectName()));
+                  return builder.build();
                 })
             .build();
 

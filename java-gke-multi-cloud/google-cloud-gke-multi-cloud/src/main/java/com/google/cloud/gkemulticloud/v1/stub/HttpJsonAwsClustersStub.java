@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
@@ -648,27 +649,58 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
         HttpJsonCallSettings.<CreateAwsClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createAwsClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterTransportSettings =
         HttpJsonCallSettings.<UpdateAwsClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAwsClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "aws_cluster.name", String.valueOf(request.getAwsCluster().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAwsClusterRequest, AwsCluster> getAwsClusterTransportSettings =
         HttpJsonCallSettings.<GetAwsClusterRequest, AwsCluster>newBuilder()
             .setMethodDescriptor(getAwsClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAwsClustersRequest, ListAwsClustersResponse>
         listAwsClustersTransportSettings =
             HttpJsonCallSettings.<ListAwsClustersRequest, ListAwsClustersResponse>newBuilder()
                 .setMethodDescriptor(listAwsClustersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterTransportSettings =
         HttpJsonCallSettings.<DeleteAwsClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAwsClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
@@ -676,38 +708,81 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                 .<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAwsAccessTokenMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<CreateAwsNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createAwsNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<UpdateAwsNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAwsNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "aws_node_pool.name", String.valueOf(request.getAwsNodePool().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
             .setMethodDescriptor(getAwsNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
         listAwsNodePoolsTransportSettings =
             HttpJsonCallSettings.<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>newBuilder()
                 .setMethodDescriptor(listAwsNodePoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<DeleteAwsNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAwsNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigTransportSettings =
             HttpJsonCallSettings.<GetAwsServerConfigRequest, AwsServerConfig>newBuilder()
                 .setMethodDescriptor(getAwsServerConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createAwsClusterCallable =

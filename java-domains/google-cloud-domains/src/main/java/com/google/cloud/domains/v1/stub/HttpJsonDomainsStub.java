@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.domains.v1.AuthorizationCode;
 import com.google.cloud.domains.v1.ConfigureContactSettingsRequest;
@@ -767,6 +768,12 @@ public class HttpJsonDomainsStub extends DomainsStub {
             HttpJsonCallSettings.<SearchDomainsRequest, SearchDomainsResponse>newBuilder()
                 .setMethodDescriptor(searchDomainsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
         retrieveRegisterParametersTransportSettings =
@@ -774,11 +781,23 @@ public class HttpJsonDomainsStub extends DomainsStub {
                 .<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>newBuilder()
                 .setMethodDescriptor(retrieveRegisterParametersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         HttpJsonCallSettings.<RegisterDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(registerDomainMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
         retrieveTransferParametersTransportSettings =
@@ -786,67 +805,140 @@ public class HttpJsonDomainsStub extends DomainsStub {
                 .<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>newBuilder()
                 .setMethodDescriptor(retrieveTransferParametersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferDomainRequest, Operation> transferDomainTransportSettings =
         HttpJsonCallSettings.<TransferDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(transferDomainMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegistrationsRequest, ListRegistrationsResponse>
         listRegistrationsTransportSettings =
             HttpJsonCallSettings.<ListRegistrationsRequest, ListRegistrationsResponse>newBuilder()
                 .setMethodDescriptor(listRegistrationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRegistrationRequest, Registration> getRegistrationTransportSettings =
         HttpJsonCallSettings.<GetRegistrationRequest, Registration>newBuilder()
             .setMethodDescriptor(getRegistrationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRegistrationRequest, Operation> updateRegistrationTransportSettings =
         HttpJsonCallSettings.<UpdateRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRegistrationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "registration.name", String.valueOf(request.getRegistration().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ConfigureManagementSettingsRequest, Operation>
         configureManagementSettingsTransportSettings =
             HttpJsonCallSettings.<ConfigureManagementSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(configureManagementSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("registration", String.valueOf(request.getRegistration()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConfigureDnsSettingsRequest, Operation>
         configureDnsSettingsTransportSettings =
             HttpJsonCallSettings.<ConfigureDnsSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(configureDnsSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("registration", String.valueOf(request.getRegistration()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConfigureContactSettingsRequest, Operation>
         configureContactSettingsTransportSettings =
             HttpJsonCallSettings.<ConfigureContactSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(configureContactSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("registration", String.valueOf(request.getRegistration()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ExportRegistrationRequest, Operation> exportRegistrationTransportSettings =
         HttpJsonCallSettings.<ExportRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(exportRegistrationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRegistrationRequest, Operation> deleteRegistrationTransportSettings =
         HttpJsonCallSettings.<DeleteRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRegistrationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RetrieveAuthorizationCodeRequest, AuthorizationCode>
         retrieveAuthorizationCodeTransportSettings =
             HttpJsonCallSettings.<RetrieveAuthorizationCodeRequest, AuthorizationCode>newBuilder()
                 .setMethodDescriptor(retrieveAuthorizationCodeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("registration", String.valueOf(request.getRegistration()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResetAuthorizationCodeRequest, AuthorizationCode>
         resetAuthorizationCodeTransportSettings =
             HttpJsonCallSettings.<ResetAuthorizationCodeRequest, AuthorizationCode>newBuilder()
                 .setMethodDescriptor(resetAuthorizationCodeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("registration", String.valueOf(request.getRegistration()));
+                      return builder.build();
+                    })
                 .build();
 
     this.searchDomainsCallable =

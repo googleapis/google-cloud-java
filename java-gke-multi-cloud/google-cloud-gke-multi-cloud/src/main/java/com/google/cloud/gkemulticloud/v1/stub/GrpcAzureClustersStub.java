@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AzureClient;
 import com.google.cloud.gkemulticloud.v1.AzureCluster;
@@ -52,7 +53,6 @@ import com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
 import com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -328,9 +328,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(createAzureClientMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAzureClientRequest, AzureClient> getAzureClientTransportSettings =
@@ -338,9 +338,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(getAzureClientMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAzureClientsRequest, ListAzureClientsResponse>
@@ -349,9 +349,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                 .setMethodDescriptor(listAzureClientsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientTransportSettings =
@@ -359,9 +359,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(deleteAzureClientMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterTransportSettings =
@@ -369,9 +369,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(createAzureClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterTransportSettings =
@@ -379,10 +379,10 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(updateAzureClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "azure_cluster.name", String.valueOf(request.getAzureCluster().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAzureClusterRequest, AzureCluster> getAzureClusterTransportSettings =
@@ -390,9 +390,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(getAzureClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAzureClustersRequest, ListAzureClustersResponse>
@@ -401,9 +401,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                 .setMethodDescriptor(listAzureClustersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterTransportSettings =
@@ -411,9 +411,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(deleteAzureClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
@@ -423,9 +423,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                 .setMethodDescriptor(generateAzureAccessTokenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("azure_cluster", String.valueOf(request.getAzureCluster()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateAzureNodePoolRequest, Operation> createAzureNodePoolTransportSettings =
@@ -433,9 +433,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(createAzureNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolTransportSettings =
@@ -443,10 +443,10 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(updateAzureNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "azure_node_pool.name", String.valueOf(request.getAzureNodePool().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolTransportSettings =
@@ -454,9 +454,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(getAzureNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
@@ -465,9 +465,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                 .setMethodDescriptor(listAzureNodePoolsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolTransportSettings =
@@ -475,9 +475,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             .setMethodDescriptor(deleteAzureNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
@@ -486,9 +486,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                 .setMethodDescriptor(getAzureServerConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

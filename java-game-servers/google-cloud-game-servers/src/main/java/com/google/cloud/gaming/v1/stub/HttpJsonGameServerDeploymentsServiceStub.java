@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest;
@@ -568,30 +569,62 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                 .<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>newBuilder()
                 .setMethodDescriptor(listGameServerDeploymentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGameServerDeploymentRequest, GameServerDeployment>
         getGameServerDeploymentTransportSettings =
             HttpJsonCallSettings.<GetGameServerDeploymentRequest, GameServerDeployment>newBuilder()
                 .setMethodDescriptor(getGameServerDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateGameServerDeploymentRequest, Operation>
         createGameServerDeploymentTransportSettings =
             HttpJsonCallSettings.<CreateGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGameServerDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGameServerDeploymentRequest, Operation>
         deleteGameServerDeploymentTransportSettings =
             HttpJsonCallSettings.<DeleteGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGameServerDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateGameServerDeploymentRequest, Operation>
         updateGameServerDeploymentTransportSettings =
             HttpJsonCallSettings.<UpdateGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "game_server_deployment.name",
+                          String.valueOf(request.getGameServerDeployment().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
         getGameServerDeploymentRolloutTransportSettings =
@@ -599,12 +632,24 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                 .<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>newBuilder()
                 .setMethodDescriptor(getGameServerDeploymentRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
         updateGameServerDeploymentRolloutTransportSettings =
             HttpJsonCallSettings.<UpdateGameServerDeploymentRolloutRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerDeploymentRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
@@ -615,6 +660,12 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                     newBuilder()
                 .setMethodDescriptor(previewGameServerDeploymentRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
         fetchDeploymentStateTransportSettings =
@@ -622,6 +673,12 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                 .<FetchDeploymentStateRequest, FetchDeploymentStateResponse>newBuilder()
                 .setMethodDescriptor(fetchDeploymentStateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listGameServerDeploymentsCallable =

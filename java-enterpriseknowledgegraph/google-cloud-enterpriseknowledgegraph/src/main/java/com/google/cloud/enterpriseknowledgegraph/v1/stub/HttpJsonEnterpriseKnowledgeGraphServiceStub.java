@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest;
@@ -484,6 +485,12 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                 .<CreateEntityReconciliationJobRequest, EntityReconciliationJob>newBuilder()
                 .setMethodDescriptor(createEntityReconciliationJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEntityReconciliationJobRequest, EntityReconciliationJob>
         getEntityReconciliationJobTransportSettings =
@@ -491,6 +498,12 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                 .<GetEntityReconciliationJobRequest, EntityReconciliationJob>newBuilder()
                 .setMethodDescriptor(getEntityReconciliationJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListEntityReconciliationJobsRequest, ListEntityReconciliationJobsResponse>
         listEntityReconciliationJobsTransportSettings =
@@ -499,40 +512,82 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                     newBuilder()
                 .setMethodDescriptor(listEntityReconciliationJobsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CancelEntityReconciliationJobRequest, Empty>
         cancelEntityReconciliationJobTransportSettings =
             HttpJsonCallSettings.<CancelEntityReconciliationJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(cancelEntityReconciliationJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteEntityReconciliationJobRequest, Empty>
         deleteEntityReconciliationJobTransportSettings =
             HttpJsonCallSettings.<DeleteEntityReconciliationJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteEntityReconciliationJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<LookupRequest, LookupResponse> lookupTransportSettings =
         HttpJsonCallSettings.<LookupRequest, LookupResponse>newBuilder()
             .setMethodDescriptor(lookupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchRequest, SearchResponse> searchTransportSettings =
         HttpJsonCallSettings.<SearchRequest, SearchResponse>newBuilder()
             .setMethodDescriptor(searchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<LookupPublicKgRequest, LookupPublicKgResponse>
         lookupPublicKgTransportSettings =
             HttpJsonCallSettings.<LookupPublicKgRequest, LookupPublicKgResponse>newBuilder()
                 .setMethodDescriptor(lookupPublicKgMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchPublicKgRequest, SearchPublicKgResponse>
         searchPublicKgTransportSettings =
             HttpJsonCallSettings.<SearchPublicKgRequest, SearchPublicKgResponse>newBuilder()
                 .setMethodDescriptor(searchPublicKgMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createEntityReconciliationJobCallable =

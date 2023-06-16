@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1beta.CreateRealmRequest;
 import com.google.cloud.gaming.v1beta.DeleteRealmRequest;
@@ -36,7 +37,6 @@ import com.google.cloud.gaming.v1beta.PreviewRealmUpdateRequest;
 import com.google.cloud.gaming.v1beta.PreviewRealmUpdateResponse;
 import com.google.cloud.gaming.v1beta.Realm;
 import com.google.cloud.gaming.v1beta.UpdateRealmRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -169,9 +169,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             .setMethodDescriptor(listRealmsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetRealmRequest, Realm> getRealmTransportSettings =
@@ -179,9 +179,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             .setMethodDescriptor(getRealmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRealmRequest, Operation> createRealmTransportSettings =
@@ -189,9 +189,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             .setMethodDescriptor(createRealmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRealmRequest, Operation> deleteRealmTransportSettings =
@@ -199,9 +199,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             .setMethodDescriptor(deleteRealmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRealmRequest, Operation> updateRealmTransportSettings =
@@ -209,9 +209,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             .setMethodDescriptor(updateRealmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("realm.name", String.valueOf(request.getRealm().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("realm.name", String.valueOf(request.getRealm().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
@@ -220,9 +220,9 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
                 .setMethodDescriptor(previewRealmUpdateMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("realm.name", String.valueOf(request.getRealm().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("realm.name", String.valueOf(request.getRealm().getName()));
+                      return builder.build();
                     })
                 .build();
 

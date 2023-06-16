@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
@@ -189,12 +190,25 @@ public class HttpJsonPublisherStub extends PublisherStub {
                     newBuilder()
                 .setMethodDescriptor(publishChannelConnectionEventsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "channel_connection", String.valueOf(request.getChannelConnection()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PublishEventsRequest, PublishEventsResponse>
         publishEventsTransportSettings =
             HttpJsonCallSettings.<PublishEventsRequest, PublishEventsResponse>newBuilder()
                 .setMethodDescriptor(publishEventsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("channel", String.valueOf(request.getChannel()));
+                      return builder.build();
+                    })
                 .build();
 
     this.publishChannelConnectionEventsCallable =

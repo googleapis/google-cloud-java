@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
 import com.google.cloud.gkebackup.v1.BackupPlan;
@@ -67,7 +68,6 @@ import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
 import com.google.cloud.gkebackup.v1.VolumeRestore;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -434,9 +434,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(createBackupPlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
@@ -445,9 +445,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                 .setMethodDescriptor(listBackupPlansMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
@@ -455,9 +455,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getBackupPlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
@@ -465,9 +465,10 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(updateBackupPlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("backup_plan.name", String.valueOf(request.getBackupPlan().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_plan.name", String.valueOf(request.getBackupPlan().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanTransportSettings =
@@ -475,9 +476,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(deleteBackupPlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
@@ -485,9 +486,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(createBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
@@ -495,9 +496,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(listBackupsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
@@ -505,9 +506,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
@@ -515,9 +516,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(updateBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("backup.name", String.valueOf(request.getBackup().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backup.name", String.valueOf(request.getBackup().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
@@ -525,9 +526,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(deleteBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
@@ -536,9 +537,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                 .setMethodDescriptor(listVolumeBackupsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVolumeBackupRequest, VolumeBackup> getVolumeBackupTransportSettings =
@@ -546,9 +547,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getVolumeBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRestorePlanRequest, Operation> createRestorePlanTransportSettings =
@@ -556,9 +557,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(createRestorePlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRestorePlansRequest, ListRestorePlansResponse>
@@ -567,9 +568,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                 .setMethodDescriptor(listRestorePlansMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRestorePlanRequest, RestorePlan> getRestorePlanTransportSettings =
@@ -577,9 +578,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getRestorePlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRestorePlanRequest, Operation> updateRestorePlanTransportSettings =
@@ -587,10 +588,10 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(updateRestorePlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "restore_plan.name", String.valueOf(request.getRestorePlan().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRestorePlanRequest, Operation> deleteRestorePlanTransportSettings =
@@ -598,9 +599,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(deleteRestorePlanMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
@@ -608,9 +609,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(createRestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRestoresRequest, ListRestoresResponse> listRestoresTransportSettings =
@@ -618,9 +619,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(listRestoresMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetRestoreRequest, Restore> getRestoreTransportSettings =
@@ -628,9 +629,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getRestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRestoreRequest, Operation> updateRestoreTransportSettings =
@@ -638,9 +639,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(updateRestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("restore.name", String.valueOf(request.getRestore().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("restore.name", String.valueOf(request.getRestore().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRestoreRequest, Operation> deleteRestoreTransportSettings =
@@ -648,9 +649,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(deleteRestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListVolumeRestoresRequest, ListVolumeRestoresResponse>
@@ -659,9 +660,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                 .setMethodDescriptor(listVolumeRestoresMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreTransportSettings =
@@ -669,9 +670,9 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             .setMethodDescriptor(getVolumeRestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

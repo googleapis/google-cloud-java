@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
 import com.google.cloud.gkebackup.v1.BackupPlan;
@@ -1165,125 +1166,271 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
         HttpJsonCallSettings.<CreateBackupPlanRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupPlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
         listBackupPlansTransportSettings =
             HttpJsonCallSettings.<ListBackupPlansRequest, ListBackupPlansResponse>newBuilder()
                 .setMethodDescriptor(listBackupPlansMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
         HttpJsonCallSettings.<GetBackupPlanRequest, BackupPlan>newBuilder()
             .setMethodDescriptor(getBackupPlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
         HttpJsonCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
             .setMethodDescriptor(updateBackupPlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_plan.name", String.valueOf(request.getBackupPlan().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanTransportSettings =
         HttpJsonCallSettings.<DeleteBackupPlanRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteBackupPlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
             .setMethodDescriptor(listBackupsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(getBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(updateBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backup.name", String.valueOf(request.getBackup().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
         listVolumeBackupsTransportSettings =
             HttpJsonCallSettings.<ListVolumeBackupsRequest, ListVolumeBackupsResponse>newBuilder()
                 .setMethodDescriptor(listVolumeBackupsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVolumeBackupRequest, VolumeBackup> getVolumeBackupTransportSettings =
         HttpJsonCallSettings.<GetVolumeBackupRequest, VolumeBackup>newBuilder()
             .setMethodDescriptor(getVolumeBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRestorePlanRequest, Operation> createRestorePlanTransportSettings =
         HttpJsonCallSettings.<CreateRestorePlanRequest, Operation>newBuilder()
             .setMethodDescriptor(createRestorePlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRestorePlansRequest, ListRestorePlansResponse>
         listRestorePlansTransportSettings =
             HttpJsonCallSettings.<ListRestorePlansRequest, ListRestorePlansResponse>newBuilder()
                 .setMethodDescriptor(listRestorePlansMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRestorePlanRequest, RestorePlan> getRestorePlanTransportSettings =
         HttpJsonCallSettings.<GetRestorePlanRequest, RestorePlan>newBuilder()
             .setMethodDescriptor(getRestorePlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRestorePlanRequest, Operation> updateRestorePlanTransportSettings =
         HttpJsonCallSettings.<UpdateRestorePlanRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRestorePlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "restore_plan.name", String.valueOf(request.getRestorePlan().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRestorePlanRequest, Operation> deleteRestorePlanTransportSettings =
         HttpJsonCallSettings.<DeleteRestorePlanRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRestorePlanMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
         HttpJsonCallSettings.<CreateRestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(createRestoreMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRestoresRequest, ListRestoresResponse> listRestoresTransportSettings =
         HttpJsonCallSettings.<ListRestoresRequest, ListRestoresResponse>newBuilder()
             .setMethodDescriptor(listRestoresMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRestoreRequest, Restore> getRestoreTransportSettings =
         HttpJsonCallSettings.<GetRestoreRequest, Restore>newBuilder()
             .setMethodDescriptor(getRestoreMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRestoreRequest, Operation> updateRestoreTransportSettings =
         HttpJsonCallSettings.<UpdateRestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRestoreMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("restore.name", String.valueOf(request.getRestore().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRestoreRequest, Operation> deleteRestoreTransportSettings =
         HttpJsonCallSettings.<DeleteRestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRestoreMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVolumeRestoresRequest, ListVolumeRestoresResponse>
         listVolumeRestoresTransportSettings =
             HttpJsonCallSettings.<ListVolumeRestoresRequest, ListVolumeRestoresResponse>newBuilder()
                 .setMethodDescriptor(listVolumeRestoresMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreTransportSettings =
         HttpJsonCallSettings.<GetVolumeRestoreRequest, VolumeRestore>newBuilder()
             .setMethodDescriptor(getVolumeRestoreMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createBackupPlanCallable =

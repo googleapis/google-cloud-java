@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1.CreateGameServerClusterRequest;
 import com.google.cloud.gaming.v1.DeleteGameServerClusterRequest;
@@ -529,18 +530,36 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                 .<ListGameServerClustersRequest, ListGameServerClustersResponse>newBuilder()
                 .setMethodDescriptor(listGameServerClustersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGameServerClusterRequest, GameServerCluster>
         getGameServerClusterTransportSettings =
             HttpJsonCallSettings.<GetGameServerClusterRequest, GameServerCluster>newBuilder()
                 .setMethodDescriptor(getGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateGameServerClusterRequest, Operation>
         createGameServerClusterTransportSettings =
             HttpJsonCallSettings.<CreateGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
@@ -550,12 +569,24 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                     newBuilder()
                 .setMethodDescriptor(previewCreateGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGameServerClusterRequest, Operation>
         deleteGameServerClusterTransportSettings =
             HttpJsonCallSettings.<DeleteGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
@@ -565,12 +596,26 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                     newBuilder()
                 .setMethodDescriptor(previewDeleteGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateGameServerClusterRequest, Operation>
         updateGameServerClusterTransportSettings =
             HttpJsonCallSettings.<UpdateGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "game_server_cluster.name",
+                          String.valueOf(request.getGameServerCluster().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
@@ -580,6 +625,14 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                     newBuilder()
                 .setMethodDescriptor(previewUpdateGameServerClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "game_server_cluster.name",
+                          String.valueOf(request.getGameServerCluster().getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listGameServerClustersCallable =

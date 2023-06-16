@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AttachedCluster;
 import com.google.cloud.gkemulticloud.v1.AttachedServerConfig;
@@ -505,24 +506,50 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
             HttpJsonCallSettings.<CreateAttachedClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(createAttachedClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAttachedClusterRequest, Operation>
         updateAttachedClusterTransportSettings =
             HttpJsonCallSettings.<UpdateAttachedClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAttachedClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "attached_cluster.name",
+                          String.valueOf(request.getAttachedCluster().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportAttachedClusterRequest, Operation>
         importAttachedClusterTransportSettings =
             HttpJsonCallSettings.<ImportAttachedClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(importAttachedClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAttachedClusterRequest, AttachedCluster>
         getAttachedClusterTransportSettings =
             HttpJsonCallSettings.<GetAttachedClusterRequest, AttachedCluster>newBuilder()
                 .setMethodDescriptor(getAttachedClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListAttachedClustersRequest, ListAttachedClustersResponse>
         listAttachedClustersTransportSettings =
@@ -530,18 +557,36 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                 .<ListAttachedClustersRequest, ListAttachedClustersResponse>newBuilder()
                 .setMethodDescriptor(listAttachedClustersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAttachedClusterRequest, Operation>
         deleteAttachedClusterTransportSettings =
             HttpJsonCallSettings.<DeleteAttachedClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAttachedClusterMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAttachedServerConfigRequest, AttachedServerConfig>
         getAttachedServerConfigTransportSettings =
             HttpJsonCallSettings.<GetAttachedServerConfigRequest, AttachedServerConfig>newBuilder()
                 .setMethodDescriptor(getAttachedServerConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             GenerateAttachedClusterInstallManifestRequest,
@@ -553,6 +598,12 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                     newBuilder()
                 .setMethodDescriptor(generateAttachedClusterInstallManifestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createAttachedClusterCallable =

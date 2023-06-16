@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
@@ -173,11 +174,23 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
         HttpJsonCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
             .setMethodDescriptor(getGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group_name", String.valueOf(request.getGroupName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
         HttpJsonCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()
             .setMethodDescriptor(updateGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group.name", String.valueOf(request.getGroup().getName()));
+                  return builder.build();
+                })
             .build();
 
     this.getGroupCallable =

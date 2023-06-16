@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsRequest;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsResponse;
@@ -35,7 +36,6 @@ import com.google.cloud.essentialcontacts.v1.ListContactsRequest;
 import com.google.cloud.essentialcontacts.v1.ListContactsResponse;
 import com.google.cloud.essentialcontacts.v1.SendTestMessageRequest;
 import com.google.cloud.essentialcontacts.v1.UpdateContactRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -189,9 +189,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(createContactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
@@ -199,9 +199,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(updateContactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("contact.name", String.valueOf(request.getContact().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("contact.name", String.valueOf(request.getContact().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListContactsRequest, ListContactsResponse> listContactsTransportSettings =
@@ -209,9 +209,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(listContactsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetContactRequest, Contact> getContactTransportSettings =
@@ -219,9 +219,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(getContactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteContactRequest, Empty> deleteContactTransportSettings =
@@ -229,9 +229,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(deleteContactMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ComputeContactsRequest, ComputeContactsResponse>
@@ -240,9 +240,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                 .setMethodDescriptor(computeContactsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SendTestMessageRequest, Empty> sendTestMessageTransportSettings =
@@ -250,9 +250,9 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             .setMethodDescriptor(sendTestMessageMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
 

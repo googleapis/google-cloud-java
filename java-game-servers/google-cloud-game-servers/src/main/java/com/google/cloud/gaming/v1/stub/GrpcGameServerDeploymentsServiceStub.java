@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest;
@@ -40,7 +41,6 @@ import com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest;
 import com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse;
 import com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -261,9 +261,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(listGameServerDeploymentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerDeploymentRequest, GameServerDeployment>
@@ -272,9 +272,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(getGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateGameServerDeploymentRequest, Operation>
@@ -283,9 +283,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(createGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGameServerDeploymentRequest, Operation>
@@ -294,9 +294,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(deleteGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGameServerDeploymentRequest, Operation>
@@ -305,11 +305,11 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(updateGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "game_server_deployment.name",
                           String.valueOf(request.getGameServerDeployment().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
@@ -319,9 +319,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(getGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
@@ -330,9 +330,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(updateGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("rollout.name", String.valueOf(request.getRollout().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -345,9 +345,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(previewGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("rollout.name", String.valueOf(request.getRollout().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
@@ -356,9 +356,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .setMethodDescriptor(fetchDeploymentStateMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

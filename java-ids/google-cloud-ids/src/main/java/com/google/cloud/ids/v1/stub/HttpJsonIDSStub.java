@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ids.v1.CreateEndpointRequest;
 import com.google.cloud.ids.v1.DeleteEndpointRequest;
@@ -302,21 +303,45 @@ public class HttpJsonIDSStub extends IDSStub {
             HttpJsonCallSettings.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
                 .setMethodDescriptor(listEndpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         HttpJsonCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
             .setMethodDescriptor(getEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEndpointRequest, Operation> createEndpointTransportSettings =
         HttpJsonCallSettings.<CreateEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(createEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         HttpJsonCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listEndpointsCallable =
