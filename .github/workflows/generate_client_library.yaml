@@ -5,15 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Run generate_library.sh
+    - name: Run generate_libraries.sh
       shell: bash
       run: |
         cd library_generation
-        bash -x generate_library.sh 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0 21.12 1.54.1 2.19.0 google/monitoring/v3 true grpc true
+        bash -x generate_libraries.sh
         echo "Code generation finished"
-    - name: Compare with googleapis-gen
-      shell: bash
-      run: |
-        cd library_generation
-        bash -x compare.sh google/monitoring/v3 true
-        echo "Comparison finished"
