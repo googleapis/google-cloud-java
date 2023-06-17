@@ -1,0 +1,2 @@
+google/cloud/aiplatform/v1 false grpc false false
+google/monitoring/v3 true grpc true
