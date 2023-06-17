@@ -597,6 +597,98 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void updateExplanationDatasetTest() throws Exception {
+    UpdateExplanationDatasetResponse expectedResponse =
+        UpdateExplanationDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExplanationDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    ModelName model = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    UpdateExplanationDatasetResponse actualResponse =
+        client.updateExplanationDatasetAsync(model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExplanationDatasetRequest actualRequest =
+        ((UpdateExplanationDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(model.toString(), actualRequest.getModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateExplanationDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName model = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.updateExplanationDatasetAsync(model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateExplanationDatasetTest2() throws Exception {
+    UpdateExplanationDatasetResponse expectedResponse =
+        UpdateExplanationDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExplanationDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String model = "model104069929";
+
+    UpdateExplanationDatasetResponse actualResponse =
+        client.updateExplanationDatasetAsync(model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExplanationDatasetRequest actualRequest =
+        ((UpdateExplanationDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateExplanationDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String model = "model104069929";
+      client.updateExplanationDatasetAsync(model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteModelTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
