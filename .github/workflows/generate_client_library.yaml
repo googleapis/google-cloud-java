@@ -9,5 +9,5 @@ jobs:
       shell: bash
       run: |
         cd library_generation
-        bash -x generate_libraries.sh
+        bash generate_libraries.sh
         echo "Code generation finished"
