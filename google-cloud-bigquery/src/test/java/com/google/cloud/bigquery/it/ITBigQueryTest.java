@@ -49,6 +49,7 @@ import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
+import com.google.cloud.bigquery.BigQuery.TableMetadataView;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryDryRunResult;
 import com.google.cloud.bigquery.BigQueryError;
@@ -1546,6 +1547,133 @@ public class ITBigQueryTest {
     assertEquals(
         partitioning, remoteTable.<StandardTableDefinition>getDefinition().getTimePartitioning());
     assertEquals(clustering, remoteTable.<StandardTableDefinition>getDefinition().getClustering());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testCreateAndGetTableWithBasicTableMetadataView() {
+    String tableName = "test_create_and_get_table_with_basic_metadata_view";
+    TableId tableId = TableId.of(DATASET, tableName);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    Clustering clustering =
+        Clustering.newBuilder().setFields(ImmutableList.of(STRING_FIELD_SCHEMA.getName())).build();
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    TableOption tableOption = BigQuery.TableOption.tableMetadataView(TableMetadataView.BASIC);
+    Table remoteTable = bigquery.getTable(DATASET, tableName, tableOption);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.getDefinition().getType());
+    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
+    // Next four values are considered transient fields that should not be calculated
+    assertNull(remoteTable.getLastModifiedTime());
+    assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
+    assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testCreateAndGetTableWithFullTableMetadataView() {
+    String tableName = "test_create_and_get_table_with_full_metadata_view";
+    TableId tableId = TableId.of(DATASET, tableName);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    Clustering clustering =
+        Clustering.newBuilder().setFields(ImmutableList.of(STRING_FIELD_SCHEMA.getName())).build();
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    TableOption tableOption = BigQuery.TableOption.tableMetadataView(TableMetadataView.FULL);
+    Table remoteTable = bigquery.getTable(DATASET, tableName, tableOption);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.getDefinition().getType());
+    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
+    assertNotNull(remoteTable.getLastModifiedTime());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testCreateAndGetTableWithStorageStatsTableMetadataView() {
+    String tableName = "test_create_and_get_table_with_storage_stats_metadata_view";
+    TableId tableId = TableId.of(DATASET, tableName);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    Clustering clustering =
+        Clustering.newBuilder().setFields(ImmutableList.of(STRING_FIELD_SCHEMA.getName())).build();
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    TableOption tableOption =
+        BigQuery.TableOption.tableMetadataView(TableMetadataView.STORAGE_STATS);
+    Table remoteTable = bigquery.getTable(DATASET, tableName, tableOption);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.getDefinition().getType());
+    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
+    assertNotNull(remoteTable.getLastModifiedTime());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testCreateAndGetTableWithUnspecifiedTableMetadataView() {
+    String tableName = "test_create_and_get_table_with_unspecified_metadata_view";
+    TableId tableId = TableId.of(DATASET, tableName);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    Clustering clustering =
+        Clustering.newBuilder().setFields(ImmutableList.of(STRING_FIELD_SCHEMA.getName())).build();
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    TableOption tableOption =
+        BigQuery.TableOption.tableMetadataView(TableMetadataView.TABLE_METADATA_VIEW_UNSPECIFIED);
+    Table remoteTable = bigquery.getTable(DATASET, tableName, tableOption);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.getDefinition().getType());
+    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
+    assertNotNull(remoteTable.getLastModifiedTime());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertTrue(remoteTable.delete());
   }
 

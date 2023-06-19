@@ -49,10 +49,10 @@ public class Table extends TableInfo {
     private final BigQuery bigquery;
     private final TableInfo.BuilderImpl infoBuilder;
 
-    Builder(BigQuery bigquery, TableId tableId, TableDefinition defintion) {
+    Builder(BigQuery bigquery, TableId tableId, TableDefinition definition) {
       this.bigquery = bigquery;
       this.infoBuilder = new TableInfo.BuilderImpl();
-      this.infoBuilder.setTableId(tableId).setDefinition(defintion);
+      this.infoBuilder.setTableId(tableId).setDefinition(definition);
     }
 
     Builder(Table table) {

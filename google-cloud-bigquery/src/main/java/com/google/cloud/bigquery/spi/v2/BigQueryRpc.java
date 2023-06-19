@@ -40,7 +40,7 @@ import java.util.Map;
 @InternalExtensionOnly
 public interface BigQueryRpc extends ServiceRpc {
 
-  // These options are part of the Google Cloud BigQuery query parameters
+  // These options are part of the Google Cloud BigQuery query parameters.
   enum Option {
     FIELDS("fields"),
     DELETE_CONTENTS("deleteContents"),
@@ -56,7 +56,8 @@ public interface BigQueryRpc extends ServiceRpc {
     START_INDEX("startIndex"),
     STATE_FILTER("stateFilter"),
     TIMEOUT("timeoutMs"),
-    REQUESTED_POLICY_VERSION("requestedPolicyVersion");
+    REQUESTED_POLICY_VERSION("requestedPolicyVersion"),
+    TABLE_METADATA_VIEW("view");
 
     private final String value;
 

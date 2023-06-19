@@ -122,6 +122,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
   }
 
   /**
+   * Metadata of a BigQuery Table.
+   *
+   * @see <a href=
+   *     "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">Table
+   *     Resource</a>
+   */
+  enum TableMetadataView {
+    BASIC,
+    FULL,
+    STORAGE_STATS,
+    TABLE_METADATA_VIEW_UNSPECIFIED;
+  }
+
+  /**
    * Fields of a BigQuery Model resource.
    *
    * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
@@ -383,6 +397,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static TableOption autodetectSchema(boolean autodetect) {
       return new TableOption(BigQueryRpc.Option.AUTODETECT_SCHEMA, autodetect);
+    }
+
+    /** Returns an option to specify the metadata of the table. */
+    public static TableOption tableMetadataView(TableMetadataView tableMetadataView) {
+      return new TableOption(BigQueryRpc.Option.TABLE_METADATA_VIEW, tableMetadataView);
     }
   }
 

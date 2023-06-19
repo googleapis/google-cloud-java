@@ -294,6 +294,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .get(projectId, datasetId, tableId)
           .setPrettyPrint(false)
           .setFields(Option.FIELDS.getString(options))
+          .setView(getTableMetadataOption(options))
           .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -302,6 +303,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       }
       throw serviceException;
     }
+  }
+
+  private String getTableMetadataOption(Map<Option, ?> options) {
+    if (options.containsKey(Option.TABLE_METADATA_VIEW)) {
+      return options.get(Option.TABLE_METADATA_VIEW).toString();
+    }
+    return "STORAGE_STATS";
   }
 
   @Override
