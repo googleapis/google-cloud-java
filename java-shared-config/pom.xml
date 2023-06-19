@@ -762,7 +762,7 @@
                 <path>
                   <groupId>com.google.auto.service</groupId>
                   <artifactId>auto-service-annotations</artifactId>
-                  <version>1.1.0</version>
+                  <version>1.1.1</version>
                 </path>
               </annotationProcessorPaths>
             </configuration>
