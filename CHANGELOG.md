@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.28.0](https://github.com/googleapis/java-bigquery/compare/v2.27.1...v2.28.0) (2023-06-19)
+
+
+### Features
+
+* Add primary key and foreign keys ([#2744](https://github.com/googleapis/java-bigquery/issues/2744)) ([afb571c](https://github.com/googleapis/java-bigquery/commit/afb571c97edb13f93df9ac140af4516205d27a49))
+* Partial Projection of Table Metadata ([#2756](https://github.com/googleapis/java-bigquery/issues/2756)) ([9207743](https://github.com/googleapis/java-bigquery/commit/92077437d759705151f7778207616ecf024371ba))
+* Return JobID with TableResult ([#2689](https://github.com/googleapis/java-bigquery/issues/2689)) ([aa38428](https://github.com/googleapis/java-bigquery/commit/aa38428ad26b64d2566b33f4b2ca3dcc102c3247))
+
 ## [2.27.1](https://github.com/googleapis/java-bigquery/compare/v2.27.0...v2.27.1) (2023-06-13)
 
 
