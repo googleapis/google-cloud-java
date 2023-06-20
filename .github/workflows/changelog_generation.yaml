@@ -2,12 +2,22 @@ on:
   pull_request:
     types:
       - synchronize
+
 name: CHANGELOG.md generation upon Release Please pull requests
+
 jobs:
+  print-github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo "$EVENT_CONTEXT" | jq .
+
   changelog-generation:
     runs-on: ubuntu-latest
     if: |
-      github.event.sender.login == 'release-please-bot' && github.event.pull_request.head.ref == 'release-please--branches--main' &&
+      github.event.sender.login == 'release-please[bot]' && github.head_ref == 'release-please--branches--main' &&
       contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
     steps:
     - uses: actions/checkout@v3
