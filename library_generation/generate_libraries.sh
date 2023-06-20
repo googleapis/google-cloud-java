@@ -19,7 +19,8 @@ do
   CONTAINS_CLOUD=$(echo "${line}" | awk '{print $2}')
   TRANSPORT=$(echo "${line}" | awk '{print $3}')
   REST_NUMERIC_ENUMS=$(echo "${line}" | awk '{print $4}')
-  INCLUDE_SAMPLES=$(echo "${line}" | awk '{print $5}')
+  IS_GAPIC_LIBRARY=$(echo "${line}" | awk '{print $5}')
+  INCLUDE_SAMPLES=$(echo "${line}" | awk '{print $6}')
   echo "Generate library in ${PROTO_PATH}"
-  ./generate_library_with_fixed_dependencies.sh "${PROTO_PATH}" "${CONTAINS_CLOUD}" "${TRANSPORT}" "${REST_NUMERIC_ENUMS}" "${INCLUDE_SAMPLES}"
+  ./generate_library_with_fixed_dependencies.sh "${PROTO_PATH}" "${CONTAINS_CLOUD}" "${TRANSPORT}" "${REST_NUMERIC_ENUMS}" "${IS_GAPIC_LIBRARY}" "${INCLUDE_SAMPLES}"
 done < proto_path.txt
