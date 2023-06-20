@@ -21,10 +21,12 @@ jobs:
       contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
     steps:
     - uses: actions/checkout@v3
-    - name: Checkout the branch
+      with:
+        fetch-depth: 0
+        ref: ${{ github.head_ref }}
+    - name: Show status of the branch checked out
       run: |
-        echo "Checking out release please branch"
-        git checkout -b release-please--branches--main origin/release-please--branches--main
+        git status
     - name: Fetching pull request body
       env:
         GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
