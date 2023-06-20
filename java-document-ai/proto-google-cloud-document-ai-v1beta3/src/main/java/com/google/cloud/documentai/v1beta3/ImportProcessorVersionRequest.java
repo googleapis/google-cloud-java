@@ -22,16 +22,23 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The request message for the ImportProcessorVersion method.
- * This method requires Document AI Service Agent of the destination project in
- * the source project's IAM with [Document AI Editor
- * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles).
+ * The request message for the
+ * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
+ * method. Requirements:
  *
- * The destination project is specified as part of the `parent` field.
- * The source project is specified as part of `source` field.
+ * - The source processor version and destination processor
+ * must be in the same location.
+ * - The Document AI [Service
+ * Agent](https://cloud.google.com/iam/docs/service-agents) of the destination
+ * project must have [Document AI Editor
+ * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles) on
+ * the source project.
  *
- * The Service Agent for Document AI can be found in
- * https://cloud.google.com/iam/docs/service-agents.
+ * The destination project is specified as part of the
+ * [parent][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.parent]
+ * field. The source project is specified as part of the
+ * [source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.processor_version_source]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionRequest}
@@ -122,7 +129,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -136,7 +144,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -163,7 +172,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -433,16 +443,23 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for the ImportProcessorVersion method.
-   * This method requires Document AI Service Agent of the destination project in
-   * the source project's IAM with [Document AI Editor
-   * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles).
+   * The request message for the
+   * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
+   * method. Requirements:
    *
-   * The destination project is specified as part of the `parent` field.
-   * The source project is specified as part of `source` field.
+   * - The source processor version and destination processor
+   * must be in the same location.
+   * - The Document AI [Service
+   * Agent](https://cloud.google.com/iam/docs/service-agents) of the destination
+   * project must have [Document AI Editor
+   * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles) on
+   * the source project.
    *
-   * The Service Agent for Document AI can be found in
-   * https://cloud.google.com/iam/docs/service-agents.
+   * The destination project is specified as part of the
+   * [parent][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.parent]
+   * field. The source project is specified as part of the
+   * [source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.processor_version_source]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionRequest}
@@ -673,7 +690,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -688,7 +706,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -716,7 +735,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -744,7 +764,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -765,7 +786,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -784,7 +806,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from.
+     * The source processor version to import from. The source processor version
+     * and destination processor need to be in the same environment and region.
      * </pre>
      *
      * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>

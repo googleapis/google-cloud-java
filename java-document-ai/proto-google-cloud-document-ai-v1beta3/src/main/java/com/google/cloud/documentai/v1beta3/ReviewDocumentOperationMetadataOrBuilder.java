@@ -149,7 +149,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -161,7 +161,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -173,7 +173,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>

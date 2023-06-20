@@ -150,16 +150,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
+     * cannot be a "Common Type".  The following naming conventions are used:
      *
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -175,16 +174,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
+     * cannot be a "Common Type".  The following naming conventions are used:
      *
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -2634,16 +2632,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
+     * cannot be a "Common Type".  The following naming conventions are used:
      *
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -2670,16 +2667,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
+     * cannot be a "Common Type".  The following naming conventions are used:
      *
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -3790,16 +3786,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
+       * cannot be a "Common Type".  The following naming conventions are used:
        *
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3825,16 +3820,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
+       * cannot be a "Common Type".  The following naming conventions are used:
        *
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3860,16 +3854,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
+       * cannot be a "Common Type".  The following naming conventions are used:
        *
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3894,16 +3887,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
+       * cannot be a "Common Type".  The following naming conventions are used:
        *
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3924,16 +3916,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
+       * cannot be a "Common Type".  The following naming conventions are used:
        *
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -4622,8 +4613,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, a `document` entity type can be applied to subdocument (
-     * splitting). Otherwise, it can only be applied to the entire document
+     * If true, a `document` entity type can be applied to subdocument
+     * (splitting). Otherwise, it can only be applied to the entire document
      * (classification).
      * </pre>
      *
@@ -4723,8 +4714,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, a `document` entity type can be applied to subdocument (
-     * splitting). Otherwise, it can only be applied to the entire document
+     * If true, a `document` entity type can be applied to subdocument
+     * (splitting). Otherwise, it can only be applied to the entire document
      * (classification).
      * </pre>
      *
@@ -5214,8 +5205,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *
@@ -5231,8 +5222,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *
@@ -5252,8 +5243,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *

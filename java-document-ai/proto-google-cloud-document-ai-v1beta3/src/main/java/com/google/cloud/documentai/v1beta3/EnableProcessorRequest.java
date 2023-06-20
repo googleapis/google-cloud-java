@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for the enable processor method.
+ * Request message for the
+ * [EnableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.EnableProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorRequest}
@@ -281,7 +283,9 @@ public final class EnableProcessorRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for the enable processor method.
+   * Request message for the
+   * [EnableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.EnableProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorRequest}

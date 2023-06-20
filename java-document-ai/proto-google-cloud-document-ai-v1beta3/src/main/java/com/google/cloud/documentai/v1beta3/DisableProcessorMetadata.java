@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The long running operation metadata for disable processor method.
+ * The long-running operation metadata for the
+ * [DisableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.DisableProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorMetadata}
@@ -66,7 +68,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -81,7 +83,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -98,7 +100,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -280,7 +282,9 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The long running operation metadata for disable processor method.
+   * The long-running operation metadata for the
+   * [DisableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.DisableProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorMetadata}
@@ -475,7 +479,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -489,7 +493,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -509,7 +513,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -532,7 +536,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -552,7 +556,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -580,7 +584,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -599,7 +603,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -614,7 +618,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -633,7 +637,7 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>

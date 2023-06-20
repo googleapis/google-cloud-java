@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for batch process document method.
+ * Request message for
+ * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest}
@@ -98,9 +99,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mimetype of the input. If the input is a raw document, the supported
-     * mimetypes are application/pdf, image/tiff, and image/gif.
-     * If the input is a [Document] proto, the type should be application/json.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+     * the input. If the input is a raw document, refer to [supported file
+     * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+     * of media types. If the input is a
+     * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+     * `application/json`.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -112,9 +117,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mimetype of the input. If the input is a raw document, the supported
-     * mimetypes are application/pdf, image/tiff, and image/gif.
-     * If the input is a [Document] proto, the type should be application/json.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+     * the input. If the input is a raw document, refer to [supported file
+     * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+     * of media types. If the input is a
+     * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+     * `application/json`.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -229,9 +238,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mimetype of the input. If the input is a raw document, the supported
-     * mimetypes are application/pdf, image/tiff, and image/gif.
-     * If the input is a [Document] proto, the type should be application/json.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+     * the input. If the input is a raw document, refer to [supported file
+     * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+     * of media types. If the input is a
+     * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+     * `application/json`.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -254,9 +267,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mimetype of the input. If the input is a raw document, the supported
-     * mimetypes are application/pdf, image/tiff, and image/gif.
-     * If the input is a [Document] proto, the type should be application/json.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+     * the input. If the input is a raw document, refer to [supported file
+     * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+     * of media types. If the input is a
+     * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+     * `application/json`.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -776,9 +793,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Mimetype of the input. If the input is a raw document, the supported
-       * mimetypes are application/pdf, image/tiff, and image/gif.
-       * If the input is a [Document] proto, the type should be application/json.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+       * the input. If the input is a raw document, refer to [supported file
+       * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+       * of media types. If the input is a
+       * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+       * `application/json`.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -800,9 +821,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Mimetype of the input. If the input is a raw document, the supported
-       * mimetypes are application/pdf, image/tiff, and image/gif.
-       * If the input is a [Document] proto, the type should be application/json.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+       * the input. If the input is a raw document, refer to [supported file
+       * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+       * of media types. If the input is a
+       * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+       * `application/json`.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -824,9 +849,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Mimetype of the input. If the input is a raw document, the supported
-       * mimetypes are application/pdf, image/tiff, and image/gif.
-       * If the input is a [Document] proto, the type should be application/json.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+       * the input. If the input is a raw document, refer to [supported file
+       * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+       * of media types. If the input is a
+       * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+       * `application/json`.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -847,9 +876,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Mimetype of the input. If the input is a raw document, the supported
-       * mimetypes are application/pdf, image/tiff, and image/gif.
-       * If the input is a [Document] proto, the type should be application/json.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+       * the input. If the input is a raw document, refer to [supported file
+       * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+       * of media types. If the input is a
+       * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+       * `application/json`.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -866,9 +899,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Mimetype of the input. If the input is a raw document, the supported
-       * mimetypes are application/pdf, image/tiff, and image/gif.
-       * If the input is a [Document] proto, the type should be application/json.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of
+       * the input. If the input is a raw document, refer to [supported file
+       * types](https://cloud.google.com/document-ai/docs/file-types) for the list
+       * of media types. If the input is a
+       * [Document][google.cloud.documentai.v1beta3.Document], the type should be
+       * `application/json`.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -990,7 +1027,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The message for output config in batch process.
+   * The output configuration in the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig}
@@ -1255,7 +1294,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The message for output config in batch process.
+     * The output configuration in the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig}
@@ -1793,7 +1834,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=499
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1813,7 +1854,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=499
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -1852,7 +1893,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -1867,7 +1910,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -1884,7 +1929,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -1903,7 +1950,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -1918,7 +1967,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -1935,7 +1986,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -1954,8 +2007,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether Human Review feature should be skipped for this request. Default to
-   * false.
+   * Whether human review should be skipped for this request. Default to
+   * `false`.
    * </pre>
    *
    * <code>bool skip_human_review = 4;</code>
@@ -2258,7 +2311,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for batch process document method.
+   * Request message for
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest}
@@ -3178,7 +3232,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=499
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
@@ -3197,7 +3251,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=499
      * @return The outputConfig.
      */
     @java.lang.Deprecated
@@ -3394,7 +3448,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3408,7 +3464,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3428,7 +3486,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3451,7 +3511,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3471,7 +3533,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3499,7 +3563,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3518,7 +3584,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3533,7 +3601,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3552,7 +3622,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -3584,7 +3656,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3599,7 +3673,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3620,7 +3696,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3644,7 +3722,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3665,7 +3745,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3693,7 +3775,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3713,7 +3797,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3729,7 +3815,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3749,7 +3837,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
@@ -3777,8 +3867,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -3793,8 +3883,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -3813,8 +3903,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>

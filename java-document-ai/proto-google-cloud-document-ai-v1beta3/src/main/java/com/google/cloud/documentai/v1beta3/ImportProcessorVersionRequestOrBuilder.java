@@ -27,7 +27,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -39,7 +40,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -51,7 +53,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>

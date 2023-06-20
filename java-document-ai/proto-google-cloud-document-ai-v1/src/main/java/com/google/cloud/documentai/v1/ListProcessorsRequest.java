@@ -127,8 +127,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The maximum number of processors to return.
-   * If unspecified, at most 50 processors will be returned.
-   * The maximum value is 100; values above 100 will be coerced to 100.
+   * If unspecified, at most `50` processors will be returned.
+   * The maximum value is `100`. Values above `100` will be coerced to `100`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -708,8 +708,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -725,8 +725,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -746,8 +746,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

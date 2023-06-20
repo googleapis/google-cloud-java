@@ -261,7 +261,7 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * Denotes that this ProcessorVersion is managed by google.
+   * Denotes that this `ProcessorVersion` is managed by Google.
    * </pre>
    *
    * <code>bool google_managed = 11;</code>

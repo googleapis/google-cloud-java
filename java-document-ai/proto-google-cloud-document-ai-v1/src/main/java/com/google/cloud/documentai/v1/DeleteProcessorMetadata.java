@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * The long running operation metadata for delete processor method.
+ * The long-running operation metadata for the
+ * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.DeleteProcessorMetadata}
@@ -66,7 +68,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -81,7 +83,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -98,7 +100,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -280,7 +282,9 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The long running operation metadata for delete processor method.
+   * The long-running operation metadata for the
+   * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.DeleteProcessorMetadata}
@@ -472,7 +476,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -486,7 +490,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -506,7 +510,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -528,7 +532,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -548,7 +552,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -575,7 +579,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -594,7 +598,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -609,7 +613,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -628,7 +632,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>

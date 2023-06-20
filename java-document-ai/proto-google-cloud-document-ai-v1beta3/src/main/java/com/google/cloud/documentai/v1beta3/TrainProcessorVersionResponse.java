@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The response for the TrainProcessorVersion method.
+ * The response for
+ * [TrainProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.TrainProcessorVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionResponse}
@@ -278,7 +279,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The response for the TrainProcessorVersion method.
+   * The response for
+   * [TrainProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.TrainProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionResponse}

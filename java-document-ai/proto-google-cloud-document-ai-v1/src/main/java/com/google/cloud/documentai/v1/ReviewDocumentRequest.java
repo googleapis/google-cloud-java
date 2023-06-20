@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for review document method.
+ * Request message for the
+ * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentRequest}
@@ -307,8 +309,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will
-   * be reviewed with.
+   * Required. The resource name of the
+   * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+   * document will be reviewed with.
    * </pre>
    *
    * <code>
@@ -333,8 +336,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will
-   * be reviewed with.
+   * Required. The resource name of the
+   * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+   * document will be reviewed with.
    * </pre>
    *
    * <code>
@@ -682,7 +686,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for review document method.
+   * Request message for the
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentRequest}
@@ -1164,8 +1170,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will
-     * be reviewed with.
+     * Required. The resource name of the
+     * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+     * document will be reviewed with.
      * </pre>
      *
      * <code>
@@ -1189,8 +1196,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will
-     * be reviewed with.
+     * Required. The resource name of the
+     * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+     * document will be reviewed with.
      * </pre>
      *
      * <code>
@@ -1214,8 +1222,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will
-     * be reviewed with.
+     * Required. The resource name of the
+     * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+     * document will be reviewed with.
      * </pre>
      *
      * <code>
@@ -1238,8 +1247,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will
-     * be reviewed with.
+     * Required. The resource name of the
+     * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+     * document will be reviewed with.
      * </pre>
      *
      * <code>
@@ -1258,8 +1268,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will
-     * be reviewed with.
+     * Required. The resource name of the
+     * [HumanReviewConfig][google.cloud.documentai.v1.HumanReviewConfig] that the
+     * document will be reviewed with.
      * </pre>
      *
      * <code>

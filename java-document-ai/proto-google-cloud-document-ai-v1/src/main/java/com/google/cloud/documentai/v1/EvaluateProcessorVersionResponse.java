@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Metadata of the EvaluateProcessorVersion method.
+ * Response of the
+ * [EvaluateProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.EvaluateProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.EvaluateProcessorVersionResponse}
@@ -278,7 +280,9 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Metadata of the EvaluateProcessorVersion method.
+   * Response of the
+   * [EvaluateProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.EvaluateProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.EvaluateProcessorVersionResponse}

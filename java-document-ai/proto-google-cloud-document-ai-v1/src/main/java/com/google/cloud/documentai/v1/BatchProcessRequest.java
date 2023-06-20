@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for batch process document method.
+ * Request message for
+ * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.BatchProcessRequest}
@@ -133,7 +134,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -148,7 +151,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -165,7 +170,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -184,7 +191,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -199,7 +208,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -216,7 +227,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -235,8 +248,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether Human Review feature should be skipped for this request. Default to
-   * false.
+   * Whether human review should be skipped for this request. Default to
+   * `false`.
    * </pre>
    *
    * <code>bool skip_human_review = 4;</code>
@@ -449,7 +462,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for batch process document method.
+   * Request message for
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.BatchProcessRequest}
@@ -831,7 +845,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -845,7 +861,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -865,7 +883,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -888,7 +908,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -908,7 +930,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -935,7 +959,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -954,7 +980,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -969,7 +997,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -988,7 +1018,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -1020,7 +1052,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1034,7 +1068,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1054,7 +1090,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1077,7 +1115,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1097,7 +1137,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1124,7 +1166,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1143,7 +1187,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1158,7 +1204,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1177,7 +1225,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1204,8 +1254,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -1220,8 +1270,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -1240,8 +1290,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>

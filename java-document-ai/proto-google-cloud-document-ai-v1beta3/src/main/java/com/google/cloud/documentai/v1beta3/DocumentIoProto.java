@@ -98,19 +98,20 @@ public final class DocumentIoProto {
           + ".cloud.documentai.v1beta3.DocumentOutput"
           + "Config.GcsOutputConfig.ShardingConfig\032@\n"
           + "\016ShardingConfig\022\027\n\017pages_per_shard\030\001 \001(\005"
-          + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"\352"
-          + "\001\n\tOcrConfig\022?\n\005hints\030\002 \001(\01320.google.clo"
+          + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"\206"
+          + "\002\n\tOcrConfig\022?\n\005hints\030\002 \001(\01320.google.clo"
           + "ud.documentai.v1beta3.OcrConfig.Hints\022!\n"
           + "\031enable_native_pdf_parsing\030\003 \001(\010\022#\n\033enab"
           + "le_image_quality_scores\030\004 \001(\010\022\034\n\024advance"
           + "d_ocr_options\030\005 \003(\t\022\025\n\renable_symbol\030\006 \001"
-          + "(\010\032\037\n\005Hints\022\026\n\016language_hints\030\001 \003(\tB\346\001\n#"
-          + "com.google.cloud.documentai.v1beta3B\017Doc"
-          + "umentIoProtoP\001ZCcloud.google.com/go/docu"
-          + "mentai/apiv1beta3/documentaipb;documenta"
-          + "ipb\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002\037"
-          + "Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Google"
-          + "::Cloud::DocumentAI::V1beta3b\006proto3"
+          + "(\010\022\032\n\022compute_style_info\030\010 \001(\010\032\037\n\005Hints\022"
+          + "\026\n\016language_hints\030\001 \003(\tB\346\001\n#com.google.c"
+          + "loud.documentai.v1beta3B\017DocumentIoProto"
+          + "P\001ZCcloud.google.com/go/documentai/apiv1"
+          + "beta3/documentaipb;documentaipb\252\002\037Google"
+          + ".Cloud.DocumentAI.V1Beta3\312\002\037Google\\Cloud"
+          + "\\DocumentAI\\V1beta3\352\002\"Google::Cloud::Doc"
+          + "umentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -197,6 +198,7 @@ public final class DocumentIoProto {
               "EnableImageQualityScores",
               "AdvancedOcrOptions",
               "EnableSymbol",
+              "ComputeStyleInfo",
             });
     internal_static_google_cloud_documentai_v1beta3_OcrConfig_Hints_descriptor =
         internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor

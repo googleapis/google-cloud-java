@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for get processor version.
+ * Request message for the
+ * [GetProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.GetProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.GetProcessorVersionRequest}
@@ -281,7 +283,9 @@ public final class GetProcessorVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for get processor version.
+   * Request message for the
+   * [GetProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.GetProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.GetProcessorVersionRequest}

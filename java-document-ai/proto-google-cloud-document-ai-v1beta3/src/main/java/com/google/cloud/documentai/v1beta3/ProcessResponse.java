@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Response message for the process document method.
+ * Response message for the
+ * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessResponse}
@@ -124,15 +126,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of the operation triggered by the processed document. If the human
-   * review process is not triggered, this field will be empty. It has the same
-   * response type and metadata as the long running operation returned by
-   * ReviewDocument method.
+   * review process isn't triggered, this field is empty. It has the same
+   * response type and metadata as the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
    * @return The humanReviewOperation.
    */
   @java.lang.Override
@@ -153,15 +155,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of the operation triggered by the processed document. If the human
-   * review process is not triggered, this field will be empty. It has the same
-   * response type and metadata as the long running operation returned by
-   * ReviewDocument method.
+   * review process isn't triggered, this field is empty. It has the same
+   * response type and metadata as the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
    * @return The bytes for humanReviewOperation.
    */
   @java.lang.Override
@@ -420,7 +422,9 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for the process document method.
+   * Response message for the
+   * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessResponse}
@@ -836,15 +840,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the operation triggered by the processed document. If the human
-     * review process is not triggered, this field will be empty. It has the same
-     * response type and metadata as the long running operation returned by
-     * ReviewDocument method.
+     * review process isn't triggered, this field is empty. It has the same
+     * response type and metadata as the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
      * @return The humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -864,15 +868,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the operation triggered by the processed document. If the human
-     * review process is not triggered, this field will be empty. It has the same
-     * response type and metadata as the long running operation returned by
-     * ReviewDocument method.
+     * review process isn't triggered, this field is empty. It has the same
+     * response type and metadata as the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -892,15 +896,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the operation triggered by the processed document. If the human
-     * review process is not triggered, this field will be empty. It has the same
-     * response type and metadata as the long running operation returned by
-     * ReviewDocument method.
+     * review process isn't triggered, this field is empty. It has the same
+     * response type and metadata as the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
      * @param value The humanReviewOperation to set.
      * @return This builder for chaining.
      */
@@ -919,15 +923,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the operation triggered by the processed document. If the human
-     * review process is not triggered, this field will be empty. It has the same
-     * response type and metadata as the long running operation returned by
-     * ReviewDocument method.
+     * review process isn't triggered, this field is empty. It has the same
+     * response type and metadata as the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -942,15 +946,15 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the operation triggered by the processed document. If the human
-     * review process is not triggered, this field will be empty. It has the same
-     * response type and metadata as the long running operation returned by
-     * ReviewDocument method.
+     * review process isn't triggered, this field is empty. It has the same
+     * response type and metadata as the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=448
      * @param value The bytes for humanReviewOperation to set.
      * @return This builder for chaining.
      */

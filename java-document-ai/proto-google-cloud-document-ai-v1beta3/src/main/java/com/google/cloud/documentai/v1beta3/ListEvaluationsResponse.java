@@ -22,7 +22,7 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The response from ListEvaluations.
+ * The response from `ListEvaluations`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ListEvaluationsResponse}
@@ -363,7 +363,7 @@ public final class ListEvaluationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response from ListEvaluations.
+   * The response from `ListEvaluations`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ListEvaluationsResponse}

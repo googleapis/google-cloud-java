@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for the delete processor version method.
+ * Request message for the
+ * [DeleteProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.DeleteProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest}
@@ -282,7 +284,9 @@ public final class DeleteProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for the delete processor version method.
+   * Request message for the
+   * [DeleteProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.DeleteProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest}

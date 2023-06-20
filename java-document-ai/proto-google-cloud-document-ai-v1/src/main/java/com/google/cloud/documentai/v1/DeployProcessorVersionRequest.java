@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for the deploy processor version method.
+ * Request message for the
+ * [DeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.DeployProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.DeployProcessorVersionRequest}
@@ -281,7 +283,9 @@ public final class DeployProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for the deploy processor version method.
+   * Request message for the
+   * [DeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.DeployProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.DeployProcessorVersionRequest}

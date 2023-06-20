@@ -88,6 +88,30 @@
           }
         }
       }
+    },
+    "DocumentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentServiceClient",
+          "rpcs": {
+            "GetDatasetSchema": {
+              "methods": ["getDatasetSchema", "getDatasetSchema", "getDatasetSchema", "getDatasetSchemaCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateDataset": {
+              "methods": ["updateDatasetAsync", "updateDatasetAsync", "updateDatasetOperationCallable", "updateDatasetCallable"]
+            },
+            "UpdateDatasetSchema": {
+              "methods": ["updateDatasetSchema", "updateDatasetSchema", "updateDatasetSchemaCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

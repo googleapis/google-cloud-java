@@ -84,6 +84,10 @@ public final class DocumentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_Document_Page_Token_DetectedBreak_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1_Document_Page_Symbol_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_Document_Page_Symbol_fieldAccessorTable;
@@ -189,7 +193,7 @@ public final class DocumentProto {
           + "s.proto\032\027google/type/color.proto\032\026google"
           + "/type/date.proto\032\032google/type/datetime.p"
           + "roto\032\027google/type/money.proto\032 google/ty"
-          + "pe/postal_address.proto\"\343A\n\010Document\022\023\n\003"
+          + "pe/postal_address.proto\"\233E\n\010Document\022\023\n\003"
           + "uri\030\001 \001(\tB\004\342A\001\001H\000\022\027\n\007content\030\002 \001(\014B\004\342A\001\001"
           + "H\000\022\021\n\tmime_type\030\003 \001(\t\022\022\n\004text\030\004 \001(\tB\004\342A\001"
           + "\001\022C\n\013text_styles\030\005 \003(\0132*.google.cloud.do"
@@ -215,7 +219,7 @@ public final class DocumentProto {
           + "oration\030\006 \001(\t\022F\n\tfont_size\030\007 \001(\01323.googl"
           + "e.cloud.documentai.v1.Document.Style.Fon"
           + "tSize\022\023\n\013font_family\030\010 \001(\t\032&\n\010FontSize\022\014"
-          + "\n\004size\030\001 \001(\002\022\014\n\004unit\030\002 \001(\t\032\212&\n\004Page\022\023\n\013p"
+          + "\n\004size\030\001 \001(\002\022\014\n\004unit\030\002 \001(\t\032\302)\n\004Page\022\023\n\013p"
           + "age_number\030\001 \001(\005\022>\n\005image\030\r \001(\0132/.google"
           + ".cloud.documentai.v1.Document.Page.Image"
           + "\022D\n\ntransforms\030\016 \003(\01320.google.cloud.docu"
@@ -277,7 +281,7 @@ public final class DocumentProto {
           + "gle.cloud.documentai.v1.Document.Page.De"
           + "tectedLanguage\022G\n\nprovenance\030\003 \001(\0132/.goo"
           + "gle.cloud.documentai.v1.Document.Provena"
-          + "nceB\002\030\001\032\352\003\n\005Token\022@\n\006layout\030\001 \001(\01320.goog"
+          + "nceB\002\030\001\032\236\007\n\005Token\022@\n\006layout\030\001 \001(\01320.goog"
           + "le.cloud.documentai.v1.Document.Page.Lay"
           + "out\022U\n\016detected_break\030\002 \001(\0132=.google.clo"
           + "ud.documentai.v1.Document.Page.Token.Det"
@@ -285,29 +289,40 @@ public final class DocumentProto {
           + ".google.cloud.documentai.v1.Document.Pag"
           + "e.DetectedLanguage\022G\n\nprovenance\030\004 \001(\0132/"
           + ".google.cloud.documentai.v1.Document.Pro"
-          + "venanceB\002\030\001\032\246\001\n\rDetectedBreak\022P\n\004type\030\001 "
-          + "\001(\0162B.google.cloud.documentai.v1.Documen"
-          + "t.Page.Token.DetectedBreak.Type\"C\n\004Type\022"
-          + "\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005SPACE\020\001\022\016\n\nWIDE"
-          + "_SPACE\020\002\022\n\n\006HYPHEN\020\003\032\242\001\n\006Symbol\022@\n\006layou"
-          + "t\030\001 \001(\01320.google.cloud.documentai.v1.Doc"
-          + "ument.Page.Layout\022V\n\022detected_languages\030"
-          + "\002 \003(\0132:.google.cloud.documentai.v1.Docum"
-          + "ent.Page.DetectedLanguage\032\267\001\n\rVisualElem"
-          + "ent\022@\n\006layout\030\001 \001(\01320.google.cloud.docum"
-          + "entai.v1.Document.Page.Layout\022\014\n\004type\030\002 "
-          + "\001(\t\022V\n\022detected_languages\030\003 \003(\0132:.google"
-          + ".cloud.documentai.v1.Document.Page.Detec"
-          + "tedLanguage\032\244\005\n\005Table\022@\n\006layout\030\001 \001(\01320."
-          + "google.cloud.documentai.v1.Document.Page"
-          + ".Layout\022M\n\013header_rows\030\002 \003(\01328.google.cl"
-          + "oud.documentai.v1.Document.Page.Table.Ta"
-          + "bleRow\022K\n\tbody_rows\030\003 \003(\01328.google.cloud"
-          + ".documentai.v1.Document.Page.Table.Table"
-          + "Row\022V\n\022detected_languages\030\004 \003(\0132:.google"
-          + ".cloud.documentai.v1.Document.Page.Detec"
-          + "tedLanguage\022C\n\nprovenance\030\005 \001(\0132/.google"
-          + ".cloud.documentai.v1.Document.Provenance"
+          + "venanceB\002\030\001\022M\n\nstyle_info\030\005 \001(\01329.google"
+          + ".cloud.documentai.v1.Document.Page.Token"
+          + ".StyleInfo\032\246\001\n\rDetectedBreak\022P\n\004type\030\001 \001"
+          + "(\0162B.google.cloud.documentai.v1.Document"
+          + ".Page.Token.DetectedBreak.Type\"C\n\004Type\022\024"
+          + "\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005SPACE\020\001\022\016\n\nWIDE_"
+          + "SPACE\020\002\022\n\n\006HYPHEN\020\003\032\342\002\n\tStyleInfo\022\021\n\tfon"
+          + "t_size\030\001 \001(\005\022\027\n\017pixel_font_size\030\002 \001(\001\022\026\n"
+          + "\016letter_spacing\030\003 \001(\001\022\021\n\tfont_type\030\004 \001(\t"
+          + "\022\014\n\004bold\030\005 \001(\010\022\016\n\006italic\030\006 \001(\010\022\022\n\nunderl"
+          + "ined\030\007 \001(\010\022\021\n\tstrikeout\030\010 \001(\010\022\021\n\tsubscri"
+          + "pt\030\t \001(\010\022\023\n\013superscript\030\n \001(\010\022\021\n\tsmallca"
+          + "ps\030\013 \001(\010\022\023\n\013font_weight\030\014 \001(\005\022\023\n\013handwri"
+          + "tten\030\r \001(\010\022&\n\ntext_color\030\016 \001(\0132\022.google."
+          + "type.Color\022,\n\020background_color\030\017 \001(\0132\022.g"
+          + "oogle.type.Color\032\242\001\n\006Symbol\022@\n\006layout\030\001 "
+          + "\001(\01320.google.cloud.documentai.v1.Documen"
+          + "t.Page.Layout\022V\n\022detected_languages\030\002 \003("
+          + "\0132:.google.cloud.documentai.v1.Document."
+          + "Page.DetectedLanguage\032\267\001\n\rVisualElement\022"
+          + "@\n\006layout\030\001 \001(\01320.google.cloud.documenta"
+          + "i.v1.Document.Page.Layout\022\014\n\004type\030\002 \001(\t\022"
+          + "V\n\022detected_languages\030\003 \003(\0132:.google.clo"
+          + "ud.documentai.v1.Document.Page.DetectedL"
+          + "anguage\032\250\005\n\005Table\022@\n\006layout\030\001 \001(\01320.goog"
+          + "le.cloud.documentai.v1.Document.Page.Lay"
+          + "out\022M\n\013header_rows\030\002 \003(\01328.google.cloud."
+          + "documentai.v1.Document.Page.Table.TableR"
+          + "ow\022K\n\tbody_rows\030\003 \003(\01328.google.cloud.doc"
+          + "umentai.v1.Document.Page.Table.TableRow\022"
+          + "V\n\022detected_languages\030\004 \003(\0132:.google.clo"
+          + "ud.documentai.v1.Document.Page.DetectedL"
+          + "anguage\022G\n\nprovenance\030\005 \001(\0132/.google.clo"
+          + "ud.documentai.v1.Document.ProvenanceB\002\030\001"
           + "\032T\n\010TableRow\022H\n\005cells\030\001 \003(\01329.google.clo"
           + "ud.documentai.v1.Document.Page.Table.Tab"
           + "leCell\032\311\001\n\tTableCell\022@\n\006layout\030\001 \001(\01320.g"
@@ -561,7 +576,7 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Document_Page_Token_descriptor,
             new java.lang.String[] {
-              "Layout", "DetectedBreak", "DetectedLanguages", "Provenance",
+              "Layout", "DetectedBreak", "DetectedLanguages", "Provenance", "StyleInfo",
             });
     internal_static_google_cloud_documentai_v1_Document_Page_Token_DetectedBreak_descriptor =
         internal_static_google_cloud_documentai_v1_Document_Page_Token_descriptor
@@ -572,6 +587,30 @@ public final class DocumentProto {
             internal_static_google_cloud_documentai_v1_Document_Page_Token_DetectedBreak_descriptor,
             new java.lang.String[] {
               "Type",
+            });
+    internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor =
+        internal_static_google_cloud_documentai_v1_Document_Page_Token_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor,
+            new java.lang.String[] {
+              "FontSize",
+              "PixelFontSize",
+              "LetterSpacing",
+              "FontType",
+              "Bold",
+              "Italic",
+              "Underlined",
+              "Strikeout",
+              "Subscript",
+              "Superscript",
+              "Smallcaps",
+              "FontWeight",
+              "Handwritten",
+              "TextColor",
+              "BackgroundColor",
             });
     internal_static_google_cloud_documentai_v1_Document_Page_Symbol_descriptor =
         internal_static_google_cloud_documentai_v1_Document_Page_descriptor.getNestedTypes().get(8);

@@ -58,8 +58,8 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
-   * To get a list of processors types, see
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
+   * To get a list of processor types, see
    * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
@@ -72,8 +72,8 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
-   * To get a list of processors types, see
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
+   * To get a list of processor types, see
    * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
@@ -232,8 +232,8 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The KMS key used for encryption/decryption in CMEK scenarios.
-   * See https://cloud.google.com/security-key-management.
+   * The [KMS key](https://cloud.google.com/security-key-management) used for
+   * encryption and decryption in CMEK scenarios.
    * </pre>
    *
    * <code>string kms_key_name = 8;</code>
@@ -245,8 +245,8 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The KMS key used for encryption/decryption in CMEK scenarios.
-   * See https://cloud.google.com/security-key-management.
+   * The [KMS key](https://cloud.google.com/security-key-management) used for
+   * encryption and decryption in CMEK scenarios.
    * </pre>
    *
    * <code>string kms_key_name = 8;</code>

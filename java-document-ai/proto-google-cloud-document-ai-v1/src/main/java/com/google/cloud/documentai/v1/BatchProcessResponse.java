@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Response message for batch process document method.
+ * Response message for
+ * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.BatchProcessResponse}
@@ -214,7 +215,8 @@ public final class BatchProcessResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for batch process document method.
+   * Response message for
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.BatchProcessResponse}

@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The response message for the ImportProcessorVersion method.
+ * The response message for the
+ * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionResponse}
@@ -279,7 +281,9 @@ public final class ImportProcessorVersionResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The response message for the ImportProcessorVersion method.
+   * The response message for the
+   * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionResponse}

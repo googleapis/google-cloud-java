@@ -22,7 +22,10 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for list processor types.
+ * Request message for the
+ * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+ * method. Some processor types may require the project be added to an
+ * allowlist.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ListProcessorTypesRequest}
@@ -71,9 +74,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The location of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -98,9 +100,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The location of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -129,8 +130,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * The maximum number of processor types to return.
-   * If unspecified, at most 100 processor types will be returned.
-   * The maximum value is 500; values above 500 will be coerced to 500.
+   * If unspecified, at most `100` processor types will be returned.
+   * The maximum value is `500`. Values above `500` will be coerced to `500`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -375,7 +376,10 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for list processor types.
+   * Request message for the
+   * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+   * method. Some processor types may require the project be added to an
+   * allowlist.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ListProcessorTypesRequest}
@@ -590,9 +594,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The location of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -616,9 +619,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The location of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -642,9 +644,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The location of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -667,9 +668,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The location of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -688,9 +688,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The location of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -717,8 +716,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * The maximum number of processor types to return.
-     * If unspecified, at most 100 processor types will be returned.
-     * The maximum value is 500; values above 500 will be coerced to 500.
+     * If unspecified, at most `100` processor types will be returned.
+     * The maximum value is `500`. Values above `500` will be coerced to `500`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -734,8 +733,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * The maximum number of processor types to return.
-     * If unspecified, at most 100 processor types will be returned.
-     * The maximum value is 500; values above 500 will be coerced to 500.
+     * If unspecified, at most `100` processor types will be returned.
+     * The maximum value is `500`. Values above `500` will be coerced to `500`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -755,8 +754,8 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * The maximum number of processor types to return.
-     * If unspecified, at most 100 processor types will be returned.
-     * The maximum value is 500; values above 500 will be coerced to 500.
+     * If unspecified, at most `100` processor types will be returned.
+     * The maximum value is `500`. Values above `500` will be coerced to `500`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Response message for set default processor version method.
+ * Response message for the
+ * [SetDefaultProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.SetDefaultProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.SetDefaultProcessorVersionResponse}
@@ -217,7 +219,9 @@ public final class SetDefaultProcessorVersionResponse extends com.google.protobu
    *
    *
    * <pre>
-   * Response message for set default processor version method.
+   * Response message for the
+   * [SetDefaultProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.SetDefaultProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.SetDefaultProcessorVersionResponse}

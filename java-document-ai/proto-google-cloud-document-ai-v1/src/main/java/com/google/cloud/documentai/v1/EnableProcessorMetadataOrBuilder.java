@@ -27,7 +27,7 @@ public interface EnableProcessorMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -39,7 +39,7 @@ public interface EnableProcessorMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -51,7 +51,7 @@ public interface EnableProcessorMetadataOrBuilder
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>

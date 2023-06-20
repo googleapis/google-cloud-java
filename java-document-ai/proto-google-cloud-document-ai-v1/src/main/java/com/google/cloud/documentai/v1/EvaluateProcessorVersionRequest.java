@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Evaluates the given ProcessorVersion against the supplied documents.
+ * Evaluates the given
+ * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] against the
+ * supplied documents.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.EvaluateProcessorVersionRequest}
@@ -362,7 +364,9 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Evaluates the given ProcessorVersion against the supplied documents.
+   * Evaluates the given
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] against the
+   * supplied documents.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.EvaluateProcessorVersionRequest}

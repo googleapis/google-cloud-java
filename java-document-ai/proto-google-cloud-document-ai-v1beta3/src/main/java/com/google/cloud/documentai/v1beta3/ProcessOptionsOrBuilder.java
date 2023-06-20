@@ -27,7 +27,7 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *

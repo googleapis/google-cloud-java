@@ -77,7 +77,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id, currently must be one of [us, eu].
+     * The location ID. For supported locations, refer to [regional and
+     * multi-regional support](/document-ai/docs/regions).
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -89,7 +90,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id, currently must be one of [us, eu].
+     * The location ID. For supported locations, refer to [regional and
+     * multi-regional support](/document-ai/docs/regions).
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -150,7 +152,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id, currently must be one of [us, eu].
+     * The location ID. For supported locations, refer to [regional and
+     * multi-regional support](/document-ai/docs/regions).
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -173,7 +176,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id, currently must be one of [us, eu].
+     * The location ID. For supported locations, refer to [regional and
+     * multi-regional support](/document-ai/docs/regions).
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -545,7 +549,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id, currently must be one of [us, eu].
+       * The location ID. For supported locations, refer to [regional and
+       * multi-regional support](/document-ai/docs/regions).
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -567,7 +572,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id, currently must be one of [us, eu].
+       * The location ID. For supported locations, refer to [regional and
+       * multi-regional support](/document-ai/docs/regions).
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -589,7 +595,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id, currently must be one of [us, eu].
+       * The location ID. For supported locations, refer to [regional and
+       * multi-regional support](/document-ai/docs/regions).
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -610,7 +617,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id, currently must be one of [us, eu].
+       * The location ID. For supported locations, refer to [regional and
+       * multi-regional support](/document-ai/docs/regions).
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -627,7 +635,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id, currently must be one of [us, eu].
+       * The location ID. For supported locations, refer to [regional and
+       * multi-regional support](/document-ai/docs/regions).
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -771,7 +780,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -794,7 +803,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -1724,7 +1733,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+     * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1746,7 +1755,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+     * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1768,7 +1777,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+     * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1789,7 +1798,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+     * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1806,7 +1815,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+     * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
      * </pre>
      *
      * <code>string type = 2;</code>

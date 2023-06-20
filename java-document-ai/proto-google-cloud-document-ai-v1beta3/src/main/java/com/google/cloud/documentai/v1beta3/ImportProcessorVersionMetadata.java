@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The long running operation metadata for the ImportProcessorVersion
+ * The long-running operation metadata for the
+ * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
  * method.
  * </pre>
  *
@@ -68,7 +69,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata for the long running operation.
+   * The basic metadata for the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -83,7 +84,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata for the long running operation.
+   * The basic metadata for the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -100,7 +101,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata for the long running operation.
+   * The basic metadata for the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -283,7 +284,8 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The long running operation metadata for the ImportProcessorVersion
+   * The long-running operation metadata for the
+   * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
    * method.
    * </pre>
    *
@@ -483,7 +485,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -497,7 +499,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -517,7 +519,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -540,7 +542,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -560,7 +562,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -588,7 +590,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -607,7 +609,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -622,7 +624,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -641,7 +643,7 @@ public final class ImportProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata for the long running operation.
+     * The basic metadata for the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>

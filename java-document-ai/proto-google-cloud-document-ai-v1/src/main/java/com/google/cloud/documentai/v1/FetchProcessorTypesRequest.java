@@ -22,7 +22,10 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for fetch processor types.
+ * Request message for the
+ * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+ * method. Some processor types may require the project be added to an
+ * allowlist.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}
@@ -70,9 +73,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -97,9 +99,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -285,7 +286,10 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for fetch processor types.
+   * Request message for the
+   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+   * method. Some processor types may require the project be added to an
+   * allowlist.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}
@@ -469,9 +473,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -495,9 +498,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -521,9 +523,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -546,9 +547,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -567,9 +567,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>

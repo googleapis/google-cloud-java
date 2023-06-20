@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Response message for the deploy processor version method.
+ * Response message for the
+ * [DeployProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.DeployProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.DeployProcessorVersionResponse}
@@ -217,7 +219,9 @@ public final class DeployProcessorVersionResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Response message for the deploy processor version method.
+   * Response message for the
+   * [DeployProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.DeployProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.DeployProcessorVersionResponse}

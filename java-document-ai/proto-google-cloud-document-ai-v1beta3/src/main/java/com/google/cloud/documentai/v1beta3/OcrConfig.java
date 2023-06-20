@@ -1008,7 +1008,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1022,7 +1028,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1036,7 +1048,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1051,7 +1069,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1079,6 +1103,24 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableSymbol() {
     return enableSymbol_;
+  }
+
+  public static final int COMPUTE_STYLE_INFO_FIELD_NUMBER = 8;
+  private boolean computeStyleInfo_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Turn on font id model and returns font style information.
+   * </pre>
+   *
+   * <code>bool compute_style_info = 8;</code>
+   *
+   * @return The computeStyleInfo.
+   */
+  @java.lang.Override
+  public boolean getComputeStyleInfo() {
+    return computeStyleInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1110,6 +1152,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableSymbol_ != false) {
       output.writeBool(6, enableSymbol_);
     }
+    if (computeStyleInfo_ != false) {
+      output.writeBool(8, computeStyleInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1139,6 +1184,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableSymbol_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableSymbol_);
     }
+    if (computeStyleInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, computeStyleInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1163,6 +1211,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (getEnableImageQualityScores() != other.getEnableImageQualityScores()) return false;
     if (!getAdvancedOcrOptionsList().equals(other.getAdvancedOcrOptionsList())) return false;
     if (getEnableSymbol() != other.getEnableSymbol()) return false;
+    if (getComputeStyleInfo() != other.getComputeStyleInfo()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1188,6 +1237,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_SYMBOL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSymbol());
+    hash = (37 * hash) + COMPUTE_STYLE_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getComputeStyleInfo());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1336,6 +1387,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       enableImageQualityScores_ = false;
       advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableSymbol_ = false;
+      computeStyleInfo_ = false;
       return this;
     }
 
@@ -1387,6 +1439,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enableSymbol_ = enableSymbol_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.computeStyleInfo_ = computeStyleInfo_;
       }
     }
 
@@ -1457,6 +1512,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableSymbol() != false) {
         setEnableSymbol(other.getEnableSymbol());
       }
+      if (other.getComputeStyleInfo() != false) {
+        setComputeStyleInfo(other.getComputeStyleInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1514,6 +1572,12 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
+            case 64:
+              {
+                computeStyleInfo_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1845,7 +1909,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1860,7 +1930,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1874,7 +1950,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1889,7 +1971,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1904,7 +1992,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1927,7 +2021,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1949,7 +2049,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1968,7 +2074,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1986,7 +2098,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -2055,6 +2173,59 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableSymbol() {
       bitField0_ = (bitField0_ & ~0x00000010);
       enableSymbol_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean computeStyleInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font id model and returns font style information.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8;</code>
+     *
+     * @return The computeStyleInfo.
+     */
+    @java.lang.Override
+    public boolean getComputeStyleInfo() {
+      return computeStyleInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font id model and returns font style information.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8;</code>
+     *
+     * @param value The computeStyleInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeStyleInfo(boolean value) {
+
+      computeStyleInfo_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font id model and returns font style information.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeStyleInfo() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      computeStyleInfo_ = false;
       onChanged();
       return this;
     }

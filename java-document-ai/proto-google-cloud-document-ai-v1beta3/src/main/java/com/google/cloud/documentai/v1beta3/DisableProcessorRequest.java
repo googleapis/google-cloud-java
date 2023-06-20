@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for the disable processor method.
+ * Request message for the
+ * [DisableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.DisableProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorRequest}
@@ -281,7 +283,9 @@ public final class DisableProcessorRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for the disable processor method.
+   * Request message for the
+   * [DisableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.DisableProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorRequest}

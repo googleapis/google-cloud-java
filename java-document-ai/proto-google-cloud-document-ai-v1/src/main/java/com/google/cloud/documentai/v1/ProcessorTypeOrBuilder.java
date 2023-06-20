@@ -54,7 +54,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -66,7 +66,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>

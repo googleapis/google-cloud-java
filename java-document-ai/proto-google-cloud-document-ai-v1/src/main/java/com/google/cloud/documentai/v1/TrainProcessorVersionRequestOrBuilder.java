@@ -142,7 +142,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -156,7 +157,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -170,7 +172,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>

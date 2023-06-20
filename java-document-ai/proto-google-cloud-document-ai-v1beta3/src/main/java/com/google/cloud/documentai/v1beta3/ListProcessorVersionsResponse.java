@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Response message for list processors.
+ * Response message for the
+ * [ListProcessorVersions][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorVersions]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ListProcessorVersionsResponse}
@@ -364,7 +366,9 @@ public final class ListProcessorVersionsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response message for list processors.
+   * Response message for the
+   * [ListProcessorVersions][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorVersions]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ListProcessorVersionsResponse}

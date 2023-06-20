@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * The long running operation metadata for review document method.
+ * The long-running operation metadata for the
+ * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentOperationMetadata}
@@ -69,7 +71,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -84,7 +86,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -101,7 +103,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -343,7 +345,9 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The long running operation metadata for review document method.
+   * The long-running operation metadata for the
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentOperationMetadata}
@@ -553,7 +557,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -567,7 +571,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -587,7 +591,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -609,7 +613,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -629,7 +633,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -656,7 +660,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -675,7 +679,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -690,7 +694,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
@@ -709,7 +713,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>

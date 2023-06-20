@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The long running operation metadata for set default processor version
+ * The long-running operation metadata for the
+ * [SetDefaultProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.SetDefaultProcessorVersion]
  * method.
  * </pre>
  *
@@ -68,7 +69,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -83,7 +84,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -100,7 +101,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -283,7 +284,8 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
    *
    *
    * <pre>
-   * The long running operation metadata for set default processor version
+   * The long-running operation metadata for the
+   * [SetDefaultProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.SetDefaultProcessorVersion]
    * method.
    * </pre>
    *
@@ -484,7 +486,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -498,7 +500,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -518,7 +520,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -541,7 +543,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -561,7 +563,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -589,7 +591,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -608,7 +610,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -623,7 +625,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -642,7 +644,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>

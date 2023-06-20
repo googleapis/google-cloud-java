@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Response message for the undeploy processor version method.
+ * Response message for the
+ * [UndeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.UndeployProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.UndeployProcessorVersionResponse}
@@ -216,7 +218,9 @@ public final class UndeployProcessorVersionResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Response message for the undeploy processor version method.
+   * Response message for the
+   * [UndeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.UndeployProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.UndeployProcessorVersionResponse}

@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for the process document method.
+ * Request message for the
+ * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessRequest}
@@ -292,13 +294,16 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The document payload, the [content] and [mime_type] fields must be set.
+   * The document payload, the
+   * [content][google.cloud.documentai.v1beta3.Document.content] and
+   * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+   * be set.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=373
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -310,13 +315,16 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The document payload, the [content] and [mime_type] fields must be set.
+   * The document payload, the
+   * [content][google.cloud.documentai.v1beta3.Document.content] and
+   * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+   * be set.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=373
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
    * @return The document.
    */
   @java.lang.Override
@@ -330,7 +338,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The document payload, the [content] and [mime_type] fields must be set.
+   * The document payload, the
+   * [content][google.cloud.documentai.v1beta3.Document.content] and
+   * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+   * be set.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -349,8 +360,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether Human Review feature should be skipped for this request. Default to
-   * false.
+   * Whether human review should be skipped for this request. Default to
+   * `false`.
    * </pre>
    *
    * <code>bool skip_human_review = 3;</code>
@@ -368,9 +379,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies which fields to include in ProcessResponse's document.
-   * Only supports top level document and pages field so it must be in the form
-   * of `{document_field_name}` or `pages.{page_field_name}`.
+   * Specifies which fields to include in the
+   * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+   * output. Only supports top-level document and pages field, so it must be in
+   * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -385,9 +397,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies which fields to include in ProcessResponse's document.
-   * Only supports top level document and pages field so it must be in the form
-   * of `{document_field_name}` or `pages.{page_field_name}`.
+   * Specifies which fields to include in the
+   * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+   * output. Only supports top-level document and pages field, so it must be in
+   * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -402,9 +415,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies which fields to include in ProcessResponse's document.
-   * Only supports top level document and pages field so it must be in the form
-   * of `{document_field_name}` or `pages.{page_field_name}`.
+   * Specifies which fields to include in the
+   * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+   * output. Only supports top-level document and pages field, so it must be in
+   * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -717,7 +731,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for the process document method.
+   * Request message for the
+   * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessRequest}
@@ -1612,13 +1628,16 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=373
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1629,13 +1648,16 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=373
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
      * @return The document.
      */
     @java.lang.Deprecated
@@ -1652,7 +1674,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1675,7 +1700,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1696,7 +1724,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1722,7 +1753,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1742,7 +1776,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1757,7 +1794,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1776,7 +1816,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document payload, the [content] and [mime_type] fields must be set.
+     * The document payload, the
+     * [content][google.cloud.documentai.v1beta3.Document.content] and
+     * [mime_type][google.cloud.documentai.v1beta3.Document.mime_type] fields must
+     * be set.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
@@ -1803,8 +1846,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 3;</code>
@@ -1819,8 +1862,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 3;</code>
@@ -1839,8 +1882,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 3;</code>
@@ -1864,9 +1907,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1880,9 +1924,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1900,9 +1945,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1924,9 +1970,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1945,9 +1992,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1972,9 +2020,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1993,9 +2042,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -2009,9 +2059,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -2027,9 +2078,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies which fields to include in ProcessResponse's document.
-     * Only supports top level document and pages field so it must be in the form
-     * of `{document_field_name}` or `pages.{page_field_name}`.
+     * Specifies which fields to include in the
+     * [ProcessResponse.document][google.cloud.documentai.v1beta3.ProcessResponse.document]
+     * output. Only supports top-level document and pages field, so it must be in
+     * the form of `{document_field_name}` or `pages.{page_field_name}`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>

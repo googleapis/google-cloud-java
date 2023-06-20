@@ -954,8 +954,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Font weight. Possible values are normal, bold, bolder, and lighter.
-     * https://www.w3schools.com/cssref/pr_font_weight.asp
+     * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+     * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
      * </pre>
      *
      * <code>string font_weight = 4;</code>
@@ -967,8 +967,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Font weight. Possible values are normal, bold, bolder, and lighter.
-     * https://www.w3schools.com/cssref/pr_font_weight.asp
+     * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+     * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
      * </pre>
      *
      * <code>string font_weight = 4;</code>
@@ -981,8 +981,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text style. Possible values are normal, italic, and oblique.
-     * https://www.w3schools.com/cssref/pr_font_font-style.asp
+     * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+     * Possible values are `normal`, `italic`, and `oblique`.
      * </pre>
      *
      * <code>string text_style = 5;</code>
@@ -994,8 +994,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text style. Possible values are normal, italic, and oblique.
-     * https://www.w3schools.com/cssref/pr_font_font-style.asp
+     * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+     * Possible values are `normal`, `italic`, and `oblique`.
      * </pre>
      *
      * <code>string text_style = 5;</code>
@@ -1008,9 +1008,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text decoration. Follows CSS standard.
-     * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-     * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+     * [Text
+     * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+     * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+     * &lt;text-decoration-style&gt;
      * </pre>
      *
      * <code>string text_decoration = 6;</code>
@@ -1022,9 +1023,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text decoration. Follows CSS standard.
-     * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-     * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+     * [Text
+     * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+     * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+     * &lt;text-decoration-style&gt;
      * </pre>
      *
      * <code>string text_decoration = 6;</code>
@@ -1165,7 +1167,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+       * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+       * `pt`).
        * </pre>
        *
        * <code>string unit = 2;</code>
@@ -1177,7 +1180,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+       * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+       * `pt`).
        * </pre>
        *
        * <code>string unit = 2;</code>
@@ -1256,7 +1260,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+       * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+       * `pt`).
        * </pre>
        *
        * <code>string unit = 2;</code>
@@ -1279,7 +1284,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+       * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+       * `pt`).
        * </pre>
        *
        * <code>string unit = 2;</code>
@@ -1727,7 +1733,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+         * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+         * `pt`).
          * </pre>
          *
          * <code>string unit = 2;</code>
@@ -1749,7 +1756,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+         * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+         * `pt`).
          * </pre>
          *
          * <code>string unit = 2;</code>
@@ -1771,7 +1779,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+         * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+         * `pt`).
          * </pre>
          *
          * <code>string unit = 2;</code>
@@ -1792,7 +1801,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+         * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+         * `pt`).
          * </pre>
          *
          * <code>string unit = 2;</code>
@@ -1809,7 +1819,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+         * Unit for the font size. Follows CSS naming (such as `in`, `px`, and
+         * `pt`).
          * </pre>
          *
          * <code>string unit = 2;</code>
@@ -2049,8 +2060,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Font weight. Possible values are normal, bold, bolder, and lighter.
-     * https://www.w3schools.com/cssref/pr_font_weight.asp
+     * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+     * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
      * </pre>
      *
      * <code>string font_weight = 4;</code>
@@ -2073,8 +2084,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Font weight. Possible values are normal, bold, bolder, and lighter.
-     * https://www.w3schools.com/cssref/pr_font_weight.asp
+     * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+     * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
      * </pre>
      *
      * <code>string font_weight = 4;</code>
@@ -2102,8 +2113,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text style. Possible values are normal, italic, and oblique.
-     * https://www.w3schools.com/cssref/pr_font_font-style.asp
+     * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+     * Possible values are `normal`, `italic`, and `oblique`.
      * </pre>
      *
      * <code>string text_style = 5;</code>
@@ -2126,8 +2137,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text style. Possible values are normal, italic, and oblique.
-     * https://www.w3schools.com/cssref/pr_font_font-style.asp
+     * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+     * Possible values are `normal`, `italic`, and `oblique`.
      * </pre>
      *
      * <code>string text_style = 5;</code>
@@ -2155,9 +2166,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text decoration. Follows CSS standard.
-     * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-     * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+     * [Text
+     * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+     * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+     * &lt;text-decoration-style&gt;
      * </pre>
      *
      * <code>string text_decoration = 6;</code>
@@ -2180,9 +2192,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text decoration. Follows CSS standard.
-     * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-     * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+     * [Text
+     * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+     * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+     * &lt;text-decoration-style&gt;
      * </pre>
      *
      * <code>string text_decoration = 6;</code>
@@ -3403,8 +3416,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Font weight. Possible values are normal, bold, bolder, and lighter.
-       * https://www.w3schools.com/cssref/pr_font_weight.asp
+       * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+       * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
        * </pre>
        *
        * <code>string font_weight = 4;</code>
@@ -3426,8 +3439,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Font weight. Possible values are normal, bold, bolder, and lighter.
-       * https://www.w3schools.com/cssref/pr_font_weight.asp
+       * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+       * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
        * </pre>
        *
        * <code>string font_weight = 4;</code>
@@ -3449,8 +3462,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Font weight. Possible values are normal, bold, bolder, and lighter.
-       * https://www.w3schools.com/cssref/pr_font_weight.asp
+       * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+       * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
        * </pre>
        *
        * <code>string font_weight = 4;</code>
@@ -3471,8 +3484,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Font weight. Possible values are normal, bold, bolder, and lighter.
-       * https://www.w3schools.com/cssref/pr_font_weight.asp
+       * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+       * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
        * </pre>
        *
        * <code>string font_weight = 4;</code>
@@ -3489,8 +3502,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Font weight. Possible values are normal, bold, bolder, and lighter.
-       * https://www.w3schools.com/cssref/pr_font_weight.asp
+       * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
+       * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
        * </pre>
        *
        * <code>string font_weight = 4;</code>
@@ -3514,8 +3527,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text style. Possible values are normal, italic, and oblique.
-       * https://www.w3schools.com/cssref/pr_font_font-style.asp
+       * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+       * Possible values are `normal`, `italic`, and `oblique`.
        * </pre>
        *
        * <code>string text_style = 5;</code>
@@ -3537,8 +3550,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text style. Possible values are normal, italic, and oblique.
-       * https://www.w3schools.com/cssref/pr_font_font-style.asp
+       * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+       * Possible values are `normal`, `italic`, and `oblique`.
        * </pre>
        *
        * <code>string text_style = 5;</code>
@@ -3560,8 +3573,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text style. Possible values are normal, italic, and oblique.
-       * https://www.w3schools.com/cssref/pr_font_font-style.asp
+       * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+       * Possible values are `normal`, `italic`, and `oblique`.
        * </pre>
        *
        * <code>string text_style = 5;</code>
@@ -3582,8 +3595,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text style. Possible values are normal, italic, and oblique.
-       * https://www.w3schools.com/cssref/pr_font_font-style.asp
+       * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+       * Possible values are `normal`, `italic`, and `oblique`.
        * </pre>
        *
        * <code>string text_style = 5;</code>
@@ -3600,8 +3613,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text style. Possible values are normal, italic, and oblique.
-       * https://www.w3schools.com/cssref/pr_font_font-style.asp
+       * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
+       * Possible values are `normal`, `italic`, and `oblique`.
        * </pre>
        *
        * <code>string text_style = 5;</code>
@@ -3625,9 +3638,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text decoration. Follows CSS standard.
-       * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-       * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+       * [Text
+       * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+       * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+       * &lt;text-decoration-style&gt;
        * </pre>
        *
        * <code>string text_decoration = 6;</code>
@@ -3649,9 +3663,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text decoration. Follows CSS standard.
-       * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-       * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+       * [Text
+       * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+       * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+       * &lt;text-decoration-style&gt;
        * </pre>
        *
        * <code>string text_decoration = 6;</code>
@@ -3673,9 +3688,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text decoration. Follows CSS standard.
-       * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-       * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+       * [Text
+       * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+       * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+       * &lt;text-decoration-style&gt;
        * </pre>
        *
        * <code>string text_decoration = 6;</code>
@@ -3696,9 +3712,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text decoration. Follows CSS standard.
-       * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-       * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+       * [Text
+       * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+       * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+       * &lt;text-decoration-style&gt;
        * </pre>
        *
        * <code>string text_decoration = 6;</code>
@@ -3715,9 +3732,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text decoration. Follows CSS standard.
-       * &lt;text-decoration-line&gt; &lt;text-decoration-color&gt; &lt;text-decoration-style&gt;
-       * https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+       * [Text
+       * decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp).
+       * Follows CSS standard. &lt;text-decoration-line&gt; &lt;text-decoration-color&gt;
+       * &lt;text-decoration-style&gt;
        * </pre>
        *
        * <code>string text_decoration = 6;</code>
@@ -4869,7 +4887,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -4882,7 +4900,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -4895,7 +4913,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -4915,7 +4933,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=488
+     *     google/cloud/documentai/v1/document.proto;l=548
      * @return Whether the provenance field is set.
      */
     @java.lang.Deprecated
@@ -4931,7 +4949,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=488
+     *     google/cloud/documentai/v1/document.proto;l=548
      * @return The provenance.
      */
     @java.lang.Deprecated
@@ -5881,7 +5899,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Encoding mime type for the image.
+       * Encoding [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+       * for the image.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -5893,7 +5913,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Encoding mime type for the image.
+       * Encoding [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+       * for the image.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -5999,7 +6021,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Encoding mime type for the image.
+       * Encoding [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+       * for the image.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -6022,7 +6046,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Encoding mime type for the image.
+       * Encoding [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+       * for the image.
        * </pre>
        *
        * <code>string mime_type = 2;</code>
@@ -6551,7 +6577,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encoding mime type for the image.
+         * Encoding [media type (MIME
+         * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+         * for the image.
          * </pre>
          *
          * <code>string mime_type = 2;</code>
@@ -6573,7 +6601,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encoding mime type for the image.
+         * Encoding [media type (MIME
+         * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+         * for the image.
          * </pre>
          *
          * <code>string mime_type = 2;</code>
@@ -6595,7 +6625,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encoding mime type for the image.
+         * Encoding [media type (MIME
+         * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+         * for the image.
          * </pre>
          *
          * <code>string mime_type = 2;</code>
@@ -6616,7 +6648,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encoding mime type for the image.
+         * Encoding [media type (MIME
+         * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+         * for the image.
          * </pre>
          *
          * <code>string mime_type = 2;</code>
@@ -6633,7 +6667,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encoding mime type for the image.
+         * Encoding [media type (MIME
+         * type)](https://www.iana.org/assignments/media-types/media-types.xhtml)
+         * for the image.
          * </pre>
          *
          * <code>string mime_type = 2;</code>
@@ -9429,7 +9465,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=203
+       *     google/cloud/documentai/v1/document.proto;l=207
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -9445,7 +9481,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=203
+       *     google/cloud/documentai/v1/document.proto;l=207
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -9660,7 +9696,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=203
+       *     google/cloud/documentai/v1/document.proto;l=207
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -9679,7 +9715,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=203
+       *     google/cloud/documentai/v1/document.proto;l=207
        * @return The provenance.
        */
       @java.lang.Override
@@ -10791,7 +10827,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=203
+         *     google/cloud/documentai/v1/document.proto;l=207
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -10809,7 +10845,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=203
+         *     google/cloud/documentai/v1/document.proto;l=207
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -11164,7 +11200,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=216
+       *     See google/cloud/documentai/v1/document.proto;l=220
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -11180,7 +11216,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=216
+       *     See google/cloud/documentai/v1/document.proto;l=220
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -11394,7 +11430,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=216
+       *     See google/cloud/documentai/v1/document.proto;l=220
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -11413,7 +11449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=216
+       *     See google/cloud/documentai/v1/document.proto;l=220
        * @return The provenance.
        */
       @java.lang.Override
@@ -12524,7 +12560,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=216
+         *     See google/cloud/documentai/v1/document.proto;l=220
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -12542,7 +12578,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=216
+         *     See google/cloud/documentai/v1/document.proto;l=220
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -12897,7 +12933,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=230
+       *     google/cloud/documentai/v1/document.proto;l=234
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -12913,7 +12949,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=230
+       *     google/cloud/documentai/v1/document.proto;l=234
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -13128,7 +13164,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=230
+       *     google/cloud/documentai/v1/document.proto;l=234
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -13147,7 +13183,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=230
+       *     google/cloud/documentai/v1/document.proto;l=234
        * @return The provenance.
        */
       @java.lang.Override
@@ -14259,7 +14295,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=230
+         *     google/cloud/documentai/v1/document.proto;l=234
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -14277,7 +14313,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=230
+         *     google/cloud/documentai/v1/document.proto;l=234
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -14674,7 +14710,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=269
+       *     google/cloud/documentai/v1/document.proto;l=326
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -14690,7 +14726,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=269
+       *     google/cloud/documentai/v1/document.proto;l=326
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -14707,6 +14743,41 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       *
+       * @return Whether the styleInfo field is set.
+       */
+      boolean hasStyleInfo();
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       *
+       * @return The styleInfo.
+       */
+      com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo getStyleInfo();
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       */
+      com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder getStyleInfoOrBuilder();
     }
     /**
      *
@@ -15577,6 +15648,2563 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface StyleInfoOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.Page.Token.StyleInfo)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Font size in points (`1` point is `¹⁄₇₂` inches).
+         * </pre>
+         *
+         * <code>int32 font_size = 1;</code>
+         *
+         * @return The fontSize.
+         */
+        int getFontSize();
+
+        /**
+         *
+         *
+         * <pre>
+         * Font size in pixels, equal to _unrounded
+         * [font_size][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_size]_
+         * * _resolution_ ÷ `72.0`.
+         * </pre>
+         *
+         * <code>double pixel_font_size = 2;</code>
+         *
+         * @return The pixelFontSize.
+         */
+        double getPixelFontSize();
+
+        /**
+         *
+         *
+         * <pre>
+         * Letter spacing in points.
+         * </pre>
+         *
+         * <code>double letter_spacing = 3;</code>
+         *
+         * @return The letterSpacing.
+         */
+        double getLetterSpacing();
+
+        /**
+         *
+         *
+         * <pre>
+         * Name or style of the font.
+         * </pre>
+         *
+         * <code>string font_type = 4;</code>
+         *
+         * @return The fontType.
+         */
+        java.lang.String getFontType();
+        /**
+         *
+         *
+         * <pre>
+         * Name or style of the font.
+         * </pre>
+         *
+         * <code>string font_type = 4;</code>
+         *
+         * @return The bytes for fontType.
+         */
+        com.google.protobuf.ByteString getFontTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is bold (equivalent to
+         * [font_weight][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_weight]
+         * is at least `700`).
+         * </pre>
+         *
+         * <code>bool bold = 5;</code>
+         *
+         * @return The bold.
+         */
+        boolean getBold();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is italic.
+         * </pre>
+         *
+         * <code>bool italic = 6;</code>
+         *
+         * @return The italic.
+         */
+        boolean getItalic();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is underlined.
+         * </pre>
+         *
+         * <code>bool underlined = 7;</code>
+         *
+         * @return The underlined.
+         */
+        boolean getUnderlined();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is strikethrough.
+         * </pre>
+         *
+         * <code>bool strikeout = 8;</code>
+         *
+         * @return The strikeout.
+         */
+        boolean getStrikeout();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is a subscript.
+         * </pre>
+         *
+         * <code>bool subscript = 9;</code>
+         *
+         * @return The subscript.
+         */
+        boolean getSubscript();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is a superscript.
+         * </pre>
+         *
+         * <code>bool superscript = 10;</code>
+         *
+         * @return The superscript.
+         */
+        boolean getSuperscript();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is in small caps.
+         * </pre>
+         *
+         * <code>bool smallcaps = 11;</code>
+         *
+         * @return The smallcaps.
+         */
+        boolean getSmallcaps();
+
+        /**
+         *
+         *
+         * <pre>
+         * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy).
+         * Normal is `400`, bold is `700`.
+         * </pre>
+         *
+         * <code>int32 font_weight = 12;</code>
+         *
+         * @return The fontWeight.
+         */
+        int getFontWeight();
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is handwritten.
+         * </pre>
+         *
+         * <code>bool handwritten = 13;</code>
+         *
+         * @return The handwritten.
+         */
+        boolean getHandwritten();
+
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         *
+         * @return Whether the textColor field is set.
+         */
+        boolean hasTextColor();
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         *
+         * @return The textColor.
+         */
+        com.google.type.Color getTextColor();
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         */
+        com.google.type.ColorOrBuilder getTextColorOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         *
+         * @return Whether the backgroundColor field is set.
+         */
+        boolean hasBackgroundColor();
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         *
+         * @return The backgroundColor.
+         */
+        com.google.type.Color getBackgroundColor();
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         */
+        com.google.type.ColorOrBuilder getBackgroundColorOrBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Font and other text style attributes.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.documentai.v1.Document.Page.Token.StyleInfo}
+       */
+      public static final class StyleInfo extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.Page.Token.StyleInfo)
+          StyleInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use StyleInfo.newBuilder() to construct.
+        private StyleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private StyleInfo() {
+          fontType_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new StyleInfo();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.class,
+                  com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder.class);
+        }
+
+        public static final int FONT_SIZE_FIELD_NUMBER = 1;
+        private int fontSize_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Font size in points (`1` point is `¹⁄₇₂` inches).
+         * </pre>
+         *
+         * <code>int32 font_size = 1;</code>
+         *
+         * @return The fontSize.
+         */
+        @java.lang.Override
+        public int getFontSize() {
+          return fontSize_;
+        }
+
+        public static final int PIXEL_FONT_SIZE_FIELD_NUMBER = 2;
+        private double pixelFontSize_ = 0D;
+        /**
+         *
+         *
+         * <pre>
+         * Font size in pixels, equal to _unrounded
+         * [font_size][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_size]_
+         * * _resolution_ ÷ `72.0`.
+         * </pre>
+         *
+         * <code>double pixel_font_size = 2;</code>
+         *
+         * @return The pixelFontSize.
+         */
+        @java.lang.Override
+        public double getPixelFontSize() {
+          return pixelFontSize_;
+        }
+
+        public static final int LETTER_SPACING_FIELD_NUMBER = 3;
+        private double letterSpacing_ = 0D;
+        /**
+         *
+         *
+         * <pre>
+         * Letter spacing in points.
+         * </pre>
+         *
+         * <code>double letter_spacing = 3;</code>
+         *
+         * @return The letterSpacing.
+         */
+        @java.lang.Override
+        public double getLetterSpacing() {
+          return letterSpacing_;
+        }
+
+        public static final int FONT_TYPE_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fontType_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Name or style of the font.
+         * </pre>
+         *
+         * <code>string font_type = 4;</code>
+         *
+         * @return The fontType.
+         */
+        @java.lang.Override
+        public java.lang.String getFontType() {
+          java.lang.Object ref = fontType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fontType_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name or style of the font.
+         * </pre>
+         *
+         * <code>string font_type = 4;</code>
+         *
+         * @return The bytes for fontType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFontTypeBytes() {
+          java.lang.Object ref = fontType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fontType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int BOLD_FIELD_NUMBER = 5;
+        private boolean bold_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is bold (equivalent to
+         * [font_weight][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_weight]
+         * is at least `700`).
+         * </pre>
+         *
+         * <code>bool bold = 5;</code>
+         *
+         * @return The bold.
+         */
+        @java.lang.Override
+        public boolean getBold() {
+          return bold_;
+        }
+
+        public static final int ITALIC_FIELD_NUMBER = 6;
+        private boolean italic_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is italic.
+         * </pre>
+         *
+         * <code>bool italic = 6;</code>
+         *
+         * @return The italic.
+         */
+        @java.lang.Override
+        public boolean getItalic() {
+          return italic_;
+        }
+
+        public static final int UNDERLINED_FIELD_NUMBER = 7;
+        private boolean underlined_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is underlined.
+         * </pre>
+         *
+         * <code>bool underlined = 7;</code>
+         *
+         * @return The underlined.
+         */
+        @java.lang.Override
+        public boolean getUnderlined() {
+          return underlined_;
+        }
+
+        public static final int STRIKEOUT_FIELD_NUMBER = 8;
+        private boolean strikeout_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is strikethrough.
+         * </pre>
+         *
+         * <code>bool strikeout = 8;</code>
+         *
+         * @return The strikeout.
+         */
+        @java.lang.Override
+        public boolean getStrikeout() {
+          return strikeout_;
+        }
+
+        public static final int SUBSCRIPT_FIELD_NUMBER = 9;
+        private boolean subscript_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is a subscript.
+         * </pre>
+         *
+         * <code>bool subscript = 9;</code>
+         *
+         * @return The subscript.
+         */
+        @java.lang.Override
+        public boolean getSubscript() {
+          return subscript_;
+        }
+
+        public static final int SUPERSCRIPT_FIELD_NUMBER = 10;
+        private boolean superscript_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is a superscript.
+         * </pre>
+         *
+         * <code>bool superscript = 10;</code>
+         *
+         * @return The superscript.
+         */
+        @java.lang.Override
+        public boolean getSuperscript() {
+          return superscript_;
+        }
+
+        public static final int SMALLCAPS_FIELD_NUMBER = 11;
+        private boolean smallcaps_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is in small caps.
+         * </pre>
+         *
+         * <code>bool smallcaps = 11;</code>
+         *
+         * @return The smallcaps.
+         */
+        @java.lang.Override
+        public boolean getSmallcaps() {
+          return smallcaps_;
+        }
+
+        public static final int FONT_WEIGHT_FIELD_NUMBER = 12;
+        private int fontWeight_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy).
+         * Normal is `400`, bold is `700`.
+         * </pre>
+         *
+         * <code>int32 font_weight = 12;</code>
+         *
+         * @return The fontWeight.
+         */
+        @java.lang.Override
+        public int getFontWeight() {
+          return fontWeight_;
+        }
+
+        public static final int HANDWRITTEN_FIELD_NUMBER = 13;
+        private boolean handwritten_ = false;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the text is handwritten.
+         * </pre>
+         *
+         * <code>bool handwritten = 13;</code>
+         *
+         * @return The handwritten.
+         */
+        @java.lang.Override
+        public boolean getHandwritten() {
+          return handwritten_;
+        }
+
+        public static final int TEXT_COLOR_FIELD_NUMBER = 14;
+        private com.google.type.Color textColor_;
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         *
+         * @return Whether the textColor field is set.
+         */
+        @java.lang.Override
+        public boolean hasTextColor() {
+          return textColor_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         *
+         * @return The textColor.
+         */
+        @java.lang.Override
+        public com.google.type.Color getTextColor() {
+          return textColor_ == null ? com.google.type.Color.getDefaultInstance() : textColor_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Color of the text.
+         * </pre>
+         *
+         * <code>.google.type.Color text_color = 14;</code>
+         */
+        @java.lang.Override
+        public com.google.type.ColorOrBuilder getTextColorOrBuilder() {
+          return textColor_ == null ? com.google.type.Color.getDefaultInstance() : textColor_;
+        }
+
+        public static final int BACKGROUND_COLOR_FIELD_NUMBER = 15;
+        private com.google.type.Color backgroundColor_;
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         *
+         * @return Whether the backgroundColor field is set.
+         */
+        @java.lang.Override
+        public boolean hasBackgroundColor() {
+          return backgroundColor_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         *
+         * @return The backgroundColor.
+         */
+        @java.lang.Override
+        public com.google.type.Color getBackgroundColor() {
+          return backgroundColor_ == null
+              ? com.google.type.Color.getDefaultInstance()
+              : backgroundColor_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Color of the background.
+         * </pre>
+         *
+         * <code>.google.type.Color background_color = 15;</code>
+         */
+        @java.lang.Override
+        public com.google.type.ColorOrBuilder getBackgroundColorOrBuilder() {
+          return backgroundColor_ == null
+              ? com.google.type.Color.getDefaultInstance()
+              : backgroundColor_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (fontSize_ != 0) {
+            output.writeInt32(1, fontSize_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(pixelFontSize_) != 0) {
+            output.writeDouble(2, pixelFontSize_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(letterSpacing_) != 0) {
+            output.writeDouble(3, letterSpacing_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fontType_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fontType_);
+          }
+          if (bold_ != false) {
+            output.writeBool(5, bold_);
+          }
+          if (italic_ != false) {
+            output.writeBool(6, italic_);
+          }
+          if (underlined_ != false) {
+            output.writeBool(7, underlined_);
+          }
+          if (strikeout_ != false) {
+            output.writeBool(8, strikeout_);
+          }
+          if (subscript_ != false) {
+            output.writeBool(9, subscript_);
+          }
+          if (superscript_ != false) {
+            output.writeBool(10, superscript_);
+          }
+          if (smallcaps_ != false) {
+            output.writeBool(11, smallcaps_);
+          }
+          if (fontWeight_ != 0) {
+            output.writeInt32(12, fontWeight_);
+          }
+          if (handwritten_ != false) {
+            output.writeBool(13, handwritten_);
+          }
+          if (textColor_ != null) {
+            output.writeMessage(14, getTextColor());
+          }
+          if (backgroundColor_ != null) {
+            output.writeMessage(15, getBackgroundColor());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (fontSize_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, fontSize_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(pixelFontSize_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, pixelFontSize_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(letterSpacing_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, letterSpacing_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fontType_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fontType_);
+          }
+          if (bold_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, bold_);
+          }
+          if (italic_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, italic_);
+          }
+          if (underlined_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, underlined_);
+          }
+          if (strikeout_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, strikeout_);
+          }
+          if (subscript_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, subscript_);
+          }
+          if (superscript_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, superscript_);
+          }
+          if (smallcaps_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, smallcaps_);
+          }
+          if (fontWeight_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, fontWeight_);
+          }
+          if (handwritten_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, handwritten_);
+          }
+          if (textColor_ != null) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getTextColor());
+          }
+          if (backgroundColor_ != null) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(15, getBackgroundColor());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo other =
+              (com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo) obj;
+
+          if (getFontSize() != other.getFontSize()) return false;
+          if (java.lang.Double.doubleToLongBits(getPixelFontSize())
+              != java.lang.Double.doubleToLongBits(other.getPixelFontSize())) return false;
+          if (java.lang.Double.doubleToLongBits(getLetterSpacing())
+              != java.lang.Double.doubleToLongBits(other.getLetterSpacing())) return false;
+          if (!getFontType().equals(other.getFontType())) return false;
+          if (getBold() != other.getBold()) return false;
+          if (getItalic() != other.getItalic()) return false;
+          if (getUnderlined() != other.getUnderlined()) return false;
+          if (getStrikeout() != other.getStrikeout()) return false;
+          if (getSubscript() != other.getSubscript()) return false;
+          if (getSuperscript() != other.getSuperscript()) return false;
+          if (getSmallcaps() != other.getSmallcaps()) return false;
+          if (getFontWeight() != other.getFontWeight()) return false;
+          if (getHandwritten() != other.getHandwritten()) return false;
+          if (hasTextColor() != other.hasTextColor()) return false;
+          if (hasTextColor()) {
+            if (!getTextColor().equals(other.getTextColor())) return false;
+          }
+          if (hasBackgroundColor() != other.hasBackgroundColor()) return false;
+          if (hasBackgroundColor()) {
+            if (!getBackgroundColor().equals(other.getBackgroundColor())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FONT_SIZE_FIELD_NUMBER;
+          hash = (53 * hash) + getFontSize();
+          hash = (37 * hash) + PIXEL_FONT_SIZE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getPixelFontSize()));
+          hash = (37 * hash) + LETTER_SPACING_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getLetterSpacing()));
+          hash = (37 * hash) + FONT_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getFontType().hashCode();
+          hash = (37 * hash) + BOLD_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBold());
+          hash = (37 * hash) + ITALIC_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getItalic());
+          hash = (37 * hash) + UNDERLINED_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnderlined());
+          hash = (37 * hash) + STRIKEOUT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStrikeout());
+          hash = (37 * hash) + SUBSCRIPT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSubscript());
+          hash = (37 * hash) + SUPERSCRIPT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuperscript());
+          hash = (37 * hash) + SMALLCAPS_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSmallcaps());
+          hash = (37 * hash) + FONT_WEIGHT_FIELD_NUMBER;
+          hash = (53 * hash) + getFontWeight();
+          hash = (37 * hash) + HANDWRITTEN_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHandwritten());
+          if (hasTextColor()) {
+            hash = (37 * hash) + TEXT_COLOR_FIELD_NUMBER;
+            hash = (53 * hash) + getTextColor().hashCode();
+          }
+          if (hasBackgroundColor()) {
+            hash = (37 * hash) + BACKGROUND_COLOR_FIELD_NUMBER;
+            hash = (53 * hash) + getBackgroundColor().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Font and other text style attributes.
+         * </pre>
+         *
+         * Protobuf type {@code google.cloud.documentai.v1.Document.Page.Token.StyleInfo}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.Page.Token.StyleInfo)
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.class,
+                    com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            fontSize_ = 0;
+            pixelFontSize_ = 0D;
+            letterSpacing_ = 0D;
+            fontType_ = "";
+            bold_ = false;
+            italic_ = false;
+            underlined_ = false;
+            strikeout_ = false;
+            subscript_ = false;
+            superscript_ = false;
+            smallcaps_ = false;
+            fontWeight_ = 0;
+            handwritten_ = false;
+            textColor_ = null;
+            if (textColorBuilder_ != null) {
+              textColorBuilder_.dispose();
+              textColorBuilder_ = null;
+            }
+            backgroundColor_ = null;
+            if (backgroundColorBuilder_ != null) {
+              backgroundColorBuilder_.dispose();
+              backgroundColorBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_Page_Token_StyleInfo_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo build() {
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo buildPartial() {
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo result =
+                new com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fontSize_ = fontSize_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pixelFontSize_ = pixelFontSize_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.letterSpacing_ = letterSpacing_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.fontType_ = fontType_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.bold_ = bold_;
+            }
+            if (((from_bitField0_ & 0x00000020) != 0)) {
+              result.italic_ = italic_;
+            }
+            if (((from_bitField0_ & 0x00000040) != 0)) {
+              result.underlined_ = underlined_;
+            }
+            if (((from_bitField0_ & 0x00000080) != 0)) {
+              result.strikeout_ = strikeout_;
+            }
+            if (((from_bitField0_ & 0x00000100) != 0)) {
+              result.subscript_ = subscript_;
+            }
+            if (((from_bitField0_ & 0x00000200) != 0)) {
+              result.superscript_ = superscript_;
+            }
+            if (((from_bitField0_ & 0x00000400) != 0)) {
+              result.smallcaps_ = smallcaps_;
+            }
+            if (((from_bitField0_ & 0x00000800) != 0)) {
+              result.fontWeight_ = fontWeight_;
+            }
+            if (((from_bitField0_ & 0x00001000) != 0)) {
+              result.handwritten_ = handwritten_;
+            }
+            if (((from_bitField0_ & 0x00002000) != 0)) {
+              result.textColor_ =
+                  textColorBuilder_ == null ? textColor_ : textColorBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00004000) != 0)) {
+              result.backgroundColor_ =
+                  backgroundColorBuilder_ == null
+                      ? backgroundColor_
+                      : backgroundColorBuilder_.build();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo other) {
+            if (other
+                == com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+                    .getDefaultInstance()) return this;
+            if (other.getFontSize() != 0) {
+              setFontSize(other.getFontSize());
+            }
+            if (other.getPixelFontSize() != 0D) {
+              setPixelFontSize(other.getPixelFontSize());
+            }
+            if (other.getLetterSpacing() != 0D) {
+              setLetterSpacing(other.getLetterSpacing());
+            }
+            if (!other.getFontType().isEmpty()) {
+              fontType_ = other.fontType_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            if (other.getBold() != false) {
+              setBold(other.getBold());
+            }
+            if (other.getItalic() != false) {
+              setItalic(other.getItalic());
+            }
+            if (other.getUnderlined() != false) {
+              setUnderlined(other.getUnderlined());
+            }
+            if (other.getStrikeout() != false) {
+              setStrikeout(other.getStrikeout());
+            }
+            if (other.getSubscript() != false) {
+              setSubscript(other.getSubscript());
+            }
+            if (other.getSuperscript() != false) {
+              setSuperscript(other.getSuperscript());
+            }
+            if (other.getSmallcaps() != false) {
+              setSmallcaps(other.getSmallcaps());
+            }
+            if (other.getFontWeight() != 0) {
+              setFontWeight(other.getFontWeight());
+            }
+            if (other.getHandwritten() != false) {
+              setHandwritten(other.getHandwritten());
+            }
+            if (other.hasTextColor()) {
+              mergeTextColor(other.getTextColor());
+            }
+            if (other.hasBackgroundColor()) {
+              mergeBackgroundColor(other.getBackgroundColor());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      fontSize_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 17:
+                    {
+                      pixelFontSize_ = input.readDouble();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 17
+                  case 25:
+                    {
+                      letterSpacing_ = input.readDouble();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 25
+                  case 34:
+                    {
+                      fontType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
+                  case 40:
+                    {
+                      bold_ = input.readBool();
+                      bitField0_ |= 0x00000010;
+                      break;
+                    } // case 40
+                  case 48:
+                    {
+                      italic_ = input.readBool();
+                      bitField0_ |= 0x00000020;
+                      break;
+                    } // case 48
+                  case 56:
+                    {
+                      underlined_ = input.readBool();
+                      bitField0_ |= 0x00000040;
+                      break;
+                    } // case 56
+                  case 64:
+                    {
+                      strikeout_ = input.readBool();
+                      bitField0_ |= 0x00000080;
+                      break;
+                    } // case 64
+                  case 72:
+                    {
+                      subscript_ = input.readBool();
+                      bitField0_ |= 0x00000100;
+                      break;
+                    } // case 72
+                  case 80:
+                    {
+                      superscript_ = input.readBool();
+                      bitField0_ |= 0x00000200;
+                      break;
+                    } // case 80
+                  case 88:
+                    {
+                      smallcaps_ = input.readBool();
+                      bitField0_ |= 0x00000400;
+                      break;
+                    } // case 88
+                  case 96:
+                    {
+                      fontWeight_ = input.readInt32();
+                      bitField0_ |= 0x00000800;
+                      break;
+                    } // case 96
+                  case 104:
+                    {
+                      handwritten_ = input.readBool();
+                      bitField0_ |= 0x00001000;
+                      break;
+                    } // case 104
+                  case 114:
+                    {
+                      input.readMessage(getTextColorFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00002000;
+                      break;
+                    } // case 114
+                  case 122:
+                    {
+                      input.readMessage(
+                          getBackgroundColorFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00004000;
+                      break;
+                    } // case 122
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int fontSize_;
+          /**
+           *
+           *
+           * <pre>
+           * Font size in points (`1` point is `¹⁄₇₂` inches).
+           * </pre>
+           *
+           * <code>int32 font_size = 1;</code>
+           *
+           * @return The fontSize.
+           */
+          @java.lang.Override
+          public int getFontSize() {
+            return fontSize_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Font size in points (`1` point is `¹⁄₇₂` inches).
+           * </pre>
+           *
+           * <code>int32 font_size = 1;</code>
+           *
+           * @param value The fontSize to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFontSize(int value) {
+
+            fontSize_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Font size in points (`1` point is `¹⁄₇₂` inches).
+           * </pre>
+           *
+           * <code>int32 font_size = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFontSize() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            fontSize_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private double pixelFontSize_;
+          /**
+           *
+           *
+           * <pre>
+           * Font size in pixels, equal to _unrounded
+           * [font_size][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_size]_
+           * * _resolution_ ÷ `72.0`.
+           * </pre>
+           *
+           * <code>double pixel_font_size = 2;</code>
+           *
+           * @return The pixelFontSize.
+           */
+          @java.lang.Override
+          public double getPixelFontSize() {
+            return pixelFontSize_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Font size in pixels, equal to _unrounded
+           * [font_size][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_size]_
+           * * _resolution_ ÷ `72.0`.
+           * </pre>
+           *
+           * <code>double pixel_font_size = 2;</code>
+           *
+           * @param value The pixelFontSize to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPixelFontSize(double value) {
+
+            pixelFontSize_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Font size in pixels, equal to _unrounded
+           * [font_size][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_size]_
+           * * _resolution_ ÷ `72.0`.
+           * </pre>
+           *
+           * <code>double pixel_font_size = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPixelFontSize() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            pixelFontSize_ = 0D;
+            onChanged();
+            return this;
+          }
+
+          private double letterSpacing_;
+          /**
+           *
+           *
+           * <pre>
+           * Letter spacing in points.
+           * </pre>
+           *
+           * <code>double letter_spacing = 3;</code>
+           *
+           * @return The letterSpacing.
+           */
+          @java.lang.Override
+          public double getLetterSpacing() {
+            return letterSpacing_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Letter spacing in points.
+           * </pre>
+           *
+           * <code>double letter_spacing = 3;</code>
+           *
+           * @param value The letterSpacing to set.
+           * @return This builder for chaining.
+           */
+          public Builder setLetterSpacing(double value) {
+
+            letterSpacing_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Letter spacing in points.
+           * </pre>
+           *
+           * <code>double letter_spacing = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearLetterSpacing() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            letterSpacing_ = 0D;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object fontType_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Name or style of the font.
+           * </pre>
+           *
+           * <code>string font_type = 4;</code>
+           *
+           * @return The fontType.
+           */
+          public java.lang.String getFontType() {
+            java.lang.Object ref = fontType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fontType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name or style of the font.
+           * </pre>
+           *
+           * <code>string font_type = 4;</code>
+           *
+           * @return The bytes for fontType.
+           */
+          public com.google.protobuf.ByteString getFontTypeBytes() {
+            java.lang.Object ref = fontType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              fontType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name or style of the font.
+           * </pre>
+           *
+           * <code>string font_type = 4;</code>
+           *
+           * @param value The fontType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFontType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            fontType_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name or style of the font.
+           * </pre>
+           *
+           * <code>string font_type = 4;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFontType() {
+            fontType_ = getDefaultInstance().getFontType();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name or style of the font.
+           * </pre>
+           *
+           * <code>string font_type = 4;</code>
+           *
+           * @param value The bytes for fontType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFontTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            fontType_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          private boolean bold_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is bold (equivalent to
+           * [font_weight][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_weight]
+           * is at least `700`).
+           * </pre>
+           *
+           * <code>bool bold = 5;</code>
+           *
+           * @return The bold.
+           */
+          @java.lang.Override
+          public boolean getBold() {
+            return bold_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is bold (equivalent to
+           * [font_weight][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_weight]
+           * is at least `700`).
+           * </pre>
+           *
+           * <code>bool bold = 5;</code>
+           *
+           * @param value The bold to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBold(boolean value) {
+
+            bold_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is bold (equivalent to
+           * [font_weight][google.cloud.documentai.v1.Document.Page.Token.StyleInfo.font_weight]
+           * is at least `700`).
+           * </pre>
+           *
+           * <code>bool bold = 5;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearBold() {
+            bitField0_ = (bitField0_ & ~0x00000010);
+            bold_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean italic_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is italic.
+           * </pre>
+           *
+           * <code>bool italic = 6;</code>
+           *
+           * @return The italic.
+           */
+          @java.lang.Override
+          public boolean getItalic() {
+            return italic_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is italic.
+           * </pre>
+           *
+           * <code>bool italic = 6;</code>
+           *
+           * @param value The italic to set.
+           * @return This builder for chaining.
+           */
+          public Builder setItalic(boolean value) {
+
+            italic_ = value;
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is italic.
+           * </pre>
+           *
+           * <code>bool italic = 6;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearItalic() {
+            bitField0_ = (bitField0_ & ~0x00000020);
+            italic_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean underlined_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is underlined.
+           * </pre>
+           *
+           * <code>bool underlined = 7;</code>
+           *
+           * @return The underlined.
+           */
+          @java.lang.Override
+          public boolean getUnderlined() {
+            return underlined_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is underlined.
+           * </pre>
+           *
+           * <code>bool underlined = 7;</code>
+           *
+           * @param value The underlined to set.
+           * @return This builder for chaining.
+           */
+          public Builder setUnderlined(boolean value) {
+
+            underlined_ = value;
+            bitField0_ |= 0x00000040;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is underlined.
+           * </pre>
+           *
+           * <code>bool underlined = 7;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearUnderlined() {
+            bitField0_ = (bitField0_ & ~0x00000040);
+            underlined_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean strikeout_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is strikethrough.
+           * </pre>
+           *
+           * <code>bool strikeout = 8;</code>
+           *
+           * @return The strikeout.
+           */
+          @java.lang.Override
+          public boolean getStrikeout() {
+            return strikeout_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is strikethrough.
+           * </pre>
+           *
+           * <code>bool strikeout = 8;</code>
+           *
+           * @param value The strikeout to set.
+           * @return This builder for chaining.
+           */
+          public Builder setStrikeout(boolean value) {
+
+            strikeout_ = value;
+            bitField0_ |= 0x00000080;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is strikethrough.
+           * </pre>
+           *
+           * <code>bool strikeout = 8;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearStrikeout() {
+            bitField0_ = (bitField0_ & ~0x00000080);
+            strikeout_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean subscript_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a subscript.
+           * </pre>
+           *
+           * <code>bool subscript = 9;</code>
+           *
+           * @return The subscript.
+           */
+          @java.lang.Override
+          public boolean getSubscript() {
+            return subscript_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a subscript.
+           * </pre>
+           *
+           * <code>bool subscript = 9;</code>
+           *
+           * @param value The subscript to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSubscript(boolean value) {
+
+            subscript_ = value;
+            bitField0_ |= 0x00000100;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a subscript.
+           * </pre>
+           *
+           * <code>bool subscript = 9;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearSubscript() {
+            bitField0_ = (bitField0_ & ~0x00000100);
+            subscript_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean superscript_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a superscript.
+           * </pre>
+           *
+           * <code>bool superscript = 10;</code>
+           *
+           * @return The superscript.
+           */
+          @java.lang.Override
+          public boolean getSuperscript() {
+            return superscript_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a superscript.
+           * </pre>
+           *
+           * <code>bool superscript = 10;</code>
+           *
+           * @param value The superscript to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSuperscript(boolean value) {
+
+            superscript_ = value;
+            bitField0_ |= 0x00000200;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is a superscript.
+           * </pre>
+           *
+           * <code>bool superscript = 10;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearSuperscript() {
+            bitField0_ = (bitField0_ & ~0x00000200);
+            superscript_ = false;
+            onChanged();
+            return this;
+          }
+
+          private boolean smallcaps_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is in small caps.
+           * </pre>
+           *
+           * <code>bool smallcaps = 11;</code>
+           *
+           * @return The smallcaps.
+           */
+          @java.lang.Override
+          public boolean getSmallcaps() {
+            return smallcaps_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is in small caps.
+           * </pre>
+           *
+           * <code>bool smallcaps = 11;</code>
+           *
+           * @param value The smallcaps to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSmallcaps(boolean value) {
+
+            smallcaps_ = value;
+            bitField0_ |= 0x00000400;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is in small caps.
+           * </pre>
+           *
+           * <code>bool smallcaps = 11;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearSmallcaps() {
+            bitField0_ = (bitField0_ & ~0x00000400);
+            smallcaps_ = false;
+            onChanged();
+            return this;
+          }
+
+          private int fontWeight_;
+          /**
+           *
+           *
+           * <pre>
+           * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy).
+           * Normal is `400`, bold is `700`.
+           * </pre>
+           *
+           * <code>int32 font_weight = 12;</code>
+           *
+           * @return The fontWeight.
+           */
+          @java.lang.Override
+          public int getFontWeight() {
+            return fontWeight_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy).
+           * Normal is `400`, bold is `700`.
+           * </pre>
+           *
+           * <code>int32 font_weight = 12;</code>
+           *
+           * @param value The fontWeight to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFontWeight(int value) {
+
+            fontWeight_ = value;
+            bitField0_ |= 0x00000800;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy).
+           * Normal is `400`, bold is `700`.
+           * </pre>
+           *
+           * <code>int32 font_weight = 12;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFontWeight() {
+            bitField0_ = (bitField0_ & ~0x00000800);
+            fontWeight_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private boolean handwritten_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is handwritten.
+           * </pre>
+           *
+           * <code>bool handwritten = 13;</code>
+           *
+           * @return The handwritten.
+           */
+          @java.lang.Override
+          public boolean getHandwritten() {
+            return handwritten_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is handwritten.
+           * </pre>
+           *
+           * <code>bool handwritten = 13;</code>
+           *
+           * @param value The handwritten to set.
+           * @return This builder for chaining.
+           */
+          public Builder setHandwritten(boolean value) {
+
+            handwritten_ = value;
+            bitField0_ |= 0x00001000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the text is handwritten.
+           * </pre>
+           *
+           * <code>bool handwritten = 13;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearHandwritten() {
+            bitField0_ = (bitField0_ & ~0x00001000);
+            handwritten_ = false;
+            onChanged();
+            return this;
+          }
+
+          private com.google.type.Color textColor_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Color,
+                  com.google.type.Color.Builder,
+                  com.google.type.ColorOrBuilder>
+              textColorBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           *
+           * @return Whether the textColor field is set.
+           */
+          public boolean hasTextColor() {
+            return ((bitField0_ & 0x00002000) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           *
+           * @return The textColor.
+           */
+          public com.google.type.Color getTextColor() {
+            if (textColorBuilder_ == null) {
+              return textColor_ == null ? com.google.type.Color.getDefaultInstance() : textColor_;
+            } else {
+              return textColorBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public Builder setTextColor(com.google.type.Color value) {
+            if (textColorBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              textColor_ = value;
+            } else {
+              textColorBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00002000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public Builder setTextColor(com.google.type.Color.Builder builderForValue) {
+            if (textColorBuilder_ == null) {
+              textColor_ = builderForValue.build();
+            } else {
+              textColorBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00002000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public Builder mergeTextColor(com.google.type.Color value) {
+            if (textColorBuilder_ == null) {
+              if (((bitField0_ & 0x00002000) != 0)
+                  && textColor_ != null
+                  && textColor_ != com.google.type.Color.getDefaultInstance()) {
+                getTextColorBuilder().mergeFrom(value);
+              } else {
+                textColor_ = value;
+              }
+            } else {
+              textColorBuilder_.mergeFrom(value);
+            }
+            bitField0_ |= 0x00002000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public Builder clearTextColor() {
+            bitField0_ = (bitField0_ & ~0x00002000);
+            textColor_ = null;
+            if (textColorBuilder_ != null) {
+              textColorBuilder_.dispose();
+              textColorBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public com.google.type.Color.Builder getTextColorBuilder() {
+            bitField0_ |= 0x00002000;
+            onChanged();
+            return getTextColorFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          public com.google.type.ColorOrBuilder getTextColorOrBuilder() {
+            if (textColorBuilder_ != null) {
+              return textColorBuilder_.getMessageOrBuilder();
+            } else {
+              return textColor_ == null ? com.google.type.Color.getDefaultInstance() : textColor_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the text.
+           * </pre>
+           *
+           * <code>.google.type.Color text_color = 14;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Color,
+                  com.google.type.Color.Builder,
+                  com.google.type.ColorOrBuilder>
+              getTextColorFieldBuilder() {
+            if (textColorBuilder_ == null) {
+              textColorBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.type.Color,
+                      com.google.type.Color.Builder,
+                      com.google.type.ColorOrBuilder>(
+                      getTextColor(), getParentForChildren(), isClean());
+              textColor_ = null;
+            }
+            return textColorBuilder_;
+          }
+
+          private com.google.type.Color backgroundColor_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Color,
+                  com.google.type.Color.Builder,
+                  com.google.type.ColorOrBuilder>
+              backgroundColorBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           *
+           * @return Whether the backgroundColor field is set.
+           */
+          public boolean hasBackgroundColor() {
+            return ((bitField0_ & 0x00004000) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           *
+           * @return The backgroundColor.
+           */
+          public com.google.type.Color getBackgroundColor() {
+            if (backgroundColorBuilder_ == null) {
+              return backgroundColor_ == null
+                  ? com.google.type.Color.getDefaultInstance()
+                  : backgroundColor_;
+            } else {
+              return backgroundColorBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public Builder setBackgroundColor(com.google.type.Color value) {
+            if (backgroundColorBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              backgroundColor_ = value;
+            } else {
+              backgroundColorBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00004000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public Builder setBackgroundColor(com.google.type.Color.Builder builderForValue) {
+            if (backgroundColorBuilder_ == null) {
+              backgroundColor_ = builderForValue.build();
+            } else {
+              backgroundColorBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00004000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public Builder mergeBackgroundColor(com.google.type.Color value) {
+            if (backgroundColorBuilder_ == null) {
+              if (((bitField0_ & 0x00004000) != 0)
+                  && backgroundColor_ != null
+                  && backgroundColor_ != com.google.type.Color.getDefaultInstance()) {
+                getBackgroundColorBuilder().mergeFrom(value);
+              } else {
+                backgroundColor_ = value;
+              }
+            } else {
+              backgroundColorBuilder_.mergeFrom(value);
+            }
+            bitField0_ |= 0x00004000;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public Builder clearBackgroundColor() {
+            bitField0_ = (bitField0_ & ~0x00004000);
+            backgroundColor_ = null;
+            if (backgroundColorBuilder_ != null) {
+              backgroundColorBuilder_.dispose();
+              backgroundColorBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public com.google.type.Color.Builder getBackgroundColorBuilder() {
+            bitField0_ |= 0x00004000;
+            onChanged();
+            return getBackgroundColorFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          public com.google.type.ColorOrBuilder getBackgroundColorOrBuilder() {
+            if (backgroundColorBuilder_ != null) {
+              return backgroundColorBuilder_.getMessageOrBuilder();
+            } else {
+              return backgroundColor_ == null
+                  ? com.google.type.Color.getDefaultInstance()
+                  : backgroundColor_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Color of the background.
+           * </pre>
+           *
+           * <code>.google.type.Color background_color = 15;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Color,
+                  com.google.type.Color.Builder,
+                  com.google.type.ColorOrBuilder>
+              getBackgroundColorFieldBuilder() {
+            if (backgroundColorBuilder_ == null) {
+              backgroundColorBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.type.Color,
+                      com.google.type.Color.Builder,
+                      com.google.type.ColorOrBuilder>(
+                      getBackgroundColor(), getParentForChildren(), isClean());
+              backgroundColor_ = null;
+            }
+            return backgroundColorBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.Page.Token.StyleInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.Page.Token.StyleInfo)
+        private static final com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo();
+        }
+
+        public static com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<StyleInfo> PARSER =
+            new com.google.protobuf.AbstractParser<StyleInfo>() {
+              @java.lang.Override
+              public StyleInfo parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<StyleInfo> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<StyleInfo> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       public static final int LAYOUT_FIELD_NUMBER = 1;
       private com.google.cloud.documentai.v1.Document.Page.Layout layout_;
       /**
@@ -15786,7 +18414,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=269
+       *     google/cloud/documentai/v1/document.proto;l=326
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -15805,7 +18433,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=269
+       *     google/cloud/documentai/v1/document.proto;l=326
        * @return The provenance.
        */
       @java.lang.Override
@@ -15831,6 +18459,57 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return provenance_ == null
             ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance()
             : provenance_;
+      }
+
+      public static final int STYLE_INFO_FIELD_NUMBER = 5;
+      private com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo styleInfo_;
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       *
+       * @return Whether the styleInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasStyleInfo() {
+        return styleInfo_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       *
+       * @return The styleInfo.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo getStyleInfo() {
+        return styleInfo_ == null
+            ? com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.getDefaultInstance()
+            : styleInfo_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text style attributes.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder
+          getStyleInfoOrBuilder() {
+        return styleInfo_ == null
+            ? com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.getDefaultInstance()
+            : styleInfo_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -15859,6 +18538,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (provenance_ != null) {
           output.writeMessage(4, getProvenance());
         }
+        if (styleInfo_ != null) {
+          output.writeMessage(5, getStyleInfo());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -15881,6 +18563,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         if (provenance_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getProvenance());
+        }
+        if (styleInfo_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStyleInfo());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -15911,6 +18596,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (hasProvenance()) {
           if (!getProvenance().equals(other.getProvenance())) return false;
         }
+        if (hasStyleInfo() != other.hasStyleInfo()) return false;
+        if (hasStyleInfo()) {
+          if (!getStyleInfo().equals(other.getStyleInfo())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -15937,6 +18626,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (hasProvenance()) {
           hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
           hash = (53 * hash) + getProvenance().hashCode();
+        }
+        if (hasStyleInfo()) {
+          hash = (37 * hash) + STYLE_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getStyleInfo().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -16102,6 +18795,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             provenanceBuilder_.dispose();
             provenanceBuilder_ = null;
           }
+          styleInfo_ = null;
+          if (styleInfoBuilder_ != null) {
+            styleInfoBuilder_.dispose();
+            styleInfoBuilder_ = null;
+          }
           return this;
         }
 
@@ -16162,6 +18860,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.provenance_ =
                 provenanceBuilder_ == null ? provenance_ : provenanceBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.styleInfo_ = styleInfoBuilder_ == null ? styleInfo_ : styleInfoBuilder_.build();
           }
         }
 
@@ -16249,6 +18950,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (other.hasProvenance()) {
             mergeProvenance(other.getProvenance());
           }
+          if (other.hasStyleInfo()) {
+            mergeStyleInfo(other.getStyleInfo());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -16308,6 +19012,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
+                case 42:
+                  {
+                    input.readMessage(getStyleInfoFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17160,7 +19870,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=269
+         *     google/cloud/documentai/v1/document.proto;l=326
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -17178,7 +19888,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=269
+         *     google/cloud/documentai/v1/document.proto;l=326
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -17348,6 +20058,196 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             provenance_ = null;
           }
           return provenanceBuilder_;
+        }
+
+        private com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo styleInfo_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo,
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder,
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder>
+            styleInfoBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         *
+         * @return Whether the styleInfo field is set.
+         */
+        public boolean hasStyleInfo() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         *
+         * @return The styleInfo.
+         */
+        public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo getStyleInfo() {
+          if (styleInfoBuilder_ == null) {
+            return styleInfo_ == null
+                ? com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.getDefaultInstance()
+                : styleInfo_;
+          } else {
+            return styleInfoBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public Builder setStyleInfo(
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo value) {
+          if (styleInfoBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            styleInfo_ = value;
+          } else {
+            styleInfoBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public Builder setStyleInfo(
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder builderForValue) {
+          if (styleInfoBuilder_ == null) {
+            styleInfo_ = builderForValue.build();
+          } else {
+            styleInfoBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public Builder mergeStyleInfo(
+            com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo value) {
+          if (styleInfoBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)
+                && styleInfo_ != null
+                && styleInfo_
+                    != com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo
+                        .getDefaultInstance()) {
+              getStyleInfoBuilder().mergeFrom(value);
+            } else {
+              styleInfo_ = value;
+            }
+          } else {
+            styleInfoBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public Builder clearStyleInfo() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          styleInfo_ = null;
+          if (styleInfoBuilder_ != null) {
+            styleInfoBuilder_.dispose();
+            styleInfoBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder
+            getStyleInfoBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getStyleInfoFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        public com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder
+            getStyleInfoOrBuilder() {
+          if (styleInfoBuilder_ != null) {
+            return styleInfoBuilder_.getMessageOrBuilder();
+          } else {
+            return styleInfo_ == null
+                ? com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.getDefaultInstance()
+                : styleInfo_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text style attributes.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Page.Token.StyleInfo style_info = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo,
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder,
+                com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder>
+            getStyleInfoFieldBuilder() {
+          if (styleInfoBuilder_ == null) {
+            styleInfoBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo,
+                    com.google.cloud.documentai.v1.Document.Page.Token.StyleInfo.Builder,
+                    com.google.cloud.documentai.v1.Document.Page.Token.StyleInfoOrBuilder>(
+                    getStyleInfo(), getParentForChildren(), isClean());
+            styleInfo_ = null;
+          }
+          return styleInfoBuilder_;
         }
 
         @java.lang.Override
@@ -20648,10 +23548,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=395
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       boolean hasProvenance();
       /**
        *
@@ -20660,10 +23564,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=395
        * @return The provenance.
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1.Document.Provenance getProvenance();
       /**
        *
@@ -20672,8 +23580,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
@@ -23701,11 +26611,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=395
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenance_ != null;
       }
@@ -23716,11 +26630,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=395
        * @return The provenance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance()
@@ -23733,9 +26651,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this table.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance()
@@ -25733,10 +28653,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+         *     google/cloud/documentai/v1/document.proto;l=395
          * @return Whether the provenance field is set.
          */
+        @java.lang.Deprecated
         public boolean hasProvenance() {
           return ((bitField0_ & 0x00000010) != 0);
         }
@@ -25747,10 +28671,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
+         *     google/cloud/documentai/v1/document.proto;l=395
          * @return The provenance.
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
           if (provenanceBuilder_ == null) {
             return provenance_ == null
@@ -25767,8 +28695,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
             if (value == null) {
@@ -25789,8 +28719,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1.Document.Provenance.Builder builderForValue) {
           if (provenanceBuilder_ == null) {
@@ -25809,8 +28741,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
             if (((bitField0_ & 0x00000010) != 0)
@@ -25835,8 +28769,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearProvenance() {
           bitField0_ = (bitField0_ & ~0x00000010);
           provenance_ = null;
@@ -25854,8 +28790,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1.Document.Provenance.Builder getProvenanceBuilder() {
           bitField0_ |= 0x00000010;
           onChanged();
@@ -25868,8 +28806,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder
             getProvenanceOrBuilder() {
           if (provenanceBuilder_ != null) {
@@ -25887,7 +28827,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this table.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5;</code>
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 5 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.documentai.v1.Document.Provenance,
@@ -30417,9 +33358,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-       * information, see
-       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * The [BCP-47 language
+       * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+       * such as `en-US` or `sr-Latn`.
        * </pre>
        *
        * <code>string language_code = 1;</code>
@@ -30431,9 +33372,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-       * information, see
-       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * The [BCP-47 language
+       * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+       * such as `en-US` or `sr-Latn`.
        * </pre>
        *
        * <code>string language_code = 1;</code>
@@ -30507,9 +33448,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-       * information, see
-       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * The [BCP-47 language
+       * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+       * such as `en-US` or `sr-Latn`.
        * </pre>
        *
        * <code>string language_code = 1;</code>
@@ -30532,9 +33473,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-       * information, see
-       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * The [BCP-47 language
+       * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+       * such as `en-US` or `sr-Latn`.
        * </pre>
        *
        * <code>string language_code = 1;</code>
@@ -30954,9 +33895,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-         * information, see
-         * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+         * The [BCP-47 language
+         * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+         * such as `en-US` or `sr-Latn`.
          * </pre>
          *
          * <code>string language_code = 1;</code>
@@ -30978,9 +33919,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-         * information, see
-         * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+         * The [BCP-47 language
+         * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+         * such as `en-US` or `sr-Latn`.
          * </pre>
          *
          * <code>string language_code = 1;</code>
@@ -31002,9 +33943,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-         * information, see
-         * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+         * The [BCP-47 language
+         * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+         * such as `en-US` or `sr-Latn`.
          * </pre>
          *
          * <code>string language_code = 1;</code>
@@ -31025,9 +33966,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-         * information, see
-         * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+         * The [BCP-47 language
+         * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+         * such as `en-US` or `sr-Latn`.
          * </pre>
          *
          * <code>string language_code = 1;</code>
@@ -31044,9 +33985,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-         * information, see
-         * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+         * The [BCP-47 language
+         * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
+         * such as `en-US` or `sr-Latn`.
          * </pre>
          *
          * <code>string language_code = 1;</code>
@@ -31194,7 +34135,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+       * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
        * </pre>
        *
        * <code>float quality_score = 1;</code>
@@ -31275,7 +34216,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores for the page image
+     * Image quality scores for the page image.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.Page.ImageQualityScores}
@@ -31367,8 +34308,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of detected defect. Range `[0, 1]` where 1 indicates
-         * strong confidence of that the defect exists.
+         * Confidence of detected defect. Range `[0, 1]` where `1` indicates
+         * strong confidence that the defect exists.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -31499,8 +34440,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of detected defect. Range `[0, 1]` where 1 indicates
-         * strong confidence of that the defect exists.
+         * Confidence of detected defect. Range `[0, 1]` where `1` indicates
+         * strong confidence that the defect exists.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -32072,8 +35013,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
-           * strong confidence of that the defect exists.
+           * Confidence of detected defect. Range `[0, 1]` where `1` indicates
+           * strong confidence that the defect exists.
            * </pre>
            *
            * <code>float confidence = 2;</code>
@@ -32088,8 +35029,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
-           * strong confidence of that the defect exists.
+           * Confidence of detected defect. Range `[0, 1]` where `1` indicates
+           * strong confidence that the defect exists.
            * </pre>
            *
            * <code>float confidence = 2;</code>
@@ -32108,8 +35049,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
-           * strong confidence of that the defect exists.
+           * Confidence of detected defect. Range `[0, 1]` where `1` indicates
+           * strong confidence that the defect exists.
            * </pre>
            *
            * <code>float confidence = 2;</code>
@@ -32198,7 +35139,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+       * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
        * </pre>
        *
        * <code>float quality_score = 1;</code>
@@ -32480,7 +35421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores for the page image
+       * Image quality scores for the page image.
        * </pre>
        *
        * Protobuf type {@code google.cloud.documentai.v1.Document.Page.ImageQualityScores}
@@ -32736,7 +35677,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
          * </pre>
          *
          * <code>float quality_score = 1;</code>
@@ -32751,7 +35692,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
          * </pre>
          *
          * <code>float quality_score = 1;</code>
@@ -32770,7 +35711,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
          * </pre>
          *
          * <code>float quality_score = 1;</code>
@@ -34328,7 +37269,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -34344,7 +37285,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -34362,7 +37303,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image Quality Scores.
+     * Image quality scores.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.Page.ImageQualityScores image_quality_scores = 17;
@@ -34389,7 +37330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=488
+     *     google/cloud/documentai/v1/document.proto;l=548
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -34408,7 +37349,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=488
+     *     google/cloud/documentai/v1/document.proto;l=548
      * @return The provenance.
      */
     @java.lang.Override
@@ -40527,7 +43468,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40543,7 +43484,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40566,7 +43507,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40591,7 +43532,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40613,7 +43554,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40643,7 +43584,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40664,7 +43605,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40681,7 +43622,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40702,7 +43643,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Image Quality Scores.
+       * Image quality scores.
        * </pre>
        *
        * <code>
@@ -40743,7 +43684,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=488
+       *     google/cloud/documentai/v1/document.proto;l=548
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -40761,7 +43702,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=488
+       *     google/cloud/documentai/v1/document.proto;l=548
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -50462,7 +53403,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=692
+       *     See google/cloud/documentai/v1/document.proto;l=752
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -50480,7 +53421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=692
+       *     See google/cloud/documentai/v1/document.proto;l=752
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -50969,7 +53910,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=692
+       *     See google/cloud/documentai/v1/document.proto;l=752
        * @return The layoutId.
        */
       @java.lang.Override
@@ -50998,7 +53939,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=692
+       *     See google/cloud/documentai/v1/document.proto;l=752
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -51741,7 +54682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -51769,7 +54710,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -51797,7 +54738,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -51824,7 +54765,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -51847,7 +54788,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -53133,7 +56074,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=759
+     *     google/cloud/documentai/v1/document.proto;l=819
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -53150,7 +56091,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=763
+     *     google/cloud/documentai/v1/document.proto;l=823
      * @return The id.
      */
     @java.lang.Deprecated
@@ -53326,9 +56267,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Updates any fields within the given provenance scope of the message. It
-       * 'overwrites'  the fields rather than replacing them.  This is
-       * especially relevant when we just want to update a field value of an
-       * entity without also affecting all the child properties.
+       * overwrites the fields rather than replacing them.  Use this when you
+       * want to update a field value of an entity without also updating all the
+       * child properties.
        * </pre>
        *
        * <code>UPDATE = 7;</code>
@@ -53418,9 +56359,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Updates any fields within the given provenance scope of the message. It
-       * 'overwrites'  the fields rather than replacing them.  This is
-       * especially relevant when we just want to update a field value of an
-       * entity without also affecting all the child properties.
+       * overwrites the fields rather than replacing them.  Use this when you
+       * want to update a field value of an entity without also updating all the
+       * child properties.
        * </pre>
        *
        * <code>UPDATE = 7;</code>
@@ -53608,7 +56549,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=722
+       *     google/cloud/documentai/v1/document.proto;l=782
        * @return The id.
        */
       @java.lang.Deprecated
@@ -53706,7 +56647,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=722
+       *     google/cloud/documentai/v1/document.proto;l=782
        * @return The id.
        */
       @java.lang.Override
@@ -54228,7 +57169,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=722
+         *     google/cloud/documentai/v1/document.proto;l=782
          * @return The id.
          */
         @java.lang.Override
@@ -54246,7 +57187,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=722
+         *     google/cloud/documentai/v1/document.proto;l=782
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -54268,7 +57209,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=722
+         *     google/cloud/documentai/v1/document.proto;l=782
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -54356,7 +57297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=759
+     *     google/cloud/documentai/v1/document.proto;l=819
      * @return The revision.
      */
     @java.lang.Override
@@ -54378,7 +57319,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=763
+     *     google/cloud/documentai/v1/document.proto;l=823
      * @return The id.
      */
     @java.lang.Override
@@ -54977,7 +57918,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=759
+       *     google/cloud/documentai/v1/document.proto;l=819
        * @return The revision.
        */
       @java.lang.Override
@@ -54995,7 +57936,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=759
+       *     google/cloud/documentai/v1/document.proto;l=819
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -55017,7 +57958,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=759
+       *     google/cloud/documentai/v1/document.proto;l=819
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -55040,7 +57981,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=763
+       *     google/cloud/documentai/v1/document.proto;l=823
        * @return The id.
        */
       @java.lang.Override
@@ -55059,7 +58000,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=763
+       *     google/cloud/documentai/v1/document.proto;l=823
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -55082,7 +58023,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=763
+       *     google/cloud/documentai/v1/document.proto;l=823
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -55739,7 +58680,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -55756,7 +58697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -55773,7 +58714,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -57089,7 +60030,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -57109,7 +60050,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -57128,7 +60069,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=802
+     *     google/cloud/documentai/v1/document.proto;l=862
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -58326,7 +61267,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -58347,7 +61288,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -58366,7 +61307,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -58386,7 +61327,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -58411,7 +61352,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -58435,7 +61376,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -58458,7 +61399,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=862
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60821,10 +63762,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -60839,10 +63779,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -60870,10 +63809,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -60944,9 +63882,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An IANA published MIME type (also referred to as media type). For more
-   * information, see
-   * https://www.iana.org/assignments/media-types/media-types.xhtml.
+   * An IANA published [media type (MIME
+   * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -60969,9 +63906,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An IANA published MIME type (also referred to as media type). For more
-   * information, see
-   * https://www.iana.org/assignments/media-types/media-types.xhtml.
+   * An IANA published [media type (MIME
+   * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -62544,10 +65480,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62563,10 +65498,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62595,10 +65529,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62627,10 +65560,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62652,10 +65584,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62675,10 +65606,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Currently supports Google Cloud Storage URI of the form
-     *    `gs://bucket_name/object_name`. Object versioning is not supported.
-     *    See [Google Cloud Storage Request
-     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-     *    info.
+     * `gs://bucket_name/object_name`. Object versioning is not supported.
+     * For more information, refer to [Google Cloud Storage Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -62782,9 +65712,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An IANA published MIME type (also referred to as media type). For more
-     * information, see
-     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -62806,9 +65735,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An IANA published MIME type (also referred to as media type). For more
-     * information, see
-     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -62830,9 +65758,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An IANA published MIME type (also referred to as media type). For more
-     * information, see
-     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -62853,9 +65780,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An IANA published MIME type (also referred to as media type). For more
-     * information, see
-     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -62872,9 +65798,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An IANA published MIME type (also referred to as media type). For more
-     * information, see
-     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
      * </pre>
      *
      * <code>string mime_type = 3;</code>

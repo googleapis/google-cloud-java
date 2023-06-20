@@ -18,8 +18,8 @@ package com.google.cloud.documentai.v1beta3.samples;
 
 // [START documentai_v1beta3_generated_DocumentProcessorService_BatchProcessDocuments_String_sync]
 import com.google.cloud.documentai.v1beta3.BatchProcessResponse;
+import com.google.cloud.documentai.v1beta3.DatasetSchemaName;
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
-import com.google.cloud.documentai.v1beta3.EvaluationName;
 
 public class SyncBatchProcessDocumentsString {
 
@@ -35,10 +35,7 @@ public class SyncBatchProcessDocumentsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentProcessorServiceClient documentProcessorServiceClient =
         DocumentProcessorServiceClient.create()) {
-      String name =
-          EvaluationName.of(
-                  "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
-              .toString();
+      String name = DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
       BatchProcessResponse response =
           documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
     }

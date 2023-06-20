@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for the create processor version method.
+ * Request message for the
+ * [TrainProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.TrainProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest}
@@ -143,7 +145,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The input data used to train a new `ProcessorVersion`.
+   * The input data used to train a new
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -468,7 +471,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The input data used to train a new `ProcessorVersion`.
+     * The input data used to train a new
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -1309,7 +1313,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1326,7 +1331,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1345,7 +1351,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1630,7 +1637,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for the create processor version method.
+   * Request message for the
+   * [TrainProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.TrainProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest}
@@ -2420,7 +2429,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2436,7 +2446,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2459,7 +2470,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2484,7 +2496,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2507,7 +2520,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2537,7 +2551,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2558,7 +2573,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2575,7 +2591,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2597,7 +2614,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
