@@ -5,6 +5,57 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "bb8a4bc8022d232a658c7a43fd57f8e976872143",
+          "message": "[vmwareengine] Adding private connection CRUD, updating management subnets and time-limited PC features",
+          "issues": [
+            "9531"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "a762b3c9-4ef7-4438-a690-a14cbc531c3d",
+      "createTime": "2023-06-20T22:00:11.185Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "07a86854bd8a996b5835d086418189a8ac89c9ad",
+          "message": "[migrationcenter] Migration Center API",
+          "issues": [
+            "9532"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-migrationcenter",
+      "id": "66d78ad4-0359-45e3-88fe-82a2f12371f0",
+      "createTime": "2023-06-20T22:00:11.182Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c873d103a625d41838c582737f4b98da6605d47f",
+          "message": "[documentai] add StyleInfo to document.proto",
+          "issues": [
+            "9551"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "dd84b864-1f3e-4c65-96e0-8c975220917e",
+      "createTime": "2023-06-20T22:00:11.179Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "ba2c590cc9970be41e5a663004d354b3881a69d9",
           "message": "[aiplatform] add blocking_operation_ids to ImportFeatureValuesOperationMetadata",
           "issues": [
@@ -7513,5 +7564,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-06-08T04:00:46.193Z"
+  "updateTime": "2023-06-20T22:00:11.185Z"
 }

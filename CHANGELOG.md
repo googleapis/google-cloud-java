@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.14.0](https://github.com/googleapis/google-cloud-java/compare/v1.13.0...v1.14.0) (2023-06-20)
+
+
+### Features
+
+* [documentai] add StyleInfo to document.proto ([#9551](https://github.com/googleapis/google-cloud-java/issues/9551)) ([c873d10](https://github.com/googleapis/google-cloud-java/commit/c873d103a625d41838c582737f4b98da6605d47f))
+* [migrationcenter] Migration Center API ([#9532](https://github.com/googleapis/google-cloud-java/issues/9532)) ([07a8685](https://github.com/googleapis/google-cloud-java/commit/07a86854bd8a996b5835d086418189a8ac89c9ad))
+* [vmwareengine] Adding private connection CRUD, updating management subnets and time-limited PC features ([#9531](https://github.com/googleapis/google-cloud-java/issues/9531)) ([bb8a4bc](https://github.com/googleapis/google-cloud-java/commit/bb8a4bc8022d232a658c7a43fd57f8e976872143))
+
+
+### Bug Fixes
+
+* **ci:** specifying fetch depth in CHANGELOG.md generation  ([#9564](https://github.com/googleapis/google-cloud-java/issues/9564)) ([0158232](https://github.com/googleapis/google-cloud-java/commit/0158232c5a99773e87d365f568c432de7e83d80b))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.14 ([#9522](https://github.com/googleapis/google-cloud-java/issues/9522)) ([78fbbe2](https://github.com/googleapis/google-cloud-java/commit/78fbbe2b03befda2cb3ed338ecdceeac74a4d103))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.4 ([#9518](https://github.com/googleapis/google-cloud-java/issues/9518)) ([36a2843](https://github.com/googleapis/google-cloud-java/commit/36a284334cd8b00da8aa71ec589fe1c6155fb64d))
+
 ## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
 
 
