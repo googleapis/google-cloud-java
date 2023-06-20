@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.138.0-beta (2023-06-20)
+
+
+
 ## [0.123.19](https://github.com/googleapis/java-notification/compare/v0.123.18...v0.123.19) (2022-10-10)
 
 

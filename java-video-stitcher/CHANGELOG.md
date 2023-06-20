@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.20.0 (2023-06-20)
+
+
+
 ## [0.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-video-stitcher-v0.4.1-SNAPSHOT...google-cloud-video-stitcher-v0.5.0) (2022-10-24)
 
 

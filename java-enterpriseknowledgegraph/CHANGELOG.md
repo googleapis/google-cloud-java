@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.16.0 (2023-06-20)
+
+
+
 ## [0.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-enterpriseknowledgegraph-v0.0.1-SNAPSHOT...google-cloud-enterpriseknowledgegraph-v0.1.0) (2022-10-24)
 
 

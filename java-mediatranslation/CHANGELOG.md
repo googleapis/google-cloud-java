@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.26.0 (2023-06-20)
+
+
+
 ## [0.11.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-mediatranslation-v0.10.1-SNAPSHOT...google-cloud-mediatranslation-v0.11.0) (2022-10-24)
 
 

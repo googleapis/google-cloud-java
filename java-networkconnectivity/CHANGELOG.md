@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.19.0 (2023-06-20)
+
+
+
 ## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-networkconnectivity-v1.3.1-SNAPSHOT...google-cloud-networkconnectivity-v1.4.0) (2022-10-24)
 
 

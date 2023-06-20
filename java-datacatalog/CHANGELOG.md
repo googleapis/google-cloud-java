@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.26.0 (2023-06-20)
+
+
+
 ## [1.11.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datacatalog-v1.10.1-SNAPSHOT...google-cloud-datacatalog-v1.11.0) (2022-10-24)
 
 

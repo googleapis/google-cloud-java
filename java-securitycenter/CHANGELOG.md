@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.28.0 (2023-06-20)
+
+
+
 ## [2.13.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-v2.12.1-SNAPSHOT...google-cloud-securitycenter-v2.13.0) (2022-10-24)
 
 

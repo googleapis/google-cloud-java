@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.23.0 (2023-06-20)
+
+
+
 ## [2.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-redis-v2.7.1-SNAPSHOT...google-cloud-redis-v2.8.0) (2022-10-24)
 
 

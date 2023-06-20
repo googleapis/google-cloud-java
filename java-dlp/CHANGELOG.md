@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.24.0 (2023-06-20)
+
+
+
 ## [3.9.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dlp-v3.8.1-SNAPSHOT...google-cloud-dlp-v3.9.0) (2022-10-24)
 
 

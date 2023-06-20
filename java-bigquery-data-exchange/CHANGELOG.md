@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.15.0 (2023-06-20)
+
+
+
 ## [2.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquery-data-exchange-v1.0.1-SNAPSHOT...google-cloud-bigquery-data-exchange-v2.0.0) (2022-10-24)
 
 

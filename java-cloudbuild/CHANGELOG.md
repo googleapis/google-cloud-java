@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.22.0 (2023-06-20)
+
+
+
 ## [3.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-build-v3.6.1-SNAPSHOT...google-cloud-build-v3.7.0) (2022-10-24)
 
 

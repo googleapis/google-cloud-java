@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.24.0 (2023-06-20)
+
+
+
 ## [0.9.0](https://github.com/googleapis/google-cloud-java/compare/google-area120-tables-v0.8.1-SNAPSHOT...google-area120-tables-v0.9.0) (2022-10-24)
 
 

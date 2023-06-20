@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.21.0 (2023-06-20)
+
+
+
 ## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-texttospeech-v2.5.1-SNAPSHOT...google-cloud-texttospeech-v2.6.0) (2022-10-24)
 
 

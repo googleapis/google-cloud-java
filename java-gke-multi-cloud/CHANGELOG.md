@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.19.0 (2023-06-20)
+
+
+
 ## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-multi-cloud-v0.3.1-SNAPSHOT...google-cloud-gke-multi-cloud-v0.4.0) (2022-10-24)
 
 

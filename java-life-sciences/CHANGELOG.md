@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.22.0 (2023-06-20)
+
+
+
 ## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-life-sciences-v0.6.1-SNAPSHOT...google-cloud-life-sciences-v0.7.0) (2022-10-24)
 
 

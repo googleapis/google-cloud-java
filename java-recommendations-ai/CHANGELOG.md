@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.27.0 (2023-06-20)
+
+
+
 ## [0.12.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recommendations-ai-v0.11.1-SNAPSHOT...google-cloud-recommendations-ai-v0.12.0) (2022-10-24)
 
 

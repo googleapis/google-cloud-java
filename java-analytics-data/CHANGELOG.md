@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.31.0 (2023-06-20)
+
+
+
 ## [0.16.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-data-v0.15.1-SNAPSHOT...google-analytics-data-v0.16.0) (2022-10-24)
 
 

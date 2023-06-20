@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.20.0 (2023-06-20)
+
+
+
 ## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquerydatatransfer-v2.4.1-SNAPSHOT...google-cloud-bigquerydatatransfer-v2.5.0) (2022-10-24)
 
 

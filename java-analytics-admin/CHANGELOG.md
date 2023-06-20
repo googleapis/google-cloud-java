@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.30.0 (2023-06-20)
+
+
+
 ## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-admin-v0.14.1-SNAPSHOT...google-analytics-admin-v0.15.0) (2022-10-24)
 
 

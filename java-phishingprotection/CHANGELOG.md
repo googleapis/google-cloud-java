@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.51.0 (2023-06-20)
+
+
+
 ## [0.36.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-phishingprotection-v0.35.1-SNAPSHOT...google-cloud-phishingprotection-v0.36.0) (2022-10-24)
 
 

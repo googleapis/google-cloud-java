@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.19.0 (2023-06-20)
+
+
+
 ## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-shell-v2.3.1-SNAPSHOT...google-cloud-shell-v2.4.0) (2022-10-24)
 
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.22.0 (2023-06-20)
+
+
+
 ## [2.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-retail-v2.6.1-SNAPSHOT...google-cloud-retail-v2.7.0) (2022-10-24)
 
 

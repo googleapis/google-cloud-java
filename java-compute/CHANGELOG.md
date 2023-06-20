@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.30.0 (2023-06-20)
+
+
+
 ## [1.15.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-compute-v1.14.1-SNAPSHOT...google-cloud-compute-v1.15.0) (2022-10-24)
 
 
