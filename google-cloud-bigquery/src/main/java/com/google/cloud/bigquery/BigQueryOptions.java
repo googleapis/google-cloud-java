@@ -30,6 +30,7 @@ import java.util.Set;
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private static final String API_SHORT_NAME = "BigQuery";
+  private static final int DEFAULT_READ_API_TIME_OUT = 60000;
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
@@ -113,7 +114,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {
-    return HttpTransportOptions.newBuilder().build();
+    return HttpTransportOptions.newBuilder().setReadTimeout(DEFAULT_READ_API_TIME_OUT).build();
   }
 
   @Override
