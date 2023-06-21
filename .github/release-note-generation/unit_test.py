@@ -14,7 +14,6 @@ dummy_module = LibraryModule(
 class TestCase(unittest.TestCase):
 
     def test_create_changelog_entry(self):
-        # do something
         entry = create_changelog_entry(
             '2023-06-10',
             dummy_module,
@@ -34,6 +33,31 @@ class TestCase(unittest.TestCase):
 * update google-cloud-shared-dependencies to 1.2.3
 ''')
 
+    def test_create_changelog_entry_only_deps(self):
+        entry = create_changelog_entry(
+            '2023-06-10',
+            dummy_module,
+            [],
+            ['update google-cloud-shared-dependencies to 1.2.3']
+        )
+        self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
+
+### Dependencies
+
+* update google-cloud-shared-dependencies to 1.2.3
+''')
+
+    def test_create_changelog_entry_empty(self):
+        entry = create_changelog_entry(
+            '2023-06-10',
+            dummy_module,
+            [],
+            []
+        )
+        self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
+
+* No change
+''')
 
     def test_group_changes_by_api(self):
         main_changes = [

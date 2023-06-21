@@ -22,7 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        fetch-depth: 0
         ref: ${{ github.head_ref }}
     - name: Show status of the branch checked out
       run: |
@@ -40,7 +39,7 @@ jobs:
         python3 .github/release-note-generation/split_release_note.py pr_body.txt .
     - name: Commit the change and push to the pull request branch
       run: |
-        git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
+        git config user.email "yoshi-code-bot@users.noreply.github.com"
         git config user.name "yoshi-code-bot"
         git remote set-url origin https://x-access-token:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/${{ github.repository }}
         git add ./*/CHANGELOG.md
