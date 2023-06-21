@@ -94,10 +94,14 @@ def create_changelog_entry(current_date: str, module: LibraryModule,
         changelog_entry += '### Features\n\n'
         for line in changelog_lines:
             changelog_entry += f'* {line}\n'
+        changelog_entry += '\n'
     if dependency_changes:
-        changelog_entry += "\n### Dependencies\n\n"
+        changelog_entry += "### Dependencies\n\n"
         for line in dependency_changes:
             changelog_entry += f'* {line}\n'
+
+    if len(changelog_lines) == 0 and len(dependency_changes) == 0:
+        changelog_entry += '* No change\n'
     return changelog_entry
 
 
