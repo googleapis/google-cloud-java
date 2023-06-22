@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17]
+        java: [11, 17]
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
@@ -36,6 +36,28 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+  units-java8:
+    # Building using Java 17 and run the tests with Java 8 runtime
+    name: "units (8)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: zulu
+      - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
+        # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
+        # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+        run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
+        shell: bash
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: zulu
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: test
   windows:
     runs-on: windows-latest
     steps:
@@ -54,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11, 17]
+        java: [17]
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
