@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -400,6 +402,21 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
       deleteChannelPartnerRepricingConfigSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings())
         .deleteChannelPartnerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSkuGroups. */
+  public PagedCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+      listSkuGroupsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listSkuGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSkuGroupBillableSkus. */
+  public PagedCallSettings<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listSkuGroupBillableSkusSettings();
   }
 
   /** Returns the object with the settings used for calls to lookupOffer. */
@@ -889,6 +906,22 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     public UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
         deleteChannelPartnerRepricingConfigSettings() {
       return getStubSettingsBuilder().deleteChannelPartnerRepricingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSkuGroups. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+        listSkuGroupsSettings() {
+      return getStubSettingsBuilder().listSkuGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSkuGroupBillableSkus. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupBillableSkusRequest,
+            ListSkuGroupBillableSkusResponse,
+            ListSkuGroupBillableSkusPagedResponse>
+        listSkuGroupBillableSkusSettings() {
+      return getStubSettingsBuilder().listSkuGroupBillableSkusSettings();
     }
 
     /** Returns the builder for the settings used for calls to lookupOffer. */

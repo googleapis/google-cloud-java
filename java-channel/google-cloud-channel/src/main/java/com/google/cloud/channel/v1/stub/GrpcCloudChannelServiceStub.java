@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -85,6 +87,10 @@ import com.google.cloud.channel.v1.ListPurchasableOffersRequest;
 import com.google.cloud.channel.v1.ListPurchasableOffersResponse;
 import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupsRequest;
+import com.google.cloud.channel.v1.ListSkuGroupsResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
@@ -550,6 +556,31 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListSkuGroupsRequest, ListSkuGroupsResponse>
+      listSkuGroupsMethodDescriptor =
+          MethodDescriptor.<ListSkuGroupsRequest, ListSkuGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ListSkuGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusMethodDescriptor =
+          MethodDescriptor
+              .<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListSkuGroupBillableSkus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupBillableSkusRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupBillableSkusResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<LookupOfferRequest, Offer> lookupOfferMethodDescriptor =
       MethodDescriptor.<LookupOfferRequest, Offer>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -759,6 +790,14 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       updateChannelPartnerRepricingConfigCallable;
   private final UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
       deleteChannelPartnerRepricingConfigCallable;
+  private final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable;
+  private final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable;
+  private final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable;
+  private final UnaryCallable<
+          ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable;
   private final UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
@@ -1237,6 +1276,28 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsTransportSettings =
+        GrpcCallSettings.<ListSkuGroupsRequest, ListSkuGroupsResponse>newBuilder()
+            .setMethodDescriptor(listSkuGroupsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+        listSkuGroupBillableSkusTransportSettings =
+            GrpcCallSettings
+                .<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>newBuilder()
+                .setMethodDescriptor(listSkuGroupBillableSkusMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
         GrpcCallSettings.<LookupOfferRequest, Offer>newBuilder()
             .setMethodDescriptor(lookupOfferMethodDescriptor)
@@ -1594,6 +1655,22 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
         callableFactory.createUnaryCallable(
             deleteChannelPartnerRepricingConfigTransportSettings,
             settings.deleteChannelPartnerRepricingConfigSettings(),
+            clientContext);
+    this.listSkuGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listSkuGroupsTransportSettings, settings.listSkuGroupsSettings(), clientContext);
+    this.listSkuGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkuGroupsTransportSettings, settings.listSkuGroupsSettings(), clientContext);
+    this.listSkuGroupBillableSkusCallable =
+        callableFactory.createUnaryCallable(
+            listSkuGroupBillableSkusTransportSettings,
+            settings.listSkuGroupBillableSkusSettings(),
+            clientContext);
+    this.listSkuGroupBillableSkusPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkuGroupBillableSkusTransportSettings,
+            settings.listSkuGroupBillableSkusSettings(),
             clientContext);
     this.lookupOfferCallable =
         callableFactory.createUnaryCallable(
@@ -1982,6 +2059,29 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
       deleteChannelPartnerRepricingConfigCallable() {
     return deleteChannelPartnerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable() {
+    return listSkuGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable() {
+    return listSkuGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable() {
+    return listSkuGroupBillableSkusCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable() {
+    return listSkuGroupBillableSkusPagedCallable;
   }
 
   @Override

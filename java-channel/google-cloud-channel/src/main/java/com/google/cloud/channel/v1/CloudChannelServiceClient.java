@@ -6165,6 +6165,453 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (SkuGroup element : cloudChannelServiceClient.listSkuGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the account from which to list SKU groups. Parent
+   *     uses the format: accounts/{account}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupsPagedResponse listSkuGroups(String parent) {
+    ListSkuGroupsRequest request = ListSkuGroupsRequest.newBuilder().setParent(parent).build();
+    return listSkuGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SkuGroup element : cloudChannelServiceClient.listSkuGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupsPagedResponse listSkuGroups(ListSkuGroupsRequest request) {
+    return listSkuGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SkuGroup> future =
+   *       cloudChannelServiceClient.listSkuGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SkuGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable() {
+    return stub.listSkuGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSkuGroupsResponse response =
+   *         cloudChannelServiceClient.listSkuGroupsCallable().call(request);
+   *     for (SkuGroup element : response.getSkuGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable() {
+    return stub.listSkuGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the SKU group. Format:
+   *     accounts/{account}/skuGroups/{sku_group}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(SkuGroupName parent) {
+    ListSkuGroupBillableSkusRequest request =
+        ListSkuGroupBillableSkusRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSkuGroupBillableSkus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString();
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the SKU group. Format:
+   *     accounts/{account}/skuGroups/{sku_group}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(String parent) {
+    ListSkuGroupBillableSkusRequest request =
+        ListSkuGroupBillableSkusRequest.newBuilder().setParent(parent).build();
+    return listSkuGroupBillableSkus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(
+      ListSkuGroupBillableSkusRequest request) {
+    return listSkuGroupBillableSkusPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BillableSku> future =
+   *       cloudChannelServiceClient.listSkuGroupBillableSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BillableSku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable() {
+    return stub.listSkuGroupBillableSkusPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSkuGroupBillableSkusResponse response =
+   *         cloudChannelServiceClient.listSkuGroupBillableSkusCallable().call(request);
+   *     for (BillableSku element : response.getBillableSkusList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable() {
+    return stub.listSkuGroupBillableSkusCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
    *
    * <p>Possible error codes:
@@ -8145,6 +8592,166 @@ public class CloudChannelServiceClient implements BackgroundResource {
     protected ListChannelPartnerRepricingConfigsFixedSizeCollection createCollection(
         List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
       return new ListChannelPartnerRepricingConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkuGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkuGroupsRequest,
+          ListSkuGroupsResponse,
+          SkuGroup,
+          ListSkuGroupsPage,
+          ListSkuGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListSkuGroupsPagedResponse> createAsync(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ApiFuture<ListSkuGroupsResponse> futureResponse) {
+      ApiFuture<ListSkuGroupsPage> futurePage =
+          ListSkuGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSkuGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSkuGroupsPagedResponse(ListSkuGroupsPage page) {
+      super(page, ListSkuGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkuGroupsPage
+      extends AbstractPage<
+          ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup, ListSkuGroupsPage> {
+
+    private ListSkuGroupsPage(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ListSkuGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkuGroupsPage createEmptyPage() {
+      return new ListSkuGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListSkuGroupsPage createPage(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ListSkuGroupsResponse response) {
+      return new ListSkuGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkuGroupsPage> createPageAsync(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ApiFuture<ListSkuGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkuGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkuGroupsRequest,
+          ListSkuGroupsResponse,
+          SkuGroup,
+          ListSkuGroupsPage,
+          ListSkuGroupsFixedSizeCollection> {
+
+    private ListSkuGroupsFixedSizeCollection(List<ListSkuGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkuGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListSkuGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkuGroupsFixedSizeCollection createCollection(
+        List<ListSkuGroupsPage> pages, int collectionSize) {
+      return new ListSkuGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage,
+          ListSkuGroupBillableSkusFixedSizeCollection> {
+
+    public static ApiFuture<ListSkuGroupBillableSkusPagedResponse> createAsync(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
+      ApiFuture<ListSkuGroupBillableSkusPage> futurePage =
+          ListSkuGroupBillableSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSkuGroupBillableSkusPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSkuGroupBillableSkusPagedResponse(ListSkuGroupBillableSkusPage page) {
+      super(page, ListSkuGroupBillableSkusFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusPage
+      extends AbstractPage<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage> {
+
+    private ListSkuGroupBillableSkusPage(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ListSkuGroupBillableSkusResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkuGroupBillableSkusPage createEmptyPage() {
+      return new ListSkuGroupBillableSkusPage(null, null);
+    }
+
+    @Override
+    protected ListSkuGroupBillableSkusPage createPage(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ListSkuGroupBillableSkusResponse response) {
+      return new ListSkuGroupBillableSkusPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkuGroupBillableSkusPage> createPageAsync(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage,
+          ListSkuGroupBillableSkusFixedSizeCollection> {
+
+    private ListSkuGroupBillableSkusFixedSizeCollection(
+        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkuGroupBillableSkusFixedSizeCollection createEmptyCollection() {
+      return new ListSkuGroupBillableSkusFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkuGroupBillableSkusFixedSizeCollection createCollection(
+        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+      return new ListSkuGroupBillableSkusFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -61,6 +63,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.channel.v1.ActivateEntitlementRequest;
+import com.google.cloud.channel.v1.BillableSku;
 import com.google.cloud.channel.v1.CancelEntitlementRequest;
 import com.google.cloud.channel.v1.ChangeOfferRequest;
 import com.google.cloud.channel.v1.ChangeParametersRequest;
@@ -107,6 +110,10 @@ import com.google.cloud.channel.v1.ListPurchasableOffersRequest;
 import com.google.cloud.channel.v1.ListPurchasableOffersResponse;
 import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupsRequest;
+import com.google.cloud.channel.v1.ListSkuGroupsResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
@@ -125,6 +132,7 @@ import com.google.cloud.channel.v1.PurchasableSku;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.Sku;
+import com.google.cloud.channel.v1.SkuGroup;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
 import com.google.cloud.channel.v1.SuspendEntitlementRequest;
 import com.google.cloud.channel.v1.TransferEntitlementsRequest;
@@ -297,6 +305,14 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       updateChannelPartnerRepricingConfigSettings;
   private final UnaryCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
       deleteChannelPartnerRepricingConfigSettings;
+  private final PagedCallSettings<
+          ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+      listSkuGroupsSettings;
+  private final PagedCallSettings<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusSettings;
   private final UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings;
   private final PagedCallSettings<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
@@ -626,6 +642,87 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               return payload.getChannelPartnerRepricingConfigsList() == null
                   ? ImmutableList.<ChannelPartnerRepricingConfig>of()
                   : payload.getChannelPartnerRepricingConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup>
+      LIST_SKU_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSkuGroupsRequest injectToken(ListSkuGroupsRequest payload, String token) {
+              return ListSkuGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSkuGroupsRequest injectPageSize(ListSkuGroupsRequest payload, int pageSize) {
+              return ListSkuGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSkuGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSkuGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SkuGroup> extractResources(ListSkuGroupsResponse payload) {
+              return payload.getSkuGroupsList() == null
+                  ? ImmutableList.<SkuGroup>of()
+                  : payload.getSkuGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+      LIST_SKU_GROUP_BILLABLE_SKUS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSkuGroupBillableSkusRequest injectToken(
+                ListSkuGroupBillableSkusRequest payload, String token) {
+              return ListSkuGroupBillableSkusRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSkuGroupBillableSkusRequest injectPageSize(
+                ListSkuGroupBillableSkusRequest payload, int pageSize) {
+              return ListSkuGroupBillableSkusRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSkuGroupBillableSkusRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSkuGroupBillableSkusResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BillableSku> extractResources(
+                ListSkuGroupBillableSkusResponse payload) {
+              return payload.getBillableSkusList() == null
+                  ? ImmutableList.<BillableSku>of()
+                  : payload.getBillableSkusList();
             }
           };
 
@@ -1080,6 +1177,50 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
+          ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+      LIST_SKU_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSkuGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> callable,
+                ListSkuGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSkuGroupsResponse> futureResponse) {
+              PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> pageContext =
+                  PageContext.create(callable, LIST_SKU_GROUPS_PAGE_STR_DESC, request, context);
+              return ListSkuGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          ListSkuGroupBillableSkusPagedResponse>
+      LIST_SKU_GROUP_BILLABLE_SKUS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSkuGroupBillableSkusRequest,
+              ListSkuGroupBillableSkusResponse,
+              ListSkuGroupBillableSkusPagedResponse>() {
+            @Override
+            public ApiFuture<ListSkuGroupBillableSkusPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+                    callable,
+                ListSkuGroupBillableSkusRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
+              PageContext<
+                      ListSkuGroupBillableSkusRequest,
+                      ListSkuGroupBillableSkusResponse,
+                      BillableSku>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SKU_GROUP_BILLABLE_SKUS_PAGE_STR_DESC, request, context);
+              return ListSkuGroupBillableSkusPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       LIST_PRODUCTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1506,6 +1647,21 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return deleteChannelPartnerRepricingConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to listSkuGroups. */
+  public PagedCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+      listSkuGroupsSettings() {
+    return listSkuGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSkuGroupBillableSkus. */
+  public PagedCallSettings<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusSettings() {
+    return listSkuGroupBillableSkusSettings;
+  }
+
   /** Returns the object with the settings used for calls to lookupOffer. */
   public UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings() {
     return lookupOfferSettings;
@@ -1746,6 +1902,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
         settingsBuilder.updateChannelPartnerRepricingConfigSettings().build();
     deleteChannelPartnerRepricingConfigSettings =
         settingsBuilder.deleteChannelPartnerRepricingConfigSettings().build();
+    listSkuGroupsSettings = settingsBuilder.listSkuGroupsSettings().build();
+    listSkuGroupBillableSkusSettings = settingsBuilder.listSkuGroupBillableSkusSettings().build();
     lookupOfferSettings = settingsBuilder.lookupOfferSettings().build();
     listProductsSettings = settingsBuilder.listProductsSettings().build();
     listSkusSettings = settingsBuilder.listSkusSettings().build();
@@ -1883,6 +2041,14 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
         updateChannelPartnerRepricingConfigSettings;
     private final UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
         deleteChannelPartnerRepricingConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+        listSkuGroupsSettings;
+    private final PagedCallSettings.Builder<
+            ListSkuGroupBillableSkusRequest,
+            ListSkuGroupBillableSkusResponse,
+            ListSkuGroupBillableSkusPagedResponse>
+        listSkuGroupBillableSkusSettings;
     private final UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings;
     private final PagedCallSettings.Builder<
             ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
@@ -2016,6 +2182,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       createChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSkuGroupsSettings = PagedCallSettings.newBuilder(LIST_SKU_GROUPS_PAGE_STR_FACT);
+      listSkuGroupBillableSkusSettings =
+          PagedCallSettings.newBuilder(LIST_SKU_GROUP_BILLABLE_SKUS_PAGE_STR_FACT);
       lookupOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
       listSkusSettings = PagedCallSettings.newBuilder(LIST_SKUS_PAGE_STR_FACT);
@@ -2068,6 +2237,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               createChannelPartnerRepricingConfigSettings,
               updateChannelPartnerRepricingConfigSettings,
               deleteChannelPartnerRepricingConfigSettings,
+              listSkuGroupsSettings,
+              listSkuGroupBillableSkusSettings,
               lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
@@ -2148,6 +2319,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           settings.updateChannelPartnerRepricingConfigSettings.toBuilder();
       deleteChannelPartnerRepricingConfigSettings =
           settings.deleteChannelPartnerRepricingConfigSettings.toBuilder();
+      listSkuGroupsSettings = settings.listSkuGroupsSettings.toBuilder();
+      listSkuGroupBillableSkusSettings = settings.listSkuGroupBillableSkusSettings.toBuilder();
       lookupOfferSettings = settings.lookupOfferSettings.toBuilder();
       listProductsSettings = settings.listProductsSettings.toBuilder();
       listSkusSettings = settings.listSkusSettings.toBuilder();
@@ -2197,6 +2370,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               createChannelPartnerRepricingConfigSettings,
               updateChannelPartnerRepricingConfigSettings,
               deleteChannelPartnerRepricingConfigSettings,
+              listSkuGroupsSettings,
+              listSkuGroupBillableSkusSettings,
               lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
@@ -2413,6 +2588,16 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .deleteChannelPartnerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSkuGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSkuGroupBillableSkusSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3076,6 +3261,22 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     public UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
         deleteChannelPartnerRepricingConfigSettings() {
       return deleteChannelPartnerRepricingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSkuGroups. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+        listSkuGroupsSettings() {
+      return listSkuGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSkuGroupBillableSkus. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupBillableSkusRequest,
+            ListSkuGroupBillableSkusResponse,
+            ListSkuGroupBillableSkusPagedResponse>
+        listSkuGroupBillableSkusSettings() {
+      return listSkuGroupBillableSkusSettings;
     }
 
     /** Returns the builder for the settings used for calls to lookupOffer. */

@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -2572,6 +2574,142 @@ public class CloudChannelServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteChannelPartnerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupsTest() throws Exception {
+    SkuGroup responsesElement = SkuGroup.newBuilder().build();
+    ListSkuGroupsResponse expectedResponse =
+        ListSkuGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkuGroups(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSkuGroupsPagedResponse pagedListResponse = client.listSkuGroups(parent);
+
+    List<SkuGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkuGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkuGroupsRequest actualRequest = ((ListSkuGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkuGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSkuGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusTest() throws Exception {
+    BillableSku responsesElement = BillableSku.newBuilder().build();
+    ListSkuGroupBillableSkusResponse expectedResponse =
+        ListSkuGroupBillableSkusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBillableSkus(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+
+    ListSkuGroupBillableSkusPagedResponse pagedListResponse =
+        client.listSkuGroupBillableSkus(parent);
+
+    List<BillableSku> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBillableSkusList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkuGroupBillableSkusRequest actualRequest =
+        ((ListSkuGroupBillableSkusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+      client.listSkuGroupBillableSkus(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusTest2() throws Exception {
+    BillableSku responsesElement = BillableSku.newBuilder().build();
+    ListSkuGroupBillableSkusResponse expectedResponse =
+        ListSkuGroupBillableSkusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBillableSkus(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSkuGroupBillableSkusPagedResponse pagedListResponse =
+        client.listSkuGroupBillableSkus(parent);
+
+    List<BillableSku> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBillableSkusList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkuGroupBillableSkusRequest actualRequest =
+        ((ListSkuGroupBillableSkusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSkuGroupBillableSkus(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

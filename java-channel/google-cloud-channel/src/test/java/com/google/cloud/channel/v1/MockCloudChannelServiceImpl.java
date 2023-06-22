@@ -829,6 +829,49 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
   }
 
   @Override
+  public void listSkuGroups(
+      ListSkuGroupsRequest request, StreamObserver<ListSkuGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSkuGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSkuGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSkuGroups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSkuGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSkuGroupBillableSkus(
+      ListSkuGroupBillableSkusRequest request,
+      StreamObserver<ListSkuGroupBillableSkusResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSkuGroupBillableSkusResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSkuGroupBillableSkusResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSkuGroupBillableSkus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSkuGroupBillableSkusResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void lookupOffer(LookupOfferRequest request, StreamObserver<Offer> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Offer) {

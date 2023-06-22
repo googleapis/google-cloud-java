@@ -1808,6 +1808,106 @@ public final class CloudChannelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSkuGroupsRequest,
+          com.google.cloud.channel.v1.ListSkuGroupsResponse>
+      getListSkuGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSkuGroups",
+      requestType = com.google.cloud.channel.v1.ListSkuGroupsRequest.class,
+      responseType = com.google.cloud.channel.v1.ListSkuGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSkuGroupsRequest,
+          com.google.cloud.channel.v1.ListSkuGroupsResponse>
+      getListSkuGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListSkuGroupsRequest,
+            com.google.cloud.channel.v1.ListSkuGroupsResponse>
+        getListSkuGroupsMethod;
+    if ((getListSkuGroupsMethod = CloudChannelServiceGrpc.getListSkuGroupsMethod) == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListSkuGroupsMethod = CloudChannelServiceGrpc.getListSkuGroupsMethod) == null) {
+          CloudChannelServiceGrpc.getListSkuGroupsMethod =
+              getListSkuGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListSkuGroupsRequest,
+                          com.google.cloud.channel.v1.ListSkuGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSkuGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSkuGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSkuGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier("ListSkuGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListSkuGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest,
+          com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+      getListSkuGroupBillableSkusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSkuGroupBillableSkus",
+      requestType = com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.class,
+      responseType = com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest,
+          com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+      getListSkuGroupBillableSkusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest,
+            com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+        getListSkuGroupBillableSkusMethod;
+    if ((getListSkuGroupBillableSkusMethod =
+            CloudChannelServiceGrpc.getListSkuGroupBillableSkusMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListSkuGroupBillableSkusMethod =
+                CloudChannelServiceGrpc.getListSkuGroupBillableSkusMethod)
+            == null) {
+          CloudChannelServiceGrpc.getListSkuGroupBillableSkusMethod =
+              getListSkuGroupBillableSkusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest,
+                          com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSkuGroupBillableSkus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "ListSkuGroupBillableSkus"))
+                      .build();
+        }
+      }
+    }
+    return getListSkuGroupBillableSkusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.channel.v1.LookupOfferRequest, com.google.cloud.channel.v1.Offer>
       getLookupOfferMethod;
 
@@ -3469,6 +3569,64 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Lists the Rebilling supported SKU groups the account is authorized to
+     * sell.
+     * Reference: https://cloud.google.com/skus/sku-groups
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different, or the account doesn't exist.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources.
+     * The data for each resource is displayed in the alphabetical order of SKU
+     * group display name.
+     * The data for each resource is displayed in the ascending order of
+     * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    default void listSkuGroups(
+        com.google.cloud.channel.v1.ListSkuGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkuGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSkuGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Billable SKUs in a given SKU group.
+     * Possible error codes:
+     * PERMISSION_DENIED: If the account making the request and the account
+     * being queried for are different, or the account doesn't exist.
+     * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * INTERNAL: Any non-user error related to technical issue in the
+     * backend. In this case, contact cloud channel support.
+     * Return Value:
+     * If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+     * resources. The data for each resource is displayed in the ascending order
+     * of:
+     * * [BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+     * * [BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    default void listSkuGroupBillableSkus(
+        com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSkuGroupBillableSkusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -4951,6 +5109,68 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Lists the Rebilling supported SKU groups the account is authorized to
+     * sell.
+     * Reference: https://cloud.google.com/skus/sku-groups
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different, or the account doesn't exist.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources.
+     * The data for each resource is displayed in the alphabetical order of SKU
+     * group display name.
+     * The data for each resource is displayed in the ascending order of
+     * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listSkuGroups(
+        com.google.cloud.channel.v1.ListSkuGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkuGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSkuGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Billable SKUs in a given SKU group.
+     * Possible error codes:
+     * PERMISSION_DENIED: If the account making the request and the account
+     * being queried for are different, or the account doesn't exist.
+     * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * INTERNAL: Any non-user error related to technical issue in the
+     * backend. In this case, contact cloud channel support.
+     * Return Value:
+     * If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+     * resources. The data for each resource is displayed in the ascending order
+     * of:
+     * * [BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+     * * [BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listSkuGroupBillableSkus(
+        com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSkuGroupBillableSkusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -6293,6 +6513,60 @@ public final class CloudChannelServiceGrpc {
         com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteChannelPartnerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Rebilling supported SKU groups the account is authorized to
+     * sell.
+     * Reference: https://cloud.google.com/skus/sku-groups
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different, or the account doesn't exist.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources.
+     * The data for each resource is displayed in the alphabetical order of SKU
+     * group display name.
+     * The data for each resource is displayed in the ascending order of
+     * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListSkuGroupsResponse listSkuGroups(
+        com.google.cloud.channel.v1.ListSkuGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSkuGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Billable SKUs in a given SKU group.
+     * Possible error codes:
+     * PERMISSION_DENIED: If the account making the request and the account
+     * being queried for are different, or the account doesn't exist.
+     * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * INTERNAL: Any non-user error related to technical issue in the
+     * backend. In this case, contact cloud channel support.
+     * Return Value:
+     * If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+     * resources. The data for each resource is displayed in the ascending order
+     * of:
+     * * [BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+     * * [BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse listSkuGroupBillableSkus(
+        com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSkuGroupBillableSkusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7648,6 +7922,63 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Lists the Rebilling supported SKU groups the account is authorized to
+     * sell.
+     * Reference: https://cloud.google.com/skus/sku-groups
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different, or the account doesn't exist.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources.
+     * The data for each resource is displayed in the alphabetical order of SKU
+     * group display name.
+     * The data for each resource is displayed in the ascending order of
+     * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListSkuGroupsResponse>
+        listSkuGroups(com.google.cloud.channel.v1.ListSkuGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSkuGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Billable SKUs in a given SKU group.
+     * Possible error codes:
+     * PERMISSION_DENIED: If the account making the request and the account
+     * being queried for are different, or the account doesn't exist.
+     * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * INTERNAL: Any non-user error related to technical issue in the
+     * backend. In this case, contact cloud channel support.
+     * Return Value:
+     * If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+     * resources. The data for each resource is displayed in the ascending order
+     * of:
+     * * [BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+     * * [BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>
+        listSkuGroupBillableSkus(
+            com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSkuGroupBillableSkusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -7898,16 +8229,18 @@ public final class CloudChannelServiceGrpc {
   private static final int METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG = 33;
   private static final int METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG = 34;
   private static final int METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG = 35;
-  private static final int METHODID_LOOKUP_OFFER = 36;
-  private static final int METHODID_LIST_PRODUCTS = 37;
-  private static final int METHODID_LIST_SKUS = 38;
-  private static final int METHODID_LIST_OFFERS = 39;
-  private static final int METHODID_LIST_PURCHASABLE_SKUS = 40;
-  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 41;
-  private static final int METHODID_REGISTER_SUBSCRIBER = 42;
-  private static final int METHODID_UNREGISTER_SUBSCRIBER = 43;
-  private static final int METHODID_LIST_SUBSCRIBERS = 44;
-  private static final int METHODID_LIST_ENTITLEMENT_CHANGES = 45;
+  private static final int METHODID_LIST_SKU_GROUPS = 36;
+  private static final int METHODID_LIST_SKU_GROUP_BILLABLE_SKUS = 37;
+  private static final int METHODID_LOOKUP_OFFER = 38;
+  private static final int METHODID_LIST_PRODUCTS = 39;
+  private static final int METHODID_LIST_SKUS = 40;
+  private static final int METHODID_LIST_OFFERS = 41;
+  private static final int METHODID_LIST_PURCHASABLE_SKUS = 42;
+  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 43;
+  private static final int METHODID_REGISTER_SUBSCRIBER = 44;
+  private static final int METHODID_UNREGISTER_SUBSCRIBER = 45;
+  private static final int METHODID_LIST_SUBSCRIBERS = 46;
+  private static final int METHODID_LIST_ENTITLEMENT_CHANGES = 47;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8132,6 +8465,19 @@ public final class CloudChannelServiceGrpc {
           serviceImpl.deleteChannelPartnerRepricingConfig(
               (com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_SKU_GROUPS:
+          serviceImpl.listSkuGroups(
+              (com.google.cloud.channel.v1.ListSkuGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkuGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SKU_GROUP_BILLABLE_SKUS:
+          serviceImpl.listSkuGroupBillableSkus(
+              (com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>)
+                  responseObserver);
           break;
         case METHODID_LOOKUP_OFFER:
           serviceImpl.lookupOffer(
@@ -8449,6 +8795,20 @@ public final class CloudChannelServiceGrpc {
                     com.google.protobuf.Empty>(
                     service, METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG)))
         .addMethod(
+            getListSkuGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListSkuGroupsRequest,
+                    com.google.cloud.channel.v1.ListSkuGroupsResponse>(
+                    service, METHODID_LIST_SKU_GROUPS)))
+        .addMethod(
+            getListSkuGroupBillableSkusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest,
+                    com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse>(
+                    service, METHODID_LIST_SKU_GROUP_BILLABLE_SKUS)))
+        .addMethod(
             getLookupOfferMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -8602,6 +8962,8 @@ public final class CloudChannelServiceGrpc {
                       .addMethod(getCreateChannelPartnerRepricingConfigMethod())
                       .addMethod(getUpdateChannelPartnerRepricingConfigMethod())
                       .addMethod(getDeleteChannelPartnerRepricingConfigMethod())
+                      .addMethod(getListSkuGroupsMethod())
+                      .addMethod(getListSkuGroupBillableSkusMethod())
                       .addMethod(getLookupOfferMethod())
                       .addMethod(getListProductsMethod())
                       .addMethod(getListSkusMethod())

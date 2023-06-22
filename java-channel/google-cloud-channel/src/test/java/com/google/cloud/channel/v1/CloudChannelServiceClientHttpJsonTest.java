@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -2793,6 +2795,158 @@ public class CloudChannelServiceClientHttpJsonTest {
       String name =
           "accounts/account-6447/channelPartnerLinks/channelPartnerLink-6447/channelPartnerRepricingConfigs/channelPartnerRepricingConfig-6447";
       client.deleteChannelPartnerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupsTest() throws Exception {
+    SkuGroup responsesElement = SkuGroup.newBuilder().build();
+    ListSkuGroupsResponse expectedResponse =
+        ListSkuGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkuGroups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "accounts/account-4811";
+
+    ListSkuGroupsPagedResponse pagedListResponse = client.listSkuGroups(parent);
+
+    List<SkuGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkuGroupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSkuGroupsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "accounts/account-4811";
+      client.listSkuGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusTest() throws Exception {
+    BillableSku responsesElement = BillableSku.newBuilder().build();
+    ListSkuGroupBillableSkusResponse expectedResponse =
+        ListSkuGroupBillableSkusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBillableSkus(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+
+    ListSkuGroupBillableSkusPagedResponse pagedListResponse =
+        client.listSkuGroupBillableSkus(parent);
+
+    List<BillableSku> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBillableSkusList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+      client.listSkuGroupBillableSkus(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusTest2() throws Exception {
+    BillableSku responsesElement = BillableSku.newBuilder().build();
+    ListSkuGroupBillableSkusResponse expectedResponse =
+        ListSkuGroupBillableSkusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBillableSkus(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "accounts/account-7304/skuGroups/skuGroup-7304";
+
+    ListSkuGroupBillableSkusPagedResponse pagedListResponse =
+        client.listSkuGroupBillableSkus(parent);
+
+    List<BillableSku> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBillableSkusList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSkuGroupBillableSkusExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "accounts/account-7304/skuGroups/skuGroup-7304";
+      client.listSkuGroupBillableSkus(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
