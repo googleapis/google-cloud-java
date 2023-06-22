@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.39.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.38.0...v2.39.0) (2023-06-22)
+
+
+### Features
+
+* Add estimated physical file sizes to ReadAPI v1 ([#2157](https://github.com/googleapis/java-bigquerystorage/issues/2157)) ([fbf6bf6](https://github.com/googleapis/java-bigquerystorage/commit/fbf6bf66567644dd46a5062507f75951800e10a9))
+
 ## [2.38.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.2...v2.38.0) (2023-06-13)
 
 
