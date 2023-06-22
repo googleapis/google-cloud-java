@@ -5,10 +5,13 @@ updates:
     schedule:
       interval: "daily"
     # Disable version updates for Maven dependencies
-    open-pull-requests-limit: 0
+    # we use renovate-bot as well as shared-dependencies BOM to update maven dependencies.
+    ignore: "*"
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
     # Disable version updates for pip dependencies
-    open-pull-requests-limit: 0
+    # If a security vulnerability comes in, we will be notified about 
+    # it via template in the synthtool repository.
+    ignore: "*"
