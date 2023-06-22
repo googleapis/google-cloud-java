@@ -118,6 +118,17 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Run Dialogflow assist model for chat, which will return automated agent
+     * response as suggestion.
+     * </pre>
+     *
+     * <code>DIALOGFLOW_ASSIST = 4;</code>
+     */
+    DIALOGFLOW_ASSIST(4),
+    /**
+     *
+     *
+     * <pre>
      * Run conversation summarization model for chat.
      * </pre>
      *
@@ -171,6 +182,17 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Run Dialogflow assist model for chat, which will return automated agent
+     * response as suggestion.
+     * </pre>
+     *
+     * <code>DIALOGFLOW_ASSIST = 4;</code>
+     */
+    public static final int DIALOGFLOW_ASSIST_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
      * Run conversation summarization model for chat.
      * </pre>
      *
@@ -210,6 +232,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return FAQ;
         case 3:
           return SMART_REPLY;
+        case 4:
+          return DIALOGFLOW_ASSIST;
         case 8:
           return CONVERSATION_SUMMARIZATION;
         default:

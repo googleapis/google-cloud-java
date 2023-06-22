@@ -877,6 +877,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * is up to you and your handoff procedures.
    *
    * You may set this, for example:
+   *
    * * In the entry fulfillment of a CX Page if entering the page indicates
    *   something went extremely wrong in the conversation.
    * * In a webhook response when you determine that the customer issue can only
@@ -1145,6 +1146,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * is up to you and your handoff procedures.
      *
      * You may set this, for example:
+     *
      * * In the entry fulfillment of a CX Page if entering the page indicates
      *   something went extremely wrong in the conversation.
      * * In a webhook response when you determine that the customer issue can only

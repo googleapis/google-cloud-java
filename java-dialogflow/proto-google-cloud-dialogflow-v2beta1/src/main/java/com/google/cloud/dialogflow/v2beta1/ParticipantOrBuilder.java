@@ -105,12 +105,13 @@ public interface ParticipantOrBuilder
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
    *
-   * Dialogflow uses this user id for following purposes:
-   * 1) Billing and measurement. If user with the same
-   * obfuscated_external_user_id is created in a later conversation, dialogflow
-   * will know it's the same user. 2) Agent assist suggestion personalization.
-   * For example, Dialogflow can use it to provide personalized smart reply
-   * suggestions for this user.
+   * Dialogflow uses this user id for billing and measurement. If a user with
+   * the same obfuscated_external_user_id is created in a later conversation,
+   * Dialogflow will know it's the same user.
+   *
+   * Dialogflow also uses this user id for Agent Assist suggestion
+   * personalization. For example, Dialogflow can use it to provide personalized
+   * smart reply suggestions for this user.
    *
    * Note:
    *
@@ -148,12 +149,13 @@ public interface ParticipantOrBuilder
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
    *
-   * Dialogflow uses this user id for following purposes:
-   * 1) Billing and measurement. If user with the same
-   * obfuscated_external_user_id is created in a later conversation, dialogflow
-   * will know it's the same user. 2) Agent assist suggestion personalization.
-   * For example, Dialogflow can use it to provide personalized smart reply
-   * suggestions for this user.
+   * Dialogflow uses this user id for billing and measurement. If a user with
+   * the same obfuscated_external_user_id is created in a later conversation,
+   * Dialogflow will know it's the same user.
+   *
+   * Dialogflow also uses this user id for Agent Assist suggestion
+   * personalization. For example, Dialogflow can use it to provide personalized
+   * smart reply suggestions for this user.
    *
    * Note:
    *

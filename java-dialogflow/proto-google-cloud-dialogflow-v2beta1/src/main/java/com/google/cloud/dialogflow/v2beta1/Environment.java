@@ -275,9 +275,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -302,9 +302,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -389,7 +389,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-   *   ID&gt;`
+   * ID&gt;`
    * </pre>
    *
    * <code>
@@ -418,7 +418,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-   *   ID&gt;`
+   * ID&gt;`
    * </pre>
    *
    * <code>
@@ -1185,9 +1185,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1211,9 +1211,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1237,9 +1237,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1262,9 +1262,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1283,9 +1283,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1424,7 +1424,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-     *   ID&gt;`
+     * ID&gt;`
      * </pre>
      *
      * <code>
@@ -1452,7 +1452,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-     *   ID&gt;`
+     * ID&gt;`
      * </pre>
      *
      * <code>
@@ -1480,7 +1480,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-     *   ID&gt;`
+     * ID&gt;`
      * </pre>
      *
      * <code>
@@ -1507,7 +1507,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-     *   ID&gt;`
+     * ID&gt;`
      * </pre>
      *
      * <code>
@@ -1530,7 +1530,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-     *   ID&gt;`
+     * ID&gt;`
      * </pre>
      *
      * <code>

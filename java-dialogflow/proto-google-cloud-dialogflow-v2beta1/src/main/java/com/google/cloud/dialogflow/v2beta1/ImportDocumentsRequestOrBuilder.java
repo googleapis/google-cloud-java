@@ -60,7 +60,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
    *
    * These URIs may have the forms
@@ -68,7 +68,9 @@ public interface ImportDocumentsRequestOrBuilder
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -77,7 +79,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
    *
    * These URIs may have the forms
@@ -85,7 +87,9 @@ public interface ImportDocumentsRequestOrBuilder
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gcsSource.
    */
@@ -94,7 +98,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
    *
    * These URIs may have the forms
@@ -102,7 +106,9 @@ public interface ImportDocumentsRequestOrBuilder
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.GcsSourcesOrBuilder getGcsSourceOrBuilder();
 

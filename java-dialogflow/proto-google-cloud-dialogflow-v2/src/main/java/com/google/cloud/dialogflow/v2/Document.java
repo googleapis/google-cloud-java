@@ -2036,7 +2036,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * If a reload fails with internal errors, the system will try to reload the
    * document on the next day.
-   * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+   * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
    * system will not try to reload the document anymore. You need to manually
    * reload the document successfully by calling `ReloadDocument` and clear the
    * errors.
@@ -3814,7 +3814,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
-     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
      * system will not try to reload the document anymore. You need to manually
      * reload the document successfully by calling `ReloadDocument` and clear the
      * errors.
@@ -3844,7 +3844,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
-     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
      * system will not try to reload the document anymore. You need to manually
      * reload the document successfully by calling `ReloadDocument` and clear the
      * errors.
@@ -3878,7 +3878,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
-     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
      * system will not try to reload the document anymore. You need to manually
      * reload the document successfully by calling `ReloadDocument` and clear the
      * errors.

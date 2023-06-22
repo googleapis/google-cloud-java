@@ -93,8 +93,8 @@ public interface AnswerFeedbackOrBuilder
    * <pre>
    * Indicates whether the answer/item was clicked by the human agent
    * or not. Default to false.
-   * For knowledge search, the answer record is considered to be clicked if the
-   * answer was copied or any URI was clicked.
+   * For knowledge search and knowledge assist, the answer record is considered
+   * to be clicked if the answer was copied or any URI was clicked.
    * </pre>
    *
    * <code>bool clicked = 3;</code>

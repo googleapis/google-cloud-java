@@ -110,7 +110,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
@@ -122,7 +122,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
@@ -134,7 +134,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>

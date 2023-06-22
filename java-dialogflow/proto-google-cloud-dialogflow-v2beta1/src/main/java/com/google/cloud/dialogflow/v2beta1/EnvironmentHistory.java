@@ -1226,8 +1226,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The name of the environment this history is for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -1253,8 +1253,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The name of the environment this history is for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -1865,8 +1865,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -1891,8 +1891,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -1917,8 +1917,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -1942,8 +1942,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -1963,8 +1963,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *

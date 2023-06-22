@@ -211,7 +211,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -226,7 +226,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -243,7 +243,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1011,7 +1011,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1025,7 +1025,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1045,7 +1045,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1068,7 +1068,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1088,7 +1088,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1115,7 +1115,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1134,7 +1134,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1149,7 +1149,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
@@ -1168,7 +1168,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query.
+     * Parameters for a human assist query. Only used for POC/demo purpose.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>

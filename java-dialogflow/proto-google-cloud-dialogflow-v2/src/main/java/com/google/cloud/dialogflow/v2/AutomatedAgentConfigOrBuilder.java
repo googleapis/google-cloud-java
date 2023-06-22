@@ -83,4 +83,51 @@ public interface AutomatedAgentConfigOrBuilder
    * @return The bytes for agent.
    */
   com.google.protobuf.ByteString getAgentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sessionTtl field is set.
+   */
+  boolean hasSessionTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sessionTtl.
+   */
+  com.google.protobuf.Duration getSessionTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder();
 }

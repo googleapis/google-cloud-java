@@ -29,8 +29,8 @@ public interface CreateEnvironmentRequestOrBuilder
    * <pre>
    * Required. The agent to create an environment for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -46,8 +46,8 @@ public interface CreateEnvironmentRequestOrBuilder
    * <pre>
    * Required. The agent to create an environment for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>

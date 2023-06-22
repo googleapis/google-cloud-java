@@ -74,8 +74,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the environment to retrieve history for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -103,8 +103,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the environment to retrieve history for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -598,8 +598,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -626,8 +626,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -654,8 +654,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -681,8 +681,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -704,8 +704,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *

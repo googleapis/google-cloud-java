@@ -4615,7 +4615,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * If this field is not set, it defaults to 0.0, which means that all
      * suggestions are returned.
      *
-     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE,
+     * KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>float confidence_threshold = 5;</code>
@@ -6574,7 +6575,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Required. The name of a Dialogflow virtual agent used for end user side
-       * intent detection and suggestion. Format: `projects/&lt;Project Number/
+       * intent detection and suggestion. Format: `projects/&lt;Project
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6591,7 +6592,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Required. The name of a Dialogflow virtual agent used for end user side
-       * intent detection and suggestion. Format: `projects/&lt;Project Number/
+       * intent detection and suggestion. Format: `projects/&lt;Project
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6662,7 +6663,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Required. The name of a Dialogflow virtual agent used for end user side
-       * intent detection and suggestion. Format: `projects/&lt;Project Number/
+       * intent detection and suggestion. Format: `projects/&lt;Project
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6690,7 +6691,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Required. The name of a Dialogflow virtual agent used for end user side
-       * intent detection and suggestion. Format: `projects/&lt;Project Number/
+       * intent detection and suggestion. Format: `projects/&lt;Project
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -7128,7 +7129,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          * <pre>
          * Required. The name of a Dialogflow virtual agent used for end user side
-         * intent detection and suggestion. Format: `projects/&lt;Project Number/
+         * intent detection and suggestion. Format: `projects/&lt;Project
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7155,7 +7156,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          * <pre>
          * Required. The name of a Dialogflow virtual agent used for end user side
-         * intent detection and suggestion. Format: `projects/&lt;Project Number/
+         * intent detection and suggestion. Format: `projects/&lt;Project
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7182,7 +7183,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          * <pre>
          * Required. The name of a Dialogflow virtual agent used for end user side
-         * intent detection and suggestion. Format: `projects/&lt;Project Number/
+         * intent detection and suggestion. Format: `projects/&lt;Project
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7208,7 +7209,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          * <pre>
          * Required. The name of a Dialogflow virtual agent used for end user side
-         * intent detection and suggestion. Format: `projects/&lt;Project Number/
+         * intent detection and suggestion. Format: `projects/&lt;Project
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7230,7 +7231,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          * <pre>
          * Required. The name of a Dialogflow virtual agent used for end user side
-         * intent detection and suggestion. Format: `projects/&lt;Project Number/
+         * intent detection and suggestion. Format: `projects/&lt;Project
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -8458,7 +8459,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * If this field is not set, it defaults to 0.0, which means that all
      * suggestions are returned.
      *
-     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE,
+     * KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>float confidence_threshold = 5;</code>
@@ -10020,7 +10022,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE,
+       * KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
@@ -10053,7 +10056,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE,
+       * KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
@@ -10090,7 +10094,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE,
+       * KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
