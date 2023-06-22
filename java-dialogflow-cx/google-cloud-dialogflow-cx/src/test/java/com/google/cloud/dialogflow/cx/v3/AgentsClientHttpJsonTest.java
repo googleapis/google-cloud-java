@@ -628,6 +628,7 @@ public class AgentsClientHttpJsonTest {
             .setEnvironment(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
+            .setIncludeBigqueryExportSettings(true)
             .build();
 
     ExportAgentResponse actualResponse = client.exportAgentAsync(request).get();
@@ -663,6 +664,7 @@ public class AgentsClientHttpJsonTest {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setIncludeBigqueryExportSettings(true)
               .build();
       client.exportAgentAsync(request).get();
       Assert.fail("No exception raised");

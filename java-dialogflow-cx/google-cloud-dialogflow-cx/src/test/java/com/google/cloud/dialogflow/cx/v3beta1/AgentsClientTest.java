@@ -547,6 +547,7 @@ public class AgentsClientTest {
             .setEnvironment(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
+            .setIncludeBigqueryExportSettings(true)
             .build();
 
     ExportAgentResponse actualResponse = client.exportAgentAsync(request).get();
@@ -560,6 +561,9 @@ public class AgentsClientTest {
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
     Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
     Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(
+        request.getIncludeBigqueryExportSettings(),
+        actualRequest.getIncludeBigqueryExportSettings());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -579,6 +583,7 @@ public class AgentsClientTest {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setIncludeBigqueryExportSettings(true)
               .build();
       client.exportAgentAsync(request).get();
       Assert.fail("No exception raised");

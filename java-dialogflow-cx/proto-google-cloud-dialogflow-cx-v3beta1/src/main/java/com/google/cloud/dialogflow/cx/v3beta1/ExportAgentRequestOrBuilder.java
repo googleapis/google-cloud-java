@@ -160,4 +160,18 @@ public interface ExportAgentRequestOrBuilder
    * @return The bytes for environment.
    */
   com.google.protobuf.ByteString getEnvironmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include BigQuery Export setting.
+   * </pre>
+   *
+   * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeBigqueryExportSettings.
+   */
+  boolean getIncludeBigqueryExportSettings();
 }

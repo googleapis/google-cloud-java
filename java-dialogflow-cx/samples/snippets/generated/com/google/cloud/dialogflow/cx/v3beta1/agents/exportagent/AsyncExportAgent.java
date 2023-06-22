@@ -44,6 +44,7 @@ public class AsyncExportAgent {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setIncludeBigqueryExportSettings(true)
               .build();
       ApiFuture<Operation> future = agentsClient.exportAgentCallable().futureCall(request);
       // Do something.

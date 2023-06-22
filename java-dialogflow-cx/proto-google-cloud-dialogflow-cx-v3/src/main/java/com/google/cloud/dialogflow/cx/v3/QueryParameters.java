@@ -864,6 +864,64 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int SESSION_TTL_FIELD_NUMBER = 16;
+  private com.google.protobuf.Duration sessionTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sessionTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionTtl() {
+    return sessionTtl_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sessionTtl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getSessionTtl() {
+    return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder() {
+    return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -909,6 +967,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, channel_);
+    }
+    if (sessionTtl_ != null) {
+      output.writeMessage(16, getSessionTtl());
     }
     getUnknownFields().writeTo(output);
   }
@@ -965,6 +1026,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, channel_);
     }
+    if (sessionTtl_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSessionTtl());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1001,6 +1065,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
     if (!getFlowVersionsList().equals(other.getFlowVersionsList())) return false;
     if (!getChannel().equals(other.getChannel())) return false;
+    if (hasSessionTtl() != other.hasSessionTtl()) return false;
+    if (hasSessionTtl()) {
+      if (!getSessionTtl().equals(other.getSessionTtl())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1046,6 +1114,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + getChannel().hashCode();
+    if (hasSessionTtl()) {
+      hash = (37 * hash) + SESSION_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionTtl().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1234,6 +1306,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       internalGetMutableWebhookHeaders().clear();
       flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       channel_ = "";
+      sessionTtl_ = null;
+      if (sessionTtlBuilder_ != null) {
+        sessionTtlBuilder_.dispose();
+        sessionTtlBuilder_ = null;
+      }
       return this;
     }
 
@@ -1316,6 +1393,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.channel_ = channel_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.sessionTtl_ = sessionTtlBuilder_ == null ? sessionTtl_ : sessionTtlBuilder_.build();
       }
     }
 
@@ -1434,6 +1514,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (other.hasSessionTtl()) {
+        mergeSessionTtl(other.getSessionTtl());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1541,6 +1624,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(getSessionTtlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3802,6 +3891,225 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration sessionTtl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        sessionTtlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sessionTtl field is set.
+     */
+    public boolean hasSessionTtl() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sessionTtl.
+     */
+    public com.google.protobuf.Duration getSessionTtl() {
+      if (sessionTtlBuilder_ == null) {
+        return sessionTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : sessionTtl_;
+      } else {
+        return sessionTtlBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSessionTtl(com.google.protobuf.Duration value) {
+      if (sessionTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionTtl_ = value;
+      } else {
+        sessionTtlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSessionTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (sessionTtlBuilder_ == null) {
+        sessionTtl_ = builderForValue.build();
+      } else {
+        sessionTtlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSessionTtl(com.google.protobuf.Duration value) {
+      if (sessionTtlBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && sessionTtl_ != null
+            && sessionTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSessionTtlBuilder().mergeFrom(value);
+        } else {
+          sessionTtl_ = value;
+        }
+      } else {
+        sessionTtlBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSessionTtl() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      sessionTtl_ = null;
+      if (sessionTtlBuilder_ != null) {
+        sessionTtlBuilder_.dispose();
+        sessionTtlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getSessionTtlBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getSessionTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder() {
+      if (sessionTtlBuilder_ != null) {
+        return sessionTtlBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : sessionTtl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow session life time.
+     * By default, a Dialogflow session remains active and its data is stored for
+     * 30 minutes after the last request is sent for the session.
+     * This value should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getSessionTtlFieldBuilder() {
+      if (sessionTtlBuilder_ == null) {
+        sessionTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getSessionTtl(), getParentForChildren(), isClean());
+        sessionTtl_ = null;
+      }
+      return sessionTtlBuilder_;
     }
 
     @java.lang.Override

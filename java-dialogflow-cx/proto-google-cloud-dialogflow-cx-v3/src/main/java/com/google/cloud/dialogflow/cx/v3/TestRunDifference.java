@@ -333,7 +333,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A description of the diff, showing the actual output vs expected output.
+   * A human readable description of the diff, showing the actual output vs
+   * expected output.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -356,7 +357,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A description of the diff, showing the actual output vs expected output.
+   * A human readable description of the diff, showing the actual output vs
+   * expected output.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -841,7 +843,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A description of the diff, showing the actual output vs expected output.
+     * A human readable description of the diff, showing the actual output vs
+     * expected output.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -863,7 +866,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A description of the diff, showing the actual output vs expected output.
+     * A human readable description of the diff, showing the actual output vs
+     * expected output.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -885,7 +889,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A description of the diff, showing the actual output vs expected output.
+     * A human readable description of the diff, showing the actual output vs
+     * expected output.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -906,7 +911,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A description of the diff, showing the actual output vs expected output.
+     * A human readable description of the diff, showing the actual output vs
+     * expected output.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -923,7 +929,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A description of the diff, showing the actual output vs expected output.
+     * A human readable description of the diff, showing the actual output vs
+     * expected output.
      * </pre>
      *
      * <code>string description = 2;</code>

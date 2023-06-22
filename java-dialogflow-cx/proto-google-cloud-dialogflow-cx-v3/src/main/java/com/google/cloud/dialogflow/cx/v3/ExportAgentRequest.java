@@ -453,6 +453,25 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int INCLUDE_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER = 7;
+  private boolean includeBigqueryExportSettings_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include BigQuery Export setting.
+   * </pre>
+   *
+   * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeBigqueryExportSettings.
+   */
+  @java.lang.Override
+  public boolean getIncludeBigqueryExportSettings() {
+    return includeBigqueryExportSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -481,6 +500,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, environment_);
     }
+    if (includeBigqueryExportSettings_ != false) {
+      output.writeBool(7, includeBigqueryExportSettings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -504,6 +526,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, environment_);
     }
+    if (includeBigqueryExportSettings_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(7, includeBigqueryExportSettings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -524,6 +550,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!getAgentUri().equals(other.getAgentUri())) return false;
     if (dataFormat_ != other.dataFormat_) return false;
     if (!getEnvironment().equals(other.getEnvironment())) return false;
+    if (getIncludeBigqueryExportSettings() != other.getIncludeBigqueryExportSettings())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -543,6 +571,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + dataFormat_;
     hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironment().hashCode();
+    hash = (37 * hash) + INCLUDE_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeBigqueryExportSettings());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -687,6 +718,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       agentUri_ = "";
       dataFormat_ = 0;
       environment_ = "";
+      includeBigqueryExportSettings_ = false;
       return this;
     }
 
@@ -734,6 +766,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.includeBigqueryExportSettings_ = includeBigqueryExportSettings_;
       }
     }
 
@@ -801,6 +836,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getIncludeBigqueryExportSettings() != false) {
+        setIncludeBigqueryExportSettings(other.getIncludeBigqueryExportSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -851,6 +889,12 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 56:
+              {
+                includeBigqueryExportSettings_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1372,6 +1416,62 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       environment_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeBigqueryExportSettings_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include BigQuery Export setting.
+     * </pre>
+     *
+     * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeBigqueryExportSettings.
+     */
+    @java.lang.Override
+    public boolean getIncludeBigqueryExportSettings() {
+      return includeBigqueryExportSettings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include BigQuery Export setting.
+     * </pre>
+     *
+     * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeBigqueryExportSettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeBigqueryExportSettings(boolean value) {
+
+      includeBigqueryExportSettings_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include BigQuery Export setting.
+     * </pre>
+     *
+     * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeBigqueryExportSettings() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      includeBigqueryExportSettings_ = false;
       onChanged();
       return this;
     }

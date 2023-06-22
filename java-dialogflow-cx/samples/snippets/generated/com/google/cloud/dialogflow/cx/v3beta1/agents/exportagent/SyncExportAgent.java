@@ -43,6 +43,7 @@ public class SyncExportAgent {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setIncludeBigqueryExportSettings(true)
               .build();
       ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
     }

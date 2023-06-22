@@ -132,6 +132,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -148,6 +151,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -166,6 +172,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -763,6 +772,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -779,6 +791,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -802,6 +817,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -827,6 +845,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -849,6 +870,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -879,6 +903,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -900,6 +927,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -917,6 +947,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>
@@ -938,6 +971,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>

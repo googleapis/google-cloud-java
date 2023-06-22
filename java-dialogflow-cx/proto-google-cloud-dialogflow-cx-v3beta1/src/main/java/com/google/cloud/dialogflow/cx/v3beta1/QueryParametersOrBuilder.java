@@ -621,4 +621,51 @@ public interface QueryParametersOrBuilder
    * @return The bytes for channel.
    */
   com.google.protobuf.ByteString getChannelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sessionTtl field is set.
+   */
+  boolean hasSessionTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sessionTtl.
+   */
+  com.google.protobuf.Duration getSessionTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow session life time.
+   * By default, a Dialogflow session remains active and its data is stored for
+   * 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder();
 }
