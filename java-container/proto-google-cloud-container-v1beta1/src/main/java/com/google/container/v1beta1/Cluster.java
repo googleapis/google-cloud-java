@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4385,6 +4385,57 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return fleet_ == null ? com.google.container.v1beta1.Fleet.getDefaultInstance() : fleet_;
   }
 
+  public static final int SECURITY_POSTURE_CONFIG_FIELD_NUMBER = 145;
+  private com.google.container.v1beta1.SecurityPostureConfig securityPostureConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPostureConfig() {
+    return securityPostureConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return The securityPostureConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecurityPostureConfig getSecurityPostureConfig() {
+    return securityPostureConfig_ == null
+        ? com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecurityPostureConfigOrBuilder
+      getSecurityPostureConfigOrBuilder() {
+    return securityPostureConfig_ == null
+        ? com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4619,6 +4670,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableK8SBetaApis_ != null) {
       output.writeMessage(143, getEnableK8SBetaApis());
+    }
+    if (securityPostureConfig_ != null) {
+      output.writeMessage(145, getSecurityPostureConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4886,6 +4940,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (enableK8SBetaApis_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(143, getEnableK8SBetaApis());
     }
+    if (securityPostureConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(145, getSecurityPostureConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5095,6 +5153,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasFleet() != other.hasFleet()) return false;
     if (hasFleet()) {
       if (!getFleet().equals(other.getFleet())) return false;
+    }
+    if (hasSecurityPostureConfig() != other.hasSecurityPostureConfig()) return false;
+    if (hasSecurityPostureConfig()) {
+      if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5343,6 +5405,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FLEET_FIELD_NUMBER;
       hash = (53 * hash) + getFleet().hashCode();
     }
+    if (hasSecurityPostureConfig()) {
+      hash = (37 * hash) + SECURITY_POSTURE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPostureConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5543,6 +5609,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getNodePoolAutoConfigFieldBuilder();
         getProtectConfigFieldBuilder();
         getFleetFieldBuilder();
+        getSecurityPostureConfigFieldBuilder();
       }
     }
 
@@ -5793,6 +5860,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (fleetBuilder_ != null) {
         fleetBuilder_.dispose();
         fleetBuilder_ = null;
+      }
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
       }
       return this;
     }
@@ -6158,6 +6230,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField2_ & 0x00000200) != 0)) {
         result.fleet_ = fleetBuilder_ == null ? fleet_ : fleetBuilder_.build();
+      }
+      if (((from_bitField2_ & 0x00000400) != 0)) {
+        result.securityPostureConfig_ =
+            securityPostureConfigBuilder_ == null
+                ? securityPostureConfig_
+                : securityPostureConfigBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6535,6 +6613,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFleet()) {
         mergeFleet(other.getFleet());
+      }
+      if (other.hasSecurityPostureConfig()) {
+        mergeSecurityPostureConfig(other.getSecurityPostureConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7053,6 +7134,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 1146
+            case 1162:
+              {
+                input.readMessage(
+                    getSecurityPostureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000400;
+                break;
+              } // case 1162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19393,6 +19481,195 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         fleet_ = null;
       }
       return fleetBuilder_;
+    }
+
+    private com.google.container.v1beta1.SecurityPostureConfig securityPostureConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecurityPostureConfig,
+            com.google.container.v1beta1.SecurityPostureConfig.Builder,
+            com.google.container.v1beta1.SecurityPostureConfigOrBuilder>
+        securityPostureConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     *
+     * @return Whether the securityPostureConfig field is set.
+     */
+    public boolean hasSecurityPostureConfig() {
+      return ((bitField2_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     *
+     * @return The securityPostureConfig.
+     */
+    public com.google.container.v1beta1.SecurityPostureConfig getSecurityPostureConfig() {
+      if (securityPostureConfigBuilder_ == null) {
+        return securityPostureConfig_ == null
+            ? com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      } else {
+        return securityPostureConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder setSecurityPostureConfig(
+        com.google.container.v1beta1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        securityPostureConfig_ = value;
+      } else {
+        securityPostureConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder setSecurityPostureConfig(
+        com.google.container.v1beta1.SecurityPostureConfig.Builder builderForValue) {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfig_ = builderForValue.build();
+      } else {
+        securityPostureConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder mergeSecurityPostureConfig(
+        com.google.container.v1beta1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000400) != 0)
+            && securityPostureConfig_ != null
+            && securityPostureConfig_
+                != com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()) {
+          getSecurityPostureConfigBuilder().mergeFrom(value);
+        } else {
+          securityPostureConfig_ = value;
+        }
+      } else {
+        securityPostureConfigBuilder_.mergeFrom(value);
+      }
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder clearSecurityPostureConfig() {
+      bitField2_ = (bitField2_ & ~0x00000400);
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public com.google.container.v1beta1.SecurityPostureConfig.Builder
+        getSecurityPostureConfigBuilder() {
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return getSecurityPostureConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public com.google.container.v1beta1.SecurityPostureConfigOrBuilder
+        getSecurityPostureConfigOrBuilder() {
+      if (securityPostureConfigBuilder_ != null) {
+        return securityPostureConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return securityPostureConfig_ == null
+            ? com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecurityPostureConfig,
+            com.google.container.v1beta1.SecurityPostureConfig.Builder,
+            com.google.container.v1beta1.SecurityPostureConfigOrBuilder>
+        getSecurityPostureConfigFieldBuilder() {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SecurityPostureConfig,
+                com.google.container.v1beta1.SecurityPostureConfig.Builder,
+                com.google.container.v1beta1.SecurityPostureConfigOrBuilder>(
+                getSecurityPostureConfig(), getParentForChildren(), isClean());
+        securityPostureConfig_ = null;
+      }
+      return securityPostureConfigBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2362,6 +2362,41 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.Fleet fleet = 140;</code>
    */
   com.google.container.v1.FleetOrBuilder getFleetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  boolean hasSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return The securityPostureConfig.
+   */
+  com.google.container.v1.SecurityPostureConfig getSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   */
+  com.google.container.v1.SecurityPostureConfigOrBuilder getSecurityPostureConfigOrBuilder();
 
   /**
    *

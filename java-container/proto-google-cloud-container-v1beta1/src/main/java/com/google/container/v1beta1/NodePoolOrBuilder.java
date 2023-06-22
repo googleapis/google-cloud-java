@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,7 +382,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3715
+   *     google/container/v1beta1/cluster_service.proto;l=3758
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -399,7 +399,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3715
+   *     google/container/v1beta1/cluster_service.proto;l=3758
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

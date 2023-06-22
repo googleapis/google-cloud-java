@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1968,6 +1968,45 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   *
+   * @return Whether the desiredSecurityPostureConfig field is set.
+   */
+  boolean hasDesiredSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   *
+   * @return The desiredSecurityPostureConfig.
+   */
+  com.google.container.v1beta1.SecurityPostureConfig getDesiredSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   */
+  com.google.container.v1beta1.SecurityPostureConfigOrBuilder
+      getDesiredSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable/Disable FQDN Network Policy for the cluster.
    * </pre>
    *
@@ -1988,6 +2027,48 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredEnableFqdnNetworkPolicy.
    */
   boolean getDesiredEnableFqdnNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   *
+   * @return Whether the desiredAutopilotWorkloadPolicyConfig field is set.
+   */
+  boolean hasDesiredAutopilotWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   *
+   * @return The desiredAutopilotWorkloadPolicyConfig.
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfig getDesiredAutopilotWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfigOrBuilder
+      getDesiredAutopilotWorkloadPolicyConfigOrBuilder();
 
   /**
    *

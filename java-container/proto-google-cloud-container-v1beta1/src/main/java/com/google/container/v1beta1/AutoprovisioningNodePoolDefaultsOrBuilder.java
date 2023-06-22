@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,7 +249,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4142
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -274,7 +274,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4142
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated

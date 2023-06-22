@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2962
+   *     google/container/v1/cluster_service.proto;l=3005
    * @return The projectId.
    */
   @java.lang.Override
@@ -108,7 +108,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2962
+   *     google/container/v1/cluster_service.proto;l=3005
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -142,7 +142,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2968
+   *     google/container/v1/cluster_service.proto;l=3011
    * @return The zone.
    */
   @java.lang.Override
@@ -171,7 +171,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2968
+   *     google/container/v1/cluster_service.proto;l=3011
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -643,7 +643,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2962
+     *     google/container/v1/cluster_service.proto;l=3005
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -670,7 +670,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2962
+     *     google/container/v1/cluster_service.proto;l=3005
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -697,7 +697,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2962
+     *     google/container/v1/cluster_service.proto;l=3005
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -723,7 +723,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2962
+     *     google/container/v1/cluster_service.proto;l=3005
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -745,7 +745,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2962
+     *     google/container/v1/cluster_service.proto;l=3005
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -775,7 +775,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2968
+     *     google/container/v1/cluster_service.proto;l=3011
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -803,7 +803,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2968
+     *     google/container/v1/cluster_service.proto;l=3011
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -831,7 +831,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2968
+     *     google/container/v1/cluster_service.proto;l=3011
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2968
+     *     google/container/v1/cluster_service.proto;l=3011
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -881,7 +881,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2968
+     *     google/container/v1/cluster_service.proto;l=3011
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */

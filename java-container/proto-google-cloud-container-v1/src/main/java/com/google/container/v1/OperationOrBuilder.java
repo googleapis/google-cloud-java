@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2309
+   *     google/container/v1/cluster_service.proto;l=2352
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -77,7 +77,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2309
+   *     google/container/v1/cluster_service.proto;l=2352
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -171,7 +171,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2322
+   *     google/container/v1/cluster_service.proto;l=2365
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -189,7 +189,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2322
+   *     google/container/v1/cluster_service.proto;l=2365
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

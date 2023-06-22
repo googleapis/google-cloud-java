@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3839
+   *     google/container/v1/cluster_service.proto;l=3882
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3839
+   *     google/container/v1/cluster_service.proto;l=3882
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3845
+   *     google/container/v1/cluster_service.proto;l=3888
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3845
+   *     google/container/v1/cluster_service.proto;l=3888
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3849
+   *     google/container/v1/cluster_service.proto;l=3892
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3849
+   *     google/container/v1/cluster_service.proto;l=3892
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

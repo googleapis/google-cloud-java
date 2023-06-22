@@ -99,6 +99,7 @@ import com.google.container.v1.ReleaseChannel;
 import com.google.container.v1.ResourceLabels;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1.SecurityPostureConfig;
 import com.google.container.v1.ServerConfig;
 import com.google.container.v1.SetAddonsConfigRequest;
 import com.google.container.v1.SetLabelsRequest;
@@ -328,6 +329,7 @@ public class ClusterManagerClientTest {
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
@@ -429,6 +431,7 @@ public class ClusterManagerClientTest {
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);

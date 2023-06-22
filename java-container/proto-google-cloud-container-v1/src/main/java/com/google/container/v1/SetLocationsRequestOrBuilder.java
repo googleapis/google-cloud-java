@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2726
+   *     google/container/v1/cluster_service.proto;l=2769
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2726
+   *     google/container/v1/cluster_service.proto;l=2769
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2732
+   *     google/container/v1/cluster_service.proto;l=2775
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2732
+   *     google/container/v1/cluster_service.proto;l=2775
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2736
+   *     google/container/v1/cluster_service.proto;l=2779
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2736
+   *     google/container/v1/cluster_service.proto;l=2779
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
