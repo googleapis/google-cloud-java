@@ -125,6 +125,33 @@ public interface TaskGroupOrBuilder
    *
    *
    * <pre>
+   * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+   *
+   * @return The enum numeric value on the wire for schedulingPolicy.
+   */
+  int getSchedulingPolicyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+   *
+   * @return The schedulingPolicy.
+   */
+  com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy getSchedulingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
    * An array of environment variable mappings, which are passed to Tasks with
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
@@ -134,8 +161,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -154,8 +179,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -174,8 +197,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -194,8 +215,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -215,8 +234,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>

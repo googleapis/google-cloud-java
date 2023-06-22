@@ -5239,7 +5239,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5254,7 +5253,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5552,7 +5550,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5578,7 +5575,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -6531,7 +6527,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -6556,7 +6551,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -6581,7 +6575,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -6605,7 +6598,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -6625,7 +6617,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>

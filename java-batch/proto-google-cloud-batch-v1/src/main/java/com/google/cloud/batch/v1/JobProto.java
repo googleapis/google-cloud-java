@@ -230,23 +230,27 @@ public final class JobProto {
           + "istance\030\002 \001(\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
           + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\021ProvisioningMode"
           + "l\022\"\n\036PROVISIONING_MODEL_UNSPECIFIED\020\000\022\014\n"
-          + "\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n\013PREEMPTIBLE\020\003\"\203"
-          + "\003\n\tTaskGroup\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0228\n\ttask"
+          + "\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n\013PREEMPTIBLE\020\003\"\257"
+          + "\004\n\tTaskGroup\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0228\n\ttask"
           + "_spec\030\003 \001(\0132\037.google.cloud.batch.v1.Task"
           + "SpecB\004\342A\001\002\022\022\n\ntask_count\030\004 \001(\003\022\023\n\013parall"
-          + "elism\030\005 \001(\003\022=\n\021task_environments\030\t \003(\0132\""
-          + ".google.cloud.batch.v1.Environment\022\033\n\023ta"
-          + "sk_count_per_node\030\n \001(\003\022\032\n\022require_hosts"
-          + "_file\030\013 \001(\010\022\026\n\016permissive_ssh\030\014 \001(\010:o\352Al"
-          + "\n\036batch.googleapis.com/TaskGroup\022Jprojec"
-          + "ts/{project}/locations/{location}/jobs/{"
-          + "job}/taskGroups/{task_group}\"/\n\016ServiceA"
-          + "ccount\022\r\n\005email\030\001 \001(\t\022\016\n\006scopes\030\002 \003(\tB\251\001"
-          + "\n\031com.google.cloud.batch.v1B\010JobProtoP\001Z"
-          + "/cloud.google.com/go/batch/apiv1/batchpb"
-          + ";batchpb\242\002\003GCB\252\002\025Google.Cloud.Batch.V1\312\002"
-          + "\025Google\\Cloud\\Batch\\V1\352\002\030Google::Cloud::"
-          + "Batch::V1b\006proto3"
+          + "elism\030\005 \001(\003\022L\n\021scheduling_policy\030\006 \001(\01621"
+          + ".google.cloud.batch.v1.TaskGroup.Schedul"
+          + "ingPolicy\022=\n\021task_environments\030\t \003(\0132\".g"
+          + "oogle.cloud.batch.v1.Environment\022\033\n\023task"
+          + "_count_per_node\030\n \001(\003\022\032\n\022require_hosts_f"
+          + "ile\030\013 \001(\010\022\026\n\016permissive_ssh\030\014 \001(\010\"\\\n\020Sch"
+          + "edulingPolicy\022!\n\035SCHEDULING_POLICY_UNSPE"
+          + "CIFIED\020\000\022\027\n\023AS_SOON_AS_POSSIBLE\020\001\022\014\n\010IN_"
+          + "ORDER\020\002:o\352Al\n\036batch.googleapis.com/TaskG"
+          + "roup\022Jprojects/{project}/locations/{loca"
+          + "tion}/jobs/{job}/taskGroups/{task_group}"
+          + "\"/\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006sco"
+          + "pes\030\002 \003(\tB\251\001\n\031com.google.cloud.batch.v1B"
+          + "\010JobProtoP\001Z/cloud.google.com/go/batch/a"
+          + "piv1/batchpb;batchpb\242\002\003GCB\252\002\025Google.Clou"
+          + "d.Batch.V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030Goo"
+          + "gle::Cloud::Batch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -452,6 +456,7 @@ public final class JobProto {
               "TaskSpec",
               "TaskCount",
               "Parallelism",
+              "SchedulingPolicy",
               "TaskEnvironments",
               "TaskCountPerNode",
               "RequireHostsFile",

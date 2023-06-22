@@ -22,8 +22,7 @@ package com.google.cloud.batch.v1;
  *
  *
  * <pre>
- * A TaskGroup contains one or multiple Tasks that share the same
- * Runnable but with different runtime parameters.
+ * A TaskGroup defines one or more Tasks that all share the same TaskSpec.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1.TaskGroup}
@@ -40,6 +39,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   private TaskGroup() {
     name_ = "";
+    schedulingPolicy_ = 0;
     taskEnvironments_ = java.util.Collections.emptyList();
   }
 
@@ -62,6 +62,171 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.batch.v1.TaskGroup.class,
             com.google.cloud.batch.v1.TaskGroup.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * How Tasks in the TaskGroup should be scheduled relative to each other.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.batch.v1.TaskGroup.SchedulingPolicy}
+   */
+  public enum SchedulingPolicy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SCHEDULING_POLICY_UNSPECIFIED = 0;</code>
+     */
+    SCHEDULING_POLICY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks as soon as resources are available.
+     *
+     * Tasks might be executed in parallel depending on parallelism and
+     * task_count values.
+     * </pre>
+     *
+     * <code>AS_SOON_AS_POSSIBLE = 1;</code>
+     */
+    AS_SOON_AS_POSSIBLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks sequentially with increased task index.
+     * </pre>
+     *
+     * <code>IN_ORDER = 2;</code>
+     */
+    IN_ORDER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SCHEDULING_POLICY_UNSPECIFIED = 0;</code>
+     */
+    public static final int SCHEDULING_POLICY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks as soon as resources are available.
+     *
+     * Tasks might be executed in parallel depending on parallelism and
+     * task_count values.
+     * </pre>
+     *
+     * <code>AS_SOON_AS_POSSIBLE = 1;</code>
+     */
+    public static final int AS_SOON_AS_POSSIBLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks sequentially with increased task index.
+     * </pre>
+     *
+     * <code>IN_ORDER = 2;</code>
+     */
+    public static final int IN_ORDER_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SchedulingPolicy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SchedulingPolicy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SCHEDULING_POLICY_UNSPECIFIED;
+        case 1:
+          return AS_SOON_AS_POSSIBLE;
+        case 2:
+          return IN_ORDER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SchedulingPolicy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SchedulingPolicy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SchedulingPolicy>() {
+              public SchedulingPolicy findValueByNumber(int number) {
+                return SchedulingPolicy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.batch.v1.TaskGroup.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SchedulingPolicy[] VALUES = values();
+
+    public static SchedulingPolicy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SchedulingPolicy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.batch.v1.TaskGroup.SchedulingPolicy)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -209,6 +374,45 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     return parallelism_;
   }
 
+  public static final int SCHEDULING_POLICY_FIELD_NUMBER = 6;
+  private int schedulingPolicy_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+   *
+   * @return The enum numeric value on the wire for schedulingPolicy.
+   */
+  @java.lang.Override
+  public int getSchedulingPolicyValue() {
+    return schedulingPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+   *
+   * @return The schedulingPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy getSchedulingPolicy() {
+    com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy result =
+        com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.forNumber(schedulingPolicy_);
+    return result == null
+        ? com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.UNRECOGNIZED
+        : result;
+  }
+
   public static final int TASK_ENVIRONMENTS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
@@ -226,8 +430,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -249,8 +451,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -273,8 +473,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -296,8 +494,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -319,8 +515,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -415,6 +609,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     if (parallelism_ != 0L) {
       output.writeInt64(5, parallelism_);
     }
+    if (schedulingPolicy_
+        != com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.SCHEDULING_POLICY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, schedulingPolicy_);
+    }
     for (int i = 0; i < taskEnvironments_.size(); i++) {
       output.writeMessage(9, taskEnvironments_.get(i));
     }
@@ -447,6 +646,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (parallelism_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, parallelism_);
+    }
+    if (schedulingPolicy_
+        != com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.SCHEDULING_POLICY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, schedulingPolicy_);
     }
     for (int i = 0; i < taskEnvironments_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, taskEnvironments_.get(i));
@@ -482,6 +686,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (getTaskCount() != other.getTaskCount()) return false;
     if (getParallelism() != other.getParallelism()) return false;
+    if (schedulingPolicy_ != other.schedulingPolicy_) return false;
     if (!getTaskEnvironmentsList().equals(other.getTaskEnvironmentsList())) return false;
     if (getTaskCountPerNode() != other.getTaskCountPerNode()) return false;
     if (getRequireHostsFile() != other.getRequireHostsFile()) return false;
@@ -507,6 +712,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaskCount());
     hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getParallelism());
+    hash = (37 * hash) + SCHEDULING_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + schedulingPolicy_;
     if (getTaskEnvironmentsCount() > 0) {
       hash = (37 * hash) + TASK_ENVIRONMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskEnvironmentsList().hashCode();
@@ -620,8 +827,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A TaskGroup contains one or multiple Tasks that share the same
-   * Runnable but with different runtime parameters.
+   * A TaskGroup defines one or more Tasks that all share the same TaskSpec.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1.TaskGroup}
@@ -664,13 +870,14 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       taskCount_ = 0L;
       parallelism_ = 0L;
+      schedulingPolicy_ = 0;
       if (taskEnvironmentsBuilder_ == null) {
         taskEnvironments_ = java.util.Collections.emptyList();
       } else {
         taskEnvironments_ = null;
         taskEnvironmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       taskCountPerNode_ = 0L;
       requireHostsFile_ = false;
       permissiveSsh_ = false;
@@ -710,9 +917,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.batch.v1.TaskGroup result) {
       if (taskEnvironmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           taskEnvironments_ = java.util.Collections.unmodifiableList(taskEnvironments_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.taskEnvironments_ = taskEnvironments_;
       } else {
@@ -734,13 +941,16 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.parallelism_ = parallelism_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.taskCountPerNode_ = taskCountPerNode_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.schedulingPolicy_ = schedulingPolicy_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.requireHostsFile_ = requireHostsFile_;
+        result.taskCountPerNode_ = taskCountPerNode_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.requireHostsFile_ = requireHostsFile_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.permissiveSsh_ = permissiveSsh_;
       }
     }
@@ -804,11 +1014,14 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       if (other.getParallelism() != 0L) {
         setParallelism(other.getParallelism());
       }
+      if (other.schedulingPolicy_ != 0) {
+        setSchedulingPolicyValue(other.getSchedulingPolicyValue());
+      }
       if (taskEnvironmentsBuilder_ == null) {
         if (!other.taskEnvironments_.isEmpty()) {
           if (taskEnvironments_.isEmpty()) {
             taskEnvironments_ = other.taskEnvironments_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTaskEnvironmentsIsMutable();
             taskEnvironments_.addAll(other.taskEnvironments_);
@@ -821,7 +1034,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             taskEnvironmentsBuilder_.dispose();
             taskEnvironmentsBuilder_ = null;
             taskEnvironments_ = other.taskEnvironments_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             taskEnvironmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTaskEnvironmentsFieldBuilder()
@@ -890,6 +1103,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 48:
+              {
+                schedulingPolicy_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             case 74:
               {
                 com.google.cloud.batch.v1.Environment m =
@@ -906,19 +1125,19 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 taskCountPerNode_ = input.readInt64();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 80
             case 88:
               {
                 requireHostsFile_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             case 96:
               {
                 permissiveSsh_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             default:
@@ -1377,14 +1596,111 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int schedulingPolicy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+     *
+     * @return The enum numeric value on the wire for schedulingPolicy.
+     */
+    @java.lang.Override
+    public int getSchedulingPolicyValue() {
+      return schedulingPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for schedulingPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchedulingPolicyValue(int value) {
+      schedulingPolicy_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+     *
+     * @return The schedulingPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy getSchedulingPolicy() {
+      com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy result =
+          com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.forNumber(schedulingPolicy_);
+      return result == null
+          ? com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+     *
+     * @param value The schedulingPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchedulingPolicy(com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      schedulingPolicy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSchedulingPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      schedulingPolicy_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.batch.v1.Environment> taskEnvironments_ =
         java.util.Collections.emptyList();
 
     private void ensureTaskEnvironmentsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         taskEnvironments_ =
             new java.util.ArrayList<com.google.cloud.batch.v1.Environment>(taskEnvironments_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1407,8 +1723,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1433,8 +1747,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1459,8 +1771,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1485,8 +1795,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1517,8 +1825,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1547,8 +1853,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1579,8 +1883,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1611,8 +1913,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1641,8 +1941,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1671,8 +1969,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1701,8 +1997,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1710,7 +2004,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTaskEnvironments() {
       if (taskEnvironmentsBuilder_ == null) {
         taskEnvironments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         taskEnvironmentsBuilder_.clear();
@@ -1730,8 +2024,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1759,8 +2051,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1781,8 +2071,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1807,8 +2095,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1834,8 +2120,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1857,8 +2141,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1880,8 +2162,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-     *
-     * task_environments supports up to 200 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
@@ -1903,7 +2183,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.batch.v1.Environment.Builder,
                 com.google.cloud.batch.v1.EnvironmentOrBuilder>(
                 taskEnvironments_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         taskEnvironments_ = null;
@@ -1946,7 +2226,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setTaskCountPerNode(long value) {
 
       taskCountPerNode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1964,7 +2244,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTaskCountPerNode() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       taskCountPerNode_ = 0L;
       onChanged();
       return this;
@@ -2005,7 +2285,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireHostsFile(boolean value) {
 
       requireHostsFile_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2023,7 +2303,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireHostsFile() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       requireHostsFile_ = false;
       onChanged();
       return this;
@@ -2062,7 +2342,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setPermissiveSsh(boolean value) {
 
       permissiveSsh_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2079,7 +2359,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPermissiveSsh() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       permissiveSsh_ = false;
       onChanged();
       return this;

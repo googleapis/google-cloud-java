@@ -285,8 +285,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
@@ -305,8 +303,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
@@ -325,8 +321,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
@@ -345,8 +339,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
@@ -366,8 +358,6 @@ public interface TaskGroupOrBuilder
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
-   *
-   * task_environments supports up to 200 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>

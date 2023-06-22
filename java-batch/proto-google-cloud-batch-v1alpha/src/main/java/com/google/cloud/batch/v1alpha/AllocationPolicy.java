@@ -5685,7 +5685,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5700,7 +5699,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -6110,7 +6108,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -6136,7 +6133,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -7428,7 +7424,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -7453,7 +7448,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -7478,7 +7472,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -7502,7 +7495,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -7522,7 +7514,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
-       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -13178,7 +13169,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=522
+   *     google/cloud/batch/v1alpha/job.proto;l=521
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -13198,7 +13189,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=522
+   *     google/cloud/batch/v1alpha/job.proto;l=521
    * @return The instance.
    */
   @java.lang.Override
@@ -13335,7 +13326,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=529
+   *     google/cloud/batch/v1alpha/job.proto;l=528
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13352,7 +13343,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=529
+   *     google/cloud/batch/v1alpha/job.proto;l=528
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13369,7 +13360,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=529
+   *     google/cloud/batch/v1alpha/job.proto;l=528
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -13387,7 +13378,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=529
+   *     google/cloud/batch/v1alpha/job.proto;l=528
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -13428,7 +13419,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=532
+   *     google/cloud/batch/v1alpha/job.proto;l=531
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -13451,7 +13442,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=532
+   *     google/cloud/batch/v1alpha/job.proto;l=531
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -13471,7 +13462,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=532
+   *     google/cloud/batch/v1alpha/job.proto;l=531
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -13493,7 +13484,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=532
+   *     google/cloud/batch/v1alpha/job.proto;l=531
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -13513,7 +13504,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=532
+   *     google/cloud/batch/v1alpha/job.proto;l=531
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -13539,7 +13530,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=535
+   *     See google/cloud/batch/v1alpha/job.proto;l=534
    * @return The serviceAccountEmail.
    */
   @java.lang.Override
@@ -13565,7 +13556,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=535
+   *     See google/cloud/batch/v1alpha/job.proto;l=534
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Override
@@ -14797,7 +14788,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=522
+     *     google/cloud/batch/v1alpha/job.proto;l=521
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -14816,7 +14807,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=522
+     *     google/cloud/batch/v1alpha/job.proto;l=521
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -15449,7 +15440,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -15467,7 +15458,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -15484,7 +15475,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -15502,7 +15493,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -15520,7 +15511,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -15546,7 +15537,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -15571,7 +15562,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -15593,7 +15584,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15614,7 +15605,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=529
+     *     google/cloud/batch/v1alpha/job.proto;l=528
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -15652,7 +15643,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -15674,7 +15665,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -15693,7 +15684,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -15714,7 +15705,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -15742,7 +15733,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -15769,7 +15760,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -15797,7 +15788,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15819,7 +15810,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -15838,7 +15829,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -15858,7 +15849,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -15882,7 +15873,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -15905,7 +15896,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=532
+     *     See google/cloud/batch/v1alpha/job.proto;l=531
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -15930,7 +15921,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=535
+     *     See google/cloud/batch/v1alpha/job.proto;l=534
      * @return The serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -15955,7 +15946,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=535
+     *     See google/cloud/batch/v1alpha/job.proto;l=534
      * @return The bytes for serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -15980,7 +15971,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=535
+     *     See google/cloud/batch/v1alpha/job.proto;l=534
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -16004,7 +15995,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=535
+     *     See google/cloud/batch/v1alpha/job.proto;l=534
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16024,7 +16015,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=535
+     *     See google/cloud/batch/v1alpha/job.proto;l=534
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
      */
