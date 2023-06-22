@@ -8,8 +8,7 @@ branchProtectionRules:
     requiresCodeOwnerReviews: true
     requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
-      - dependencies (8)
-      - dependencies (11)
+      - dependencies (17)
       - lint
       - clirr
       - units (8)
