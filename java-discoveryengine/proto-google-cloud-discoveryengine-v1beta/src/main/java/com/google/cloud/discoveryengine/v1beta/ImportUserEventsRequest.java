@@ -1193,11 +1193,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    *
    * @return Whether the inlineSource field is set.
@@ -1210,11 +1210,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    *
    * @return The inlineSource.
@@ -1232,11 +1232,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    */
   @java.lang.Override
@@ -1254,12 +1254,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -1271,12 +1269,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
    *
    * @return The gcsSource.
    */
@@ -1291,12 +1287,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
    */
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder getGcsSourceOrBuilder() {
@@ -1311,12 +1305,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
    *
    * @return Whether the bigquerySource field is set.
    */
@@ -1328,12 +1320,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
    *
    * @return The bigquerySource.
    */
@@ -1348,12 +1338,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
    */
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.BigQuerySourceOrBuilder
@@ -2001,11 +1989,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      *
      * @return Whether the inlineSource field is set.
@@ -2018,11 +2006,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      *
      * @return The inlineSource.
@@ -2049,11 +2037,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     public Builder setInlineSource(
@@ -2074,11 +2062,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     public Builder setInlineSource(
@@ -2097,11 +2085,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     public Builder mergeInlineSource(
@@ -2136,11 +2124,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     public Builder clearInlineSource() {
@@ -2163,11 +2151,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource.Builder
@@ -2178,11 +2166,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     @java.lang.Override
@@ -2203,11 +2191,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The Inline source for the input content for UserEvents.
+     * The Inline source for the input content for UserEvents.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource inline_source = 2;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2248,12 +2236,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      *
      * @return Whether the gcsSource field is set.
      */
@@ -2265,12 +2251,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      *
      * @return The gcsSource.
      */
@@ -2292,12 +2276,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     public Builder setGcsSource(com.google.cloud.discoveryengine.v1beta.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
@@ -2316,12 +2298,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     public Builder setGcsSource(
         com.google.cloud.discoveryengine.v1beta.GcsSource.Builder builderForValue) {
@@ -2338,12 +2318,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     public Builder mergeGcsSource(com.google.cloud.discoveryengine.v1beta.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
@@ -2372,12 +2350,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     public Builder clearGcsSource() {
       if (gcsSourceBuilder_ == null) {
@@ -2399,12 +2375,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
@@ -2413,12 +2387,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder getGcsSourceOrBuilder() {
@@ -2435,12 +2407,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Cloud Storage location for the input content.
+     * Cloud Storage location for the input content.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1beta.GcsSource,
@@ -2475,12 +2445,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      *
      * @return Whether the bigquerySource field is set.
      */
@@ -2492,12 +2460,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      *
      * @return The bigquerySource.
      */
@@ -2519,12 +2485,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     public Builder setBigquerySource(com.google.cloud.discoveryengine.v1beta.BigQuerySource value) {
       if (bigquerySourceBuilder_ == null) {
@@ -2543,12 +2507,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     public Builder setBigquerySource(
         com.google.cloud.discoveryengine.v1beta.BigQuerySource.Builder builderForValue) {
@@ -2565,12 +2527,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     public Builder mergeBigquerySource(
         com.google.cloud.discoveryengine.v1beta.BigQuerySource value) {
@@ -2601,12 +2561,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     public Builder clearBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
@@ -2628,12 +2586,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.BigQuerySource.Builder
         getBigquerySourceBuilder() {
@@ -2643,12 +2599,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.BigQuerySourceOrBuilder
@@ -2666,12 +2620,10 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. BigQuery input source.
+     * BigQuery input source.
      * </pre>
      *
-     * <code>
-     * .google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.discoveryengine.v1beta.BigQuerySource bigquery_source = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1beta.BigQuerySource,

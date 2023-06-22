@@ -8965,6 +8965,53 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpecOrBuilder
         getSummarySpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     *
+     * @return Whether the extractiveContentSpec field is set.
+     */
+    boolean hasExtractiveContentSpec();
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     *
+     * @return The extractiveContentSpec.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec
+        getExtractiveContentSpec();
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .ExtractiveContentSpecOrBuilder
+        getExtractiveContentSpecOrBuilder();
   }
   /**
    *
@@ -9020,6 +9067,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of snippets returned in each search result.
+       *
+       * A snippet is an infomartive summary of a content with highlighting for
+       * UI rendering.
+       *
        * If the matching snippets is less than the max_snippet_count, return all
        * of the snippets; otherwise, return the max_snippet_count.
        *
@@ -9097,6 +9148,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of snippets returned in each search result.
+       *
+       * A snippet is an infomartive summary of a content with highlighting for
+       * UI rendering.
+       *
        * If the matching snippets is less than the max_snippet_count, return all
        * of the snippets; otherwise, return the max_snippet_count.
        *
@@ -9549,6 +9604,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Max number of snippets returned in each search result.
+         *
+         * A snippet is an infomartive summary of a content with highlighting for
+         * UI rendering.
+         *
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
          *
@@ -9568,6 +9627,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Max number of snippets returned in each search result.
+         *
+         * A snippet is an infomartive summary of a content with highlighting for
+         * UI rendering.
+         *
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
          *
@@ -9591,6 +9654,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Max number of snippets returned in each search result.
+         *
+         * A snippet is an infomartive summary of a content with highlighting for
+         * UI rendering.
+         *
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
          *
@@ -10353,6 +10420,829 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ExtractiveContentSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The max number of extractive answers returned in each search result.
+       *
+       * An extractive answer is a verbatim answer extracted from the original
+       * document, which provides precise and contextually relevant answer to
+       * the search query.
+       *
+       * If the number of matching answers is less than the
+       * extractive_answer_count, return all of the answers; otherwise, return
+       * the extractive_answer_count.
+       *
+       * At most 5 answers will be returned for each SearchResult.
+       * </pre>
+       *
+       * <code>int32 max_extractive_answer_count = 1;</code>
+       *
+       * @return The maxExtractiveAnswerCount.
+       */
+      int getMaxExtractiveAnswerCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * The max number of extractive segments returned in each search result.
+       *
+       * An extractive segment is a text segment extracted from the original
+       * document which is relevant to the search query and in general more
+       * verbose than an extrative answer. The segment could then be used as
+       * input for LLMs to generate summaries and answers.
+       *
+       * If the number of matching segments is less than the
+       * max_extractive_segment_count, return all of the segments; otherwise,
+       * return the max_extractive_segment_count.
+       *
+       * Currently one segment will be returned for each SearchResult.
+       * </pre>
+       *
+       * <code>int32 max_extractive_segment_count = 2;</code>
+       *
+       * @return The maxExtractiveSegmentCount.
+       */
+      int getMaxExtractiveSegmentCount();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification that configs the extractive content in search results.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec}
+     */
+    public static final class ExtractiveContentSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec)
+        ExtractiveContentSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ExtractiveContentSpec.newBuilder() to construct.
+      private ExtractiveContentSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ExtractiveContentSpec() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ExtractiveContentSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .ExtractiveContentSpec.class,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .ExtractiveContentSpec.Builder.class);
+      }
+
+      public static final int MAX_EXTRACTIVE_ANSWER_COUNT_FIELD_NUMBER = 1;
+      private int maxExtractiveAnswerCount_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The max number of extractive answers returned in each search result.
+       *
+       * An extractive answer is a verbatim answer extracted from the original
+       * document, which provides precise and contextually relevant answer to
+       * the search query.
+       *
+       * If the number of matching answers is less than the
+       * extractive_answer_count, return all of the answers; otherwise, return
+       * the extractive_answer_count.
+       *
+       * At most 5 answers will be returned for each SearchResult.
+       * </pre>
+       *
+       * <code>int32 max_extractive_answer_count = 1;</code>
+       *
+       * @return The maxExtractiveAnswerCount.
+       */
+      @java.lang.Override
+      public int getMaxExtractiveAnswerCount() {
+        return maxExtractiveAnswerCount_;
+      }
+
+      public static final int MAX_EXTRACTIVE_SEGMENT_COUNT_FIELD_NUMBER = 2;
+      private int maxExtractiveSegmentCount_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The max number of extractive segments returned in each search result.
+       *
+       * An extractive segment is a text segment extracted from the original
+       * document which is relevant to the search query and in general more
+       * verbose than an extrative answer. The segment could then be used as
+       * input for LLMs to generate summaries and answers.
+       *
+       * If the number of matching segments is less than the
+       * max_extractive_segment_count, return all of the segments; otherwise,
+       * return the max_extractive_segment_count.
+       *
+       * Currently one segment will be returned for each SearchResult.
+       * </pre>
+       *
+       * <code>int32 max_extractive_segment_count = 2;</code>
+       *
+       * @return The maxExtractiveSegmentCount.
+       */
+      @java.lang.Override
+      public int getMaxExtractiveSegmentCount() {
+        return maxExtractiveSegmentCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (maxExtractiveAnswerCount_ != 0) {
+          output.writeInt32(1, maxExtractiveAnswerCount_);
+        }
+        if (maxExtractiveSegmentCount_ != 0) {
+          output.writeInt32(2, maxExtractiveSegmentCount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (maxExtractiveAnswerCount_ != 0) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(1, maxExtractiveAnswerCount_);
+        }
+        if (maxExtractiveSegmentCount_ != 0) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxExtractiveSegmentCount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec
+            other =
+                (com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                        .ExtractiveContentSpec)
+                    obj;
+
+        if (getMaxExtractiveAnswerCount() != other.getMaxExtractiveAnswerCount()) return false;
+        if (getMaxExtractiveSegmentCount() != other.getMaxExtractiveSegmentCount()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MAX_EXTRACTIVE_ANSWER_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxExtractiveAnswerCount();
+        hash = (37 * hash) + MAX_EXTRACTIVE_SEGMENT_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxExtractiveSegmentCount();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The specification that configs the extractive content in search results.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec)
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          maxExtractiveAnswerCount_ = 0;
+          maxExtractiveSegmentCount_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .ExtractiveContentSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.maxExtractiveAnswerCount_ = maxExtractiveAnswerCount_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxExtractiveSegmentCount_ = maxExtractiveSegmentCount_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                        .ExtractiveContentSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .ExtractiveContentSpec
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.getDefaultInstance()) return this;
+          if (other.getMaxExtractiveAnswerCount() != 0) {
+            setMaxExtractiveAnswerCount(other.getMaxExtractiveAnswerCount());
+          }
+          if (other.getMaxExtractiveSegmentCount() != 0) {
+            setMaxExtractiveSegmentCount(other.getMaxExtractiveSegmentCount());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    maxExtractiveAnswerCount_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    maxExtractiveSegmentCount_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int maxExtractiveAnswerCount_;
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive answers returned in each search result.
+         *
+         * An extractive answer is a verbatim answer extracted from the original
+         * document, which provides precise and contextually relevant answer to
+         * the search query.
+         *
+         * If the number of matching answers is less than the
+         * extractive_answer_count, return all of the answers; otherwise, return
+         * the extractive_answer_count.
+         *
+         * At most 5 answers will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_answer_count = 1;</code>
+         *
+         * @return The maxExtractiveAnswerCount.
+         */
+        @java.lang.Override
+        public int getMaxExtractiveAnswerCount() {
+          return maxExtractiveAnswerCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive answers returned in each search result.
+         *
+         * An extractive answer is a verbatim answer extracted from the original
+         * document, which provides precise and contextually relevant answer to
+         * the search query.
+         *
+         * If the number of matching answers is less than the
+         * extractive_answer_count, return all of the answers; otherwise, return
+         * the extractive_answer_count.
+         *
+         * At most 5 answers will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_answer_count = 1;</code>
+         *
+         * @param value The maxExtractiveAnswerCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMaxExtractiveAnswerCount(int value) {
+
+          maxExtractiveAnswerCount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive answers returned in each search result.
+         *
+         * An extractive answer is a verbatim answer extracted from the original
+         * document, which provides precise and contextually relevant answer to
+         * the search query.
+         *
+         * If the number of matching answers is less than the
+         * extractive_answer_count, return all of the answers; otherwise, return
+         * the extractive_answer_count.
+         *
+         * At most 5 answers will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_answer_count = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMaxExtractiveAnswerCount() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          maxExtractiveAnswerCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int maxExtractiveSegmentCount_;
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive segments returned in each search result.
+         *
+         * An extractive segment is a text segment extracted from the original
+         * document which is relevant to the search query and in general more
+         * verbose than an extrative answer. The segment could then be used as
+         * input for LLMs to generate summaries and answers.
+         *
+         * If the number of matching segments is less than the
+         * max_extractive_segment_count, return all of the segments; otherwise,
+         * return the max_extractive_segment_count.
+         *
+         * Currently one segment will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_segment_count = 2;</code>
+         *
+         * @return The maxExtractiveSegmentCount.
+         */
+        @java.lang.Override
+        public int getMaxExtractiveSegmentCount() {
+          return maxExtractiveSegmentCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive segments returned in each search result.
+         *
+         * An extractive segment is a text segment extracted from the original
+         * document which is relevant to the search query and in general more
+         * verbose than an extrative answer. The segment could then be used as
+         * input for LLMs to generate summaries and answers.
+         *
+         * If the number of matching segments is less than the
+         * max_extractive_segment_count, return all of the segments; otherwise,
+         * return the max_extractive_segment_count.
+         *
+         * Currently one segment will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_segment_count = 2;</code>
+         *
+         * @param value The maxExtractiveSegmentCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMaxExtractiveSegmentCount(int value) {
+
+          maxExtractiveSegmentCount_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max number of extractive segments returned in each search result.
+         *
+         * An extractive segment is a text segment extracted from the original
+         * document which is relevant to the search query and in general more
+         * verbose than an extrative answer. The segment could then be used as
+         * input for LLMs to generate summaries and answers.
+         *
+         * If the number of matching segments is less than the
+         * max_extractive_segment_count, return all of the segments; otherwise,
+         * return the max_extractive_segment_count.
+         *
+         * Currently one segment will be returned for each SearchResult.
+         * </pre>
+         *
+         * <code>int32 max_extractive_segment_count = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMaxExtractiveSegmentCount() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          maxExtractiveSegmentCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .ExtractiveContentSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ExtractiveContentSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ExtractiveContentSpec>() {
+            @java.lang.Override
+            public ExtractiveContentSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ExtractiveContentSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ExtractiveContentSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public static final int SNIPPET_SPEC_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec
         snippetSpec_;
@@ -10483,6 +11373,73 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           : summarySpec_;
     }
 
+    public static final int EXTRACTIVE_CONTENT_SPEC_FIELD_NUMBER = 3;
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .ExtractiveContentSpec
+        extractiveContentSpec_;
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     *
+     * @return Whether the extractiveContentSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasExtractiveContentSpec() {
+      return extractiveContentSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     *
+     * @return The extractiveContentSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .ExtractiveContentSpec
+        getExtractiveContentSpec() {
+      return extractiveContentSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec.getDefaultInstance()
+          : extractiveContentSpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there is no extractive_content_spec provided, there will be no
+     * extractive answer in the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .ExtractiveContentSpecOrBuilder
+        getExtractiveContentSpecOrBuilder() {
+      return extractiveContentSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec.getDefaultInstance()
+          : extractiveContentSpec_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10503,6 +11460,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (summarySpec_ != null) {
         output.writeMessage(2, getSummarySpec());
       }
+      if (extractiveContentSpec_ != null) {
+        output.writeMessage(3, getExtractiveContentSpec());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10517,6 +11477,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (summarySpec_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSummarySpec());
+      }
+      if (extractiveContentSpec_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExtractiveContentSpec());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10543,6 +11507,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasSummarySpec()) {
         if (!getSummarySpec().equals(other.getSummarySpec())) return false;
       }
+      if (hasExtractiveContentSpec() != other.hasExtractiveContentSpec()) return false;
+      if (hasExtractiveContentSpec()) {
+        if (!getExtractiveContentSpec().equals(other.getExtractiveContentSpec())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10561,6 +11529,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasSummarySpec()) {
         hash = (37 * hash) + SUMMARY_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getSummarySpec().hashCode();
+      }
+      if (hasExtractiveContentSpec()) {
+        hash = (37 * hash) + EXTRACTIVE_CONTENT_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getExtractiveContentSpec().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -10718,6 +11690,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           summarySpecBuilder_.dispose();
           summarySpecBuilder_ = null;
         }
+        extractiveContentSpec_ = null;
+        if (extractiveContentSpecBuilder_ != null) {
+          extractiveContentSpecBuilder_.dispose();
+          extractiveContentSpecBuilder_ = null;
+        }
         return this;
       }
 
@@ -10766,6 +11743,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.summarySpec_ =
               summarySpecBuilder_ == null ? summarySpec_ : summarySpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.extractiveContentSpec_ =
+              extractiveContentSpecBuilder_ == null
+                  ? extractiveContentSpec_
+                  : extractiveContentSpecBuilder_.build();
         }
       }
 
@@ -10827,6 +11810,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasSummarySpec()) {
           mergeSummarySpec(other.getSummarySpec());
         }
+        if (other.hasExtractiveContentSpec()) {
+          mergeExtractiveContentSpec(other.getExtractiveContentSpec());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -10865,6 +11851,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getExtractiveContentSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11348,6 +12341,246 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           summarySpec_ = null;
         }
         return summarySpecBuilder_;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          extractiveContentSpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpecOrBuilder>
+          extractiveContentSpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       *
+       * @return Whether the extractiveContentSpec field is set.
+       */
+      public boolean hasExtractiveContentSpec() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       *
+       * @return The extractiveContentSpec.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec
+          getExtractiveContentSpec() {
+        if (extractiveContentSpecBuilder_ == null) {
+          return extractiveContentSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.getDefaultInstance()
+              : extractiveContentSpec_;
+        } else {
+          return extractiveContentSpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public Builder setExtractiveContentSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec
+              value) {
+        if (extractiveContentSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          extractiveContentSpec_ = value;
+        } else {
+          extractiveContentSpecBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public Builder setExtractiveContentSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.Builder
+              builderForValue) {
+        if (extractiveContentSpecBuilder_ == null) {
+          extractiveContentSpec_ = builderForValue.build();
+        } else {
+          extractiveContentSpecBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public Builder mergeExtractiveContentSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec
+              value) {
+        if (extractiveContentSpecBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && extractiveContentSpec_ != null
+              && extractiveContentSpec_
+                  != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec.getDefaultInstance()) {
+            getExtractiveContentSpecBuilder().mergeFrom(value);
+          } else {
+            extractiveContentSpec_ = value;
+          }
+        } else {
+          extractiveContentSpecBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public Builder clearExtractiveContentSpec() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        extractiveContentSpec_ = null;
+        if (extractiveContentSpecBuilder_ != null) {
+          extractiveContentSpecBuilder_.dispose();
+          extractiveContentSpecBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpec.Builder
+          getExtractiveContentSpecBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getExtractiveContentSpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ExtractiveContentSpecOrBuilder
+          getExtractiveContentSpecOrBuilder() {
+        if (extractiveContentSpecBuilder_ != null) {
+          return extractiveContentSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return extractiveContentSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.getDefaultInstance()
+              : extractiveContentSpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there is no extractive_content_spec provided, there will be no
+       * extractive answer in the search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec extractive_content_spec = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpec.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ExtractiveContentSpecOrBuilder>
+          getExtractiveContentSpecFieldBuilder() {
+        if (extractiveContentSpecBuilder_ == null) {
+          extractiveContentSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpec.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ExtractiveContentSpecOrBuilder>(
+                  getExtractiveContentSpec(), getParentForChildren(), isClean());
+          extractiveContentSpec_ = null;
+        }
+        return extractiveContentSpecBuilder_;
       }
 
       @java.lang.Override

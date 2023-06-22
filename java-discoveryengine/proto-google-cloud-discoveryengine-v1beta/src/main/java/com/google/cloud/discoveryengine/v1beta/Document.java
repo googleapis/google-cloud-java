@@ -159,8 +159,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The MIME type of the content. Supported types:
      *
-     * * `application/pdf` (PDF)
+     * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+     * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+     * * `text/plain` (TXT)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -176,8 +179,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The MIME type of the content. Supported types:
      *
-     * * `application/pdf` (PDF)
+     * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+     * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+     * * `text/plain` (TXT)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -418,8 +424,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The MIME type of the content. Supported types:
      *
-     * * `application/pdf` (PDF)
+     * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+     * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+     * * `text/plain` (TXT)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -446,8 +455,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The MIME type of the content. Supported types:
      *
-     * * `application/pdf` (PDF)
+     * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+     * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+     * * `text/plain` (TXT)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -1160,8 +1172,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The MIME type of the content. Supported types:
        *
-       * * `application/pdf` (PDF)
+       * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+       * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+       * * `text/plain` (TXT)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1187,8 +1202,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The MIME type of the content. Supported types:
        *
-       * * `application/pdf` (PDF)
+       * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+       * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+       * * `text/plain` (TXT)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1214,8 +1232,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The MIME type of the content. Supported types:
        *
-       * * `application/pdf` (PDF)
+       * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+       * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+       * * `text/plain` (TXT)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1240,8 +1261,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The MIME type of the content. Supported types:
        *
-       * * `application/pdf` (PDF)
+       * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+       * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+       * * `text/plain` (TXT)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1262,8 +1286,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The MIME type of the content. Supported types:
        *
-       * * `application/pdf` (PDF)
+       * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
+       * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+       * * `text/plain` (TXT)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>

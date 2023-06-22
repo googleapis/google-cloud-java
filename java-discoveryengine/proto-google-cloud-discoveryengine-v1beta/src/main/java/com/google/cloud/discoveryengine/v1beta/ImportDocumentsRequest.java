@@ -1756,7 +1756,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
    * or
    * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
    *
    * <code>bool auto_generate_ids = 8;</code>
@@ -3587,7 +3587,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
      * or
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>
@@ -3622,7 +3622,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
      * or
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>
@@ -3661,7 +3661,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
      * or
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>

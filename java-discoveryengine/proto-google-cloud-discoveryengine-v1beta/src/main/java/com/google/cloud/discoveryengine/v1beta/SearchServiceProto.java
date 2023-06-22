@@ -68,6 +68,10 @@ public final class SearchServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_fieldAccessorTable;
@@ -120,7 +124,7 @@ public final class SearchServiceProto {
           + "urce.proto\0320google/cloud/discoveryengine"
           + "/v1beta/common.proto\0322google/cloud/disco"
           + "veryengine/v1beta/document.proto\032\034google"
-          + "/protobuf/struct.proto\"\347\022\n\rSearchRequest"
+          + "/protobuf/struct.proto\"\310\024\n\rSearchRequest"
           + "\022M\n\016serving_config\030\001 \001(\tB5\342A\001\002\372A.\n,disco"
           + "veryengine.googleapis.com/ServingConfig\022"
           + ":\n\006branch\030\002 \001(\tB*\372A\'\n%discoveryengine.go"
@@ -169,63 +173,69 @@ public final class SearchServiceProto {
           + ".cloud.discoveryengine.v1beta.SearchRequ"
           + "est.SpellCorrectionSpec.Mode\";\n\004Mode\022\024\n\020"
           + "MODE_UNSPECIFIED\020\000\022\023\n\017SUGGESTION_ONLY\020\001\022"
-          + "\010\n\004AUTO\020\002\032\322\002\n\021ContentSearchSpec\022f\n\014snipp"
+          + "\010\n\004AUTO\020\002\032\263\004\n\021ContentSearchSpec\022f\n\014snipp"
           + "et_spec\030\001 \001(\0132P.google.cloud.discoveryen"
           + "gine.v1beta.SearchRequest.ContentSearchS"
           + "pec.SnippetSpec\022f\n\014summary_spec\030\002 \001(\0132P."
           + "google.cloud.discoveryengine.v1beta.Sear"
-          + "chRequest.ContentSearchSpec.SummarySpec\032"
-          + "@\n\013SnippetSpec\022\031\n\021max_snippet_count\030\001 \001("
-          + "\005\022\026\n\016reference_only\030\002 \001(\010\032+\n\013SummarySpec"
-          + "\022\034\n\024summary_result_count\030\001 \001(\005\032E\n\013Params"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.goog"
-          + "le.protobuf.Value:\0028\001\0321\n\017UserLabelsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\010\n\016Sea"
-          + "rchResponse\022Q\n\007results\030\001 \003(\0132@.google.cl"
-          + "oud.discoveryengine.v1beta.SearchRespons"
-          + "e.SearchResult\022I\n\006facets\030\002 \003(\01329.google."
-          + "cloud.discoveryengine.v1beta.SearchRespo"
-          + "nse.Facet\022d\n\024guided_search_result\030\010 \001(\0132"
-          + "F.google.cloud.discoveryengine.v1beta.Se"
-          + "archResponse.GuidedSearchResult\022\022\n\ntotal"
-          + "_size\030\003 \001(\005\022\031\n\021attribution_token\030\004 \001(\t\022\027"
-          + "\n\017next_page_token\030\005 \001(\t\022\027\n\017corrected_que"
-          + "ry\030\007 \001(\t\022L\n\007summary\030\t \001(\0132;.google.cloud"
-          + ".discoveryengine.v1beta.SearchResponse.S"
-          + "ummary\022\030\n\020applied_controls\030\n \003(\t\032[\n\014Sear"
-          + "chResult\022\n\n\002id\030\001 \001(\t\022?\n\010document\030\002 \001(\0132-"
-          + ".google.cloud.discoveryengine.v1beta.Doc"
-          + "ument\032\201\002\n\005Facet\022\013\n\003key\030\001 \001(\t\022T\n\006values\030\002"
-          + " \003(\0132D.google.cloud.discoveryengine.v1be"
-          + "ta.SearchResponse.Facet.FacetValue\022\025\n\rdy"
-          + "namic_facet\030\003 \001(\010\032~\n\nFacetValue\022\017\n\005value"
-          + "\030\001 \001(\tH\000\022A\n\010interval\030\002 \001(\0132-.google.clou"
-          + "d.discoveryengine.v1beta.IntervalH\000\022\r\n\005c"
-          + "ount\030\003 \001(\003B\r\n\013facet_value\032\326\001\n\022GuidedSear"
-          + "chResult\022y\n\025refinement_attributes\030\001 \003(\0132"
-          + "Z.google.cloud.discoveryengine.v1beta.Se"
-          + "archResponse.GuidedSearchResult.Refineme"
-          + "ntAttribute\032E\n\023RefinementAttribute\022\025\n\rat"
-          + "tribute_key\030\001 \001(\t\022\027\n\017attribute_value\030\002 \001"
-          + "(\t\032\037\n\007Summary\022\024\n\014summary_text\030\001 \001(\t2\243\003\n\r"
-          + "SearchService\022\275\002\n\006Search\0222.google.cloud."
-          + "discoveryengine.v1beta.SearchRequest\0323.g"
-          + "oogle.cloud.discoveryengine.v1beta.Searc"
-          + "hResponse\"\311\001\202\323\344\223\002\302\001\"T/v1beta/{serving_co"
-          + "nfig=projects/*/locations/*/dataStores/*"
-          + "/servingConfigs/*}:search:\001*Zg\"b/v1beta/"
-          + "{serving_config=projects/*/locations/*/c"
-          + "ollections/*/dataStores/*/servingConfigs"
-          + "/*}:search:\001*\032R\312A\036discoveryengine.google"
-          + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\231\002\n\'com.google.cloud.d"
-          + "iscoveryengine.v1betaB\022SearchServiceProt"
-          + "oP\001ZQcloud.google.com/go/discoveryengine"
-          + "/apiv1beta/discoveryenginepb;discoveryen"
-          + "ginepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud."
-          + "DiscoveryEngine.V1Beta\312\002#Google\\Cloud\\Di"
-          + "scoveryEngine\\V1beta\352\002&Google::Cloud::Di"
-          + "scoveryEngine::V1betab\006proto3"
+          + "chRequest.ContentSearchSpec.SummarySpec\022"
+          + "{\n\027extractive_content_spec\030\003 \001(\0132Z.googl"
+          + "e.cloud.discoveryengine.v1beta.SearchReq"
+          + "uest.ContentSearchSpec.ExtractiveContent"
+          + "Spec\032@\n\013SnippetSpec\022\031\n\021max_snippet_count"
+          + "\030\001 \001(\005\022\026\n\016reference_only\030\002 \001(\010\032+\n\013Summar"
+          + "ySpec\022\034\n\024summary_result_count\030\001 \001(\005\032b\n\025E"
+          + "xtractiveContentSpec\022#\n\033max_extractive_a"
+          + "nswer_count\030\001 \001(\005\022$\n\034max_extractive_segm"
+          + "ent_count\030\002 \001(\005\032E\n\013ParamsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Val"
+          + "ue:\0028\001\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"\316\010\n\016SearchResponse\022Q\n\007"
+          + "results\030\001 \003(\0132@.google.cloud.discoveryen"
+          + "gine.v1beta.SearchResponse.SearchResult\022"
+          + "I\n\006facets\030\002 \003(\01329.google.cloud.discovery"
+          + "engine.v1beta.SearchResponse.Facet\022d\n\024gu"
+          + "ided_search_result\030\010 \001(\0132F.google.cloud."
+          + "discoveryengine.v1beta.SearchResponse.Gu"
+          + "idedSearchResult\022\022\n\ntotal_size\030\003 \001(\005\022\031\n\021"
+          + "attribution_token\030\004 \001(\t\022\024\n\014redirect_uri\030"
+          + "\014 \001(\t\022\027\n\017next_page_token\030\005 \001(\t\022\027\n\017correc"
+          + "ted_query\030\007 \001(\t\022L\n\007summary\030\t \001(\0132;.googl"
+          + "e.cloud.discoveryengine.v1beta.SearchRes"
+          + "ponse.Summary\022\030\n\020applied_controls\030\n \003(\t\032"
+          + "[\n\014SearchResult\022\n\n\002id\030\001 \001(\t\022?\n\010document\030"
+          + "\002 \001(\0132-.google.cloud.discoveryengine.v1b"
+          + "eta.Document\032\201\002\n\005Facet\022\013\n\003key\030\001 \001(\t\022T\n\006v"
+          + "alues\030\002 \003(\0132D.google.cloud.discoveryengi"
+          + "ne.v1beta.SearchResponse.Facet.FacetValu"
+          + "e\022\025\n\rdynamic_facet\030\003 \001(\010\032~\n\nFacetValue\022\017"
+          + "\n\005value\030\001 \001(\tH\000\022A\n\010interval\030\002 \001(\0132-.goog"
+          + "le.cloud.discoveryengine.v1beta.Interval"
+          + "H\000\022\r\n\005count\030\003 \001(\003B\r\n\013facet_value\032\326\001\n\022Gui"
+          + "dedSearchResult\022y\n\025refinement_attributes"
+          + "\030\001 \003(\0132Z.google.cloud.discoveryengine.v1"
+          + "beta.SearchResponse.GuidedSearchResult.R"
+          + "efinementAttribute\032E\n\023RefinementAttribut"
+          + "e\022\025\n\rattribute_key\030\001 \001(\t\022\027\n\017attribute_va"
+          + "lue\030\002 \001(\t\032\037\n\007Summary\022\024\n\014summary_text\030\001 \001"
+          + "(\t2\243\003\n\rSearchService\022\275\002\n\006Search\0222.google"
+          + ".cloud.discoveryengine.v1beta.SearchRequ"
+          + "est\0323.google.cloud.discoveryengine.v1bet"
+          + "a.SearchResponse\"\311\001\202\323\344\223\002\302\001\"T/v1beta/{ser"
+          + "ving_config=projects/*/locations/*/dataS"
+          + "tores/*/servingConfigs/*}:search:\001*Zg\"b/"
+          + "v1beta/{serving_config=projects/*/locati"
+          + "ons/*/collections/*/dataStores/*/serving"
+          + "Configs/*}:search:\001*\032R\312A\036discoveryengine"
+          + ".googleapis.com\322A.https://www.googleapis"
+          + ".com/auth/cloud-platformB\231\002\n\'com.google."
+          + "cloud.discoveryengine.v1betaB\022SearchServ"
+          + "iceProtoP\001ZQcloud.google.com/go/discover"
+          + "yengine/apiv1beta/discoveryenginepb;disc"
+          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002#Google"
+          + ".Cloud.DiscoveryEngine.V1Beta\312\002#Google\\C"
+          + "loud\\DiscoveryEngine\\V1beta\352\002&Google::Cl"
+          + "oud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -338,7 +348,7 @@ public final class SearchServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_descriptor,
             new java.lang.String[] {
-              "SnippetSpec", "SummarySpec",
+              "SnippetSpec", "SummarySpec", "ExtractiveContentSpec",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SnippetSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_descriptor
@@ -359,6 +369,16 @@ public final class SearchServiceProto {
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_descriptor,
             new java.lang.String[] {
               "SummaryResultCount",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ExtractiveContentSpec_descriptor,
+            new java.lang.String[] {
+              "MaxExtractiveAnswerCount", "MaxExtractiveSegmentCount",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor
@@ -391,6 +411,7 @@ public final class SearchServiceProto {
               "GuidedSearchResult",
               "TotalSize",
               "AttributionToken",
+              "RedirectUri",
               "NextPageToken",
               "CorrectedQuery",
               "Summary",

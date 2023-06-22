@@ -43,6 +43,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     results_ = java.util.Collections.emptyList();
     facets_ = java.util.Collections.emptyList();
     attributionToken_ = "";
+    redirectUri_ = "";
     nextPageToken_ = "";
     correctedQuery_ = "";
     appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -6750,6 +6751,67 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REDIRECT_URI_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The redirectUri.
+   */
+  @java.lang.Override
+  public java.lang.String getRedirectUri() {
+    java.lang.Object ref = redirectUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redirectUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The bytes for redirectUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRedirectUriBytes() {
+    java.lang.Object ref = redirectUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redirectUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -7027,6 +7089,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < appliedControls_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, appliedControls_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, redirectUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -7068,6 +7133,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAppliedControlsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, redirectUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7092,6 +7160,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     if (getTotalSize() != other.getTotalSize()) return false;
     if (!getAttributionToken().equals(other.getAttributionToken())) return false;
+    if (!getRedirectUri().equals(other.getRedirectUri())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!getCorrectedQuery().equals(other.getCorrectedQuery())) return false;
     if (hasSummary() != other.hasSummary()) return false;
@@ -7126,6 +7195,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTotalSize();
     hash = (37 * hash) + ATTRIBUTION_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getAttributionToken().hashCode();
+    hash = (37 * hash) + REDIRECT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getRedirectUri().hashCode();
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (37 * hash) + CORRECTED_QUERY_FIELD_NUMBER;
@@ -7301,6 +7372,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       totalSize_ = 0;
       attributionToken_ = "";
+      redirectUri_ = "";
       nextPageToken_ = "";
       correctedQuery_ = "";
       summary_ = null;
@@ -7381,15 +7453,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.attributionToken_ = attributionToken_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.nextPageToken_ = nextPageToken_;
+        result.redirectUri_ = redirectUri_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.correctedQuery_ = correctedQuery_;
+        result.nextPageToken_ = nextPageToken_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
+        result.correctedQuery_ = correctedQuery_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         appliedControls_.makeImmutable();
         result.appliedControls_ = appliedControls_;
       }
@@ -7506,14 +7581,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getRedirectUri().isEmpty()) {
+        redirectUri_ = other.redirectUri_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getCorrectedQuery().isEmpty()) {
         correctedQuery_ = other.correctedQuery_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSummary()) {
@@ -7522,7 +7602,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!other.appliedControls_.isEmpty()) {
         if (appliedControls_.isEmpty()) {
           appliedControls_ = other.appliedControls_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureAppliedControlsIsMutable();
           appliedControls_.addAll(other.appliedControls_);
@@ -7599,13 +7679,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 58:
               {
                 correctedQuery_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -7618,7 +7698,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -7628,6 +7708,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 appliedControls_.add(s);
                 break;
               } // case 82
+            case 98:
+              {
+                redirectUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8807,6 +8893,137 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object redirectUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URI of a customer-defined redirect page. If redirect action is
+     * triggered, no search is performed, and only
+     * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+     * and
+     * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+     * are set in the response.
+     * </pre>
+     *
+     * <code>string redirect_uri = 12;</code>
+     *
+     * @return The redirectUri.
+     */
+    public java.lang.String getRedirectUri() {
+      java.lang.Object ref = redirectUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirectUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of a customer-defined redirect page. If redirect action is
+     * triggered, no search is performed, and only
+     * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+     * and
+     * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+     * are set in the response.
+     * </pre>
+     *
+     * <code>string redirect_uri = 12;</code>
+     *
+     * @return The bytes for redirectUri.
+     */
+    public com.google.protobuf.ByteString getRedirectUriBytes() {
+      java.lang.Object ref = redirectUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redirectUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of a customer-defined redirect page. If redirect action is
+     * triggered, no search is performed, and only
+     * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+     * and
+     * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+     * are set in the response.
+     * </pre>
+     *
+     * <code>string redirect_uri = 12;</code>
+     *
+     * @param value The redirectUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedirectUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      redirectUri_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of a customer-defined redirect page. If redirect action is
+     * triggered, no search is performed, and only
+     * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+     * and
+     * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+     * are set in the response.
+     * </pre>
+     *
+     * <code>string redirect_uri = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRedirectUri() {
+      redirectUri_ = getDefaultInstance().getRedirectUri();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of a customer-defined redirect page. If redirect action is
+     * triggered, no search is performed, and only
+     * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+     * and
+     * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+     * are set in the response.
+     * </pre>
+     *
+     * <code>string redirect_uri = 12;</code>
+     *
+     * @param value The bytes for redirectUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedirectUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      redirectUri_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object nextPageToken_ = "";
     /**
      *
@@ -8878,7 +9095,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextPageToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8898,7 +9115,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextPageToken() {
       nextPageToken_ = getDefaultInstance().getNextPageToken();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -8923,7 +9140,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextPageToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8996,7 +9213,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       correctedQuery_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9015,7 +9232,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCorrectedQuery() {
       correctedQuery_ = getDefaultInstance().getCorrectedQuery();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -9039,7 +9256,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       correctedQuery_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9065,7 +9282,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the summary field is set.
      */
     public boolean hasSummary() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -9112,7 +9329,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         summaryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9135,7 +9352,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         summaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9154,7 +9371,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSummary(
         com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary value) {
       if (summaryBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && summary_ != null
             && summary_
                 != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
@@ -9166,7 +9383,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         summaryBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9183,7 +9400,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 9;</code>
      */
     public Builder clearSummary() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       summary_ = null;
       if (summaryBuilder_ != null) {
         summaryBuilder_.dispose();
@@ -9206,7 +9423,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder
         getSummaryBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSummaryFieldBuilder().getBuilder();
     }
@@ -9268,7 +9485,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!appliedControls_.isModifiable()) {
         appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -9348,7 +9565,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -9370,7 +9587,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -9389,7 +9606,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAppliedControls(java.lang.Iterable<java.lang.String> values) {
       ensureAppliedControlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedControls_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -9406,7 +9623,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAppliedControls() {
       appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -9430,7 +9647,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
