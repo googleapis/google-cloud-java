@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.39.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.39.0...v2.39.1) (2023-06-22)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.27.1 ([#2150](https://github.com/googleapis/java-bigquerystorage/issues/2150)) ([da736a6](https://github.com/googleapis/java-bigquerystorage/commit/da736a65378d007930e0afb9246d0f53bb41e0c3))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.28.0 ([#2163](https://github.com/googleapis/java-bigquerystorage/issues/2163)) ([088219e](https://github.com/googleapis/java-bigquerystorage/commit/088219effe0528df7c998c6e71adc62025d3b204))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#2160](https://github.com/googleapis/java-bigquerystorage/issues/2160)) ([069165a](https://github.com/googleapis/java-bigquerystorage/commit/069165aa9e3644ae84bcffa501bee175623ee9b3))
+* Update dependency com.google.http-client:google-http-client to v1.43.3 ([#2156](https://github.com/googleapis/java-bigquerystorage/issues/2156)) ([814e826](https://github.com/googleapis/java-bigquerystorage/commit/814e8261689351bc88202be37975e78415192de5))
+* Update dependency com.google.truth:truth to v1.1.5 ([#2153](https://github.com/googleapis/java-bigquerystorage/issues/2153)) ([bf9f1da](https://github.com/googleapis/java-bigquerystorage/commit/bf9f1da8a3de27a775e7c3a58076dd06b026c459))
+* Update dependency org.json:json to v20230618 ([#2154](https://github.com/googleapis/java-bigquerystorage/issues/2154)) ([8e7b42a](https://github.com/googleapis/java-bigquerystorage/commit/8e7b42aeac292b3291a505e2a456499553951a8f))
+
 ## [2.39.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.38.0...v2.39.0) (2023-06-22)
 
 
