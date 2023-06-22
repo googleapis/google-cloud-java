@@ -215,6 +215,13 @@
       <id>java17</id>
       <activation>
         <jdk>[17,)</jdk>
+        <property>
+          <!--
+          In Java 8 unit tests where we run tests in Java 8 after building
+          bytecode on Java 17, we don't want to add the argLine
+          -->
+          <name>!jvm</name>
+        </property>
       </activation>
       <build>
         <plugins>
