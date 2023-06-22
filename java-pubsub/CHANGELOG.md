@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.123.15](https://github.com/googleapis/java-pubsub/compare/v1.123.14...v1.123.15) (2023-06-22)
+
+
+### Bug Fixes
+
+* Fixing the shutdown logic for streaming subscriber connection ([#1613](https://github.com/googleapis/java-pubsub/issues/1613)) ([09aff9c](https://github.com/googleapis/java-pubsub/commit/09aff9c59bab646c0bae857f3bca9dc8e9eeebd1))
+
+
+### Documentation
+
+* Adding pubsub emulator example ([#1602](https://github.com/googleapis/java-pubsub/issues/1602)) ([8ded110](https://github.com/googleapis/java-pubsub/commit/8ded11041c63f1f75f0612c081ba6b476b6b89b8))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.27.0 ([#1599](https://github.com/googleapis/java-pubsub/issues/1599)) ([3b4b7d0](https://github.com/googleapis/java-pubsub/commit/3b4b7d0522d8eb136800dd546acb8880b8b28e9e))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.27.1 ([#1614](https://github.com/googleapis/java-pubsub/issues/1614)) ([a974e08](https://github.com/googleapis/java-pubsub/commit/a974e08b45d49ca275c19a4e94e66b4b831a0fad))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.28.0 ([#1626](https://github.com/googleapis/java-pubsub/issues/1626)) ([a4a02b4](https://github.com/googleapis/java-pubsub/commit/a4a02b4fd0a3827c3e321c56223731f0a828e8c5))
+* Update dependency com.google.cloud:google-cloud-core to v2.20.0 ([#1629](https://github.com/googleapis/java-pubsub/issues/1629)) ([5f88f4f](https://github.com/googleapis/java-pubsub/commit/5f88f4f5f6fd1c8f2c0e7523b6919a6a477d785c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#1630](https://github.com/googleapis/java-pubsub/issues/1630)) ([b444a9d](https://github.com/googleapis/java-pubsub/commit/b444a9d825300519681a205a833ae9d816e89cf2))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.23 ([#1623](https://github.com/googleapis/java-pubsub/issues/1623)) ([b5f8e49](https://github.com/googleapis/java-pubsub/commit/b5f8e4961dd473c98641d8b78c958db1e0e8d01e))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.23 ([#1624](https://github.com/googleapis/java-pubsub/issues/1624)) ([68ada24](https://github.com/googleapis/java-pubsub/commit/68ada243897a763e04d4858ad052050e09326371))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.1 - abandoned ([#1616](https://github.com/googleapis/java-pubsub/issues/1616)) ([48ec282](https://github.com/googleapis/java-pubsub/commit/48ec282753f8068df135cee55febe5dba97be1b5))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.1 [security] ([#1620](https://github.com/googleapis/java-pubsub/issues/1620)) ([a1cb267](https://github.com/googleapis/java-pubsub/commit/a1cb2673f5e6556472a87a0fb2acbc3e0ddfd933))
+
 ## [1.123.14](https://github.com/googleapis/java-pubsub/compare/v1.123.13...v1.123.14) (2023-06-12)
 
 
