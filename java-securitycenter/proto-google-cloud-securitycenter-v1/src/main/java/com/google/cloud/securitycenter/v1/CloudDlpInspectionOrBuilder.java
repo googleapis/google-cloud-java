@@ -54,8 +54,8 @@ public interface CloudDlpInspectionOrBuilder
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *
@@ -68,8 +68,8 @@ public interface CloudDlpInspectionOrBuilder
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *

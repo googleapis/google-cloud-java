@@ -73,8 +73,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -97,8 +97,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -126,7 +126,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -149,7 +149,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -178,7 +178,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -192,7 +192,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -206,7 +206,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -221,7 +221,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -642,8 +642,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -665,8 +665,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -688,8 +688,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -710,8 +710,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -728,8 +728,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -753,7 +753,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -775,7 +775,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -797,7 +797,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -818,7 +818,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -835,7 +835,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -867,7 +867,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -882,7 +882,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -896,7 +896,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -911,7 +911,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -926,7 +926,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -949,7 +949,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -971,7 +971,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -990,7 +990,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -1008,7 +1008,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>

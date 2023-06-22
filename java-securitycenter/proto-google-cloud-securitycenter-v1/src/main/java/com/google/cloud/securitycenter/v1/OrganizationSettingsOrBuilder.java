@@ -59,9 +59,9 @@ public interface OrganizationSettingsOrBuilder
    *
    * <pre>
    * A flag that indicates if Asset Discovery should be enabled. If the flag is
-   * set to `true`, then discovery of assets will occur. If it is set to `false,
-   * all historical assets will remain, but discovery of future assets will not
-   * occur.
+   * set to `true`, then discovery of assets will occur. If it is set to
+   * `false`, all historical assets will remain, but discovery of future assets
+   * will not occur.
    * </pre>
    *
    * <code>bool enable_asset_discovery = 2;</code>

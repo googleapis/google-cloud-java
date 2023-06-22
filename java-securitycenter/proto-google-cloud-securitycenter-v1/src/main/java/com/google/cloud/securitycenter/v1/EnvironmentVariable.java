@@ -22,8 +22,8 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * EnvironmentVariable is a name-value pair to store environment variables for
- * Process.
+ * A name-value pair representing an environment variable used in an operating
+ * system process.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.EnvironmentVariable}
@@ -339,8 +339,8 @@ public final class EnvironmentVariable extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * EnvironmentVariable is a name-value pair to store environment variables for
-   * Process.
+   * A name-value pair representing an environment variable used in an operating
+   * system process.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.EnvironmentVariable}

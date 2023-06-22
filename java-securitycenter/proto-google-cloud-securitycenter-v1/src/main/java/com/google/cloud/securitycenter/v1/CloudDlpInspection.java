@@ -126,8 +126,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *
@@ -151,8 +151,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *
@@ -739,8 +739,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The [type of
-     * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+     * The type of information (or
+     * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
      * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
      * </pre>
      *
@@ -763,8 +763,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The [type of
-     * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+     * The type of information (or
+     * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
      * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
      * </pre>
      *
@@ -787,8 +787,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The [type of
-     * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+     * The type of information (or
+     * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
      * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
      * </pre>
      *
@@ -810,8 +810,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The [type of
-     * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+     * The type of information (or
+     * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
      * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
      * </pre>
      *
@@ -829,8 +829,8 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The [type of
-     * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+     * The type of information (or
+     * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
      * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
      * </pre>
      *

@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * The details pertaining to specific contacts
+ * Details about specific contacts
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.ContactDetails}
@@ -298,7 +298,7 @@ public final class ContactDetails extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The details pertaining to specific contacts
+   * Details about specific contacts
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.ContactDetails}

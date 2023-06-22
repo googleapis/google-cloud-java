@@ -49,4 +49,29 @@ public interface CloudDlpDataProfileOrBuilder
    * @return The bytes for dataProfile.
    */
   com.google.protobuf.ByteString getDataProfileBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource hierarchy level at which the data profile was generated.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for parentType.
+   */
+  int getParentTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The resource hierarchy level at which the data profile was generated.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+   *
+   * @return The parentType.
+   */
+  com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType getParentType();
 }

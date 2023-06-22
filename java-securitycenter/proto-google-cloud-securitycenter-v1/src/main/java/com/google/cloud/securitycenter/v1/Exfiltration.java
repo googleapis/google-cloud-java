@@ -22,10 +22,10 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Exfiltration represents a data exfiltration attempt of one or more
- * sources to one or more targets. Sources represent the source
- * of data that is exfiltrated, and Targets represents the destination the
- * data was copied to.
+ * Exfiltration represents a data exfiltration attempt from one or more sources
+ * to one or more targets. The `sources` attribute lists the sources of the
+ * exfiltrated data. The `targets` attribute lists the destinations the data was
+ * copied to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Exfiltration}
@@ -399,10 +399,10 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Exfiltration represents a data exfiltration attempt of one or more
-   * sources to one or more targets. Sources represent the source
-   * of data that is exfiltrated, and Targets represents the destination the
-   * data was copied to.
+   * Exfiltration represents a data exfiltration attempt from one or more sources
+   * to one or more targets. The `sources` attribute lists the sources of the
+   * exfiltrated data. The `targets` attribute lists the destinations the data was
+   * copied to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Exfiltration}

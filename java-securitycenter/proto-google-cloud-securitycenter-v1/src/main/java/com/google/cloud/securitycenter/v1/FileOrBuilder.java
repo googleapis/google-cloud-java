@@ -122,8 +122,7 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>
@@ -135,8 +134,7 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>

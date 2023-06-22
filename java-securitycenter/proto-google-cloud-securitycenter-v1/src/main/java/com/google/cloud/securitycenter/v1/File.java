@@ -235,8 +235,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>
@@ -259,8 +258,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>
@@ -1127,8 +1125,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prefix of the file contents as a JSON encoded string.
-     * (Currently only populated for Malicious Script Executed findings.)
+     * Prefix of the file contents as a JSON-encoded string.
      * </pre>
      *
      * <code>string contents = 6;</code>
@@ -1150,8 +1147,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prefix of the file contents as a JSON encoded string.
-     * (Currently only populated for Malicious Script Executed findings.)
+     * Prefix of the file contents as a JSON-encoded string.
      * </pre>
      *
      * <code>string contents = 6;</code>
@@ -1173,8 +1169,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prefix of the file contents as a JSON encoded string.
-     * (Currently only populated for Malicious Script Executed findings.)
+     * Prefix of the file contents as a JSON-encoded string.
      * </pre>
      *
      * <code>string contents = 6;</code>
@@ -1195,8 +1190,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prefix of the file contents as a JSON encoded string.
-     * (Currently only populated for Malicious Script Executed findings.)
+     * Prefix of the file contents as a JSON-encoded string.
      * </pre>
      *
      * <code>string contents = 6;</code>
@@ -1213,8 +1207,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prefix of the file contents as a JSON encoded string.
-     * (Currently only populated for Malicious Script Executed findings.)
+     * Prefix of the file contents as a JSON-encoded string.
      * </pre>
      *
      * <code>string contents = 6;</code>

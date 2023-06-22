@@ -954,8 +954,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -993,8 +993,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -1032,8 +1032,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -1071,8 +1071,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -6344,8 +6344,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6384,8 +6384,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6424,8 +6424,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6464,8 +6464,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(

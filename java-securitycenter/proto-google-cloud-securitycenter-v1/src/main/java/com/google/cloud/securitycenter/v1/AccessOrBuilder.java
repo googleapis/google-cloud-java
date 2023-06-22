@@ -153,6 +153,31 @@ public interface AccessOrBuilder
    *
    *
    * <pre>
+   * The caller's user agent string associated with the finding.
+   * </pre>
+   *
+   * <code>string user_agent = 12;</code>
+   *
+   * @return The userAgent.
+   */
+  java.lang.String getUserAgent();
+  /**
+   *
+   *
+   * <pre>
+   * The caller's user agent string associated with the finding.
+   * </pre>
+   *
+   * <code>string user_agent = 12;</code>
+   *
+   * @return The bytes for userAgent.
+   */
+  com.google.protobuf.ByteString getUserAgentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This is the API service that the service account made a call to, e.g.
    * "iam.googleapis.com"
    * </pre>

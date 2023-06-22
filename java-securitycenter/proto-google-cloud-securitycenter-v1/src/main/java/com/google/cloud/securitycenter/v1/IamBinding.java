@@ -320,8 +320,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource,
-   * e.g. "foo&#64;google.com".
+   * A single identity requesting access for a Cloud Platform resource, for
+   * example, "foo&#64;google.com".
    * </pre>
    *
    * <code>string member = 3;</code>
@@ -344,8 +344,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource,
-   * e.g. "foo&#64;google.com".
+   * A single identity requesting access for a Cloud Platform resource, for
+   * example, "foo&#64;google.com".
    * </pre>
    *
    * <code>string member = 3;</code>
@@ -963,8 +963,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource,
-     * e.g. "foo&#64;google.com".
+     * A single identity requesting access for a Cloud Platform resource, for
+     * example, "foo&#64;google.com".
      * </pre>
      *
      * <code>string member = 3;</code>
@@ -986,8 +986,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource,
-     * e.g. "foo&#64;google.com".
+     * A single identity requesting access for a Cloud Platform resource, for
+     * example, "foo&#64;google.com".
      * </pre>
      *
      * <code>string member = 3;</code>
@@ -1009,8 +1009,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource,
-     * e.g. "foo&#64;google.com".
+     * A single identity requesting access for a Cloud Platform resource, for
+     * example, "foo&#64;google.com".
      * </pre>
      *
      * <code>string member = 3;</code>
@@ -1031,8 +1031,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource,
-     * e.g. "foo&#64;google.com".
+     * A single identity requesting access for a Cloud Platform resource, for
+     * example, "foo&#64;google.com".
      * </pre>
      *
      * <code>string member = 3;</code>
@@ -1049,8 +1049,8 @@ public final class IamBinding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource,
-     * e.g. "foo&#64;google.com".
+     * A single identity requesting access for a Cloud Platform resource, for
+     * example, "foo&#64;google.com".
      * </pre>
      *
      * <code>string member = 3;</code>

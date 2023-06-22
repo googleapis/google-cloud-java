@@ -70,7 +70,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Rootkit name when available.
+   * Rootkit name, when available.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -93,7 +93,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Rootkit name when available.
+   * Rootkit name, when available.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -119,7 +119,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when unexpected modifications of kernel code memory are present.
+   * True if unexpected modifications of kernel code memory are present.
    * </pre>
    *
    * <code>bool unexpected_code_modification = 2;</code>
@@ -137,7 +137,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when unexpected modifications of kernel read-only data memory are
+   * True if unexpected modifications of kernel read-only data memory are
    * present.
    * </pre>
    *
@@ -156,7 +156,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when `ftrace` points are present with callbacks pointing to regions
+   * True if `ftrace` points are present with callbacks pointing to regions
    * that are not in the expected kernel or module code range.
    * </pre>
    *
@@ -175,7 +175,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when `kprobe` points are present with callbacks pointing to regions
+   * True if `kprobe` points are present with callbacks pointing to regions
    * that are not in the expected kernel or module code range.
    * </pre>
    *
@@ -194,7 +194,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when kernel code pages that are not in the expected kernel or module
+   * True if kernel code pages that are not in the expected kernel or module
    * code regions are present.
    * </pre>
    *
@@ -213,7 +213,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when system call handlers that are are not in the expected kernel or
+   * True if system call handlers that are are not in the expected kernel or
    * module code regions are present.
    * </pre>
    *
@@ -232,7 +232,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when interrupt handlers that are are not in the expected kernel or
+   * True if interrupt handlers that are are not in the expected kernel or
    * module code regions are present.
    * </pre>
    *
@@ -251,7 +251,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * True when unexpected processes in the scheduler run queue are present. Such
+   * True if unexpected processes in the scheduler run queue are present. Such
    * processes are in the run queue, but not in the process task list.
    * </pre>
    *
@@ -796,7 +796,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rootkit name when available.
+     * Rootkit name, when available.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -818,7 +818,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rootkit name when available.
+     * Rootkit name, when available.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -840,7 +840,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rootkit name when available.
+     * Rootkit name, when available.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -861,7 +861,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rootkit name when available.
+     * Rootkit name, when available.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -878,7 +878,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rootkit name when available.
+     * Rootkit name, when available.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -902,7 +902,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel code memory are present.
+     * True if unexpected modifications of kernel code memory are present.
      * </pre>
      *
      * <code>bool unexpected_code_modification = 2;</code>
@@ -917,7 +917,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel code memory are present.
+     * True if unexpected modifications of kernel code memory are present.
      * </pre>
      *
      * <code>bool unexpected_code_modification = 2;</code>
@@ -936,7 +936,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel code memory are present.
+     * True if unexpected modifications of kernel code memory are present.
      * </pre>
      *
      * <code>bool unexpected_code_modification = 2;</code>
@@ -955,7 +955,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel read-only data memory are
+     * True if unexpected modifications of kernel read-only data memory are
      * present.
      * </pre>
      *
@@ -971,7 +971,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel read-only data memory are
+     * True if unexpected modifications of kernel read-only data memory are
      * present.
      * </pre>
      *
@@ -991,7 +991,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected modifications of kernel read-only data memory are
+     * True if unexpected modifications of kernel read-only data memory are
      * present.
      * </pre>
      *
@@ -1011,7 +1011,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `ftrace` points are present with callbacks pointing to regions
+     * True if `ftrace` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1027,7 +1027,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `ftrace` points are present with callbacks pointing to regions
+     * True if `ftrace` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1047,7 +1047,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `ftrace` points are present with callbacks pointing to regions
+     * True if `ftrace` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1067,7 +1067,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `kprobe` points are present with callbacks pointing to regions
+     * True if `kprobe` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1083,7 +1083,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `kprobe` points are present with callbacks pointing to regions
+     * True if `kprobe` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1103,7 +1103,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when `kprobe` points are present with callbacks pointing to regions
+     * True if `kprobe` points are present with callbacks pointing to regions
      * that are not in the expected kernel or module code range.
      * </pre>
      *
@@ -1123,7 +1123,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when kernel code pages that are not in the expected kernel or module
+     * True if kernel code pages that are not in the expected kernel or module
      * code regions are present.
      * </pre>
      *
@@ -1139,7 +1139,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when kernel code pages that are not in the expected kernel or module
+     * True if kernel code pages that are not in the expected kernel or module
      * code regions are present.
      * </pre>
      *
@@ -1159,7 +1159,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when kernel code pages that are not in the expected kernel or module
+     * True if kernel code pages that are not in the expected kernel or module
      * code regions are present.
      * </pre>
      *
@@ -1179,7 +1179,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when system call handlers that are are not in the expected kernel or
+     * True if system call handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1195,7 +1195,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when system call handlers that are are not in the expected kernel or
+     * True if system call handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1215,7 +1215,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when system call handlers that are are not in the expected kernel or
+     * True if system call handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1235,7 +1235,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when interrupt handlers that are are not in the expected kernel or
+     * True if interrupt handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1251,7 +1251,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when interrupt handlers that are are not in the expected kernel or
+     * True if interrupt handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1271,7 +1271,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when interrupt handlers that are are not in the expected kernel or
+     * True if interrupt handlers that are are not in the expected kernel or
      * module code regions are present.
      * </pre>
      *
@@ -1291,7 +1291,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected processes in the scheduler run queue are present. Such
+     * True if unexpected processes in the scheduler run queue are present. Such
      * processes are in the run queue, but not in the process task list.
      * </pre>
      *
@@ -1307,7 +1307,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected processes in the scheduler run queue are present. Such
+     * True if unexpected processes in the scheduler run queue are present. Such
      * processes are in the run queue, but not in the process task list.
      * </pre>
      *
@@ -1327,7 +1327,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True when unexpected processes in the scheduler run queue are present. Such
+     * True if unexpected processes in the scheduler run queue are present. Such
      * processes are in the run queue, but not in the process task list.
      * </pre>
      *
