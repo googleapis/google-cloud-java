@@ -911,6 +911,166 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Incrementally update the dataset used for an examples model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName model = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   UpdateExplanationDatasetResponse response =
+   *       modelServiceClient.updateExplanationDatasetAsync(model).get();
+   * }
+   * }</pre>
+   *
+   * @param model Required. The resource name of the Model to update. Format:
+   *     `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          UpdateExplanationDatasetResponse, UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetAsync(ModelName model) {
+    UpdateExplanationDatasetRequest request =
+        UpdateExplanationDatasetRequest.newBuilder()
+            .setModel(model == null ? null : model.toString())
+            .build();
+    return updateExplanationDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally update the dataset used for an examples model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String model = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   UpdateExplanationDatasetResponse response =
+   *       modelServiceClient.updateExplanationDatasetAsync(model).get();
+   * }
+   * }</pre>
+   *
+   * @param model Required. The resource name of the Model to update. Format:
+   *     `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          UpdateExplanationDatasetResponse, UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetAsync(String model) {
+    UpdateExplanationDatasetRequest request =
+        UpdateExplanationDatasetRequest.newBuilder().setModel(model).build();
+    return updateExplanationDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally update the dataset used for an examples model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   UpdateExplanationDatasetRequest request =
+   *       UpdateExplanationDatasetRequest.newBuilder()
+   *           .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setExamples(Examples.newBuilder().build())
+   *           .build();
+   *   UpdateExplanationDatasetResponse response =
+   *       modelServiceClient.updateExplanationDatasetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          UpdateExplanationDatasetResponse, UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetAsync(UpdateExplanationDatasetRequest request) {
+    return updateExplanationDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally update the dataset used for an examples model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   UpdateExplanationDatasetRequest request =
+   *       UpdateExplanationDatasetRequest.newBuilder()
+   *           .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setExamples(Examples.newBuilder().build())
+   *           .build();
+   *   OperationFuture<UpdateExplanationDatasetResponse, UpdateExplanationDatasetOperationMetadata>
+   *       future =
+   *           modelServiceClient.updateExplanationDatasetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpdateExplanationDatasetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateExplanationDatasetRequest,
+          UpdateExplanationDatasetResponse,
+          UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetOperationCallable() {
+    return stub.updateExplanationDatasetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally update the dataset used for an examples model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   UpdateExplanationDatasetRequest request =
+   *       UpdateExplanationDatasetRequest.newBuilder()
+   *           .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setExamples(Examples.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelServiceClient.updateExplanationDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExplanationDatasetRequest, Operation>
+      updateExplanationDatasetCallable() {
+    return stub.updateExplanationDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a Model.
    *
    * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource

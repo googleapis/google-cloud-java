@@ -700,6 +700,9 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UpdateExplanationDataset": {
+              "methods": ["updateExplanationDatasetAsync", "updateExplanationDatasetAsync", "updateExplanationDatasetAsync", "updateExplanationDatasetOperationCallable", "updateExplanationDatasetCallable"]
+            },
             "UpdateModel": {
               "methods": ["updateModel", "updateModel", "updateModelCallable"]
             },

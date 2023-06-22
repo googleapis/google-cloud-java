@@ -1301,6 +1301,7 @@ public class ModelServiceClientTest {
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setBiasConfigs(ModelEvaluation.BiasConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1353,6 +1354,7 @@ public class ModelServiceClientTest {
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setBiasConfigs(ModelEvaluation.BiasConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1583,6 +1585,7 @@ public class ModelServiceClientTest {
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setBiasConfigs(ModelEvaluation.BiasConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1633,6 +1636,7 @@ public class ModelServiceClientTest {
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setBiasConfigs(ModelEvaluation.BiasConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

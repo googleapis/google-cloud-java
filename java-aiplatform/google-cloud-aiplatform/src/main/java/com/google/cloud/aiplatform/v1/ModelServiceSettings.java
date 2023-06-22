@@ -124,6 +124,22 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).updateModelSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateExplanationDataset. */
+  public UnaryCallSettings<UpdateExplanationDatasetRequest, Operation>
+      updateExplanationDatasetSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).updateExplanationDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExplanationDataset. */
+  public OperationCallSettings<
+          UpdateExplanationDatasetRequest,
+          UpdateExplanationDatasetResponse,
+          UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetOperationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings())
+        .updateExplanationDatasetOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteModel. */
   public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).deleteModelSettings();
@@ -382,6 +398,21 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     /** Returns the builder for the settings used for calls to updateModel. */
     public UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings() {
       return getStubSettingsBuilder().updateModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExplanationDataset. */
+    public UnaryCallSettings.Builder<UpdateExplanationDatasetRequest, Operation>
+        updateExplanationDatasetSettings() {
+      return getStubSettingsBuilder().updateExplanationDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExplanationDataset. */
+    public OperationCallSettings.Builder<
+            UpdateExplanationDatasetRequest,
+            UpdateExplanationDatasetResponse,
+            UpdateExplanationDatasetOperationMetadata>
+        updateExplanationDatasetOperationSettings() {
+      return getStubSettingsBuilder().updateExplanationDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */
