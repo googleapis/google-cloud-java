@@ -6,7 +6,8 @@ updates:
       interval: "daily"
     # Disable version updates for Maven dependencies
     # we use renovate-bot as well as shared-dependencies BOM to update maven dependencies.
-    ignore: "*"
+    ignore:
+      - dependency-name: "*"
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
@@ -14,4 +15,5 @@ updates:
     # Disable version updates for pip dependencies
     # If a security vulnerability comes in, we will be notified about 
     # it via template in the synthtool repository.
-    ignore: "*"
+    ignore:
+      - dependency-name: "*"
