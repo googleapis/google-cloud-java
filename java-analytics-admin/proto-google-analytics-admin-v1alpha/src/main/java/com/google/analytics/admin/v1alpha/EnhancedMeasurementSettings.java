@@ -22,7 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Singleton resource under a WebDataStream, configuring measurement of
+ * Singleton resource under a web DataStream, configuring measurement of
  * additional site interactions and content.
  * </pre>
  *
@@ -638,7 +638,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Singleton resource under a WebDataStream, configuring measurement of
+   * Singleton resource under a web DataStream, configuring measurement of
    * additional site interactions and content.
    * </pre>
    *

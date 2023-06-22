@@ -43,6 +43,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     acquisitionConversionEventLookbackWindow_ = 0;
     otherConversionEventLookbackWindow_ = 0;
     reportingAttributionModel_ = 0;
+    adsWebConversionDataExportScope_ = 0;
   }
 
   @java.lang.Override
@@ -473,6 +474,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
      * </pre>
@@ -484,6 +492,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
@@ -496,6 +511,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
      * </pre>
@@ -507,6 +529,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
      * </pre>
@@ -566,6 +595,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
      * </pre>
@@ -577,6 +613,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
@@ -589,6 +632,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
      * </pre>
@@ -600,6 +650,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
      * </pre>
@@ -715,6 +772,193 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Conversion Export Scope for data exported to linked Ads Accounts.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope}
+   */
+  public enum AdsWebConversionDataExportScope implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * No data export scope selected yet.
+     * Export scope can never be changed back to this value.
+     * </pre>
+     *
+     * <code>NOT_SELECTED_YET = 1;</code>
+     */
+    NOT_SELECTED_YET(1),
+    /**
+     *
+     *
+     * <pre>
+     * The Ads Web Conversion Data export scope is Cross Channel.
+     * </pre>
+     *
+     * <code>CROSS_CHANNEL = 2;</code>
+     */
+    CROSS_CHANNEL(2),
+    /**
+     *
+     *
+     * <pre>
+     * The Ads Web Conversion Data export scope is Ads Preferred.
+     * </pre>
+     *
+     * <code>ADS_PREFERRED = 3;</code>
+     */
+    ADS_PREFERRED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * No data export scope selected yet.
+     * Export scope can never be changed back to this value.
+     * </pre>
+     *
+     * <code>NOT_SELECTED_YET = 1;</code>
+     */
+    public static final int NOT_SELECTED_YET_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The Ads Web Conversion Data export scope is Cross Channel.
+     * </pre>
+     *
+     * <code>CROSS_CHANNEL = 2;</code>
+     */
+    public static final int CROSS_CHANNEL_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The Ads Web Conversion Data export scope is Ads Preferred.
+     * </pre>
+     *
+     * <code>ADS_PREFERRED = 3;</code>
+     */
+    public static final int ADS_PREFERRED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdsWebConversionDataExportScope valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AdsWebConversionDataExportScope forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED;
+        case 1:
+          return NOT_SELECTED_YET;
+        case 2:
+          return CROSS_CHANNEL;
+        case 3:
+          return ADS_PREFERRED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>() {
+              public AdsWebConversionDataExportScope findValueByNumber(int number) {
+                return AdsWebConversionDataExportScope.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.analytics.admin.v1alpha.AttributionSettings.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final AdsWebConversionDataExportScope[] VALUES = values();
+
+    public static AdsWebConversionDataExportScope valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AdsWebConversionDataExportScope(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -922,6 +1166,52 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         : result;
   }
 
+  public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_FIELD_NUMBER = 5;
+  private int adsWebConversionDataExportScope_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+   */
+  @java.lang.Override
+  public int getAdsWebConversionDataExportScopeValue() {
+    return adsWebConversionDataExportScope_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The adsWebConversionDataExportScope.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+      getAdsWebConversionDataExportScope() {
+    com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope result =
+        com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .forNumber(adsWebConversionDataExportScope_);
+    return result == null
+        ? com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -958,6 +1248,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(4, reportingAttributionModel_);
     }
+    if (adsWebConversionDataExportScope_
+        != com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, adsWebConversionDataExportScope_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -993,6 +1289,14 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, reportingAttributionModel_);
     }
+    if (adsWebConversionDataExportScope_
+        != com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              5, adsWebConversionDataExportScope_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1015,6 +1319,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     if (otherConversionEventLookbackWindow_ != other.otherConversionEventLookbackWindow_)
       return false;
     if (reportingAttributionModel_ != other.reportingAttributionModel_) return false;
+    if (adsWebConversionDataExportScope_ != other.adsWebConversionDataExportScope_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1034,6 +1339,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + otherConversionEventLookbackWindow_;
     hash = (37 * hash) + REPORTING_ATTRIBUTION_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + reportingAttributionModel_;
+    hash = (37 * hash) + ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + adsWebConversionDataExportScope_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1179,6 +1486,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       acquisitionConversionEventLookbackWindow_ = 0;
       otherConversionEventLookbackWindow_ = 0;
       reportingAttributionModel_ = 0;
+      adsWebConversionDataExportScope_ = 0;
       return this;
     }
 
@@ -1227,6 +1535,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.reportingAttributionModel_ = reportingAttributionModel_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.adsWebConversionDataExportScope_ = adsWebConversionDataExportScope_;
       }
     }
 
@@ -1292,6 +1603,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (other.reportingAttributionModel_ != 0) {
         setReportingAttributionModelValue(other.getReportingAttributionModelValue());
       }
+      if (other.adsWebConversionDataExportScope_ != 0) {
+        setAdsWebConversionDataExportScopeValue(other.getAdsWebConversionDataExportScopeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1342,6 +1656,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                adsWebConversionDataExportScope_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1837,6 +2157,119 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public Builder clearReportingAttributionModel() {
       bitField0_ = (bitField0_ & ~0x00000008);
       reportingAttributionModel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int adsWebConversionDataExportScope_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+     */
+    @java.lang.Override
+    public int getAdsWebConversionDataExportScopeValue() {
+      return adsWebConversionDataExportScope_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for adsWebConversionDataExportScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdsWebConversionDataExportScopeValue(int value) {
+      adsWebConversionDataExportScope_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The adsWebConversionDataExportScope.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+        getAdsWebConversionDataExportScope() {
+      com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+          result =
+              com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+                  .forNumber(adsWebConversionDataExportScope_);
+      return result == null
+          ? com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The adsWebConversionDataExportScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdsWebConversionDataExportScope(
+        com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      adsWebConversionDataExportScope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdsWebConversionDataExportScope() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      adsWebConversionDataExportScope_ = 0;
       onChanged();
       return this;
     }

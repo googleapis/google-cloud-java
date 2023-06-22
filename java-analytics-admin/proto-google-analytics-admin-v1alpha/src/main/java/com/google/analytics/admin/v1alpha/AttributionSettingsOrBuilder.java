@@ -155,4 +155,36 @@ public interface AttributionSettingsOrBuilder
    */
   com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
       getReportingAttributionModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+   */
+  int getAdsWebConversionDataExportScopeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The adsWebConversionDataExportScope.
+   */
+  com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+      getAdsWebConversionDataExportScope();
 }
