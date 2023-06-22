@@ -1181,11 +1181,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies a table sampling percentage. Specifically, the query
-     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-     * samples at the file-level. It will randomly choose for each file whether
-     * to include that file in the sample returned. Note, that if the table only
-     * has one file, then TABLESAMPLE SYSTEM will select that file and return
-     * all returnable rows contained within.
+     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+     * sampling percentage is applied at the data block granularity. It will
+     * randomly choose for each data block whether to read the rows in that data
+     * block. For more details, see
+     * https://cloud.google.com/bigquery/docs/table-sampling)
      * </pre>
      *
      * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1198,11 +1198,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies a table sampling percentage. Specifically, the query
-     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-     * samples at the file-level. It will randomly choose for each file whether
-     * to include that file in the sample returned. Note, that if the table only
-     * has one file, then TABLESAMPLE SYSTEM will select that file and return
-     * all returnable rows contained within.
+     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+     * sampling percentage is applied at the data block granularity. It will
+     * randomly choose for each data block whether to read the rows in that data
+     * block. For more details, see
+     * https://cloud.google.com/bigquery/docs/table-sampling)
      * </pre>
      *
      * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1756,11 +1756,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies a table sampling percentage. Specifically, the query
-     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-     * samples at the file-level. It will randomly choose for each file whether
-     * to include that file in the sample returned. Note, that if the table only
-     * has one file, then TABLESAMPLE SYSTEM will select that file and return
-     * all returnable rows contained within.
+     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+     * sampling percentage is applied at the data block granularity. It will
+     * randomly choose for each data block whether to read the rows in that data
+     * block. For more details, see
+     * https://cloud.google.com/bigquery/docs/table-sampling)
      * </pre>
      *
      * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1776,11 +1776,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies a table sampling percentage. Specifically, the query
-     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-     * samples at the file-level. It will randomly choose for each file whether
-     * to include that file in the sample returned. Note, that if the table only
-     * has one file, then TABLESAMPLE SYSTEM will select that file and return
-     * all returnable rows contained within.
+     * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+     * sampling percentage is applied at the data block granularity. It will
+     * randomly choose for each data block whether to read the rows in that data
+     * block. For more details, see
+     * https://cloud.google.com/bigquery/docs/table-sampling)
      * </pre>
      *
      * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3567,11 +3567,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies a table sampling percentage. Specifically, the query
-       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-       * samples at the file-level. It will randomly choose for each file whether
-       * to include that file in the sample returned. Note, that if the table only
-       * has one file, then TABLESAMPLE SYSTEM will select that file and return
-       * all returnable rows contained within.
+       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+       * sampling percentage is applied at the data block granularity. It will
+       * randomly choose for each data block whether to read the rows in that data
+       * block. For more details, see
+       * https://cloud.google.com/bigquery/docs/table-sampling)
        * </pre>
        *
        * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3588,11 +3588,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies a table sampling percentage. Specifically, the query
-       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-       * samples at the file-level. It will randomly choose for each file whether
-       * to include that file in the sample returned. Note, that if the table only
-       * has one file, then TABLESAMPLE SYSTEM will select that file and return
-       * all returnable rows contained within.
+       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+       * sampling percentage is applied at the data block granularity. It will
+       * randomly choose for each data block whether to read the rows in that data
+       * block. For more details, see
+       * https://cloud.google.com/bigquery/docs/table-sampling)
        * </pre>
        *
        * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3609,11 +3609,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies a table sampling percentage. Specifically, the query
-       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-       * samples at the file-level. It will randomly choose for each file whether
-       * to include that file in the sample returned. Note, that if the table only
-       * has one file, then TABLESAMPLE SYSTEM will select that file and return
-       * all returnable rows contained within.
+       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+       * sampling percentage is applied at the data block granularity. It will
+       * randomly choose for each data block whether to read the rows in that data
+       * block. For more details, see
+       * https://cloud.google.com/bigquery/docs/table-sampling)
        * </pre>
        *
        * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3634,11 +3634,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies a table sampling percentage. Specifically, the query
-       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). This
-       * samples at the file-level. It will randomly choose for each file whether
-       * to include that file in the sample returned. Note, that if the table only
-       * has one file, then TABLESAMPLE SYSTEM will select that file and return
-       * all returnable rows contained within.
+       * planner will use TABLESAMPLE SYSTEM (sample_percentage PERCENT). The
+       * sampling percentage is applied at the data block granularity. It will
+       * randomly choose for each data block whether to read the rows in that data
+       * block. For more details, see
+       * https://cloud.google.com/bigquery/docs/table-sampling)
        * </pre>
        *
        * <code>optional double sample_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -4336,6 +4336,30 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     return estimatedTotalBytesScanned_;
   }
 
+  public static final int ESTIMATED_TOTAL_PHYSICAL_FILE_SIZE_FIELD_NUMBER = 15;
+  private long estimatedTotalPhysicalFileSize_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A pre-projected estimate of the total physical size (in bytes)
+   * of files this session will scan when all streams are completely consumed.
+   * This estimate does not depend on the selected columns and can be based on
+   * metadata from the table which might be incomplete or stale. Only set for
+   * BigLake tables.
+   * </pre>
+   *
+   * <code>
+   * int64 estimated_total_physical_file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedTotalPhysicalFileSize.
+   */
+  @java.lang.Override
+  public long getEstimatedTotalPhysicalFileSize() {
+    return estimatedTotalPhysicalFileSize_;
+  }
+
   public static final int ESTIMATED_ROW_COUNT_FIELD_NUMBER = 14;
   private long estimatedRowCount_ = 0L;
   /**
@@ -4468,6 +4492,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     if (estimatedRowCount_ != 0L) {
       output.writeInt64(14, estimatedRowCount_);
     }
+    if (estimatedTotalPhysicalFileSize_ != 0L) {
+      output.writeInt64(15, estimatedTotalPhysicalFileSize_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4519,6 +4546,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     if (estimatedRowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, estimatedRowCount_);
     }
+    if (estimatedTotalPhysicalFileSize_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              15, estimatedTotalPhysicalFileSize_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4552,6 +4584,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getStreamsList().equals(other.getStreamsList())) return false;
     if (getEstimatedTotalBytesScanned() != other.getEstimatedTotalBytesScanned()) return false;
+    if (getEstimatedTotalPhysicalFileSize() != other.getEstimatedTotalPhysicalFileSize())
+      return false;
     if (getEstimatedRowCount() != other.getEstimatedRowCount()) return false;
     if (!getTraceId().equals(other.getTraceId())) return false;
     if (!getSchemaCase().equals(other.getSchemaCase())) return false;
@@ -4600,6 +4634,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ESTIMATED_TOTAL_BYTES_SCANNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalBytesScanned());
+    hash = (37 * hash) + ESTIMATED_TOTAL_PHYSICAL_FILE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalPhysicalFileSize());
     hash = (37 * hash) + ESTIMATED_ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedRowCount());
     hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
@@ -4787,6 +4823,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000100);
       estimatedTotalBytesScanned_ = 0L;
+      estimatedTotalPhysicalFileSize_ = 0L;
       estimatedRowCount_ = 0L;
       traceId_ = "";
       schemaCase_ = 0;
@@ -4866,9 +4903,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         result.estimatedTotalBytesScanned_ = estimatedTotalBytesScanned_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.estimatedRowCount_ = estimatedRowCount_;
+        result.estimatedTotalPhysicalFileSize_ = estimatedTotalPhysicalFileSize_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.estimatedRowCount_ = estimatedRowCount_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.traceId_ = traceId_;
       }
     }
@@ -4982,12 +5022,15 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (other.getEstimatedTotalBytesScanned() != 0L) {
         setEstimatedTotalBytesScanned(other.getEstimatedTotalBytesScanned());
       }
+      if (other.getEstimatedTotalPhysicalFileSize() != 0L) {
+        setEstimatedTotalPhysicalFileSize(other.getEstimatedTotalPhysicalFileSize());
+      }
       if (other.getEstimatedRowCount() != 0L) {
         setEstimatedRowCount(other.getEstimatedRowCount());
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getSchemaCase()) {
@@ -5103,15 +5146,21 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 traceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 estimatedRowCount_ = input.readInt64();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 112
+            case 120:
+              {
+                estimatedTotalPhysicalFileSize_ = input.readInt64();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7128,6 +7177,77 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long estimatedTotalPhysicalFileSize_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A pre-projected estimate of the total physical size (in bytes)
+     * of files this session will scan when all streams are completely consumed.
+     * This estimate does not depend on the selected columns and can be based on
+     * metadata from the table which might be incomplete or stale. Only set for
+     * BigLake tables.
+     * </pre>
+     *
+     * <code>
+     * int64 estimated_total_physical_file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The estimatedTotalPhysicalFileSize.
+     */
+    @java.lang.Override
+    public long getEstimatedTotalPhysicalFileSize() {
+      return estimatedTotalPhysicalFileSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A pre-projected estimate of the total physical size (in bytes)
+     * of files this session will scan when all streams are completely consumed.
+     * This estimate does not depend on the selected columns and can be based on
+     * metadata from the table which might be incomplete or stale. Only set for
+     * BigLake tables.
+     * </pre>
+     *
+     * <code>
+     * int64 estimated_total_physical_file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The estimatedTotalPhysicalFileSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedTotalPhysicalFileSize(long value) {
+
+      estimatedTotalPhysicalFileSize_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A pre-projected estimate of the total physical size (in bytes)
+     * of files this session will scan when all streams are completely consumed.
+     * This estimate does not depend on the selected columns and can be based on
+     * metadata from the table which might be incomplete or stale. Only set for
+     * BigLake tables.
+     * </pre>
+     *
+     * <code>
+     * int64 estimated_total_physical_file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedTotalPhysicalFileSize() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      estimatedTotalPhysicalFileSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long estimatedRowCount_;
     /**
      *
@@ -7163,7 +7283,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder setEstimatedRowCount(long value) {
 
       estimatedRowCount_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7181,7 +7301,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEstimatedRowCount() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       estimatedRowCount_ = 0L;
       onChanged();
       return this;
@@ -7264,7 +7384,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       traceId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7286,7 +7406,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTraceId() {
       traceId_ = getDefaultInstance().getTraceId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -7313,7 +7433,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       traceId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

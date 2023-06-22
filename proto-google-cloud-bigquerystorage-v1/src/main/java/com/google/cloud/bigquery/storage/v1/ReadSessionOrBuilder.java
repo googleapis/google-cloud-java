@@ -435,6 +435,25 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
+   * Output only. A pre-projected estimate of the total physical size (in bytes)
+   * of files this session will scan when all streams are completely consumed.
+   * This estimate does not depend on the selected columns and can be based on
+   * metadata from the table which might be incomplete or stale. Only set for
+   * BigLake tables.
+   * </pre>
+   *
+   * <code>
+   * int64 estimated_total_physical_file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedTotalPhysicalFileSize.
+   */
+  long getEstimatedTotalPhysicalFileSize();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. An estimate on the number of rows present in this session's
    * streams. This estimate is based on metadata from the table which might be
    * incomplete or stale.
