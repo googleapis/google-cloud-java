@@ -683,6 +683,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -731,6 +732,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -779,6 +781,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -841,6 +844,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -903,6 +907,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1146,6 +1151,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1206,6 +1212,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1264,6 +1271,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1338,6 +1346,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

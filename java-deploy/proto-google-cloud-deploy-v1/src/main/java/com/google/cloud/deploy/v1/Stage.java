@@ -40,6 +40,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   private Stage() {
     targetId_ = "";
     profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    deployParameters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -240,6 +241,88 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     return strategy_ == null ? com.google.cloud.deploy.v1.Strategy.getDefaultInstance() : strategy_;
   }
 
+  public static final int DEPLOY_PARAMETERS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.deploy.v1.DeployParameters> deployParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.deploy.v1.DeployParameters> getDeployParametersList() {
+    return deployParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.deploy.v1.DeployParametersOrBuilder>
+      getDeployParametersOrBuilderList() {
+    return deployParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDeployParametersCount() {
+    return deployParameters_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.DeployParameters getDeployParameters(int index) {
+    return deployParameters_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.DeployParametersOrBuilder getDeployParametersOrBuilder(
+      int index) {
+    return deployParameters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -262,6 +345,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     }
     if (strategy_ != null) {
       output.writeMessage(5, getStrategy());
+    }
+    for (int i = 0; i < deployParameters_.size(); i++) {
+      output.writeMessage(6, deployParameters_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -286,6 +372,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     if (strategy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStrategy());
     }
+    for (int i = 0; i < deployParameters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, deployParameters_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -307,6 +396,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     if (hasStrategy()) {
       if (!getStrategy().equals(other.getStrategy())) return false;
     }
+    if (!getDeployParametersList().equals(other.getDeployParametersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -327,6 +417,10 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     if (hasStrategy()) {
       hash = (37 * hash) + STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getStrategy().hashCode();
+    }
+    if (getDeployParametersCount() > 0) {
+      hash = (37 * hash) + DEPLOY_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeployParametersList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -473,6 +567,13 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         strategyBuilder_.dispose();
         strategyBuilder_ = null;
       }
+      if (deployParametersBuilder_ == null) {
+        deployParameters_ = java.util.Collections.emptyList();
+      } else {
+        deployParameters_ = null;
+        deployParametersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -499,11 +600,24 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Stage buildPartial() {
       com.google.cloud.deploy.v1.Stage result = new com.google.cloud.deploy.v1.Stage(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Stage result) {
+      if (deployParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          deployParameters_ = java.util.Collections.unmodifiableList(deployParameters_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.deployParameters_ = deployParameters_;
+      } else {
+        result.deployParameters_ = deployParametersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.deploy.v1.Stage result) {
@@ -583,6 +697,33 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStrategy()) {
         mergeStrategy(other.getStrategy());
       }
+      if (deployParametersBuilder_ == null) {
+        if (!other.deployParameters_.isEmpty()) {
+          if (deployParameters_.isEmpty()) {
+            deployParameters_ = other.deployParameters_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureDeployParametersIsMutable();
+            deployParameters_.addAll(other.deployParameters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.deployParameters_.isEmpty()) {
+          if (deployParametersBuilder_.isEmpty()) {
+            deployParametersBuilder_.dispose();
+            deployParametersBuilder_ = null;
+            deployParameters_ = other.deployParameters_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            deployParametersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDeployParametersFieldBuilder()
+                    : null;
+          } else {
+            deployParametersBuilder_.addAllMessages(other.deployParameters_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -628,6 +769,19 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.deploy.v1.DeployParameters m =
+                    input.readMessage(
+                        com.google.cloud.deploy.v1.DeployParameters.parser(), extensionRegistry);
+                if (deployParametersBuilder_ == null) {
+                  ensureDeployParametersIsMutable();
+                  deployParameters_.add(m);
+                } else {
+                  deployParametersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1160,6 +1314,401 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         strategy_ = null;
       }
       return strategyBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.deploy.v1.DeployParameters> deployParameters_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDeployParametersIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        deployParameters_ =
+            new java.util.ArrayList<com.google.cloud.deploy.v1.DeployParameters>(deployParameters_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.DeployParameters,
+            com.google.cloud.deploy.v1.DeployParameters.Builder,
+            com.google.cloud.deploy.v1.DeployParametersOrBuilder>
+        deployParametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.DeployParameters> getDeployParametersList() {
+      if (deployParametersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(deployParameters_);
+      } else {
+        return deployParametersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDeployParametersCount() {
+      if (deployParametersBuilder_ == null) {
+        return deployParameters_.size();
+      } else {
+        return deployParametersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployParameters getDeployParameters(int index) {
+      if (deployParametersBuilder_ == null) {
+        return deployParameters_.get(index);
+      } else {
+        return deployParametersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeployParameters(
+        int index, com.google.cloud.deploy.v1.DeployParameters value) {
+      if (deployParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeployParametersIsMutable();
+        deployParameters_.set(index, value);
+        onChanged();
+      } else {
+        deployParametersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeployParameters(
+        int index, com.google.cloud.deploy.v1.DeployParameters.Builder builderForValue) {
+      if (deployParametersBuilder_ == null) {
+        ensureDeployParametersIsMutable();
+        deployParameters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        deployParametersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDeployParameters(com.google.cloud.deploy.v1.DeployParameters value) {
+      if (deployParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeployParametersIsMutable();
+        deployParameters_.add(value);
+        onChanged();
+      } else {
+        deployParametersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDeployParameters(
+        int index, com.google.cloud.deploy.v1.DeployParameters value) {
+      if (deployParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeployParametersIsMutable();
+        deployParameters_.add(index, value);
+        onChanged();
+      } else {
+        deployParametersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDeployParameters(
+        com.google.cloud.deploy.v1.DeployParameters.Builder builderForValue) {
+      if (deployParametersBuilder_ == null) {
+        ensureDeployParametersIsMutable();
+        deployParameters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        deployParametersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDeployParameters(
+        int index, com.google.cloud.deploy.v1.DeployParameters.Builder builderForValue) {
+      if (deployParametersBuilder_ == null) {
+        ensureDeployParametersIsMutable();
+        deployParameters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        deployParametersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDeployParameters(
+        java.lang.Iterable<? extends com.google.cloud.deploy.v1.DeployParameters> values) {
+      if (deployParametersBuilder_ == null) {
+        ensureDeployParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deployParameters_);
+        onChanged();
+      } else {
+        deployParametersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDeployParameters() {
+      if (deployParametersBuilder_ == null) {
+        deployParameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        deployParametersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDeployParameters(int index) {
+      if (deployParametersBuilder_ == null) {
+        ensureDeployParametersIsMutable();
+        deployParameters_.remove(index);
+        onChanged();
+      } else {
+        deployParametersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployParameters.Builder getDeployParametersBuilder(
+        int index) {
+      return getDeployParametersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployParametersOrBuilder getDeployParametersOrBuilder(
+        int index) {
+      if (deployParametersBuilder_ == null) {
+        return deployParameters_.get(index);
+      } else {
+        return deployParametersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.deploy.v1.DeployParametersOrBuilder>
+        getDeployParametersOrBuilderList() {
+      if (deployParametersBuilder_ != null) {
+        return deployParametersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(deployParameters_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployParameters.Builder addDeployParametersBuilder() {
+      return getDeployParametersFieldBuilder()
+          .addBuilder(com.google.cloud.deploy.v1.DeployParameters.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployParameters.Builder addDeployParametersBuilder(
+        int index) {
+      return getDeployParametersFieldBuilder()
+          .addBuilder(index, com.google.cloud.deploy.v1.DeployParameters.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for the target in this stage.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.DeployParameters.Builder>
+        getDeployParametersBuilderList() {
+      return getDeployParametersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.DeployParameters,
+            com.google.cloud.deploy.v1.DeployParameters.Builder,
+            com.google.cloud.deploy.v1.DeployParametersOrBuilder>
+        getDeployParametersFieldBuilder() {
+      if (deployParametersBuilder_ == null) {
+        deployParametersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.deploy.v1.DeployParameters,
+                com.google.cloud.deploy.v1.DeployParameters.Builder,
+                com.google.cloud.deploy.v1.DeployParametersOrBuilder>(
+                deployParameters_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        deployParameters_ = null;
+      }
+      return deployParametersBuilder_;
     }
 
     @java.lang.Override
