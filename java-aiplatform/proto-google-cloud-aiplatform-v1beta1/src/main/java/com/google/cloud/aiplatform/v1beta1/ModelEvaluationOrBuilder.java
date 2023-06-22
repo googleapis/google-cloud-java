@@ -409,4 +409,39 @@ public interface ModelEvaluationOrBuilder
    * <code>.google.protobuf.Value metadata = 11;</code>
    */
   com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return Whether the biasConfigs field is set.
+   */
+  boolean hasBiasConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return The biasConfigs.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig getBiasConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder getBiasConfigsOrBuilder();
 }

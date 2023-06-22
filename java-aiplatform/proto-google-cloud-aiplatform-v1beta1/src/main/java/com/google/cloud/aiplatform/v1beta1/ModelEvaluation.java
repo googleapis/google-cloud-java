@@ -1088,6 +1088,1461 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface BiasConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     *
+     * @return Whether the biasSlices field is set.
+     */
+    boolean hasBiasSlices();
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     *
+     * @return The biasSlices.
+     */
+    com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec getBiasSlices();
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpecOrBuilder
+        getBiasSlicesOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @return A list containing the labels.
+     */
+    java.util.List<java.lang.String> getLabelsList();
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @return The count of labels.
+     */
+    int getLabelsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The labels at the given index.
+     */
+    java.lang.String getLabels(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the labels at the given index.
+     */
+    com.google.protobuf.ByteString getLabelsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for bias detection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig}
+   */
+  public static final class BiasConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)
+      BiasConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BiasConfig.newBuilder() to construct.
+    private BiasConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BiasConfig() {
+      labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BiasConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.class,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder.class);
+    }
+
+    public static final int BIAS_SLICES_FIELD_NUMBER = 1;
+    private com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec biasSlices_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     *
+     * @return Whether the biasSlices field is set.
+     */
+    @java.lang.Override
+    public boolean hasBiasSlices() {
+      return biasSlices_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     *
+     * @return The biasSlices.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+        getBiasSlices() {
+      return biasSlices_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+              .getDefaultInstance()
+          : biasSlices_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for how the data should be sliced for bias. It contains a
+     * list of slices, with limitation of two slices. The first slice of data
+     * will be the slice_a. The second slice in the list (slice_b) will be
+     * compared against the first slice. If only a single slice is provided,
+     * then slice_a will be compared against “not slice_a”.
+     * Below are examples with feature "education" with value "low", "medium",
+     * "high" in the dataset:
+     *
+     * Example 1:
+     *
+     *     bias_slices = [{'education': 'low'}]
+     *
+     * A single slice provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'medium' or 'high'.
+     *
+     * Example 2:
+     *
+     *     bias_slices = [{'education': 'low'},
+     *                    {'education': 'high'}]
+     *
+     * Two slices provided. In this case, slice_a is the collection of data
+     * with 'education' equals 'low', and slice_b is the collection of data with
+     * 'education' equals 'high'.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpecOrBuilder
+        getBiasSlicesOrBuilder() {
+      return biasSlices_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+              .getDefaultInstance()
+          : biasSlices_;
+    }
+
+    public static final int LABELS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList labels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @return A list containing the labels.
+     */
+    public com.google.protobuf.ProtocolStringList getLabelsList() {
+      return labels_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @return The count of labels.
+     */
+    public int getLabelsCount() {
+      return labels_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The labels at the given index.
+     */
+    public java.lang.String getLabels(int index) {
+      return labels_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Positive labels selection on the target field.
+     * </pre>
+     *
+     * <code>repeated string labels = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the labels at the given index.
+     */
+    public com.google.protobuf.ByteString getLabelsBytes(int index) {
+      return labels_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (biasSlices_ != null) {
+        output.writeMessage(1, getBiasSlices());
+      }
+      for (int i = 0; i < labels_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, labels_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (biasSlices_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBiasSlices());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < labels_.size(); i++) {
+          dataSize += computeStringSizeNoTag(labels_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getLabelsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig other =
+          (com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig) obj;
+
+      if (hasBiasSlices() != other.hasBiasSlices()) return false;
+      if (hasBiasSlices()) {
+        if (!getBiasSlices().equals(other.getBiasSlices())) return false;
+      }
+      if (!getLabelsList().equals(other.getLabelsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBiasSlices()) {
+        hash = (37 * hash) + BIAS_SLICES_FIELD_NUMBER;
+        hash = (53 * hash) + getBiasSlices().hashCode();
+      }
+      if (getLabelsCount() > 0) {
+        hash = (37 * hash) + LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + getLabelsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for bias detection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.class,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        biasSlices_ = null;
+        if (biasSlicesBuilder_ != null) {
+          biasSlicesBuilder_.dispose();
+          biasSlicesBuilder_ = null;
+        }
+        labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig build() {
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig result =
+            new com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.biasSlices_ =
+              biasSlicesBuilder_ == null ? biasSlices_ : biasSlicesBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          labels_.makeImmutable();
+          result.labels_ = labels_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance())
+          return this;
+        if (other.hasBiasSlices()) {
+          mergeBiasSlices(other.getBiasSlices());
+        }
+        if (!other.labels_.isEmpty()) {
+          if (labels_.isEmpty()) {
+            labels_ = other.labels_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureLabelsIsMutable();
+            labels_.addAll(other.labels_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getBiasSlicesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureLabelsIsMutable();
+                  labels_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec biasSlices_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec.Builder,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpecOrBuilder>
+          biasSlicesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       *
+       * @return Whether the biasSlices field is set.
+       */
+      public boolean hasBiasSlices() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       *
+       * @return The biasSlices.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+          getBiasSlices() {
+        if (biasSlicesBuilder_ == null) {
+          return biasSlices_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+                  .getDefaultInstance()
+              : biasSlices_;
+        } else {
+          return biasSlicesBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public Builder setBiasSlices(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec value) {
+        if (biasSlicesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          biasSlices_ = value;
+        } else {
+          biasSlicesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public Builder setBiasSlices(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec.Builder
+              builderForValue) {
+        if (biasSlicesBuilder_ == null) {
+          biasSlices_ = builderForValue.build();
+        } else {
+          biasSlicesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public Builder mergeBiasSlices(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec value) {
+        if (biasSlicesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && biasSlices_ != null
+              && biasSlices_
+                  != com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+                      .getDefaultInstance()) {
+            getBiasSlicesBuilder().mergeFrom(value);
+          } else {
+            biasSlices_ = value;
+          }
+        } else {
+          biasSlicesBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public Builder clearBiasSlices() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        biasSlices_ = null;
+        if (biasSlicesBuilder_ != null) {
+          biasSlicesBuilder_.dispose();
+          biasSlicesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec.Builder
+          getBiasSlicesBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getBiasSlicesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpecOrBuilder
+          getBiasSlicesOrBuilder() {
+        if (biasSlicesBuilder_ != null) {
+          return biasSlicesBuilder_.getMessageOrBuilder();
+        } else {
+          return biasSlices_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec
+                  .getDefaultInstance()
+              : biasSlices_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification for how the data should be sliced for bias. It contains a
+       * list of slices, with limitation of two slices. The first slice of data
+       * will be the slice_a. The second slice in the list (slice_b) will be
+       * compared against the first slice. If only a single slice is provided,
+       * then slice_a will be compared against “not slice_a”.
+       * Below are examples with feature "education" with value "low", "medium",
+       * "high" in the dataset:
+       *
+       * Example 1:
+       *
+       *     bias_slices = [{'education': 'low'}]
+       *
+       * A single slice provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'medium' or 'high'.
+       *
+       * Example 2:
+       *
+       *     bias_slices = [{'education': 'low'},
+       *                    {'education': 'high'}]
+       *
+       * Two slices provided. In this case, slice_a is the collection of data
+       * with 'education' equals 'low', and slice_b is the collection of data with
+       * 'education' equals 'high'.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec bias_slices = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec.Builder,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpecOrBuilder>
+          getBiasSlicesFieldBuilder() {
+        if (biasSlicesBuilder_ == null) {
+          biasSlicesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec,
+                  com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.SliceSpec.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice
+                      .SliceSpecOrBuilder>(getBiasSlices(), getParentForChildren(), isClean());
+          biasSlices_ = null;
+        }
+        return biasSlicesBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringArrayList labels_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureLabelsIsMutable() {
+        if (!labels_.isModifiable()) {
+          labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @return A list containing the labels.
+       */
+      public com.google.protobuf.ProtocolStringList getLabelsList() {
+        labels_.makeImmutable();
+        return labels_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @return The count of labels.
+       */
+      public int getLabelsCount() {
+        return labels_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The labels at the given index.
+       */
+      public java.lang.String getLabels(int index) {
+        return labels_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the labels at the given index.
+       */
+      public com.google.protobuf.ByteString getLabelsBytes(int index) {
+        return labels_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The labels to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabels(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLabelsIsMutable();
+        labels_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param value The labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLabels(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLabelsIsMutable();
+        labels_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param values The labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllLabels(java.lang.Iterable<java.lang.String> values) {
+        ensureLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labels_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLabels() {
+        labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Positive labels selection on the target field.
+       * </pre>
+       *
+       * <code>repeated string labels = 2;</code>
+       *
+       * @param value The bytes of the labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLabelsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureLabelsIsMutable();
+        labels_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BiasConfig> PARSER =
+        new com.google.protobuf.AbstractParser<BiasConfig>() {
+          @java.lang.Override
+          public BiasConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BiasConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BiasConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1637,6 +3092,57 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
   }
 
+  public static final int BIAS_CONFIGS_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig biasConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return Whether the biasConfigs field is set.
+   */
+  @java.lang.Override
+  public boolean hasBiasConfigs() {
+    return biasConfigs_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return The biasConfigs.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig getBiasConfigs() {
+    return biasConfigs_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance()
+        : biasConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder
+      getBiasConfigsOrBuilder() {
+    return biasConfigs_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance()
+        : biasConfigs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1677,6 +3183,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     if (metadata_ != null) {
       output.writeMessage(11, getMetadata());
+    }
+    if (biasConfigs_ != null) {
+      output.writeMessage(12, getBiasConfigs());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1719,6 +3228,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getMetadata());
     }
+    if (biasConfigs_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getBiasConfigs());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1755,6 +3267,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
+    }
+    if (hasBiasConfigs() != other.hasBiasConfigs()) return false;
+    if (hasBiasConfigs()) {
+      if (!getBiasConfigs().equals(other.getBiasConfigs())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1796,6 +3312,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasBiasConfigs()) {
+      hash = (37 * hash) + BIAS_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getBiasConfigs().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1968,6 +3488,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      biasConfigs_ = null;
+      if (biasConfigsBuilder_ != null) {
+        biasConfigsBuilder_.dispose();
+        biasConfigsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2043,6 +3568,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.biasConfigs_ =
+            biasConfigsBuilder_ == null ? biasConfigs_ : biasConfigsBuilder_.build();
       }
     }
 
@@ -2156,6 +3685,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (other.hasBiasConfigs()) {
+        mergeBiasConfigs(other.getBiasConfigs());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2248,6 +3780,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getBiasConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4079,6 +5617,196 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig biasConfigs_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder>
+        biasConfigsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     *
+     * @return Whether the biasConfigs field is set.
+     */
+    public boolean hasBiasConfigs() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     *
+     * @return The biasConfigs.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig getBiasConfigs() {
+      if (biasConfigsBuilder_ == null) {
+        return biasConfigs_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance()
+            : biasConfigs_;
+      } else {
+        return biasConfigsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public Builder setBiasConfigs(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig value) {
+      if (biasConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        biasConfigs_ = value;
+      } else {
+        biasConfigsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public Builder setBiasConfigs(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder builderForValue) {
+      if (biasConfigsBuilder_ == null) {
+        biasConfigs_ = builderForValue.build();
+      } else {
+        biasConfigsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public Builder mergeBiasConfigs(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig value) {
+      if (biasConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && biasConfigs_ != null
+            && biasConfigs_
+                != com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig
+                    .getDefaultInstance()) {
+          getBiasConfigsBuilder().mergeFrom(value);
+        } else {
+          biasConfigs_ = value;
+        }
+      } else {
+        biasConfigsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public Builder clearBiasConfigs() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      biasConfigs_ = null;
+      if (biasConfigsBuilder_ != null) {
+        biasConfigsBuilder_.dispose();
+        biasConfigsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder
+        getBiasConfigsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getBiasConfigsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder
+        getBiasConfigsOrBuilder() {
+      if (biasConfigsBuilder_ != null) {
+        return biasConfigsBuilder_.getMessageOrBuilder();
+      } else {
+        return biasConfigs_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.getDefaultInstance()
+            : biasConfigs_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the configuration for bias detection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder>
+        getBiasConfigsFieldBuilder() {
+      if (biasConfigsBuilder_ == null) {
+        biasConfigsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder>(
+                getBiasConfigs(), getParentForChildren(), isClean());
+        biasConfigs_ = null;
+      }
+      return biasConfigsBuilder_;
     }
 
     @java.lang.Override
