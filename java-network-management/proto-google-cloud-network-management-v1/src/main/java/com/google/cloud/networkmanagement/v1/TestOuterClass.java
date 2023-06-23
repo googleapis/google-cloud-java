@@ -76,30 +76,31 @@ public final class TestOuterClass {
           + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:t\352Aq\n1networkmana"
           + "gement.googleapis.com/ConnectivityTest\022<"
           + "projects/{project}/locations/global/conn"
-          + "ectivityTests/{test}\"\275\002\n\010Endpoint\022\022\n\nip_"
+          + "ectivityTests/{test}\"\326\002\n\010Endpoint\022\022\n\nip_"
           + "address\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\022\020\n\010instance\030"
-          + "\003 \001(\t\022\032\n\022gke_master_cluster\030\007 \001(\t\022\032\n\022clo"
-          + "ud_sql_instance\030\010 \001(\t\022\017\n\007network\030\004 \001(\t\022M"
-          + "\n\014network_type\030\005 \001(\01627.google.cloud.netw"
-          + "orkmanagement.v1.Endpoint.NetworkType\022\022\n"
-          + "\nproject_id\030\006 \001(\t\"Q\n\013NetworkType\022\034\n\030NETW"
-          + "ORK_TYPE_UNSPECIFIED\020\000\022\017\n\013GCP_NETWORK\020\001\022"
-          + "\023\n\017NON_GCP_NETWORK\020\002\"\325\002\n\023ReachabilityDet"
-          + "ails\022M\n\006result\030\001 \001(\0162=.google.cloud.netw"
-          + "orkmanagement.v1.ReachabilityDetails.Res"
-          + "ult\022/\n\013verify_time\030\002 \001(\0132\032.google.protob"
-          + "uf.Timestamp\022!\n\005error\030\003 \001(\0132\022.google.rpc"
-          + ".Status\0228\n\006traces\030\005 \003(\0132(.google.cloud.n"
-          + "etworkmanagement.v1.Trace\"a\n\006Result\022\026\n\022R"
-          + "ESULT_UNSPECIFIED\020\000\022\r\n\tREACHABLE\020\001\022\017\n\013UN"
-          + "REACHABLE\020\002\022\r\n\tAMBIGUOUS\020\004\022\020\n\014UNDETERMIN"
-          + "ED\020\005B\375\001\n%com.google.cloud.networkmanagem"
-          + "ent.v1B\016TestOuterClassP\001ZScloud.google.c"
-          + "om/go/networkmanagement/apiv1/networkman"
-          + "agementpb;networkmanagementpb\252\002!Google.C"
-          + "loud.NetworkManagement.V1\312\002!Google\\Cloud"
-          + "\\NetworkManagement\\V1\352\002$Google::Cloud::N"
-          + "etworkManagement::V1b\006proto3"
+          + "\003 \001(\t\022\027\n\017forwarding_rule\030\r \001(\t\022\032\n\022gke_ma"
+          + "ster_cluster\030\007 \001(\t\022\032\n\022cloud_sql_instance"
+          + "\030\010 \001(\t\022\017\n\007network\030\004 \001(\t\022M\n\014network_type\030"
+          + "\005 \001(\01627.google.cloud.networkmanagement.v"
+          + "1.Endpoint.NetworkType\022\022\n\nproject_id\030\006 \001"
+          + "(\t\"Q\n\013NetworkType\022\034\n\030NETWORK_TYPE_UNSPEC"
+          + "IFIED\020\000\022\017\n\013GCP_NETWORK\020\001\022\023\n\017NON_GCP_NETW"
+          + "ORK\020\002\"\325\002\n\023ReachabilityDetails\022M\n\006result\030"
+          + "\001 \001(\0162=.google.cloud.networkmanagement.v"
+          + "1.ReachabilityDetails.Result\022/\n\013verify_t"
+          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022!\n"
+          + "\005error\030\003 \001(\0132\022.google.rpc.Status\0228\n\006trac"
+          + "es\030\005 \003(\0132(.google.cloud.networkmanagemen"
+          + "t.v1.Trace\"a\n\006Result\022\026\n\022RESULT_UNSPECIFI"
+          + "ED\020\000\022\r\n\tREACHABLE\020\001\022\017\n\013UNREACHABLE\020\002\022\r\n\t"
+          + "AMBIGUOUS\020\004\022\020\n\014UNDETERMINED\020\005B\375\001\n%com.go"
+          + "ogle.cloud.networkmanagement.v1B\016TestOut"
+          + "erClassP\001ZScloud.google.com/go/networkma"
+          + "nagement/apiv1/networkmanagementpb;netwo"
+          + "rkmanagementpb\252\002!Google.Cloud.NetworkMan"
+          + "agement.V1\312\002!Google\\Cloud\\NetworkManagem"
+          + "ent\\V1\352\002$Google::Cloud::NetworkManagemen"
+          + "t::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -148,6 +149,7 @@ public final class TestOuterClass {
               "IpAddress",
               "Port",
               "Instance",
+              "ForwardingRule",
               "GkeMasterCluster",
               "CloudSqlInstance",
               "Network",

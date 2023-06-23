@@ -40,6 +40,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   private Endpoint() {
     ipAddress_ = "";
     instance_ = "";
+    forwardingRule_ = "";
     gkeMasterCluster_ = "";
     cloudSqlInstance_ = "";
     network_ = "";
@@ -359,6 +360,67 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object forwardingRule_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule and its corresponding IP address represent the frontend
+   * configuration of a Google Cloud load balancer. Forwarding rules are also
+   * used for protocol forwarding, Private Service Connect and other network
+   * services to provide forwarding information in the control plane. Format:
+   *  projects/{project}/global/forwardingRules/{id} or
+   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   * </pre>
+   *
+   * <code>string forwarding_rule = 13;</code>
+   *
+   * @return The forwardingRule.
+   */
+  @java.lang.Override
+  public java.lang.String getForwardingRule() {
+    java.lang.Object ref = forwardingRule_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      forwardingRule_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule and its corresponding IP address represent the frontend
+   * configuration of a Google Cloud load balancer. Forwarding rules are also
+   * used for protocol forwarding, Private Service Connect and other network
+   * services to provide forwarding information in the control plane. Format:
+   *  projects/{project}/global/forwardingRules/{id} or
+   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   * </pre>
+   *
+   * <code>string forwarding_rule = 13;</code>
+   *
+   * @return The bytes for forwardingRule.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getForwardingRuleBytes() {
+    java.lang.Object ref = forwardingRule_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      forwardingRule_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int GKE_MASTER_CLUSTER_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -662,6 +724,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cloudSqlInstance_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(forwardingRule_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, forwardingRule_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -697,6 +762,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cloudSqlInstance_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(forwardingRule_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, forwardingRule_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -716,6 +784,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (getPort() != other.getPort()) return false;
     if (!getInstance().equals(other.getInstance())) return false;
+    if (!getForwardingRule().equals(other.getForwardingRule())) return false;
     if (!getGkeMasterCluster().equals(other.getGkeMasterCluster())) return false;
     if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
@@ -738,6 +807,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPort();
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
+    hash = (37 * hash) + FORWARDING_RULE_FIELD_NUMBER;
+    hash = (53 * hash) + getForwardingRule().hashCode();
     hash = (37 * hash) + GKE_MASTER_CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + getGkeMasterCluster().hashCode();
     hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
@@ -890,6 +961,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       ipAddress_ = "";
       port_ = 0;
       instance_ = "";
+      forwardingRule_ = "";
       gkeMasterCluster_ = "";
       cloudSqlInstance_ = "";
       network_ = "";
@@ -941,18 +1013,21 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         result.instance_ = instance_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.gkeMasterCluster_ = gkeMasterCluster_;
+        result.forwardingRule_ = forwardingRule_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.cloudSqlInstance_ = cloudSqlInstance_;
+        result.gkeMasterCluster_ = gkeMasterCluster_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.network_ = network_;
+        result.cloudSqlInstance_ = cloudSqlInstance_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.networkType_ = networkType_;
+        result.network_ = network_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.networkType_ = networkType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.projectId_ = projectId_;
       }
     }
@@ -1015,19 +1090,24 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getForwardingRule().isEmpty()) {
+        forwardingRule_ = other.forwardingRule_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (!other.getGkeMasterCluster().isEmpty()) {
         gkeMasterCluster_ = other.gkeMasterCluster_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getCloudSqlInstance().isEmpty()) {
         cloudSqlInstance_ = other.cloudSqlInstance_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -1035,7 +1115,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1085,33 +1165,39 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 gkeMasterCluster_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
               {
                 cloudSqlInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 106:
+              {
+                forwardingRule_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1409,6 +1495,137 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object forwardingRule_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule and its corresponding IP address represent the frontend
+     * configuration of a Google Cloud load balancer. Forwarding rules are also
+     * used for protocol forwarding, Private Service Connect and other network
+     * services to provide forwarding information in the control plane. Format:
+     *  projects/{project}/global/forwardingRules/{id} or
+     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * </pre>
+     *
+     * <code>string forwarding_rule = 13;</code>
+     *
+     * @return The forwardingRule.
+     */
+    public java.lang.String getForwardingRule() {
+      java.lang.Object ref = forwardingRule_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        forwardingRule_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule and its corresponding IP address represent the frontend
+     * configuration of a Google Cloud load balancer. Forwarding rules are also
+     * used for protocol forwarding, Private Service Connect and other network
+     * services to provide forwarding information in the control plane. Format:
+     *  projects/{project}/global/forwardingRules/{id} or
+     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * </pre>
+     *
+     * <code>string forwarding_rule = 13;</code>
+     *
+     * @return The bytes for forwardingRule.
+     */
+    public com.google.protobuf.ByteString getForwardingRuleBytes() {
+      java.lang.Object ref = forwardingRule_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        forwardingRule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule and its corresponding IP address represent the frontend
+     * configuration of a Google Cloud load balancer. Forwarding rules are also
+     * used for protocol forwarding, Private Service Connect and other network
+     * services to provide forwarding information in the control plane. Format:
+     *  projects/{project}/global/forwardingRules/{id} or
+     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * </pre>
+     *
+     * <code>string forwarding_rule = 13;</code>
+     *
+     * @param value The forwardingRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardingRule(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      forwardingRule_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule and its corresponding IP address represent the frontend
+     * configuration of a Google Cloud load balancer. Forwarding rules are also
+     * used for protocol forwarding, Private Service Connect and other network
+     * services to provide forwarding information in the control plane. Format:
+     *  projects/{project}/global/forwardingRules/{id} or
+     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * </pre>
+     *
+     * <code>string forwarding_rule = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForwardingRule() {
+      forwardingRule_ = getDefaultInstance().getForwardingRule();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule and its corresponding IP address represent the frontend
+     * configuration of a Google Cloud load balancer. Forwarding rules are also
+     * used for protocol forwarding, Private Service Connect and other network
+     * services to provide forwarding information in the control plane. Format:
+     *  projects/{project}/global/forwardingRules/{id} or
+     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * </pre>
+     *
+     * <code>string forwarding_rule = 13;</code>
+     *
+     * @param value The bytes for forwardingRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardingRuleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      forwardingRule_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object gkeMasterCluster_ = "";
     /**
      *
@@ -1474,7 +1691,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       gkeMasterCluster_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1492,7 +1709,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGkeMasterCluster() {
       gkeMasterCluster_ = getDefaultInstance().getGkeMasterCluster();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1515,7 +1732,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       gkeMasterCluster_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1582,7 +1799,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1599,7 +1816,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCloudSqlInstance() {
       cloudSqlInstance_ = getDefaultInstance().getCloudSqlInstance();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1621,7 +1838,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1688,7 +1905,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1705,7 +1922,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1727,7 +1944,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1766,7 +1983,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1810,7 +2027,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -1829,7 +2046,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       networkType_ = 0;
       onChanged();
       return this;
@@ -1921,7 +2138,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1946,7 +2163,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1976,7 +2193,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
