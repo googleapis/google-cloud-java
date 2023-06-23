@@ -16,35 +16,27 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_async]
-import com.google.api.core.ApiFuture;
+// [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectbillinginfoname_sync]
 import com.google.cloud.billing.v1.CloudBillingClient;
-import com.google.cloud.billing.v1.GetProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.ProjectBillingInfoName;
 
-public class AsyncGetProjectBillingInfo {
+public class SyncGetProjectBillingInfoProjectbillinginfoname {
 
   public static void main(String[] args) throws Exception {
-    asyncGetProjectBillingInfo();
+    syncGetProjectBillingInfoProjectbillinginfoname();
   }
 
-  public static void asyncGetProjectBillingInfo() throws Exception {
+  public static void syncGetProjectBillingInfoProjectbillinginfoname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      GetProjectBillingInfoRequest request =
-          GetProjectBillingInfoRequest.newBuilder()
-              .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
-              .build();
-      ApiFuture<ProjectBillingInfo> future =
-          cloudBillingClient.getProjectBillingInfoCallable().futureCall(request);
-      // Do something.
-      ProjectBillingInfo response = future.get();
+      ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+      ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
     }
   }
 }
-// [END cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_async]
+// [END cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectbillinginfoname_sync]

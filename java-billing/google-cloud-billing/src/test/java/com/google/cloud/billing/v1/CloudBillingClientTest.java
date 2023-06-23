@@ -443,7 +443,49 @@ public class CloudBillingClientTest {
   public void getProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName("name3373707")
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+            .setProjectId("projectId-894832108")
+            .setBillingAccountName("billingAccountName929322205")
+            .setBillingEnabled(true)
+            .build();
+    mockCloudBilling.addResponse(expectedResponse);
+
+    ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+
+    ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBilling.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProjectBillingInfoRequest actualRequest =
+        ((GetProjectBillingInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProjectBillingInfoExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBilling.addException(exception);
+
+    try {
+      ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+      client.getProjectBillingInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectBillingInfoTest2() throws Exception {
+    ProjectBillingInfo expectedResponse =
+        ProjectBillingInfo.newBuilder()
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)
@@ -468,7 +510,7 @@ public class CloudBillingClientTest {
   }
 
   @Test
-  public void getProjectBillingInfoExceptionTest() throws Exception {
+  public void getProjectBillingInfoExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCloudBilling.addException(exception);
 
@@ -485,7 +527,7 @@ public class CloudBillingClientTest {
   public void updateProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName("name3373707")
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)

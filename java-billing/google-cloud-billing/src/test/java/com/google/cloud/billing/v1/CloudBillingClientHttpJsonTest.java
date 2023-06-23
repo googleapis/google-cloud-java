@@ -46,6 +46,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -475,18 +476,19 @@ public class CloudBillingClientHttpJsonTest {
     }
   }
 
+  @Ignore("Ignore until https://github.com/googleapis/sdk-platform-java/issues/1780 is resolved")
   @Test
   public void getProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName("name3373707")
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "projects/project-3664";
+    ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
 
     ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -514,6 +516,53 @@ public class CloudBillingClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+      client.getProjectBillingInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectBillingInfoTest2() throws Exception {
+    ProjectBillingInfo expectedResponse =
+        ProjectBillingInfo.newBuilder()
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+            .setProjectId("projectId-894832108")
+            .setBillingAccountName("billingAccountName929322205")
+            .setBillingEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3664";
+
+    ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProjectBillingInfoExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String name = "projects/project-3664";
       client.getProjectBillingInfo(name);
       Assert.fail("No exception raised");
@@ -526,7 +575,7 @@ public class CloudBillingClientHttpJsonTest {
   public void updateProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName("name3373707")
+            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)

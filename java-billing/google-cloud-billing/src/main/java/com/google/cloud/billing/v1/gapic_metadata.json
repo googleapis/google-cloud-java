@@ -20,7 +20,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "GetProjectBillingInfo": {
-              "methods": ["getProjectBillingInfo", "getProjectBillingInfo", "getProjectBillingInfoCallable"]
+              "methods": ["getProjectBillingInfo", "getProjectBillingInfo", "getProjectBillingInfo", "getProjectBillingInfoCallable"]
             },
             "ListBillingAccounts": {
               "methods": ["listBillingAccounts", "listBillingAccounts", "listBillingAccountsPagedCallable", "listBillingAccountsCallable"]

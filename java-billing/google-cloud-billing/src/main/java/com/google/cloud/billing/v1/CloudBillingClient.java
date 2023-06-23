@@ -888,7 +888,40 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String name = "name3373707";
+   *   ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+   *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the project for which billing information is
+   *     retrieved. For example, `projects/tokyo-rain-123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProjectBillingInfo getProjectBillingInfo(ProjectBillingInfoName name) {
+    GetProjectBillingInfoRequest request =
+        GetProjectBillingInfoRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProjectBillingInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the billing information for a project. The current authenticated user must have the
+   * `resourcemanager.projects.get` permission for the project, which can be granted by assigning
+   * the [Project Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+   * role.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = ProjectBillingInfoName.of("[PROJECT]").toString();
    *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
    * }
    * }</pre>
@@ -920,7 +953,9 @@ public class CloudBillingClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
-   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *       GetProjectBillingInfoRequest.newBuilder()
+   *           .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+   *           .build();
    *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(request);
    * }
    * }</pre>
@@ -949,7 +984,9 @@ public class CloudBillingClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
-   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *       GetProjectBillingInfoRequest.newBuilder()
+   *           .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<ProjectBillingInfo> future =
    *       cloudBillingClient.getProjectBillingInfoCallable().futureCall(request);
    *   // Do something.
