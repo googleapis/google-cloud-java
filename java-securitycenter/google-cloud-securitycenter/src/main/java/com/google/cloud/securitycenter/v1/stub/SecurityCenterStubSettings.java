@@ -1120,7 +1120,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return getSourceSettings;
   }
 
-  /** Returns the object with the settings used for calls to groupAssets. */
+  /**
+   * Returns the object with the settings used for calls to groupAssets.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
       groupAssetsSettings() {
     return groupAssetsSettings;
@@ -1132,7 +1137,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return groupFindingsSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAssets. */
+  /**
+   * Returns the object with the settings used for calls to listAssets.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       listAssetsSettings() {
     return listAssetsSettings;
@@ -1202,7 +1212,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return listSourcesSettings;
   }
 
-  /** Returns the object with the settings used for calls to runAssetDiscovery. */
+  /**
+   * Returns the object with the settings used for calls to runAssetDiscovery.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoverySettings() {
     return runAssetDiscoverySettings;
   }
@@ -2312,7 +2327,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return getSourceSettings;
     }
 
-    /** Returns the builder for the settings used for calls to groupAssets. */
+    /**
+     * Returns the builder for the settings used for calls to groupAssets.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
         groupAssetsSettings() {
@@ -2326,7 +2346,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return groupFindingsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAssets. */
+    /**
+     * Returns the builder for the settings used for calls to listAssets.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
         listAssetsSettings() {
       return listAssetsSettings;
@@ -2398,7 +2423,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return listSourcesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to runAssetDiscovery. */
+    /**
+     * Returns the builder for the settings used for calls to runAssetDiscovery.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RunAssetDiscoveryRequest, Operation>
         runAssetDiscoverySettings() {
       return runAssetDiscoverySettings;

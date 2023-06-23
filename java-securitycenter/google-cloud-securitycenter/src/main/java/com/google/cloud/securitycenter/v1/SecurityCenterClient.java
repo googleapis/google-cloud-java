@@ -2930,7 +2930,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GroupAssetsPagedResponse groupAssets(GroupAssetsRequest request) {
     return groupAssetsPagedCallable().call(request);
   }
@@ -2966,7 +2968,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
       groupAssetsPagedCallable() {
     return stub.groupAssetsPagedCallable();
@@ -3009,7 +3014,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     return stub.groupAssetsCallable();
   }
@@ -3290,7 +3298,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAssetsPagedResponse listAssets(ListAssetsRequest request) {
     return listAssetsPagedCallable().call(request);
   }
@@ -3327,7 +3337,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return stub.listAssetsPagedCallable();
   }
@@ -3370,7 +3383,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();
   }
@@ -4858,7 +4874,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       OrganizationName parent) {
     RunAssetDiscoveryRequest request =
@@ -4893,7 +4911,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       String parent) {
     RunAssetDiscoveryRequest request =
@@ -4928,7 +4948,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       RunAssetDiscoveryRequest request) {
     return runAssetDiscoveryOperationCallable().futureCall(request);
@@ -4960,7 +4982,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return stub.runAssetDiscoveryOperationCallable();
@@ -4992,7 +5017,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     return stub.runAssetDiscoveryCallable();
   }

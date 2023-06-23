@@ -213,7 +213,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).getSourceSettings();
   }
 
-  /** Returns the object with the settings used for calls to groupAssets. */
+  /**
+   * Returns the object with the settings used for calls to groupAssets.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
       groupAssetsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).groupAssetsSettings();
@@ -225,7 +230,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).groupFindingsSettings();
   }
 
-  /** Returns the object with the settings used for calls to listAssets. */
+  /**
+   * Returns the object with the settings used for calls to listAssets.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       listAssetsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).listAssetsSettings();
@@ -298,12 +308,22 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).listSourcesSettings();
   }
 
-  /** Returns the object with the settings used for calls to runAssetDiscovery. */
+  /**
+   * Returns the object with the settings used for calls to runAssetDiscovery.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoverySettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).runAssetDiscoverySettings();
   }
 
-  /** Returns the object with the settings used for calls to runAssetDiscovery. */
+  /**
+   * Returns the object with the settings used for calls to runAssetDiscovery.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).runAssetDiscoveryOperationSettings();
@@ -637,7 +657,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().getSourceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to groupAssets. */
+    /**
+     * Returns the builder for the settings used for calls to groupAssets.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
         groupAssetsSettings() {
@@ -651,7 +676,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().groupFindingsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listAssets. */
+    /**
+     * Returns the builder for the settings used for calls to listAssets.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
         listAssetsSettings() {
       return getStubSettingsBuilder().listAssetsSettings();
@@ -723,13 +753,23 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().listSourcesSettings();
     }
 
-    /** Returns the builder for the settings used for calls to runAssetDiscovery. */
+    /**
+     * Returns the builder for the settings used for calls to runAssetDiscovery.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RunAssetDiscoveryRequest, Operation>
         runAssetDiscoverySettings() {
       return getStubSettingsBuilder().runAssetDiscoverySettings();
     }
 
-    /** Returns the builder for the settings used for calls to runAssetDiscovery. */
+    /**
+     * Returns the builder for the settings used for calls to runAssetDiscovery.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
         runAssetDiscoveryOperationSettings() {
       return getStubSettingsBuilder().runAssetDiscoveryOperationSettings();

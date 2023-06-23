@@ -2528,6 +2528,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     default void groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.GroupAssetsResponse>
@@ -2563,6 +2564,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListAssetsResponse>
@@ -2701,6 +2703,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     default void runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -3290,6 +3293,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public void groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.GroupAssetsResponse>
@@ -3329,6 +3333,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListAssetsResponse>
@@ -3487,6 +3492,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public void runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -4048,6 +4054,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.GroupAssetsResponse groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4079,6 +4086,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.ListAssetsResponse listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4214,6 +4222,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4732,6 +4741,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1.GroupAssetsResponse>
         groupAssets(com.google.cloud.securitycenter.v1.GroupAssetsRequest request) {
@@ -4765,6 +4775,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1.ListAssetsResponse>
         listAssets(com.google.cloud.securitycenter.v1.ListAssetsRequest request) {
@@ -4907,6 +4918,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         runAssetDiscovery(com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

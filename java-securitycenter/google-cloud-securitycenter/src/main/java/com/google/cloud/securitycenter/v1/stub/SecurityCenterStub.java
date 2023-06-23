@@ -210,10 +210,12 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getSourceCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: groupAssetsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     throw new UnsupportedOperationException("Not implemented: groupAssetsCallable()");
   }
@@ -227,10 +229,12 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: groupFindingsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAssetsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAssetsCallable()");
   }
@@ -319,12 +323,14 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listSourcesCallable()");
   }
 
+  @Deprecated
   public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: runAssetDiscoveryOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     throw new UnsupportedOperationException("Not implemented: runAssetDiscoveryCallable()");
   }
