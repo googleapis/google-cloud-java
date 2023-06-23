@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.16.0 (2023-06-23)
+
+### Features
+
+* support extractive content in search ([#9554](https://github.com/googleapis/google-cloud-java/issues/9554)) ([af36e0a](https://github.com/googleapis/google-cloud-java/commit/af36e0ac5a36f277074ab6b1448170eb2ec50940))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-discoveryengine-v0.0.1-SNAPSHOT...google-cloud-discoveryengine-v0.1.0) (2022-10-24)
 
 

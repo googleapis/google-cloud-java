@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.24.0 (2023-06-23)
+
+### Features
+
+* add StyleInfo to document.proto ([#9551](https://github.com/googleapis/google-cloud-java/issues/9551)) ([c873d10](https://github.com/googleapis/google-cloud-java/commit/c873d103a625d41838c582737f4b98da6605d47f))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [2.9.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-document-ai-v2.8.1-SNAPSHOT...google-cloud-document-ai-v2.9.0) (2022-10-24)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.138.0-beta (2023-06-23)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.123.19](https://github.com/googleapis/java-notification/compare/v0.123.18...v0.123.19) (2022-10-10)
 
 

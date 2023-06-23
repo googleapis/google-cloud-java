@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.20.0 (2023-06-23)
+
+### Features
+
+* mark fields in Contacts message as REQUIRED ([#9572](https://github.com/googleapis/google-cloud-java/issues/9572)) ([ac62dbc](https://github.com/googleapis/google-cloud-java/commit/ac62dbc7ddb2bf3b037c07316730ba2ce2420c45))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-essential-contacts-v2.4.1-SNAPSHOT...google-cloud-essential-contacts-v2.5.0) (2022-10-24)
 
 

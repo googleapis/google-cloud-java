@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.23.0 (2023-06-23)
+
+### Features
+
+* add API for GPU driver installation config ([#9534](https://github.com/googleapis/google-cloud-java/issues/9534)) ([1c2b1d4](https://github.com/googleapis/google-cloud-java/commit/1c2b1d4a65e84e5926c319d951381dc5a4f472c4))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [2.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-container-v2.7.1-SNAPSHOT...google-cloud-container-v2.8.0) (2022-10-24)
 
 
