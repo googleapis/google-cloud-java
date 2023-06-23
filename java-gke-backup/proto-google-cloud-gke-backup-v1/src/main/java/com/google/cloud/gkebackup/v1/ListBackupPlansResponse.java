@@ -144,10 +144,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * A token which may be sent as
-   * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-   * `ListBackupPlans` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+   * in a subsequent `ListBackupPlans` call to retrieve the next page of
+   * results. If this field is omitted or empty, then there are no more results
+   * to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -171,10 +171,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * A token which may be sent as
-   * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-   * `ListBackupPlans` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+   * in a subsequent `ListBackupPlans` call to retrieve the next page of
+   * results. If this field is omitted or empty, then there are no more results
+   * to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1068,10 +1068,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * A token which may be sent as
-     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-     * `ListBackupPlans` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+     * in a subsequent `ListBackupPlans` call to retrieve the next page of
+     * results. If this field is omitted or empty, then there are no more results
+     * to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1094,10 +1094,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * A token which may be sent as
-     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-     * `ListBackupPlans` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+     * in a subsequent `ListBackupPlans` call to retrieve the next page of
+     * results. If this field is omitted or empty, then there are no more results
+     * to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1120,10 +1120,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * A token which may be sent as
-     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-     * `ListBackupPlans` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+     * in a subsequent `ListBackupPlans` call to retrieve the next page of
+     * results. If this field is omitted or empty, then there are no more results
+     * to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1145,10 +1145,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * A token which may be sent as
-     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-     * `ListBackupPlans` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+     * in a subsequent `ListBackupPlans` call to retrieve the next page of
+     * results. If this field is omitted or empty, then there are no more results
+     * to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1166,10 +1166,10 @@ public final class ListBackupPlansResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * A token which may be sent as
-     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token] in a subsequent
-     * `ListBackupPlans` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * [page_token][google.cloud.gkebackup.v1.ListBackupPlansRequest.page_token]
+     * in a subsequent `ListBackupPlans` call to retrieve the next page of
+     * results. If this field is omitted or empty, then there are no more results
+     * to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

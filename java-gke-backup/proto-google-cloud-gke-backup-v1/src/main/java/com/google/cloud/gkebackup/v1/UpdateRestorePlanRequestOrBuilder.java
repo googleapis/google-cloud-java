@@ -27,8 +27,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -57,8 +57,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>

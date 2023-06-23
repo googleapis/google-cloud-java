@@ -28,7 +28,7 @@ public interface EncryptionKeyOrBuilder
    *
    * <pre>
    * Google Cloud KMS encryption key. Format:
-   * projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
    * </pre>
    *
    * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -41,7 +41,7 @@ public interface EncryptionKeyOrBuilder
    *
    * <pre>
    * Google Cloud KMS encryption key. Format:
-   * projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
    * </pre>
    *
    * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>

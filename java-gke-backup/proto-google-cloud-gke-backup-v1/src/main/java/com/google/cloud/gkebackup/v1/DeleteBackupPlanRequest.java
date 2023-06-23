@@ -72,7 +72,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -129,8 +129,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-   * rejected.
+   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+   * or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -154,8 +154,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-   * rejected.
+   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+   * or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -548,7 +548,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -573,7 +573,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -598,7 +598,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -622,7 +622,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -642,7 +642,7 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -669,8 +669,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-     * rejected.
+     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+     * or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -693,8 +693,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-     * rejected.
+     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+     * or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -717,8 +717,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-     * rejected.
+     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+     * or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -740,8 +740,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-     * rejected.
+     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+     * or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -759,8 +759,8 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-     * rejected.
+     * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+     * or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>

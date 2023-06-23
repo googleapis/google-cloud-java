@@ -74,7 +74,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The RestorePlan that contains the Restores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The RestorePlan that contains the Restores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -750,7 +750,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The RestorePlan that contains the Restores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -775,7 +775,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The RestorePlan that contains the Restores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -800,7 +800,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The RestorePlan that contains the Restores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -824,7 +824,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The RestorePlan that contains the Restores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class ListRestoresRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The RestorePlan that contains the Restores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>

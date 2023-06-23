@@ -28,7 +28,7 @@ public interface GetRestorePlanRequestOrBuilder
    *
    * <pre>
    * Required. Fully qualified RestorePlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetRestorePlanRequestOrBuilder
    *
    * <pre>
    * Required. Fully qualified RestorePlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>

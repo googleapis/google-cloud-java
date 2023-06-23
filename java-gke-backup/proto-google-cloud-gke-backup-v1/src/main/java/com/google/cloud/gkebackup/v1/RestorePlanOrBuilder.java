@@ -28,7 +28,7 @@ public interface RestorePlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the RestorePlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface RestorePlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the RestorePlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -188,9 +188,10 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-   * source for Restores created via this RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+   * Required. Immutable. A reference to the
+   * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+   * be used as the source for Restores created via this RestorePlan. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
    * </pre>
    *
    * <code>
@@ -204,9 +205,10 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-   * source for Restores created via this RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+   * Required. Immutable. A reference to the
+   * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+   * be used as the source for Restores created via this RestorePlan. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
    * </pre>
    *
    * <code>
@@ -221,13 +223,12 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-   * will restore data. NOTE: the cluster's region must be the same as the
-   * RestorePlan.
-   * Valid formats:
+   * Required. Immutable. The target cluster into which Restores created via
+   * this RestorePlan will restore data. NOTE: the cluster's region must be the
+   * same as the RestorePlan. Valid formats:
    *
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -241,13 +242,12 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-   * will restore data. NOTE: the cluster's region must be the same as the
-   * RestorePlan.
-   * Valid formats:
+   * Required. Immutable. The target cluster into which Restores created via
+   * this RestorePlan will restore data. NOTE: the cluster's region must be the
+   * same as the RestorePlan. Valid formats:
    *
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -361,8 +361,8 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -380,8 +380,8 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestorePlan`,

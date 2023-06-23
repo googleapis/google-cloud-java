@@ -28,7 +28,7 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * Required. The BackupPlan that contains the Backups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * Required. The BackupPlan that contains the Backups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>

@@ -66,8 +66,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. A new version of the BackupPlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the BackupPlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -84,8 +84,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. A new version of the BackupPlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the BackupPlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -104,8 +104,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. A new version of the BackupPlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the BackupPlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -580,8 +580,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -597,8 +597,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -620,8 +620,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -645,8 +645,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -667,8 +667,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -695,8 +695,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -717,8 +717,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -734,8 +734,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -755,8 +755,8 @@ public final class UpdateBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. A new version of the BackupPlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the BackupPlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>

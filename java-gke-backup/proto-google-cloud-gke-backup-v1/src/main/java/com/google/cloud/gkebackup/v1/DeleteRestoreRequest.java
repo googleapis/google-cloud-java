@@ -72,7 +72,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Full name of the Restore
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Full name of the Restore
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>
@@ -129,8 +129,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-   * rejected.
+   * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+   * the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -154,8 +154,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-   * rejected.
+   * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+   * the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -589,7 +589,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full name of the Restore
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -614,7 +614,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full name of the Restore
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -639,7 +639,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full name of the Restore
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -663,7 +663,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full name of the Restore
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -683,7 +683,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full name of the Restore
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -710,8 +710,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-     * rejected.
+     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+     * the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -734,8 +734,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-     * rejected.
+     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+     * the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -758,8 +758,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-     * rejected.
+     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+     * the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -781,8 +781,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-     * rejected.
+     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+     * the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -800,8 +800,8 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or the request is
-     * rejected.
+     * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
+     * the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>

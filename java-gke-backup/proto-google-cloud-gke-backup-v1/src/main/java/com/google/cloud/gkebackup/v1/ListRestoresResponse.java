@@ -143,10 +143,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-   * in a subsequent `ListRestores` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * A token which may be sent as
+   * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+   * subsequent `ListRestores` call to retrieve the next page of results. If
+   * this field is omitted or empty, then there are no more results to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -169,10 +169,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-   * in a subsequent `ListRestores` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * A token which may be sent as
+   * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+   * subsequent `ListRestores` call to retrieve the next page of results. If
+   * this field is omitted or empty, then there are no more results to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1061,10 +1061,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-     * in a subsequent `ListRestores` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * A token which may be sent as
+     * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+     * subsequent `ListRestores` call to retrieve the next page of results. If
+     * this field is omitted or empty, then there are no more results to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1086,10 +1086,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-     * in a subsequent `ListRestores` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * A token which may be sent as
+     * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+     * subsequent `ListRestores` call to retrieve the next page of results. If
+     * this field is omitted or empty, then there are no more results to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1111,10 +1111,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-     * in a subsequent `ListRestores` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * A token which may be sent as
+     * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+     * subsequent `ListRestores` call to retrieve the next page of results. If
+     * this field is omitted or empty, then there are no more results to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1135,10 +1135,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-     * in a subsequent `ListRestores` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * A token which may be sent as
+     * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+     * subsequent `ListRestores` call to retrieve the next page of results. If
+     * this field is omitted or empty, then there are no more results to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1155,10 +1155,10 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token which may be sent as [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token]
-     * in a subsequent `ListRestores` call to retrieve the next page of results.
-     * If this field is omitted or empty, then there are no more results to
-     * return.
+     * A token which may be sent as
+     * [page_token][google.cloud.gkebackup.v1.ListRestoresRequest.page_token] in a
+     * subsequent `ListRestores` call to retrieve the next page of results. If
+     * this field is omitted or empty, then there are no more results to return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

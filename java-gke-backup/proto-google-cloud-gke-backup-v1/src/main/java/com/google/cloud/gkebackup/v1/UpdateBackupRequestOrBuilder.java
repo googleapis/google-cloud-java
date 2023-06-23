@@ -27,8 +27,8 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Backup resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Backup resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -41,8 +41,8 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Backup resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Backup resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -55,8 +55,8 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Backup resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Backup resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];

@@ -108,7 +108,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default maximum age of a Backup created via this BackupPlan.
-     * This field MUST be an integer value &gt;= 0.
+     * This field MUST be an integer value &gt;= 0 and &lt;= 365.
      * If specified, a Backup created under this BackupPlan will be
      * automatically deleted after its age reaches (create_time +
      * backup_retain_days).
@@ -117,7 +117,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Updating this field does NOT affect existing Backups under it. Backups
      * created AFTER a successful update will automatically pick up the new
      * value.
-     * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     * NOTE: backup_retain_days must be &gt;=
+     * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     * If
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * is defined, then this must be
+     * &lt;= 360 * the creation interval.
      *
      * Default: 0 (no automatic deletion)
      * </pre>
@@ -220,7 +225,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default maximum age of a Backup created via this BackupPlan.
-     * This field MUST be an integer value &gt;= 0.
+     * This field MUST be an integer value &gt;= 0 and &lt;= 365.
      * If specified, a Backup created under this BackupPlan will be
      * automatically deleted after its age reaches (create_time +
      * backup_retain_days).
@@ -229,7 +234,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Updating this field does NOT affect existing Backups under it. Backups
      * created AFTER a successful update will automatically pick up the new
      * value.
-     * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     * NOTE: backup_retain_days must be &gt;=
+     * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     * If
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * is defined, then this must be
+     * &lt;= 360 * the creation interval.
      *
      * Default: 0 (no automatic deletion)
      * </pre>
@@ -737,7 +747,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0.
+       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
        * If specified, a Backup created under this BackupPlan will be
        * automatically deleted after its age reaches (create_time +
        * backup_retain_days).
@@ -746,7 +756,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field does NOT affect existing Backups under it. Backups
        * created AFTER a successful update will automatically pick up the new
        * value.
-       * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * NOTE: backup_retain_days must be &gt;=
+       * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * If
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * is defined, then this must be
+       * &lt;= 360 * the creation interval.
        *
        * Default: 0 (no automatic deletion)
        * </pre>
@@ -764,7 +779,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0.
+       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
        * If specified, a Backup created under this BackupPlan will be
        * automatically deleted after its age reaches (create_time +
        * backup_retain_days).
@@ -773,7 +788,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field does NOT affect existing Backups under it. Backups
        * created AFTER a successful update will automatically pick up the new
        * value.
-       * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * NOTE: backup_retain_days must be &gt;=
+       * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * If
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * is defined, then this must be
+       * &lt;= 360 * the creation interval.
        *
        * Default: 0 (no automatic deletion)
        * </pre>
@@ -795,7 +815,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0.
+       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
        * If specified, a Backup created under this BackupPlan will be
        * automatically deleted after its age reaches (create_time +
        * backup_retain_days).
@@ -804,7 +824,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field does NOT affect existing Backups under it. Backups
        * created AFTER a successful update will automatically pick up the new
        * value.
-       * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * NOTE: backup_retain_days must be &gt;=
+       * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       * If
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * is defined, then this must be
+       * &lt;= 360 * the creation interval.
        *
        * Default: 0 (no automatic deletion)
        * </pre>
@@ -959,7 +984,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan.
+     * repeating schedule for creating Backups via this BackupPlan. If this is
+     * defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
@@ -974,7 +1002,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan.
+     * repeating schedule for creating Backups via this BackupPlan. If this is
+     * defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
@@ -1055,7 +1086,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan.
+     * repeating schedule for creating Backups via this BackupPlan. If this is
+     * defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
@@ -1081,7 +1115,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan.
+     * repeating schedule for creating Backups via this BackupPlan. If this is
+     * defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
@@ -1499,7 +1536,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan.
+       * repeating schedule for creating Backups via this BackupPlan. If this is
+       * defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
@@ -1524,7 +1564,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan.
+       * repeating schedule for creating Backups via this BackupPlan. If this is
+       * defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
@@ -1549,7 +1592,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan.
+       * repeating schedule for creating Backups via this BackupPlan. If this is
+       * defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
@@ -1573,7 +1619,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan.
+       * repeating schedule for creating Backups via this BackupPlan. If this is
+       * defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
@@ -1593,7 +1642,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan.
+       * repeating schedule for creating Backups via this BackupPlan. If this is
+       * defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
@@ -3713,7 +3765,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3737,7 +3789,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3970,12 +4022,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
    *
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -4000,12 +4051,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
    *
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -4238,9 +4288,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to
@@ -4268,9 +4318,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to
@@ -5088,7 +5138,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the BackupPlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5111,7 +5161,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the BackupPlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5134,7 +5184,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the BackupPlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5156,7 +5206,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the BackupPlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5174,7 +5224,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the BackupPlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5826,12 +5876,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The source cluster from which Backups will be created via
-     * this BackupPlan.
-     * Valid formats:
+     * Required. Immutable. The source cluster from which Backups will be created
+     * via this BackupPlan. Valid formats:
      *
-     * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -5855,12 +5904,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The source cluster from which Backups will be created via
-     * this BackupPlan.
-     * Valid formats:
+     * Required. Immutable. The source cluster from which Backups will be created
+     * via this BackupPlan. Valid formats:
      *
-     * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -5884,12 +5932,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The source cluster from which Backups will be created via
-     * this BackupPlan.
-     * Valid formats:
+     * Required. Immutable. The source cluster from which Backups will be created
+     * via this BackupPlan. Valid formats:
      *
-     * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -5912,12 +5959,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The source cluster from which Backups will be created via
-     * this BackupPlan.
-     * Valid formats:
+     * Required. Immutable. The source cluster from which Backups will be created
+     * via this BackupPlan. Valid formats:
      *
-     * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -5936,12 +5982,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The source cluster from which Backups will be created via
-     * this BackupPlan.
-     * Valid formats:
+     * Required. Immutable. The source cluster from which Backups will be created
+     * via this BackupPlan. Valid formats:
      *
-     * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -6504,9 +6549,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup plan from overwriting each other.
-     * It is strongly suggested that systems make use of the 'etag' in the
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup plan from overwriting each
+     * other. It is strongly suggested that systems make use of the 'etag' in the
      * read-modify-write cycle to perform BackupPlan updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
      * and systems are expected to put that etag in the request to
@@ -6533,9 +6578,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup plan from overwriting each other.
-     * It is strongly suggested that systems make use of the 'etag' in the
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup plan from overwriting each
+     * other. It is strongly suggested that systems make use of the 'etag' in the
      * read-modify-write cycle to perform BackupPlan updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
      * and systems are expected to put that etag in the request to
@@ -6562,9 +6607,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup plan from overwriting each other.
-     * It is strongly suggested that systems make use of the 'etag' in the
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup plan from overwriting each
+     * other. It is strongly suggested that systems make use of the 'etag' in the
      * read-modify-write cycle to perform BackupPlan updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
      * and systems are expected to put that etag in the request to
@@ -6590,9 +6635,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup plan from overwriting each other.
-     * It is strongly suggested that systems make use of the 'etag' in the
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup plan from overwriting each
+     * other. It is strongly suggested that systems make use of the 'etag' in the
      * read-modify-write cycle to perform BackupPlan updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
      * and systems are expected to put that etag in the request to
@@ -6614,9 +6659,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup plan from overwriting each other.
-     * It is strongly suggested that systems make use of the 'etag' in the
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup plan from overwriting each
+     * other. It is strongly suggested that systems make use of the 'etag' in the
      * read-modify-write cycle to perform BackupPlan updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
      * and systems are expected to put that etag in the request to

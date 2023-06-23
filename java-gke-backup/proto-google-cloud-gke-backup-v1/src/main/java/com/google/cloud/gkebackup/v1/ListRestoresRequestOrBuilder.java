@@ -28,7 +28,7 @@ public interface ListRestoresRequestOrBuilder
    *
    * <pre>
    * Required. The RestorePlan that contains the Restores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListRestoresRequestOrBuilder
    *
    * <pre>
    * Required. The RestorePlan that contains the Restores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>

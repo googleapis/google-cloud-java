@@ -66,8 +66,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -84,8 +84,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -104,8 +104,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -578,8 +578,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -595,8 +595,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -618,8 +618,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -643,8 +643,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -666,8 +666,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -694,8 +694,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -716,8 +716,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -733,8 +733,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>
@@ -754,8 +754,8 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. A new version of the RestorePlan resource that contains updated fields.
-     * This may be sparsely populated if an `update_mask` is provided.
+     * Required. A new version of the RestorePlan resource that contains updated
+     * fields. This may be sparsely populated if an `update_mask` is provided.
      * </pre>
      *
      * <code>

@@ -72,7 +72,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The BackupPlan within which to create the Backup.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The BackupPlan within which to create the Backup.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -634,7 +634,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The BackupPlan within which to create the Backup.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -659,7 +659,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The BackupPlan within which to create the Backup.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -684,7 +684,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The BackupPlan within which to create the Backup.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -708,7 +708,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The BackupPlan within which to create the Backup.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -728,7 +728,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The BackupPlan within which to create the Backup.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>

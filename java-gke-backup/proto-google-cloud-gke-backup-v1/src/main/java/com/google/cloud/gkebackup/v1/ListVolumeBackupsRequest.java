@@ -74,7 +74,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The Backup that contains the VolumeBackups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The Backup that contains the VolumeBackups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>
@@ -751,7 +751,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The Backup that contains the VolumeBackups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -776,7 +776,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The Backup that contains the VolumeBackups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -801,7 +801,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The Backup that contains the VolumeBackups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -825,7 +825,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The Backup that contains the VolumeBackups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -845,7 +845,7 @@ public final class ListVolumeBackupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The Backup that contains the VolumeBackups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>

@@ -71,7 +71,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Full name of the VolumeRestore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Full name of the VolumeRestore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
    * </pre>
    *
    * <code>
@@ -468,7 +468,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>
@@ -493,7 +493,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>
@@ -542,7 +542,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>
@@ -562,7 +562,7 @@ public final class GetVolumeRestoreRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>

@@ -28,7 +28,7 @@ public interface CreateRestorePlanRequestOrBuilder
    *
    * <pre>
    * Required. The location within which to create the RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateRestorePlanRequestOrBuilder
    *
    * <pre>
    * Required. The location within which to create the RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>

@@ -71,7 +71,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Full name of the VolumeBackup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Full name of the VolumeBackup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
    * </pre>
    *
    * <code>
@@ -467,7 +467,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
      * </pre>
      *
      * <code>
@@ -492,7 +492,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
      * </pre>
      *
      * <code>
@@ -517,7 +517,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
      * </pre>
      *
      * <code>
@@ -541,7 +541,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
      * </pre>
      *
      * <code>
@@ -561,7 +561,7 @@ public final class GetVolumeBackupRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`
      * </pre>
      *
      * <code>

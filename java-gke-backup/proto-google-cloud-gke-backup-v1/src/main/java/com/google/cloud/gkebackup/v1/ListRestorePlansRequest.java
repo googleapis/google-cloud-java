@@ -74,7 +74,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The location that contains the RestorePlans to list.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The location that contains the RestorePlans to list.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -751,7 +751,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The location that contains the RestorePlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -776,7 +776,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The location that contains the RestorePlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -801,7 +801,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The location that contains the RestorePlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -825,7 +825,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The location that contains the RestorePlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -845,7 +845,7 @@ public final class ListRestorePlansRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The location that contains the RestorePlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>

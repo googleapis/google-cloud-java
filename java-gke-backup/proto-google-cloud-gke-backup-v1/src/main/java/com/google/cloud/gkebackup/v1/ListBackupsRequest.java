@@ -74,7 +74,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The BackupPlan that contains the Backups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The BackupPlan that contains the Backups to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -750,7 +750,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The BackupPlan that contains the Backups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -775,7 +775,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The BackupPlan that contains the Backups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -800,7 +800,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The BackupPlan that contains the Backups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -824,7 +824,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The BackupPlan that contains the Backups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The BackupPlan that contains the Backups to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>

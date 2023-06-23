@@ -63,7 +63,8 @@ public interface RestoreConfigOrBuilder
    * Defines the behavior for handling the situation where cluster-scoped
    * resources being restored already exist in the target cluster. This MUST be
    * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+   * is not empty.
    * </pre>
    *
    * <code>
@@ -80,7 +81,8 @@ public interface RestoreConfigOrBuilder
    * Defines the behavior for handling the situation where cluster-scoped
    * resources being restored already exist in the target cluster. This MUST be
    * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+   * is not empty.
    * </pre>
    *
    * <code>

@@ -28,7 +28,7 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -185,12 +185,11 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
    *
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -204,12 +203,11 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
    *
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -352,9 +350,9 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to
@@ -371,9 +369,9 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to

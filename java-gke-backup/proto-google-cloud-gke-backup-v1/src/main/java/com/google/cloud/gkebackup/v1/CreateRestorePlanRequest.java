@@ -72,7 +72,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The location within which to create the RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The location within which to create the RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -646,7 +646,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The location within which to create the RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -671,7 +671,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The location within which to create the RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -696,7 +696,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The location within which to create the RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -720,7 +720,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The location within which to create the RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The location within which to create the RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
