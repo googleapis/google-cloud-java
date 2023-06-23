@@ -115,6 +115,48 @@ public class Table extends TableInfo {
     }
 
     @Override
+    Builder setNumTimeTravelPhysicalBytes(Long numTimeTravelPhysicalBytes) {
+      infoBuilder.setNumTimeTravelPhysicalBytes(numTimeTravelPhysicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumTotalLogicalBytes(Long numTotalLogicalBytes) {
+      infoBuilder.setNumTotalLogicalBytes(numTotalLogicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumActiveLogicalBytes(Long numActiveLogicalBytes) {
+      infoBuilder.setNumActiveLogicalBytes(numActiveLogicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumLongTermLogicalBytes(Long numLongTermLogicalBytes) {
+      infoBuilder.setNumLongTermLogicalBytes(numLongTermLogicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumTotalPhysicalBytes(Long numTotalPhysicalBytes) {
+      infoBuilder.setNumTotalPhysicalBytes(numTotalPhysicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumActivePhysicalBytes(Long numActivePhysicalBytes) {
+      infoBuilder.setNumActivePhysicalBytes(numActivePhysicalBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumLongTermPhysicalBytes(Long numLongTermPhysicalBytes) {
+      infoBuilder.setNumLongTermPhysicalBytes(numLongTermPhysicalBytes);
+      return this;
+    }
+
+    @Override
     Builder setNumRows(BigInteger numRows) {
       infoBuilder.setNumRows(numRows);
       return this;

@@ -67,6 +67,13 @@ public class TableInfo implements Serializable {
   private final Long lastModifiedTime;
   private final Long numBytes;
   private final Long numLongTermBytes;
+  private final Long numTimeTravelPhysicalBytes;
+  private final Long numTotalLogicalBytes;
+  private final Long numActiveLogicalBytes;
+  private final Long numLongTermLogicalBytes;
+  private final Long numTotalPhysicalBytes;
+  private final Long numActivePhysicalBytes;
+  private final Long numLongTermPhysicalBytes;
   private final BigInteger numRows;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
@@ -103,6 +110,20 @@ public class TableInfo implements Serializable {
     abstract Builder setNumBytes(Long numBytes);
 
     abstract Builder setNumLongTermBytes(Long numLongTermBytes);
+
+    abstract Builder setNumTimeTravelPhysicalBytes(Long numTimeTravelPhysicalBytes);
+
+    abstract Builder setNumTotalLogicalBytes(Long numTotalLogicalBytes);
+
+    abstract Builder setNumActiveLogicalBytes(Long numActiveLogicalBytes);
+
+    abstract Builder setNumLongTermLogicalBytes(Long numLongTermLogicalBytes);
+
+    abstract Builder setNumTotalPhysicalBytes(Long numTotalPhysicalBytes);
+
+    abstract Builder setNumActivePhysicalBytes(Long numActivePhysicalBytes);
+
+    abstract Builder setNumLongTermPhysicalBytes(Long numLongTermPhysicalBytes);
 
     abstract Builder setNumRows(BigInteger numRows);
 
@@ -160,6 +181,13 @@ public class TableInfo implements Serializable {
     private Long lastModifiedTime;
     private Long numBytes;
     private Long numLongTermBytes;
+    private Long numTimeTravelPhysicalBytes;
+    private Long numTotalLogicalBytes;
+    private Long numActiveLogicalBytes;
+    private Long numLongTermLogicalBytes;
+    private Long numTotalPhysicalBytes;
+    private Long numActivePhysicalBytes;
+    private Long numLongTermPhysicalBytes;
     private BigInteger numRows;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
@@ -183,6 +211,13 @@ public class TableInfo implements Serializable {
       this.lastModifiedTime = tableInfo.lastModifiedTime;
       this.numBytes = tableInfo.numBytes;
       this.numLongTermBytes = tableInfo.numLongTermBytes;
+      this.numTimeTravelPhysicalBytes = tableInfo.numTimeTravelPhysicalBytes;
+      this.numTotalLogicalBytes = tableInfo.numTotalLogicalBytes;
+      this.numActiveLogicalBytes = tableInfo.numActiveLogicalBytes;
+      this.numLongTermLogicalBytes = tableInfo.numLongTermLogicalBytes;
+      this.numTotalPhysicalBytes = tableInfo.numTotalPhysicalBytes;
+      this.numActivePhysicalBytes = tableInfo.numActivePhysicalBytes;
+      this.numLongTermPhysicalBytes = tableInfo.numLongTermPhysicalBytes;
       this.numRows = tableInfo.numRows;
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
@@ -207,6 +242,13 @@ public class TableInfo implements Serializable {
       this.selfLink = tablePb.getSelfLink();
       this.numBytes = tablePb.getNumBytes();
       this.numLongTermBytes = tablePb.getNumLongTermBytes();
+      this.numTimeTravelPhysicalBytes = tablePb.getNumTimeTravelPhysicalBytes();
+      this.numTotalLogicalBytes = tablePb.getNumTotalLogicalBytes();
+      this.numActiveLogicalBytes = tablePb.getNumActiveLogicalBytes();
+      this.numLongTermLogicalBytes = tablePb.getNumLongTermLogicalBytes();
+      this.numTotalPhysicalBytes = tablePb.getNumTotalPhysicalBytes();
+      this.numActivePhysicalBytes = tablePb.getNumActivePhysicalBytes();
+      this.numLongTermPhysicalBytes = tablePb.getNumLongTermPhysicalBytes();
       this.numRows = tablePb.getNumRows();
       this.definition = TableDefinition.fromPb(tablePb);
       if (tablePb.getEncryptionConfiguration() != null) {
@@ -275,6 +317,48 @@ public class TableInfo implements Serializable {
     @Override
     Builder setNumLongTermBytes(Long numLongTermBytes) {
       this.numLongTermBytes = numLongTermBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumTimeTravelPhysicalBytes(Long numTimeTravelPhysicalBytes) {
+      this.numTimeTravelPhysicalBytes = numTimeTravelPhysicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumTotalLogicalBytes(Long numTotalLogicalBytes) {
+      this.numTotalLogicalBytes = numTotalLogicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumActiveLogicalBytes(Long numActiveLogicalBytes) {
+      this.numActiveLogicalBytes = numActiveLogicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumLongTermLogicalBytes(Long numLongTermLogicalBytes) {
+      this.numLongTermLogicalBytes = numLongTermLogicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumTotalPhysicalBytes(Long numTotalPhysicalBytes) {
+      this.numTotalPhysicalBytes = numTotalPhysicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumActivePhysicalBytes(Long numActivePhysicalBytes) {
+      this.numActivePhysicalBytes = numActivePhysicalBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumLongTermPhysicalBytes(Long numLongTermPhysicalBytes) {
+      this.numLongTermPhysicalBytes = numLongTermPhysicalBytes;
       return this;
     }
 
@@ -354,6 +438,13 @@ public class TableInfo implements Serializable {
     this.lastModifiedTime = builder.lastModifiedTime;
     this.numBytes = builder.numBytes;
     this.numLongTermBytes = builder.numLongTermBytes;
+    this.numTimeTravelPhysicalBytes = builder.numTimeTravelPhysicalBytes;
+    this.numTotalLogicalBytes = builder.numTotalLogicalBytes;
+    this.numActiveLogicalBytes = builder.numActiveLogicalBytes;
+    this.numLongTermLogicalBytes = builder.numLongTermLogicalBytes;
+    this.numTotalPhysicalBytes = builder.numTotalPhysicalBytes;
+    this.numActivePhysicalBytes = builder.numActivePhysicalBytes;
+    this.numLongTermPhysicalBytes = builder.numLongTermPhysicalBytes;
     this.numRows = builder.numRows;
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
@@ -440,6 +531,69 @@ public class TableInfo implements Serializable {
     return numLongTermBytes;
   }
 
+  /**
+   * Returns the number of time travel physical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumTimeTravelPhysicalBytes() {
+    return this.numTimeTravelPhysicalBytes;
+  }
+
+  /**
+   * Returns the number of total logical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumTotalLogicalBytes() {
+    return this.numTotalLogicalBytes;
+  }
+
+  /**
+   * Returns the number of active logical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumActiveLogicalBytes() {
+    return this.numActiveLogicalBytes;
+  }
+
+  /**
+   * Returns the number of long term logical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumLongTermLogicalBytes() {
+    return this.numLongTermLogicalBytes;
+  }
+
+  /**
+   * Returns the number of total physical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumTotalPhysicalBytes() {
+    return this.numTotalPhysicalBytes;
+  }
+
+  /**
+   * Returns the number of active physical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumActivePhysicalBytes() {
+    return this.numActivePhysicalBytes;
+  }
+
+  /**
+   * Returns the number of long term physical bytes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   */
+  public Long getNumLongTermPhysicalBytes() {
+    return this.numLongTermPhysicalBytes;
+  }
+
   /** Returns the number of rows of data in this table */
   public BigInteger getNumRows() {
     return numRows;
@@ -495,6 +649,13 @@ public class TableInfo implements Serializable {
         .add("lastModifiedTime", lastModifiedTime)
         .add("numBytes", numBytes)
         .add("numLongTermBytes", numLongTermBytes)
+        .add("numTimeTravelPhysicalBytes", numTimeTravelPhysicalBytes)
+        .add("numTotalLogicalBytes", numTotalLogicalBytes)
+        .add("numActiveLogicalBytes", numActiveLogicalBytes)
+        .add("numLongTermLogicalBytes", numLongTermLogicalBytes)
+        .add("numTotalPhysicalBytes", numTotalPhysicalBytes)
+        .add("numActivePhysicalBytes", numActivePhysicalBytes)
+        .add("numLongTermPhysicalBytes", numLongTermPhysicalBytes)
         .add("numRows", numRows)
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)

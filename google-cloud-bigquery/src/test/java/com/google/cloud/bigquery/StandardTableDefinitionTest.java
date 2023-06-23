@@ -51,6 +51,13 @@ public class StandardTableDefinitionTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
   private static final Long NUM_LONG_TERM_BYTES = 18L;
+  private static final Long NUM_TIME_TRAVEL_PHYSICAL_BYTES = 21L;
+  private static final Long NUM_TOTAL_LOGICAL_BYTES = 22L;
+  private static final Long NUM_ACTIVE_LOGICAL_BYTES = 23L;
+  private static final Long NUM_LONG_TERM_LOGICAL_BYTES = 24L;
+  private static final Long NUM_TOTAL_PHYSICAL_BYTES = 25L;
+  private static final Long NUM_ACTIVE_PHYSICAL_BYTES = 26L;
+  private static final Long NUM_LONG_TERM_PHYSICAL_BYTES = 27L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
@@ -64,6 +71,13 @@ public class StandardTableDefinitionTest {
           .setNumBytes(NUM_BYTES)
           .setNumRows(NUM_ROWS)
           .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
+          .setNumTimeTravelPhysicalBytes(NUM_TIME_TRAVEL_PHYSICAL_BYTES)
+          .setNumTotalLogicalBytes(NUM_TOTAL_LOGICAL_BYTES)
+          .setNumActiveLogicalBytes(NUM_ACTIVE_LOGICAL_BYTES)
+          .setNumLongTermLogicalBytes(NUM_LONG_TERM_LOGICAL_BYTES)
+          .setNumTotalPhysicalBytes(NUM_TOTAL_PHYSICAL_BYTES)
+          .setNumActivePhysicalBytes(NUM_ACTIVE_PHYSICAL_BYTES)
+          .setNumLongTermPhysicalBytes(NUM_LONG_TERM_PHYSICAL_BYTES)
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
@@ -93,6 +107,13 @@ public class StandardTableDefinitionTest {
     assertEquals(LOCATION, TABLE_DEFINITION.getLocation());
     assertEquals(NUM_BYTES, TABLE_DEFINITION.getNumBytes());
     assertEquals(NUM_LONG_TERM_BYTES, TABLE_DEFINITION.getNumLongTermBytes());
+    assertEquals(NUM_TIME_TRAVEL_PHYSICAL_BYTES, TABLE_DEFINITION.getNumTimeTravelPhysicalBytes());
+    assertEquals(NUM_TOTAL_LOGICAL_BYTES, TABLE_DEFINITION.getNumTotalLogicalBytes());
+    assertEquals(NUM_ACTIVE_LOGICAL_BYTES, TABLE_DEFINITION.getNumActiveLogicalBytes());
+    assertEquals(NUM_LONG_TERM_LOGICAL_BYTES, TABLE_DEFINITION.getNumLongTermLogicalBytes());
+    assertEquals(NUM_TOTAL_PHYSICAL_BYTES, TABLE_DEFINITION.getNumTotalPhysicalBytes());
+    assertEquals(NUM_ACTIVE_PHYSICAL_BYTES, TABLE_DEFINITION.getNumActivePhysicalBytes());
+    assertEquals(NUM_LONG_TERM_PHYSICAL_BYTES, TABLE_DEFINITION.getNumLongTermPhysicalBytes());
     assertEquals(NUM_ROWS, TABLE_DEFINITION.getNumRows());
     assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.getStreamingBuffer());
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
@@ -118,6 +139,13 @@ public class StandardTableDefinitionTest {
     assertNull(definition.getLocation());
     assertNull(definition.getNumBytes());
     assertNull(definition.getNumLongTermBytes());
+    assertNull(definition.getNumTimeTravelPhysicalBytes());
+    assertNull(definition.getNumTotalLogicalBytes());
+    assertNull(definition.getNumActiveLogicalBytes());
+    assertNull(definition.getNumLongTermLogicalBytes());
+    assertNull(definition.getNumTotalPhysicalBytes());
+    assertNull(definition.getNumActivePhysicalBytes());
+    assertNull(definition.getNumLongTermPhysicalBytes());
     assertNull(definition.getNumRows());
     assertNull(definition.getStreamingBuffer());
     assertNull(definition.getTimePartitioning());
@@ -176,6 +204,13 @@ public class StandardTableDefinitionTest {
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getNumBytes(), value.getNumBytes());
     assertEquals(expected.getNumLongTermBytes(), value.getNumLongTermBytes());
+    assertEquals(expected.getNumTimeTravelPhysicalBytes(), value.getNumTimeTravelPhysicalBytes());
+    assertEquals(expected.getNumTotalLogicalBytes(), value.getNumTotalLogicalBytes());
+    assertEquals(expected.getNumActiveLogicalBytes(), value.getNumActiveLogicalBytes());
+    assertEquals(expected.getNumLongTermLogicalBytes(), value.getNumLongTermLogicalBytes());
+    assertEquals(expected.getNumTotalPhysicalBytes(), value.getNumTotalPhysicalBytes());
+    assertEquals(expected.getNumActivePhysicalBytes(), value.getNumActivePhysicalBytes());
+    assertEquals(expected.getNumLongTermPhysicalBytes(), value.getNumLongTermPhysicalBytes());
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStreamingBuffer(), value.getStreamingBuffer());

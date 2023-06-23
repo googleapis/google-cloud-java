@@ -58,6 +58,13 @@ public class TableInfoTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
   private static final Long NUM_LONG_TERM_BYTES = 21L;
+  private static final Long NUM_TIME_TRAVEL_PHYSICAL_BYTES = 21L;
+  private static final Long NUM_TOTAL_LOGICAL_BYTES = 22L;
+  private static final Long NUM_ACTIVE_LOGICAL_BYTES = 23L;
+  private static final Long NUM_LONG_TERM_LOGICAL_BYTES = 24L;
+  private static final Long NUM_TOTAL_PHYSICAL_BYTES = 25L;
+  private static final Long NUM_ACTIVE_PHYSICAL_BYTES = 26L;
+  private static final Long NUM_LONG_TERM_PHYSICAL_BYTES = 27L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StandardTableDefinition.StreamingBuffer STREAMING_BUFFER =
@@ -67,6 +74,13 @@ public class TableInfoTest {
           .setLocation(LOCATION)
           .setNumBytes(NUM_BYTES)
           .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
+          .setNumTimeTravelPhysicalBytes(NUM_TIME_TRAVEL_PHYSICAL_BYTES)
+          .setNumTotalLogicalBytes(NUM_TOTAL_LOGICAL_BYTES)
+          .setNumActiveLogicalBytes(NUM_ACTIVE_LOGICAL_BYTES)
+          .setNumLongTermLogicalBytes(NUM_LONG_TERM_LOGICAL_BYTES)
+          .setNumTotalPhysicalBytes(NUM_TOTAL_PHYSICAL_BYTES)
+          .setNumActivePhysicalBytes(NUM_ACTIVE_PHYSICAL_BYTES)
+          .setNumLongTermPhysicalBytes(NUM_LONG_TERM_PHYSICAL_BYTES)
           .setNumRows(NUM_ROWS)
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
@@ -102,6 +116,13 @@ public class TableInfoTest {
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setNumBytes(NUM_BYTES)
           .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
+          .setNumTimeTravelPhysicalBytes(NUM_TIME_TRAVEL_PHYSICAL_BYTES)
+          .setNumTotalLogicalBytes(NUM_TOTAL_LOGICAL_BYTES)
+          .setNumActiveLogicalBytes(NUM_ACTIVE_LOGICAL_BYTES)
+          .setNumLongTermLogicalBytes(NUM_LONG_TERM_LOGICAL_BYTES)
+          .setNumTotalPhysicalBytes(NUM_TOTAL_PHYSICAL_BYTES)
+          .setNumActivePhysicalBytes(NUM_ACTIVE_PHYSICAL_BYTES)
+          .setNumLongTermPhysicalBytes(NUM_LONG_TERM_PHYSICAL_BYTES)
           .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
@@ -166,6 +187,13 @@ public class TableInfoTest {
     assertEquals(SELF_LINK, TABLE_INFO.getSelfLink());
     assertEquals(NUM_BYTES, TABLE_INFO.getNumBytes());
     assertEquals(NUM_LONG_TERM_BYTES, TABLE_INFO.getNumLongTermBytes());
+    assertEquals(NUM_TIME_TRAVEL_PHYSICAL_BYTES, TABLE_INFO.getNumTimeTravelPhysicalBytes());
+    assertEquals(NUM_TOTAL_LOGICAL_BYTES, TABLE_INFO.getNumTotalLogicalBytes());
+    assertEquals(NUM_ACTIVE_LOGICAL_BYTES, TABLE_INFO.getNumActiveLogicalBytes());
+    assertEquals(NUM_LONG_TERM_LOGICAL_BYTES, TABLE_INFO.getNumLongTermLogicalBytes());
+    assertEquals(NUM_TOTAL_PHYSICAL_BYTES, TABLE_INFO.getNumTotalPhysicalBytes());
+    assertEquals(NUM_ACTIVE_PHYSICAL_BYTES, TABLE_INFO.getNumActivePhysicalBytes());
+    assertEquals(NUM_LONG_TERM_PHYSICAL_BYTES, TABLE_INFO.getNumLongTermPhysicalBytes());
     assertEquals(BigInteger.valueOf(NUM_ROWS), TABLE_INFO.getNumRows());
     assertEquals(REQUIRE_PARTITION_FILTER, TABLE_INFO.getRequirePartitionFilter());
 
@@ -271,6 +299,13 @@ public class TableInfoTest {
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getNumBytes(), value.getNumBytes());
     assertEquals(expected.getNumLongTermBytes(), value.getNumLongTermBytes());
+    assertEquals(expected.getNumTimeTravelPhysicalBytes(), value.getNumTimeTravelPhysicalBytes());
+    assertEquals(expected.getNumTotalLogicalBytes(), value.getNumTotalLogicalBytes());
+    assertEquals(expected.getNumActiveLogicalBytes(), value.getNumActiveLogicalBytes());
+    assertEquals(expected.getNumLongTermLogicalBytes(), value.getNumLongTermLogicalBytes());
+    assertEquals(expected.getNumTotalPhysicalBytes(), value.getNumTotalPhysicalBytes());
+    assertEquals(expected.getNumActivePhysicalBytes(), value.getNumActivePhysicalBytes());
+    assertEquals(expected.getNumLongTermPhysicalBytes(), value.getNumLongTermPhysicalBytes());
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());
