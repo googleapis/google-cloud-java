@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.16.0](https://github.com/googleapis/java-datastore/compare/v2.15.0...v2.16.0) (2023-06-22)
+
+
+### Features
+
+* Remove BetaApi annotation from OR query API ([#1118](https://github.com/googleapis/java-datastore/issues/1118)) ([b08dc9a](https://github.com/googleapis/java-datastore/commit/b08dc9ac796bf066e447633644c4380aa2c26753))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#1121](https://github.com/googleapis/java-datastore/issues/1121)) ([65dd46d](https://github.com/googleapis/java-datastore/commit/65dd46d501de1360701146f4a9d7231dccd1e3c2))
+* Update dependency com.google.errorprone:error_prone_core to v2.20.0 ([#1115](https://github.com/googleapis/java-datastore/issues/1115)) ([381d76e](https://github.com/googleapis/java-datastore/commit/381d76e3e079752f9f02d488603e3b89979018ea))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.23 ([#1114](https://github.com/googleapis/java-datastore/issues/1114)) ([7f58868](https://github.com/googleapis/java-datastore/commit/7f588682212e1a8f7e27d4cacb5995c0c129c090))
+
 ## [2.15.0](https://github.com/googleapis/java-datastore/compare/v2.14.7...v2.15.0) (2023-06-09)
 
 
