@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.29.0](https://github.com/googleapis/java-bigquery/compare/v2.28.0...v2.29.0) (2023-06-23)
+
+
+### Features
+
+* Increase default Read API timeout to 60s ([#2764](https://github.com/googleapis/java-bigquery/issues/2764)) ([f606d0b](https://github.com/googleapis/java-bigquery/commit/f606d0b28ca8f65654413a99ab698f35e3befce1))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#2771](https://github.com/googleapis/java-bigquery/issues/2771)) ([7537e0f](https://github.com/googleapis/java-bigquery/commit/7537e0f31d8f4696559ef09c7bd284bf78217280))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.23 ([#2759](https://github.com/googleapis/java-bigquery/issues/2759)) ([27ba48a](https://github.com/googleapis/java-bigquery/commit/27ba48a0cab331f2d233ba96fed710c11d31dc53))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.23 ([#2760](https://github.com/googleapis/java-bigquery/issues/2760)) ([8cddf8f](https://github.com/googleapis/java-bigquery/commit/8cddf8fd286f51cd75aba0da6a52cbc12cab7e2a))
+
 ## [2.28.0](https://github.com/googleapis/java-bigquery/compare/v2.27.1...v2.28.0) (2023-06-19)
 
 
