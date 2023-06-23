@@ -30,17 +30,27 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.Environment;
+import com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse;
+import com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotResponse;
+import com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -137,6 +147,42 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandMethodDescriptor =
+          MethodDescriptor.<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1beta1.Environments/ExecuteAirflowCommand")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteAirflowCommandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteAirflowCommandResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandMethodDescriptor =
+          MethodDescriptor.<StopAirflowCommandRequest, StopAirflowCommandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1beta1.Environments/StopAirflowCommand")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StopAirflowCommandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StopAirflowCommandResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandMethodDescriptor =
+          MethodDescriptor.<PollAirflowCommandRequest, PollAirflowCommandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1beta1.Environments/PollAirflowCommand")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PollAirflowCommandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PollAirflowCommandResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SaveSnapshotRequest, Operation>
       saveSnapshotMethodDescriptor =
           MethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
@@ -155,6 +201,31 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   "google.cloud.orchestration.airflow.service.v1beta1.Environments/LoadSnapshot")
               .setRequestMarshaller(ProtoUtils.marshaller(LoadSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DatabaseFailoverRequest, Operation>
+      databaseFailoverMethodDescriptor =
+          MethodDescriptor.<DatabaseFailoverRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1beta1.Environments/DatabaseFailover")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DatabaseFailoverRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesMethodDescriptor =
+          MethodDescriptor
+              .<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1beta1.Environments/FetchDatabaseProperties")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchDatabasePropertiesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchDatabasePropertiesResponse.getDefaultInstance()))
               .build();
 
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
@@ -177,12 +248,24 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable;
   private final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
       checkUpgradeOperationCallable;
+  private final UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable;
+  private final UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable;
+  private final UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable;
   private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
   private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationCallable;
   private final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable;
   private final OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationCallable;
+  private final UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable;
+  private final OperationCallable<
+          DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable;
+  private final UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -297,6 +380,40 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+        executeAirflowCommandTransportSettings =
+            GrpcCallSettings
+                .<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(executeAirflowCommandMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<StopAirflowCommandRequest, StopAirflowCommandResponse>
+        stopAirflowCommandTransportSettings =
+            GrpcCallSettings.<StopAirflowCommandRequest, StopAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(stopAirflowCommandMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<PollAirflowCommandRequest, PollAirflowCommandResponse>
+        pollAirflowCommandTransportSettings =
+            GrpcCallSettings.<PollAirflowCommandRequest, PollAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(pollAirflowCommandMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         GrpcCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(saveSnapshotMethodDescriptor)
@@ -317,6 +434,28 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DatabaseFailoverRequest, Operation> databaseFailoverTransportSettings =
+        GrpcCallSettings.<DatabaseFailoverRequest, Operation>newBuilder()
+            .setMethodDescriptor(databaseFailoverMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+        fetchDatabasePropertiesTransportSettings =
+            GrpcCallSettings
+                .<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>newBuilder()
+                .setMethodDescriptor(fetchDatabasePropertiesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createEnvironmentCallable =
         callableFactory.createUnaryCallable(
@@ -378,6 +517,21 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             settings.checkUpgradeOperationSettings(),
             clientContext,
             operationsStub);
+    this.executeAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            executeAirflowCommandTransportSettings,
+            settings.executeAirflowCommandSettings(),
+            clientContext);
+    this.stopAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            stopAirflowCommandTransportSettings,
+            settings.stopAirflowCommandSettings(),
+            clientContext);
+    this.pollAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            pollAirflowCommandTransportSettings,
+            settings.pollAirflowCommandSettings(),
+            clientContext);
     this.saveSnapshotCallable =
         callableFactory.createUnaryCallable(
             saveSnapshotTransportSettings, settings.saveSnapshotSettings(), clientContext);
@@ -396,6 +550,20 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             settings.loadSnapshotOperationSettings(),
             clientContext,
             operationsStub);
+    this.databaseFailoverCallable =
+        callableFactory.createUnaryCallable(
+            databaseFailoverTransportSettings, settings.databaseFailoverSettings(), clientContext);
+    this.databaseFailoverOperationCallable =
+        callableFactory.createOperationCallable(
+            databaseFailoverTransportSettings,
+            settings.databaseFailoverOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchDatabasePropertiesCallable =
+        callableFactory.createUnaryCallable(
+            fetchDatabasePropertiesTransportSettings,
+            settings.fetchDatabasePropertiesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -478,6 +646,24 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   }
 
   @Override
+  public UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable() {
+    return executeAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable() {
+    return stopAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable() {
+    return pollAirflowCommandCallable;
+  }
+
+  @Override
   public UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
     return saveSnapshotCallable;
   }
@@ -497,6 +683,23 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationCallable() {
     return loadSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable() {
+    return databaseFailoverCallable;
+  }
+
+  @Override
+  public OperationCallable<DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable() {
+    return databaseFailoverOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable() {
+    return fetchDatabasePropertiesCallable;
   }
 
   @Override

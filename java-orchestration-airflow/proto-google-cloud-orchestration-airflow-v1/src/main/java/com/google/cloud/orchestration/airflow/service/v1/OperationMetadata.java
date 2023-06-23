@@ -360,6 +360,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>LOAD_SNAPSHOT = 6;</code>
      */
     LOAD_SNAPSHOT(6),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers failover of environment's Cloud SQL instance (only for highly
+     * resilient environments).
+     * </pre>
+     *
+     * <code>DATABASE_FAILOVER = 7;</code>
+     */
+    DATABASE_FAILOVER(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -433,6 +444,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>LOAD_SNAPSHOT = 6;</code>
      */
     public static final int LOAD_SNAPSHOT_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Triggers failover of environment's Cloud SQL instance (only for highly
+     * resilient environments).
+     * </pre>
+     *
+     * <code>DATABASE_FAILOVER = 7;</code>
+     */
+    public static final int DATABASE_FAILOVER_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -472,6 +494,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return SAVE_SNAPSHOT;
         case 6:
           return LOAD_SNAPSHOT;
+        case 7:
+          return DATABASE_FAILOVER;
         default:
           return null;
       }

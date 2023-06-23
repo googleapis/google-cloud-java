@@ -737,4 +737,40 @@ public interface EnvironmentConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder
       getRecoveryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resilience mode of the Cloud Composer Environment.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.2.0-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resilienceMode.
+   */
+  int getResilienceModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resilience mode of the Cloud Composer Environment.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.2.0-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resilienceMode.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+      getResilienceMode();
 }
