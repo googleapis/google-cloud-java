@@ -1,5 +1,71 @@
 # Changelog
 
+## [1.14.0](https://github.com/googleapis/google-cloud-java/compare/v1.13.0...v1.14.0) (2023-06-23)
+
+
+### Features
+
+* [aiplatform] add bias_configs to ModelEvaluation ([3c65d52](https://github.com/googleapis/google-cloud-java/commit/3c65d5290a69125c115e765cd13b2e67aa6f5783))
+* [aiplatform] add UpdateExplanationDataset to aiplatform ([#9549](https://github.com/googleapis/google-cloud-java/issues/9549)) ([3c65d52](https://github.com/googleapis/google-cloud-java/commit/3c65d5290a69125c115e765cd13b2e67aa6f5783))
+* [alloydb] Added new SSL modes ALLOW_UNENCRYPTED_AND_ENCRYPTED, ENCRYPTED_ONLY ([#9538](https://github.com/googleapis/google-cloud-java/issues/9538)) ([1dfd3f3](https://github.com/googleapis/google-cloud-java/commit/1dfd3f3eb12f114e626cc098d3ae7c1f7c5527e6))
+* [batch] implement minCpuPlatform ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+* [cloudbilling] added resource_reference for name in GetProjectBillingInfoRequest message ([#9555](https://github.com/googleapis/google-cloud-java/issues/9555)) ([cf43432](https://github.com/googleapis/google-cloud-java/commit/cf43432340ad1b64633cec21d2d4fd4c37dedc10))
+* [cloudchannel] Add support for ListSkuGroups and ListSkuGroupBillableSkus APIs in Cloud Channel APIs ([#9548](https://github.com/googleapis/google-cloud-java/issues/9548)) ([9c1a805](https://github.com/googleapis/google-cloud-java/commit/9c1a8055746f3e0b11390ba208e73118bef5857b))
+* [clouddeploy] Add deploy parameters for cloud deploy ([#9570](https://github.com/googleapis/google-cloud-java/issues/9570)) ([c6b3360](https://github.com/googleapis/google-cloud-java/commit/c6b3360a32c98eca308559f5293f866a7b9e2a31))
+* [container] add API for GPU driver installation config ([#9534](https://github.com/googleapis/google-cloud-java/issues/9534)) ([1c2b1d4](https://github.com/googleapis/google-cloud-java/commit/1c2b1d4a65e84e5926c319d951381dc5a4f472c4))
+* [dialogflow-cx] added include_bigquery_export_settings to ExportAgentRequest ([#9537](https://github.com/googleapis/google-cloud-java/issues/9537)) ([7edc704](https://github.com/googleapis/google-cloud-java/commit/7edc704578221350c075febef00e4b4a7c3e7ef0))
+* [dialogflow] added dialogflow_assist_answer ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* [dialogflow] added dialogflow_assist_answer ([#9565](https://github.com/googleapis/google-cloud-java/issues/9565)) ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* [discoveryengine] support extractive content in search ([#9554](https://github.com/googleapis/google-cloud-java/issues/9554)) ([af36e0a](https://github.com/googleapis/google-cloud-java/commit/af36e0ac5a36f277074ab6b1448170eb2ec50940))
+* [documentai] add StyleInfo to document.proto ([#9551](https://github.com/googleapis/google-cloud-java/issues/9551)) ([c873d10](https://github.com/googleapis/google-cloud-java/commit/c873d103a625d41838c582737f4b98da6605d47f))
+* [migrationcenter] Migration Center API ([#9532](https://github.com/googleapis/google-cloud-java/issues/9532)) ([07a8685](https://github.com/googleapis/google-cloud-java/commit/07a86854bd8a996b5835d086418189a8ac89c9ad))
+* [networkmanagement] add forwarding_rule field to Connectivity Test Endpoint proto ([#9576](https://github.com/googleapis/google-cloud-java/issues/9576)) ([53e7f84](https://github.com/googleapis/google-cloud-java/commit/53e7f8498a9dfd4794ea081e410230cce3e969f8))
+* [orchestration-airflow] added RPCs StopAirflowCommand, ExecuteAirflowCommand, PollAirflowCommand, DatabaseFailover, FetchDatabaseProperties ([#9543](https://github.com/googleapis/google-cloud-java/issues/9543)) ([1a2fab1](https://github.com/googleapis/google-cloud-java/commit/1a2fab1495e09d03276c7bf5dac44a429915048e))
+* [securitycenter] Add user agent and DLP parent type fields to finding's list of attributes ([#9535](https://github.com/googleapis/google-cloud-java/issues/9535)) ([48b1b5d](https://github.com/googleapis/google-cloud-java/commit/48b1b5d4843f5fd334b80b754054770cf209e8a3))
+* [securitycenter] Mark the Asset APIs as deprecated in client libraries ([#9575](https://github.com/googleapis/google-cloud-java/issues/9575)) ([0b25cfa](https://github.com/googleapis/google-cloud-java/commit/0b25cfaf7f9b668e7aea88a09d3eef49b8a9a7b3))
+* [vmwareengine] Adding private connection CRUD, updating management subnets and time-limited PC features ([#9531](https://github.com/googleapis/google-cloud-java/issues/9531)) ([bb8a4bc](https://github.com/googleapis/google-cloud-java/commit/bb8a4bc8022d232a658c7a43fd57f8e976872143))
+* add `AdsWebConversionDataExportScope` enum to the Admin API v1alpha ([a093cb3](https://github.com/googleapis/google-cloud-java/commit/a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24))
+* add `AdsWebConversionDataExportScope` enum to the Admin API v1alpha ([e2f7dc3](https://github.com/googleapis/google-cloud-java/commit/e2f7dc385da8bfa65b70ee096e708d2a2f9f0863))
+* add redirected uri in search response ([af36e0a](https://github.com/googleapis/google-cloud-java/commit/af36e0ac5a36f277074ab6b1448170eb2ec50940))
+* add the `ads_web_conversion_data_export_scope` field to the `ReportingAttributionModel` type ([a093cb3](https://github.com/googleapis/google-cloud-java/commit/a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24))
+* add the `ads_web_conversion_data_export_scope` field to the `ReportingAttributionModel` type ([e2f7dc3](https://github.com/googleapis/google-cloud-java/commit/e2f7dc385da8bfa65b70ee096e708d2a2f9f0863))
+* added human_agent_side_config ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added human_agent_side_config ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added RPCs StopAirflowCommand, ExecuteAirflowCommand, PollAirflowCommand, DatabaseFailover, FetchDatabaseProperties ([1a2fab1](https://github.com/googleapis/google-cloud-java/commit/1a2fab1495e09d03276c7bf5dac44a429915048e))
+* added session_ttl ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added session_ttl ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggest_dialogflow_assists_response ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggest_dialogflow_assists_response ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggest_entity_extraction_response ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggest_entity_extraction_response ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggestion_input ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* added suggestion_input ([0daa460](https://github.com/googleapis/google-cloud-java/commit/0daa460b5020a3bdde087d470ba4b20d85a93254))
+* support docx/pptx/txt/csv in allowed data format ([af36e0a](https://github.com/googleapis/google-cloud-java/commit/af36e0ac5a36f277074ab6b1448170eb2ec50940))
+* update TaskGroup doc ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+* update the `default_uri` field of the `WebStreamData` type to be mutable ([a093cb3](https://github.com/googleapis/google-cloud-java/commit/a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24))
+* update the `default_uri` field of the `WebStreamData` type to be mutable ([e2f7dc3](https://github.com/googleapis/google-cloud-java/commit/e2f7dc385da8bfa65b70ee096e708d2a2f9f0863))
+* **v1:** [batch] Add support for scheduling_policy ([#9542](https://github.com/googleapis/google-cloud-java/issues/9542)) ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+
+
+### Bug Fixes
+
+* [essentialcontacts] mark fields in Contacts message as REQUIRED ([#9572](https://github.com/googleapis/google-cloud-java/issues/9572)) ([ac62dbc](https://github.com/googleapis/google-cloud-java/commit/ac62dbc7ddb2bf3b037c07316730ba2ce2420c45))
+* **ci:** CHANGELOG.md generation fix for 'no change' and yoshi-code-bot email ([#9566](https://github.com/googleapis/google-cloud-java/issues/9566)) ([6a5d805](https://github.com/googleapis/google-cloud-java/commit/6a5d80515d37aa6706caf8f6b7e9b5d50127c890))
+* **ci:** specifying fetch depth in CHANGELOG.md generation  ([#9564](https://github.com/googleapis/google-cloud-java/issues/9564)) ([0158232](https://github.com/googleapis/google-cloud-java/commit/0158232c5a99773e87d365f568c432de7e83d80b))
+* **deps:** [gke-backup] change dependency grpc-google-common-protos to test scope. ([594e965](https://github.com/googleapis/google-cloud-java/commit/594e96586cc13852ad38fb9725b39bc643cb5e20))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.14 ([#9522](https://github.com/googleapis/google-cloud-java/issues/9522)) ([78fbbe2](https://github.com/googleapis/google-cloud-java/commit/78fbbe2b03befda2cb3ed338ecdceeac74a4d103))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.4 ([#9518](https://github.com/googleapis/google-cloud-java/issues/9518)) ([36a2843](https://github.com/googleapis/google-cloud-java/commit/36a284334cd8b00da8aa71ec589fe1c6155fb64d))
+
+
+### Documentation
+
+* [analyticsadmin] announce the deprecation of first-click, linear, time-decay and position-based attribution models ([#9562](https://github.com/googleapis/google-cloud-java/issues/9562)) ([e2f7dc3](https://github.com/googleapis/google-cloud-java/commit/e2f7dc385da8bfa65b70ee096e708d2a2f9f0863))
+* [analyticsadmin] announce the deprecation of first-click, linear, time-decay and position-based attribution models ([#9563](https://github.com/googleapis/google-cloud-java/issues/9563)) ([a093cb3](https://github.com/googleapis/google-cloud-java/commit/a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24))
+* [gke-backup] minor documentation fixes ([#9533](https://github.com/googleapis/google-cloud-java/issues/9533)) ([7709391](https://github.com/googleapis/google-cloud-java/commit/7709391fa7cedae835d87dc3f6bcb575068a6ad6))
+* keep the API doc up-to-date with recent changes ([af36e0a](https://github.com/googleapis/google-cloud-java/commit/af36e0ac5a36f277074ab6b1448170eb2ec50940))
+* **v1:** Minor clarifications for TaskGroup and min_cpu_platform ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+
 ## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
 
 

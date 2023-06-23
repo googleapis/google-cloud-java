@@ -5,6 +5,504 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "bb8a4bc8022d232a658c7a43fd57f8e976872143",
+          "message": "[vmwareengine] Adding private connection CRUD, updating management subnets and time-limited PC features",
+          "issues": [
+            "9531"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "f8777952-a3b3-483c-8e80-c78b47145f7c",
+      "createTime": "2023-06-23T19:41:27.395Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "07a86854bd8a996b5835d086418189a8ac89c9ad",
+          "message": "[migrationcenter] Migration Center API",
+          "issues": [
+            "9532"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-migrationcenter",
+      "id": "943c04b3-833e-4e38-b5f8-55c1e726663a",
+      "createTime": "2023-06-23T19:41:27.393Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c873d103a625d41838c582737f4b98da6605d47f",
+          "message": "[documentai] add StyleInfo to document.proto",
+          "issues": [
+            "9551"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "c054dfe2-3483-4b63-a926-0b38a55f4adb",
+      "createTime": "2023-06-23T19:41:27.390Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1c2b1d4a65e84e5926c319d951381dc5a4f472c4",
+          "message": "[container] add API for GPU driver installation config",
+          "issues": [
+            "9534"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "f64d579a-fa9f-492d-a93f-05c32c8b6bda",
+      "createTime": "2023-06-23T19:41:27.387Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7edc704578221350c075febef00e4b4a7c3e7ef0",
+          "message": "[dialogflow-cx] added include_bigquery_export_settings to ExportAgentRequest",
+          "issues": [
+            "9537"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "a9c5e034-136f-4fad-9fa7-d0a0b901c1c1",
+      "createTime": "2023-06-23T19:41:27.385Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "ac62dbc7ddb2bf3b037c07316730ba2ce2420c45",
+          "message": "[essentialcontacts] mark fields in Contacts message as REQUIRED",
+          "issues": [
+            "9572"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-essential-contacts",
+      "id": "0b161d2a-0211-443a-8641-1e6b0c3cc069",
+      "createTime": "2023-06-23T19:41:27.382Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9c1a8055746f3e0b11390ba208e73118bef5857b",
+          "message": "[cloudchannel] Add support for ListSkuGroups and ListSkuGroupBillableSkus APIs in Cloud Channel APIs",
+          "issues": [
+            "9548"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "265f8bb3-5565-4794-86ca-196b6c21db31",
+      "createTime": "2023-06-23T19:41:27.380Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c6b3360a32c98eca308559f5293f866a7b9e2a31",
+          "message": "[clouddeploy] Add deploy parameters for cloud deploy",
+          "issues": [
+            "9570"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "1bdb96cd-78bd-4a1f-b7bb-091e6bfbb74c",
+      "createTime": "2023-06-23T19:41:27.375Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24",
+          "message": "update the `default_uri` field of the `WebStreamData` type to be mutable",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24",
+          "message": "add the `ads_web_conversion_data_export_scope` field to the `ReportingAttributionModel` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24",
+          "message": "add `AdsWebConversionDataExportScope` enum to the Admin API v1alpha",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24",
+          "message": "[analyticsadmin] announce the deprecation of first-click, linear, time-decay and position-based attribution models",
+          "issues": [
+            "9563"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "e2f7dc385da8bfa65b70ee096e708d2a2f9f0863",
+          "message": "update the `default_uri` field of the `WebStreamData` type to be mutable",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "e2f7dc385da8bfa65b70ee096e708d2a2f9f0863",
+          "message": "add the `ads_web_conversion_data_export_scope` field to the `ReportingAttributionModel` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "e2f7dc385da8bfa65b70ee096e708d2a2f9f0863",
+          "message": "add `AdsWebConversionDataExportScope` enum to the Admin API v1alpha",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "e2f7dc385da8bfa65b70ee096e708d2a2f9f0863",
+          "message": "[analyticsadmin] announce the deprecation of first-click, linear, time-decay and position-based attribution models",
+          "issues": [
+            "9562"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "4d36d01f-357b-477b-93c8-48388fc3d3ae",
+      "createTime": "2023-06-23T19:41:27.373Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3c65d5290a69125c115e765cd13b2e67aa6f5783",
+          "message": "[aiplatform] add UpdateExplanationDataset to aiplatform",
+          "issues": [
+            "9549"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "3c65d5290a69125c115e765cd13b2e67aa6f5783",
+          "message": "[aiplatform] add bias_configs to ModelEvaluation",
+          "issues": []
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "25a03ed4-9bf2-409e-a3ad-03fd74f891ba",
+      "createTime": "2023-06-23T19:41:27.371Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "af36e0ac5a36f277074ab6b1448170eb2ec50940",
+          "message": "add redirected uri in search response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "af36e0ac5a36f277074ab6b1448170eb2ec50940",
+          "message": "support docx/pptx/txt/csv in allowed data format",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "af36e0ac5a36f277074ab6b1448170eb2ec50940",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "af36e0ac5a36f277074ab6b1448170eb2ec50940",
+          "message": "[discoveryengine] support extractive content in search",
+          "issues": [
+            "9554"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "6fe9c77d-6378-4c45-aab9-99dfc01483be",
+      "createTime": "2023-06-23T19:41:27.368Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6",
+          "message": "Minor clarifications for TaskGroup and min_cpu_platform",
+          "issues": [],
+          "scope": "v1"
+        },
+        {
+          "type": "feat",
+          "sha": "c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6",
+          "message": "[batch] Add support for scheduling_policy",
+          "issues": [
+            "9542"
+          ],
+          "scope": "v1"
+        },
+        {
+          "type": "feat",
+          "sha": "c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6",
+          "message": "update TaskGroup doc",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6",
+          "message": "[batch] implement minCpuPlatform",
+          "issues": []
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "9a513747-f574-4fc6-98b6-c3cd64000552",
+      "createTime": "2023-06-23T19:41:27.366Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added session_ttl",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added human_agent_side_config",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggestion_input",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggest_dialogflow_assists_response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggest_entity_extraction_response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "[dialogflow] added dialogflow_assist_answer",
+          "issues": [
+            "9565"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added session_ttl",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added human_agent_side_config",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggestion_input",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggest_dialogflow_assists_response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "added suggest_entity_extraction_response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0daa460b5020a3bdde087d470ba4b20d85a93254",
+          "message": "[dialogflow] added dialogflow_assist_answer",
+          "issues": []
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "74379db3-3f28-437c-8f34-1626e3c432d6",
+      "createTime": "2023-06-23T19:41:27.363Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1dfd3f3eb12f114e626cc098d3ae7c1f7c5527e6",
+          "message": "[alloydb] Added new SSL modes ALLOW_UNENCRYPTED_AND_ENCRYPTED, ENCRYPTED_ONLY",
+          "issues": [
+            "9538"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "ff7710a9-453d-4d9b-b461-79ea69ac03fc",
+      "createTime": "2023-06-23T19:41:27.361Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1a2fab1495e09d03276c7bf5dac44a429915048e",
+          "message": "added RPCs StopAirflowCommand, ExecuteAirflowCommand, PollAirflowCommand, DatabaseFailover, FetchDatabaseProperties",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "1a2fab1495e09d03276c7bf5dac44a429915048e",
+          "message": "[orchestration-airflow] added RPCs StopAirflowCommand, ExecuteAirflowCommand, PollAirflowCommand, DatabaseFailover, FetchDatabaseProperties",
+          "issues": [
+            "9543"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "2fd40ab4-1528-47c1-96a1-95c8a91eb852",
+      "createTime": "2023-06-23T19:41:27.354Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "53e7f8498a9dfd4794ea081e410230cce3e969f8",
+          "message": "[networkmanagement] add forwarding_rule field to Connectivity Test Endpoint proto",
+          "issues": [
+            "9576"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "e7b30ec3-f1f6-47b0-ba3d-16437c56d355",
+      "createTime": "2023-06-23T19:41:27.352Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0b25cfaf7f9b668e7aea88a09d3eef49b8a9a7b3",
+          "message": "[securitycenter] Mark the Asset APIs as deprecated in client libraries",
+          "issues": [
+            "9575"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "48b1b5d4843f5fd334b80b754054770cf209e8a3",
+          "message": "[securitycenter] Add user agent and DLP parent type fields to finding's list of attributes",
+          "issues": [
+            "9535"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "ed2a3050-d3e8-4fb0-aab5-c09fd0acc9ea",
+      "createTime": "2023-06-23T19:41:27.349Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "cf43432340ad1b64633cec21d2d4fd4c37dedc10",
+          "message": "[cloudbilling] added resource_reference for name in GetProjectBillingInfoRequest message",
+          "issues": [
+            "9555"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "c2949879-457b-4d59-b328-35ab79ff6412",
+      "createTime": "2023-06-23T19:41:27.347Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "594e96586cc13852ad38fb9725b39bc643cb5e20",
+          "message": "[gke-backup] change dependency grpc-google-common-protos to test scope.",
+          "issues": [],
+          "scope": "deps"
+        },
+        {
+          "type": "docs",
+          "sha": "7709391fa7cedae835d87dc3f6bcb575068a6ad6",
+          "message": "[gke-backup] minor documentation fixes",
+          "issues": [
+            "9533"
+          ]
+        }
+      ],
+      "version": "1.14.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-backup",
+      "id": "21f5982b-2202-410a-ae71-ecd60adbd637",
+      "createTime": "2023-06-23T19:41:27.343Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "ba2c590cc9970be41e5a663004d354b3881a69d9",
           "message": "[aiplatform] add blocking_operation_ids to ImportFeatureValuesOperationMetadata",
           "issues": [
@@ -7513,5 +8011,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-06-08T04:00:46.193Z"
+  "updateTime": "2023-06-23T19:41:27.395Z"
 }

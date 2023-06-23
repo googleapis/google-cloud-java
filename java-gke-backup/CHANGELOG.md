@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.19.0 (2023-06-23)
+
+### Features
+
+* change dependency grpc-google-common-protos to test scope. ([594e965](https://github.com/googleapis/google-cloud-java/commit/594e96586cc13852ad38fb9725b39bc643cb5e20))
+* minor documentation fixes ([#9533](https://github.com/googleapis/google-cloud-java/issues/9533)) ([7709391](https://github.com/googleapis/google-cloud-java/commit/7709391fa7cedae835d87dc3f6bcb575068a6ad6))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-backup-v0.3.1-SNAPSHOT...google-cloud-gke-backup-v0.4.0) (2022-10-24)
 
 

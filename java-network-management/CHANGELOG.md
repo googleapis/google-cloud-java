@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.21.0 (2023-06-23)
+
+### Features
+
+* add forwarding_rule field to Connectivity Test Endpoint proto ([#9576](https://github.com/googleapis/google-cloud-java/issues/9576)) ([53e7f84](https://github.com/googleapis/google-cloud-java/commit/53e7f8498a9dfd4794ea081e410230cce3e969f8))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [1.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-network-management-v1.5.1-SNAPSHOT...google-cloud-network-management-v1.6.0) (2022-10-24)
 
 

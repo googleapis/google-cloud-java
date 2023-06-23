@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.30.0 (2023-06-23)
+
+### Features
+
+* announce the deprecation of first-click, linear, time-decay and position-based attribution models ([#9562](https://github.com/googleapis/google-cloud-java/issues/9562)) ([e2f7dc3](https://github.com/googleapis/google-cloud-java/commit/e2f7dc385da8bfa65b70ee096e708d2a2f9f0863))
+* announce the deprecation of first-click, linear, time-decay and position-based attribution models ([#9563](https://github.com/googleapis/google-cloud-java/issues/9563)) ([a093cb3](https://github.com/googleapis/google-cloud-java/commit/a093cb3fae7c2c332c0654ce1fe9f6bb4c912d24))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-admin-v0.14.1-SNAPSHOT...google-analytics-admin-v0.15.0) (2022-10-24)
 
 

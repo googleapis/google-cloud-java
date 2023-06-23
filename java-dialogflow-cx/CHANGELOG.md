@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.31.0 (2023-06-23)
+
+### Features
+
+* added include_bigquery_export_settings to ExportAgentRequest ([#9537](https://github.com/googleapis/google-cloud-java/issues/9537)) ([7edc704](https://github.com/googleapis/google-cloud-java/commit/7edc704578221350c075febef00e4b4a7c3e7ef0))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.16.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-cx-v0.15.1-SNAPSHOT...google-cloud-dialogflow-cx-v0.16.0) (2022-10-24)
 
 

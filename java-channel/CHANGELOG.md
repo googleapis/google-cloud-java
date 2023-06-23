@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.24.0 (2023-06-23)
+
+### Features
+
+* Add support for ListSkuGroups and ListSkuGroupBillableSkus APIs in Cloud Channel APIs ([#9548](https://github.com/googleapis/google-cloud-java/issues/9548)) ([9c1a805](https://github.com/googleapis/google-cloud-java/commit/9c1a8055746f3e0b11390ba208e73118bef5857b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [3.9.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-channel-v3.8.1-SNAPSHOT...google-cloud-channel-v3.9.0) (2022-10-24)
 
 

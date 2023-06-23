@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.20.0 (2023-06-23)
+
+### Features
+
+* implement minCpuPlatform ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+* Add support for scheduling_policy ([#9542](https://github.com/googleapis/google-cloud-java/issues/9542)) ([c235f3a](https://github.com/googleapis/google-cloud-java/commit/c235f3a4a2706c5e6a5bee97ebc62aef96d2e3e6))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.12.0 ([#9577](https://github.com/googleapis/google-cloud-java/issues/9577)) ([9e9812a](https://github.com/googleapis/google-cloud-java/commit/9e9812a0ba19e5aa82a34f2a3049bb72892544a6))
+
+
 ## [0.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-batch-v0.4.1-SNAPSHOT...google-cloud-batch-v0.5.0) (2022-10-24)
 
 
