@@ -3128,14 +3128,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=550
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasSslConfig() {
     return sslConfig_ != null;
   }
@@ -3143,14 +3146,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=550
    * @return The sslConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
     return sslConfig_ == null
         ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
@@ -3160,12 +3166,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
     return sslConfig_ == null
         ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
@@ -3294,6 +3301,120 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return encryptionInfo_ == null
         ? com.google.cloud.alloydb.v1.EncryptionInfo.getDefaultInstance()
         : encryptionInfo_;
+  }
+
+  public static final int CONTINUOUS_BACKUP_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.alloydb.v1.ContinuousBackupConfig continuousBackupConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the continuousBackupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinuousBackupConfig() {
+    return continuousBackupConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The continuousBackupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupConfig getContinuousBackupConfig() {
+    return continuousBackupConfig_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+        : continuousBackupConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder
+      getContinuousBackupConfigOrBuilder() {
+    return continuousBackupConfig_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+        : continuousBackupConfig_;
+  }
+
+  public static final int CONTINUOUS_BACKUP_INFO_FIELD_NUMBER = 28;
+  private com.google.cloud.alloydb.v1.ContinuousBackupInfo continuousBackupInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the continuousBackupInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinuousBackupInfo() {
+    return continuousBackupInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The continuousBackupInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupInfo getContinuousBackupInfo() {
+    return continuousBackupInfo_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+        : continuousBackupInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder
+      getContinuousBackupInfoOrBuilder() {
+    return continuousBackupInfo_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+        : continuousBackupInfo_;
   }
 
   public static final int SECONDARY_CONFIG_FIELD_NUMBER = 22;
@@ -3486,6 +3607,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1.Cluster.ClusterType.CLUSTER_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(24, clusterType_);
     }
+    if (continuousBackupConfig_ != null) {
+      output.writeMessage(27, getContinuousBackupConfig());
+    }
+    if (continuousBackupInfo_ != null) {
+      output.writeMessage(28, getContinuousBackupInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3585,6 +3712,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1.Cluster.ClusterType.CLUSTER_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(24, clusterType_);
     }
+    if (continuousBackupConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getContinuousBackupConfig());
+    }
+    if (continuousBackupInfo_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getContinuousBackupInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3642,6 +3777,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
     if (hasEncryptionInfo()) {
       if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
+    if (hasContinuousBackupConfig() != other.hasContinuousBackupConfig()) return false;
+    if (hasContinuousBackupConfig()) {
+      if (!getContinuousBackupConfig().equals(other.getContinuousBackupConfig())) return false;
+    }
+    if (hasContinuousBackupInfo() != other.hasContinuousBackupInfo()) return false;
+    if (hasContinuousBackupInfo()) {
+      if (!getContinuousBackupInfo().equals(other.getContinuousBackupInfo())) return false;
     }
     if (hasSecondaryConfig() != other.hasSecondaryConfig()) return false;
     if (hasSecondaryConfig()) {
@@ -3730,6 +3873,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo()) {
       hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
+    if (hasContinuousBackupConfig()) {
+      hash = (37 * hash) + CONTINUOUS_BACKUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getContinuousBackupConfig().hashCode();
+    }
+    if (hasContinuousBackupInfo()) {
+      hash = (37 * hash) + CONTINUOUS_BACKUP_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getContinuousBackupInfo().hashCode();
     }
     if (hasSecondaryConfig()) {
       hash = (37 * hash) + SECONDARY_CONFIG_FIELD_NUMBER;
@@ -3972,6 +4123,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         encryptionInfoBuilder_.dispose();
         encryptionInfoBuilder_ = null;
       }
+      continuousBackupConfig_ = null;
+      if (continuousBackupConfigBuilder_ != null) {
+        continuousBackupConfigBuilder_.dispose();
+        continuousBackupConfigBuilder_ = null;
+      }
+      continuousBackupInfo_ = null;
+      if (continuousBackupInfoBuilder_ != null) {
+        continuousBackupInfoBuilder_.dispose();
+        continuousBackupInfoBuilder_ = null;
+      }
       secondaryConfig_ = null;
       if (secondaryConfigBuilder_ != null) {
         secondaryConfigBuilder_.dispose();
@@ -4086,10 +4247,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.continuousBackupConfig_ =
+            continuousBackupConfigBuilder_ == null
+                ? continuousBackupConfig_
+                : continuousBackupConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.continuousBackupInfo_ =
+            continuousBackupInfoBuilder_ == null
+                ? continuousBackupInfo_
+                : continuousBackupInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.secondaryConfig_ =
             secondaryConfigBuilder_ == null ? secondaryConfig_ : secondaryConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.primaryConfig_ =
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
       }
@@ -4215,6 +4388,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEncryptionInfo()) {
         mergeEncryptionInfo(other.getEncryptionInfo());
+      }
+      if (other.hasContinuousBackupConfig()) {
+        mergeContinuousBackupConfig(other.getContinuousBackupConfig());
+      }
+      if (other.hasContinuousBackupInfo()) {
+        mergeContinuousBackupInfo(other.getContinuousBackupInfo());
       }
       if (other.hasSecondaryConfig()) {
         mergeSecondaryConfig(other.getSecondaryConfig());
@@ -4401,13 +4580,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 input.readMessage(getSecondaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getPrimaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 186
             case 192:
@@ -4416,6 +4595,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 192
+            case 218:
+              {
+                input.readMessage(
+                    getContinuousBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getContinuousBackupInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7293,13 +7486,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=550
      * @return Whether the sslConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasSslConfig() {
       return ((bitField0_ & 0x00040000) != 0);
     }
@@ -7307,13 +7503,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=550
      * @return The sslConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
       if (sslConfigBuilder_ == null) {
         return sslConfig_ == null
@@ -7327,11 +7526,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
       if (sslConfigBuilder_ == null) {
         if (value == null) {
@@ -7349,11 +7549,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig.Builder builderForValue) {
       if (sslConfigBuilder_ == null) {
         sslConfig_ = builderForValue.build();
@@ -7368,11 +7569,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
       if (sslConfigBuilder_ == null) {
         if (((bitField0_ & 0x00040000) != 0)
@@ -7393,11 +7595,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearSslConfig() {
       bitField0_ = (bitField0_ & ~0x00040000);
       sslConfig_ = null;
@@ -7412,11 +7615,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfig.Builder getSslConfigBuilder() {
       bitField0_ |= 0x00040000;
       onChanged();
@@ -7426,11 +7630,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
       if (sslConfigBuilder_ != null) {
         return sslConfigBuilder_.getMessageOrBuilder();
@@ -7444,10 +7649,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.alloydb.v1.SslConfig,
@@ -7907,6 +8112,419 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return encryptionInfoBuilder_;
     }
 
+    private com.google.cloud.alloydb.v1.ContinuousBackupConfig continuousBackupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>
+        continuousBackupConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the continuousBackupConfig field is set.
+     */
+    public boolean hasContinuousBackupConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The continuousBackupConfig.
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfig getContinuousBackupConfig() {
+      if (continuousBackupConfigBuilder_ == null) {
+        return continuousBackupConfig_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+            : continuousBackupConfig_;
+      } else {
+        return continuousBackupConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig value) {
+      if (continuousBackupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        continuousBackupConfig_ = value;
+      } else {
+        continuousBackupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder builderForValue) {
+      if (continuousBackupConfigBuilder_ == null) {
+        continuousBackupConfig_ = builderForValue.build();
+      } else {
+        continuousBackupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig value) {
+      if (continuousBackupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && continuousBackupConfig_ != null
+            && continuousBackupConfig_
+                != com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()) {
+          getContinuousBackupConfigBuilder().mergeFrom(value);
+        } else {
+          continuousBackupConfig_ = value;
+        }
+      } else {
+        continuousBackupConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContinuousBackupConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      continuousBackupConfig_ = null;
+      if (continuousBackupConfigBuilder_ != null) {
+        continuousBackupConfigBuilder_.dispose();
+        continuousBackupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder
+        getContinuousBackupConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getContinuousBackupConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder
+        getContinuousBackupConfigOrBuilder() {
+      if (continuousBackupConfigBuilder_ != null) {
+        return continuousBackupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return continuousBackupConfig_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+            : continuousBackupConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>
+        getContinuousBackupConfigFieldBuilder() {
+      if (continuousBackupConfigBuilder_ == null) {
+        continuousBackupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+                com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+                com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>(
+                getContinuousBackupConfig(), getParentForChildren(), isClean());
+        continuousBackupConfig_ = null;
+      }
+      return continuousBackupConfigBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1.ContinuousBackupInfo continuousBackupInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>
+        continuousBackupInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the continuousBackupInfo field is set.
+     */
+    public boolean hasContinuousBackupInfo() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The continuousBackupInfo.
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfo getContinuousBackupInfo() {
+      if (continuousBackupInfoBuilder_ == null) {
+        return continuousBackupInfo_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+            : continuousBackupInfo_;
+      } else {
+        return continuousBackupInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setContinuousBackupInfo(com.google.cloud.alloydb.v1.ContinuousBackupInfo value) {
+      if (continuousBackupInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        continuousBackupInfo_ = value;
+      } else {
+        continuousBackupInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setContinuousBackupInfo(
+        com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder builderForValue) {
+      if (continuousBackupInfoBuilder_ == null) {
+        continuousBackupInfo_ = builderForValue.build();
+      } else {
+        continuousBackupInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeContinuousBackupInfo(
+        com.google.cloud.alloydb.v1.ContinuousBackupInfo value) {
+      if (continuousBackupInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && continuousBackupInfo_ != null
+            && continuousBackupInfo_
+                != com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()) {
+          getContinuousBackupInfoBuilder().mergeFrom(value);
+        } else {
+          continuousBackupInfo_ = value;
+        }
+      } else {
+        continuousBackupInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearContinuousBackupInfo() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      continuousBackupInfo_ = null;
+      if (continuousBackupInfoBuilder_ != null) {
+        continuousBackupInfoBuilder_.dispose();
+        continuousBackupInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder
+        getContinuousBackupInfoBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getContinuousBackupInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder
+        getContinuousBackupInfoOrBuilder() {
+      if (continuousBackupInfoBuilder_ != null) {
+        return continuousBackupInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return continuousBackupInfo_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+            : continuousBackupInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>
+        getContinuousBackupInfoFieldBuilder() {
+      if (continuousBackupInfoBuilder_ == null) {
+        continuousBackupInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+                com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+                com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>(
+                getContinuousBackupInfo(), getParentForChildren(), isClean());
+        continuousBackupInfo_ = null;
+      }
+      return continuousBackupInfoBuilder_;
+    }
+
     private com.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondaryConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.alloydb.v1.Cluster.SecondaryConfig,
@@ -7925,7 +8543,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondaryConfig field is set.
      */
     public boolean hasSecondaryConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -7965,7 +8583,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7985,7 +8603,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -8000,7 +8618,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecondaryConfig(com.google.cloud.alloydb.v1.Cluster.SecondaryConfig value) {
       if (secondaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && secondaryConfig_ != null
             && secondaryConfig_
                 != com.google.cloud.alloydb.v1.Cluster.SecondaryConfig.getDefaultInstance()) {
@@ -8011,7 +8629,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -8025,7 +8643,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondary_config = 22;</code>
      */
     public Builder clearSecondaryConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       secondaryConfig_ = null;
       if (secondaryConfigBuilder_ != null) {
         secondaryConfigBuilder_.dispose();
@@ -8044,7 +8662,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondary_config = 22;</code>
      */
     public com.google.cloud.alloydb.v1.Cluster.SecondaryConfig.Builder getSecondaryConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getSecondaryConfigFieldBuilder().getBuilder();
     }
@@ -8113,7 +8731,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the primaryConfig field is set.
      */
     public boolean hasPrimaryConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -8157,7 +8775,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8179,7 +8797,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8196,7 +8814,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrimaryConfig(com.google.cloud.alloydb.v1.Cluster.PrimaryConfig value) {
       if (primaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && primaryConfig_ != null
             && primaryConfig_
                 != com.google.cloud.alloydb.v1.Cluster.PrimaryConfig.getDefaultInstance()) {
@@ -8207,7 +8825,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8223,7 +8841,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrimaryConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       primaryConfig_ = null;
       if (primaryConfigBuilder_ != null) {
         primaryConfigBuilder_.dispose();
@@ -8244,7 +8862,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1.Cluster.PrimaryConfig.Builder getPrimaryConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getPrimaryConfigFieldBuilder().getBuilder();
     }

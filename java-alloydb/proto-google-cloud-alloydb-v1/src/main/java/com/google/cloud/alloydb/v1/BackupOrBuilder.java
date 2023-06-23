@@ -399,7 +399,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Required. The full resource name of the backup source cluster
-   * (e.g., projects/&lt;project&gt;/locations/&lt;location&gt;/clusters/&lt;cluster_id&gt;).
+   * (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
    * </pre>
    *
    * <code>
@@ -414,7 +414,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Required. The full resource name of the backup source cluster
-   * (e.g., projects/&lt;project&gt;/locations/&lt;location&gt;/clusters/&lt;cluster_id&gt;).
+   * (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
    * </pre>
    *
    * <code>

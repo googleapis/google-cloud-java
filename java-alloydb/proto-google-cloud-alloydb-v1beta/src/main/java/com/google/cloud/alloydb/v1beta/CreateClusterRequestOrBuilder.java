@@ -27,7 +27,7 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource. For the required format, see the
+   * Required. The location of the new cluster. For the required format, see the
    * comment on the Cluster.name field.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource. For the required format, see the
+   * Required. The location of the new cluster. For the required format, see the
    * comment on the Cluster.name field.
    * </pre>
    *

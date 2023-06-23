@@ -709,35 +709,42 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=550
    * @return Whether the sslConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasSslConfig();
   /**
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=550
    * @return The sslConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1.SslConfig getSslConfig();
   /**
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder();
 
   /**
@@ -833,6 +840,88 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the continuousBackupConfig field is set.
+   */
+  boolean hasContinuousBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The continuousBackupConfig.
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupConfig getContinuousBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder getContinuousBackupConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the continuousBackupInfo field is set.
+   */
+  boolean hasContinuousBackupInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The continuousBackupInfo.
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupInfo getContinuousBackupInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder getContinuousBackupInfoOrBuilder();
 
   /**
    *

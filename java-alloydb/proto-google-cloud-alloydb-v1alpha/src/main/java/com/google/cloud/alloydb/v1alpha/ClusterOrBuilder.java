@@ -462,6 +462,29 @@ public interface ClusterOrBuilder
   com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion();
 
   /**
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.alloydb.v1alpha.Cluster.NetworkConfig getNetworkConfig();
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Cluster.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -710,35 +733,42 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=578
    * @return Whether the sslConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasSslConfig();
   /**
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=578
    * @return The sslConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1alpha.SslConfig getSslConfig();
   /**
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1alpha.SslConfigOrBuilder getSslConfigOrBuilder();
 
   /**

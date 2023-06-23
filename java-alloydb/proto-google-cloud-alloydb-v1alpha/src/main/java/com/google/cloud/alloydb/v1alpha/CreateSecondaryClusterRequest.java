@@ -64,8 +64,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the parent resource (the primary cluster). For the
-   * required format, see the comment on the Cluster.name field.
+   * Required. The location of the new cluster. For the required
+   * format, see the comment on the Cluster.name field.
    * </pre>
    *
    * <code>
@@ -90,8 +90,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the parent resource (the primary cluster). For the
-   * required format, see the comment on the Cluster.name field.
+   * Required. The location of the new cluster. For the required
+   * format, see the comment on the Cluster.name field.
    * </pre>
    *
    * <code>
@@ -759,8 +759,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the parent resource (the primary cluster). For the
-     * required format, see the comment on the Cluster.name field.
+     * Required. The location of the new cluster. For the required
+     * format, see the comment on the Cluster.name field.
      * </pre>
      *
      * <code>
@@ -784,8 +784,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the parent resource (the primary cluster). For the
-     * required format, see the comment on the Cluster.name field.
+     * Required. The location of the new cluster. For the required
+     * format, see the comment on the Cluster.name field.
      * </pre>
      *
      * <code>
@@ -809,8 +809,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the parent resource (the primary cluster). For the
-     * required format, see the comment on the Cluster.name field.
+     * Required. The location of the new cluster. For the required
+     * format, see the comment on the Cluster.name field.
      * </pre>
      *
      * <code>
@@ -833,8 +833,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the parent resource (the primary cluster). For the
-     * required format, see the comment on the Cluster.name field.
+     * Required. The location of the new cluster. For the required
+     * format, see the comment on the Cluster.name field.
      * </pre>
      *
      * <code>
@@ -853,8 +853,8 @@ public final class CreateSecondaryClusterRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the parent resource (the primary cluster). For the
-     * required format, see the comment on the Cluster.name field.
+     * Required. The location of the new cluster. For the required
+     * format, see the comment on the Cluster.name field.
      * </pre>
      *
      * <code>

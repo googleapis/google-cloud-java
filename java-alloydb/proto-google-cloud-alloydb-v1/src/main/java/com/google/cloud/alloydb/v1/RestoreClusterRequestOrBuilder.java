@@ -62,6 +62,44 @@ public interface RestoreClusterRequestOrBuilder
    *
    *
    * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   *
+   * @return Whether the continuousBackupSource field is set.
+   */
+  boolean hasContinuousBackupSource();
+  /**
+   *
+   *
+   * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   *
+   * @return The continuousBackupSource.
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupSource getContinuousBackupSource();
+  /**
+   *
+   *
+   * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   */
+  com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder getContinuousBackupSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The name of the parent resource. For the required format, see the
    * comment on the Cluster.name field.
    * </pre>

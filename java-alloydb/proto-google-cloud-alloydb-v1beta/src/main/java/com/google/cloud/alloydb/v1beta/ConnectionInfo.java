@@ -187,11 +187,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=894
    * @return A list containing the pemCertificateChain.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
     return pemCertificateChain_;
   }
@@ -203,11 +207,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=894
    * @return The count of pemCertificateChain.
    */
+  @java.lang.Deprecated
   public int getPemCertificateChainCount() {
     return pemCertificateChain_.size();
   }
@@ -219,12 +227,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=894
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getPemCertificateChain(int index) {
     return pemCertificateChain_.get(index);
   }
@@ -236,12 +248,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=894
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPemCertificateChainBytes(int index) {
     return pemCertificateChain_.getByteString(index);
   }
@@ -969,11 +985,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @return A list containing the pemCertificateChain.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
       pemCertificateChain_.makeImmutable();
       return pemCertificateChain_;
@@ -986,11 +1006,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @return The count of pemCertificateChain.
      */
+    @java.lang.Deprecated
     public int getPemCertificateChainCount() {
       return pemCertificateChain_.size();
     }
@@ -1002,12 +1026,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param index The index of the element to return.
      * @return The pemCertificateChain at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getPemCertificateChain(int index) {
       return pemCertificateChain_.get(index);
     }
@@ -1019,12 +1047,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param index The index of the value to return.
      * @return The bytes of the pemCertificateChain at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPemCertificateChainBytes(int index) {
       return pemCertificateChain_.getByteString(index);
     }
@@ -1036,13 +1068,17 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param index The index to set the value at.
      * @param value The pemCertificateChain to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPemCertificateChain(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1061,12 +1097,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param value The pemCertificateChain to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addPemCertificateChain(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1085,12 +1125,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param values The pemCertificateChain to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllPemCertificateChain(java.lang.Iterable<java.lang.String> values) {
       ensurePemCertificateChainIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificateChain_);
@@ -1106,11 +1150,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPemCertificateChain() {
       pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1126,12 +1174,16 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * certificate. Expected to be in issuer-to-root order according to RFC 5246.
      * </pre>
      *
-     * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=894
      * @param value The bytes of the pemCertificateChain to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addPemCertificateChainBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

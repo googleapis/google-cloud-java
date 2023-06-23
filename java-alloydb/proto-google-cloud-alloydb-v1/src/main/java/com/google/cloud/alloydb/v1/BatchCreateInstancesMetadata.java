@@ -23,6 +23,7 @@ package com.google.cloud.alloydb.v1;
  *
  * <pre>
  * Message for metadata that is specific to BatchCreateInstances API.
+ * NEXT_ID: 3
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1.BatchCreateInstancesMetadata}
@@ -486,6 +487,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
    *
    * <pre>
    * Message for metadata that is specific to BatchCreateInstances API.
+   * NEXT_ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1.BatchCreateInstancesMetadata}

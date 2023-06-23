@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.alloydb.v1.AlloyDBAdminClient;
 import com.google.cloud.alloydb.v1.Cluster;
 import com.google.cloud.alloydb.v1.ClusterName;
+import com.google.cloud.alloydb.v1.ClusterView;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
 
 public class AsyncGetCluster {
@@ -39,6 +40,7 @@ public class AsyncGetCluster {
       GetClusterRequest request =
           GetClusterRequest.newBuilder()
               .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+              .setView(ClusterView.forNumber(0))
               .build();
       ApiFuture<Cluster> future = alloyDBAdminClient.getClusterCallable().futureCall(request);
       // Do something.

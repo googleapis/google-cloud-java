@@ -22,6 +22,15 @@
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },
+            "CreateSecondaryCluster": {
+              "methods": ["createSecondaryClusterAsync", "createSecondaryClusterAsync", "createSecondaryClusterAsync", "createSecondaryClusterOperationCallable", "createSecondaryClusterCallable"]
+            },
+            "CreateSecondaryInstance": {
+              "methods": ["createSecondaryInstanceAsync", "createSecondaryInstanceAsync", "createSecondaryInstanceAsync", "createSecondaryInstanceOperationCallable", "createSecondaryInstanceCallable"]
+            },
+            "CreateUser": {
+              "methods": ["createUser", "createUser", "createUser", "createUserCallable"]
+            },
             "DeleteBackup": {
               "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
             },
@@ -30,6 +39,9 @@
             },
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "DeleteUser": {
+              "methods": ["deleteUser", "deleteUser", "deleteUser", "deleteUserCallable"]
             },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
@@ -46,6 +58,12 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetUser": {
+              "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "InjectFault": {
+              "methods": ["injectFaultAsync", "injectFaultAsync", "injectFaultAsync", "injectFaultOperationCallable", "injectFaultCallable"]
+            },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
             },
@@ -61,6 +79,12 @@
             "ListSupportedDatabaseFlags": {
               "methods": ["listSupportedDatabaseFlags", "listSupportedDatabaseFlags", "listSupportedDatabaseFlags", "listSupportedDatabaseFlagsPagedCallable", "listSupportedDatabaseFlagsCallable"]
             },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "PromoteCluster": {
+              "methods": ["promoteClusterAsync", "promoteClusterAsync", "promoteClusterAsync", "promoteClusterOperationCallable", "promoteClusterCallable"]
+            },
             "RestartInstance": {
               "methods": ["restartInstanceAsync", "restartInstanceAsync", "restartInstanceAsync", "restartInstanceOperationCallable", "restartInstanceCallable"]
             },
@@ -75,6 +99,9 @@
             },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateUser": {
+              "methods": ["updateUser", "updateUser", "updateUserCallable"]
             }
           }
         }

@@ -27,8 +27,8 @@ public interface CreateSecondaryClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource (the primary cluster). For the
-   * required format, see the comment on the Cluster.name field.
+   * Required. The location of the new cluster. For the required
+   * format, see the comment on the Cluster.name field.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateSecondaryClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource (the primary cluster). For the
-   * required format, see the comment on the Cluster.name field.
+   * Required. The location of the new cluster. For the required
+   * format, see the comment on the Cluster.name field.
    * </pre>
    *
    * <code>

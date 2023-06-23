@@ -20,6 +20,7 @@ package com.google.cloud.alloydb.v1alpha.samples;
 import com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient;
 import com.google.cloud.alloydb.v1alpha.Cluster;
 import com.google.cloud.alloydb.v1alpha.ClusterName;
+import com.google.cloud.alloydb.v1alpha.ClusterView;
 import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 
 public class SyncGetCluster {
@@ -38,6 +39,7 @@ public class SyncGetCluster {
       GetClusterRequest request =
           GetClusterRequest.newBuilder()
               .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+              .setView(ClusterView.forNumber(0))
               .build();
       Cluster response = alloyDBAdminClient.getCluster(request);
     }

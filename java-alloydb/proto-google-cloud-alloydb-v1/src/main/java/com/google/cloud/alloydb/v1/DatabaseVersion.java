@@ -152,7 +152,7 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.alloydb.v1.ResourcesProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.alloydb.v1.ResourcesProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DatabaseVersion[] VALUES = values();

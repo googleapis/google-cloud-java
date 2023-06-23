@@ -33,6 +33,7 @@ package com.google.cloud.alloydb.v1;
  *   2. Instance2 = ROLLED_BACK
  *   3. Instance3 = FAILED
  *   4. Instance4 = FAILED
+ *
  * However, while the operation is running, the instance might be in other
  * states including PENDING_CREATE, ACTIVE, DELETING and CREATING. The states
  * / do not get further updated once the operation is done.
@@ -723,6 +724,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
    *   2. Instance2 = ROLLED_BACK
    *   3. Instance3 = FAILED
    *   4. Instance4 = FAILED
+   *
    * However, while the operation is running, the instance might be in other
    * states including PENDING_CREATE, ACTIVE, DELETING and CREATING. The states
    * / do not get further updated once the operation is done.

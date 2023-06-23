@@ -110,10 +110,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * Optional. A pem-encoded X.509 certificate signing request (CSR).
    * </pre>
    *
-   * <code>string pem_csr = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1351
    * @return The pemCsr.
    */
+  @java.lang.Deprecated
   java.lang.String getPemCsr();
   /**
    *
@@ -122,10 +125,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * Optional. A pem-encoded X.509 certificate signing request (CSR).
    * </pre>
    *
-   * <code>string pem_csr = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1351
    * @return The bytes for pemCsr.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPemCsrBytes();
 
   /**
@@ -177,4 +183,29 @@ public interface GenerateClientCertificateRequestOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getCertDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The public key from the client.
+   * </pre>
+   *
+   * <code>string public_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The publicKey.
+   */
+  java.lang.String getPublicKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The public key from the client.
+   * </pre>
+   *
+   * <code>string public_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for publicKey.
+   */
+  com.google.protobuf.ByteString getPublicKeyBytes();
 }

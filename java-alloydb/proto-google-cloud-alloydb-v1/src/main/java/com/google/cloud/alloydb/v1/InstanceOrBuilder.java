@@ -389,8 +389,11 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -403,8 +406,11 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>

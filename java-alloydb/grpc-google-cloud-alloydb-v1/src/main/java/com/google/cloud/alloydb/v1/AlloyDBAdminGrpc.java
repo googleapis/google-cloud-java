@@ -251,6 +251,49 @@ public final class AlloyDBAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.PromoteClusterRequest, com.google.longrunning.Operation>
+      getPromoteClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PromoteCluster",
+      requestType = com.google.cloud.alloydb.v1.PromoteClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.PromoteClusterRequest, com.google.longrunning.Operation>
+      getPromoteClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.PromoteClusterRequest, com.google.longrunning.Operation>
+        getPromoteClusterMethod;
+    if ((getPromoteClusterMethod = AlloyDBAdminGrpc.getPromoteClusterMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getPromoteClusterMethod = AlloyDBAdminGrpc.getPromoteClusterMethod) == null) {
+          AlloyDBAdminGrpc.getPromoteClusterMethod =
+              getPromoteClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.PromoteClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PromoteCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.PromoteClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("PromoteCluster"))
+                      .build();
+        }
+      }
+    }
+    return getPromoteClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.alloydb.v1.RestoreClusterRequest, com.google.longrunning.Operation>
       getRestoreClusterMethod;
 
@@ -291,6 +334,55 @@ public final class AlloyDBAdminGrpc {
       }
     }
     return getRestoreClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest,
+          com.google.longrunning.Operation>
+      getCreateSecondaryClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSecondaryCluster",
+      requestType = com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest,
+          com.google.longrunning.Operation>
+      getCreateSecondaryClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest,
+            com.google.longrunning.Operation>
+        getCreateSecondaryClusterMethod;
+    if ((getCreateSecondaryClusterMethod = AlloyDBAdminGrpc.getCreateSecondaryClusterMethod)
+        == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getCreateSecondaryClusterMethod = AlloyDBAdminGrpc.getCreateSecondaryClusterMethod)
+            == null) {
+          AlloyDBAdminGrpc.getCreateSecondaryClusterMethod =
+              getCreateSecondaryClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateSecondaryCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("CreateSecondaryCluster"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSecondaryClusterMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -422,6 +514,55 @@ public final class AlloyDBAdminGrpc {
       }
     }
     return getCreateInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest,
+          com.google.longrunning.Operation>
+      getCreateSecondaryInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSecondaryInstance",
+      requestType = com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest,
+          com.google.longrunning.Operation>
+      getCreateSecondaryInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest,
+            com.google.longrunning.Operation>
+        getCreateSecondaryInstanceMethod;
+    if ((getCreateSecondaryInstanceMethod = AlloyDBAdminGrpc.getCreateSecondaryInstanceMethod)
+        == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getCreateSecondaryInstanceMethod = AlloyDBAdminGrpc.getCreateSecondaryInstanceMethod)
+            == null) {
+          AlloyDBAdminGrpc.getCreateSecondaryInstanceMethod =
+              getCreateSecondaryInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateSecondaryInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("CreateSecondaryInstance"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSecondaryInstanceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -597,6 +738,47 @@ public final class AlloyDBAdminGrpc {
       }
     }
     return getFailoverInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.InjectFaultRequest, com.google.longrunning.Operation>
+      getInjectFaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InjectFault",
+      requestType = com.google.cloud.alloydb.v1.InjectFaultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.InjectFaultRequest, com.google.longrunning.Operation>
+      getInjectFaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.InjectFaultRequest, com.google.longrunning.Operation>
+        getInjectFaultMethod;
+    if ((getInjectFaultMethod = AlloyDBAdminGrpc.getInjectFaultMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getInjectFaultMethod = AlloyDBAdminGrpc.getInjectFaultMethod) == null) {
+          AlloyDBAdminGrpc.getInjectFaultMethod =
+              getInjectFaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.InjectFaultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InjectFault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.InjectFaultRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("InjectFault"))
+                      .build();
+        }
+      }
+    }
+    return getInjectFaultMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -901,6 +1083,213 @@ public final class AlloyDBAdminGrpc {
     return getListSupportedDatabaseFlagsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ListUsersRequest,
+          com.google.cloud.alloydb.v1.ListUsersResponse>
+      getListUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUsers",
+      requestType = com.google.cloud.alloydb.v1.ListUsersRequest.class,
+      responseType = com.google.cloud.alloydb.v1.ListUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ListUsersRequest,
+          com.google.cloud.alloydb.v1.ListUsersResponse>
+      getListUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.ListUsersRequest,
+            com.google.cloud.alloydb.v1.ListUsersResponse>
+        getListUsersMethod;
+    if ((getListUsersMethod = AlloyDBAdminGrpc.getListUsersMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getListUsersMethod = AlloyDBAdminGrpc.getListUsersMethod) == null) {
+          AlloyDBAdminGrpc.getListUsersMethod =
+              getListUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.ListUsersRequest,
+                          com.google.cloud.alloydb.v1.ListUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.ListUsersRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.ListUsersResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("ListUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GetUserRequest, com.google.cloud.alloydb.v1.User>
+      getGetUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUser",
+      requestType = com.google.cloud.alloydb.v1.GetUserRequest.class,
+      responseType = com.google.cloud.alloydb.v1.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GetUserRequest, com.google.cloud.alloydb.v1.User>
+      getGetUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.GetUserRequest, com.google.cloud.alloydb.v1.User>
+        getGetUserMethod;
+    if ((getGetUserMethod = AlloyDBAdminGrpc.getGetUserMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getGetUserMethod = AlloyDBAdminGrpc.getGetUserMethod) == null) {
+          AlloyDBAdminGrpc.getGetUserMethod =
+              getGetUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.GetUserRequest,
+                          com.google.cloud.alloydb.v1.User>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.GetUserRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.User.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("GetUser"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateUserRequest, com.google.cloud.alloydb.v1.User>
+      getCreateUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUser",
+      requestType = com.google.cloud.alloydb.v1.CreateUserRequest.class,
+      responseType = com.google.cloud.alloydb.v1.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.CreateUserRequest, com.google.cloud.alloydb.v1.User>
+      getCreateUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.CreateUserRequest, com.google.cloud.alloydb.v1.User>
+        getCreateUserMethod;
+    if ((getCreateUserMethod = AlloyDBAdminGrpc.getCreateUserMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getCreateUserMethod = AlloyDBAdminGrpc.getCreateUserMethod) == null) {
+          AlloyDBAdminGrpc.getCreateUserMethod =
+              getCreateUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.CreateUserRequest,
+                          com.google.cloud.alloydb.v1.User>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.CreateUserRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.User.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("CreateUser"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.UpdateUserRequest, com.google.cloud.alloydb.v1.User>
+      getUpdateUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUser",
+      requestType = com.google.cloud.alloydb.v1.UpdateUserRequest.class,
+      responseType = com.google.cloud.alloydb.v1.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.UpdateUserRequest, com.google.cloud.alloydb.v1.User>
+      getUpdateUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.UpdateUserRequest, com.google.cloud.alloydb.v1.User>
+        getUpdateUserMethod;
+    if ((getUpdateUserMethod = AlloyDBAdminGrpc.getUpdateUserMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getUpdateUserMethod = AlloyDBAdminGrpc.getUpdateUserMethod) == null) {
+          AlloyDBAdminGrpc.getUpdateUserMethod =
+              getUpdateUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.UpdateUserRequest,
+                          com.google.cloud.alloydb.v1.User>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.UpdateUserRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.User.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("UpdateUser"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.DeleteUserRequest, com.google.protobuf.Empty>
+      getDeleteUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUser",
+      requestType = com.google.cloud.alloydb.v1.DeleteUserRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.DeleteUserRequest, com.google.protobuf.Empty>
+      getDeleteUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.DeleteUserRequest, com.google.protobuf.Empty>
+        getDeleteUserMethod;
+    if ((getDeleteUserMethod = AlloyDBAdminGrpc.getDeleteUserMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getDeleteUserMethod = AlloyDBAdminGrpc.getDeleteUserMethod) == null) {
+          AlloyDBAdminGrpc.getDeleteUserMethod =
+              getDeleteUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.DeleteUserRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.DeleteUserRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlloyDBAdminMethodDescriptorSupplier("DeleteUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlloyDBAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlloyDBAdminStub> factory =
@@ -1025,6 +1414,23 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Promotes a SECONDARY cluster. This turns down replication
+     * from the PRIMARY cluster and promotes a secondary cluster
+     * into its own standalone cluster.
+     * Imperative only.
+     * </pre>
+     */
+    default void promoteCluster(
+        com.google.cloud.alloydb.v1.PromoteClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPromoteClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Cluster in a given project and location, with a volume
      * restored from the provided source, either a backup ID or a point-in-time
      * and a source cluster.
@@ -1035,6 +1441,21 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRestoreClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster of type SECONDARY in the given location using
+     * the primary cluster as the source.
+     * </pre>
+     */
+    default void createSecondaryCluster(
+        com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSecondaryClusterMethod(), responseObserver);
     }
 
     /**
@@ -1078,6 +1499,20 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new SECONDARY Instance in a given project and location.
+     * </pre>
+     */
+    default void createSecondaryInstance(
+        com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSecondaryInstanceMethod(), responseObserver);
     }
 
     /**
@@ -1145,6 +1580,21 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFailoverInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Injects fault in an instance.
+     * Imperative only.
+     * </pre>
+     */
+    default void injectFault(
+        com.google.cloud.alloydb.v1.InjectFaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getInjectFaultMethod(), responseObserver);
     }
 
     /**
@@ -1245,6 +1695,72 @@ public final class AlloyDBAdminGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSupportedDatabaseFlagsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project and location.
+     * </pre>
+     */
+    default void listUsers(
+        com.google.cloud.alloydb.v1.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ListUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single User.
+     * </pre>
+     */
+    default void getUser(
+        com.google.cloud.alloydb.v1.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new User in a given project, location, and cluster.
+     * </pre>
+     */
+    default void createUser(
+        com.google.cloud.alloydb.v1.CreateUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single User.
+     * </pre>
+     */
+    default void updateUser(
+        com.google.cloud.alloydb.v1.UpdateUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    default void deleteUser(
+        com.google.cloud.alloydb.v1.DeleteUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
     }
   }
 
@@ -1365,6 +1881,25 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Promotes a SECONDARY cluster. This turns down replication
+     * from the PRIMARY cluster and promotes a secondary cluster
+     * into its own standalone cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public void promoteCluster(
+        com.google.cloud.alloydb.v1.PromoteClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPromoteClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Cluster in a given project and location, with a volume
      * restored from the provided source, either a backup ID or a point-in-time
      * and a source cluster.
@@ -1375,6 +1910,23 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRestoreClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster of type SECONDARY in the given location using
+     * the primary cluster as the source.
+     * </pre>
+     */
+    public void createSecondaryCluster(
+        com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSecondaryClusterMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1424,6 +1976,22 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new SECONDARY Instance in a given project and location.
+     * </pre>
+     */
+    public void createSecondaryInstance(
+        com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSecondaryInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1499,6 +2067,23 @@ public final class AlloyDBAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Injects fault in an instance.
+     * Imperative only.
+     * </pre>
+     */
+    public void injectFault(
+        com.google.cloud.alloydb.v1.InjectFaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInjectFaultMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1615,6 +2200,77 @@ public final class AlloyDBAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project and location.
+     * </pre>
+     */
+    public void listUsers(
+        com.google.cloud.alloydb.v1.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ListUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single User.
+     * </pre>
+     */
+    public void getUser(
+        com.google.cloud.alloydb.v1.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new User in a given project, location, and cluster.
+     * </pre>
+     */
+    public void createUser(
+        com.google.cloud.alloydb.v1.CreateUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single User.
+     * </pre>
+     */
+    public void updateUser(
+        com.google.cloud.alloydb.v1.UpdateUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public void deleteUser(
+        com.google.cloud.alloydb.v1.DeleteUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1705,6 +2361,22 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Promotes a SECONDARY cluster. This turns down replication
+     * from the PRIMARY cluster and promotes a secondary cluster
+     * into its own standalone cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation promoteCluster(
+        com.google.cloud.alloydb.v1.PromoteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPromoteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Cluster in a given project and location, with a volume
      * restored from the provided source, either a backup ID or a point-in-time
      * and a source cluster.
@@ -1714,6 +2386,20 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1.RestoreClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRestoreClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster of type SECONDARY in the given location using
+     * the primary cluster as the source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSecondaryCluster(
+        com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSecondaryClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1753,6 +2439,19 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1.CreateInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new SECONDARY Instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSecondaryInstance(
+        com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSecondaryInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1816,6 +2515,20 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1.FailoverInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFailoverInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Injects fault in an instance.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation injectFault(
+        com.google.cloud.alloydb.v1.InjectFaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInjectFaultMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1910,6 +2623,71 @@ public final class AlloyDBAdminGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSupportedDatabaseFlagsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.ListUsersResponse listUsers(
+        com.google.cloud.alloydb.v1.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single User.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.User getUser(
+        com.google.cloud.alloydb.v1.GetUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new User in a given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.User createUser(
+        com.google.cloud.alloydb.v1.CreateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single User.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.User updateUser(
+        com.google.cloud.alloydb.v1.UpdateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUser(
+        com.google.cloud.alloydb.v1.DeleteUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2001,6 +2779,22 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Promotes a SECONDARY cluster. This turns down replication
+     * from the PRIMARY cluster and promotes a secondary cluster
+     * into its own standalone cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        promoteCluster(com.google.cloud.alloydb.v1.PromoteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPromoteClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Cluster in a given project and location, with a volume
      * restored from the provided source, either a backup ID or a point-in-time
      * and a source cluster.
@@ -2010,6 +2804,20 @@ public final class AlloyDBAdminGrpc {
         restoreCluster(com.google.cloud.alloydb.v1.RestoreClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRestoreClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster of type SECONDARY in the given location using
+     * the primary cluster as the source.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createSecondaryCluster(com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSecondaryClusterMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2050,6 +2858,20 @@ public final class AlloyDBAdminGrpc {
         createInstance(com.google.cloud.alloydb.v1.CreateInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new SECONDARY Instance in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createSecondaryInstance(
+            com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSecondaryInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2113,6 +2935,20 @@ public final class AlloyDBAdminGrpc {
         failoverInstance(com.google.cloud.alloydb.v1.FailoverInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Injects fault in an instance.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        injectFault(com.google.cloud.alloydb.v1.InjectFaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInjectFaultMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2209,6 +3045,72 @@ public final class AlloyDBAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSupportedDatabaseFlagsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.alloydb.v1.ListUsersResponse>
+        listUsers(com.google.cloud.alloydb.v1.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single User.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.alloydb.v1.User>
+        getUser(com.google.cloud.alloydb.v1.GetUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new User in a given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.alloydb.v1.User>
+        createUser(com.google.cloud.alloydb.v1.CreateUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single User.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.alloydb.v1.User>
+        updateUser(com.google.cloud.alloydb.v1.UpdateUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteUser(
+        com.google.cloud.alloydb.v1.DeleteUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -2216,21 +3118,30 @@ public final class AlloyDBAdminGrpc {
   private static final int METHODID_CREATE_CLUSTER = 2;
   private static final int METHODID_UPDATE_CLUSTER = 3;
   private static final int METHODID_DELETE_CLUSTER = 4;
-  private static final int METHODID_RESTORE_CLUSTER = 5;
-  private static final int METHODID_LIST_INSTANCES = 6;
-  private static final int METHODID_GET_INSTANCE = 7;
-  private static final int METHODID_CREATE_INSTANCE = 8;
-  private static final int METHODID_BATCH_CREATE_INSTANCES = 9;
-  private static final int METHODID_UPDATE_INSTANCE = 10;
-  private static final int METHODID_DELETE_INSTANCE = 11;
-  private static final int METHODID_FAILOVER_INSTANCE = 12;
-  private static final int METHODID_RESTART_INSTANCE = 13;
-  private static final int METHODID_LIST_BACKUPS = 14;
-  private static final int METHODID_GET_BACKUP = 15;
-  private static final int METHODID_CREATE_BACKUP = 16;
-  private static final int METHODID_UPDATE_BACKUP = 17;
-  private static final int METHODID_DELETE_BACKUP = 18;
-  private static final int METHODID_LIST_SUPPORTED_DATABASE_FLAGS = 19;
+  private static final int METHODID_PROMOTE_CLUSTER = 5;
+  private static final int METHODID_RESTORE_CLUSTER = 6;
+  private static final int METHODID_CREATE_SECONDARY_CLUSTER = 7;
+  private static final int METHODID_LIST_INSTANCES = 8;
+  private static final int METHODID_GET_INSTANCE = 9;
+  private static final int METHODID_CREATE_INSTANCE = 10;
+  private static final int METHODID_CREATE_SECONDARY_INSTANCE = 11;
+  private static final int METHODID_BATCH_CREATE_INSTANCES = 12;
+  private static final int METHODID_UPDATE_INSTANCE = 13;
+  private static final int METHODID_DELETE_INSTANCE = 14;
+  private static final int METHODID_FAILOVER_INSTANCE = 15;
+  private static final int METHODID_INJECT_FAULT = 16;
+  private static final int METHODID_RESTART_INSTANCE = 17;
+  private static final int METHODID_LIST_BACKUPS = 18;
+  private static final int METHODID_GET_BACKUP = 19;
+  private static final int METHODID_CREATE_BACKUP = 20;
+  private static final int METHODID_UPDATE_BACKUP = 21;
+  private static final int METHODID_DELETE_BACKUP = 22;
+  private static final int METHODID_LIST_SUPPORTED_DATABASE_FLAGS = 23;
+  private static final int METHODID_LIST_USERS = 24;
+  private static final int METHODID_GET_USER = 25;
+  private static final int METHODID_CREATE_USER = 26;
+  private static final int METHODID_UPDATE_USER = 27;
+  private static final int METHODID_DELETE_USER = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2275,9 +3186,19 @@ public final class AlloyDBAdminGrpc {
               (com.google.cloud.alloydb.v1.DeleteClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_PROMOTE_CLUSTER:
+          serviceImpl.promoteCluster(
+              (com.google.cloud.alloydb.v1.PromoteClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_RESTORE_CLUSTER:
           serviceImpl.restoreCluster(
               (com.google.cloud.alloydb.v1.RestoreClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_SECONDARY_CLUSTER:
+          serviceImpl.createSecondaryCluster(
+              (com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_INSTANCES:
@@ -2294,6 +3215,11 @@ public final class AlloyDBAdminGrpc {
         case METHODID_CREATE_INSTANCE:
           serviceImpl.createInstance(
               (com.google.cloud.alloydb.v1.CreateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_SECONDARY_INSTANCE:
+          serviceImpl.createSecondaryInstance(
+              (com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_BATCH_CREATE_INSTANCES:
@@ -2314,6 +3240,11 @@ public final class AlloyDBAdminGrpc {
         case METHODID_FAILOVER_INSTANCE:
           serviceImpl.failoverInstance(
               (com.google.cloud.alloydb.v1.FailoverInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_INJECT_FAULT:
+          serviceImpl.injectFault(
+              (com.google.cloud.alloydb.v1.InjectFaultRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_RESTART_INSTANCE:
@@ -2353,6 +3284,32 @@ public final class AlloyDBAdminGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_USERS:
+          serviceImpl.listUsers(
+              (com.google.cloud.alloydb.v1.ListUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ListUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_USER:
+          serviceImpl.getUser(
+              (com.google.cloud.alloydb.v1.GetUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User>) responseObserver);
+          break;
+        case METHODID_CREATE_USER:
+          serviceImpl.createUser(
+              (com.google.cloud.alloydb.v1.CreateUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER:
+          serviceImpl.updateUser(
+              (com.google.cloud.alloydb.v1.UpdateUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.User>) responseObserver);
+          break;
+        case METHODID_DELETE_USER:
+          serviceImpl.deleteUser(
+              (com.google.cloud.alloydb.v1.DeleteUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2404,11 +3361,23 @@ public final class AlloyDBAdminGrpc {
                     com.google.cloud.alloydb.v1.DeleteClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
         .addMethod(
+            getPromoteClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.PromoteClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PROMOTE_CLUSTER)))
+        .addMethod(
             getRestoreClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.alloydb.v1.RestoreClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_RESTORE_CLUSTER)))
+        .addMethod(
+            getCreateSecondaryClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SECONDARY_CLUSTER)))
         .addMethod(
             getListInstancesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2428,6 +3397,12 @@ public final class AlloyDBAdminGrpc {
                 new MethodHandlers<
                     com.google.cloud.alloydb.v1.CreateInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getCreateSecondaryInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SECONDARY_INSTANCE)))
         .addMethod(
             getBatchCreateInstancesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2452,6 +3427,12 @@ public final class AlloyDBAdminGrpc {
                 new MethodHandlers<
                     com.google.cloud.alloydb.v1.FailoverInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_FAILOVER_INSTANCE)))
+        .addMethod(
+            getInjectFaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.InjectFaultRequest,
+                    com.google.longrunning.Operation>(service, METHODID_INJECT_FAULT)))
         .addMethod(
             getRestartInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2496,6 +3477,36 @@ public final class AlloyDBAdminGrpc {
                     com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest,
                     com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse>(
                     service, METHODID_LIST_SUPPORTED_DATABASE_FLAGS)))
+        .addMethod(
+            getListUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.ListUsersRequest,
+                    com.google.cloud.alloydb.v1.ListUsersResponse>(service, METHODID_LIST_USERS)))
+        .addMethod(
+            getGetUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.GetUserRequest, com.google.cloud.alloydb.v1.User>(
+                    service, METHODID_GET_USER)))
+        .addMethod(
+            getCreateUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.CreateUserRequest,
+                    com.google.cloud.alloydb.v1.User>(service, METHODID_CREATE_USER)))
+        .addMethod(
+            getUpdateUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.UpdateUserRequest,
+                    com.google.cloud.alloydb.v1.User>(service, METHODID_UPDATE_USER)))
+        .addMethod(
+            getDeleteUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.DeleteUserRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_USER)))
         .build();
   }
 
@@ -2552,14 +3563,18 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
+                      .addMethod(getPromoteClusterMethod())
                       .addMethod(getRestoreClusterMethod())
+                      .addMethod(getCreateSecondaryClusterMethod())
                       .addMethod(getListInstancesMethod())
                       .addMethod(getGetInstanceMethod())
                       .addMethod(getCreateInstanceMethod())
+                      .addMethod(getCreateSecondaryInstanceMethod())
                       .addMethod(getBatchCreateInstancesMethod())
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getFailoverInstanceMethod())
+                      .addMethod(getInjectFaultMethod())
                       .addMethod(getRestartInstanceMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getGetBackupMethod())
@@ -2567,6 +3582,11 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getUpdateBackupMethod())
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getListSupportedDatabaseFlagsMethod())
+                      .addMethod(getListUsersMethod())
+                      .addMethod(getGetUserMethod())
+                      .addMethod(getCreateUserMethod())
+                      .addMethod(getUpdateUserMethod())
+                      .addMethod(getDeleteUserMethod())
                       .build();
         }
       }
