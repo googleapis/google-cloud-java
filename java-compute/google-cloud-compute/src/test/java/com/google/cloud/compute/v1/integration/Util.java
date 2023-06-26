@@ -22,6 +22,10 @@ import com.google.cloud.compute.v1.DeleteInstanceRequest;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallsClient;
 import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.InstanceGroupManagersClient;
+import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplatesClient;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import java.time.Instant;
@@ -71,6 +75,30 @@ public class Util {
       if (isCreatedBeforeThresholdTime(firewall.getCreationTimestamp())
           && firewall.getName().startsWith(prefix)) {
         firewallsClient.deleteAsync(project, firewall.getName());
+      }
+    }
+  }
+
+  public static void cleanUpInstanceTemplates(
+      InstanceTemplatesClient instanceTemplatesClient, String project, String prefix) {
+    InstanceTemplatesClient.ListPagedResponse listPagedResponse =
+        instanceTemplatesClient.list(project);
+    for (InstanceTemplate instanceTemplate : listPagedResponse.iterateAll()) {
+      if (isCreatedBeforeThresholdTime(instanceTemplate.getCreationTimestamp())
+          && instanceTemplate.getName().startsWith(prefix)) {
+        instanceTemplatesClient.deleteAsync(project, instanceTemplate.getName());
+      }
+    }
+  }
+
+  public static void cleanUpGroupManagers(
+      InstanceGroupManagersClient groupManagersClient, String project, String zone, String prefix) {
+    InstanceGroupManagersClient.ListPagedResponse listPagedResponse =
+        groupManagersClient.list(project, zone);
+    for (InstanceGroupManager groupManager : listPagedResponse.iterateAll()) {
+      if (isCreatedBeforeThresholdTime(groupManager.getCreationTimestamp())
+          && groupManager.getName().startsWith(prefix)) {
+        groupManagersClient.deleteAsync(project, zone, groupManager.getName());
       }
     }
   }

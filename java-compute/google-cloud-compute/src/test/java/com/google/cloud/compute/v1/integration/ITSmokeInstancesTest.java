@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -47,8 +48,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
+  private static final int DEFAULT_AWAIT_TERMINATION_DURATION = 10;
   private static InstancesClient instancesClient;
   private static FirewallsClient firewallsClient;
+  private static InstanceTemplatesClient instanceTemplatesClient;
+  private static InstanceGroupManagersClient instanceGroupManagersClient;
   private static List<Instance> instances;
   private static final String DEFAULT_IMAGE =
       "projects/debian-cloud/global/images/family/debian-10";
@@ -89,6 +93,13 @@ public class ITSmokeInstancesTest extends BaseTest {
     FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();
     firewallsClient = FirewallsClient.create(firewallsSettings);
     Util.cleanUpFirewalls(firewallsClient, DEFAULT_PROJECT, COMPUTE_PREFIX);
+
+    instanceTemplatesClient = InstanceTemplatesClient.create();
+    Util.cleanUpInstanceTemplates(instanceTemplatesClient, DEFAULT_PROJECT, COMPUTE_PREFIX);
+
+    instanceGroupManagersClient = InstanceGroupManagersClient.create();
+    Util.cleanUpGroupManagers(
+        instanceGroupManagersClient, DEFAULT_PROJECT, DEFAULT_ZONE, COMPUTE_PREFIX);
   }
 
   @Before
@@ -103,6 +114,14 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
     instancesClient.close();
     firewallsClient.close();
+    instanceTemplatesClient.close();
+    instanceGroupManagersClient.close();
+
+    instancesClient.awaitTermination(DEFAULT_AWAIT_TERMINATION_DURATION, TimeUnit.SECONDS);
+    firewallsClient.awaitTermination(DEFAULT_AWAIT_TERMINATION_DURATION, TimeUnit.SECONDS);
+    instanceTemplatesClient.awaitTermination(DEFAULT_AWAIT_TERMINATION_DURATION, TimeUnit.SECONDS);
+    instanceGroupManagersClient.awaitTermination(
+        DEFAULT_AWAIT_TERMINATION_DURATION, TimeUnit.SECONDS);
   }
 
   @Test
@@ -127,13 +146,11 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testResizeGroupToZero() throws IOException, ExecutionException, InterruptedException {
+  public void testResizeGroupToZero() throws ExecutionException, InterruptedException {
     // We test here: 1)set body field to zero
     //               2)set query param to zero
     List<String> instanceGroupManagersToClean = new ArrayList<>();
     List<String> instanceTemplatesToClean = new ArrayList<>();
-    InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create();
-    InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create();
     String templateName = generateRandomName("template");
     String instanceGroupManagerName = generateRandomName("igm");
     Instance instance = insertInstance();
@@ -179,10 +196,10 @@ public class ITSmokeInstancesTest extends BaseTest {
 
     } finally {
       for (String name : instanceGroupManagersToClean) {
-        instanceGroupManagersClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, name).get();
+        instanceGroupManagersClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, name);
       }
       for (String name : instanceTemplatesToClean) {
-        instanceTemplatesClient.deleteAsync(DEFAULT_PROJECT, name).get();
+        instanceTemplatesClient.deleteAsync(DEFAULT_PROJECT, name);
       }
     }
   }
@@ -244,8 +261,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testCapitalLetterField()
-      throws IOException, ExecutionException, InterruptedException {
+  public void testCapitalLetterField() throws ExecutionException, InterruptedException {
     // we want to test a field like "IPProtocol"
     String name = generateRandomName("fw-rule");
     Firewall firewall =
