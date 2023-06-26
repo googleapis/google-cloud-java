@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.123.17](https://github.com/googleapis/java-pubsub/compare/v1.123.16...v1.123.17) (2023-06-26)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.29.0 ([#1633](https://github.com/googleapis/java-pubsub/issues/1633)) ([20096e7](https://github.com/googleapis/java-pubsub/commit/20096e7b64f9b62051f51ad28aa49b95f78b3e6b))
+
 ## [1.123.16](https://github.com/googleapis/java-pubsub/compare/v1.123.15...v1.123.16) (2023-06-26)
 
 
