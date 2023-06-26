@@ -38,7 +38,7 @@
     <bigtable.cfe-data-batch-endpoint>batch-bigtable.googleapis.com:443</bigtable.cfe-data-batch-endpoint>
 
     <!-- These are needed to compile the protobuf used by Changestream merging acceptance test. -->
-    <test-protoc-grpc.version>1.55.1</test-protoc-grpc.version>
+    <test-protoc-grpc.version>1.56.0</test-protoc-grpc.version>
     <test-protoc.version>3.23.2</test-protoc.version>
   </properties>
 
