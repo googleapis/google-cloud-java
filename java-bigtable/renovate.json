@@ -71,6 +71,13 @@
       ],
       "groupName": "jackson dependencies"
     },
+    {
+      "packagePatterns": [
+        "^com.google.cloud:google-cloud-shared-dependencies",
+        "^com.google.cloud:google-cloud-monitoring-bom"
+      ],
+      "groupName": "shared dependencies"
+    }
   ],
   "regexManagers": [
     {
