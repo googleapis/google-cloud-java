@@ -19,6 +19,8 @@ package com.google.cloud.compute.v1.integration;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallsClient;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
@@ -58,6 +60,17 @@ public class Util {
       if (isCreatedBeforeThresholdTime(address.getCreationTimestamp())
           && address.getName().startsWith(prefix)) {
         addressesClient.deleteAsync(project, region, address.getName());
+      }
+    }
+  }
+
+  public static void cleanUpFirewalls(
+      FirewallsClient firewallsClient, String project, String prefix) {
+    FirewallsClient.ListPagedResponse listPagedResponse = firewallsClient.list(project);
+    for (Firewall firewall : listPagedResponse.iterateAll()) {
+      if (isCreatedBeforeThresholdTime(firewall.getCreationTimestamp())
+          && firewall.getName().startsWith(prefix)) {
+        firewallsClient.deleteAsync(project, firewall.getName());
       }
     }
   }

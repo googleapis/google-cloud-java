@@ -32,7 +32,6 @@ import com.google.cloud.compute.v1.InstanceTemplate;
 import com.google.cloud.compute.v1.InstanceTemplatesClient;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesScopedList;
-import com.google.cloud.compute.v1.InstancesSettings;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ShieldedInstanceConfig;
@@ -49,6 +48,7 @@ import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
   private static InstancesClient instancesClient;
+  private static FirewallsClient firewallsClient;
   private static List<Instance> instances;
   private static final String DEFAULT_IMAGE =
       "projects/debian-cloud/global/images/family/debian-10";
@@ -71,10 +71,24 @@ public class ITSmokeInstancesTest extends BaseTest {
   @BeforeClass
   public static void setUp() throws IOException {
     instances = new ArrayList<>();
-    InstancesSettings instanceSettings = InstancesSettings.newBuilder().build();
-    instancesClient = InstancesClient.create(instanceSettings);
-
+    instancesClient = InstancesClient.create();
     Util.cleanUpComputeInstances(instancesClient, DEFAULT_PROJECT, DEFAULT_ZONE, COMPUTE_PREFIX);
+
+    FirewallsSettings.Builder firewallsSettingsBuilder = FirewallsSettings.newBuilder();
+    firewallsSettingsBuilder
+        .getSettings()
+        .setRetrySettings(
+            firewallsSettingsBuilder
+                .getSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setMaxAttempts(5)
+                .setInitialRetryDelay(org.threeten.bp.Duration.ofSeconds(5))
+                .setRetryDelayMultiplier(1.0)
+                .build());
+    FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();
+    firewallsClient = FirewallsClient.create(firewallsSettings);
+    Util.cleanUpFirewalls(firewallsClient, DEFAULT_PROJECT, COMPUTE_PREFIX);
   }
 
   @Before
@@ -88,6 +102,7 @@ public class ITSmokeInstancesTest extends BaseTest {
       instancesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
     }
     instancesClient.close();
+    firewallsClient.close();
   }
 
   @Test
@@ -192,8 +207,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testDefaultClient() throws IOException, ExecutionException, InterruptedException {
-    InstancesClient defaultClient = InstancesClient.create();
+  public void testDefaultClient() throws ExecutionException, InterruptedException {
     Instance instanceResource =
         Instance.newBuilder()
             .setName(INSTANCE)
@@ -201,7 +215,7 @@ public class ITSmokeInstancesTest extends BaseTest {
             .addDisks(DISK)
             .addNetworkInterfaces(NETWORK_INTERFACE)
             .build();
-    defaultClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();
+    instancesClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();
     instances.add(instanceResource);
     assertInstanceDetails(getInstance());
   }
@@ -234,20 +248,6 @@ public class ITSmokeInstancesTest extends BaseTest {
       throws IOException, ExecutionException, InterruptedException {
     // we want to test a field like "IPProtocol"
     String name = generateRandomName("fw-rule");
-    FirewallsSettings.Builder firewallsSettingsBuilder = FirewallsSettings.newBuilder();
-    firewallsSettingsBuilder
-        .getSettings()
-        .setRetrySettings(
-            firewallsSettingsBuilder
-                .getSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setMaxAttempts(5)
-                .setInitialRetryDelay(org.threeten.bp.Duration.ofSeconds(5))
-                .setRetryDelayMultiplier(1.0)
-                .build());
-    FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();
-    FirewallsClient firewallsClient = FirewallsClient.create(firewallsSettings);
     Firewall firewall =
         Firewall.newBuilder()
             .setName(name)
@@ -260,7 +260,7 @@ public class ITSmokeInstancesTest extends BaseTest {
       Assert.assertEquals(name, fetched.getName());
       Assert.assertEquals("tcp", fetched.getAllowed(0).getIPProtocol());
     } finally {
-      firewallsClient.deleteAsync(DEFAULT_PROJECT, name).get();
+      firewallsClient.deleteAsync(DEFAULT_PROJECT, name);
     }
   }
 
