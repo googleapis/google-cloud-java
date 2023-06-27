@@ -286,12 +286,6 @@
                         <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/readrows/**</sourceFileExclude>
                         <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/metrics/**</sourceFileExclude>
                     </sourceFileExcludes>
-
-                    <!-- Enable external linking -->
-                    <links>
-                        <link>https://googleapis.dev/java/gax/${gax.version}/</link>
-                        <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
-                    </links>
                 </configuration>
             </plugin>
             <plugin>
