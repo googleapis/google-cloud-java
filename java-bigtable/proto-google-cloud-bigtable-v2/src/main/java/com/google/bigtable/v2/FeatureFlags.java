@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,25 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.FeatureFlags.Builder.class);
   }
 
+  public static final int REVERSE_SCANS_FIELD_NUMBER = 1;
+  private boolean reverseScans_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports reverse scans. The server will
+   * reject ReadRowsRequests with the reverse bit set when this is absent.
+   * </pre>
+   *
+   * <code>bool reverse_scans = 1;</code>
+   *
+   * @return The reverseScans.
+   */
+  @java.lang.Override
+  public boolean getReverseScans() {
+    return reverseScans_;
+  }
+
   public static final int MUTATE_ROWS_RATE_LIMIT_FIELD_NUMBER = 3;
   private boolean mutateRowsRateLimit_ = false;
   /**
@@ -100,6 +119,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (reverseScans_ != false) {
+      output.writeBool(1, reverseScans_);
+    }
     if (mutateRowsRateLimit_ != false) {
       output.writeBool(3, mutateRowsRateLimit_);
     }
@@ -112,6 +134,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (reverseScans_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, reverseScans_);
+    }
     if (mutateRowsRateLimit_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, mutateRowsRateLimit_);
     }
@@ -130,6 +155,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.FeatureFlags other = (com.google.bigtable.v2.FeatureFlags) obj;
 
+    if (getReverseScans() != other.getReverseScans()) return false;
     if (getMutateRowsRateLimit() != other.getMutateRowsRateLimit()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -142,6 +168,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + REVERSE_SCANS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReverseScans());
     hash = (37 * hash) + MUTATE_ROWS_RATE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMutateRowsRateLimit());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -289,6 +317,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      reverseScans_ = false;
       mutateRowsRateLimit_ = false;
       return this;
     }
@@ -326,6 +355,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.bigtable.v2.FeatureFlags result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reverseScans_ = reverseScans_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.mutateRowsRateLimit_ = mutateRowsRateLimit_;
       }
     }
@@ -375,6 +407,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.bigtable.v2.FeatureFlags other) {
       if (other == com.google.bigtable.v2.FeatureFlags.getDefaultInstance()) return this;
+      if (other.getReverseScans() != false) {
+        setReverseScans(other.getReverseScans());
+      }
       if (other.getMutateRowsRateLimit() != false) {
         setMutateRowsRateLimit(other.getMutateRowsRateLimit());
       }
@@ -404,10 +439,16 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                reverseScans_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
             case 24:
               {
                 mutateRowsRateLimit_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -428,6 +469,62 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private boolean reverseScans_;
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports reverse scans. The server will
+     * reject ReadRowsRequests with the reverse bit set when this is absent.
+     * </pre>
+     *
+     * <code>bool reverse_scans = 1;</code>
+     *
+     * @return The reverseScans.
+     */
+    @java.lang.Override
+    public boolean getReverseScans() {
+      return reverseScans_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports reverse scans. The server will
+     * reject ReadRowsRequests with the reverse bit set when this is absent.
+     * </pre>
+     *
+     * <code>bool reverse_scans = 1;</code>
+     *
+     * @param value The reverseScans to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReverseScans(boolean value) {
+
+      reverseScans_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports reverse scans. The server will
+     * reject ReadRowsRequests with the reverse bit set when this is absent.
+     * </pre>
+     *
+     * <code>bool reverse_scans = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReverseScans() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      reverseScans_ = false;
+      onChanged();
+      return this;
+    }
 
     private boolean mutateRowsRateLimit_;
     /**
@@ -462,7 +559,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder setMutateRowsRateLimit(boolean value) {
 
       mutateRowsRateLimit_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -479,7 +576,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMutateRowsRateLimit() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       mutateRowsRateLimit_ = false;
       onChanged();
       return this;

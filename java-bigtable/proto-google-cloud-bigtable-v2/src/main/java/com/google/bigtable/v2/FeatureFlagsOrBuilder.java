@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,20 @@ public interface FeatureFlagsOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.FeatureFlags)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports reverse scans. The server will
+   * reject ReadRowsRequests with the reverse bit set when this is absent.
+   * </pre>
+   *
+   * <code>bool reverse_scans = 1;</code>
+   *
+   * @return The reverseScans.
+   */
+  boolean getReverseScans();
 
   /**
    *

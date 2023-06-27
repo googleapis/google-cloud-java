@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -495,6 +495,31 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int REVERSED_FIELD_NUMBER = 7;
+  private boolean reversed_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Experimental API - Please note that this API is currently experimental
+   * and can change in the future.
+   *
+   * Return rows in lexiographical descending order of the row keys. The row
+   * contents will not be affected by this flag.
+   * Example result set: [
+   * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
+   * "f:col2": "v2"} ].
+   * </pre>
+   *
+   * <code>bool reversed = 7;</code>
+   *
+   * @return The reversed.
+   */
+  @java.lang.Override
+  public boolean getReversed() {
+    return reversed_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -529,6 +554,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(6, requestStatsView_);
     }
+    if (reversed_ != false) {
+      output.writeBool(7, reversed_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -558,6 +586,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, requestStatsView_);
     }
+    if (reversed_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, reversed_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -585,6 +616,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     }
     if (getRowsLimit() != other.getRowsLimit()) return false;
     if (requestStatsView_ != other.requestStatsView_) return false;
+    if (getReversed() != other.getReversed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -612,6 +644,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowsLimit());
     hash = (37 * hash) + REQUEST_STATS_VIEW_FIELD_NUMBER;
     hash = (53 * hash) + requestStatsView_;
+    hash = (37 * hash) + REVERSED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReversed());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -765,6 +799,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       }
       rowsLimit_ = 0L;
       requestStatsView_ = 0;
+      reversed_ = false;
       return this;
     }
 
@@ -818,6 +853,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.requestStatsView_ = requestStatsView_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.reversed_ = reversed_;
       }
     }
 
@@ -888,6 +926,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       if (other.requestStatsView_ != 0) {
         setRequestStatsViewValue(other.getRequestStatsViewValue());
       }
+      if (other.getReversed() != false) {
+        setReversed(other.getReversed());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -950,6 +991,12 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 56:
+              {
+                reversed_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1727,6 +1774,80 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder clearRequestStatsView() {
       bitField0_ = (bitField0_ & ~0x00000020);
       requestStatsView_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean reversed_;
+    /**
+     *
+     *
+     * <pre>
+     * Experimental API - Please note that this API is currently experimental
+     * and can change in the future.
+     *
+     * Return rows in lexiographical descending order of the row keys. The row
+     * contents will not be affected by this flag.
+     * Example result set: [
+     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
+     * "f:col2": "v2"} ].
+     * </pre>
+     *
+     * <code>bool reversed = 7;</code>
+     *
+     * @return The reversed.
+     */
+    @java.lang.Override
+    public boolean getReversed() {
+      return reversed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental API - Please note that this API is currently experimental
+     * and can change in the future.
+     *
+     * Return rows in lexiographical descending order of the row keys. The row
+     * contents will not be affected by this flag.
+     * Example result set: [
+     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
+     * "f:col2": "v2"} ].
+     * </pre>
+     *
+     * <code>bool reversed = 7;</code>
+     *
+     * @param value The reversed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReversed(boolean value) {
+
+      reversed_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental API - Please note that this API is currently experimental
+     * and can change in the future.
+     *
+     * Return rows in lexiographical descending order of the row keys. The row
+     * contents will not be affected by this flag.
+     * Example result set: [
+     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
+     * "f:col2": "v2"} ].
+     * </pre>
+     *
+     * <code>bool reversed = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReversed() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      reversed_ = false;
       onChanged();
       return this;
     }
