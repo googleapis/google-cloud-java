@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.24.0](https://github.com/googleapis/java-bigtable/compare/v2.23.3...v2.24.0) (2023-06-27)
+
+
+### Features
+
+* Add experimental reverse scan for public preview ([#1809](https://github.com/googleapis/java-bigtable/issues/1809)) ([f4f2e2e](https://github.com/googleapis/java-bigtable/commit/f4f2e2ebac535372ebfb8ebd60ca78f0f7ca010b))
+* Reverse scans public preview ([#1711](https://github.com/googleapis/java-bigtable/issues/1711)) ([176360f](https://github.com/googleapis/java-bigtable/commit/176360f2689966dccbe95c401cf2bfe9ca64f274))
+
+
+### Dependencies
+
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.1.5 ([#1801](https://github.com/googleapis/java-bigtable/issues/1801)) ([a8961e8](https://github.com/googleapis/java-bigtable/commit/a8961e8f45f5cb2812c185a68a8892bed958ae6a))
+* Update dependency kr.motd.maven:os-maven-plugin to v1.7.1 ([#1792](https://github.com/googleapis/java-bigtable/issues/1792)) ([80acca0](https://github.com/googleapis/java-bigtable/commit/80acca0922060e932dedd31e8079f432b7de9785))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.23 ([#1800](https://github.com/googleapis/java-bigtable/issues/1800)) ([a9172c4](https://github.com/googleapis/java-bigtable/commit/a9172c4570a053d28ab90232b98ab716cc8b6f80))
+* Update shared dependencies to 3.12.0, monitoring to 3.21.0, update renovate config ([#1807](https://github.com/googleapis/java-bigtable/issues/1807)) ([12fc8cd](https://github.com/googleapis/java-bigtable/commit/12fc8cded38d64c9e4d997d83ff8cdbffe373120))
+
 ## [2.23.3](https://github.com/googleapis/java-bigtable/compare/v2.23.2...v2.23.3) (2023-06-08)
 
 
