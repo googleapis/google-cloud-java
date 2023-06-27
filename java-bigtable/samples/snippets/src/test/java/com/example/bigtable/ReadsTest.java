@@ -198,7 +198,7 @@ public class ReadsTest extends MobileTimeSeriesBaseTest {
                     + "Column Family stats_summary\n"
                     + "\tconnected_cell: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 @%1$s\n"
                     + "\tconnected_wifi: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @%1$s\n"
-                    + "\tos_build: PQ2A.190406.000 @%1$s"
+                    + "\tos_build: PQ2A.190406.000 @%1$s\n\n"
                     + "Reading data for phone#5c10102#20190501\n"
                     + "Column Family stats_summary\n"
                     + "\tconnected_cell: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 @%1$s\n"
@@ -208,12 +208,7 @@ public class ReadsTest extends MobileTimeSeriesBaseTest {
                     + "Column Family stats_summary\n"
                     + "\tconnected_cell: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @%1$s\n"
                     + "\tconnected_wifi: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 @%1$s\n"
-                    + "\tos_build: PQ2A.190406.000 @%1$s\n\n"
-                    + "Reading data for phone#4c410523#20190502\n"
-                    + "Column Family stats_summary\n"
-                    + "\tconnected_cell: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 @%1$s\n"
-                    + "\tconnected_wifi: \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 @%1$s\n"
-                    + "\tos_build: PQ2A.190405.004 @%1$s\n\n",
+                    + "\tos_build: PQ2A.190406.000 @%1$s\n\n",
                 TIMESTAMP));
   }
 

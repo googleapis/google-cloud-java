@@ -217,7 +217,7 @@ public class Reads {
       Query query =
           Query.create(tableId)
               .reversed(true)
-              .limit(2)
+              .limit(3)
               .prefix("phone#4c410523")
               .range("phone#5c10102", "phone#5c10103");
       ServerStream<Row> rows = dataClient.readRows(query);
