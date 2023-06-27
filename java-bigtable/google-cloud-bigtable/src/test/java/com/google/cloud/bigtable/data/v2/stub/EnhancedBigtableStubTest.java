@@ -53,6 +53,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
+import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
@@ -228,6 +229,20 @@ public class EnhancedBigtableStubTest {
     String jwtStr = authValue.substring(expectedPrefix.length());
     JsonWebSignature parsed = JsonWebSignature.parse(GsonFactory.getDefaultInstance(), jwtStr);
     assertThat(parsed.getPayload().getAudience()).isEqualTo("https://bigtable.googleapis.com/");
+  }
+
+  @Test
+  public void testFeatureFlags() throws InterruptedException, IOException, ExecutionException {
+
+    enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
+    Metadata metadata = metadataInterceptor.headers.take();
+
+    String encodedFeatureFlags =
+        metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    FeatureFlags featureFlags =
+        FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
+
+    assertThat(featureFlags.getReverseScans()).isTrue();
   }
 
   @Test

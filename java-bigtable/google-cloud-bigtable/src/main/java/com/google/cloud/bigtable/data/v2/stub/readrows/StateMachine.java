@@ -76,6 +76,7 @@ import java.util.List;
  */
 final class StateMachine<RowT> {
   private final RowBuilder<RowT> adapter;
+  private boolean reversed;
   private State currentState;
   private ByteString lastCompleteRowKey;
 
@@ -102,9 +103,11 @@ final class StateMachine<RowT> {
    * Initialize a new state machine that's ready for a new row.
    *
    * @param adapter The adapter that will build the final row.
+   * @param reversed
    */
-  StateMachine(RowBuilder<RowT> adapter) {
+  StateMachine(RowBuilder<RowT> adapter, boolean reversed) {
     this.adapter = adapter;
+    this.reversed = reversed;
     reset();
   }
 
@@ -261,9 +264,15 @@ final class StateMachine<RowT> {
           validate(chunk.hasFamilyName(), "AWAITING_NEW_ROW: family missing");
           validate(chunk.hasQualifier(), "AWAITING_NEW_ROW: qualifier missing");
           if (lastCompleteRowKey != null) {
-            validate(
-                ByteStringComparator.INSTANCE.compare(lastCompleteRowKey, chunk.getRowKey()) < 0,
-                "AWAITING_NEW_ROW: key must be strictly increasing");
+
+            int cmp = ByteStringComparator.INSTANCE.compare(lastCompleteRowKey, chunk.getRowKey());
+            String direction = "increasing";
+            if (reversed) {
+              cmp *= -1;
+              direction = "decreasing";
+            }
+
+            validate(cmp < 0, "AWAITING_NEW_ROW: key must be strictly " + direction);
           }
 
           rowKey = chunk.getRowKey();

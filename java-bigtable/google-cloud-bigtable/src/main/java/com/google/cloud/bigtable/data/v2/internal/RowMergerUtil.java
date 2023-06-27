@@ -30,7 +30,7 @@ public class RowMergerUtil implements AutoCloseable {
 
   public RowMergerUtil() {
     RowBuilder<Row> rowBuilder = new DefaultRowAdapter().createRowBuilder();
-    merger = new RowMerger<>(rowBuilder);
+    merger = new RowMerger<>(rowBuilder, false);
   }
 
   @Override

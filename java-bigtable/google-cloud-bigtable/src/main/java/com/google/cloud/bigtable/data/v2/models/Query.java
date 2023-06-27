@@ -185,6 +185,26 @@ public final class Query implements Serializable {
   }
 
   /**
+   * Return rows in reverse order.
+   *
+   * <p>The row will be streamed in reverse lexiographic order of the keys. The row key ranges are
+   * still expected to be oriented the same way as forwards. ie [a,c] where a <= c. The row content
+   * will remain unchanged from the ordering forward scans. This is particularly useful to get the
+   * last N records before a key:
+   *
+   * <pre>{@code
+   * query
+   *   .range(ByteStringRange.unbounded().endOpen("key"))
+   *   .limit(10)
+   *   .reversed(true)
+   * }</pre>
+   */
+  public Query reversed(boolean enable) {
+    builder.setReversed(enable);
+    return this;
+  }
+
+  /**
    * Split this query into multiple queries that can be evenly distributed across Bigtable nodes and
    * be run in parallel. This method takes the results from {@link
    * com.google.cloud.bigtable.data.v2.BigtableDataClient#sampleRowKeysAsync(String)} to divide this
@@ -379,11 +399,12 @@ public final class Query implements Serializable {
 
       // Split the row ranges / row keys. Return false if there's nothing
       // left on the right of the split point.
-      RowSetUtil.Split split = RowSetUtil.split(query.builder.getRows(), lastSeenRowKey);
-      if (split.getRight() == null) {
+      RowSet remaining =
+          RowSetUtil.erase(query.builder.getRows(), lastSeenRowKey, !query.builder.getReversed());
+      if (remaining == null) {
         return false;
       }
-      query.builder.setRows(split.getRight());
+      query.builder.setRows(remaining);
       return true;
     }
   }

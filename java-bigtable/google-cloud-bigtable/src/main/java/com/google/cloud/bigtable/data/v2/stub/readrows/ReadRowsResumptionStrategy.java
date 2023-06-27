@@ -85,7 +85,8 @@ public class ReadRowsResumptionStrategy<RowT>
       return originalRequest;
     }
 
-    RowSet remaining = RowSetUtil.split(originalRequest.getRows(), lastKey).getRight();
+    RowSet remaining =
+        RowSetUtil.erase(originalRequest.getRows(), lastKey, !originalRequest.getReversed());
 
     // Edge case: retrying a fulfilled request.
     // A fulfilled request is one that has had all of its row keys and ranges fulfilled, or if it

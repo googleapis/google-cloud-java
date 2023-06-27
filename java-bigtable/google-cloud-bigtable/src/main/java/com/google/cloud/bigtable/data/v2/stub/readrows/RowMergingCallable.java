@@ -49,7 +49,7 @@ public class RowMergingCallable<RowT> extends ServerStreamingCallable<ReadRowsRe
   public void call(
       ReadRowsRequest request, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
     RowBuilder<RowT> rowBuilder = rowAdapter.createRowBuilder();
-    RowMerger<RowT> merger = new RowMerger<>(rowBuilder);
+    RowMerger<RowT> merger = new RowMerger<>(rowBuilder, request.getReversed());
     ReframingResponseObserver<ReadRowsResponse, RowT> innerObserver =
         new ReframingResponseObserver<>(responseObserver, merger);
     inner.call(request, innerObserver, context);

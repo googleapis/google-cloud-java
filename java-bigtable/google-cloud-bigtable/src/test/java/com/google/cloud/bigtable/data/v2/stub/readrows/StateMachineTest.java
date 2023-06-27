@@ -34,7 +34,7 @@ public class StateMachineTest {
 
   @Before
   public void setUp() throws Exception {
-    stateMachine = new StateMachine<>(new DefaultRowAdapter().createRowBuilder());
+    stateMachine = new StateMachine<>(new DefaultRowAdapter().createRowBuilder(), false);
   }
 
   @Test

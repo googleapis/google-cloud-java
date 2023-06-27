@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
@@ -36,8 +37,14 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
+import com.google.common.io.BaseEncoding;
 import io.grpc.Attributes;
+import io.grpc.Metadata;
 import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCall.Listener;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.grpc.ServerTransportFilter;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
@@ -78,12 +85,24 @@ public class BigtableDataClientFactoryTest {
 
   private final BlockingQueue<Attributes> setUpAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
+  private final BlockingQueue<Metadata> requestMetadata = new LinkedBlockingDeque<>();
 
   @Before
   public void setUp() throws IOException {
     service = new FakeBigtableService();
     server =
         FakeServiceBuilder.create(service)
+            .intercept(
+                new ServerInterceptor() {
+                  @Override
+                  public <ReqT, RespT> Listener<ReqT> interceptCall(
+                      ServerCall<ReqT, RespT> call,
+                      Metadata headers,
+                      ServerCallHandler<ReqT, RespT> next) {
+                    requestMetadata.add(headers);
+                    return next.startCall(call, headers);
+                  }
+                })
             .addTransportFilter(
                 new ServerTransportFilter() {
                   @Override
@@ -277,6 +296,24 @@ public class BigtableDataClientFactoryTest {
   }
 
   @Test
+  public void testFeatureFlags() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createDefault()) {
+
+      requestMetadata.clear();
+      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    }
+
+    Metadata metadata = requestMetadata.take();
+    String encodedValue =
+        metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    FeatureFlags featureFlags =
+        FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedValue));
+
+    assertThat(featureFlags.getReverseScans()).isTrue();
+  }
+
+  @Test
   public void testBulkMutationFlowControllerConfigured() throws Exception {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder()
@@ -306,6 +343,7 @@ public class BigtableDataClientFactoryTest {
     volatile MutateRowRequest lastRequest;
     BlockingQueue<ReadRowsRequest> readRowsRequests = new LinkedBlockingDeque<>();
     BlockingQueue<PingAndWarmRequest> pingAndWarmRequests = new LinkedBlockingDeque<>();
+
     private ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
         new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
           @Override

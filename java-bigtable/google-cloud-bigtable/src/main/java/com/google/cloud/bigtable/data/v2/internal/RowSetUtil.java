@@ -50,80 +50,79 @@ public final class RowSetUtil {
   private RowSetUtil() {}
 
   /**
-   * Splits the provided {@link RowSet} along the provided splitPoint into 2 segments. The right
-   * segment will contain all keys that are strictly greater than the splitPoint and all {@link
-   * RowRange}s truncated to start right after the splitPoint. The primary usecase is to resume a
-   * broken ReadRows stream.
+   * Removes all the keys and range parts that fall on or before the splitPoint.
+   *
+   * <p>The direction of before is determined by fromStart: for forward scans fromStart is true and
+   * will remove all the keys and range segments that would've been read prior to the splitPoint
+   * (ie. all of the keys sort lexiographically at or before the split point. For reverse scans,
+   * fromStart is false and all segments that sort lexiographically at or after the split point are
+   * removed. The primary usecase is to resume a broken ReadRows stream.
    */
-  @Nonnull
-  public static Split split(@Nonnull RowSet rowSet, @Nonnull ByteString splitPoint) {
-    // Edgecase: splitPoint is the leftmost key ("")
-    if (splitPoint.isEmpty()) {
-      return Split.of(null, rowSet);
-    }
+  public static RowSet erase(RowSet rowSet, ByteString splitPoint, boolean fromStart) {
+    RowSet.Builder newRowSet = RowSet.newBuilder();
 
-    // An empty RowSet represents a full table scan. Make that explicit so that there is RowRange to
-    // split.
     if (rowSet.getRowKeysList().isEmpty() && rowSet.getRowRangesList().isEmpty()) {
       rowSet = RowSet.newBuilder().addRowRanges(RowRange.getDefaultInstance()).build();
     }
 
-    RowSet.Builder leftBuilder = RowSet.newBuilder();
-    boolean leftIsEmpty = true;
-    RowSet.Builder rightBuilder = RowSet.newBuilder();
-    boolean rightIsEmpty = true;
-
+    // Handle point lookups
     for (ByteString key : rowSet.getRowKeysList()) {
-      if (ByteStringComparator.INSTANCE.compare(key, splitPoint) <= 0) {
-        leftBuilder.addRowKeys(key);
-        leftIsEmpty = false;
+      if (fromStart) {
+        // key is right of the split
+        if (ByteStringComparator.INSTANCE.compare(key, splitPoint) > 0) {
+          newRowSet.addRowKeys(key);
+        }
       } else {
-        rightBuilder.addRowKeys(key);
-        rightIsEmpty = false;
+        // key is left of the split
+        if (ByteStringComparator.INSTANCE.compare(key, splitPoint) < 0) {
+          newRowSet.addRowKeys(key);
+        }
       }
     }
 
-    for (RowRange range : rowSet.getRowRangesList()) {
-      StartPoint startPoint = StartPoint.extract(range);
-      int startCmp =
-          ComparisonChain.start()
-              .compare(startPoint.value, splitPoint, ByteStringComparator.INSTANCE)
-              // when value lies on the split point, only closed start points are on the left
-              .compareTrueFirst(startPoint.isClosed, true)
-              .result();
-
-      // Range is fully on the right side
-      if (startCmp > 0) {
-        rightBuilder.addRowRanges(range);
-        rightIsEmpty = false;
-        continue;
-      }
-
-      EndPoint endPoint = EndPoint.extract(range);
-      int endCmp =
-          ComparisonChain.start()
-              // empty (true) end key means rightmost regardless of the split point
-              .compareFalseFirst(endPoint.value.isEmpty(), false)
-              .compare(endPoint.value, splitPoint, ByteStringComparator.INSTANCE)
-              // don't care if the endpoint is open/closed: both will be on the left if the value is
-              // <=
-              .result();
-
-      if (endCmp <= 0) {
-        // Range is fully on the left
-        leftBuilder.addRowRanges(range);
-        leftIsEmpty = false;
-      } else {
-        // Range is split
-        leftBuilder.addRowRanges(range.toBuilder().setEndKeyClosed(splitPoint));
-        leftIsEmpty = false;
-        rightBuilder.addRowRanges(range.toBuilder().setStartKeyOpen(splitPoint));
-        rightIsEmpty = false;
+    // Handle ranges
+    for (RowRange rowRange : rowSet.getRowRangesList()) {
+      RowRange newRange = truncateRange(rowRange, splitPoint, fromStart);
+      if (newRange != null) {
+        newRowSet.addRowRanges(newRange);
       }
     }
 
-    return Split.of(
-        leftIsEmpty ? null : leftBuilder.build(), rightIsEmpty ? null : rightBuilder.build());
+    // Return the new rowset if there is anything left to read
+    RowSet result = newRowSet.build();
+    if (result.getRowKeysList().isEmpty() && result.getRowRangesList().isEmpty()) {
+      return null;
+    }
+    return result;
+  }
+
+  private static RowRange truncateRange(RowRange range, ByteString split, boolean fromStart) {
+    if (fromStart) {
+      // range end is on or left of the split: skip
+      if (EndPoint.extract(range).compareTo(new EndPoint(split, true)) <= 0) {
+        return null;
+      }
+    } else {
+      // range is on or right of the split
+      if (StartPoint.extract(range).compareTo(new StartPoint(split, true)) >= 0) {
+        return null;
+      }
+    }
+    RowRange.Builder newRange = range.toBuilder();
+
+    if (fromStart) {
+      // range start is on or left of the split
+      if (StartPoint.extract(range).compareTo(new StartPoint(split, true)) <= 0) {
+        newRange.setStartKeyOpen(split);
+      }
+    } else {
+      // range end is on or right of the split
+      if (EndPoint.extract(range).compareTo(new EndPoint(split, true)) >= 0) {
+        newRange.setEndKeyOpen(split);
+      }
+    }
+
+    return newRange.build();
   }
 
   /**

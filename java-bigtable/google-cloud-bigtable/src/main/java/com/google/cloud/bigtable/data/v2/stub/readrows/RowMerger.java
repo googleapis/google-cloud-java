@@ -61,8 +61,8 @@ public class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
   private final StateMachine<RowT> stateMachine;
   private Queue<RowT> mergedRows;
 
-  public RowMerger(RowBuilder<RowT> rowBuilder) {
-    stateMachine = new StateMachine<>(rowBuilder);
+  public RowMerger(RowBuilder<RowT> rowBuilder, boolean reversed) {
+    stateMachine = new StateMachine<>(rowBuilder, reversed);
     mergedRows = new ArrayDeque<>();
   }
 

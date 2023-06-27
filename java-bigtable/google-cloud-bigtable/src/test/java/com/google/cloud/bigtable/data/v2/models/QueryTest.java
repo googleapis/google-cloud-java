@@ -505,4 +505,11 @@ public class QueryTest {
 
     assertThat(queryPaginator.advance(ByteString.EMPTY)).isFalse();
   }
+
+  @Test
+  public void testQueryReversed() {
+    Query query = Query.create(TABLE_ID).reversed(true);
+    assertThat(query.toProto(requestContext))
+        .isEqualTo(expectedProtoBuilder().setReversed(true).build());
+  }
 }

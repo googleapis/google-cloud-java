@@ -36,37 +36,41 @@ public class RowSetUtilTest {
   @Test
   public void testSplitFullScan() {
     RowSet input = RowSet.getDefaultInstance();
-    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("g"));
 
-    assertThat(split.getLeft()).isEqualTo(parse("-g]"));
-    assertThat(split.getRight()).isEqualTo(parse("(g-"));
+    RowSet right = RowSetUtil.erase(input, ByteString.copyFromUtf8("g"), true);
+    assertThat(right).isEqualTo(parse("(g-"));
+
+    RowSet left = RowSetUtil.erase(input, ByteString.copyFromUtf8("g"), false);
+    assertThat(left).isEqualTo(parse("-g)"));
   }
 
   @Test
   public void testSplitAllLeft() {
-    RowSet input = parse("a,c,(a1-c],[a2-c],(a3-c),[a4-c)");
-    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("c"));
+    RowSet input = parse("a,(a1-c),[a2-c),(a3-c),[a4-c)");
+    RowSet left = RowSetUtil.erase(input, ByteString.copyFromUtf8("c"), false);
+    RowSet right = RowSetUtil.erase(input, ByteString.copyFromUtf8("c"), true);
 
-    assertThat(split.getLeft()).isEqualTo(input);
-    assertThat(split.getRight()).isNull();
+    assertThat(left).isEqualTo(input);
+    assertThat(right).isNull();
   }
 
   @Test
   public void testSplitAllRight() {
     RowSet input = parse("a1,c,(a-c],[a2-c],(a3-c),[a4-c)");
-    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("a"));
 
-    assertThat(split.getLeft()).isNull();
-    assertThat(split.getRight()).isEqualTo(input);
+    assertThat(RowSetUtil.erase(input, ByteString.copyFromUtf8("a"), true)).isEqualTo(input);
+    assertThat(RowSetUtil.erase(input, ByteString.copyFromUtf8("a"), false)).isNull();
   }
 
   @Test
   public void testSplit() {
-    RowSet input = parse("a1,c,(a1-c],[a2-c],(a3-c),[a4-c)");
-    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("b"));
+    RowSet input = parse("a1,c,(a1-c],[a2-c],(a3-c),[a4-c),[b-z],(b-y]");
 
-    assertThat(split.getLeft()).isEqualTo(parse("a1,(a1-b],[a2-b],(a3-b],[a4-b]"));
-    assertThat(split.getRight()).isEqualTo(parse("c,(b-c],(b-c],(b-c),(b-c)"));
+    RowSet before = RowSetUtil.erase(input, ByteString.copyFromUtf8("b"), false);
+    RowSet after = RowSetUtil.erase(input, ByteString.copyFromUtf8("b"), true);
+
+    assertThat(before).isEqualTo(parse("a1,(a1-b),[a2-b),(a3-b),[a4-b)"));
+    assertThat(after).isEqualTo(parse("c,(b-c],(b-c],(b-c),(b-c),(b-z],(b-y]"));
   }
 
   @Test

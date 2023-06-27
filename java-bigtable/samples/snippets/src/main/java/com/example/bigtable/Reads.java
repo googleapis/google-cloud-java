@@ -200,6 +200,37 @@ public class Reads {
   }
   // [END bigtable_reads_prefix]
 
+  // [START bigtable_reverse_scan]
+  public static void readRowsReversed() {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String instanceId = "my-instance-id";
+    String tableId = "mobile-time-series";
+    readRowsReversed(projectId, instanceId, tableId);
+  }
+
+  public static void readRowsReversed(String projectId, String instanceId, String tableId) {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
+      Query query =
+          Query.create(tableId)
+              .reversed(true)
+              .limit(2)
+              .prefix("phone#4c410523")
+              .range("phone#5c10102", "phone#5c10103");
+      ServerStream<Row> rows = dataClient.readRows(query);
+      for (Row row : rows) {
+        printRow(row);
+      }
+    } catch (IOException e) {
+      System.out.println(
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
+    }
+  }
+  // [END bigtable_reverse_scan]
+
   // [START bigtable_reads_filter]
   public static void readFilter() {
     // TODO(developer): Replace these variables before running the sample.

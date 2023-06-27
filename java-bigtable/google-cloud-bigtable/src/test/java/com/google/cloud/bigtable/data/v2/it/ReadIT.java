@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -31,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -222,6 +224,88 @@ public class ReadIT {
                     Query.create(tableId)
                         .range(ByteStringRange.unbounded().startOpen(keyA).endOpen(keyZ)))))
         .isEmpty();
+  }
+
+  @Test
+  public void reversed() {
+    assume()
+        .withMessage("reverse scans are not supported in the emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+    BigtableDataClient client = testEnvRule.env().getDataClient();
+    String tableId = testEnvRule.env().getTableId();
+    String familyId = testEnvRule.env().getFamilyId();
+    String uniqueKey = prefix + "-rev-queries";
+    String keyA = uniqueKey + "-" + "a";
+    String keyB = uniqueKey + "-" + "b";
+    String keyC = uniqueKey + "-" + "c";
+
+    long timestampMicros = System.currentTimeMillis() * 1_000;
+
+    client.bulkMutateRows(
+        BulkMutation.create(tableId)
+            .add(RowMutationEntry.create(keyA).setCell(familyId, "", timestampMicros, "A"))
+            .add(RowMutationEntry.create(keyB).setCell(familyId, "", timestampMicros, "B"))
+            .add(RowMutationEntry.create(keyC).setCell(familyId, "", timestampMicros, "C")));
+
+    Row expectedRowA =
+        Row.create(
+            ByteString.copyFromUtf8(keyA),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(""),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("A"))));
+
+    Row expectedRowB =
+        Row.create(
+            ByteString.copyFromUtf8(keyB),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(""),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("B"))));
+    Row expectedRowC =
+        Row.create(
+            ByteString.copyFromUtf8(keyC),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(""),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("C"))));
+
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId).reversed(true).range(ByteStringRange.prefix(uniqueKey)))))
+        .containsExactly(expectedRowC, expectedRowB, expectedRowA)
+        .inOrder();
+
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .reversed(true)
+                        .range(ByteStringRange.prefix(uniqueKey))
+                        .limit(2))))
+        .containsExactly(expectedRowC, expectedRowB)
+        .inOrder();
+
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .reversed(true)
+                        .range(ByteStringRange.unbounded().endOpen(keyC))
+                        .limit(2))))
+        .containsExactly(expectedRowB, expectedRowA)
+        .inOrder();
   }
 
   @Test
