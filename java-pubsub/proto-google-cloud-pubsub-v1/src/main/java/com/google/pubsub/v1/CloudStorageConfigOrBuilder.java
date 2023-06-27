@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,8 @@ public interface CloudStorageConfigOrBuilder
    *
    * <pre>
    * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
+   * not end in "/".
    * </pre>
    *
    * <code>string filename_suffix = 3;</code>
@@ -99,7 +100,8 @@ public interface CloudStorageConfigOrBuilder
    *
    * <pre>
    * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
+   * not end in "/".
    * </pre>
    *
    * <code>string filename_suffix = 3;</code>

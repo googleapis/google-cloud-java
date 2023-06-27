@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=1221
+   *     google/pubsub/v1/pubsub.proto;l=1222
    * @return The returnImmediately.
    */
   @java.lang.Override
@@ -687,7 +687,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1221
+     *     google/pubsub/v1/pubsub.proto;l=1222
      * @return The returnImmediately.
      */
     @java.lang.Override
@@ -713,7 +713,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1221
+     *     google/pubsub/v1/pubsub.proto;l=1222
      * @param value The returnImmediately to set.
      * @return This builder for chaining.
      */
@@ -743,7 +743,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=1221
+     *     google/pubsub/v1/pubsub.proto;l=1222
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
