@@ -247,7 +247,8 @@ public class StreamWriter implements AutoCloseable {
                   String fetchedLocation = writeStream.getLocation();
                   log.info(
                       String.format(
-                          "Fethed location %s for stream name %s, extracted project and dataset name: %s\"",
+                          "Fethed location %s for stream name %s, extracted project and dataset"
+                              + " name: %s\"",
                           fetchedLocation, streamName, datasetAndProjectName));
                   return fetchedLocation;
                 });
@@ -494,12 +495,12 @@ public class StreamWriter implements AutoCloseable {
     singleConnectionOrConnectionPool.close(this);
   }
 
-  /** Constructs a new {@link StreamWriterV2.Builder} using the given stream and client. */
+  /** Constructs a new {@link StreamWriter.Builder} using the given stream and client. */
   public static StreamWriter.Builder newBuilder(String streamName, BigQueryWriteClient client) {
     return new StreamWriter.Builder(streamName, client);
   }
 
-  /** Constructs a new {@link StreamWriterV2.Builder} using the given stream. */
+  /** Constructs a new {@link StreamWriter.Builder} using the given stream. */
   public static StreamWriter.Builder newBuilder(String streamName) {
     return new StreamWriter.Builder(streamName);
   }

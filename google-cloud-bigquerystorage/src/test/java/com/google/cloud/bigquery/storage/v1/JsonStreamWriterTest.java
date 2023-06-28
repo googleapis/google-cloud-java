@@ -1280,7 +1280,8 @@ public class JsonStreamWriterTest {
           ex.getStatus()
               .getDescription()
               .contains(
-                  "Exceeds client side inflight buffer, consider add more buffer or open more connections"));
+                  "Exceeds client side inflight buffer, consider add more buffer or open more"
+                      + " connections"));
     }
   }
 
@@ -1342,7 +1343,8 @@ public class JsonStreamWriterTest {
             "The source object has fields unknown to BigQuery: root.not_foo.",
             rowIndexToErrorMessage.get(0));
         assertEquals(
-            "Field root.foo failed to convert to STRING. Error: JSONObject does not have a string field at root.foo.",
+            "Field root.foo failed to convert to STRING. Error: JSONObject does not have a string"
+                + " field at root.foo.",
             rowIndexToErrorMessage.get(2));
       }
     }

@@ -101,8 +101,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
    * created with the updated TableSchema.
    *
    * @param items The array that contains objects to be written
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(Iterable<T> items)
       throws IOException, DescriptorValidationException {
@@ -158,8 +158,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
    *
    * @param items The collection that contains objects to be written
    * @param offset Offset for deduplication
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(Iterable<T> items, long offset)
       throws IOException, DescriptorValidationException {

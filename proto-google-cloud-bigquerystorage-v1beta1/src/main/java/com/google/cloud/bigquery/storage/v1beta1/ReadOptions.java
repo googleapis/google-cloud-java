@@ -90,6 +90,7 @@ public final class ReadOptions {
      * @return A list containing the selectedFields.
      */
     java.util.List<java.lang.String> getSelectedFieldsList();
+
     /**
      *
      *
@@ -148,6 +149,7 @@ public final class ReadOptions {
      * @return The count of selectedFields.
      */
     int getSelectedFieldsCount();
+
     /**
      *
      *
@@ -207,6 +209,7 @@ public final class ReadOptions {
      * @return The selectedFields at the given index.
      */
     java.lang.String getSelectedFields(int index);
+
     /**
      *
      *
@@ -288,6 +291,7 @@ public final class ReadOptions {
      * @return The rowRestriction.
      */
     java.lang.String getRowRestriction();
+
     /**
      *
      *
@@ -420,6 +424,7 @@ public final class ReadOptions {
     public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
       return selectedFields_;
     }
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class ReadOptions {
     public int getSelectedFieldsCount() {
       return selectedFields_.size();
     }
+
     /**
      *
      *
@@ -541,6 +547,7 @@ public final class ReadOptions {
     public java.lang.String getSelectedFields(int index) {
       return selectedFields_.get(index);
     }
+
     /**
      *
      *
@@ -607,6 +614,7 @@ public final class ReadOptions {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rowRestriction_ = "";
+
     /**
      *
      *
@@ -639,6 +647,7 @@ public final class ReadOptions {
         return s;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1087,7 @@ public final class ReadOptions {
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1139,6 +1149,7 @@ public final class ReadOptions {
         selectedFields_.makeImmutable();
         return selectedFields_;
       }
+
       /**
        *
        *
@@ -1199,6 +1210,7 @@ public final class ReadOptions {
       public int getSelectedFieldsCount() {
         return selectedFields_.size();
       }
+
       /**
        *
        *
@@ -1260,6 +1272,7 @@ public final class ReadOptions {
       public java.lang.String getSelectedFields(int index) {
         return selectedFields_.get(index);
       }
+
       /**
        *
        *
@@ -1321,6 +1334,7 @@ public final class ReadOptions {
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1390,6 +1404,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1458,6 +1473,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1523,6 +1539,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1587,6 +1604,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1658,6 +1676,7 @@ public final class ReadOptions {
       }
 
       private java.lang.Object rowRestriction_ = "";
+
       /**
        *
        *
@@ -1689,6 +1708,7 @@ public final class ReadOptions {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1720,6 +1740,7 @@ public final class ReadOptions {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1750,6 +1771,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1776,6 +1798,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *

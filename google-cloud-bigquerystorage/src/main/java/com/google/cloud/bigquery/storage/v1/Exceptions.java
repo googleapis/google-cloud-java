@@ -243,10 +243,10 @@ public final class Exceptions {
   }
 
   /**
-   * This exception is thrown from {@link SchemaAwareStreamWriter#append()} when the client side
-   * Proto serialization fails. It can also be thrown by the server in case rows contains invalid
-   * data. The exception contains a Map of indexes of faulty rows and the corresponding error
-   * message.
+   * This exception is thrown from {@link SchemaAwareStreamWriter#append(Iterable)} when the client
+   * side Proto serialization fails. It can also be thrown by the server in case rows contains
+   * invalid data. The exception contains a Map of indexes of faulty rows and the corresponding
+   * error message.
    */
   public static class AppendSerializationError extends AppendSerializtionError {
 
@@ -344,7 +344,8 @@ public final class Exceptions {
       super(
           Status.fromCode(Status.Code.RESOURCE_EXHAUSTED)
               .withDescription(
-                  "Exceeds client side inflight buffer, consider add more buffer or open more connections. Current limit: "
+                  "Exceeds client side inflight buffer, consider add more buffer or open more"
+                      + " connections. Current limit: "
                       + currentLimit),
           writerId,
           currentLimit);
@@ -356,7 +357,8 @@ public final class Exceptions {
       super(
           Status.fromCode(Status.Code.RESOURCE_EXHAUSTED)
               .withDescription(
-                  "Exceeds client side inflight buffer, consider add more buffer or open more connections. Current limit:  "
+                  "Exceeds client side inflight buffer, consider add more buffer or open more"
+                      + " connections. Current limit:  "
                       + currentLimit),
           writerId,
           currentLimit);

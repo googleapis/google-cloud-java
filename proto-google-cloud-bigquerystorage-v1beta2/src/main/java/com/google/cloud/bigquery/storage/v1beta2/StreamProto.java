@@ -56,8 +56,8 @@ public final class StreamProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n2google/cloud/bigquery/storage/v1beta2/"
-          + "stream.proto\022%google.cloud.bigquery.stor"
+      "\n"
+          + "2google/cloud/bigquery/storage/v1beta2/stream.proto\022%google.cloud.bigquery.stor"
           + "age.v1beta2\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\0321google/"
           + "cloud/bigquery/storage/v1beta2/arrow.pro"

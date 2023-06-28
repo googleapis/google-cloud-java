@@ -174,7 +174,8 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCommitWriteStreams, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCommitWriteStreams, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCommitWriteStreamsResponse.class.getName(),
                   Exception.class.getName())));

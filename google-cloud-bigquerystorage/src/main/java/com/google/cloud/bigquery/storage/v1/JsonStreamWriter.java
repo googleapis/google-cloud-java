@@ -54,8 +54,8 @@ public class JsonStreamWriter implements AutoCloseable {
    * is created with the updated TableSchema.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr)
       throws IOException, Descriptors.DescriptorValidationException {
@@ -70,8 +70,8 @@ public class JsonStreamWriter implements AutoCloseable {
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset)
       throws IOException, Descriptors.DescriptorValidationException {

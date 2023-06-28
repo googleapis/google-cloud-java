@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v2
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/build.sh
@@ -51,7 +51,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v2
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 8
     - run: java -version
     - run: .kokoro/build.bat
@@ -66,17 +66,29 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v2
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/dependencies.sh
+  javadoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+      - run: java -version
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: javadoc
   lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v2
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 11
     - run: java -version
     - run: .kokoro/build.sh
@@ -88,7 +100,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v2
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 8
     - run: java -version
     - run: .kokoro/build.sh

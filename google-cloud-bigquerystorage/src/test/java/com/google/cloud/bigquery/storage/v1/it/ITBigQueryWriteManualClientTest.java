@@ -376,13 +376,15 @@ public class ITBigQueryWriteManualClientTest {
       AppendSerializationError e = (AppendSerializationError) t;
       LOG.info("Found row errors on stream: " + e.getStreamName());
       assertEquals(
-          "Field foo: STRING(10) has maximum length 10 but got a value with length 12 on field foo.",
+          "Field foo: STRING(10) has maximum length 10 but got a value with length 12 on field"
+              + " foo.",
           e.getRowIndexToErrorMessage().get(0));
       assertEquals(
           "Timestamp field value is out of range: -9223372036854775808 on field bar.",
           e.getRowIndexToErrorMessage().get(1));
       assertEquals(
-          "Field foo: STRING(10) has maximum length 10 but got a value with length 15 on field foo.",
+          "Field foo: STRING(10) has maximum length 10 but got a value with length 15 on field"
+              + " foo.",
           e.getRowIndexToErrorMessage().get(2));
       for (Map.Entry<Integer, String> entry : e.getRowIndexToErrorMessage().entrySet()) {
         LOG.info("Bad row index: " + entry.getKey() + ", has problem: " + entry.getValue());
@@ -1035,10 +1037,12 @@ public class ITBigQueryWriteManualClientTest {
     Iterator<FieldValueList> queryIter = queryResult.getValues().iterator();
     assertTrue(queryIter.hasNext());
     assertEquals(
-        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=aaa}, FieldValue{attribute=PRIMITIVE, value=aaa}]}]",
+        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=aaa},"
+            + " FieldValue{attribute=PRIMITIVE, value=aaa}]}]",
         queryIter.next().get(1).getRepeatedValue().toString());
     assertEquals(
-        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=bbb}, FieldValue{attribute=PRIMITIVE, value=bbb}]}]",
+        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=bbb},"
+            + " FieldValue{attribute=PRIMITIVE, value=bbb}]}]",
         queryIter.next().get(1).getRepeatedValue().toString());
     assertFalse(queryIter.hasNext());
   }

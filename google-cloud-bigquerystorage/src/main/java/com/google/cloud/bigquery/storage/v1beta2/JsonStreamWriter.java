@@ -83,8 +83,8 @@ public class JsonStreamWriter implements AutoCloseable {
    * data to protobuf messages, then using StreamWriter's append() to write the data.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr) {
     return append(jsonArr, -1);
@@ -96,8 +96,8 @@ public class JsonStreamWriter implements AutoCloseable {
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication
-   * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
-   *     ApiFuture
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
    */
   public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset) {
     ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();

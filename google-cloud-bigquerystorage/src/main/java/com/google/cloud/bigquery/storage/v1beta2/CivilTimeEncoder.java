@@ -30,6 +30,7 @@ import org.threeten.bp.temporal.ChronoUnit;
  * <p>The valid range and number of bits required by each date/time field is as the following:
  *
  * <table>
+ *   <caption>Range and bits for date/time fields</caption>
  *   <tr> <th> Field  </th> <th> Range          </th> <th> #Bits </th> </tr>
  *   <tr> <td> Year   </td> <td> [1, 9999]      </td> <td> 14    </td> </tr>
  *   <tr> <td> Month  </td> <td> [1, 12]        </td> <td> 4     </td> </tr>

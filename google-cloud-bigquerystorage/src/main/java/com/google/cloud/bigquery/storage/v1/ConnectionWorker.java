@@ -843,7 +843,8 @@ class ConnectionWorker implements AutoCloseable {
 
       log.fine(
           String.format(
-              "Got response with schema updated (omitting updated schema in response here): %s writer id %s",
+              "Got response with schema updated (omitting updated schema in response here): %s"
+                  + " writer id %s",
               responseWithUpdatedSchemaRemoved.toString(), writerId));
     }
 

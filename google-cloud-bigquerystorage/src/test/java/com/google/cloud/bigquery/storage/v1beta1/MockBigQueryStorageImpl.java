@@ -117,7 +117,8 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateReadSessionStreams, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateReadSessionStreams, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Storage.BatchCreateReadSessionStreamsResponse.class.getName(),
                   Exception.class.getName())));
