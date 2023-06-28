@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.cloudbuild.v2",
+  "libraryPackage": "com.google.cloud.devtools.cloudbuild.v2",
+  "services": {
+    "RepositoryManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RepositoryManagerClient",
+          "rpcs": {
+            "BatchCreateRepositories": {
+              "methods": ["batchCreateRepositoriesAsync", "batchCreateRepositoriesAsync", "batchCreateRepositoriesAsync", "batchCreateRepositoriesOperationCallable", "batchCreateRepositoriesCallable"]
+            },
+            "CreateConnection": {
+              "methods": ["createConnectionAsync", "createConnectionAsync", "createConnectionAsync", "createConnectionOperationCallable", "createConnectionCallable"]
+            },
+            "CreateRepository": {
+              "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
+            },
+            "DeleteConnection": {
+              "methods": ["deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionOperationCallable", "deleteConnectionCallable"]
+            },
+            "DeleteRepository": {
+              "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
+            },
+            "FetchGitRefs": {
+              "methods": ["fetchGitRefs", "fetchGitRefs", "fetchGitRefs", "fetchGitRefsCallable"]
+            },
+            "FetchLinkableRepositories": {
+              "methods": ["fetchLinkableRepositories", "fetchLinkableRepositoriesPagedCallable", "fetchLinkableRepositoriesCallable"]
+            },
+            "FetchReadToken": {
+              "methods": ["fetchReadToken", "fetchReadToken", "fetchReadToken", "fetchReadTokenCallable"]
+            },
+            "FetchReadWriteToken": {
+              "methods": ["fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteTokenCallable"]
+            },
+            "GetConnection": {
+              "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetRepository": {
+              "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
+            },
+            "ListConnections": {
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
+            },
+            "ListRepositories": {
+              "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateConnection": {
+              "methods": ["updateConnectionAsync", "updateConnectionAsync", "updateConnectionOperationCallable", "updateConnectionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
