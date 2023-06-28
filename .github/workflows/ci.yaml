@@ -30,7 +30,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/build.sh
@@ -45,7 +45,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: 8
-          distribution: zulu
+          distribution: temurin
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: zulu
+          distribution: temurin
       - run: .kokoro/build.sh
         env:
           JOB_TYPE: test
@@ -66,7 +66,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 8
     - run: java -version
     - run: .kokoro/build.bat
@@ -81,17 +81,29 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/dependencies.sh
+  javadoc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: javadoc
   lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 11
     - run: java -version
     - run: .kokoro/build.sh
@@ -103,7 +115,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 8
     - run: java -version
     - run: .kokoro/build.sh

@@ -31,7 +31,7 @@ import java.util.Objects;
  * Access Control for a BigQuery Dataset. BigQuery uses ACLs to manage permissions on datasets. ACLs
  * are not directly supported on tables. A table inherits its ACL from the dataset that contains it.
  * Project roles affect your ability to run jobs or manage the project, while dataset roles affect
- * how you can access or modify the data inside of a project.
+ * how you can access or modify the data inside a project.
  *
  * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
  */
@@ -82,12 +82,15 @@ public final class Acl implements Serializable {
       return type.valueOfStrict(constant);
     }
 
-    /** Get the Role for the given String constant, and allow unrecognized values. */
+    /**
+     * @param constant
+     * @return Get the Role for the given String constant, and allow unrecognized values.
+     */
     public static Role valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /** Return the known values for Role. */
+    /** @return Return the known values for Role. */
     public static Role[] values() {
       return type.values();
     }
@@ -167,14 +170,19 @@ public final class Acl implements Serializable {
     private final DatasetId id;
     private final List<String> targetTypes;
 
-    /** Creates a DatasetAclEntity given the DatasetAclEntity's id. */
+    /**
+     * Creates a DatasetAclEntity given the DatasetAclEntity's id.
+     *
+     * @param id
+     * @param targetTypes
+     */
     public DatasetAclEntity(DatasetId id, List<String> targetTypes) {
       super(Type.DATASET);
       this.id = id;
       this.targetTypes = targetTypes;
     }
 
-    /** Returns DatasetAclEntity's identity. */
+    /** @return Returns DatasetAclEntity's identity. */
     public DatasetId getId() {
       return id;
     }
@@ -230,7 +238,7 @@ public final class Acl implements Serializable {
       this.domain = domain;
     }
 
-    /** Returns the domain name. */
+    /** @return Returns the domain name. */
     public String getDomain() {
       return domain;
     }
@@ -291,9 +299,9 @@ public final class Acl implements Serializable {
     }
 
     /**
-     * Returns group's identifier, can be either a <a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
-     * special group identifier</a> or a group email.
+     * @return Returns group's identifier, can be either a <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     special group identifier</a> or a group email.
      */
     public String getIdentifier() {
       return identifier;
@@ -338,22 +346,22 @@ public final class Acl implements Serializable {
       }
     }
 
-    /** Returns a Group entity representing all project's owners. */
+    /** @return Returns a Group entity representing all project's owners. */
     public static Group ofProjectOwners() {
       return new Group(PROJECT_OWNERS);
     }
 
-    /** Returns a Group entity representing all project's readers. */
+    /** @return Returns a Group entity representing all project's readers. */
     public static Group ofProjectReaders() {
       return new Group(PROJECT_READERS);
     }
 
-    /** Returns a Group entity representing all project's writers. */
+    /** @return Returns a Group entity representing all project's writers. */
     public static Group ofProjectWriters() {
       return new Group(PROJECT_WRITERS);
     }
 
-    /** Returns a Group entity representing all BigQuery authenticated users. */
+    /** @return Returns a Group entity representing all BigQuery authenticated users. */
     public static Group ofAllAuthenticatedUsers() {
       return new Group(ALL_AUTHENTICATED_USERS);
     }
@@ -375,7 +383,7 @@ public final class Acl implements Serializable {
       this.email = email;
     }
 
-    /** Returns user's email. */
+    /** @return Returns user's email. */
     public String getEmail() {
       return email;
     }
@@ -427,7 +435,7 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /** Returns table's identity. */
+    /** @return Returns table's identity. */
     public TableId getId() {
       return id;
     }
@@ -479,7 +487,7 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /** Returns routine's identity. */
+    /** @return Returns routine's identity. */
     public RoutineId getId() {
       return id;
     }
@@ -527,7 +535,7 @@ public final class Acl implements Serializable {
       this.iamMember = iamMember;
     }
 
-    /** Returns iamMember. */
+    /** @return Returns iamMember. */
     public String getIamMember() {
       return iamMember;
     }
@@ -565,19 +573,18 @@ public final class Acl implements Serializable {
     this.role = role;
   }
 
-  /** Returns the entity for this ACL. */
+  /** @return Returns the entity for this ACL. */
   public Entity getEntity() {
     return entity;
   }
 
-  /** Returns the role specified by this ACL. */
+  /** @return Returns the role specified by this ACL. */
   public Role getRole() {
     return role;
   }
 
   /**
-   * Returns an Acl object.
-   *
+   * @return Returns an Acl object.
    * @param entity the entity for this ACL object
    * @param role the role to associate to the {@code entity} object
    */
@@ -585,17 +592,26 @@ public final class Acl implements Serializable {
     return new Acl(entity, role);
   }
 
-  /** Returns an Acl object for a datasetAclEntity. */
+  /**
+   * @param datasetAclEntity
+   * @return Returns an Acl object for a datasetAclEntity.
+   */
   public static Acl of(DatasetAclEntity datasetAclEntity) {
     return new Acl(datasetAclEntity, null);
   }
 
-  /** Returns an Acl object for a view entity. */
+  /**
+   * @param view
+   * @return Returns an Acl object for a view entity.
+   */
   public static Acl of(View view) {
     return new Acl(view, null);
   }
 
-  /** Returns an Acl object for a routine entity. */
+  /**
+   * @param routine
+   * @return Returns an Acl object for a routine entity.
+   */
   public static Acl of(Routine routine) {
     return new Acl(routine, null);
   }

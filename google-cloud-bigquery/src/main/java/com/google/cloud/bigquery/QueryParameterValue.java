@@ -52,8 +52,6 @@ import org.threeten.extra.PeriodDuration;
  * for StandardSQLTypeName.INT64). Alternatively, an instance can be constructed by calling {@link
  * #of(Object, Class)} with the value and a Class object, which will use these mappings:
  *
- * <p>
- *
  * <ul>
  *   <li>Boolean: StandardSQLTypeName.BOOL
  *   <li>String: StandardSQLTypeName.STRING

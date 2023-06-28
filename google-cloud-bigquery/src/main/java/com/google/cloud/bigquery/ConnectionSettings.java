@@ -115,7 +115,7 @@ public abstract class ConnectionSettings {
 
   /**
    * Returns the table where to put query results. If not provided a new table is created. This
-   * value is required if {@link # allowLargeResults()} is {@code true}.
+   * value is required if {@link #getAllowLargeResults()} is {@code true}.
    */
   @Nullable
   public abstract TableId getDestinationTable();

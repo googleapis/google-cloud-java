@@ -78,7 +78,7 @@ public abstract class RemoteFunctionOptions implements Serializable {
   /**
    * Returns the user-defined context as a set of key/value pairs.
    *
-   * @return Map<String, String>
+   * @return Map&lt;String, String&gt;
    */
   @Nullable
   public abstract Map<String, String> getUserDefinedContext();
@@ -96,7 +96,7 @@ public abstract class RemoteFunctionOptions implements Serializable {
    */
   public abstract RemoteFunctionOptions.Builder toBuilder();
 
-  /** Returns a builder for a {@Code RemoteFunctionOptions} object. */
+  /** Returns a builder for a {@code RemoteFunctionOptions} object. */
   public static RemoteFunctionOptions.Builder newBuilder() {
     return new AutoValue_RemoteFunctionOptions.Builder();
   }

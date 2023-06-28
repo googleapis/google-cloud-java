@@ -258,30 +258,21 @@ public final class Field implements Serializable {
      * <p>You can use struct or array expression to specify default value for the entire struct or
      * array. The valid SQL expressions are:
      *
-     * <ul>
-     *   <ul>
-     *     <li>Literals for all data types, including STRUCT and ARRAY.
-     *   </ul>
-     *   <ul>
-     *     <li>The following functions:
-     *         <ul>
-     *           <li>CURRENT_TIMESTAMP
-     *           <li>CURRENT_TIME
-     *           <li>CURRENT_DATE
-     *           <li>CURRENT_DATETIME
-     *           <li>GENERATE_UUID
-     *           <li>RAND
-     *           <li>SESSION_USER
-     *           <li>ST_GEOGPOINT
-     *         </ul>
-     *   </ul>
-     *   <ul>
-     *     <li>Struct or array composed with the above allowed functions, for example:
-     *         <ul>
-     *           <li>"[CURRENT_DATE(), DATE '2020-01-01']"
-     *         </ul>
-     *   </ul>
-     * </ul>
+     * <pre>
+     *   Literals for all data types, including STRUCT and ARRAY.
+     *   The following functions:
+     *      - CURRENT_TIMESTAMP
+     *      - CURRENT_TIME
+     *      - CURRENT_DATE
+     *      - CURRENT_DATETIME
+     *      - GENERATE_UUID
+     *      - RAND
+     *      - SESSION_USER
+     *      - ST_GEOGPOINT
+     *
+     *   Struct or array composed with the above allowed functions, for example:
+     *      "[CURRENT_DATE(), DATE '2020-01-01']"
+     * </pre>
      */
     public Builder setDefaultValueExpression(String defaultValueExpression) {
       this.defaultValueExpression = defaultValueExpression;

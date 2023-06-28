@@ -90,7 +90,7 @@ public abstract class RoutineArgument {
   /** Returns a builder pre-populated using the current values of this {@code RoutineArgument}. */
   public abstract Builder toBuilder();
 
-  /** Returns a builder for a {@Code RoutineArgument} object. */
+  /** Returns a builder for a {@code RoutineArgument} object. */
   public static Builder newBuilder() {
     return new AutoValue_RoutineArgument.Builder();
   }
