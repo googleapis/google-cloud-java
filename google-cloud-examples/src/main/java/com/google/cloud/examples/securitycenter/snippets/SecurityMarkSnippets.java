@@ -45,7 +45,7 @@ public class SecurityMarkSnippets {
   // [START securitycenter_add_security_marks]
   static SecurityMarks addToAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // assetName: must be in one of the following formats:
+      // Specify the value of 'assetName' in one of the following formats:
       //    String assetName = "organizations/{org-id}/assets/{asset-id}";
       //    String assetName = "projects/{project-id}/assets/{asset-id}";
       //    String assetName = "folders/{folder-id}/assets/{asset-id}";
@@ -88,7 +88,7 @@ public class SecurityMarkSnippets {
   // [START securitycenter_delete_security_marks]
   static SecurityMarks clearFromAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // assetName: must be in one of the following formats:
+      // Specify the value of 'assetName' in one of the following formats:
       //    String assetName = "organizations/{org-id}/assets/{asset-id}";
       //    String assetName = "projects/{project-id}/assets/{asset-id}";
       //    String assetName = "folders/{folder-id}/assets/{asset-id}";
@@ -125,7 +125,7 @@ public class SecurityMarkSnippets {
   // [START securitycenter_add_delete_security_marks]
   static SecurityMarks deleteAndUpdateMarks(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // assetName: must be in one of the following formats:
+      // Specify the value of 'assetName' in one of the following formats:
       //    String assetName = "organizations/{org-id}/assets/{asset-id}";
       //    String assetName = "projects/{project-id}/assets/{asset-id}";
       //    String assetName = "folders/{folder-id}/assets/{asset-id}";
@@ -168,7 +168,7 @@ public class SecurityMarkSnippets {
       // Start setting up a request to add security marks for a finding.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
-      // findingName: must in one of the following formats:
+      // Specify the value of 'findingName' in one of the following formats:
       //    FindingName.ofOrganizationSourceFindingName("org-id", "source", "finding-id");
       //    FindingName.ofProjectSourceFindingName("project-id", "source", "finding-id");
       //    FindingName.ofFolderSourceFindingName("folder-id", "source", "finding-id");

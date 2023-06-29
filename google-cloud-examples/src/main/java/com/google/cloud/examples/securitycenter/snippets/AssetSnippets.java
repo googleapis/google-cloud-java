@@ -50,7 +50,7 @@ public class AssetSnippets {
   // [START securitycenter_list_all_assets]
   static ImmutableList<ListAssetsResult> listAssets(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to search for all assets in an organization/ project/ folder.
+      // Start setting up a request to search for all assets in an organization/ project/ folder.
       //
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");

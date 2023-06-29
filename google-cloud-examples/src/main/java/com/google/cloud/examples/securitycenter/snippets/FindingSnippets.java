@@ -230,7 +230,7 @@ public class FindingSnippets {
   // [START securitycenter_list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName must be in one of the following formats:
+      // Input parameters for SourceName must be in one of the following formats
       //    * OrganizationName organizationName = OrganizationName.of("organization-id");
       //      organizationName.getOrganization();
       //    * ProjectName projectName = ProjectName.of("project-id");
@@ -375,7 +375,7 @@ public class FindingSnippets {
   // [START securitycenter_group_all_findings]
   static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName must be in one of the following formats:
+      // Input parameters for 'SourceName' must be in one of the following formats:
       //    * OrganizationName organizationName = OrganizationName.of("organization-id");
       //      organizationName.getOrganization();
       //    * ProjectName projectName = ProjectName.of("project-id");
