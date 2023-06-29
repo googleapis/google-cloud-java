@@ -24,10 +24,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * The result of an {@link AggregationQuery} query submission. Contains a {@link
- * List<AggregationResult>} and readTime {@link Timestamp} in it.
+ * The result of an {@link AggregationQuery} query submission. Contains a List&lt;{@link
+ * AggregationResult}&gt; and readTime {@link Timestamp} in it.
  *
- * <p>This can be used to iterate over an underlying {@link List<AggregationResult>} directly.
+ * <p>This can be used to iterate over an underlying List&lt;{@link AggregationResult}&gt; directly.
  */
 public class AggregationResults implements Iterable<AggregationResult> {
 
@@ -41,7 +41,7 @@ public class AggregationResults implements Iterable<AggregationResult> {
     this.readTime = readTime;
   }
 
-  /** Returns {@link Iterator} for underlying {@link List<AggregationResult>}. */
+  /** Returns {@link Iterator} for underlying List&lt;{@link AggregationResult}&gt;. */
   @Override
   public Iterator<AggregationResult> iterator() {
     return this.aggregationResults.iterator();

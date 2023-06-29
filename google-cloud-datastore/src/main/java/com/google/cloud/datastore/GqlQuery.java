@@ -41,7 +41,7 @@ import java.util.TreeMap;
 /**
  * A Google Cloud Datastore GQL query.
  *
- * <h3>A usage example:</h3>
+ * <p>A usage example:
  *
  * <p>When the type of the results is known the preferred usage would be:
  *

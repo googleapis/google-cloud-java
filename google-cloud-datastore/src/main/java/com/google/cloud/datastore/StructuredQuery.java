@@ -46,7 +46,7 @@ import java.util.Objects;
  * An implementation of a Google Cloud Datastore Query that can be constructed by providing all the
  * specific query elements.
  *
- * <h3>A usage example:</h3>
+ * <p>A usage example:
  *
  * <p>A simple query that returns all entities for a specific kind
  *

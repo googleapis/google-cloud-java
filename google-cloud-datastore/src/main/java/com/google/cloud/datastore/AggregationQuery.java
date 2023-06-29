@@ -45,7 +45,7 @@ import java.util.Set;
  * }
  * }</pre>
  *
- * <h4>{@link GqlQuery} example:</h4>
+ * <p>{@link GqlQuery} example:
  *
  * <pre>{@code
  * GqlQuery<?> selectAllGqlQuery = Query.newGqlQueryBuilder(
