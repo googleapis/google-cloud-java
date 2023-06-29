@@ -34,7 +34,8 @@ import java.io.IOException;
 
 public class SecurityMarkSnippets {
 
-  private SecurityMarkSnippets() {}
+  private SecurityMarkSnippets() {
+  }
 
   /**
    * Add security mark to an asset.
@@ -44,7 +45,11 @@ public class SecurityMarkSnippets {
   // [START securitycenter_add_security_marks]
   static SecurityMarks addToAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // String assetName = "organizations/123123342/assets/12312321";
+      // assetName: must be in one of the following formats:
+      //    String assetName = "organizations/{org-id}/assets/{asset-id}";
+      //    String assetName = "projects/{project-id}/assets/{asset-id}";
+      //    String assetName = "folders/{folder-id}/assets/{asset-id}";
+      //
       // Start setting up a request to add security marks for an asset.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
@@ -82,8 +87,11 @@ public class SecurityMarkSnippets {
    */
   // [START securitycenter_delete_security_marks]
   static SecurityMarks clearFromAsset(String assetName) {
-    // String assetName = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // assetName: must be in one of the following formats:
+      //    String assetName = "organizations/{org-id}/assets/{asset-id}";
+      //    String assetName = "projects/{project-id}/assets/{asset-id}";
+      //    String assetName = "folders/{folder-id}/assets/{asset-id}";
       // Start setting up a request to clear security marks for an asset.
       // Create security mark and field mask for clearing security marks.
       SecurityMarks securityMarks =
@@ -116,8 +124,11 @@ public class SecurityMarkSnippets {
    */
   // [START securitycenter_add_delete_security_marks]
   static SecurityMarks deleteAndUpdateMarks(String assetName) {
-    // String assetName = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // assetName: must be in one of the following formats:
+      //    String assetName = "organizations/{org-id}/assets/{asset-id}";
+      //    String assetName = "projects/{project-id}/assets/{asset-id}";
+      //    String assetName = "folders/{folder-id}/assets/{asset-id}";
       // Start setting up a request to clear and update security marks for an asset.
       // Create security mark and field mask for clearing security marks.
       SecurityMarks securityMarks =
@@ -153,12 +164,14 @@ public class SecurityMarkSnippets {
    */
   // [START securitycenter_add_finding_security_marks]
   static SecurityMarks addToFinding(FindingName findingName) {
-    // FindingName findingName = FindingName.of(/*organization=*/"123234324",
-    // /*source=*/"423432321", /*findingId=*/"samplefindingid2");
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to add security marks for a finding.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
+      // findingName: must in one of the following formats:
+      //    FindingName.ofOrganizationSourceFindingName("org-id", "source", "finding-id");
+      //    FindingName.ofProjectSourceFindingName("project-id", "source", "finding-id");
+      //    FindingName.ofFolderSourceFindingName("folder-id", "source", "finding-id");
       // Add security marks and field mask for security marks.
       SecurityMarks securityMarks =
           SecurityMarks.newBuilder()
@@ -196,7 +209,10 @@ public class SecurityMarkSnippets {
       OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to list all assets filtered by a specific security mark.
-      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
+      // Parent must be in one of the following formats:
+      //    OrganizationName organizationName = OrganizationName.of("organization-id");
+      //    ProjectName projectName = ProjectName.of("project-id");
+      //    FolderName folderName = FolderName.of("folder-id");
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
               .setParent(organizationName.toString())
@@ -228,8 +244,14 @@ public class SecurityMarkSnippets {
   static ImmutableList<ListFindingsResult> listFindingsWithQueryMarks(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to list all findings filtered by a specific security mark.
-      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
-      // "423432321");
+      // SourceName must be in one of the following formats:
+      //    * OrganizationName organizationName = OrganizationName.of("organization-id");
+      //      String parent = organizationName.getOrganization();
+      //    * ProjectName projectName = ProjectName.of("project-id");
+      //      String parent = projectName.getProject();
+      //    * FolderName folderName = FolderName.of("folder-id");
+      //      String parent = folderName.getFolder();
+      // SourceName sourceName = SourceName.of(parent, {source-id});
 
       String filter = "NOT security_marks.marks.key_a=\"value_a\"";
 
