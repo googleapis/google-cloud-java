@@ -1569,15 +1569,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1592,15 +1594,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1615,15 +1619,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1644,9 +1650,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1665,9 +1672,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1686,9 +1694,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1852,15 +1861,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1878,15 +1889,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1906,15 +1919,17 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify one or more of
-     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or
+     * more of five fields:
+     * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-     * other fields are rejected with the error
-     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [status][google.storagetransfer.v1.TransferJob.status].  An
+     * `UpdateTransferJobRequest` that specifies other fields are rejected with
+     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+     * job status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
@@ -1942,9 +1957,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1966,9 +1982,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1992,9 +2009,10 @@ public final class TransferProto {
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
      * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-     * complete transfer specification must be provided. An incomplete
-     * specification missing any required fields is rejected with the error
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+     * `transfer_spec` of the job, a complete transfer specification must be
+     * provided. An incomplete specification missing any required fields is
+     * rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -2693,15 +2711,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2718,15 +2738,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2749,15 +2771,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2783,15 +2807,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2814,15 +2840,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2853,15 +2881,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2883,15 +2913,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2909,15 +2941,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2939,15 +2973,17 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify one or more of
-       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or
+       * more of five fields:
+       * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
-       * other fields are rejected with the error
-       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
-       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [status][google.storagetransfer.v1.TransferJob.status].  An
+       * `UpdateTransferJobRequest` that specifies other fields are rejected with
+       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+       * job status to
+       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
@@ -2988,9 +3024,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3011,9 +3048,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3040,9 +3078,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3071,9 +3110,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3100,9 +3140,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3135,9 +3176,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3163,9 +3205,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3186,9 +3229,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3213,9 +3257,10 @@ public final class TransferProto {
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
        * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
-       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
-       * complete transfer specification must be provided. An incomplete
-       * specification missing any required fields is rejected with the error
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the
+       * `transfer_spec` of the job, a complete transfer specification must be
+       * provided. An incomplete specification missing any required fields is
+       * rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -10944,8 +10989,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -10967,8 +11012,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -10990,8 +11035,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -11113,8 +11158,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -11139,8 +11184,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -11167,8 +11212,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The agent pool to update. `agent_pool` is expected to specify following
-     * fields:
+     * Required. The agent pool to update. `agent_pool` is expected to specify
+     * following fields:
      *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
      *
@@ -11672,8 +11717,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11697,8 +11742,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11728,8 +11773,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11762,8 +11807,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11793,8 +11838,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11832,8 +11877,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11862,8 +11907,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11888,8 +11933,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *
@@ -11918,8 +11963,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The agent pool to update. `agent_pool` is expected to specify following
-       * fields:
+       * Required. The agent pool to update. `agent_pool` is expected to specify
+       * following fields:
        *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
        *

@@ -709,9 +709,9 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
-   * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error will be returned.
+   * Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one
+   * active `TransferOperation`. If this method is called while a `TransferOperation` is active, an
+   * error is returned.
    *
    * <p>Sample code:
    *
@@ -742,9 +742,9 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
-   * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error will be returned.
+   * Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one
+   * active `TransferOperation`. If this method is called while a `TransferOperation` is active, an
+   * error is returned.
    *
    * <p>Sample code:
    *
@@ -776,9 +776,9 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
-   * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error will be returned.
+   * Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one
+   * active `TransferOperation`. If this method is called while a `TransferOperation` is active, an
+   * error is returned.
    *
    * <p>Sample code:
    *
