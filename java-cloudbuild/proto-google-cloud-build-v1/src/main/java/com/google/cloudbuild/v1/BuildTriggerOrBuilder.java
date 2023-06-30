@@ -811,5 +811,43 @@ public interface BuildTriggerOrBuilder
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return Whether the repositoryEventConfig field is set.
+   */
+  boolean hasRepositoryEventConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return The repositoryEventConfig.
+   */
+  com.google.cloudbuild.v1.RepositoryEventConfig getRepositoryEventConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   */
+  com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder getRepositoryEventConfigOrBuilder();
+
   com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
 }

@@ -44,6 +44,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -599,6 +601,41 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
+      fetchGitRefsMethodDescriptor =
+          ApiMethodDescriptor.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+              .setFullMethodName("google.devtools.cloudbuild.v2.RepositoryManager/FetchGitRefs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchGitRefsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{repository=projects/*/locations/*/connections/*/repositories/*}:fetchGitRefs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "repository", request.getRepository());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "refType", request.getRefTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchGitRefsResponse>newBuilder()
+                      .setDefaultInstance(FetchGitRefsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
@@ -745,6 +782,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
   private final UnaryCallable<
           FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable;
+  private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -961,6 +999,17 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
+        HttpJsonCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+            .setMethodDescriptor(fetchGitRefsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -1088,6 +1137,9 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
             fetchLinkableRepositoriesTransportSettings,
             settings.fetchLinkableRepositoriesSettings(),
             clientContext);
+    this.fetchGitRefsCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1120,6 +1172,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
     methodDescriptors.add(fetchReadWriteTokenMethodDescriptor);
     methodDescriptors.add(fetchReadTokenMethodDescriptor);
     methodDescriptors.add(fetchLinkableRepositoriesMethodDescriptor);
+    methodDescriptors.add(fetchGitRefsMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -1252,6 +1305,11 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
   public UnaryCallable<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable() {
     return fetchLinkableRepositoriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
+    return fetchGitRefsCallable;
   }
 
   @Override

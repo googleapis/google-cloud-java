@@ -49,6 +49,7 @@ import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
+import com.google.cloudbuild.v1.RepositoryEventConfig;
 import com.google.cloudbuild.v1.Results;
 import com.google.cloudbuild.v1.Secret;
 import com.google.cloudbuild.v1.Secrets;
@@ -565,6 +566,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -626,6 +628,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -779,6 +782,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -802,6 +806,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
 
     BuildTrigger actualResponse = client.updateBuildTrigger(projectId, triggerId, trigger);
@@ -850,6 +855,7 @@ public class CloudBuildClientHttpJsonTest {
               .addAllIncludedFiles(new ArrayList<String>())
               .setFilter("filter-1274492040")
               .setServiceAccount("serviceAccount1079137720")
+              .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
               .build();
       client.updateBuildTrigger(projectId, triggerId, trigger);
       Assert.fail("No exception raised");

@@ -1297,6 +1297,60 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REPOSITORY_EVENT_CONFIG_FIELD_NUMBER = 39;
+  private com.google.cloudbuild.v1.RepositoryEventConfig repositoryEventConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return Whether the repositoryEventConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRepositoryEventConfig() {
+    return repositoryEventConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return The repositoryEventConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.RepositoryEventConfig getRepositoryEventConfig() {
+    return repositoryEventConfig_ == null
+        ? com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()
+        : repositoryEventConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder
+      getRepositoryEventConfigOrBuilder() {
+    return repositoryEventConfig_ == null
+        ? com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()
+        : repositoryEventConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1366,6 +1420,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 34, resourceName_);
+    }
+    if (repositoryEventConfig_ != null) {
+      output.writeMessage(39, getRepositoryEventConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1459,6 +1516,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, resourceName_);
     }
+    if (repositoryEventConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(39, getRepositoryEventConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1505,6 +1566,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!getIncludedFilesList().equals(other.getIncludedFilesList())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasRepositoryEventConfig() != other.hasRepositoryEventConfig()) return false;
+    if (hasRepositoryEventConfig()) {
+      if (!getRepositoryEventConfig().equals(other.getRepositoryEventConfig())) return false;
+    }
     if (!getBuildTemplateCase().equals(other.getBuildTemplateCase())) return false;
     switch (buildTemplateCase_) {
       case 18:
@@ -1580,6 +1645,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasRepositoryEventConfig()) {
+      hash = (37 * hash) + REPOSITORY_EVENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRepositoryEventConfig().hashCode();
+    }
     switch (buildTemplateCase_) {
       case 18:
         hash = (37 * hash) + AUTODETECT_FIELD_NUMBER;
@@ -1794,6 +1863,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filter_ = "";
       serviceAccount_ = "";
+      repositoryEventConfig_ = null;
+      if (repositoryEventConfigBuilder_ != null) {
+        repositoryEventConfigBuilder_.dispose();
+        repositoryEventConfigBuilder_ = null;
+      }
       buildTemplateCase_ = 0;
       buildTemplate_ = null;
       return this;
@@ -1887,6 +1961,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.repositoryEventConfig_ =
+            repositoryEventConfigBuilder_ == null
+                ? repositoryEventConfig_
+                : repositoryEventConfigBuilder_.build();
       }
     }
 
@@ -2022,6 +2102,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         serviceAccount_ = other.serviceAccount_;
         bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.hasRepositoryEventConfig()) {
+        mergeRepositoryEventConfig(other.getRepositoryEventConfig());
       }
       switch (other.getBuildTemplateCase()) {
         case AUTODETECT:
@@ -2196,6 +2279,13 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 274
+            case 314:
+              {
+                input.readMessage(
+                    getRepositoryEventConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 314
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5282,6 +5372,212 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloudbuild.v1.RepositoryEventConfig repositoryEventConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.RepositoryEventConfig,
+            com.google.cloudbuild.v1.RepositoryEventConfig.Builder,
+            com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder>
+        repositoryEventConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     *
+     * @return Whether the repositoryEventConfig field is set.
+     */
+    public boolean hasRepositoryEventConfig() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     *
+     * @return The repositoryEventConfig.
+     */
+    public com.google.cloudbuild.v1.RepositoryEventConfig getRepositoryEventConfig() {
+      if (repositoryEventConfigBuilder_ == null) {
+        return repositoryEventConfig_ == null
+            ? com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()
+            : repositoryEventConfig_;
+      } else {
+        return repositoryEventConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public Builder setRepositoryEventConfig(com.google.cloudbuild.v1.RepositoryEventConfig value) {
+      if (repositoryEventConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        repositoryEventConfig_ = value;
+      } else {
+        repositoryEventConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public Builder setRepositoryEventConfig(
+        com.google.cloudbuild.v1.RepositoryEventConfig.Builder builderForValue) {
+      if (repositoryEventConfigBuilder_ == null) {
+        repositoryEventConfig_ = builderForValue.build();
+      } else {
+        repositoryEventConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public Builder mergeRepositoryEventConfig(
+        com.google.cloudbuild.v1.RepositoryEventConfig value) {
+      if (repositoryEventConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && repositoryEventConfig_ != null
+            && repositoryEventConfig_
+                != com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()) {
+          getRepositoryEventConfigBuilder().mergeFrom(value);
+        } else {
+          repositoryEventConfig_ = value;
+        }
+      } else {
+        repositoryEventConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public Builder clearRepositoryEventConfig() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      repositoryEventConfig_ = null;
+      if (repositoryEventConfigBuilder_ != null) {
+        repositoryEventConfigBuilder_.dispose();
+        repositoryEventConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.RepositoryEventConfig.Builder
+        getRepositoryEventConfigBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getRepositoryEventConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder
+        getRepositoryEventConfigOrBuilder() {
+      if (repositoryEventConfigBuilder_ != null) {
+        return repositoryEventConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return repositoryEventConfig_ == null
+            ? com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()
+            : repositoryEventConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of a trigger that creates a build whenever an event from
+     * Repo API is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.RepositoryEventConfig,
+            com.google.cloudbuild.v1.RepositoryEventConfig.Builder,
+            com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder>
+        getRepositoryEventConfigFieldBuilder() {
+      if (repositoryEventConfigBuilder_ == null) {
+        repositoryEventConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.RepositoryEventConfig,
+                com.google.cloudbuild.v1.RepositoryEventConfig.Builder,
+                com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder>(
+                getRepositoryEventConfig(), getParentForChildren(), isClean());
+        repositoryEventConfig_ = null;
+      }
+      return repositoryEventConfigBuilder_;
     }
 
     @java.lang.Override

@@ -30,6 +30,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -174,6 +176,10 @@ public abstract class RepositoryManagerStub implements BackgroundResource {
   public UnaryCallable<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
       fetchLinkableRepositoriesCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchLinkableRepositoriesCallable()");
+  }
+
+  public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchGitRefsCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

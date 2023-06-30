@@ -21,7 +21,7 @@
  *
  * <p>======================= RepositoryManagerClient =======================
  *
- * <p>Service Description: Manages connections to source code repostiories.
+ * <p>Service Description: Manages connections to source code repositories.
  *
  * <p>Sample for RepositoryManagerClient:
  *

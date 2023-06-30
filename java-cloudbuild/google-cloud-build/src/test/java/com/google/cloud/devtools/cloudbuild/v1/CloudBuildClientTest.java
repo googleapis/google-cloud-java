@@ -60,6 +60,7 @@ import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
+import com.google.cloudbuild.v1.RepositoryEventConfig;
 import com.google.cloudbuild.v1.Results;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
@@ -566,6 +567,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -622,6 +624,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -759,6 +762,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 

@@ -203,6 +203,44 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return Whether the gitlabConfig field is set.
+   */
+  boolean hasGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return The gitlabConfig.
+   */
+  com.google.cloudbuild.v2.GitLabConfig getGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   */
+  com.google.cloudbuild.v2.GitLabConfigOrBuilder getGitlabConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Installation state of the Connection.
    * </pre>
    *

@@ -35,6 +35,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -212,6 +214,16 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchLinkableRepositoriesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
+      fetchGitRefsMethodDescriptor =
+          MethodDescriptor.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v2.RepositoryManager/FetchGitRefs")
+              .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -277,6 +289,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
   private final UnaryCallable<
           FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable;
+  private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -463,6 +476,16 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
+        GrpcCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+            .setMethodDescriptor(fetchGitRefsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -587,6 +610,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             fetchLinkableRepositoriesTransportSettings,
             settings.fetchLinkableRepositoriesSettings(),
             clientContext);
+    this.fetchGitRefsCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -729,6 +755,11 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
   public UnaryCallable<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable() {
     return fetchLinkableRepositoriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
+    return fetchGitRefsCallable;
   }
 
   @Override
