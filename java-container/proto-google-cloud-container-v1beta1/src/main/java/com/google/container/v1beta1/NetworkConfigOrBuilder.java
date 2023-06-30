@@ -331,6 +331,49 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  boolean hasNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+      getNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether FQDN Network Policy is enabled on this cluster.
    * </pre>
    *

@@ -104,6 +104,16 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_DNS = 2;</code>
      */
     CLOUD_DNS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Use KubeDNS for DNS resolution
+     * </pre>
+     *
+     * <code>KUBE_DNS = 3;</code>
+     */
+    KUBE_DNS(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -137,6 +147,16 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_DNS = 2;</code>
      */
     public static final int CLOUD_DNS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Use KubeDNS for DNS resolution
+     * </pre>
+     *
+     * <code>KUBE_DNS = 3;</code>
+     */
+    public static final int KUBE_DNS_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -168,6 +188,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
           return PLATFORM_DEFAULT;
         case 2:
           return CLOUD_DNS;
+        case 3:
+          return KUBE_DNS;
         default:
           return null;
       }

@@ -868,7 +868,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Whether the nodes are created as preemptible VM instances. See:
    * https://cloud.google.com/compute/docs/instances/preemptible for more
-   * inforamtion about preemptible VM instances.
+   * information about preemptible VM instances.
    * </pre>
    *
    * <code>bool preemptible = 10;</code>
@@ -5442,7 +5442,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
      * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * inforamtion about preemptible VM instances.
+     * information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
@@ -5459,7 +5459,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
      * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * inforamtion about preemptible VM instances.
+     * information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
@@ -5480,7 +5480,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
      * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * inforamtion about preemptible VM instances.
+     * information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>

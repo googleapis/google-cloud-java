@@ -2007,6 +2007,49 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   *
+   * @return Whether the desiredNetworkPerformanceConfig field is set.
+   */
+  boolean hasDesiredNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   *
+   * @return The desiredNetworkPerformanceConfig.
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+      getDesiredNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+      getDesiredNetworkPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable/Disable FQDN Network Policy for the cluster.
    * </pre>
    *
