@@ -452,4 +452,66 @@ public interface BackupPlanOrBuilder
    * @return The protectedPodCount.
    */
   int getProtectedPodCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.gkebackup.v1.BackupPlan.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  java.lang.String getStateReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  com.google.protobuf.ByteString getStateReasonBytes();
 }

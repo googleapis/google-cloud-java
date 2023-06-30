@@ -395,4 +395,64 @@ public interface RestorePlanOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RestorePlan. This State field reflects the
+   * various stages a RestorePlan can be in
+   * during the Create operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RestorePlan. This State field reflects the
+   * various stages a RestorePlan can be in
+   * during the Create operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.gkebackup.v1.RestorePlan.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why RestorePlan is in the
+   * current `state`
+   * </pre>
+   *
+   * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  java.lang.String getStateReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why RestorePlan is in the
+   * current `state`
+   * </pre>
+   *
+   * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  com.google.protobuf.ByteString getStateReasonBytes();
 }

@@ -43,6 +43,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     cluster_ = "";
     etag_ = "";
+    state_ = 0;
+    stateReason_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +77,251 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.gkebackup.v1.BackupPlan.class,
             com.google.cloud.gkebackup.v1.BackupPlan.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * State
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkebackup.v1.BackupPlan.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default first value for Enums.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for cluster state to be RUNNING.
+     * </pre>
+     *
+     * <code>CLUSTER_PENDING = 1;</code>
+     */
+    CLUSTER_PENDING(1),
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan is in the process of being created.
+     * </pre>
+     *
+     * <code>PROVISIONING = 2;</code>
+     */
+    PROVISIONING(2),
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan has successfully been created and is ready for Backups.
+     * </pre>
+     *
+     * <code>READY = 3;</code>
+     */
+    READY(3),
+    /**
+     *
+     *
+     * <pre>
+     * BackupPlan creation has failed.
+     * </pre>
+     *
+     * <code>FAILED = 4;</code>
+     */
+    FAILED(4),
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan has been deactivated.
+     * </pre>
+     *
+     * <code>DEACTIVATED = 5;</code>
+     */
+    DEACTIVATED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan is in the process of being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 6;</code>
+     */
+    DELETING(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default first value for Enums.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for cluster state to be RUNNING.
+     * </pre>
+     *
+     * <code>CLUSTER_PENDING = 1;</code>
+     */
+    public static final int CLUSTER_PENDING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan is in the process of being created.
+     * </pre>
+     *
+     * <code>PROVISIONING = 2;</code>
+     */
+    public static final int PROVISIONING_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan has successfully been created and is ready for Backups.
+     * </pre>
+     *
+     * <code>READY = 3;</code>
+     */
+    public static final int READY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * BackupPlan creation has failed.
+     * </pre>
+     *
+     * <code>FAILED = 4;</code>
+     */
+    public static final int FAILED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan has been deactivated.
+     * </pre>
+     *
+     * <code>DEACTIVATED = 5;</code>
+     */
+    public static final int DEACTIVATED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The BackupPlan is in the process of being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 6;</code>
+     */
+    public static final int DELETING_VALUE = 6;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CLUSTER_PENDING;
+        case 2:
+          return PROVISIONING;
+        case 3:
+          return READY;
+        case 4:
+          return FAILED;
+        case 5:
+          return DEACTIVATED;
+        case 6:
+          return DELETING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.BackupPlan.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkebackup.v1.BackupPlan.State)
   }
 
   public interface RetentionPolicyOrBuilder
@@ -1036,7 +1283,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schedule defines scheduling parameters for automatically creating Backups
+   * Defines scheduling parameters for automatically creating Backups
    * via this BackupPlan.
    * </pre>
    *
@@ -1334,7 +1581,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schedule defines scheduling parameters for automatically creating Backups
+     * Defines scheduling parameters for automatically creating Backups
      * via this BackupPlan.
      * </pre>
      *
@@ -4438,6 +4685,104 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     return protectedPodCount_;
   }
 
+  public static final int STATE_FIELD_NUMBER = 14;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.BackupPlan.State getState() {
+    com.google.cloud.gkebackup.v1.BackupPlan.State result =
+        com.google.cloud.gkebackup.v1.BackupPlan.State.forNumber(state_);
+    return result == null ? com.google.cloud.gkebackup.v1.BackupPlan.State.UNRECOGNIZED : result;
+  }
+
+  public static final int STATE_REASON_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  @java.lang.Override
+  public java.lang.String getStateReason() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stateReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStateReasonBytes() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stateReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4489,6 +4834,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
     if (protectedPodCount_ != 0) {
       output.writeInt32(13, protectedPodCount_);
+    }
+    if (state_ != com.google.cloud.gkebackup.v1.BackupPlan.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(14, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, stateReason_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4545,6 +4896,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (protectedPodCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, protectedPodCount_);
     }
+    if (state_ != com.google.cloud.gkebackup.v1.BackupPlan.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, stateReason_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4588,6 +4945,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (!getBackupConfig().equals(other.getBackupConfig())) return false;
     }
     if (getProtectedPodCount() != other.getProtectedPodCount()) return false;
+    if (state_ != other.state_) return false;
+    if (!getStateReason().equals(other.getStateReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4637,6 +4996,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PROTECTED_POD_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getProtectedPodCount();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    hash = (37 * hash) + STATE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getStateReason().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4829,6 +5192,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         backupConfigBuilder_ = null;
       }
       protectedPodCount_ = 0;
+      state_ = 0;
+      stateReason_ = "";
       return this;
     }
 
@@ -4907,6 +5272,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.protectedPodCount_ = protectedPodCount_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.stateReason_ = stateReason_;
       }
     }
 
@@ -5002,6 +5373,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getProtectedPodCount() != 0) {
         setProtectedPodCount(other.getProtectedPodCount());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (!other.getStateReason().isEmpty()) {
+        stateReason_ = other.stateReason_;
+        bitField0_ |= 0x00004000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5113,6 +5492,18 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
+            case 112:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
+            case 122:
+              {
+                stateReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6994,6 +7385,232 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     public Builder clearProtectedPodCount() {
       bitField0_ = (bitField0_ & ~0x00001000);
       protectedPodCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the BackupPlan. This State field reflects the
+     * various stages a BackupPlan can be in
+     * during the Create operation. It will be set to "DEACTIVATED"
+     * if the BackupPlan is deactivated on an Update
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the BackupPlan. This State field reflects the
+     * various stages a BackupPlan can be in
+     * during the Create operation. It will be set to "DEACTIVATED"
+     * if the BackupPlan is deactivated on an Update
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the BackupPlan. This State field reflects the
+     * various stages a BackupPlan can be in
+     * during the Create operation. It will be set to "DEACTIVATED"
+     * if the BackupPlan is deactivated on an Update
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.BackupPlan.State getState() {
+      com.google.cloud.gkebackup.v1.BackupPlan.State result =
+          com.google.cloud.gkebackup.v1.BackupPlan.State.forNumber(state_);
+      return result == null ? com.google.cloud.gkebackup.v1.BackupPlan.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the BackupPlan. This State field reflects the
+     * various stages a BackupPlan can be in
+     * during the Create operation. It will be set to "DEACTIVATED"
+     * if the BackupPlan is deactivated on an Update
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.gkebackup.v1.BackupPlan.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the BackupPlan. This State field reflects the
+     * various stages a BackupPlan can be in
+     * during the Create operation. It will be set to "DEACTIVATED"
+     * if the BackupPlan is deactivated on an Update
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stateReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why BackupPlan is in the current
+     * `state`
+     * </pre>
+     *
+     * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The stateReason.
+     */
+    public java.lang.String getStateReason() {
+      java.lang.Object ref = stateReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stateReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why BackupPlan is in the current
+     * `state`
+     * </pre>
+     *
+     * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for stateReason.
+     */
+    public com.google.protobuf.ByteString getStateReasonBytes() {
+      java.lang.Object ref = stateReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stateReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why BackupPlan is in the current
+     * `state`
+     * </pre>
+     *
+     * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      stateReason_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why BackupPlan is in the current
+     * `state`
+     * </pre>
+     *
+     * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStateReason() {
+      stateReason_ = getDefaultInstance().getStateReason();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why BackupPlan is in the current
+     * `state`
+     * </pre>
+     *
+     * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      stateReason_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

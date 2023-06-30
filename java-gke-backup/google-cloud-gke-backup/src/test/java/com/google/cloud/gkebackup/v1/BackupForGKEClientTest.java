@@ -128,6 +128,7 @@ public class BackupForGKEClientTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -193,6 +194,7 @@ public class BackupForGKEClientTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -346,6 +348,7 @@ public class BackupForGKEClientTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -396,6 +399,7 @@ public class BackupForGKEClientTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -446,6 +450,7 @@ public class BackupForGKEClientTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1298,6 +1303,7 @@ public class BackupForGKEClientTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1360,6 +1366,7 @@ public class BackupForGKEClientTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1510,6 +1517,7 @@ public class BackupForGKEClientTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -1557,6 +1565,7 @@ public class BackupForGKEClientTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -1604,6 +1613,7 @@ public class BackupForGKEClientTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
