@@ -387,8 +387,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 1 minute.
-   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
-   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 5
+   *       minutes and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
    *       operation} across all of the attempts is 10 mins.
    * </ul>
    */
@@ -659,7 +659,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sampleRowKeysSettings
           .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
-          .setRetrySettings(IDEMPOTENT_RETRY_SETTINGS);
+          .setRetrySettings(
+              IDEMPOTENT_RETRY_SETTINGS
+                  .toBuilder()
+                  .setInitialRpcTimeout(Duration.ofMinutes(5))
+                  .setMaxRpcTimeout(Duration.ofMinutes(5))
+                  .build());
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
