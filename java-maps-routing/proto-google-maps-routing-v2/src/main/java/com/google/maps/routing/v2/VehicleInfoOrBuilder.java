@@ -28,7 +28,8 @@ public interface VehicleInfoOrBuilder
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -41,7 +42,8 @@ public interface VehicleInfoOrBuilder
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
