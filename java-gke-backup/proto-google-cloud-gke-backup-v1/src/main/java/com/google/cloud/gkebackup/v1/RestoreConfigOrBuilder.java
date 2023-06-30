@@ -284,6 +284,71 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
+   * Do not restore any namespaced resources if set to "True".
+   * Specifying this field to "False" is not allowed.
+   * </pre>
+   *
+   * <code>bool no_namespaces = 9;</code>
+   *
+   * @return Whether the noNamespaces field is set.
+   */
+  boolean hasNoNamespaces();
+  /**
+   *
+   *
+   * <pre>
+   * Do not restore any namespaced resources if set to "True".
+   * Specifying this field to "False" is not allowed.
+   * </pre>
+   *
+   * <code>bool no_namespaces = 9;</code>
+   *
+   * @return The noNamespaces.
+   */
+  boolean getNoNamespaces();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   *
+   * @return Whether the excludedNamespaces field is set.
+   */
+  boolean hasExcludedNamespaces();
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   *
+   * @return The excludedNamespaces.
+   */
+  com.google.cloud.gkebackup.v1.Namespaces getExcludedNamespaces();
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   */
+  com.google.cloud.gkebackup.v1.NamespacesOrBuilder getExcludedNamespacesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of transformation rules to be applied against Kubernetes resources
    * as they are selected for restoration from a Backup. Rules are executed in
    * order defined - this order matters, as changes made by a rule may impact
@@ -363,6 +428,90 @@ public interface RestoreConfigOrBuilder
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder
       getSubstitutionRulesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+      getTransformationRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  int getTransformationRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
+      getTransformationRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
+      getTransformationRulesOrBuilder(int index);
 
   com.google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreScopeCase
       getNamespacedResourceRestoreScopeCase();

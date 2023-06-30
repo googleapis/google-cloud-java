@@ -119,6 +119,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -185,6 +186,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -351,6 +353,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -407,6 +410,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -463,6 +467,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -487,6 +492,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDeactivated(true)
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
+            .setStateReason("stateReason1148834357")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -531,6 +537,7 @@ public class BackupForGKEClientHttpJsonTest {
               .setDeactivated(true)
               .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
               .setProtectedPodCount(-1494678716)
+              .setStateReason("stateReason1148834357")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupPlanAsync(backupPlan, updateMask).get();
@@ -1471,6 +1478,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1534,6 +1542,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1697,6 +1706,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1750,6 +1760,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1803,6 +1814,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1824,6 +1836,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setRestoreConfig(RestoreConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setStateReason("stateReason1148834357")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1866,6 +1879,7 @@ public class BackupForGKEClientHttpJsonTest {
               .setRestoreConfig(RestoreConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setEtag("etag3123477")
+              .setStateReason("stateReason1148834357")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRestorePlanAsync(restorePlan, updateMask).get();

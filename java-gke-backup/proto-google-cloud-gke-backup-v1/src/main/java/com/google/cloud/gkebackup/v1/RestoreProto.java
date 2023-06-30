@@ -51,6 +51,18 @@ public final class RestoreProto {
       internal_static_google_cloud_gkebackup_v1_RestoreConfig_SubstitutionRule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_RestoreConfig_SubstitutionRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -91,7 +103,7 @@ public final class RestoreProto {
           + "gkebackup.googleapis.com/Restore\022Vprojec"
           + "ts/{project}/locations/{location}/restor"
           + "ePlans/{restore_plan}/restores/{restore}"
-          + "\"\251\014\n\rRestoreConfig\022d\n\032volume_data_restor"
+          + "\"\307\023\n\rRestoreConfig\022d\n\032volume_data_restor"
           + "e_policy\030\001 \001(\0162@.google.cloud.gkebackup."
           + "v1.RestoreConfig.VolumeDataRestorePolicy"
           + "\022p\n cluster_resource_conflict_policy\030\002 \001"
@@ -106,36 +118,59 @@ public final class RestoreProto {
           + "(\010H\000\022D\n\023selected_namespaces\030\006 \001(\0132%.goog"
           + "le.cloud.gkebackup.v1.NamespacesH\000\022K\n\025se"
           + "lected_applications\030\007 \001(\0132*.google.cloud"
-          + ".gkebackup.v1.NamespacedNamesH\000\022U\n\022subst"
-          + "itution_rules\030\010 \003(\01329.google.cloud.gkeba"
-          + "ckup.v1.RestoreConfig.SubstitutionRule\032:"
-          + "\n\tGroupKind\022\026\n\016resource_group\030\001 \001(\t\022\025\n\rr"
-          + "esource_kind\030\002 \001(\t\032o\n\033ClusterResourceRes"
-          + "toreScope\022P\n\024selected_group_kinds\030\001 \003(\0132"
-          + "2.google.cloud.gkebackup.v1.RestoreConfi"
-          + "g.GroupKind\032\320\001\n\020SubstitutionRule\022\031\n\021targ"
-          + "et_namespaces\030\001 \003(\t\022N\n\022target_group_kind"
-          + "s\030\002 \003(\01322.google.cloud.gkebackup.v1.Rest"
-          + "oreConfig.GroupKind\022\036\n\020target_json_path\030"
-          + "\003 \001(\tB\004\342A\001\002\022\036\n\026original_value_pattern\030\004 "
-          + "\001(\t\022\021\n\tnew_value\030\005 \001(\t\"\257\001\n\027VolumeDataRes"
-          + "torePolicy\022*\n&VOLUME_DATA_RESTORE_POLICY"
-          + "_UNSPECIFIED\020\000\022#\n\037RESTORE_VOLUME_DATA_FR"
-          + "OM_BACKUP\020\001\022#\n\037REUSE_VOLUME_HANDLE_FROM_"
-          + "BACKUP\020\002\022\036\n\032NO_VOLUME_DATA_RESTORATION\020\003"
-          + "\"\203\001\n\035ClusterResourceConflictPolicy\0220\n,CL"
-          + "USTER_RESOURCE_CONFLICT_POLICY_UNSPECIFI"
-          + "ED\020\000\022\030\n\024USE_EXISTING_VERSION\020\001\022\026\n\022USE_BA"
-          + "CKUP_VERSION\020\002\"\177\n\035NamespacedResourceRest"
-          + "oreMode\0220\n,NAMESPACED_RESOURCE_RESTORE_M"
-          + "ODE_UNSPECIFIED\020\000\022\026\n\022DELETE_AND_RESTORE\020"
-          + "\001\022\024\n\020FAIL_ON_CONFLICT\020\002B#\n!namespaced_re"
-          + "source_restore_scopeB\303\001\n\035com.google.clou"
-          + "d.gkebackup.v1B\014RestoreProtoP\001Z;cloud.go"
-          + "ogle.com/go/gkebackup/apiv1/gkebackuppb;"
-          + "gkebackuppb\252\002\031Google.Cloud.GkeBackup.V1\312"
-          + "\002\031Google\\Cloud\\GkeBackup\\V1\352\002\034Google::Cl"
-          + "oud::GkeBackup::V1b\006proto3"
+          + ".gkebackup.v1.NamespacedNamesH\000\022\027\n\rno_na"
+          + "mespaces\030\t \001(\010H\000\022D\n\023excluded_namespaces\030"
+          + "\n \001(\0132%.google.cloud.gkebackup.v1.Namesp"
+          + "acesH\000\022U\n\022substitution_rules\030\010 \003(\01329.goo"
+          + "gle.cloud.gkebackup.v1.RestoreConfig.Sub"
+          + "stitutionRule\022Y\n\024transformation_rules\030\013 "
+          + "\003(\0132;.google.cloud.gkebackup.v1.RestoreC"
+          + "onfig.TransformationRule\032:\n\tGroupKind\022\026\n"
+          + "\016resource_group\030\001 \001(\t\022\025\n\rresource_kind\030\002"
+          + " \001(\t\032\362\001\n\033ClusterResourceRestoreScope\022P\n\024"
+          + "selected_group_kinds\030\001 \003(\01322.google.clou"
+          + "d.gkebackup.v1.RestoreConfig.GroupKind\022P"
+          + "\n\024excluded_group_kinds\030\002 \003(\01322.google.cl"
+          + "oud.gkebackup.v1.RestoreConfig.GroupKind"
+          + "\022\027\n\017all_group_kinds\030\003 \001(\010\022\026\n\016no_group_ki"
+          + "nds\030\004 \001(\010\032\320\001\n\020SubstitutionRule\022\031\n\021target"
+          + "_namespaces\030\001 \003(\t\022N\n\022target_group_kinds\030"
+          + "\002 \003(\01322.google.cloud.gkebackup.v1.Restor"
+          + "eConfig.GroupKind\022\036\n\020target_json_path\030\003 "
+          + "\001(\tB\004\342A\001\002\022\036\n\026original_value_pattern\030\004 \001("
+          + "\t\022\021\n\tnew_value\030\005 \001(\t\032\374\001\n\030TransformationR"
+          + "uleAction\022V\n\002op\030\001 \001(\0162D.google.cloud.gke"
+          + "backup.v1.RestoreConfig.TransformationRu"
+          + "leAction.OpB\004\342A\001\002\022\021\n\tfrom_path\030\002 \001(\t\022\014\n\004"
+          + "path\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\"X\n\002Op\022\022\n\016OP_UN"
+          + "SPECIFIED\020\000\022\n\n\006REMOVE\020\001\022\010\n\004MOVE\020\002\022\010\n\004COP"
+          + "Y\020\003\022\007\n\003ADD\020\004\022\010\n\004TEST\020\005\022\013\n\007REPLACE\020\006\032\200\001\n\016"
+          + "ResourceFilter\022\022\n\nnamespaces\030\001 \003(\t\022G\n\013gr"
+          + "oup_kinds\030\002 \003(\01322.google.cloud.gkebackup"
+          + ".v1.RestoreConfig.GroupKind\022\021\n\tjson_path"
+          + "\030\003 \001(\t\032\333\001\n\022TransformationRule\022^\n\rfield_a"
+          + "ctions\030\001 \003(\0132A.google.cloud.gkebackup.v1"
+          + ".RestoreConfig.TransformationRuleActionB"
+          + "\004\342A\001\002\022P\n\017resource_filter\030\002 \001(\01327.google."
+          + "cloud.gkebackup.v1.RestoreConfig.Resourc"
+          + "eFilter\022\023\n\013description\030\003 \001(\t\"\257\001\n\027VolumeD"
+          + "ataRestorePolicy\022*\n&VOLUME_DATA_RESTORE_"
+          + "POLICY_UNSPECIFIED\020\000\022#\n\037RESTORE_VOLUME_D"
+          + "ATA_FROM_BACKUP\020\001\022#\n\037REUSE_VOLUME_HANDLE"
+          + "_FROM_BACKUP\020\002\022\036\n\032NO_VOLUME_DATA_RESTORA"
+          + "TION\020\003\"\203\001\n\035ClusterResourceConflictPolicy"
+          + "\0220\n,CLUSTER_RESOURCE_CONFLICT_POLICY_UNS"
+          + "PECIFIED\020\000\022\030\n\024USE_EXISTING_VERSION\020\001\022\026\n\022"
+          + "USE_BACKUP_VERSION\020\002\"\177\n\035NamespacedResour"
+          + "ceRestoreMode\0220\n,NAMESPACED_RESOURCE_RES"
+          + "TORE_MODE_UNSPECIFIED\020\000\022\026\n\022DELETE_AND_RE"
+          + "STORE\020\001\022\024\n\020FAIL_ON_CONFLICT\020\002B#\n!namespa"
+          + "ced_resource_restore_scopeB\303\001\n\035com.googl"
+          + "e.cloud.gkebackup.v1B\014RestoreProtoP\001Z;cl"
+          + "oud.google.com/go/gkebackup/apiv1/gkebac"
+          + "kuppb;gkebackuppb\252\002\031Google.Cloud.GkeBack"
+          + "up.V1\312\002\031Google\\Cloud\\GkeBackup\\V1\352\002\034Goog"
+          + "le::Cloud::GkeBackup::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -191,7 +226,10 @@ public final class RestoreProto {
               "AllNamespaces",
               "SelectedNamespaces",
               "SelectedApplications",
+              "NoNamespaces",
+              "ExcludedNamespaces",
               "SubstitutionRules",
+              "TransformationRules",
               "NamespacedResourceRestoreScope",
             });
     internal_static_google_cloud_gkebackup_v1_RestoreConfig_GroupKind_descriptor =
@@ -208,7 +246,7 @@ public final class RestoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_RestoreConfig_ClusterResourceRestoreScope_descriptor,
             new java.lang.String[] {
-              "SelectedGroupKinds",
+              "SelectedGroupKinds", "ExcludedGroupKinds", "AllGroupKinds", "NoGroupKinds",
             });
     internal_static_google_cloud_gkebackup_v1_RestoreConfig_SubstitutionRule_descriptor =
         internal_static_google_cloud_gkebackup_v1_RestoreConfig_descriptor.getNestedTypes().get(2);
@@ -221,6 +259,30 @@ public final class RestoreProto {
               "TargetJsonPath",
               "OriginalValuePattern",
               "NewValue",
+            });
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor =
+        internal_static_google_cloud_gkebackup_v1_RestoreConfig_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor,
+            new java.lang.String[] {
+              "Op", "FromPath", "Path", "Value",
+            });
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor =
+        internal_static_google_cloud_gkebackup_v1_RestoreConfig_descriptor.getNestedTypes().get(4);
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor,
+            new java.lang.String[] {
+              "Namespaces", "GroupKinds", "JsonPath",
+            });
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor =
+        internal_static_google_cloud_gkebackup_v1_RestoreConfig_descriptor.getNestedTypes().get(5);
+    internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor,
+            new java.lang.String[] {
+              "FieldActions", "ResourceFilter", "Description",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
