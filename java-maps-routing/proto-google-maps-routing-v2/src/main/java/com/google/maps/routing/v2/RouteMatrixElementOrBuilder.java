@@ -318,4 +318,40 @@ public interface RouteMatrixElementOrBuilder
    * <code>.google.maps.routing.v2.FallbackInfo fallback_info = 8;</code>
    */
   com.google.maps.routing.v2.FallbackInfoOrBuilder getFallbackInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  boolean hasLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return The localizedValues.
+   */
+  com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues getLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   */
+  com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder();
 }

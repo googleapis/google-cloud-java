@@ -69,8 +69,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to avoid toll roads where reasonable. Preference will be
-   * given to routes not containing toll roads. Applies only to the `DRIVE` and
+   * When set to true, avoids toll roads where reasonable, giving preference to
+   * routes not containing toll roads. Applies only to the `DRIVE` and
    * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
@@ -89,8 +89,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to avoid highways where reasonable. Preference will be
-   * given to routes not containing highways. Applies only to the `DRIVE` and
+   * When set to true, avoids highways where reasonable, giving preference to
+   * routes not containing highways. Applies only to the `DRIVE` and
    * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
@@ -109,9 +109,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to avoid ferries where reasonable. Preference will be
-   * given to routes not containing travel by ferries.
-   * Applies only to the `DRIVE` and`TWO_WHEELER`
+   * When set to true, avoids ferries where reasonable, giving preference to
+   * routes not containing ferries. Applies only to the `DRIVE` and`TWO_WHEELER`
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
@@ -130,10 +129,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to avoid navigating indoors where reasonable. Preference
-   * will be given to routes not containing indoor navigation.
-   * Applies only to the `WALK`
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+   * When set to true, avoids navigating indoors where reasonable, giving
+   * preference to routes not containing indoor navigation. Applies only to the
+   * `WALK` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool avoid_indoor = 4;</code>
@@ -825,8 +823,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid toll roads where reasonable. Preference will be
-     * given to routes not containing toll roads. Applies only to the `DRIVE` and
+     * When set to true, avoids toll roads where reasonable, giving preference to
+     * routes not containing toll roads. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -842,8 +840,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid toll roads where reasonable. Preference will be
-     * given to routes not containing toll roads. Applies only to the `DRIVE` and
+     * When set to true, avoids toll roads where reasonable, giving preference to
+     * routes not containing toll roads. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -863,8 +861,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid toll roads where reasonable. Preference will be
-     * given to routes not containing toll roads. Applies only to the `DRIVE` and
+     * When set to true, avoids toll roads where reasonable, giving preference to
+     * routes not containing toll roads. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -884,8 +882,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid highways where reasonable. Preference will be
-     * given to routes not containing highways. Applies only to the `DRIVE` and
+     * When set to true, avoids highways where reasonable, giving preference to
+     * routes not containing highways. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -901,8 +899,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid highways where reasonable. Preference will be
-     * given to routes not containing highways. Applies only to the `DRIVE` and
+     * When set to true, avoids highways where reasonable, giving preference to
+     * routes not containing highways. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -922,8 +920,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid highways where reasonable. Preference will be
-     * given to routes not containing highways. Applies only to the `DRIVE` and
+     * When set to true, avoids highways where reasonable, giving preference to
+     * routes not containing highways. Applies only to the `DRIVE` and
      * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -943,9 +941,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid ferries where reasonable. Preference will be
-     * given to routes not containing travel by ferries.
-     * Applies only to the `DRIVE` and`TWO_WHEELER`
+     * When set to true, avoids ferries where reasonable, giving preference to
+     * routes not containing ferries. Applies only to the `DRIVE` and`TWO_WHEELER`
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -961,9 +958,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid ferries where reasonable. Preference will be
-     * given to routes not containing travel by ferries.
-     * Applies only to the `DRIVE` and`TWO_WHEELER`
+     * When set to true, avoids ferries where reasonable, giving preference to
+     * routes not containing ferries. Applies only to the `DRIVE` and`TWO_WHEELER`
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -983,9 +979,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid ferries where reasonable. Preference will be
-     * given to routes not containing travel by ferries.
-     * Applies only to the `DRIVE` and`TWO_WHEELER`
+     * When set to true, avoids ferries where reasonable, giving preference to
+     * routes not containing ferries. Applies only to the `DRIVE` and`TWO_WHEELER`
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
@@ -1005,10 +1000,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid navigating indoors where reasonable. Preference
-     * will be given to routes not containing indoor navigation.
-     * Applies only to the `WALK`
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+     * When set to true, avoids navigating indoors where reasonable, giving
+     * preference to routes not containing indoor navigation. Applies only to the
+     * `WALK` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool avoid_indoor = 4;</code>
@@ -1023,10 +1017,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid navigating indoors where reasonable. Preference
-     * will be given to routes not containing indoor navigation.
-     * Applies only to the `WALK`
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+     * When set to true, avoids navigating indoors where reasonable, giving
+     * preference to routes not containing indoor navigation. Applies only to the
+     * `WALK` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool avoid_indoor = 4;</code>
@@ -1045,10 +1038,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to avoid navigating indoors where reasonable. Preference
-     * will be given to routes not containing indoor navigation.
-     * Applies only to the `WALK`
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+     * When set to true, avoids navigating indoors where reasonable, giving
+     * preference to routes not containing indoor navigation. Applies only to the
+     * `WALK` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool avoid_indoor = 4;</code>

@@ -267,9 +267,11 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to
-   * the time that you made the request. If you set this value to a time that
-   * has already occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, then this value
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -282,9 +284,11 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to
-   * the time that you made the request. If you set this value to a time that
-   * has already occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, then this value
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -297,15 +301,67 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to
-   * the time that you made the request. If you set this value to a time that
-   * has already occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, then this value
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDepartureTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the arrivalTime field is set.
+   */
+  boolean hasArrivalTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The arrivalTime.
+   */
+  com.google.protobuf.Timestamp getArrivalTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getArrivalTimeOrBuilder();
 
   /**
    *
@@ -460,4 +516,99 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The enum numeric value on the wire of extraComputations at the given index.
    */
   int getExtraComputationsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [RouteMatrixElement][google.maps.routing.v2.RouteMatrixElement] which
+   * contains the predicted time in traffic based on historical averages.
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for trafficModel.
+   */
+  int getTrafficModelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [RouteMatrixElement][google.maps.routing.v2.RouteMatrixElement] which
+   * contains the predicted time in traffic based on historical averages.
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficModel.
+   */
+  com.google.maps.routing.v2.TrafficModel getTrafficModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transitPreferences field is set.
+   */
+  boolean hasTransitPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transitPreferences.
+   */
+  com.google.maps.routing.v2.TransitPreferences getTransitPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.maps.routing.v2.TransitPreferencesOrBuilder getTransitPreferencesOrBuilder();
 }

@@ -22,8 +22,8 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates the additional information that the user should be informed
- * about, such as possible traffic zone restriction on a leg step.
+ * Contains the additional information that the user should be informed
+ * about, such as possible traffic zone restrictions on a leg step.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.RouteLegStepTravelAdvisory}
@@ -304,8 +304,8 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions on a leg step.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteLegStepTravelAdvisory}

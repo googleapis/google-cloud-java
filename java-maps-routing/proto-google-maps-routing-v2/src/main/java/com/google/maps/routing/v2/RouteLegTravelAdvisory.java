@@ -22,8 +22,8 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates the additional information that the user should be informed
- * about, such as possible traffic zone restriction etc. on a route leg.
+ * Contains the additional information that the user should be informed
+ * about on a leg step, such as possible traffic zone restrictions.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.RouteLegTravelAdvisory}
@@ -69,11 +69,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -88,11 +89,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -107,11 +109,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -131,7 +134,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
@@ -154,7 +157,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
@@ -177,7 +180,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
@@ -199,7 +202,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
@@ -221,7 +224,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
@@ -420,8 +423,8 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about on a leg step, such as possible traffic zone restrictions.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteLegTravelAdvisory}
@@ -674,11 +677,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -692,11 +696,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -716,11 +721,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -742,11 +748,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -765,11 +772,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -794,11 +802,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -817,11 +826,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -835,11 +845,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -857,11 +868,12 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the specific RouteLeg.
-     * This field is only populated if we expect there are tolls on the RouteLeg.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field does not exist, then there is no toll on the RouteLeg.
+     * Contains information about tolls on the specific `RouteLeg`.
+     * This field is only populated if we expect there are tolls on the
+     * `RouteLeg`. If this field is set but the estimated_price subfield is not
+     * populated, we expect that road contains tolls but we do not know an
+     * estimated price. If this field does not exist, then there is no toll on the
+     * `RouteLeg`.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -907,7 +919,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -934,7 +946,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -960,7 +972,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -986,7 +998,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1019,7 +1031,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1049,7 +1061,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1081,7 +1093,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1114,7 +1126,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1144,7 +1156,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1174,7 +1186,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1204,7 +1216,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1233,7 +1245,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1262,7 +1274,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1285,7 +1297,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1312,7 +1324,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1339,7 +1351,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1363,7 +1375,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
@@ -1387,7 +1399,7 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The intervals cover the entire polyline of the `RouteLeg` without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *

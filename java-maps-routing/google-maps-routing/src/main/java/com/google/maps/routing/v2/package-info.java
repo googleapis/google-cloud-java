@@ -42,13 +42,17 @@
  *           .setPolylineQuality(PolylineQuality.forNumber(0))
  *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
  *           .setDepartureTime(Timestamp.newBuilder().build())
+ *           .setArrivalTime(Timestamp.newBuilder().build())
  *           .setComputeAlternativeRoutes(true)
  *           .setRouteModifiers(RouteModifiers.newBuilder().build())
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
  *           .setUnits(Units.forNumber(0))
+ *           .setOptimizeWaypointOrder(true)
  *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
  *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+ *           .setTrafficModel(TrafficModel.forNumber(0))
+ *           .setTransitPreferences(TransitPreferences.newBuilder().build())
  *           .build();
  *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
  * }
