@@ -608,7 +608,7 @@ public class JsonToProtoMessageTest {
         TableFieldSchema.newBuilder()
             .setName("datetime")
             .setType(TableFieldSchema.Type.DATETIME)
-            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
             .build();
     TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
     JSONObject json = new JSONObject();
@@ -621,6 +621,34 @@ public class JsonToProtoMessageTest {
     } catch (IllegalArgumentException e) {
       assertEquals("JSONObject does not have a int64 field at root.datetime.", e.getMessage());
     }
+  }
+
+  private void dateTimeMatch_Internal(String jsonVal, Long expectedVal) throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("datetime")
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+    TestDatetime expectedProto = TestDatetime.newBuilder().setDatetime(expectedVal).build();
+    JSONObject json = new JSONObject();
+    json.put("datetime", jsonVal);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestDatetime.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testDateTimeMatch() throws Exception {
+    dateTimeMatch_Internal("2021-09-27T20:51:10.752", 142258614586538368L);
+    dateTimeMatch_Internal("2021-09-27t20:51:10.752", 142258614586538368L);
+    dateTimeMatch_Internal("2021-09-27 20:51:10.752", 142258614586538368L);
+    dateTimeMatch_Internal("2021-9-27T20:51:10.752", 142258614586538368L);
+    dateTimeMatch_Internal("2021-09-27T00:00:00", 142258525253402624L);
+    dateTimeMatch_Internal("2021-09-27T00:0:00", 142258525253402624L);
+    dateTimeMatch_Internal("2021-09-27", 142258525253402624L);
   }
 
   @Test
@@ -952,6 +980,9 @@ public class JsonToProtoMessageTest {
             .setTestDate(1)
             .setTestDatetime(1)
             .addTestDatetimeStr(142258614586538368L)
+            .addTestDatetimeStr(142258614586538368L)
+            .addTestDatetimeStr(142258614586538368L)
+            .addTestDatetimeStr(142258525253402624L)
             .addTestDatetimeStr(142258525253402624L)
             .setComplexLvl1(
                 ComplexLvl1.newBuilder()
@@ -1020,7 +1051,14 @@ public class JsonToProtoMessageTest {
     json.put("test_datetime", 1);
     json.put(
         "test_datetime_str",
-        new JSONArray(new String[] {"2021-09-27T20:51:10.752", "2021-09-27T00:00:00"}));
+        new JSONArray(
+            new String[] {
+              "2021-09-27T20:51:10.752",
+              "2021-09-27t20:51:10.752",
+              "2021-09-27 20:51:10.752",
+              "2021-09-27T00:00:00",
+              "2021-09-27"
+            }));
     json.put("complex_lvl1", complex_lvl1);
     json.put("complex_lvl2", complex_lvl2);
     json.put(

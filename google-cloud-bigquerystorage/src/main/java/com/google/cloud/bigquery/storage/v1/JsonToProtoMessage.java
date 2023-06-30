@@ -100,6 +100,25 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
           .toFormatter()
           .withZone(ZoneOffset.UTC);
 
+  private static final DateTimeFormatter DATETIME_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .optionalStart()
+          .optionalStart()
+          .parseCaseInsensitive()
+          .appendLiteral('T')
+          .optionalEnd()
+          .optionalStart()
+          .appendLiteral(' ')
+          .optionalEnd()
+          .append(DateTimeFormatter.ISO_LOCAL_TIME)
+          .optionalEnd()
+          .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+          .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+          .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+          .toFormatter();
+
   /** You can use {@link #INSTANCE} instead */
   public JsonToProtoMessage() {}
 
@@ -402,7 +421,8 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
             if (val instanceof String) {
               protoMsg.setField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64DatetimeMicros(
+                      LocalDateTime.parse((String) val, DATETIME_FORMATTER)));
               return;
             } else if (val instanceof Long) {
               protoMsg.setField(fieldDescriptor, val);
@@ -663,7 +683,8 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
             if (val instanceof String) {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64DatetimeMicros(
+                      LocalDateTime.parse((String) val, DATETIME_FORMATTER)));
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, val);
             } else {
