@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,9 +41,8 @@ public class SyncCreateSlate {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSlateId("slateId-2126174060")
               .setSlate(Slate.newBuilder().build())
-              .setRequestId("requestId693933066")
               .build();
-      Slate response = videoStitcherServiceClient.createSlateAsync(request).get();
+      Slate response = videoStitcherServiceClient.createSlate(request);
     }
   }
 }

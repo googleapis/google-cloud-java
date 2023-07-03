@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
 import com.google.cloud.video.stitcher.v1.LocationName;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
-import com.google.longrunning.Operation;
 
 public class AsyncCreateSlate {
 
@@ -43,12 +42,11 @@ public class AsyncCreateSlate {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSlateId("slateId-2126174060")
               .setSlate(Slate.newBuilder().build())
-              .setRequestId("requestId693933066")
               .build();
-      ApiFuture<Operation> future =
+      ApiFuture<Slate> future =
           videoStitcherServiceClient.createSlateCallable().futureCall(request);
       // Do something.
-      Operation response = future.get();
+      Slate response = future.get();
     }
   }
 }
