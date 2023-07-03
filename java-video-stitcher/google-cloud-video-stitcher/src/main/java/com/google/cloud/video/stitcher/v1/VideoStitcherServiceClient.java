@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,14 @@ package com.google.cloud.video.stitcher.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.video.stitcher.v1.stub.VideoStitcherServiceStub;
 import com.google.cloud.video.stitcher.v1.stub.VideoStitcherServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -56,8 +52,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VideoStitcherServiceClient videoStitcherServiceClient =
  *     VideoStitcherServiceClient.create()) {
- *   CdnKeyName name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]");
- *   CdnKey response = videoStitcherServiceClient.getCdnKey(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   CdnKey cdnKey = CdnKey.newBuilder().build();
+ *   String cdnKeyId = "cdnKeyId-1777782867";
+ *   CdnKey response = videoStitcherServiceClient.createCdnKey(parent, cdnKey, cdnKeyId);
  * }
  * }</pre>
  *
@@ -124,7 +122,6 @@ import javax.annotation.Generated;
 public class VideoStitcherServiceClient implements BackgroundResource {
   private final VideoStitcherServiceSettings settings;
   private final VideoStitcherServiceStub stub;
-  private final OperationsClient operationsClient;
 
   /** Constructs an instance of VideoStitcherServiceClient with default settings. */
   public static final VideoStitcherServiceClient create() throws IOException {
@@ -156,13 +153,11 @@ public class VideoStitcherServiceClient implements BackgroundResource {
   protected VideoStitcherServiceClient(VideoStitcherServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((VideoStitcherServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected VideoStitcherServiceClient(VideoStitcherServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final VideoStitcherServiceSettings getSettings() {
@@ -171,14 +166,6 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
   public VideoStitcherServiceStub getStub() {
     return stub;
-  }
-
-  /**
-   * Returns the OperationsClient that can be used to query the status of a long-running operation
-   * returned by another API method call.
-   */
-  public final OperationsClient getOperationsClient() {
-    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -198,8 +185,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   CdnKey cdnKey = CdnKey.newBuilder().build();
    *   String cdnKeyId = "cdnKeyId-1777782867";
-   *   CdnKey response =
-   *       videoStitcherServiceClient.createCdnKeyAsync(parent, cdnKey, cdnKeyId).get();
+   *   CdnKey response = videoStitcherServiceClient.createCdnKey(parent, cdnKey, cdnKeyId);
    * }
    * }</pre>
    *
@@ -213,15 +199,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CdnKey, OperationMetadata> createCdnKeyAsync(
-      LocationName parent, CdnKey cdnKey, String cdnKeyId) {
+  public final CdnKey createCdnKey(LocationName parent, CdnKey cdnKey, String cdnKeyId) {
     CreateCdnKeyRequest request =
         CreateCdnKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
             .setCdnKey(cdnKey)
             .setCdnKeyId(cdnKeyId)
             .build();
-    return createCdnKeyAsync(request);
+    return createCdnKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -241,8 +226,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   CdnKey cdnKey = CdnKey.newBuilder().build();
    *   String cdnKeyId = "cdnKeyId-1777782867";
-   *   CdnKey response =
-   *       videoStitcherServiceClient.createCdnKeyAsync(parent, cdnKey, cdnKeyId).get();
+   *   CdnKey response = videoStitcherServiceClient.createCdnKey(parent, cdnKey, cdnKeyId);
    * }
    * }</pre>
    *
@@ -256,15 +240,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CdnKey, OperationMetadata> createCdnKeyAsync(
-      String parent, CdnKey cdnKey, String cdnKeyId) {
+  public final CdnKey createCdnKey(String parent, CdnKey cdnKey, String cdnKeyId) {
     CreateCdnKeyRequest request =
         CreateCdnKeyRequest.newBuilder()
             .setParent(parent)
             .setCdnKey(cdnKey)
             .setCdnKeyId(cdnKeyId)
             .build();
-    return createCdnKeyAsync(request);
+    return createCdnKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -287,16 +270,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setCdnKey(CdnKey.newBuilder().build())
    *           .setCdnKeyId("cdnKeyId-1777782867")
    *           .build();
-   *   CdnKey response = videoStitcherServiceClient.createCdnKeyAsync(request).get();
+   *   CdnKey response = videoStitcherServiceClient.createCdnKey(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CdnKey, OperationMetadata> createCdnKeyAsync(
-      CreateCdnKeyRequest request) {
-    return createCdnKeyOperationCallable().futureCall(request);
+  public final CdnKey createCdnKey(CreateCdnKeyRequest request) {
+    return createCdnKeyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -319,46 +301,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setCdnKey(CdnKey.newBuilder().build())
    *           .setCdnKeyId("cdnKeyId-1777782867")
    *           .build();
-   *   OperationFuture<CdnKey, OperationMetadata> future =
-   *       videoStitcherServiceClient.createCdnKeyOperationCallable().futureCall(request);
+   *   ApiFuture<CdnKey> future =
+   *       videoStitcherServiceClient.createCdnKeyCallable().futureCall(request);
    *   // Do something.
    *   CdnKey response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<CreateCdnKeyRequest, CdnKey, OperationMetadata>
-      createCdnKeyOperationCallable() {
-    return stub.createCdnKeyOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a new CDN key.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   CreateCdnKeyRequest request =
-   *       CreateCdnKeyRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setCdnKey(CdnKey.newBuilder().build())
-   *           .setCdnKeyId("cdnKeyId-1777782867")
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.createCdnKeyCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable() {
+  public final UnaryCallable<CreateCdnKeyRequest, CdnKey> createCdnKeyCallable() {
     return stub.createCdnKeyCallable();
   }
 
@@ -667,7 +617,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CdnKeyName name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]");
-   *   videoStitcherServiceClient.deleteCdnKeyAsync(name).get();
+   *   videoStitcherServiceClient.deleteCdnKey(name);
    * }
    * }</pre>
    *
@@ -675,10 +625,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/cdnKeys/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteCdnKeyAsync(CdnKeyName name) {
+  public final void deleteCdnKey(CdnKeyName name) {
     DeleteCdnKeyRequest request =
         DeleteCdnKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteCdnKeyAsync(request);
+    deleteCdnKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -696,7 +646,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString();
-   *   videoStitcherServiceClient.deleteCdnKeyAsync(name).get();
+   *   videoStitcherServiceClient.deleteCdnKey(name);
    * }
    * }</pre>
    *
@@ -704,9 +654,9 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/cdnKeys/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteCdnKeyAsync(String name) {
+  public final void deleteCdnKey(String name) {
     DeleteCdnKeyRequest request = DeleteCdnKeyRequest.newBuilder().setName(name).build();
-    return deleteCdnKeyAsync(request);
+    deleteCdnKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -727,16 +677,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *       DeleteCdnKeyRequest.newBuilder()
    *           .setName(CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString())
    *           .build();
-   *   videoStitcherServiceClient.deleteCdnKeyAsync(request).get();
+   *   videoStitcherServiceClient.deleteCdnKey(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteCdnKeyAsync(
-      DeleteCdnKeyRequest request) {
-    return deleteCdnKeyOperationCallable().futureCall(request);
+  public final void deleteCdnKey(DeleteCdnKeyRequest request) {
+    deleteCdnKeyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -757,44 +706,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *       DeleteCdnKeyRequest.newBuilder()
    *           .setName(CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString())
    *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       videoStitcherServiceClient.deleteCdnKeyOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<DeleteCdnKeyRequest, Empty, OperationMetadata>
-      deleteCdnKeyOperationCallable() {
-    return stub.deleteCdnKeyOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified CDN key.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   DeleteCdnKeyRequest request =
-   *       DeleteCdnKeyRequest.newBuilder()
-   *           .setName(CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString())
-   *           .build();
-   *   ApiFuture<Operation> future =
+   *   ApiFuture<Empty> future =
    *       videoStitcherServiceClient.deleteCdnKeyCallable().futureCall(request);
    *   // Do something.
    *   future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<DeleteCdnKeyRequest, Operation> deleteCdnKeyCallable() {
+  public final UnaryCallable<DeleteCdnKeyRequest, Empty> deleteCdnKeyCallable() {
     return stub.deleteCdnKeyCallable();
   }
 
@@ -814,7 +733,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     VideoStitcherServiceClient.create()) {
    *   CdnKey cdnKey = CdnKey.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   CdnKey response = videoStitcherServiceClient.updateCdnKeyAsync(cdnKey, updateMask).get();
+   *   CdnKey response = videoStitcherServiceClient.updateCdnKey(cdnKey, updateMask);
    * }
    * }</pre>
    *
@@ -824,11 +743,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CdnKey, OperationMetadata> updateCdnKeyAsync(
-      CdnKey cdnKey, FieldMask updateMask) {
+  public final CdnKey updateCdnKey(CdnKey cdnKey, FieldMask updateMask) {
     UpdateCdnKeyRequest request =
         UpdateCdnKeyRequest.newBuilder().setCdnKey(cdnKey).setUpdateMask(updateMask).build();
-    return updateCdnKeyAsync(request);
+    return updateCdnKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -850,16 +768,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setCdnKey(CdnKey.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   CdnKey response = videoStitcherServiceClient.updateCdnKeyAsync(request).get();
+   *   CdnKey response = videoStitcherServiceClient.updateCdnKey(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CdnKey, OperationMetadata> updateCdnKeyAsync(
-      UpdateCdnKeyRequest request) {
-    return updateCdnKeyOperationCallable().futureCall(request);
+  public final CdnKey updateCdnKey(UpdateCdnKeyRequest request) {
+    return updateCdnKeyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -881,45 +798,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setCdnKey(CdnKey.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   OperationFuture<CdnKey, OperationMetadata> future =
-   *       videoStitcherServiceClient.updateCdnKeyOperationCallable().futureCall(request);
+   *   ApiFuture<CdnKey> future =
+   *       videoStitcherServiceClient.updateCdnKeyCallable().futureCall(request);
    *   // Do something.
    *   CdnKey response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
-      updateCdnKeyOperationCallable() {
-    return stub.updateCdnKeyOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates the specified CDN key. Only update fields specified in the call method body.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   UpdateCdnKeyRequest request =
-   *       UpdateCdnKeyRequest.newBuilder()
-   *           .setCdnKey(CdnKey.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.updateCdnKeyCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateCdnKeyRequest, Operation> updateCdnKeyCallable() {
+  public final UnaryCallable<UpdateCdnKeyRequest, CdnKey> updateCdnKeyCallable() {
     return stub.updateCdnKeyCallable();
   }
 
@@ -2104,27 +1990,26 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Slate slate = Slate.newBuilder().build();
    *   String slateId = "slateId-2126174060";
-   *   Slate response = videoStitcherServiceClient.createSlateAsync(parent, slate, slateId).get();
+   *   Slate response = videoStitcherServiceClient.createSlate(parent, slate, slateId);
    * }
    * }</pre>
    *
    * @param parent Required. The project in which the slate should be created, in the form of
-   *     `projects/{project_number}/locations/{location}`.
+   *     `projects/{project_number}`.
    * @param slate Required. The slate to create.
    * @param slateId Required. The unique identifier for the slate. This value should conform to
    *     RFC-1034, which restricts to lower-case letters, numbers, and hyphen, with the first
    *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Slate, OperationMetadata> createSlateAsync(
-      LocationName parent, Slate slate, String slateId) {
+  public final Slate createSlate(LocationName parent, Slate slate, String slateId) {
     CreateSlateRequest request =
         CreateSlateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
             .setSlate(slate)
             .setSlateId(slateId)
             .build();
-    return createSlateAsync(request);
+    return createSlate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2144,27 +2029,26 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Slate slate = Slate.newBuilder().build();
    *   String slateId = "slateId-2126174060";
-   *   Slate response = videoStitcherServiceClient.createSlateAsync(parent, slate, slateId).get();
+   *   Slate response = videoStitcherServiceClient.createSlate(parent, slate, slateId);
    * }
    * }</pre>
    *
    * @param parent Required. The project in which the slate should be created, in the form of
-   *     `projects/{project_number}/locations/{location}`.
+   *     `projects/{project_number}`.
    * @param slate Required. The slate to create.
    * @param slateId Required. The unique identifier for the slate. This value should conform to
    *     RFC-1034, which restricts to lower-case letters, numbers, and hyphen, with the first
    *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Slate, OperationMetadata> createSlateAsync(
-      String parent, Slate slate, String slateId) {
+  public final Slate createSlate(String parent, Slate slate, String slateId) {
     CreateSlateRequest request =
         CreateSlateRequest.newBuilder()
             .setParent(parent)
             .setSlate(slate)
             .setSlateId(slateId)
             .build();
-    return createSlateAsync(request);
+    return createSlate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2186,18 +2070,16 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSlateId("slateId-2126174060")
    *           .setSlate(Slate.newBuilder().build())
-   *           .setRequestId("requestId693933066")
    *           .build();
-   *   Slate response = videoStitcherServiceClient.createSlateAsync(request).get();
+   *   Slate response = videoStitcherServiceClient.createSlate(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Slate, OperationMetadata> createSlateAsync(
-      CreateSlateRequest request) {
-    return createSlateOperationCallable().futureCall(request);
+  public final Slate createSlate(CreateSlateRequest request) {
+    return createSlateCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2219,49 +2101,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSlateId("slateId-2126174060")
    *           .setSlate(Slate.newBuilder().build())
-   *           .setRequestId("requestId693933066")
    *           .build();
-   *   OperationFuture<Slate, OperationMetadata> future =
-   *       videoStitcherServiceClient.createSlateOperationCallable().futureCall(request);
+   *   ApiFuture<Slate> future =
+   *       videoStitcherServiceClient.createSlateCallable().futureCall(request);
    *   // Do something.
    *   Slate response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<CreateSlateRequest, Slate, OperationMetadata>
-      createSlateOperationCallable() {
-    return stub.createSlateOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a slate.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   CreateSlateRequest request =
-   *       CreateSlateRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setSlateId("slateId-2126174060")
-   *           .setSlate(Slate.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.createSlateCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateSlateRequest, Operation> createSlateCallable() {
+  public final UnaryCallable<CreateSlateRequest, Slate> createSlateCallable() {
     return stub.createSlateCallable();
   }
 
@@ -2286,8 +2134,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project to list slates, in the form of
-   *     `projects/{project_number}/locations/{location}`.
+   * @param parent Required. The project to list slates, in the form of `projects/{project_number}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSlatesPagedResponse listSlates(LocationName parent) {
@@ -2317,8 +2164,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project to list slates, in the form of
-   *     `projects/{project_number}/locations/{location}`.
+   * @param parent Required. The project to list slates, in the form of `projects/{project_number}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSlatesPagedResponse listSlates(String parent) {
@@ -2567,7 +2413,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     VideoStitcherServiceClient.create()) {
    *   Slate slate = Slate.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Slate response = videoStitcherServiceClient.updateSlateAsync(slate, updateMask).get();
+   *   Slate response = videoStitcherServiceClient.updateSlate(slate, updateMask);
    * }
    * }</pre>
    *
@@ -2575,11 +2421,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @param updateMask Required. The update mask which specifies fields which should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Slate, OperationMetadata> updateSlateAsync(
-      Slate slate, FieldMask updateMask) {
+  public final Slate updateSlate(Slate slate, FieldMask updateMask) {
     UpdateSlateRequest request =
         UpdateSlateRequest.newBuilder().setSlate(slate).setUpdateMask(updateMask).build();
-    return updateSlateAsync(request);
+    return updateSlate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2601,16 +2446,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setSlate(Slate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   Slate response = videoStitcherServiceClient.updateSlateAsync(request).get();
+   *   Slate response = videoStitcherServiceClient.updateSlate(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Slate, OperationMetadata> updateSlateAsync(
-      UpdateSlateRequest request) {
-    return updateSlateOperationCallable().futureCall(request);
+  public final Slate updateSlate(UpdateSlateRequest request) {
+    return updateSlateCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2632,45 +2476,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .setSlate(Slate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   OperationFuture<Slate, OperationMetadata> future =
-   *       videoStitcherServiceClient.updateSlateOperationCallable().futureCall(request);
+   *   ApiFuture<Slate> future =
+   *       videoStitcherServiceClient.updateSlateCallable().futureCall(request);
    *   // Do something.
    *   Slate response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<UpdateSlateRequest, Slate, OperationMetadata>
-      updateSlateOperationCallable() {
-    return stub.updateSlateOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates the specified slate.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   UpdateSlateRequest request =
-   *       UpdateSlateRequest.newBuilder()
-   *           .setSlate(Slate.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.updateSlateCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateSlateRequest, Operation> updateSlateCallable() {
+  public final UnaryCallable<UpdateSlateRequest, Slate> updateSlateCallable() {
     return stub.updateSlateCallable();
   }
 
@@ -2689,7 +2502,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   SlateName name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]");
-   *   videoStitcherServiceClient.deleteSlateAsync(name).get();
+   *   videoStitcherServiceClient.deleteSlate(name);
    * }
    * }</pre>
    *
@@ -2697,10 +2510,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/slates/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSlateAsync(SlateName name) {
+  public final void deleteSlate(SlateName name) {
     DeleteSlateRequest request =
         DeleteSlateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteSlateAsync(request);
+    deleteSlate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2718,7 +2531,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString();
-   *   videoStitcherServiceClient.deleteSlateAsync(name).get();
+   *   videoStitcherServiceClient.deleteSlate(name);
    * }
    * }</pre>
    *
@@ -2726,9 +2539,9 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/slates/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSlateAsync(String name) {
+  public final void deleteSlate(String name) {
     DeleteSlateRequest request = DeleteSlateRequest.newBuilder().setName(name).build();
-    return deleteSlateAsync(request);
+    deleteSlate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2749,16 +2562,15 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *       DeleteSlateRequest.newBuilder()
    *           .setName(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
    *           .build();
-   *   videoStitcherServiceClient.deleteSlateAsync(request).get();
+   *   videoStitcherServiceClient.deleteSlate(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSlateAsync(
-      DeleteSlateRequest request) {
-    return deleteSlateOperationCallable().futureCall(request);
+  public final void deleteSlate(DeleteSlateRequest request) {
+    deleteSlateCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2779,44 +2591,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *       DeleteSlateRequest.newBuilder()
    *           .setName(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
    *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       videoStitcherServiceClient.deleteSlateOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<DeleteSlateRequest, Empty, OperationMetadata>
-      deleteSlateOperationCallable() {
-    return stub.deleteSlateOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified slate.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   DeleteSlateRequest request =
-   *       DeleteSlateRequest.newBuilder()
-   *           .setName(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
-   *           .build();
-   *   ApiFuture<Operation> future =
+   *   ApiFuture<Empty> future =
    *       videoStitcherServiceClient.deleteSlateCallable().futureCall(request);
    *   // Do something.
    *   future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<DeleteSlateRequest, Operation> deleteSlateCallable() {
+  public final UnaryCallable<DeleteSlateRequest, Empty> deleteSlateCallable() {
     return stub.deleteSlateCallable();
   }
 
@@ -3058,626 +2840,6 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetLiveSessionRequest, LiveSession> getLiveSessionCallable() {
     return stub.getLiveSessionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Registers the live config with the provided unique ID in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   LiveConfig liveConfig = LiveConfig.newBuilder().build();
-   *   String liveConfigId = "liveConfigId1256140041";
-   *   LiveConfig response =
-   *       videoStitcherServiceClient.createLiveConfigAsync(parent, liveConfig, liveConfigId).get();
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The project in which the live config should be created, in the form of
-   *     `projects/{project_number}/locations/{location}`.
-   * @param liveConfig Required. The live config resource to create.
-   * @param liveConfigId Required. The unique identifier ID to use for the live config.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<LiveConfig, OperationMetadata> createLiveConfigAsync(
-      LocationName parent, LiveConfig liveConfig, String liveConfigId) {
-    CreateLiveConfigRequest request =
-        CreateLiveConfigRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setLiveConfig(liveConfig)
-            .setLiveConfigId(liveConfigId)
-            .build();
-    return createLiveConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Registers the live config with the provided unique ID in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   LiveConfig liveConfig = LiveConfig.newBuilder().build();
-   *   String liveConfigId = "liveConfigId1256140041";
-   *   LiveConfig response =
-   *       videoStitcherServiceClient.createLiveConfigAsync(parent, liveConfig, liveConfigId).get();
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The project in which the live config should be created, in the form of
-   *     `projects/{project_number}/locations/{location}`.
-   * @param liveConfig Required. The live config resource to create.
-   * @param liveConfigId Required. The unique identifier ID to use for the live config.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<LiveConfig, OperationMetadata> createLiveConfigAsync(
-      String parent, LiveConfig liveConfig, String liveConfigId) {
-    CreateLiveConfigRequest request =
-        CreateLiveConfigRequest.newBuilder()
-            .setParent(parent)
-            .setLiveConfig(liveConfig)
-            .setLiveConfigId(liveConfigId)
-            .build();
-    return createLiveConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Registers the live config with the provided unique ID in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   CreateLiveConfigRequest request =
-   *       CreateLiveConfigRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setLiveConfigId("liveConfigId1256140041")
-   *           .setLiveConfig(LiveConfig.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   LiveConfig response = videoStitcherServiceClient.createLiveConfigAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<LiveConfig, OperationMetadata> createLiveConfigAsync(
-      CreateLiveConfigRequest request) {
-    return createLiveConfigOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Registers the live config with the provided unique ID in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   CreateLiveConfigRequest request =
-   *       CreateLiveConfigRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setLiveConfigId("liveConfigId1256140041")
-   *           .setLiveConfig(LiveConfig.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   OperationFuture<LiveConfig, OperationMetadata> future =
-   *       videoStitcherServiceClient.createLiveConfigOperationCallable().futureCall(request);
-   *   // Do something.
-   *   LiveConfig response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
-      createLiveConfigOperationCallable() {
-    return stub.createLiveConfigOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Registers the live config with the provided unique ID in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   CreateLiveConfigRequest request =
-   *       CreateLiveConfigRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setLiveConfigId("liveConfigId1256140041")
-   *           .setLiveConfig(LiveConfig.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.createLiveConfigCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateLiveConfigRequest, Operation> createLiveConfigCallable() {
-    return stub.createLiveConfigCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all live configs managed by the Video Stitcher that belong to the specified project and
-   * region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (LiveConfig element : videoStitcherServiceClient.listLiveConfigs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The project that contains the list of live configs, in the form of
-   *     `projects/{project_number}/locations/{location}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLiveConfigsPagedResponse listLiveConfigs(LocationName parent) {
-    ListLiveConfigsRequest request =
-        ListLiveConfigsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listLiveConfigs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all live configs managed by the Video Stitcher that belong to the specified project and
-   * region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   for (LiveConfig element : videoStitcherServiceClient.listLiveConfigs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The project that contains the list of live configs, in the form of
-   *     `projects/{project_number}/locations/{location}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLiveConfigsPagedResponse listLiveConfigs(String parent) {
-    ListLiveConfigsRequest request = ListLiveConfigsRequest.newBuilder().setParent(parent).build();
-    return listLiveConfigs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all live configs managed by the Video Stitcher that belong to the specified project and
-   * region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   ListLiveConfigsRequest request =
-   *       ListLiveConfigsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   for (LiveConfig element : videoStitcherServiceClient.listLiveConfigs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLiveConfigsPagedResponse listLiveConfigs(ListLiveConfigsRequest request) {
-    return listLiveConfigsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all live configs managed by the Video Stitcher that belong to the specified project and
-   * region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   ListLiveConfigsRequest request =
-   *       ListLiveConfigsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   ApiFuture<LiveConfig> future =
-   *       videoStitcherServiceClient.listLiveConfigsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (LiveConfig element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsPagedResponse>
-      listLiveConfigsPagedCallable() {
-    return stub.listLiveConfigsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all live configs managed by the Video Stitcher that belong to the specified project and
-   * region.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   ListLiveConfigsRequest request =
-   *       ListLiveConfigsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   while (true) {
-   *     ListLiveConfigsResponse response =
-   *         videoStitcherServiceClient.listLiveConfigsCallable().call(request);
-   *     for (LiveConfig element : response.getLiveConfigsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsResponse>
-      listLiveConfigsCallable() {
-    return stub.listLiveConfigsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the specified live config managed by the Video Stitcher service.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   LiveConfigName name = LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]");
-   *   LiveConfig response = videoStitcherServiceClient.getLiveConfig(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the live config to be retrieved, in the form of
-   *     `projects/{project_number}/locations/{location}/liveConfigs/{id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LiveConfig getLiveConfig(LiveConfigName name) {
-    GetLiveConfigRequest request =
-        GetLiveConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getLiveConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the specified live config managed by the Video Stitcher service.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   String name = LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString();
-   *   LiveConfig response = videoStitcherServiceClient.getLiveConfig(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the live config to be retrieved, in the form of
-   *     `projects/{project_number}/locations/{location}/liveConfigs/{id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LiveConfig getLiveConfig(String name) {
-    GetLiveConfigRequest request = GetLiveConfigRequest.newBuilder().setName(name).build();
-    return getLiveConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the specified live config managed by the Video Stitcher service.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   GetLiveConfigRequest request =
-   *       GetLiveConfigRequest.newBuilder()
-   *           .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
-   *           .build();
-   *   LiveConfig response = videoStitcherServiceClient.getLiveConfig(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LiveConfig getLiveConfig(GetLiveConfigRequest request) {
-    return getLiveConfigCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the specified live config managed by the Video Stitcher service.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   GetLiveConfigRequest request =
-   *       GetLiveConfigRequest.newBuilder()
-   *           .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
-   *           .build();
-   *   ApiFuture<LiveConfig> future =
-   *       videoStitcherServiceClient.getLiveConfigCallable().futureCall(request);
-   *   // Do something.
-   *   LiveConfig response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetLiveConfigRequest, LiveConfig> getLiveConfigCallable() {
-    return stub.getLiveConfigCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified live config.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   LiveConfigName name = LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]");
-   *   videoStitcherServiceClient.deleteLiveConfigAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the live config to be deleted, in the form of
-   *     `projects/{project_number}/locations/{location}/liveConfigs/{id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteLiveConfigAsync(
-      LiveConfigName name) {
-    DeleteLiveConfigRequest request =
-        DeleteLiveConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteLiveConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified live config.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   String name = LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString();
-   *   videoStitcherServiceClient.deleteLiveConfigAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the live config to be deleted, in the form of
-   *     `projects/{project_number}/locations/{location}/liveConfigs/{id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteLiveConfigAsync(String name) {
-    DeleteLiveConfigRequest request = DeleteLiveConfigRequest.newBuilder().setName(name).build();
-    return deleteLiveConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified live config.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   DeleteLiveConfigRequest request =
-   *       DeleteLiveConfigRequest.newBuilder()
-   *           .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
-   *           .build();
-   *   videoStitcherServiceClient.deleteLiveConfigAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteLiveConfigAsync(
-      DeleteLiveConfigRequest request) {
-    return deleteLiveConfigOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified live config.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   DeleteLiveConfigRequest request =
-   *       DeleteLiveConfigRequest.newBuilder()
-   *           .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
-   *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       videoStitcherServiceClient.deleteLiveConfigOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
-      deleteLiveConfigOperationCallable() {
-    return stub.deleteLiveConfigOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified live config.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (VideoStitcherServiceClient videoStitcherServiceClient =
-   *     VideoStitcherServiceClient.create()) {
-   *   DeleteLiveConfigRequest request =
-   *       DeleteLiveConfigRequest.newBuilder()
-   *           .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       videoStitcherServiceClient.deleteLiveConfigCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable() {
-    return stub.deleteLiveConfigCallable();
   }
 
   @Override
@@ -4105,83 +3267,6 @@ public class VideoStitcherServiceClient implements BackgroundResource {
     protected ListSlatesFixedSizeCollection createCollection(
         List<ListSlatesPage> pages, int collectionSize) {
       return new ListSlatesFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListLiveConfigsPagedResponse
-      extends AbstractPagedListResponse<
-          ListLiveConfigsRequest,
-          ListLiveConfigsResponse,
-          LiveConfig,
-          ListLiveConfigsPage,
-          ListLiveConfigsFixedSizeCollection> {
-
-    public static ApiFuture<ListLiveConfigsPagedResponse> createAsync(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ApiFuture<ListLiveConfigsResponse> futureResponse) {
-      ApiFuture<ListLiveConfigsPage> futurePage =
-          ListLiveConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListLiveConfigsPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListLiveConfigsPagedResponse(ListLiveConfigsPage page) {
-      super(page, ListLiveConfigsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListLiveConfigsPage
-      extends AbstractPage<
-          ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig, ListLiveConfigsPage> {
-
-    private ListLiveConfigsPage(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ListLiveConfigsResponse response) {
-      super(context, response);
-    }
-
-    private static ListLiveConfigsPage createEmptyPage() {
-      return new ListLiveConfigsPage(null, null);
-    }
-
-    @Override
-    protected ListLiveConfigsPage createPage(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ListLiveConfigsResponse response) {
-      return new ListLiveConfigsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListLiveConfigsPage> createPageAsync(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ApiFuture<ListLiveConfigsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListLiveConfigsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListLiveConfigsRequest,
-          ListLiveConfigsResponse,
-          LiveConfig,
-          ListLiveConfigsPage,
-          ListLiveConfigsFixedSizeCollection> {
-
-    private ListLiveConfigsFixedSizeCollection(
-        List<ListLiveConfigsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListLiveConfigsFixedSizeCollection createEmptyCollection() {
-      return new ListLiveConfigsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListLiveConfigsFixedSizeCollection createCollection(
-        List<ListLiveConfigsPage> pages, int collectionSize) {
-      return new ListLiveConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

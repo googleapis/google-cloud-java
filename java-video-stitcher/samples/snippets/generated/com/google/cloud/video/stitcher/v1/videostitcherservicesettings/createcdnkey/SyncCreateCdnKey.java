@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,31 +16,35 @@
 
 package com.google.cloud.video.stitcher.v1.samples;
 
-// [START videostitcher_v1_generated_VideoStitcherService_CreateLiveConfig_LocationnameLiveconfigString_sync]
-import com.google.cloud.video.stitcher.v1.LiveConfig;
-import com.google.cloud.video.stitcher.v1.LocationName;
-import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
+// [START videostitcher_v1_generated_VideoStitcherServiceSettings_CreateCdnKey_sync]
+import com.google.cloud.video.stitcher.v1.VideoStitcherServiceSettings;
+import java.time.Duration;
 
-public class SyncCreateLiveConfigLocationnameLiveconfigString {
+public class SyncCreateCdnKey {
 
   public static void main(String[] args) throws Exception {
-    syncCreateLiveConfigLocationnameLiveconfigString();
+    syncCreateCdnKey();
   }
 
-  public static void syncCreateLiveConfigLocationnameLiveconfigString() throws Exception {
+  public static void syncCreateCdnKey() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (VideoStitcherServiceClient videoStitcherServiceClient =
-        VideoStitcherServiceClient.create()) {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      LiveConfig liveConfig = LiveConfig.newBuilder().build();
-      String liveConfigId = "liveConfigId1256140041";
-      LiveConfig response =
-          videoStitcherServiceClient.createLiveConfigAsync(parent, liveConfig, liveConfigId).get();
-    }
+    VideoStitcherServiceSettings.Builder videoStitcherServiceSettingsBuilder =
+        VideoStitcherServiceSettings.newBuilder();
+    videoStitcherServiceSettingsBuilder
+        .createCdnKeySettings()
+        .setRetrySettings(
+            videoStitcherServiceSettingsBuilder
+                .createCdnKeySettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setTotalTimeout(Duration.ofSeconds(30))
+                .build());
+    VideoStitcherServiceSettings videoStitcherServiceSettings =
+        videoStitcherServiceSettingsBuilder.build();
   }
 }
-// [END videostitcher_v1_generated_VideoStitcherService_CreateLiveConfig_LocationnameLiveconfigString_sync]
+// [END videostitcher_v1_generated_VideoStitcherServiceSettings_CreateCdnKey_sync]
