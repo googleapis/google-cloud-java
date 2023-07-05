@@ -76,8 +76,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         return internalGetTargetArtifacts();
       case 22:
         return internalGetTargetRenders();
-      case 25:
-        return internalGetDeployParameters();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -6708,118 +6706,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         : condition_;
   }
 
-  public static final int DEPLOY_PARAMETERS_FIELD_NUMBER = 25;
-
-  private static final class DeployParametersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.deploy.v1.CloudDeployProto
-                .internal_static_google_cloud_deploy_v1_Release_DeployParametersEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
-  }
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetDeployParameters() {
-    if (deployParameters_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          DeployParametersDefaultEntryHolder.defaultEntry);
-    }
-    return deployParameters_;
-  }
-
-  public int getDeployParametersCount() {
-    return internalGetDeployParameters().getMap().size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The deploy parameters to use for all targets in this release.
-   * </pre>
-   *
-   * <code>
-   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public boolean containsDeployParameters(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    return internalGetDeployParameters().getMap().containsKey(key);
-  }
-  /** Use {@link #getDeployParametersMap()} instead. */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
-    return getDeployParametersMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The deploy parameters to use for all targets in this release.
-   * </pre>
-   *
-   * <code>
-   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
-    return internalGetDeployParameters().getMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The deploy parameters to use for all targets in this release.
-   * </pre>
-   *
-   * <code>
-   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public /* nullable */ java.lang.String getDeployParametersOrDefault(
-      java.lang.String key,
-      /* nullable */
-      java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The deploy parameters to use for all targets in this release.
-   * </pre>
-   *
-   * <code>
-   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6891,8 +6777,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (condition_ != null) {
       output.writeMessage(24, getCondition());
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetDeployParameters(), DeployParametersDefaultEntryHolder.defaultEntry, 25);
     getUnknownFields().writeTo(output);
   }
 
@@ -6996,16 +6880,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (condition_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getCondition());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetDeployParameters().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> deployParameters__ =
-          DeployParametersDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, deployParameters__);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7056,7 +6930,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (hasCondition()) {
       if (!getCondition().equals(other.getCondition())) return false;
     }
-    if (!internalGetDeployParameters().equals(other.internalGetDeployParameters())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7129,10 +7002,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (hasCondition()) {
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getCondition().hashCode();
-    }
-    if (!internalGetDeployParameters().getMap().isEmpty()) {
-      hash = (37 * hash) + DEPLOY_PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetDeployParameters().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7265,8 +7134,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           return internalGetTargetArtifacts();
         case 22:
           return internalGetTargetRenders();
-        case 25:
-          return internalGetDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -7283,8 +7150,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableTargetArtifacts();
         case 22:
           return internalGetMutableTargetRenders();
-        case 25:
-          return internalGetMutableDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -7363,7 +7228,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-      internalGetMutableDeployParameters().clear();
       return this;
     }
 
@@ -7483,10 +7347,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.deployParameters_ = internalGetDeployParameters();
-        result.deployParameters_.makeImmutable();
       }
     }
 
@@ -7653,8 +7513,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCondition()) {
         mergeCondition(other.getCondition());
       }
-      internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
-      bitField0_ |= 0x00100000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -7844,19 +7702,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 194
-            case 202:
-              {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                    deployParameters__ =
-                        input.readMessage(
-                            DeployParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                            extensionRegistry);
-                internalGetMutableDeployParameters()
-                    .getMutableMap()
-                    .put(deployParameters__.getKey(), deployParameters__.getValue());
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11399,190 +11244,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         condition_ = null;
       }
       return conditionBuilder_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetDeployParameters() {
-      if (deployParameters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DeployParametersDefaultEntryHolder.defaultEntry);
-      }
-      return deployParameters_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableDeployParameters() {
-      if (deployParameters_ == null) {
-        deployParameters_ =
-            com.google.protobuf.MapField.newMapField(
-                DeployParametersDefaultEntryHolder.defaultEntry);
-      }
-      if (!deployParameters_.isMutable()) {
-        deployParameters_ = deployParameters_.copy();
-      }
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return deployParameters_;
-    }
-
-    public int getDeployParametersCount() {
-      return internalGetDeployParameters().getMap().size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public boolean containsDeployParameters(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetDeployParameters().getMap().containsKey(key);
-    }
-    /** Use {@link #getDeployParametersMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
-      return getDeployParametersMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
-      return internalGetDeployParameters().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public /* nullable */ java.lang.String getDeployParametersOrDefault(
-        java.lang.String key,
-        /* nullable */
-        java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetDeployParameters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetDeployParameters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearDeployParameters() {
-      bitField0_ = (bitField0_ & ~0x00100000);
-      internalGetMutableDeployParameters().getMutableMap().clear();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder removeDeployParameters(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      internalGetMutableDeployParameters().getMutableMap().remove(key);
-      return this;
-    }
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
-      bitField0_ |= 0x00100000;
-      return internalGetMutableDeployParameters().getMutableMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder putDeployParameters(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      if (value == null) {
-        throw new NullPointerException("map value");
-      }
-      internalGetMutableDeployParameters().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The deploy parameters to use for all targets in this release.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder putAllDeployParameters(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableDeployParameters().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
-      return this;
     }
 
     @java.lang.Override
