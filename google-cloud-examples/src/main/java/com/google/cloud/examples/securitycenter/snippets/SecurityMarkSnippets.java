@@ -208,7 +208,7 @@ public class SecurityMarkSnippets {
   static ImmutableList<ListAssetsResult> listAssetsWithQueryMarks(
       OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to list all assets filtered by a specific security mark.
+      // Start setting up a request to list all assets filtered by a specific security mark.
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
       //    ProjectName projectName = ProjectName.of("project-id");
@@ -243,8 +243,9 @@ public class SecurityMarkSnippets {
   // [START securitycenter_list_findings_with_security_marks]
   static ImmutableList<ListFindingsResult> listFindingsWithQueryMarks(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to list all findings filtered by a specific security mark.
-      // SourceName must be in one of the following formats:
+      // Start setting up a request to list all findings filtered by a specific security mark.
+      //
+      // 'parent' must be in one of the following formats:
       //    * OrganizationName organizationName = OrganizationName.of("organization-id");
       //      String parent = organizationName.getOrganization();
       //    * ProjectName projectName = ProjectName.of("project-id");

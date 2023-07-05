@@ -35,7 +35,7 @@ import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
 /**
- * Snippets for how to work with Assets in Cloud Security Command Center.
+ * Snippets for how to work with Assets in Security Command Center.
  */
 public class AssetSnippets {
 
@@ -83,7 +83,7 @@ public class AssetSnippets {
   // [START securitycenter_list_assets_with_filter]
   static ImmutableList<ListAssetsResult> listAssetsWithFilter(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to search for all assets in an organization/ project/ folder.
+      // Start setting up a request to search for all assets in an organization/ project/ folder.
       //
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
@@ -121,7 +121,7 @@ public class AssetSnippets {
   static ImmutableList<ListAssetsResult> listAssetsAsOfYesterday(
       OrganizationName organizationName, Instant asOf) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to search for all assets in an organization/ project/ folder.
+      // Start setting up a request to search for all assets in an organization/ project/ folder.
       //
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
@@ -166,7 +166,7 @@ public class AssetSnippets {
       OrganizationName organizationName, Duration timeSpan, Instant asOf) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
 
-      // Start setting up a request for to search for all assets in an organization/ project/ folder.
+      // Start setting up a request to search for all assets in an organization/ project/ folder.
       //
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
@@ -210,7 +210,7 @@ public class AssetSnippets {
   // [START securitycenter_group_all_assets]
   static ImmutableList<GroupResult> groupAssets(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to group all assets by type in an organization/ project/ folder.
+      // Start setting up a request to group all assets by type in an organization/ project/ folder.
       //
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
@@ -246,7 +246,7 @@ public class AssetSnippets {
   // [START securitycenter_group_all_assets_with_filter]
   static ImmutableList<GroupResult> groupAssetsWithFilter(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to filter all assets by type and group them by project in an
+      // Start setting up a request to filter all assets by type and group them by project in an
       // organization.
       // You can also use a project/ folder as a parent resource and filter assests in them
       // respectively.
@@ -283,7 +283,7 @@ public class AssetSnippets {
   static ImmutableList<GroupResult> groupAssetsWithCompareDuration(
       OrganizationName organizationName, Duration duration) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request for to group all assets during a period of time in an
+      // Start setting up a request to group all assets during a period of time in an
       // organization/ project/ folder.
       //
       // Parent must be in one of the following formats:

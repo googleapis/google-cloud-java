@@ -41,7 +41,7 @@ import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
 /**
- * Snippets for how to work with Findings in Cloud Security Command Center.
+ * Snippets for how to work with Findings in Security Command Center.
  */
 public class FindingSnippets {
 
@@ -230,7 +230,7 @@ public class FindingSnippets {
   // [START securitycenter_list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Input parameters for SourceName must be in one of the following formats
+      // Input parameters for SourceName must be in one of the following formats:
       //    * OrganizationName organizationName = OrganizationName.of("organization-id");
       //      organizationName.getOrganization();
       //    * ProjectName projectName = ProjectName.of("project-id");

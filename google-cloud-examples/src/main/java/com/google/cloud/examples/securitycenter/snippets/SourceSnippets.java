@@ -33,7 +33,7 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
 /**
- * Snippets for how to work with Sources in Cloud Security Command Center.
+ * Snippets for how to work with Sources in Security Command Center.
  */
 public class SourceSnippets {
 
