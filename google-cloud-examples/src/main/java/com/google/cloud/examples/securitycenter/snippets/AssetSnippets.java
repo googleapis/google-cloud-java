@@ -248,7 +248,7 @@ public class AssetSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to filter all assets by type and group them by project in an
       // organization.
-      // You can also use a project/ folder as a parent resource and filter assests in them
+      // You can also use a project/ folder as a parent resource and filter assets in them
       // respectively.
       GroupAssetsRequest.Builder request =
           GroupAssetsRequest.newBuilder()
