@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
 import com.google.bigtable.admin.v2.Backup.State;
 import com.google.bigtable.admin.v2.BackupInfo;
+import com.google.bigtable.admin.v2.ChangeStreamConfig;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
@@ -45,6 +46,7 @@ import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
@@ -68,6 +70,7 @@ import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
@@ -116,6 +119,13 @@ public class BigtableTableAdminClientTests {
   private UnaryCallable<
           com.google.bigtable.admin.v2.CreateTableRequest, com.google.bigtable.admin.v2.Table>
       mockCreateTableCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.UpdateTableRequest,
+          com.google.bigtable.admin.v2.Table,
+          UpdateTableMetadata>
+      mockUpdateTableOperationCallable;
 
   @Mock
   private UnaryCallable<
@@ -202,6 +212,40 @@ public class BigtableTableAdminClientTests {
 
     // Verify
     assertThat(result).isEqualTo(Table.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testUpdateTable() {
+    // Setup
+    Mockito.when(mockStub.updateTableOperationCallable())
+        .thenReturn(mockUpdateTableOperationCallable);
+
+    com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest request =
+        com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest.of(TABLE_ID)
+            .addChangeStreamRetention(org.threeten.bp.Duration.ofHours(24));
+
+    com.google.bigtable.admin.v2.Table expectedResponse =
+        com.google.bigtable.admin.v2.Table.newBuilder()
+            .setName(TABLE_NAME)
+            .setChangeStreamConfig(
+                ChangeStreamConfig.newBuilder()
+                    .setRetentionPeriod(Duration.newBuilder().setSeconds(86400).build())
+                    .build())
+            .build();
+
+    mockOperationResult(
+        mockUpdateTableOperationCallable,
+        request.toProto(PROJECT_ID, INSTANCE_ID),
+        expectedResponse,
+        UpdateTableMetadata.newBuilder().setName(TABLE_NAME).build());
+
+    // Execute
+    Table actualResult = adminClient.updateTable(request);
+
+    // Verify
+    assertThat(actualResult.getId()).isEqualTo(TABLE_ID);
+    assertThat(actualResult.getChangeStreamRetention())
+        .isEqualTo(org.threeten.bp.Duration.ofHours(24));
   }
 
   @Test

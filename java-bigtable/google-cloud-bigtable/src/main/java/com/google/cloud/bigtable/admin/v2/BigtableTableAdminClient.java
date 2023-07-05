@@ -50,6 +50,7 @@ import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -256,6 +257,72 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
     return transformToTableResponse(
         this.stub.createTableCallable().futureCall(request.toProto(projectId, instanceId)));
+  }
+
+  /**
+   * Update a table with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // Alter change stream retention period.
+   * Table table = client.updateTable(
+   *   UpdateTableRequest.of("my-table")
+   *     .addChangeStreamRetention(Duration.ofHours(24))
+   * );
+   *
+   * // Disable change stream
+   * Table table = client.updateTable(
+   *   UpdateTableRequest.of("my-table")
+   *     .disableChangeStream()
+   * );
+   * }</pre>
+   *
+   * @see UpdateTableRequest for available options.
+   */
+  public Table updateTable(UpdateTableRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateTableAsync(request));
+  }
+
+  /**
+   * Asynchronously update a table with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // Update table to 1 day change stream retention.
+   * ApiFuture<Table> tableFuture = client.createTableAsync(
+   *   UpdateTableRequest.of("my-table")
+   *     .addChangeStreamRetention(Duration.ofHours(24))
+   * );
+   *
+   * ApiFutures.addCallback(
+   *   tableFuture,
+   *   new ApiFutureCallback<Table>() {
+   *     public void onSuccess(Table table) {
+   *       System.out.println("Updated table: " + table.getTableName());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   *
+   * @see UpdateTableRequest for available options.
+   */
+  public ApiFuture<Table> updateTableAsync(UpdateTableRequest request) {
+    return ApiFutures.transform(
+        stub.updateTableOperationCallable().futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Table, Table>() {
+          @Override
+          public Table apply(com.google.bigtable.admin.v2.Table tableProto) {
+            return Table.fromProto(tableProto);
+          }
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**

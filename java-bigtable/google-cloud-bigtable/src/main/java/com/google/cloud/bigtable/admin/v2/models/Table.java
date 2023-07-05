@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Duration;
 
 /** Wrapper for {@link Table} protocol buffer object */
 public final class Table {
@@ -103,6 +104,8 @@ public final class Table {
   private final Map<String, ReplicationState> replicationStatesByClusterId;
   private final List<ColumnFamily> columnFamilies;
 
+  private final Duration changeStreamRetention;
+
   @InternalApi
   public static Table fromProto(@Nonnull com.google.bigtable.admin.v2.Table proto) {
     ImmutableMap.Builder<String, ReplicationState> replicationStates = ImmutableMap.builder();
@@ -120,18 +123,31 @@ public final class Table {
       columnFamilies.add(ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
     }
 
+    Duration changeStreamConfig = null;
+    if (proto.hasChangeStreamConfig()) {
+      changeStreamConfig =
+          Duration.ofSeconds(
+              proto.getChangeStreamConfig().getRetentionPeriod().getSeconds(),
+              proto.getChangeStreamConfig().getRetentionPeriod().getNanos());
+    }
+
     return new Table(
-        TableName.parse(proto.getName()), replicationStates.build(), columnFamilies.build());
+        TableName.parse(proto.getName()),
+        replicationStates.build(),
+        columnFamilies.build(),
+        changeStreamConfig);
   }
 
   private Table(
       TableName tableName,
       Map<String, ReplicationState> replicationStatesByClusterId,
-      List<ColumnFamily> columnFamilies) {
+      List<ColumnFamily> columnFamilies,
+      Duration changeStreamRetention) {
     this.instanceId = tableName.getInstance();
     this.id = tableName.getTable();
     this.replicationStatesByClusterId = replicationStatesByClusterId;
     this.columnFamilies = columnFamilies;
+    this.changeStreamRetention = changeStreamRetention;
   }
 
   /** Gets the table's id. */
@@ -152,6 +168,10 @@ public final class Table {
     return columnFamilies;
   }
 
+  public Duration getChangeStreamRetention() {
+    return changeStreamRetention;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -164,11 +184,13 @@ public final class Table {
     return Objects.equal(id, table.id)
         && Objects.equal(instanceId, table.instanceId)
         && Objects.equal(replicationStatesByClusterId, table.replicationStatesByClusterId)
-        && Objects.equal(columnFamilies, table.columnFamilies);
+        && Objects.equal(columnFamilies, table.columnFamilies)
+        && Objects.equal(changeStreamRetention, table.changeStreamRetention);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(id, instanceId, replicationStatesByClusterId, columnFamilies);
+    return Objects.hashCode(
+        id, instanceId, replicationStatesByClusterId, columnFamilies, changeStreamRetention);
   }
 }

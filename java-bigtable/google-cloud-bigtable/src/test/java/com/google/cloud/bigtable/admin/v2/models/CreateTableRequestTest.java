@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.ChangeStreamConfig;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.Table;
@@ -46,7 +47,8 @@ public class CreateTableRequestTest {
             .addFamily("family-id")
             .addFamily("another-family", GCRULES.maxAge(100, TimeUnit.HOURS))
             .addSplit(splitKey)
-            .addSplit(secondSplitKey);
+            .addSplit(secondSplitKey)
+            .addChangeStreamRetention(Duration.ofHours(24));
 
     com.google.bigtable.admin.v2.CreateTableRequest requestProto =
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
@@ -63,6 +65,11 @@ public class CreateTableRequestTest {
                                         com.google.protobuf.Duration.newBuilder()
                                             .setSeconds(100 * 60 * 60))
                                     .build())
+                            .build())
+                    .setChangeStreamConfig(
+                        ChangeStreamConfig.newBuilder()
+                            .setRetentionPeriod(
+                                com.google.protobuf.Duration.newBuilder().setSeconds(86400))
                             .build()))
             .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
             .addInitialSplits(
