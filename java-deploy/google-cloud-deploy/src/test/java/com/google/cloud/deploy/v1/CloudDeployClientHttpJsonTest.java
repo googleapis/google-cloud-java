@@ -745,7 +745,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -800,7 +799,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -855,7 +853,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -919,7 +916,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -983,7 +979,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1006,7 +1001,6 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1049,7 +1043,6 @@ public class CloudDeployClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
               .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
-              .putAllDeployParameters(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTargetAsync(target, updateMask).get();
@@ -1277,7 +1270,6 @@ public class CloudDeployClientHttpJsonTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1344,7 +1336,6 @@ public class CloudDeployClientHttpJsonTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1411,7 +1402,6 @@ public class CloudDeployClientHttpJsonTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1487,7 +1477,6 @@ public class CloudDeployClientHttpJsonTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
-            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
