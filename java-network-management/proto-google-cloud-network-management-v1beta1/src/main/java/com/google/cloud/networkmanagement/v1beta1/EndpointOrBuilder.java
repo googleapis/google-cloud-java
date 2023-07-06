@@ -97,41 +97,6 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A forwarding rule and its corresponding IP address represent the frontend
-   * configuration of a Google Cloud load balancer. Forwarding rules are also
-   * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
-   * </pre>
-   *
-   * <code>string forwarding_rule = 13;</code>
-   *
-   * @return The forwardingRule.
-   */
-  java.lang.String getForwardingRule();
-  /**
-   *
-   *
-   * <pre>
-   * A forwarding rule and its corresponding IP address represent the frontend
-   * configuration of a Google Cloud load balancer. Forwarding rules are also
-   * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
-   * </pre>
-   *
-   * <code>string forwarding_rule = 13;</code>
-   *
-   * @return The bytes for forwardingRule.
-   */
-  com.google.protobuf.ByteString getForwardingRuleBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * A cluster URI for [Google Kubernetes Engine
    * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
