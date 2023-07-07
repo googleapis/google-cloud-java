@@ -84,7 +84,15 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Protobuf enum {@code google.cloud.batch.v1.JobStatus.State}
    */
   public enum State implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>STATE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Job state unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
     STATE_UNSPECIFIED(0),
     /**
      *
@@ -153,7 +161,15 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>STATE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Job state unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
      *
