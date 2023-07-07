@@ -89,7 +89,7 @@
     <module>java-filestore</module>
     <module>java-functions</module>
     <module>java-game-servers</module>
-    <module>java-gke-backup</module>
+    <module>java-gkebackup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gkehub</module>
     <module>java-gke-multi-cloud</module>

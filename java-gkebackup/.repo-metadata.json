@@ -1,0 +1,16 @@
+{
+  "api_shortname": "gkebackup",
+  "name_pretty": "Backup for GKE API",
+  "product_documentation": "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke",
+  "api_description": "Backup for GKE is a managed Kubernetes workload backup and restore\n    service for GKE clusters.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-gkebackup/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-gkebackup",
+  "repo_short": "java-gkebackup",
+  "distribution_name": "com.google.cloud:google-cloud-gkebackup",
+  "api_id": "gkebackup.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

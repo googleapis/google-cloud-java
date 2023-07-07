@@ -1,19 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gke-backup</artifactId>
-  <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+  <artifactId>google-cloud-gkebackup</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkebackup:current} -->
   <packaging>jar</packaging>
-  <name>Google Backup for GKE</name>
-  <description>Backup for GKE is a service for backing up and restoring workloads in GKE.</description>
+  <name>Google Backup for GKE API</name>
+  <description>Backup for GKE API Backup for GKE is a managed Kubernetes workload backup and restore
+    service for GKE clusters.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gke-backup-parent</artifactId>
-    <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+    <artifactId>google-cloud-gkebackup-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkebackup:current} -->
   </parent>
   <properties>
-    <site.installationModule>google-cloud-gke-backup</site.installationModule>
+    <site.installationModule>google-cloud-gkebackup</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -43,7 +44,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-gke-backup-v1</artifactId>
+      <artifactId>proto-google-cloud-gkebackup-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -62,10 +63,9 @@
       <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.threeten</groupId>
-      <artifactId>threetenbp</artifactId>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
@@ -74,6 +74,11 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+    </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -83,7 +88,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-gke-backup-v1</artifactId>
+      <artifactId>grpc-google-cloud-gkebackup-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
@@ -103,11 +108,6 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

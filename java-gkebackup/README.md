@@ -1,6 +1,6 @@
-# Google Backup for GKE Client for Java
+# Google Backup for GKE API Client for Java
 
-Java idiomatic client for [Backup for GKE][product-docs].
+Java idiomatic client for [Backup for GKE API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.17.0</version>
+      <version>26.18.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -33,32 +33,32 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gke-backup</artifactId>
+    <artifactId>google-cloud-gkebackup</artifactId>
   </dependency>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-gke-backup:released} -->
+<!-- {x-version-update-start:google-cloud-gkebackup:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gke-backup</artifactId>
-  <version>0.19.0</version>
+  <artifactId>google-cloud-gkebackup</artifactId>
+  <version>0.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-gke-backup:0.19.0'
+implementation 'com.google.cloud:google-cloud-gkebackup:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gke-backup" % "0.19.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-gkebackup" % "0.0.0"
 ```
 <!-- {x-version-update-end} -->
 
@@ -68,30 +68,31 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Backup for GKE APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Backup for GKE API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Backup for GKE API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Backup for GKE API API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Backup for GKE [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Backup for GKE.
+You will need a [Google Cloud Platform Console][developer-console] project with the Backup for GKE API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Backup for GKE API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-gke-backup` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-gke-backup` as a dependency in your code.
+You'll need to obtain the `google-cloud-gkebackup` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-gkebackup` as a dependency in your code.
 
-## About Backup for GKE
+## About Backup for GKE API
 
 
-[Backup for GKE][product-docs] is a service for backing up and restoring workloads in GKE.
+[Backup for GKE API][product-docs] Backup for GKE is a managed Kubernetes workload backup and restore
+    service for GKE clusters.
 
-See the [Backup for GKE client library docs][javadocs] to learn how to
-use this Backup for GKE Client Library.
+See the [Backup for GKE API client library docs][javadocs] to learn how to
+use this Backup for GKE API Client Library.
 
 
 
@@ -104,7 +105,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Backup for GKE uses gRPC for the transport layer.
+Backup for GKE API uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -187,21 +188,21 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke 
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-gke-backup/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
+[product-docs]: https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-gkebackup/latest/overview
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gkebackup/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gke-backup.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gke-backup/0.19.0
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gkebackup.svg
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gkebackup/0.0.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -210,11 +211,11 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
 [troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
-[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/java-gkebackup/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-gkebackup/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-gkebackup/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=gke-backup.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=gkebackup.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 

@@ -541,8 +541,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gke-backup-bom</artifactId>
-        <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+        <artifactId>google-cloud-gkebackup-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkebackup:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

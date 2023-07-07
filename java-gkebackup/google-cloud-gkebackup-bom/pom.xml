@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gke-backup-bom</artifactId>
-  <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+  <artifactId>google-cloud-gkebackup-bom</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkebackup:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -13,9 +13,9 @@
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
-  <name>Google Backup for GKE BOM</name>
+  <name>Google Backup for GKE API BOM</name>
   <description>
-    BOM for Backup for GKE
+    BOM for Backup for GKE API
   </description>
 
   <properties>
@@ -26,18 +26,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gke-backup</artifactId>
-        <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+        <artifactId>google-cloud-gkebackup</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkebackup:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-gke-backup-v1</artifactId>
-        <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-backup-v1:current} -->
+        <artifactId>grpc-google-cloud-gkebackup-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkebackup-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-gke-backup-v1</artifactId>
-        <version>0.20.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
+        <artifactId>proto-google-cloud-gkebackup-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkebackup-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
