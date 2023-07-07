@@ -38,7 +38,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     super(builder);
   }
 
-  private RecognitionConfig() {}
+  private RecognitionConfig() {
+    model_ = "";
+    languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -220,6 +223,177 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.speech.v2.ExplicitDecodingConfig.getDefaultInstance();
   }
 
+  public static final int MODEL_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which model to use for recognition requests. Select the model
+   * best suited to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which model to use for recognition requests. Select the model
+   * best suited to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LANGUAGE_CODES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList languageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+    return languageCodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  public int getLanguageCodesCount() {
+    return languageCodes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  public java.lang.String getLanguageCodes(int index) {
+    return languageCodes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+    return languageCodes_.getByteString(index);
+  }
+
   public static final int FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.RecognitionFeatures features_;
   /**
@@ -349,6 +523,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (decodingConfigCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.speech.v2.ExplicitDecodingConfig) decodingConfig_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, model_);
+    }
+    for (int i = 0; i < languageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCodes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -374,6 +554,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.speech.v2.ExplicitDecodingConfig) decodingConfig_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, model_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLanguageCodesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -390,6 +581,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.speech.v2.RecognitionConfig other =
         (com.google.cloud.speech.v2.RecognitionConfig) obj;
 
+    if (!getModel().equals(other.getModel())) return false;
+    if (!getLanguageCodesList().equals(other.getLanguageCodesList())) return false;
     if (hasFeatures() != other.hasFeatures()) return false;
     if (hasFeatures()) {
       if (!getFeatures().equals(other.getFeatures())) return false;
@@ -420,6 +613,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    if (getLanguageCodesCount() > 0) {
+      hash = (37 * hash) + LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCodesList().hashCode();
+    }
     if (hasFeatures()) {
       hash = (37 * hash) + FEATURES_FIELD_NUMBER;
       hash = (53 * hash) + getFeatures().hashCode();
@@ -586,6 +785,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (explicitDecodingConfigBuilder_ != null) {
         explicitDecodingConfigBuilder_.clear();
       }
+      model_ = "";
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       features_ = null;
       if (featuresBuilder_ != null) {
         featuresBuilder_.dispose();
@@ -636,9 +837,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.cloud.speech.v2.RecognitionConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.features_ = featuresBuilder_ == null ? features_ : featuresBuilder_.build();
+        result.model_ = model_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        languageCodes_.makeImmutable();
+        result.languageCodes_ = languageCodes_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.features_ = featuresBuilder_ == null ? features_ : featuresBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.adaptation_ = adaptationBuilder_ == null ? adaptation_ : adaptationBuilder_.build();
       }
     }
@@ -699,6 +907,21 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.speech.v2.RecognitionConfig other) {
       if (other == com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()) return this;
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.languageCodes_.isEmpty()) {
+        if (languageCodes_.isEmpty()) {
+          languageCodes_ = other.languageCodes_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureLanguageCodesIsMutable();
+          languageCodes_.addAll(other.languageCodes_);
+        }
+        onChanged();
+      }
       if (other.hasFeatures()) {
         mergeFeatures(other.getFeatures());
       }
@@ -750,13 +973,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getFeaturesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 50:
               {
                 input.readMessage(getAdaptationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -773,6 +996,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 decodingConfigCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                model_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLanguageCodesIsMutable();
+                languageCodes_.add(s);
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1253,6 +1489,416 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return explicitDecodingConfigBuilder_;
     }
 
+    private java.lang.Object model_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which model to use for recognition requests. Select the model
+     * best suited to your domain to get best results.
+     *
+     * Guidance for choosing which model to use can be found in the [Transcription
+     * Models
+     * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+     * and the models supported in each region can be found in the [Table Of
+     * Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which model to use for recognition requests. Select the model
+     * best suited to your domain to get best results.
+     *
+     * Guidance for choosing which model to use can be found in the [Transcription
+     * Models
+     * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+     * and the models supported in each region can be found in the [Table Of
+     * Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which model to use for recognition requests. Select the model
+     * best suited to your domain to get best results.
+     *
+     * Guidance for choosing which model to use can be found in the [Transcription
+     * Models
+     * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+     * and the models supported in each region can be found in the [Table Of
+     * Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      model_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which model to use for recognition requests. Select the model
+     * best suited to your domain to get best results.
+     *
+     * Guidance for choosing which model to use can be found in the [Transcription
+     * Models
+     * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+     * and the models supported in each region can be found in the [Table Of
+     * Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which model to use for recognition requests. Select the model
+     * best suited to your domain to get best results.
+     *
+     * Guidance for choosing which model to use can be found in the [Transcription
+     * Models
+     * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+     * and the models supported in each region can be found in the [Table Of
+     * Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      model_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList languageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureLanguageCodesIsMutable() {
+      if (!languageCodes_.isModifiable()) {
+        languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the languageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+      languageCodes_.makeImmutable();
+      return languageCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of languageCodes.
+     */
+    public int getLanguageCodesCount() {
+      return languageCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
+     */
+    public java.lang.String getLanguageCodes(int index) {
+      return languageCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+      return languageCodes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageCodes_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCodes() {
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the supplied audio as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * Language tags are normalized to BCP-47 before they are used eg "en-us"
+     * becomes "en-US".
+     *
+     * Supported languages for each model are listed in the [Table of Supported
+     * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+     *
+     * If additional languages are provided, recognition result will contain
+     * recognition in the most likely language detected. The recognition result
+     * will include the language tag of the language detected in the audio.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.speech.v2.RecognitionFeatures features_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.RecognitionFeatures,
@@ -1271,7 +1917,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the features field is set.
      */
     public boolean hasFeatures() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1311,7 +1957,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         featuresBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1331,7 +1977,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         featuresBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1346,7 +1992,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFeatures(com.google.cloud.speech.v2.RecognitionFeatures value) {
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && features_ != null
             && features_ != com.google.cloud.speech.v2.RecognitionFeatures.getDefaultInstance()) {
           getFeaturesBuilder().mergeFrom(value);
@@ -1356,7 +2002,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         featuresBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1370,7 +2016,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.RecognitionFeatures features = 2;</code>
      */
     public Builder clearFeatures() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       features_ = null;
       if (featuresBuilder_ != null) {
         featuresBuilder_.dispose();
@@ -1389,7 +2035,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.RecognitionFeatures features = 2;</code>
      */
     public com.google.cloud.speech.v2.RecognitionFeatures.Builder getFeaturesBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
@@ -1456,7 +2102,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the adaptation field is set.
      */
     public boolean hasAdaptation() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1498,7 +2144,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         adaptationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1519,7 +2165,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         adaptationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1535,7 +2181,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAdaptation(com.google.cloud.speech.v2.SpeechAdaptation value) {
       if (adaptationBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && adaptation_ != null
             && adaptation_ != com.google.cloud.speech.v2.SpeechAdaptation.getDefaultInstance()) {
           getAdaptationBuilder().mergeFrom(value);
@@ -1545,7 +2191,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         adaptationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1560,7 +2206,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.SpeechAdaptation adaptation = 6;</code>
      */
     public Builder clearAdaptation() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       adaptation_ = null;
       if (adaptationBuilder_ != null) {
         adaptationBuilder_.dispose();
@@ -1580,7 +2226,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.SpeechAdaptation adaptation = 6;</code>
      */
     public com.google.cloud.speech.v2.SpeechAdaptation.Builder getAdaptationBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getAdaptationFieldBuilder().getBuilder();
     }
