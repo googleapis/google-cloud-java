@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return new ListBucketsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
@@ -77,10 +72,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent resource whose buckets are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *
    * Note: The locations portion of the resource must be specified, but
    * supplying the character `-` in place of [LOCATION_ID] will return all
    * buckets.
@@ -109,10 +106,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent resource whose buckets are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *
    * Note: The locations portion of the resource must be specified, but
    * supplying the character `-` in place of [LOCATION_ID] will return all
    * buckets.
@@ -606,10 +605,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource whose buckets are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+     *
      * Note: The locations portion of the resource must be specified, but
      * supplying the character `-` in place of [LOCATION_ID] will return all
      * buckets.
@@ -637,10 +638,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource whose buckets are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+     *
      * Note: The locations portion of the resource must be specified, but
      * supplying the character `-` in place of [LOCATION_ID] will return all
      * buckets.
@@ -668,10 +671,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource whose buckets are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+     *
      * Note: The locations portion of the resource must be specified, but
      * supplying the character `-` in place of [LOCATION_ID] will return all
      * buckets.
@@ -698,10 +703,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource whose buckets are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+     *
      * Note: The locations portion of the resource must be specified, but
      * supplying the character `-` in place of [LOCATION_ID] will return all
      * buckets.
@@ -724,10 +731,12 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource whose buckets are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+     *
      * Note: The locations portion of the resource must be specified, but
      * supplying the character `-` in place of [LOCATION_ID] will return all
      * buckets.

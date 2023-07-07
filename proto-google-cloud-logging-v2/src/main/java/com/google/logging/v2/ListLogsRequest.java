@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
   private ListLogsRequest() {
     parent_ = "";
-    resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pageToken_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListLogsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +73,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The resource name to list logs for:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -107,6 +103,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The resource name to list logs for:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -135,21 +132,26 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceNames_;
+  private com.google.protobuf.LazyStringArrayList resourceNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -167,15 +169,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -193,15 +199,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -220,15 +230,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -551,8 +565,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -582,7 +595,6 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.logging.v2.ListLogsRequest buildPartial() {
       com.google.logging.v2.ListLogsRequest result =
           new com.google.logging.v2.ListLogsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -590,18 +602,14 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.logging.v2.ListLogsRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        resourceNames_ = resourceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.resourceNames_ = resourceNames_;
-    }
-
     private void buildPartial0(com.google.logging.v2.ListLogsRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        resourceNames_.makeImmutable();
+        result.resourceNames_ = resourceNames_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageSize_ = pageSize_;
@@ -664,7 +672,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       if (!other.resourceNames_.isEmpty()) {
         if (resourceNames_.isEmpty()) {
           resourceNames_ = other.resourceNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureResourceNamesIsMutable();
           resourceNames_.addAll(other.resourceNames_);
@@ -755,6 +763,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The resource name to list logs for:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -783,6 +792,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The resource name to list logs for:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -811,6 +821,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The resource name to list logs for:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -838,6 +849,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The resource name to list logs for:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -861,6 +873,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The resource name to list logs for:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -885,29 +898,33 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourceNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!resourceNames_.isModifiable()) {
         resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -918,22 +935,27 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the resourceNames.
      */
     public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-      return resourceNames_.getUnmodifiableView();
+      resourceNames_.makeImmutable();
+      return resourceNames_;
     }
     /**
      *
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -951,15 +973,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -978,15 +1004,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1005,15 +1035,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1031,6 +1065,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       ensureResourceNamesIsMutable();
       resourceNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,15 +1074,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1064,6 +1103,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1072,15 +1112,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1094,6 +1138,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
       ensureResourceNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1102,15 +1147,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1121,8 +1170,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearResourceNames() {
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1131,15 +1181,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. List of resource names to list logs for:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *
      * To support legacy queries, it could also be:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * The resource name in the `parent` field is added to this list.
      * </pre>
      *
@@ -1157,6 +1211,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

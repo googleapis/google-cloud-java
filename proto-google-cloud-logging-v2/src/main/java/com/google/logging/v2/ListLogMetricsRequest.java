@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
     return new ListLogMetricsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingMetricsProto
         .internal_static_google_logging_v2_ListLogMetricsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the project containing the metrics:
+   *
    *     "projects/[PROJECT_ID]"
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the project containing the metrics:
+   *
    *     "projects/[PROJECT_ID]"
    * </pre>
    *
@@ -595,6 +592,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the project containing the metrics:
+     *
      *     "projects/[PROJECT_ID]"
      * </pre>
      *
@@ -620,6 +618,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the project containing the metrics:
+     *
      *     "projects/[PROJECT_ID]"
      * </pre>
      *
@@ -645,6 +644,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the project containing the metrics:
+     *
      *     "projects/[PROJECT_ID]"
      * </pre>
      *
@@ -669,6 +669,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the project containing the metrics:
+     *
      *     "projects/[PROJECT_ID]"
      * </pre>
      *
@@ -689,6 +690,7 @@ public final class ListLogMetricsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the project containing the metrics:
+     *
      *     "projects/[PROJECT_ID]"
      * </pre>
      *

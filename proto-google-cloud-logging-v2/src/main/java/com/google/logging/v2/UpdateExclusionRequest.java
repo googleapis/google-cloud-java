@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
     return new UpdateExclusionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_UpdateExclusionRequest_descriptor;
@@ -76,11 +71,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the exclusion to update:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
@@ -107,11 +105,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the exclusion to update:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
@@ -201,6 +202,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
    * Fields not mentioned in `update_mask` are not changed and are ignored in
    * the request.
+   *
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
@@ -223,6 +225,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
    * Fields not mentioned in `update_mask` are not changed and are ignored in
    * the request.
+   *
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
@@ -245,6 +248,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
    * Fields not mentioned in `update_mask` are not changed and are ignored in
    * the request.
+   *
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
@@ -666,11 +670,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the exclusion to update:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -696,11 +703,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the exclusion to update:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -726,11 +736,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the exclusion to update:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -755,11 +768,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the exclusion to update:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -780,11 +796,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the exclusion to update:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -1031,6 +1050,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1052,6 +1072,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1079,6 +1100,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1108,6 +1130,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1134,6 +1157,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1166,6 +1190,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1192,6 +1217,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1213,6 +1239,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
@@ -1238,6 +1265,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
      * Fields not mentioned in `update_mask` are not changed and are ignored in
      * the request.
+     *
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      * </pre>

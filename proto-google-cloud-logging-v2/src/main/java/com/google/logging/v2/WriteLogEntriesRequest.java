@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     return new WriteLogEntriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingProto
         .internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
@@ -89,13 +84,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
+   *
    * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
    * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
    * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+   *
    * `[LOG_ID]` must be URL-encoded. For example:
+   *
    *     "projects/my-project-id/logs/syslog"
    *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+   *
    * The permission `logging.logEntries.create` is needed on each project,
    * organization, billing account, or folder that is receiving new log
    * entries, whether the resource is specified in `logName` or in an
@@ -126,13 +125,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
+   *
    * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
    * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
    * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+   *
    * `[LOG_ID]` must be URL-encoded. For example:
+   *
    *     "projects/my-project-id/logs/syslog"
    *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+   *
    * The permission `logging.logEntries.create` is needed on each project,
    * organization, billing account, or folder that is receiving new log
    * entries, whether the resource is specified in `logName` or in an
@@ -166,9 +169,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
+   *
    *     { "type": "gce_instance",
    *       "labels": {
    *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+   *
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
@@ -187,9 +192,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
+   *
    *     { "type": "gce_instance",
    *       "labels": {
    *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+   *
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
@@ -208,9 +215,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
+   *
    *     { "type": "gce_instance",
    *       "labels": {
    *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+   *
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
@@ -350,17 +359,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * entries in this list that do not include values for their corresponding
    * fields. For more information, see the
    * [LogEntry][google.logging.v2.LogEntry] type.
+   *
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
+   *
    * Log entries with timestamps that are more than the
    * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *
    * To improve throughput and to avoid exceeding the
    * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
@@ -385,17 +397,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * entries in this list that do not include values for their corresponding
    * fields. For more information, see the
    * [LogEntry][google.logging.v2.LogEntry] type.
+   *
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
+   *
    * Log entries with timestamps that are more than the
    * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *
    * To improve throughput and to avoid exceeding the
    * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
@@ -421,17 +436,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * entries in this list that do not include values for their corresponding
    * fields. For more information, see the
    * [LogEntry][google.logging.v2.LogEntry] type.
+   *
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
+   *
    * Log entries with timestamps that are more than the
    * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *
    * To improve throughput and to avoid exceeding the
    * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
@@ -456,17 +474,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * entries in this list that do not include values for their corresponding
    * fields. For more information, see the
    * [LogEntry][google.logging.v2.LogEntry] type.
+   *
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
+   *
    * Log entries with timestamps that are more than the
    * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *
    * To improve throughput and to avoid exceeding the
    * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
@@ -491,17 +512,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * entries in this list that do not include values for their corresponding
    * fields. For more information, see the
    * [LogEntry][google.logging.v2.LogEntry] type.
+   *
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
+   *
    * Log entries with timestamps that are more than the
    * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *
    * To improve throughput and to avoid exceeding the
    * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
@@ -1110,13 +1134,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example:
+     *
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+     *
      * The permission `logging.logEntries.create` is needed on each project,
      * organization, billing account, or folder that is receiving new log
      * entries, whether the resource is specified in `logName` or in an
@@ -1146,13 +1174,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example:
+     *
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+     *
      * The permission `logging.logEntries.create` is needed on each project,
      * organization, billing account, or folder that is receiving new log
      * entries, whether the resource is specified in `logName` or in an
@@ -1182,13 +1214,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example:
+     *
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+     *
      * The permission `logging.logEntries.create` is needed on each project,
      * organization, billing account, or folder that is receiving new log
      * entries, whether the resource is specified in `logName` or in an
@@ -1217,13 +1253,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example:
+     *
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+     *
      * The permission `logging.logEntries.create` is needed on each project,
      * organization, billing account, or folder that is receiving new log
      * entries, whether the resource is specified in `logName` or in an
@@ -1248,13 +1288,17 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example:
+     *
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
+     *
      * The permission `logging.logEntries.create` is needed on each project,
      * organization, billing account, or folder that is receiving new log
      * entries, whether the resource is specified in `logName` or in an
@@ -1291,9 +1335,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1311,9 +1357,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1337,9 +1385,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1365,9 +1415,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1390,9 +1442,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1421,9 +1475,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1446,9 +1502,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1466,9 +1524,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1490,9 +1550,11 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
+     *
      *     { "type": "gce_instance",
      *       "labels": {
      *         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+     *
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
@@ -1726,17 +1788,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1764,17 +1829,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1802,17 +1870,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1840,17 +1911,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1884,17 +1958,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1925,17 +2002,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -1969,17 +2049,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2013,17 +2096,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2054,17 +2140,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2095,17 +2184,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2137,17 +2229,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2178,17 +2273,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2219,17 +2317,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2253,17 +2354,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2291,17 +2395,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2330,17 +2437,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2365,17 +2475,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this
@@ -2400,17 +2513,20 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * entries in this list that do not include values for their corresponding
      * fields. For more information, see the
      * [LogEntry][google.logging.v2.LogEntry] type.
+     *
      * If the `timestamp` or `insert_id` fields are missing in log entries, then
      * this method supplies the current time or a unique identifier, respectively.
      * The supplied values are chosen so that, among the log entries that did not
      * supply their own values, the entries earlier in the list will sort before
      * the entries later in the list. See the `entries.list` method.
+     *
      * Log entries with timestamps that are more than the
      * [logs retention period](https://cloud.google.com/logging/quotas) in
      * the past or more than 24 hours in the future will not be available when
      * calling `entries.list`. However, those log entries can still be [exported
      * with
      * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     *
      * To improve throughput and to avoid exceeding the
      * [quota limit](https://cloud.google.com/logging/quotas) for calls to
      * `entries.write`, you should try to include several log entries in this

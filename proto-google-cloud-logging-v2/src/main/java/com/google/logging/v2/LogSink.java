@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LogSink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -234,6 +229,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int optionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object options_;
 
   public enum OptionsCase
@@ -286,6 +283,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the project.
+   *
    * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
    * to 100 characters and can include only the following characters: upper and
    * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -313,6 +311,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the project.
+   *
    * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
    * to 100 characters and can include only the following characters: upper and
    * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -345,9 +344,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The export destination:
+   *
    *     "storage.googleapis.com/[GCS_BUCKET]"
    *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+   *
    * The sink's `writer_identity`, set when the sink is created, must have
    * permission to write to the destination or else the log entries are not
    * exported. For more information, see
@@ -378,9 +379,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The export destination:
+   *
    *     "storage.googleapis.com/[GCS_BUCKET]"
    *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+   *
    * The sink's `writer_identity`, set when the sink is created, must have
    * permission to write to the destination or else the log entries are not
    * exported. For more information, see
@@ -419,7 +422,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
    * only exported log entries are those that are in the resource owning the
    * sink and that match the filter.
+   *
    * For example:
+   *
    *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
    * </pre>
    *
@@ -447,7 +452,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
    * only exported log entries are those that are in the resource owning the
    * sink and that match the filter.
+   *
    * For example:
+   *
    *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
    * </pre>
    *
@@ -477,6 +484,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A description of this sink.
+   *
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
@@ -501,6 +509,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A description of this sink.
+   *
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
@@ -550,6 +559,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Log entries that match any of these exclusion filters will not be
    * exported.
+   *
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -568,6 +578,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Log entries that match any of these exclusion filters will not be
    * exported.
+   *
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -587,6 +598,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Log entries that match any of these exclusion filters will not be
    * exported.
+   *
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -605,6 +617,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Log entries that match any of these exclusion filters will not be
    * exported.
+   *
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -623,6 +636,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Log entries that match any of these exclusion filters will not be
    * exported.
+   *
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -694,12 +708,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
+   *
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information, see [Granting
    * Access for a
    * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
+   *
    * Sinks that have a destination that is a log bucket in the same project as
    * the sink cannot have a writer_identity and no additional permissions are
    * required.
@@ -732,12 +748,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
+   *
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information, see [Granting
    * Access for a
    * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
+   *
    * Sinks that have a destination that is a log bucket in the same project as
    * the sink cannot have a writer_identity and no additional permissions are
    * required.
@@ -773,11 +791,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * in the sink's parent resource are also available for export. Whether a
    * particular log entry from the children is exported depends on the sink's
    * filter expression.
+   *
    * For example, if this field is true, then the filter
    * `resource.type=gce_instance` would export all Compute Engine VM instance
    * log entries from all projects in the sink's parent.
+   *
    * To only export entries from certain child projects, filter on the project
    * part of the log name:
+   *
    *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
    *   resource.type=gce_instance
    * </pre>
@@ -855,6 +876,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The creation timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -872,6 +894,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The creation timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -889,6 +912,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The creation timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -907,6 +931,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last update timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -924,6 +949,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last update timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -941,6 +967,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last update timestamp of the sink.
+   *
    * This field may not be present for older sinks.
    * </pre>
    *
@@ -1665,6 +1692,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the project.
+     *
      * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
      * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -1691,6 +1719,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the project.
+     *
      * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
      * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -1717,6 +1746,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the project.
+     *
      * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
      * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -1742,6 +1772,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the project.
+     *
      * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
      * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -1763,6 +1794,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the project.
+     *
      * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
      * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
@@ -1791,9 +1823,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The export destination:
+     *
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+     *
      * The sink's `writer_identity`, set when the sink is created, must have
      * permission to write to the destination or else the log entries are not
      * exported. For more information, see
@@ -1823,9 +1857,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The export destination:
+     *
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+     *
      * The sink's `writer_identity`, set when the sink is created, must have
      * permission to write to the destination or else the log entries are not
      * exported. For more information, see
@@ -1855,9 +1891,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The export destination:
+     *
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+     *
      * The sink's `writer_identity`, set when the sink is created, must have
      * permission to write to the destination or else the log entries are not
      * exported. For more information, see
@@ -1886,9 +1924,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The export destination:
+     *
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+     *
      * The sink's `writer_identity`, set when the sink is created, must have
      * permission to write to the destination or else the log entries are not
      * exported. For more information, see
@@ -1913,9 +1953,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The export destination:
+     *
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
+     *
      * The sink's `writer_identity`, set when the sink is created, must have
      * permission to write to the destination or else the log entries are not
      * exported. For more information, see
@@ -1950,7 +1992,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
      * sink and that match the filter.
+     *
      * For example:
+     *
      *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
@@ -1977,7 +2021,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
      * sink and that match the filter.
+     *
      * For example:
+     *
      *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
@@ -2004,7 +2050,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
      * sink and that match the filter.
+     *
      * For example:
+     *
      *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
@@ -2030,7 +2078,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
      * sink and that match the filter.
+     *
      * For example:
+     *
      *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
@@ -2052,7 +2102,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
      * sink and that match the filter.
+     *
      * For example:
+     *
      *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
@@ -2078,6 +2130,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this sink.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -2101,6 +2154,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this sink.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -2124,6 +2178,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this sink.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -2146,6 +2201,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this sink.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -2164,6 +2220,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this sink.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -2261,6 +2318,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2282,6 +2340,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2303,6 +2362,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2324,6 +2384,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2351,6 +2412,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2376,6 +2438,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2403,6 +2466,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2430,6 +2494,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2454,6 +2519,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2479,6 +2545,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2504,6 +2571,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2528,6 +2596,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2552,6 +2621,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2569,6 +2639,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2590,6 +2661,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2612,6 +2684,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2630,6 +2703,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2648,6 +2722,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Log entries that match any of these exclusion filters will not be
      * exported.
+     *
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2799,12 +2874,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
+     *
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information, see [Granting
      * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     *
      * Sinks that have a destination that is a log bucket in the same project as
      * the sink cannot have a writer_identity and no additional permissions are
      * required.
@@ -2836,12 +2913,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
+     *
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information, see [Granting
      * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     *
      * Sinks that have a destination that is a log bucket in the same project as
      * the sink cannot have a writer_identity and no additional permissions are
      * required.
@@ -2873,12 +2952,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
+     *
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information, see [Granting
      * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     *
      * Sinks that have a destination that is a log bucket in the same project as
      * the sink cannot have a writer_identity and no additional permissions are
      * required.
@@ -2909,12 +2990,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
+     *
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information, see [Granting
      * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     *
      * Sinks that have a destination that is a log bucket in the same project as
      * the sink cannot have a writer_identity and no additional permissions are
      * required.
@@ -2941,12 +3024,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
+     *
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information, see [Granting
      * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     *
      * Sinks that have a destination that is a log bucket in the same project as
      * the sink cannot have a writer_identity and no additional permissions are
      * required.
@@ -2980,11 +3065,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * in the sink's parent resource are also available for export. Whether a
      * particular log entry from the children is exported depends on the sink's
      * filter expression.
+     *
      * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
      * log entries from all projects in the sink's parent.
+     *
      * To only export entries from certain child projects, filter on the project
      * part of the log name:
+     *
      *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
      *   resource.type=gce_instance
      * </pre>
@@ -3008,11 +3096,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * in the sink's parent resource are also available for export. Whether a
      * particular log entry from the children is exported depends on the sink's
      * filter expression.
+     *
      * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
      * log entries from all projects in the sink's parent.
+     *
      * To only export entries from certain child projects, filter on the project
      * part of the log name:
+     *
      *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
      *   resource.type=gce_instance
      * </pre>
@@ -3040,11 +3131,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * in the sink's parent resource are also available for export. Whether a
      * particular log entry from the children is exported depends on the sink's
      * filter expression.
+     *
      * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
      * log entries from all projects in the sink's parent.
+     *
      * To only export entries from certain child projects, filter on the project
      * part of the log name:
+     *
      *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
      *   resource.type=gce_instance
      * </pre>
@@ -3298,6 +3392,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3315,6 +3410,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3338,6 +3434,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3363,6 +3460,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3385,6 +3483,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3413,6 +3512,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3435,6 +3535,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3452,6 +3553,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3473,6 +3575,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The creation timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3508,6 +3611,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3525,6 +3629,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3548,6 +3653,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3573,6 +3679,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3595,6 +3702,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3623,6 +3731,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3645,6 +3754,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3662,6 +3772,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *
@@ -3683,6 +3794,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last update timestamp of the sink.
+     *
      * This field may not be present for older sinks.
      * </pre>
      *

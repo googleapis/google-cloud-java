@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   private TailLogEntriesRequest() {
-    resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     filter_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TailLogEntriesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,17 +66,21 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceNames_;
+  private com.google.protobuf.LazyStringArrayList resourceNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. Name of a parent resource from which to retrieve log entries:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * May alternatively be one or more views:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -100,11 +99,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of a parent resource from which to retrieve log entries:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * May alternatively be one or more views:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -123,11 +125,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of a parent resource from which to retrieve log entries:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * May alternatively be one or more views:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -147,11 +152,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of a parent resource from which to retrieve log entries:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * May alternatively be one or more views:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -516,8 +524,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filter_ = "";
       bufferWindow_ = null;
       if (bufferWindowBuilder_ != null) {
@@ -551,7 +558,6 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public com.google.logging.v2.TailLogEntriesRequest buildPartial() {
       com.google.logging.v2.TailLogEntriesRequest result =
           new com.google.logging.v2.TailLogEntriesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -559,16 +565,12 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.logging.v2.TailLogEntriesRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resourceNames_ = resourceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.resourceNames_ = resourceNames_;
-    }
-
     private void buildPartial0(com.google.logging.v2.TailLogEntriesRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        resourceNames_.makeImmutable();
+        result.resourceNames_ = resourceNames_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.filter_ = filter_;
       }
@@ -626,7 +628,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       if (!other.resourceNames_.isEmpty()) {
         if (resourceNames_.isEmpty()) {
           resourceNames_ = other.resourceNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureResourceNamesIsMutable();
           resourceNames_.addAll(other.resourceNames_);
@@ -705,25 +707,28 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList resourceNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!resourceNames_.isModifiable()) {
         resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -735,18 +740,22 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * @return A list containing the resourceNames.
      */
     public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-      return resourceNames_.getUnmodifiableView();
+      resourceNames_.makeImmutable();
+      return resourceNames_;
     }
     /**
      *
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -765,11 +774,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -789,11 +801,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -813,11 +828,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -836,6 +854,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       }
       ensureResourceNamesIsMutable();
       resourceNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,11 +863,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -866,6 +888,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       }
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,11 +897,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -893,6 +919,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
       ensureResourceNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,11 +928,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -917,8 +947,9 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResourceNames() {
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -927,11 +958,14 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of a parent resource from which to retrieve log entries:
+     *
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
      * *  `folders/[FOLDER_ID]`
+     *
      * May alternatively be one or more views:
+     *
      *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
      *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
@@ -950,6 +984,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

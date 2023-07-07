@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     return new BucketMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_BucketMetadata_descriptor;
@@ -68,6 +63,8 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int requestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object request_;
 
   public enum RequestCase

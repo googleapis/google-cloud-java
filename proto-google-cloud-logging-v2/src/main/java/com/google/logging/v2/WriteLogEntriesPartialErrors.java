@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WriteLogEntriesPartialErrors();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -113,6 +108,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -137,6 +133,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -154,6 +151,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -177,6 +175,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -604,6 +603,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -628,6 +628,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -645,6 +646,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -668,6 +670,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -697,6 +700,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -721,6 +725,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>
@@ -743,6 +748,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * When `WriteLogEntriesRequest.partial_success` is true, records the error
      * status for entries that were not written due to a permanent error, keyed
      * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+     *
      * Failed requests for which no entries are written will not include
      * per-entry errors.
      * </pre>

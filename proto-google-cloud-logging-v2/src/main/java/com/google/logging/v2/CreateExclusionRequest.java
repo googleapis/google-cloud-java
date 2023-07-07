@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
     return new CreateExclusionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_CreateExclusionRequest_descriptor;
@@ -76,11 +71,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-logging-project"`
    *   `"organizations/123456789"`
    * </pre>
@@ -108,11 +106,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-logging-project"`
    *   `"organizations/123456789"`
    * </pre>
@@ -570,11 +571,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource in which to create the exclusion:
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
+     *
      * For examples:
+     *
      *   `"projects/my-logging-project"`
      *   `"organizations/123456789"`
      * </pre>
@@ -601,11 +605,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource in which to create the exclusion:
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
+     *
      * For examples:
+     *
      *   `"projects/my-logging-project"`
      *   `"organizations/123456789"`
      * </pre>
@@ -632,11 +639,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource in which to create the exclusion:
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
+     *
      * For examples:
+     *
      *   `"projects/my-logging-project"`
      *   `"organizations/123456789"`
      * </pre>
@@ -662,11 +672,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource in which to create the exclusion:
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
+     *
      * For examples:
+     *
      *   `"projects/my-logging-project"`
      *   `"organizations/123456789"`
      * </pre>
@@ -688,11 +701,14 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource in which to create the exclusion:
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
+     *
      * For examples:
+     *
      *   `"projects/my-logging-project"`
      *   `"organizations/123456789"`
      * </pre>

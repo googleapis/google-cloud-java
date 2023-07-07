@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface CreateBucketRequestOrBuilder
    *
    * <pre>
    * Required. The resource in which to create the log bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global"`
    * </pre>
    *
@@ -45,8 +48,11 @@ public interface CreateBucketRequestOrBuilder
    *
    * <pre>
    * Required. The resource in which to create the log bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global"`
    * </pre>
    *

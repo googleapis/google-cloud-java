@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name to list logs for:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -46,6 +47,7 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name to list logs for:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -65,15 +67,19 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -89,15 +95,19 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -113,15 +123,19 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *
@@ -138,15 +152,19 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. List of resource names to list logs for:
+   *
    *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *
    * To support legacy queries, it could also be:
+   *
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
    * *  `folders/[FOLDER_ID]`
+   *
    * The resource name in the `parent` field is added to this list.
    * </pre>
    *

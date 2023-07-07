@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.logging.v2;
  * <pre>
  * The parameters to
  * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
+ *
  * See [Enabling CMEK for Log
  * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
  * more information.
@@ -51,11 +52,6 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
     return new GetCmekSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor;
@@ -80,12 +76,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource for which to retrieve CMEK settings.
+   *
    *     "projects/[PROJECT_ID]/cmekSettings"
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
+   *
    * For example:
+   *
    *   `"organizations/12345/cmekSettings"`
+   *
    * Note: CMEK for the Log Router can be configured for Google Cloud projects,
    * folders, organizations and billing accounts. Once configured for an
    * organization, it applies to all projects and folders in the Google Cloud
@@ -115,12 +115,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource for which to retrieve CMEK settings.
+   *
    *     "projects/[PROJECT_ID]/cmekSettings"
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
+   *
    * For example:
+   *
    *   `"organizations/12345/cmekSettings"`
+   *
    * Note: CMEK for the Log Router can be configured for Google Cloud projects,
    * folders, organizations and billing accounts. Once configured for an
    * organization, it applies to all projects and folders in the Google Cloud
@@ -311,6 +315,7 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The parameters to
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
    * more information.
@@ -497,12 +502,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource for which to retrieve CMEK settings.
+     *
      *     "projects/[PROJECT_ID]/cmekSettings"
      *     "organizations/[ORGANIZATION_ID]/cmekSettings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
      *     "folders/[FOLDER_ID]/cmekSettings"
+     *
      * For example:
+     *
      *   `"organizations/12345/cmekSettings"`
+     *
      * Note: CMEK for the Log Router can be configured for Google Cloud projects,
      * folders, organizations and billing accounts. Once configured for an
      * organization, it applies to all projects and folders in the Google Cloud
@@ -531,12 +540,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource for which to retrieve CMEK settings.
+     *
      *     "projects/[PROJECT_ID]/cmekSettings"
      *     "organizations/[ORGANIZATION_ID]/cmekSettings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
      *     "folders/[FOLDER_ID]/cmekSettings"
+     *
      * For example:
+     *
      *   `"organizations/12345/cmekSettings"`
+     *
      * Note: CMEK for the Log Router can be configured for Google Cloud projects,
      * folders, organizations and billing accounts. Once configured for an
      * organization, it applies to all projects and folders in the Google Cloud
@@ -565,12 +578,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource for which to retrieve CMEK settings.
+     *
      *     "projects/[PROJECT_ID]/cmekSettings"
      *     "organizations/[ORGANIZATION_ID]/cmekSettings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
      *     "folders/[FOLDER_ID]/cmekSettings"
+     *
      * For example:
+     *
      *   `"organizations/12345/cmekSettings"`
+     *
      * Note: CMEK for the Log Router can be configured for Google Cloud projects,
      * folders, organizations and billing accounts. Once configured for an
      * organization, it applies to all projects and folders in the Google Cloud
@@ -598,12 +615,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource for which to retrieve CMEK settings.
+     *
      *     "projects/[PROJECT_ID]/cmekSettings"
      *     "organizations/[ORGANIZATION_ID]/cmekSettings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
      *     "folders/[FOLDER_ID]/cmekSettings"
+     *
      * For example:
+     *
      *   `"organizations/12345/cmekSettings"`
+     *
      * Note: CMEK for the Log Router can be configured for Google Cloud projects,
      * folders, organizations and billing accounts. Once configured for an
      * organization, it applies to all projects and folders in the Google Cloud
@@ -627,12 +648,16 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource for which to retrieve CMEK settings.
+     *
      *     "projects/[PROJECT_ID]/cmekSettings"
      *     "organizations/[ORGANIZATION_ID]/cmekSettings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
      *     "folders/[FOLDER_ID]/cmekSettings"
+     *
      * For example:
+     *
      *   `"organizations/12345/cmekSettings"`
+     *
      * Note: CMEK for the Log Router can be configured for Google Cloud projects,
      * folders, organizations and billing accounts. Once configured for an
      * organization, it applies to all projects and folders in the Google Cloud

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
     return new ListViewsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_ListViewsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The bucket whose views are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
@@ -101,6 +97,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The bucket whose views are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
@@ -185,6 +182,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The maximum number of results to return from this request.
+   *
    * Non-positive values are ignored. The presence of `nextPageToken` in the
    * response indicates that more results might be available.
    * </pre>
@@ -590,6 +588,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The bucket whose views are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
@@ -613,6 +612,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The bucket whose views are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
@@ -636,6 +636,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The bucket whose views are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
@@ -658,6 +659,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The bucket whose views are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
@@ -676,6 +678,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The bucket whose views are to be listed:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
@@ -822,6 +825,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The maximum number of results to return from this request.
+     *
      * Non-positive values are ignored. The presence of `nextPageToken` in the
      * response indicates that more results might be available.
      * </pre>
@@ -839,6 +843,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The maximum number of results to return from this request.
+     *
      * Non-positive values are ignored. The presence of `nextPageToken` in the
      * response indicates that more results might be available.
      * </pre>
@@ -860,6 +865,7 @@ public final class ListViewsRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The maximum number of results to return from this request.
+     *
      * Non-positive values are ignored. The presence of `nextPageToken` in the
      * response indicates that more results might be available.
      * </pre>

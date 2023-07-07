@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * The resource name of the view.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * The resource name of the view.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
@@ -159,12 +163,16 @@ public interface LogViewOrBuilder
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
    * view.
+   *
    * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
+   *
    *   - originating project/folder/organization/billing account.
    *   - resource type
    *   - log id
+   *
    * For example:
+   *
    *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
    *                                AND LOG_ID("stdout")
    * </pre>
@@ -180,12 +188,16 @@ public interface LogViewOrBuilder
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
    * view.
+   *
    * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
+   *
    *   - originating project/folder/organization/billing account.
    *   - resource type
    *   - log id
+   *
    * For example:
+   *
    *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
    *                                AND LOG_ID("stdout")
    * </pre>

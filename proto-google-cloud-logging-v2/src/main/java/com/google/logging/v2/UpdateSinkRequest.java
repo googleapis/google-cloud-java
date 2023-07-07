@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     return new UpdateSinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_UpdateSinkRequest_descriptor;
@@ -77,11 +72,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The full resource name of the sink to update, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -109,11 +107,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The full resource name of the sink to update, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -195,6 +196,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * for a description of this field. When updating a sink, the effect of this
    * field on the value of `writer_identity` in the updated sink depends on both
    * the old and new values of this field:
+   *
    * +   If the old and new values of this field are both false or both true,
    *     then there is no change to the sink's `writer_identity`.
    * +   If the old value is false and the new value is true, then
@@ -221,13 +223,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * An empty `updateMask` is temporarily treated as using the following mask
    * for backwards compatibility purposes:
+   *
    *   `destination,filter,includeChildren`
+   *
    * At some point in the future, behavior will be removed and specifying an
    * empty `updateMask` will be an error.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *
@@ -247,13 +254,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * An empty `updateMask` is temporarily treated as using the following mask
    * for backwards compatibility purposes:
+   *
    *   `destination,filter,includeChildren`
+   *
    * At some point in the future, behavior will be removed and specifying an
    * empty `updateMask` will be an error.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *
@@ -273,13 +285,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * An empty `updateMask` is temporarily treated as using the following mask
    * for backwards compatibility purposes:
+   *
    *   `destination,filter,includeChildren`
+   *
    * At some point in the future, behavior will be removed and specifying an
    * empty `updateMask` will be an error.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *
@@ -722,11 +739,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to update, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -753,11 +773,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to update, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -784,11 +807,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to update, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -814,11 +840,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to update, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -840,11 +869,14 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to update, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -1063,6 +1095,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * for a description of this field. When updating a sink, the effect of this
      * field on the value of `writer_identity` in the updated sink depends on both
      * the old and new values of this field:
+     *
      * +   If the old and new values of this field are both false or both true,
      *     then there is no change to the sink's `writer_identity`.
      * +   If the old value is false and the new value is true, then
@@ -1087,6 +1120,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * for a description of this field. When updating a sink, the effect of this
      * field on the value of `writer_identity` in the updated sink depends on both
      * the old and new values of this field:
+     *
      * +   If the old and new values of this field are both false or both true,
      *     then there is no change to the sink's `writer_identity`.
      * +   If the old value is false and the new value is true, then
@@ -1115,6 +1149,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * for a description of this field. When updating a sink, the effect of this
      * field on the value of `writer_identity` in the updated sink depends on both
      * the old and new values of this field:
+     *
      * +   If the old and new values of this field are both false or both true,
      *     then there is no change to the sink's `writer_identity`.
      * +   If the old value is false and the new value is true, then
@@ -1147,13 +1182,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1172,13 +1212,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1203,13 +1248,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1236,13 +1286,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1266,13 +1321,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1302,13 +1362,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1332,13 +1397,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1357,13 +1427,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *
@@ -1386,13 +1461,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
      * in the update mask. `name` and output only fields cannot be updated.
+     *
      * An empty `updateMask` is temporarily treated as using the following mask
      * for backwards compatibility purposes:
+     *
      *   `destination,filter,includeChildren`
+     *
      * At some point in the future, behavior will be removed and specifying an
      * empty `updateMask` will be an error.
+     *
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+     *
      * For example: `updateMask=filter`
      * </pre>
      *

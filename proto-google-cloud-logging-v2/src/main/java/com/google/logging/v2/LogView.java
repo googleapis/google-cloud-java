@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
     return new LogView();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_LogView_descriptor;
@@ -77,7 +72,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the view.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
@@ -102,7 +99,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the view.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
@@ -282,12 +281,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
    * view.
+   *
    * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
+   *
    *   - originating project/folder/organization/billing account.
    *   - resource type
    *   - log id
+   *
    * For example:
+   *
    *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
    *                                AND LOG_ID("stdout")
    * </pre>
@@ -314,12 +317,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
    * view.
+   *
    * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
+   *
    *   - originating project/folder/organization/billing account.
    *   - resource type
    *   - log id
+   *
    * For example:
+   *
    *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
    *                                AND LOG_ID("stdout")
    * </pre>
@@ -794,7 +801,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the view.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
      * </pre>
      *
@@ -818,7 +827,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the view.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
      * </pre>
      *
@@ -842,7 +853,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the view.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
      * </pre>
      *
@@ -865,7 +878,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the view.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
      * </pre>
      *
@@ -884,7 +899,9 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the view.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
      * </pre>
      *
@@ -1419,12 +1436,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Filter that restricts which log entries in a bucket are visible in this
      * view.
+     *
      * Filters are restricted to be a logical AND of ==/!= of any of the
      * following:
+     *
      *   - originating project/folder/organization/billing account.
      *   - resource type
      *   - log id
+     *
      * For example:
+     *
      *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
      *                                AND LOG_ID("stdout")
      * </pre>
@@ -1450,12 +1471,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Filter that restricts which log entries in a bucket are visible in this
      * view.
+     *
      * Filters are restricted to be a logical AND of ==/!= of any of the
      * following:
+     *
      *   - originating project/folder/organization/billing account.
      *   - resource type
      *   - log id
+     *
      * For example:
+     *
      *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
      *                                AND LOG_ID("stdout")
      * </pre>
@@ -1481,12 +1506,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Filter that restricts which log entries in a bucket are visible in this
      * view.
+     *
      * Filters are restricted to be a logical AND of ==/!= of any of the
      * following:
+     *
      *   - originating project/folder/organization/billing account.
      *   - resource type
      *   - log id
+     *
      * For example:
+     *
      *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
      *                                AND LOG_ID("stdout")
      * </pre>
@@ -1511,12 +1540,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Filter that restricts which log entries in a bucket are visible in this
      * view.
+     *
      * Filters are restricted to be a logical AND of ==/!= of any of the
      * following:
+     *
      *   - originating project/folder/organization/billing account.
      *   - resource type
      *   - log id
+     *
      * For example:
+     *
      *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
      *                                AND LOG_ID("stdout")
      * </pre>
@@ -1537,12 +1570,16 @@ public final class LogView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Filter that restricts which log entries in a bucket are visible in this
      * view.
+     *
      * Filters are restricted to be a logical AND of ==/!= of any of the
      * following:
+     *
      *   - originating project/folder/organization/billing account.
      *   - resource type
      *   - log id
+     *
      * For example:
+     *
      *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
      *                                AND LOG_ID("stdout")
      * </pre>

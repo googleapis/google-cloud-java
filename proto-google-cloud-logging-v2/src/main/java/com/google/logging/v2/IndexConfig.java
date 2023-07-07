@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
     return new IndexConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_IndexConfig_descriptor;
@@ -77,10 +72,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The LogEntry field path to index.
+   *
    * Note that some paths are automatically indexed, and other paths are not
    * eligible for indexing. See [indexing documentation](
    * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
    * for details.
+   *
    * For example: `jsonPayload.request.status`
    * </pre>
    *
@@ -105,10 +102,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The LogEntry field path to index.
+   *
    * Note that some paths are automatically indexed, and other paths are not
    * eligible for indexing. See [indexing documentation](
    * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
    * for details.
+   *
    * For example: `jsonPayload.request.status`
    * </pre>
    *
@@ -170,6 +169,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>
@@ -188,6 +188,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>
@@ -206,6 +207,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>
@@ -615,10 +617,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The LogEntry field path to index.
+     *
      * Note that some paths are automatically indexed, and other paths are not
      * eligible for indexing. See [indexing documentation](
      * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
      * for details.
+     *
      * For example: `jsonPayload.request.status`
      * </pre>
      *
@@ -642,10 +646,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The LogEntry field path to index.
+     *
      * Note that some paths are automatically indexed, and other paths are not
      * eligible for indexing. See [indexing documentation](
      * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
      * for details.
+     *
      * For example: `jsonPayload.request.status`
      * </pre>
      *
@@ -669,10 +675,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The LogEntry field path to index.
+     *
      * Note that some paths are automatically indexed, and other paths are not
      * eligible for indexing. See [indexing documentation](
      * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
      * for details.
+     *
      * For example: `jsonPayload.request.status`
      * </pre>
      *
@@ -695,10 +703,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The LogEntry field path to index.
+     *
      * Note that some paths are automatically indexed, and other paths are not
      * eligible for indexing. See [indexing documentation](
      * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
      * for details.
+     *
      * For example: `jsonPayload.request.status`
      * </pre>
      *
@@ -717,10 +727,12 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The LogEntry field path to index.
+     *
      * Note that some paths are automatically indexed, and other paths are not
      * eligible for indexing. See [indexing documentation](
      * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
      * for details.
+     *
      * For example: `jsonPayload.request.status`
      * </pre>
      *
@@ -840,6 +852,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -858,6 +871,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -882,6 +896,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -908,6 +923,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -931,6 +947,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -960,6 +977,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -983,6 +1001,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -1001,6 +1020,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>
@@ -1023,6 +1043,7 @@ public final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp when the index was last modified.
+     *
      * This is used to return the timestamp, and will be ignored if supplied
      * during update.
      * </pre>

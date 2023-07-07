@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     return new CreateViewRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_CreateViewRequest_descriptor;
@@ -77,8 +72,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The bucket in which to create the view
+   *
    *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
@@ -103,8 +101,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The bucket in which to create the view
+   *
    *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
@@ -627,8 +628,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The bucket in which to create the view
+     *
      *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -652,8 +656,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The bucket in which to create the view
+     *
      *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -677,8 +684,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The bucket in which to create the view
+     *
      *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -701,8 +711,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The bucket in which to create the view
+     *
      *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -721,8 +734,11 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The bucket in which to create the view
+     *
      *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *

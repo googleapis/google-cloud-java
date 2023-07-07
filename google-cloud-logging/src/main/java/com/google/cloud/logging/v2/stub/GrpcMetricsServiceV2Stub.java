@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -156,9 +156,9 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                 .setMethodDescriptor(listLogMetricsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetLogMetricRequest, LogMetric> getLogMetricTransportSettings =
@@ -166,9 +166,9 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             .setMethodDescriptor(getLogMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("metric_name", String.valueOf(request.getMetricName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("metric_name", String.valueOf(request.getMetricName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricTransportSettings =
@@ -176,9 +176,9 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             .setMethodDescriptor(createLogMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
@@ -186,9 +186,9 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             .setMethodDescriptor(updateLogMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("metric_name", String.valueOf(request.getMetricName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("metric_name", String.valueOf(request.getMetricName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
@@ -196,9 +196,9 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             .setMethodDescriptor(deleteLogMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("metric_name", String.valueOf(request.getMetricName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("metric_name", String.valueOf(request.getMetricName()));
+                  return builder.build();
                 })
             .build();
 

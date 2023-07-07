@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,14 @@ public interface DeleteSinkRequestOrBuilder
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -50,11 +53,14 @@ public interface DeleteSinkRequestOrBuilder
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *

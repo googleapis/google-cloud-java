@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
     return new CopyLogEntriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_CopyLogEntriesRequest_descriptor;
@@ -78,7 +73,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Log bucket from which to copy log entries.
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
    * </pre>
    *
@@ -103,7 +100,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Log bucket from which to copy log entries.
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
    * </pre>
    *
@@ -623,7 +622,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Log bucket from which to copy log entries.
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
      * </pre>
      *
@@ -647,7 +648,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Log bucket from which to copy log entries.
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
      * </pre>
      *
@@ -671,7 +674,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Log bucket from which to copy log entries.
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
      * </pre>
      *
@@ -694,7 +699,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Log bucket from which to copy log entries.
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
      * </pre>
      *
@@ -713,7 +720,9 @@ public final class CopyLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Log bucket from which to copy log entries.
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-source-bucket"`
      * </pre>
      *

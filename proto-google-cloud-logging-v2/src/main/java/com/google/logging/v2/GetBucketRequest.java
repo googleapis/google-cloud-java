@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     return new GetBucketRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_GetBucketRequest_descriptor;
@@ -76,11 +71,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
@@ -107,11 +105,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
@@ -480,11 +481,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -510,11 +514,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -540,11 +547,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -569,11 +579,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
@@ -594,11 +607,14 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *

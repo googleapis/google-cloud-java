@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,8 +88,10 @@ public interface LogExclusionOrBuilder
    * matches the log entries to be excluded. By using the [sample
    * function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
+   *
    * For example, the following query matches 99% of low-severity log entries
    * from Google Cloud Storage buckets:
+   *
    *   `resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)`
    * </pre>
    *
@@ -107,8 +109,10 @@ public interface LogExclusionOrBuilder
    * matches the log entries to be excluded. By using the [sample
    * function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
+   *
    * For example, the following query matches 99% of low-severity log entries
    * from Google Cloud Storage buckets:
+   *
    *   `resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)`
    * </pre>
    *
@@ -139,6 +143,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The creation timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *
@@ -153,6 +158,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The creation timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *
@@ -167,6 +173,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The creation timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *
@@ -180,6 +187,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The last update timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *
@@ -194,6 +202,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The last update timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *
@@ -208,6 +217,7 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Output only. The last update timestamp of the exclusion.
+   *
    * This field may not be present for older exclusions.
    * </pre>
    *

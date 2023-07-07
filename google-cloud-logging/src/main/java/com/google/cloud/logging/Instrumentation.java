@@ -224,7 +224,7 @@ public final class Instrumentation {
   /**
    * Returns a library version associated with given class
    *
-   * @param libraryClass {Class<?>} The class to be used to determine a library version
+   * @param libraryClass The class to be used to determine a library version
    * @return The version number string for given class or DEFAULT_INSTRUMENTATION_VERSION if class
    *     library version cannot be detected
    */

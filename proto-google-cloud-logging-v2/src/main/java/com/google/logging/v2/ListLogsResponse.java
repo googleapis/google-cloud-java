@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   private ListLogsResponse() {
-    logNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    logNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListLogsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   public static final int LOG_NAMES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList logNames_;
+  private com.google.protobuf.LazyStringArrayList logNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -407,8 +403,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      logNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      logNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
       return this;
     }
@@ -437,7 +432,6 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.logging.v2.ListLogsResponse buildPartial() {
       com.google.logging.v2.ListLogsResponse result =
           new com.google.logging.v2.ListLogsResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -445,16 +439,12 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.logging.v2.ListLogsResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        logNames_ = logNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.logNames_ = logNames_;
-    }
-
     private void buildPartial0(com.google.logging.v2.ListLogsResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        logNames_.makeImmutable();
+        result.logNames_ = logNames_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
       }
@@ -508,7 +498,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       if (!other.logNames_.isEmpty()) {
         if (logNames_.isEmpty()) {
           logNames_ = other.logNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLogNamesIsMutable();
           logNames_.addAll(other.logNames_);
@@ -578,14 +568,14 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList logNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList logNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLogNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!logNames_.isModifiable()) {
         logNames_ = new com.google.protobuf.LazyStringArrayList(logNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -601,7 +591,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      * @return A list containing the logNames.
      */
     public com.google.protobuf.ProtocolStringList getLogNamesList() {
-      return logNames_.getUnmodifiableView();
+      logNames_.makeImmutable();
+      return logNames_;
     }
     /**
      *
@@ -674,6 +665,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       }
       ensureLogNamesIsMutable();
       logNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,6 +689,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       }
       ensureLogNamesIsMutable();
       logNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,6 +710,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public Builder addAllLogNames(java.lang.Iterable<java.lang.String> values) {
       ensureLogNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, logNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,8 +728,9 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLogNames() {
-      logNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      logNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -760,6 +755,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureLogNamesIsMutable();
       logNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

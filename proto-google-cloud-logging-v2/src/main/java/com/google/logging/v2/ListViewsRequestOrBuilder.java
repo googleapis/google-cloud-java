@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListViewsRequestOrBuilder
    *
    * <pre>
    * Required. The bucket whose views are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface ListViewsRequestOrBuilder
    *
    * <pre>
    * Required. The bucket whose views are to be listed:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
@@ -86,6 +88,7 @@ public interface ListViewsRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of results to return from this request.
+   *
    * Non-positive values are ignored. The presence of `nextPageToken` in the
    * response indicates that more results might be available.
    * </pre>

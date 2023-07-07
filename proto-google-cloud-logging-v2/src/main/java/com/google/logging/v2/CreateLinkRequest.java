@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     return new CreateLinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_CreateLinkRequest_descriptor;
@@ -77,6 +72,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The full resource name of the bucket to create a link for.
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -106,6 +102,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The full resource name of the bucket to create a link for.
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -633,6 +630,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the bucket to create a link for.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -661,6 +659,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the bucket to create a link for.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -689,6 +688,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the bucket to create a link for.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -716,6 +716,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the bucket to create a link for.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -739,6 +740,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the bucket to create a link for.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -44,6 +45,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -61,6 +63,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -75,6 +78,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>
@@ -93,6 +97,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
    * by the entry's zero-based index in `WriteLogEntriesRequest.entries`.
+   *
    * Failed requests for which no entries are written will not include
    * per-entry errors.
    * </pre>

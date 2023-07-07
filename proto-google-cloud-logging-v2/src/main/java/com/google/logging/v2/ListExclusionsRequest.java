@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
     return new ListExclusionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_ListExclusionsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent resource whose exclusions are to be listed.
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -106,6 +102,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent resource whose exclusions are to be listed.
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -601,6 +598,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource whose exclusions are to be listed.
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -629,6 +627,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource whose exclusions are to be listed.
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -657,6 +656,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource whose exclusions are to be listed.
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -684,6 +684,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource whose exclusions are to be listed.
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
@@ -707,6 +708,7 @@ public final class ListExclusionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource whose exclusions are to be listed.
+     *
      *     "projects/[PROJECT_ID]"
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"

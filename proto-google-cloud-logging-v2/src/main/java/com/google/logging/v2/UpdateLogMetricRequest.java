@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     return new UpdateLogMetricRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingMetricsProto
         .internal_static_google_logging_v2_UpdateLogMetricRequest_descriptor;
@@ -76,7 +71,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the metric to update:
+   *
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+   *
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -105,7 +102,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the metric to update:
+   *
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+   *
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -554,7 +553,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the metric to update:
+     *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+     *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -582,7 +583,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the metric to update:
+     *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+     *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -610,7 +613,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the metric to update:
+     *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+     *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -637,7 +642,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the metric to update:
+     *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+     *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
@@ -660,7 +667,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the metric to update:
+     *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+     *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.

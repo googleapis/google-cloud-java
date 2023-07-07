@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * Output only. True if new timestamp column based partitioning is in use,
    * false if legacy ingestion-time partitioning is in use.
+   *
    * All new sinks will have this field set true and will use timestamp column
    * based partitioning. If use_partitioned_tables is false, this value has no
    * meaning and will be false. Legacy sinks using partitioned tables will have

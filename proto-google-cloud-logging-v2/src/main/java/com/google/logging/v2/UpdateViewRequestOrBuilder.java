@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface UpdateViewRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the view to update
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
@@ -43,8 +46,11 @@ public interface UpdateViewRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the view to update
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
@@ -96,8 +102,10 @@ public interface UpdateViewRequestOrBuilder
    * Optional. Field mask that specifies the fields in `view` that need
    * an update. A field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *
@@ -114,8 +122,10 @@ public interface UpdateViewRequestOrBuilder
    * Optional. Field mask that specifies the fields in `view` that need
    * an update. A field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *
@@ -132,8 +142,10 @@ public interface UpdateViewRequestOrBuilder
    * Optional. Field mask that specifies the fields in `view` that need
    * an update. A field will be overwritten if, and only if, it is
    * in the update mask. `name` and output only fields cannot be updated.
+   *
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *
    * For example: `updateMask=filter`
    * </pre>
    *

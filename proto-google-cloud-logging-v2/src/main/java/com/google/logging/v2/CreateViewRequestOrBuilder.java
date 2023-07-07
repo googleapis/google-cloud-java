@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface CreateViewRequestOrBuilder
    *
    * <pre>
    * Required. The bucket in which to create the view
+   *
    *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
@@ -43,8 +46,11 @@ public interface CreateViewRequestOrBuilder
    *
    * <pre>
    * Required. The bucket in which to create the view
+   *
    *     `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"`
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *

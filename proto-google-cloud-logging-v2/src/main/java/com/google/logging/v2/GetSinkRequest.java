@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetSinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_GetSinkRequest_descriptor;
@@ -76,11 +71,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the sink:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -107,11 +105,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the sink:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -478,11 +479,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the sink:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -508,11 +512,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the sink:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -538,11 +545,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the sink:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -567,11 +577,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the sink:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -592,11 +605,14 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the sink:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *

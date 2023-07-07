@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
     return new GetExclusionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_GetExclusionRequest_descriptor;
@@ -76,11 +71,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of an existing exclusion:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
@@ -107,11 +105,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of an existing exclusion:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
@@ -481,11 +482,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of an existing exclusion:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -511,11 +515,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of an existing exclusion:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -541,11 +548,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of an existing exclusion:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -570,11 +580,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of an existing exclusion:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *
@@ -595,11 +608,14 @@ public final class GetExclusionRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of an existing exclusion:
+     *
      *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
      *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/exclusions/my-exclusion"`
      * </pre>
      *

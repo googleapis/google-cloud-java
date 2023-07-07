@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
     return new DeleteSinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_DeleteSinkRequest_descriptor;
@@ -77,11 +72,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -109,11 +107,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
+   *
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
@@ -483,11 +484,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to delete, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -514,11 +518,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to delete, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -545,11 +552,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to delete, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -575,11 +585,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to delete, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *
@@ -601,11 +614,14 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The full resource name of the sink to delete, including the
      * parent resource and the sink identifier:
+     *
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/sinks/my-sink"`
      * </pre>
      *

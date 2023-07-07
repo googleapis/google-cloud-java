@@ -303,7 +303,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sets flush severity for asynchronous logging writes. It is disabled by default, enabled when
-   * this method is called with any {@link Severity} value other than {@link Severity.NONE}. Logs
+   * this method is called with any {@link Severity} value other than {@link Severity#NONE}. Logs
    * will be immediately written out for entries at or higher than flush severity.
    *
    * <p>Enabling this can cause the leaking and hanging threads, see BUG(2796) BUG(3880). However
@@ -368,7 +368,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   &#64;code
    *   String exclusionName = "my_exclusion_name";
    *   Exclusion exclusion = Exclusion.of(exclusionName,
-   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   *       "resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)");
    *   Exclusion exclusion = logging.create(exclusion);
    * }
    * </pre>
@@ -385,17 +385,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <p>Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
    * {@link LoggingOptions#getProjectId()} project).
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   String datasetName = "my_dataset";
-   *   SinkInfo sinkInfo = SinkInfo.of(sinkName, DatasetDestination.of(datasetName));
-   *   ApiFuture<Sink> future = logging.createAsync(sinkInfo);
-   *   // ...
-   *   Sink sink = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * String datasetName = "my_dataset";
+   * SinkInfo sinkInfo = SinkInfo.of(sinkName, DatasetDestination.of(datasetName));
+   * ApiFuture<Sink> future = logging.createAsync(sinkInfo);
+   * // ...
+   * Sink sink = future.get();
+   * }</pre>
    */
   ApiFuture<Sink> createAsync(SinkInfo sink);
 
@@ -405,16 +402,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously creating a metric for logs with severity higher or equal to ERROR.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
-   *   ApiFuture<Metric> future = logging.createAsync(metricInfo);
-   *   // ...
-   *   Metric metric = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
+   * ApiFuture<Metric> future = logging.createAsync(metricInfo);
+   * // ...
+   * Metric metric = future.get();
+   * }</pre>
    */
   ApiFuture<Metric> createAsync(MetricInfo metric);
 
@@ -424,17 +418,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously creating the exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion.of(exclusionName,
-   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
-   *   ApiFuture<Exclusion> future = logging.createAsync(exclusion);
-   *   // ...
-   *   Exclusion exclusion = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion.of(exclusionName,
+   *     "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   * ApiFuture<Exclusion> future = logging.createAsync(exclusion);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * }</pre>
    */
   ApiFuture<Exclusion> createAsync(Exclusion exclusion);
 
@@ -443,16 +434,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of updating a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   String datasetName = "my_dataset";
-   *   SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
-   *       .setVersionFormat(SinkInfo.VersionFormat.V2).setFilter("severity>=ERROR").build();
-   *   Sink sink = logging.update(sinkInfo);
-   * }
-   * </pre>
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * String datasetName = "my_dataset";
+   * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+   *     .setVersionFormat(SinkInfo.VersionFormat.V2).setFilter("severity>=ERROR").build();
+   * Sink sink = logging.update(sinkInfo);
+   * }</pre>
    *
    * @return the created sink
    * @throws LoggingException upon failure
@@ -464,15 +452,12 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of updating a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
-   *       .build();
-   *   Metric metric = logging.update(metricInfo);
-   * }
-   * </pre>
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
+   *     .build();
+   * Metric metric = logging.update(metricInfo);
+   * }</pre>
    *
    * @return the created metric
    * @throws LoggingException upon failure
@@ -484,16 +469,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of updating the exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion
-   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
-   *       .setDescription("new description").setIsDisabled(false).build();
-   *   Exclusion exclusion = logging.update(exclusion);
-   * }
-   * </pre>
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion
+   *     .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *     .setDescription("new description").setIsDisabled(false).build();
+   * Exclusion exclusion = logging.update(exclusion);
+   * }</pre>
    *
    * @return the updated exclusion
    * @throws LoggingException upon failure
@@ -507,18 +489,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously updating a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   String datasetName = "my_dataset";
-   *   SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
-   *       .setVersionFormat(SinkInfo.VersionFormat.V2).setFilter("severity>=ERROR").build();
-   *   ApiFuture<Sink> future = logging.updateAsync(sinkInfo);
-   *   // ...
-   *   Sink sink = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * String datasetName = "my_dataset";
+   * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+   *     .setVersionFormat(SinkInfo.VersionFormat.V2).setFilter("severity>=ERROR").build();
+   * ApiFuture<Sink> future = logging.updateAsync(sinkInfo);
+   * // ...
+   * Sink sink = future.get();
+   * }</pre>
    */
   ApiFuture<Sink> updateAsync(SinkInfo sink);
 
@@ -529,17 +508,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously updating a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
-   *       .build();
-   *   ApiFuture<Metric> future = logging.updateAsync(metricInfo);
-   *   // ...
-   *   Metric metric = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
+   *     .build();
+   * ApiFuture<Metric> future = logging.updateAsync(metricInfo);
+   * // ...
+   * Metric metric = future.get();
+   * }</pre>
    */
   ApiFuture<Metric> updateAsync(MetricInfo metric);
 
@@ -550,18 +526,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronous exclusion update:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion
-   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
-   *       .setDescription("new description").setIsDisabled(false).build();
-   *   ApiFuture<Exclusion> future = logging.updateAsync(exclusion);
-   *   // ...
-   *   Exclusion exclusion = future.get();
-   * }
-   * </pre>
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion
+   *     .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *     .setDescription("new description").setIsDisabled(false).build();
+   * ApiFuture<Exclusion> future = logging.updateAsync(exclusion);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * }</pre>
    */
   ApiFuture<Exclusion> updateAsync(Exclusion exclusion);
 
@@ -570,16 +543,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of getting a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   Sink sink = logging.getSink(sinkName);
-   *   if (sink == null) {
-   *     // sink was not found
-   *   }
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * Sink sink = logging.getSink(sinkName);
+   * if (sink == null) {
+   *   // sink was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -591,18 +561,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously getting a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   ApiFuture<Sink> future = logging.getSinkAsync(sinkName);
-   *   // ...
-   *   Sink sink = future.get();
-   *   if (sink == null) {
-   *     // sink was not found
-   *   }
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * ApiFuture<Sink> future = logging.getSinkAsync(sinkName);
+   * // ...
+   * Sink sink = future.get();
+   * if (sink == null) {
+   *   // sink was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -615,17 +582,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing sinks, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
-   *   Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
-   *   while (sinkIterator.hasNext()) {
-   *     Sink sink = sinkIterator.next();
-   *     // do something with the sink
-   *   }
+   * <pre>{@code
+   * Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
+   * Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
+   * while (sinkIterator.hasNext()) {
+   *   Sink sink = sinkIterator.next();
+   *   // do something with the sink
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -657,18 +621,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of deleting a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   boolean deleted = logging.deleteSink(sinkName);
-   *   if (deleted) {
-   *     // the sink was deleted
-   *   } else {
-   *     // the sink was not found
-   *   }
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * boolean deleted = logging.deleteSink(sinkName);
+   * if (deleted) {
+   *   // the sink was deleted
+   * } else {
+   *   // the sink was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @return {@code true} if the sink was deleted, {@code false} if it was not found
    */
@@ -681,20 +642,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously deleting a sink.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String sinkName = "my_sink_name";
-   *   ApiFuture<Boolean> future = logging.deleteSinkAsync(sinkName);
-   *   // ...
-   *   boolean deleted = future.get();
-   *   if (deleted) {
-   *     // the sink was deleted
-   *   } else {
-   *     // the sink was not found
-   *   }
+   * <pre>{@code
+   * String sinkName = "my_sink_name";
+   * ApiFuture<Boolean> future = logging.deleteSinkAsync(sinkName);
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the sink was deleted
+   * } else {
+   *   // the sink was not found
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<Boolean> deleteSinkAsync(String sink);
 
@@ -705,17 +663,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing log names, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   Page<Log> logNames = logging.listLogs(ListOption.pageSize(100));
-   *   Iterator<Log> logIterator = logNames.iterateAll().iterator();
-   *   while (logIterator.hasNext()) {
-   *     String logName = logIterator.next();
-   *     // do something with the log name
-   *   }
+   * <pre>{@code
+   * Page<Log> logNames = logging.listLogs(ListOption.pageSize(100));
+   * Iterator<Log> logIterator = logNames.iterateAll().iterator();
+   * while (logIterator.hasNext()) {
+   *   String logName = logIterator.next();
+   *   // do something with the log name
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -753,18 +708,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of deleting a log.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String logName = "my_log_name";
-   *   boolean deleted = logging.deleteLog(logName);
-   *   if (deleted) {
-   *     // the log was deleted
-   *   } else {
-   *     // the log was not found
-   *   }
+   * <pre>{@code
+   * String logName = "my_log_name";
+   * boolean deleted = logging.deleteLog(logName);
+   * if (deleted) {
+   *   // the log was deleted
+   * } else {
+   *   // the log was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @return {@code true} if the log was deleted, {@code false} if it was not found
    */
@@ -777,19 +729,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of deleting a log by folder destination.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String logName = "my_log_name";
-   *   String folder = "my_folder";
-   *   boolean deleted = logging.deleteLog(logName, LogDestinationName.folder(folder));
-   *   if (deleted) {
-   *     // the log was deleted
-   *   } else {
-   *     // the log was not found
-   *   }
+   * <pre>{@code
+   * String logName = "my_log_name";
+   * String folder = "my_folder";
+   * boolean deleted = logging.deleteLog(logName, LogDestinationName.folder(folder));
+   * if (deleted) {
+   *   // the log was deleted
+   * } else {
+   *   // the log was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @return {@code true} if the log was deleted, {@code false} if it was not found
    */
@@ -806,21 +755,18 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously deleting a log by folder destination.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String logName = "my_log_name";
-   *   String folder = "my_folder";
-   *   ApiFuture<Boolean> future = logging.deleteLogAsync(logName, LogDestinationName.folder(folder));
-   *   // ...
-   *   boolean deleted = future.get();
-   *   if (deleted) {
-   *     // the log was deleted
-   *   } else {
-   *     // the log was not found
-   *   }
+   * <pre>{@code
+   * String logName = "my_log_name";
+   * String folder = "my_folder";
+   * ApiFuture<Boolean> future = logging.deleteLogAsync(logName, LogDestinationName.folder(folder));
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the log was deleted
+   * } else {
+   *   // the log was not found
    * }
-   * </pre>
+   * }</pre>
    */
   default ApiFuture<Boolean> deleteLogAsync(String log, LogDestinationName destination) {
     throw new UnsupportedOperationException(
@@ -834,20 +780,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously deleting a log.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String logName = "my_log_name";
-   *   ApiFuture<Boolean> future = logging.deleteLogAsync(logName);
-   *   // ...
-   *   boolean deleted = future.get();
-   *   if (deleted) {
-   *     // the log was deleted
-   *   } else {
-   *     // the log was not found
-   *   }
+   * <pre>{@code
+   * String logName = "my_log_name";
+   * ApiFuture<Boolean> future = logging.deleteLogAsync(logName);
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the log was deleted
+   * } else {
+   *   // the log was not found
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<Boolean> deleteLogAsync(String log);
 
@@ -858,18 +801,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing monitored resource descriptors, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   Page<MonitoredResourceDescriptor> descriptors = logging
-   *       .listMonitoredResourceDescriptors(ListOption.pageSize(100));
-   *   Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
-   *   while (descriptorIterator.hasNext()) {
-   *     MonitoredResourceDescriptor descriptor = descriptorIterator.next();
-   *     // do something with the descriptor
-   *   }
+   * <pre>{@code
+   * Page<MonitoredResourceDescriptor> descriptors = logging
+   *     .listMonitoredResourceDescriptors(ListOption.pageSize(100));
+   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
+   * while (descriptorIterator.hasNext()) {
+   *   MonitoredResourceDescriptor descriptor = descriptorIterator.next();
+   *   // do something with the descriptor
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -904,16 +844,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of getting a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   Metric metric = logging.getMetric(metricName);
-   *   if (metric == null) {
-   *     // metric was not found
-   *   }
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * Metric metric = logging.getMetric(metricName);
+   * if (metric == null) {
+   *   // metric was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -925,18 +862,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously getting a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   ApiFuture<Metric> future = logging.getMetricAsync(metricName);
-   *   // ...
-   *   Metric metric = future.get();
-   *   if (metric == null) {
-   *     // metric was not found
-   *   }
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * ApiFuture<Metric> future = logging.getMetricAsync(metricName);
+   * // ...
+   * Metric metric = future.get();
+   * if (metric == null) {
+   *   // metric was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -949,17 +883,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing metrics, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
-   *   Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
-   *   while (metricIterator.hasNext()) {
-   *     Metric metric = metricIterator.next();
-   *     // do something with the metric
-   *   }
+   * <pre>{@code
+   * Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
+   * Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
+   * while (metricIterator.hasNext()) {
+   *   Metric metric = metricIterator.next();
+   *   // do something with the metric
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -991,18 +922,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of deleting a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   boolean deleted = logging.deleteMetric(metricName);
-   *   if (deleted) {
-   *     // the metric was deleted
-   *   } else {
-   *     // the metric was not found
-   *   }
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * boolean deleted = logging.deleteMetric(metricName);
+   * if (deleted) {
+   *   // the metric was deleted
+   * } else {
+   *   // the metric was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @return {@code true} if the metric was deleted, {@code false} if it was not found
    */
@@ -1015,20 +943,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously deleting a metric.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   ApiFuture<Boolean> future = logging.deleteMetricAsync(metricName);
-   *   // ...
-   *   boolean deleted = future.get();
-   *   if (deleted) {
-   *     // the metric was deleted
-   *   } else {
-   *     // the metric was not found
-   *   }
+   * <pre>{@code
+   * String metricName = "my_metric_name";
+   * ApiFuture<Boolean> future = logging.deleteMetricAsync(metricName);
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the metric was deleted
+   * } else {
+   *   // the metric was not found
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<Boolean> deleteMetricAsync(String metric);
 
@@ -1037,16 +962,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of getting the description of an exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = logging.getExclusion(exclusionName);
-   *   if (exclusion == null) {
-   *     // exclusion was not found
-   *   }
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = logging.getExclusion(exclusionName);
+   * if (exclusion == null) {
+   *   // exclusion was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -1059,18 +981,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously getting the exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   ApiFuture<Exclusion> future = logging.getExclusionAsync(exclusionName);
-   *   // ...
-   *   Exclusion exclusion = future.get();
-   *   if (exclusion == null) {
-   *     // exclusion was not found
-   *   }
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * ApiFuture<Exclusion> future = logging.getExclusionAsync(exclusionName);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * if (exclusion == null) {
+   *   // exclusion was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -1081,18 +1000,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of deleting the exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   boolean deleted = logging.deleteExclusion(exclusionName);
-   *   if (deleted) {
-   *     // the exclusion was deleted
-   *   } else {
-   *     // the exclusion was not found
-   *   }
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * boolean deleted = logging.deleteExclusion(exclusionName);
+   * if (deleted) {
+   *   // the exclusion was deleted
+   * } else {
+   *   // the exclusion was not found
    * }
-   * </pre>
+   * }</pre>
    *
    * @return {@code true} if the exclusion was deleted, {@code false} if it was not found
    */
@@ -1105,20 +1021,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously deleting the exclusion:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   ApiFuture<Boolean> future = logging.deleteExclusionAsync(metricName);
-   *   // ...
-   *   boolean deleted = future.get();
-   *   if (deleted) {
-   *     // the exclusion was deleted
-   *   } else {
-   *     // the exclusion was not found
-   *   }
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * ApiFuture<Boolean> future = logging.deleteExclusionAsync(metricName);
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the exclusion was deleted
+   * } else {
+   *   // the exclusion was not found
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<Boolean> deleteExclusionAsync(String exclusion);
 
@@ -1129,17 +1042,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing exclusions, specifying the page size:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   Page<Exclusion> exclusions = logging.listMetrics(ListOption.pageSize(100));
-   *   Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
-   *   while (exclusionIterator.hasNext()) {
-   *     Exclusion exclusion = exclusionIterator.next();
-   *     // do something with the exclusion
-   *   }
+   * <pre>{@code
+   * Page<Exclusion> exclusions = logging.listMetrics(ListOption.pageSize(100));
+   * Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
+   * while (exclusionIterator.hasNext()) {
+   *   Exclusion exclusion = exclusionIterator.next();
+   *   // do something with the exclusion
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -1208,18 +1118,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of listing log entries for a specific log.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String filter = "logName=projects/my_project_id/logs/my_log_name";
-   *   Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
-   *   Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
-   *   while (entryIterator.hasNext()) {
-   *     LogEntry entry = entryIterator.next();
-   *     // do something with the entry
-   *   }
+   * <pre>{@code
+   * String filter = "logName=projects/my_project_id/logs/my_log_name";
+   * Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
+   * Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
+   * while (entryIterator.hasNext()) {
+   *   LogEntry entry = entryIterator.next();
+   *   // do something with the entry
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */
@@ -1262,16 +1169,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of streaming log entries for a specific project.
    *
-   * <pre>
-   * {@code}
+   * <pre>{@code
    * LogEntryServerStream stream = logging.tailLogEntries(TailOption.project("my_project_id"));
    * Iterator<LogEntry> it = stream.iterator();
    * while (it.hasNext()) {
    *   // do something with entry
    *   // call stream.cancel(); to stop streaming
    * }
-   * }
-   * </pre>
+   * }</pre>
    */
   @BetaApi("The surface for the tail streaming is not stable yet and may change in the future.")
   LogEntryServerStream tailLogEntries(TailOption... options);
@@ -1279,7 +1184,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   /**
    * Populates metadata fields of the immutable collection of {@link LogEntry} items. Only empty
    * fields are populated. The {@link SourceLocation} is populated only for items with the severity
-   * set to {@link Severity.DEBUG}. The information about {@link HttpRequest}, trace and span Id is
+   * set to {@link Severity#DEBUG}. The information about {@link HttpRequest}, trace and span Id is
    * retrieved using {@link ContextHandler}.
    *
    * @param logEntries an immutable collection of {@link LogEntry} items.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface CreateLogMetricRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the project in which to create the metric:
+   *
    *     "projects/[PROJECT_ID]"
+   *
    * The new metric must be provided in the request.
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface CreateLogMetricRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the project in which to create the metric:
+   *
    *     "projects/[PROJECT_ID]"
+   *
    * The new metric must be provided in the request.
    * </pre>
    *

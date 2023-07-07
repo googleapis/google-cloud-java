@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,8 +185,10 @@ public interface CopyLogEntriesMetadataOrBuilder
    * <pre>
    * The IAM identity of a service account that must be granted access to the
    * destination.
+   *
    * If the service account is not granted permission to the destination within
    * an hour, the operation will be cancelled.
+   *
    * For example: `"serviceAccount:foo&#64;bar.com"`
    * </pre>
    *
@@ -201,8 +203,10 @@ public interface CopyLogEntriesMetadataOrBuilder
    * <pre>
    * The IAM identity of a service account that must be granted access to the
    * destination.
+   *
    * If the service account is not granted permission to the destination within
    * an hour, the operation will be cancelled.
+   *
    * For example: `"serviceAccount:foo&#64;bar.com"`
    * </pre>
    *

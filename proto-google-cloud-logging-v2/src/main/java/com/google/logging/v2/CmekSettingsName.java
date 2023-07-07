@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,7 +146,7 @@ public class CmekSettingsName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  /** @deprecated Please use {@link #ofProjectName()} instead */
+  /** @deprecated Please use {@link #ofProjectName(String)} instead */
   @Deprecated
   public static CmekSettingsName ofProjectCmekSettingsName(String project) {
     return newBuilder().setProject(project).build();
@@ -157,7 +157,7 @@ public class CmekSettingsName implements ResourceName {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build();
   }
 
-  /** @deprecated Please use {@link #ofOrganizationName()} instead */
+  /** @deprecated Please use {@link #ofOrganizationName(String)} instead */
   @Deprecated
   public static CmekSettingsName ofOrganizationCmekSettingsName(String organization) {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build();
@@ -168,7 +168,7 @@ public class CmekSettingsName implements ResourceName {
     return newFolderCmekSettingsBuilder().setFolder(folder).build();
   }
 
-  /** @deprecated Please use {@link #ofFolderName()} instead */
+  /** @deprecated Please use {@link #ofFolderName(String)} instead */
   @Deprecated
   public static CmekSettingsName ofFolderCmekSettingsName(String folder) {
     return newFolderCmekSettingsBuilder().setFolder(folder).build();
@@ -179,7 +179,7 @@ public class CmekSettingsName implements ResourceName {
     return newBillingAccountCmekSettingsBuilder().setBillingAccount(billingAccount).build();
   }
 
-  /** @deprecated Please use {@link #ofBillingAccountName()} instead */
+  /** @deprecated Please use {@link #ofBillingAccountName(String)} instead */
   @Deprecated
   public static CmekSettingsName ofBillingAccountCmekSettingsName(String billingAccount) {
     return newBillingAccountCmekSettingsBuilder().setBillingAccount(billingAccount).build();
@@ -194,7 +194,7 @@ public class CmekSettingsName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  /** @deprecated Please use {@link #formatProjectName()} instead */
+  /** @deprecated Please use {@link #formatProjectName(String)} instead */
   @Deprecated
   public static String formatProjectCmekSettingsName(String project) {
     return newBuilder().setProject(project).build().toString();
@@ -205,7 +205,7 @@ public class CmekSettingsName implements ResourceName {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build().toString();
   }
 
-  /** @deprecated Please use {@link #formatOrganizationName()} instead */
+  /** @deprecated Please use {@link #formatOrganizationName(String)} instead */
   @Deprecated
   public static String formatOrganizationCmekSettingsName(String organization) {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build().toString();
@@ -216,7 +216,7 @@ public class CmekSettingsName implements ResourceName {
     return newFolderCmekSettingsBuilder().setFolder(folder).build().toString();
   }
 
-  /** @deprecated Please use {@link #formatFolderName()} instead */
+  /** @deprecated Please use {@link #formatFolderName(String)} instead */
   @Deprecated
   public static String formatFolderCmekSettingsName(String folder) {
     return newFolderCmekSettingsBuilder().setFolder(folder).build().toString();
@@ -230,7 +230,7 @@ public class CmekSettingsName implements ResourceName {
         .toString();
   }
 
-  /** @deprecated Please use {@link #formatBillingAccountName()} instead */
+  /** @deprecated Please use {@link #formatBillingAccountName(String)} instead */
   @Deprecated
   public static String formatBillingAccountCmekSettingsName(String billingAccount) {
     return newBillingAccountCmekSettingsBuilder()

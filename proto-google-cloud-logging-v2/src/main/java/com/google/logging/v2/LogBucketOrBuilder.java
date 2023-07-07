@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,17 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Output only. The resource name of the bucket.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket`
+   *
    * For a list of supported locations, see [Supported
    * Regions](https://cloud.google.com/logging/docs/region-support)
+   *
    * For the location of `global` it is unspecified where log entries are
    * actually stored.
+   *
    * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
@@ -47,12 +52,17 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Output only. The resource name of the bucket.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket`
+   *
    * For a list of supported locations, see [Supported
    * Regions](https://cloud.google.com/logging/docs/region-support)
+   *
    * For the location of `global` it is unspecified where log entries are
    * actually stored.
+   *
    * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
@@ -187,6 +197,7 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Whether the bucket is locked.
+   *
    * The retention period on a locked bucket cannot be changed. Locked buckets
    * may only be deleted if they are empty.
    * </pre>
@@ -231,6 +242,7 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Whether log analytics is enabled for this bucket.
+   *
    * Once enabled, log analytics features cannot be disabled.
    * </pre>
    *
@@ -245,8 +257,10 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -261,8 +275,10 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -277,8 +293,10 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -294,8 +312,10 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>

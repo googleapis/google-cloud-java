@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,14 @@ public interface CreateSinkRequestOrBuilder
    *
    * <pre>
    * Required. The resource in which to create the sink:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-project"`
    *   `"organizations/123456789"`
    * </pre>
@@ -49,11 +52,14 @@ public interface CreateSinkRequestOrBuilder
    *
    * <pre>
    * Required. The resource in which to create the sink:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-project"`
    *   `"organizations/123456789"`
    * </pre>
@@ -114,6 +120,7 @@ public interface CreateSinkRequestOrBuilder
    * the same group or service account used by Cloud Logging before the addition
    * of writer identities to this API. The sink's destination must be in the
    * same project as the sink itself.
+   *
    * If this field is set to true, or if the sink is owned by a non-project
    * resource such as an organization, then the value of `writer_identity` will
    * be a unique service account used only for exports from the new sink. For

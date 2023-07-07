@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
     return new DeleteViewRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_DeleteViewRequest_descriptor;
@@ -76,8 +71,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The full resource name of the view to delete:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+   *
    * For example:
+   *
    *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
@@ -104,8 +102,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The full resource name of the view to delete:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+   *
    * For example:
+   *
    *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
@@ -474,8 +475,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the view to delete:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+     *
      * For example:
+     *
      *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
@@ -501,8 +505,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the view to delete:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+     *
      * For example:
+     *
      *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
@@ -528,8 +535,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the view to delete:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+     *
      * For example:
+     *
      *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
@@ -554,8 +564,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the view to delete:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+     *
      * For example:
+     *
      *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
@@ -576,8 +589,11 @@ public final class DeleteViewRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The full resource name of the view to delete:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+     *
      * For example:
+     *
      *    `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *

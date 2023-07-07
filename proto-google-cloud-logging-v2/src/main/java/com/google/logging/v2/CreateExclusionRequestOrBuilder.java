@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,14 @@ public interface CreateExclusionRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-logging-project"`
    *   `"organizations/123456789"`
    * </pre>
@@ -49,11 +52,14 @@ public interface CreateExclusionRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
+   *
    *     "projects/[PROJECT_ID]"
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
+   *
    * For examples:
+   *
    *   `"projects/my-logging-project"`
    *   `"organizations/123456789"`
    * </pre>

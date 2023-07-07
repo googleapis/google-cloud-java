@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     return new Link();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_Link_descriptor;
@@ -79,11 +74,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the link. The name can have up to 100 characters.
    * A valid link id (at the end of the link name) must only have alphanumeric
    * characters and underscores within it.
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
    * </pre>
    *
@@ -110,11 +108,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the link. The name can have up to 100 characters.
    * A valid link id (at the end of the link name) must only have alphanumeric
    * characters and underscores within it.
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
    * </pre>
    *
@@ -144,6 +145,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes this link.
+   *
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
@@ -168,6 +170,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes this link.
+   *
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
@@ -791,11 +794,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the link. The name can have up to 100 characters.
      * A valid link id (at the end of the link name) must only have alphanumeric
      * characters and underscores within it.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
      * </pre>
      *
@@ -821,11 +827,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the link. The name can have up to 100 characters.
      * A valid link id (at the end of the link name) must only have alphanumeric
      * characters and underscores within it.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
      * </pre>
      *
@@ -851,11 +860,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the link. The name can have up to 100 characters.
      * A valid link id (at the end of the link name) must only have alphanumeric
      * characters and underscores within it.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
      * </pre>
      *
@@ -880,11 +892,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the link. The name can have up to 100 characters.
      * A valid link id (at the end of the link name) must only have alphanumeric
      * characters and underscores within it.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
      * </pre>
      *
@@ -905,11 +920,14 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the link. The name can have up to 100 characters.
      * A valid link id (at the end of the link name) must only have alphanumeric
      * characters and underscores within it.
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket/links/my_link
      * </pre>
      *
@@ -935,6 +953,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes this link.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -958,6 +977,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes this link.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -981,6 +1001,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes this link.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -1003,6 +1024,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes this link.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
@@ -1021,6 +1043,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes this link.
+     *
      * The maximum length of the description is 8000 characters.
      * </pre>
      *

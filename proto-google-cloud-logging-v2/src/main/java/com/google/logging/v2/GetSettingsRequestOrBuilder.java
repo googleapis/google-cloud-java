@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,16 @@ public interface GetSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource for which to retrieve settings.
+   *
    *     "projects/[PROJECT_ID]/settings"
    *     "organizations/[ORGANIZATION_ID]/settings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
    *     "folders/[FOLDER_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can be get for Google Cloud projects,
    * folders, organizations and billing accounts. Currently it can only be
    * configured for organizations. Once configured for an organization, it
@@ -52,12 +56,16 @@ public interface GetSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource for which to retrieve settings.
+   *
    *     "projects/[PROJECT_ID]/settings"
    *     "organizations/[ORGANIZATION_ID]/settings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
    *     "folders/[FOLDER_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can be get for Google Cloud projects,
    * folders, organizations and billing accounts. Currently it can only be
    * configured for organizations. Once configured for an organization, it

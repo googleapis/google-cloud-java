@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,14 @@ public interface GetExclusionRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of an existing exclusion:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
@@ -48,11 +51,14 @@ public interface GetExclusionRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of an existing exclusion:
+   *
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *

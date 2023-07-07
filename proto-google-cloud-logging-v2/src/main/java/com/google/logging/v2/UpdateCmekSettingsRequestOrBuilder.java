@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,16 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the CMEK settings to update.
+   *
    *     "projects/[PROJECT_ID]/cmekSettings"
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
+   *
    * For example:
+   *
    *   `"organizations/12345/cmekSettings"`
+   *
    * Note: CMEK for the Log Router can currently only be configured for Google
    * Cloud organizations. Once configured, it applies to all projects and
    * folders in the Google Cloud organization.
@@ -49,12 +53,16 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the CMEK settings to update.
+   *
    *     "projects/[PROJECT_ID]/cmekSettings"
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
+   *
    * For example:
+   *
    *   `"organizations/12345/cmekSettings"`
+   *
    * Note: CMEK for the Log Router can currently only be configured for Google
    * Cloud organizations. Once configured, it applies to all projects and
    * folders in the Google Cloud organization.
@@ -71,6 +79,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -88,6 +97,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -105,6 +115,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -123,7 +134,9 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Optional. Field mask identifying which fields from `cmek_settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
@@ -140,7 +153,9 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Optional. Field mask identifying which fields from `cmek_settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
@@ -157,7 +172,9 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Optional. Field mask identifying which fields from `cmek_settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *

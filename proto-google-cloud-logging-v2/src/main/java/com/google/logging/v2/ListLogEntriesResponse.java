@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListLogEntriesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -160,6 +155,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
    * method again using the value of `nextPageToken` as `pageToken`.
+   *
    * If a value for `next_page_token` appears and the `entries` field is empty,
    * it means that the search found no log entries so far but it did not have
    * time to search all the possible log entries.  Retry the method with this
@@ -191,6 +187,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
    * method again using the value of `nextPageToken` as `pageToken`.
+   *
    * If a value for `next_page_token` appears and the `entries` field is empty,
    * it means that the search found no log entries so far but it did not have
    * time to search all the possible log entries.  Retry the method with this
@@ -1017,6 +1014,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * If there might be more results than those appearing in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
      * method again using the value of `nextPageToken` as `pageToken`.
+     *
      * If a value for `next_page_token` appears and the `entries` field is empty,
      * it means that the search found no log entries so far but it did not have
      * time to search all the possible log entries.  Retry the method with this
@@ -1047,6 +1045,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * If there might be more results than those appearing in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
      * method again using the value of `nextPageToken` as `pageToken`.
+     *
      * If a value for `next_page_token` appears and the `entries` field is empty,
      * it means that the search found no log entries so far but it did not have
      * time to search all the possible log entries.  Retry the method with this
@@ -1077,6 +1076,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * If there might be more results than those appearing in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
      * method again using the value of `nextPageToken` as `pageToken`.
+     *
      * If a value for `next_page_token` appears and the `entries` field is empty,
      * it means that the search found no log entries so far but it did not have
      * time to search all the possible log entries.  Retry the method with this
@@ -1106,6 +1106,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * If there might be more results than those appearing in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
      * method again using the value of `nextPageToken` as `pageToken`.
+     *
      * If a value for `next_page_token` appears and the `entries` field is empty,
      * it means that the search found no log entries so far but it did not have
      * time to search all the possible log entries.  Retry the method with this
@@ -1131,6 +1132,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * If there might be more results than those appearing in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
      * method again using the value of `nextPageToken` as `pageToken`.
+     *
      * If a value for `next_page_token` appears and the `entries` field is empty,
      * it means that the search found no log entries so far but it did not have
      * time to search all the possible log entries.  Retry the method with this

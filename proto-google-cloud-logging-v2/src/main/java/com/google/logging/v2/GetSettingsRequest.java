@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.logging.v2;
  * <pre>
  * The parameters to
  * [GetSettings][google.logging.v2.ConfigServiceV2.GetSettings].
+ *
  * See [Enabling CMEK for Log
  * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
  * more information.
@@ -51,11 +52,6 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
     return new GetSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_GetSettingsRequest_descriptor;
@@ -80,12 +76,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource for which to retrieve settings.
+   *
    *     "projects/[PROJECT_ID]/settings"
    *     "organizations/[ORGANIZATION_ID]/settings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
    *     "folders/[FOLDER_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can be get for Google Cloud projects,
    * folders, organizations and billing accounts. Currently it can only be
    * configured for organizations. Once configured for an organization, it
@@ -115,12 +115,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource for which to retrieve settings.
+   *
    *     "projects/[PROJECT_ID]/settings"
    *     "organizations/[ORGANIZATION_ID]/settings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
    *     "folders/[FOLDER_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can be get for Google Cloud projects,
    * folders, organizations and billing accounts. Currently it can only be
    * configured for organizations. Once configured for an organization, it
@@ -310,6 +314,7 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The parameters to
    * [GetSettings][google.logging.v2.ConfigServiceV2.GetSettings].
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
    * more information.
@@ -496,12 +501,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource for which to retrieve settings.
+     *
      *     "projects/[PROJECT_ID]/settings"
      *     "organizations/[ORGANIZATION_ID]/settings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
      *     "folders/[FOLDER_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can be get for Google Cloud projects,
      * folders, organizations and billing accounts. Currently it can only be
      * configured for organizations. Once configured for an organization, it
@@ -530,12 +539,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource for which to retrieve settings.
+     *
      *     "projects/[PROJECT_ID]/settings"
      *     "organizations/[ORGANIZATION_ID]/settings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
      *     "folders/[FOLDER_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can be get for Google Cloud projects,
      * folders, organizations and billing accounts. Currently it can only be
      * configured for organizations. Once configured for an organization, it
@@ -564,12 +577,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource for which to retrieve settings.
+     *
      *     "projects/[PROJECT_ID]/settings"
      *     "organizations/[ORGANIZATION_ID]/settings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
      *     "folders/[FOLDER_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can be get for Google Cloud projects,
      * folders, organizations and billing accounts. Currently it can only be
      * configured for organizations. Once configured for an organization, it
@@ -597,12 +614,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource for which to retrieve settings.
+     *
      *     "projects/[PROJECT_ID]/settings"
      *     "organizations/[ORGANIZATION_ID]/settings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
      *     "folders/[FOLDER_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can be get for Google Cloud projects,
      * folders, organizations and billing accounts. Currently it can only be
      * configured for organizations. Once configured for an organization, it
@@ -626,12 +647,16 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource for which to retrieve settings.
+     *
      *     "projects/[PROJECT_ID]/settings"
      *     "organizations/[ORGANIZATION_ID]/settings"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/settings"
      *     "folders/[FOLDER_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can be get for Google Cloud projects,
      * folders, organizations and billing accounts. Currently it can only be
      * configured for organizations. Once configured for an organization, it

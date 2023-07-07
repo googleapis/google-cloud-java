@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,12 @@ public interface IndexConfigOrBuilder
    *
    * <pre>
    * Required. The LogEntry field path to index.
+   *
    * Note that some paths are automatically indexed, and other paths are not
    * eligible for indexing. See [indexing documentation](
    * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
    * for details.
+   *
    * For example: `jsonPayload.request.status`
    * </pre>
    *
@@ -45,10 +47,12 @@ public interface IndexConfigOrBuilder
    *
    * <pre>
    * Required. The LogEntry field path to index.
+   *
    * Note that some paths are automatically indexed, and other paths are not
    * eligible for indexing. See [indexing documentation](
    * https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields)
    * for details.
+   *
    * For example: `jsonPayload.request.status`
    * </pre>
    *
@@ -88,6 +92,7 @@ public interface IndexConfigOrBuilder
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>
@@ -103,6 +108,7 @@ public interface IndexConfigOrBuilder
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>
@@ -118,6 +124,7 @@ public interface IndexConfigOrBuilder
    *
    * <pre>
    * Output only. The timestamp when the index was last modified.
+   *
    * This is used to return the timestamp, and will be ignored if supplied
    * during update.
    * </pre>

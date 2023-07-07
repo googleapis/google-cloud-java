@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.logging.v2;
  * <pre>
  * The parameters to
  * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings].
+ *
  * See [Enabling CMEK for Log
  * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
  * more information.
@@ -51,11 +52,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     return new UpdateSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_UpdateSettingsRequest_descriptor;
@@ -80,9 +76,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name for the settings to update.
+   *
    *     "organizations/[ORGANIZATION_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can currently only be configured for
    * Google Cloud organizations. Once configured, it applies to all projects and
    * folders in the Google Cloud organization.
@@ -109,9 +109,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name for the settings to update.
+   *
    *     "organizations/[ORGANIZATION_ID]/settings"
+   *
    * For example:
+   *
    *   `"organizations/12345/settings"`
+   *
    * Note: Settings for the Log Router can currently only be configured for
    * Google Cloud organizations. Once configured, it applies to all projects and
    * folders in the Google Cloud organization.
@@ -141,6 +145,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -160,6 +165,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -179,6 +185,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The settings to update.
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
@@ -201,7 +208,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    * Optional. Field mask identifying which fields from `settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
@@ -221,7 +230,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    * Optional. Field mask identifying which fields from `settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
@@ -241,7 +252,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    * Optional. Field mask identifying which fields from `settings` should
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
+   *
    * See [FieldMask][google.protobuf.FieldMask] for more information.
+   *
    * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
@@ -446,6 +459,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The parameters to
    * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings].
+   *
    * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
    * more information.
@@ -666,9 +680,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name for the settings to update.
+     *
      *     "organizations/[ORGANIZATION_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can currently only be configured for
      * Google Cloud organizations. Once configured, it applies to all projects and
      * folders in the Google Cloud organization.
@@ -694,9 +712,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name for the settings to update.
+     *
      *     "organizations/[ORGANIZATION_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can currently only be configured for
      * Google Cloud organizations. Once configured, it applies to all projects and
      * folders in the Google Cloud organization.
@@ -722,9 +744,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name for the settings to update.
+     *
      *     "organizations/[ORGANIZATION_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can currently only be configured for
      * Google Cloud organizations. Once configured, it applies to all projects and
      * folders in the Google Cloud organization.
@@ -749,9 +775,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name for the settings to update.
+     *
      *     "organizations/[ORGANIZATION_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can currently only be configured for
      * Google Cloud organizations. Once configured, it applies to all projects and
      * folders in the Google Cloud organization.
@@ -772,9 +802,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name for the settings to update.
+     *
      *     "organizations/[ORGANIZATION_ID]/settings"
+     *
      * For example:
+     *
      *   `"organizations/12345/settings"`
+     *
      * Note: Settings for the Log Router can currently only be configured for
      * Google Cloud organizations. Once configured, it applies to all projects and
      * folders in the Google Cloud organization.
@@ -807,6 +841,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -825,6 +860,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -847,6 +883,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -873,6 +910,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -896,6 +934,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -925,6 +964,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -948,6 +988,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -966,6 +1007,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -986,6 +1028,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The settings to update.
+     *
      * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
@@ -1024,7 +1067,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1043,7 +1088,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1068,7 +1115,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1095,7 +1144,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1119,7 +1170,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1149,7 +1202,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1173,7 +1228,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1192,7 +1249,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *
@@ -1215,7 +1274,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      * Optional. Field mask identifying which fields from `settings` should
      * be updated. A field will be overwritten if and only if it is in the update
      * mask. Output only fields cannot be updated.
+     *
      * See [FieldMask][google.protobuf.FieldMask] for more information.
+     *
      * For example: `"updateMask=kmsKeyName"`
      * </pre>
      *

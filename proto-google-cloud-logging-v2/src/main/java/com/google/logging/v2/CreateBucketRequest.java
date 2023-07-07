@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     return new CreateBucketRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_CreateBucketRequest_descriptor;
@@ -77,8 +72,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource in which to create the log bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global"`
    * </pre>
    *
@@ -105,8 +103,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource in which to create the log bucket:
+   *
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *
    * For example:
+   *
    *   `"projects/my-project/locations/global"`
    * </pre>
    *
@@ -638,8 +639,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource in which to create the log bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global"`
      * </pre>
      *
@@ -665,8 +669,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource in which to create the log bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global"`
      * </pre>
      *
@@ -692,8 +699,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource in which to create the log bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global"`
      * </pre>
      *
@@ -718,8 +728,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource in which to create the log bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global"`
      * </pre>
      *
@@ -740,8 +753,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource in which to create the log bucket:
+     *
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+     *
      * For example:
+     *
      *   `"projects/my-project/locations/global"`
      * </pre>
      *

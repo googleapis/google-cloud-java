@@ -44,9 +44,10 @@ import java.util.logging.SimpleFormatter;
  * <p>Java logging levels (see {@link java.util.logging.Level}) are mapped to the following Google
  * Cloud Logging severities:
  *
- * <table summary="Mapping of Java logging level to Cloud Logging severities">
+ * <table>
+ *   <caption>Mapping of Java logging level to Cloud Logging severities</caption>
  * <tr>
- * <th width="50%">Java Level</th>
+ * <th>Java Level</th>
  * <th>Cloud Logging Severity</th>
  * </tr>
  * <tr>

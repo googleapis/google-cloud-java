@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
     return new ListLinksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_ListLinksRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The parent resource whose links are to be listed:
+   *
    *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
    *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
    *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -106,6 +102,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The parent resource whose links are to be listed:
+   *
    *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
    *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
    *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -596,6 +593,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource whose links are to be listed:
+     *
      *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
      *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
      *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -624,6 +622,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource whose links are to be listed:
+     *
      *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
      *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
      *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -652,6 +651,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource whose links are to be listed:
+     *
      *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
      *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
      *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -679,6 +679,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource whose links are to be listed:
+     *
      *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
      *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
      *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
@@ -702,6 +703,7 @@ public final class ListLinksRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource whose links are to be listed:
+     *
      *   "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
      *   "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
      *   "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"

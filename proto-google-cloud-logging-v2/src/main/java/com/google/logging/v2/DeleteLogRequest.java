@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
     return new DeleteLogRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingProto
         .internal_static_google_logging_v2_DeleteLogRequest_descriptor;
@@ -76,13 +71,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the log to delete:
+   *
    * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
    * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
    * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+   *
    * `[LOG_ID]` must be URL-encoded. For example,
    * `"projects/my-project-id/logs/syslog"`,
    * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+   *
    * For more information about log names, see
    * [LogEntry][google.logging.v2.LogEntry].
    * </pre>
@@ -110,13 +108,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the log to delete:
+   *
    * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
    * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
    * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+   *
    * `[LOG_ID]` must be URL-encoded. For example,
    * `"projects/my-project-id/logs/syslog"`,
    * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+   *
    * For more information about log names, see
    * [LogEntry][google.logging.v2.LogEntry].
    * </pre>
@@ -486,13 +487,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the log to delete:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example,
      * `"projects/my-project-id/logs/syslog"`,
      * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+     *
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      * </pre>
@@ -519,13 +523,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the log to delete:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example,
      * `"projects/my-project-id/logs/syslog"`,
      * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+     *
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      * </pre>
@@ -552,13 +559,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the log to delete:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example,
      * `"projects/my-project-id/logs/syslog"`,
      * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+     *
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      * </pre>
@@ -584,13 +594,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the log to delete:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example,
      * `"projects/my-project-id/logs/syslog"`,
      * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+     *
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      * </pre>
@@ -612,13 +625,16 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the log to delete:
+     *
      * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
      * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
      * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
+     *
      * `[LOG_ID]` must be URL-encoded. For example,
      * `"projects/my-project-id/logs/syslog"`,
      * `"organizations/123/logs/cloudaudit.googleapis.com%2Factivity"`.
+     *
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      * </pre>

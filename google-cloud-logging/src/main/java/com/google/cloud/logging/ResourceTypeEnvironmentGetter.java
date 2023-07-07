@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging;
 
+import com.google.cloud.MetadataConfig;
+
 public interface ResourceTypeEnvironmentGetter {
 
   /**
@@ -34,7 +36,7 @@ public interface ResourceTypeEnvironmentGetter {
    * @param name the name of the metadata server attribute.
    * @return the string value of the attribute, or <code>null</code> if the attribute is not defined
    *     in the metadata or the server is not available.
-   * @see MetadataConfig#getAttribute()
+   * @see MetadataConfig#getAttribute(String)
    */
   String getAttribute(String name);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
     return new CreateLogMetricRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingMetricsProto
         .internal_static_google_logging_v2_CreateLogMetricRequest_descriptor;
@@ -76,7 +71,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the project in which to create the metric:
+   *
    *     "projects/[PROJECT_ID]"
+   *
    * The new metric must be provided in the request.
    * </pre>
    *
@@ -103,7 +100,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the project in which to create the metric:
+   *
    *     "projects/[PROJECT_ID]"
+   *
    * The new metric must be provided in the request.
    * </pre>
    *
@@ -553,7 +552,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the project in which to create the metric:
+     *
      *     "projects/[PROJECT_ID]"
+     *
      * The new metric must be provided in the request.
      * </pre>
      *
@@ -579,7 +580,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the project in which to create the metric:
+     *
      *     "projects/[PROJECT_ID]"
+     *
      * The new metric must be provided in the request.
      * </pre>
      *
@@ -605,7 +608,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the project in which to create the metric:
+     *
      *     "projects/[PROJECT_ID]"
+     *
      * The new metric must be provided in the request.
      * </pre>
      *
@@ -630,7 +635,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the project in which to create the metric:
+     *
      *     "projects/[PROJECT_ID]"
+     *
      * The new metric must be provided in the request.
      * </pre>
      *
@@ -651,7 +658,9 @@ public final class CreateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the project in which to create the metric:
+     *
      *     "projects/[PROJECT_ID]"
+     *
      * The new metric must be provided in the request.
      * </pre>
      *

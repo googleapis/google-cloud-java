@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface BigQueryDatasetOrBuilder
    * will match the ID of the link, so the link must match the naming
    * restrictions of BigQuery datasets (alphanumeric characters and underscores
    * only).
+   *
    * The dataset will have a resource path of
    *   "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET_ID]"
    * </pre>
@@ -48,6 +49,7 @@ public interface BigQueryDatasetOrBuilder
    * will match the ID of the link, so the link must match the naming
    * restrictions of BigQuery datasets (alphanumeric characters and underscores
    * only).
+   *
    * The dataset will have a resource path of
    *   "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET_ID]"
    * </pre>

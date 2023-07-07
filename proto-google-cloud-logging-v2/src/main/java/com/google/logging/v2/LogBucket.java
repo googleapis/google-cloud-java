@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     lifecycleState_ = 0;
-    restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    restrictedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     indexConfigs_ = java.util.Collections.emptyList();
   }
 
@@ -49,11 +49,6 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LogBucket();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,12 +74,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the bucket.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket`
+   *
    * For a list of supported locations, see [Supported
    * Regions](https://cloud.google.com/logging/docs/region-support)
+   *
    * For the location of `global` it is unspecified where log entries are
    * actually stored.
+   *
    * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
@@ -109,12 +109,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the bucket.
+   *
    * For example:
+   *
    *   `projects/my-project/locations/global/buckets/my-bucket`
+   *
    * For a list of supported locations, see [Supported
    * Regions](https://cloud.google.com/logging/docs/region-support)
+   *
    * For the location of `global` it is unspecified where log entries are
    * actually stored.
+   *
    * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
@@ -315,6 +320,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether the bucket is locked.
+   *
    * The retention period on a locked bucket cannot be changed. Locked buckets
    * may only be deleted if they are empty.
    * </pre>
@@ -374,6 +380,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether log analytics is enabled for this bucket.
+   *
    * Once enabled, log analytics features cannot be disabled.
    * </pre>
    *
@@ -389,14 +396,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public static final int RESTRICTED_FIELDS_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList restrictedFields_;
+  private com.google.protobuf.LazyStringArrayList restrictedFields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -413,8 +423,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -431,8 +443,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -450,8 +464,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Log entry field paths that are denied access in this bucket.
+   *
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   *
    * Restricting a repeated field will restrict all values. Adding a parent will
    * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
    * </pre>
@@ -925,8 +941,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       locked_ = false;
       lifecycleState_ = 0;
       analyticsEnabled_ = false;
-      restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      restrictedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (indexConfigsBuilder_ == null) {
         indexConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -974,11 +989,6 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.logging.v2.LogBucket result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        restrictedFields_ = restrictedFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.restrictedFields_ = restrictedFields_;
       if (indexConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           indexConfigs_ = java.util.Collections.unmodifiableList(indexConfigs_);
@@ -1015,6 +1025,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.analyticsEnabled_ = analyticsEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        restrictedFields_.makeImmutable();
+        result.restrictedFields_ = restrictedFields_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.cmekSettings_ =
@@ -1098,7 +1112,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       if (!other.restrictedFields_.isEmpty()) {
         if (restrictedFields_.isEmpty()) {
           restrictedFields_ = other.restrictedFields_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureRestrictedFieldsIsMutable();
           restrictedFields_.addAll(other.restrictedFields_);
@@ -1260,12 +1274,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the bucket.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket`
+     *
      * For a list of supported locations, see [Supported
      * Regions](https://cloud.google.com/logging/docs/region-support)
+     *
      * For the location of `global` it is unspecified where log entries are
      * actually stored.
+     *
      * After a bucket has been created, the location cannot be changed.
      * </pre>
      *
@@ -1289,12 +1308,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the bucket.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket`
+     *
      * For a list of supported locations, see [Supported
      * Regions](https://cloud.google.com/logging/docs/region-support)
+     *
      * For the location of `global` it is unspecified where log entries are
      * actually stored.
+     *
      * After a bucket has been created, the location cannot be changed.
      * </pre>
      *
@@ -1318,12 +1342,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the bucket.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket`
+     *
      * For a list of supported locations, see [Supported
      * Regions](https://cloud.google.com/logging/docs/region-support)
+     *
      * For the location of `global` it is unspecified where log entries are
      * actually stored.
+     *
      * After a bucket has been created, the location cannot be changed.
      * </pre>
      *
@@ -1346,12 +1375,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the bucket.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket`
+     *
      * For a list of supported locations, see [Supported
      * Regions](https://cloud.google.com/logging/docs/region-support)
+     *
      * For the location of `global` it is unspecified where log entries are
      * actually stored.
+     *
      * After a bucket has been created, the location cannot be changed.
      * </pre>
      *
@@ -1370,12 +1404,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the bucket.
+     *
      * For example:
+     *
      *   `projects/my-project/locations/global/buckets/my-bucket`
+     *
      * For a list of supported locations, see [Supported
      * Regions](https://cloud.google.com/logging/docs/region-support)
+     *
      * For the location of `global` it is unspecified where log entries are
      * actually stored.
+     *
      * After a bucket has been created, the location cannot be changed.
      * </pre>
      *
@@ -1980,6 +2019,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the bucket is locked.
+     *
      * The retention period on a locked bucket cannot be changed. Locked buckets
      * may only be deleted if they are empty.
      * </pre>
@@ -1997,6 +2037,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the bucket is locked.
+     *
      * The retention period on a locked bucket cannot be changed. Locked buckets
      * may only be deleted if they are empty.
      * </pre>
@@ -2018,6 +2059,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the bucket is locked.
+     *
      * The retention period on a locked bucket cannot be changed. Locked buckets
      * may only be deleted if they are empty.
      * </pre>
@@ -2139,6 +2181,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether log analytics is enabled for this bucket.
+     *
      * Once enabled, log analytics features cannot be disabled.
      * </pre>
      *
@@ -2155,6 +2198,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether log analytics is enabled for this bucket.
+     *
      * Once enabled, log analytics features cannot be disabled.
      * </pre>
      *
@@ -2175,6 +2219,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether log analytics is enabled for this bucket.
+     *
      * Once enabled, log analytics features cannot be disabled.
      * </pre>
      *
@@ -2189,22 +2234,24 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList restrictedFields_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList restrictedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRestrictedFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!restrictedFields_.isModifiable()) {
         restrictedFields_ = new com.google.protobuf.LazyStringArrayList(restrictedFields_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2214,15 +2261,18 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the restrictedFields.
      */
     public com.google.protobuf.ProtocolStringList getRestrictedFieldsList() {
-      return restrictedFields_.getUnmodifiableView();
+      restrictedFields_.makeImmutable();
+      return restrictedFields_;
     }
     /**
      *
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2239,8 +2289,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2258,8 +2310,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2277,8 +2331,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2295,6 +2351,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRestrictedFieldsIsMutable();
       restrictedFields_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2303,8 +2360,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2320,6 +2379,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRestrictedFieldsIsMutable();
       restrictedFields_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2328,8 +2388,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2342,6 +2404,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRestrictedFields(java.lang.Iterable<java.lang.String> values) {
       ensureRestrictedFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedFields_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2350,8 +2413,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2361,8 +2426,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRestrictedFields() {
-      restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      restrictedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2371,8 +2437,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Log entry field paths that are denied access in this bucket.
+     *
      * The following fields and their children are eligible: `textPayload`,
      * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+     *
      * Restricting a repeated field will restrict all values. Adding a parent will
      * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
      * </pre>
@@ -2389,6 +2457,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRestrictedFieldsIsMutable();
       restrictedFields_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
