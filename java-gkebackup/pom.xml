@@ -50,4 +50,5 @@
     <module>proto-google-cloud-gkebackup-v1</module>
     <module>google-cloud-gkebackup-bom</module>
   </modules>
-</project>
+
+  </project>
