@@ -980,6 +980,64 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Deployment metadata associated with the resource to be set by a GKE hub controller and read by the backend RCTH
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
+   */
+  int getMetadatasCount();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment metadata associated with the resource to be set by a GKE hub controller and read by the backend RCTH
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
+   */
+  boolean containsMetadatas(java.lang.String key);
+  /** Use {@link #getMetadatasMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getMetadatas();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment metadata associated with the resource to be set by a GKE hub controller and read by the backend RCTH
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getMetadatasMap();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment metadata associated with the resource to be set by a GKE hub controller and read by the backend RCTH
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
+   */
+  /* nullable */
+  java.lang.String getMetadatasOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Deployment metadata associated with the resource to be set by a GKE hub controller and read by the backend RCTH
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
+   */
+  java.lang.String getMetadatasOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *

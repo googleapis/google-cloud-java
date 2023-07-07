@@ -245,6 +245,95 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+      getCustomLearnedIpRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange getCustomLearnedIpRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  int getCustomLearnedIpRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
+      getCustomLearnedIpRangesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder
+      getCustomLearnedIpRangesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * </pre>
+   *
+   * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+   *
+   * @return Whether the customLearnedRoutePriority field is set.
+   */
+  boolean hasCustomLearnedRoutePriority();
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * </pre>
+   *
+   * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+   *
+   * @return The customLearnedRoutePriority.
+   */
+  int getCustomLearnedRoutePriority();
+
+  /**
+   *
+   *
+   * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>

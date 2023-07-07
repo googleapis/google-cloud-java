@@ -497,6 +497,47 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   *
+   * @return Whether the instanceEncryptionKey field is set.
+   */
+  boolean hasInstanceEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   *
+   * @return The instanceEncryptionKey.
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKey getInstanceEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getInstanceEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>

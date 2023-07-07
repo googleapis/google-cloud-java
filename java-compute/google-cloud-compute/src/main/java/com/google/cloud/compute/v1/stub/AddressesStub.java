@@ -30,6 +30,7 @@ import com.google.cloud.compute.v1.DeleteAddressRequest;
 import com.google.cloud.compute.v1.GetAddressRequest;
 import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
+import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
 import javax.annotation.Generated;
@@ -79,6 +80,14 @@ public abstract class AddressesStub implements BackgroundResource {
 
   public UnaryCallable<ListAddressesRequest, AddressList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<MoveAddressRequest, Operation, Operation> moveOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveOperationCallable()");
+  }
+
+  public UnaryCallable<MoveAddressRequest, Operation> moveCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveCallable()");
   }
 
   public OperationCallable<SetLabelsAddressRequest, Operation, Operation>

@@ -273,7 +273,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AccessConfig.Type}
@@ -403,7 +403,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+   * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -418,7 +418,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+   * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -441,7 +441,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+   * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -467,7 +467,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The prefix length of the external IPv6 range.
+   * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -482,7 +482,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The prefix length of the external IPv6 range.
+   * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -568,7 +568,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+   * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -583,7 +583,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+   * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -606,7 +606,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+   * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -634,7 +634,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+   * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
    * <code>optional string nat_i_p = 117634556;</code>
@@ -649,7 +649,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+   * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
    * <code>optional string nat_i_p = 117634556;</code>
@@ -672,7 +672,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+   * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
    * <code>optional string nat_i_p = 117634556;</code>
@@ -868,7 +868,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -884,7 +884,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -908,7 +908,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1521,7 +1521,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1535,7 +1535,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1557,7 +1557,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1579,7 +1579,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1600,7 +1600,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1617,7 +1617,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+     * Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1641,7 +1641,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length of the external IPv6 range.
+     * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1656,7 +1656,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length of the external IPv6 range.
+     * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1671,7 +1671,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length of the external IPv6 range.
+     * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1690,7 +1690,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length of the external IPv6 range.
+     * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1829,7 +1829,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1843,7 +1843,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1865,7 +1865,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1887,7 +1887,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1908,7 +1908,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1925,7 +1925,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1949,7 +1949,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -1963,7 +1963,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -1985,7 +1985,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -2007,7 +2007,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -2028,7 +2028,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -2045,7 +2045,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
      * </pre>
      *
      * <code>optional string nat_i_p = 117634556;</code>
@@ -2383,7 +2383,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2398,7 +2398,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2421,7 +2421,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2444,7 +2444,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2466,7 +2466,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2484,7 +2484,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

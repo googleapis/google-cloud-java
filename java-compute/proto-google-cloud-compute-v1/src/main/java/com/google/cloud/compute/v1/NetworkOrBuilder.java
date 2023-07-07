@@ -225,7 +225,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -237,7 +237,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -249,7 +249,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>

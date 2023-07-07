@@ -87,7 +87,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
@@ -200,7 +200,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>

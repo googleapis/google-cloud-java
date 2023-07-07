@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service. next tag = 20
+ * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ServiceAttachment}
@@ -1156,6 +1156,39 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         : pscServiceAttachmentId_;
   }
 
+  public static final int RECONCILE_CONNECTIONS_FIELD_NUMBER = 125493732;
+  private boolean reconcileConnections_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+   * </pre>
+   *
+   * <code>optional bool reconcile_connections = 125493732;</code>
+   *
+   * @return Whether the reconcileConnections field is set.
+   */
+  @java.lang.Override
+  public boolean hasReconcileConnections() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+   * </pre>
+   *
+   * <code>optional bool reconcile_connections = 125493732;</code>
+   *
+   * @return The reconcileConnections.
+   */
+  @java.lang.Override
+  public boolean getReconcileConnections() {
+    return reconcileConnections_;
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
 
   @SuppressWarnings("serial")
@@ -1173,7 +1206,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1239,7 +1272,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1305,7 +1338,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTargetService() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1371,7 +1404,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1390,6 +1423,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       output.writeMessage(72223688, connectedEndpoints_.get(i));
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeBool(125493732, reconcileConnections_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < consumerRejectLists_.size(); i++) {
@@ -1418,7 +1454,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -1436,7 +1472,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1463,6 +1499,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
               72223688, connectedEndpoints_.get(i));
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(125493732, reconcileConnections_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     {
@@ -1506,7 +1546,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -1574,6 +1614,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasPscServiceAttachmentId() != other.hasPscServiceAttachmentId()) return false;
     if (hasPscServiceAttachmentId()) {
       if (!getPscServiceAttachmentId().equals(other.getPscServiceAttachmentId())) return false;
+    }
+    if (hasReconcileConnections() != other.hasReconcileConnections()) return false;
+    if (hasReconcileConnections()) {
+      if (getReconcileConnections() != other.getReconcileConnections()) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1657,6 +1701,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasPscServiceAttachmentId()) {
       hash = (37 * hash) + PSC_SERVICE_ATTACHMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPscServiceAttachmentId().hashCode();
+    }
+    if (hasReconcileConnections()) {
+      hash = (37 * hash) + RECONCILE_CONNECTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconcileConnections());
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1774,7 +1822,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service. next tag = 20
+   * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ServiceAttachment}
@@ -1851,6 +1899,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         pscServiceAttachmentIdBuilder_.dispose();
         pscServiceAttachmentIdBuilder_ = null;
       }
+      reconcileConnections_ = false;
       region_ = "";
       selfLink_ = "";
       targetService_ = "";
@@ -1969,16 +2018,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.region_ = region_;
+        result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.targetService_ = targetService_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.targetService_ = targetService_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2156,19 +2209,22 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (other.hasPscServiceAttachmentId()) {
         mergePscServiceAttachmentId(other.getPscServiceAttachmentId());
       }
+      if (other.hasReconcileConnections()) {
+        setReconcileConnections(other.getReconcileConnections());
+      }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasTargetService()) {
         targetService_ = other.targetService_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2206,7 +2262,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 10350650:
               {
                 targetService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 10350650
             case 26336418:
@@ -2248,10 +2304,16 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 577789506
+            case 1003949856:
+              {
+                reconcileConnections_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 1003949856
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1111570338
             case 1632265458:
@@ -2315,7 +2377,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -645248918
             case -73405582:
@@ -4851,6 +4913,74 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return pscServiceAttachmentIdBuilder_;
     }
 
+    private boolean reconcileConnections_;
+    /**
+     *
+     *
+     * <pre>
+     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+     * </pre>
+     *
+     * <code>optional bool reconcile_connections = 125493732;</code>
+     *
+     * @return Whether the reconcileConnections field is set.
+     */
+    @java.lang.Override
+    public boolean hasReconcileConnections() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+     * </pre>
+     *
+     * <code>optional bool reconcile_connections = 125493732;</code>
+     *
+     * @return The reconcileConnections.
+     */
+    @java.lang.Override
+    public boolean getReconcileConnections() {
+      return reconcileConnections_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+     * </pre>
+     *
+     * <code>optional bool reconcile_connections = 125493732;</code>
+     *
+     * @param value The reconcileConnections to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconcileConnections(boolean value) {
+
+      reconcileConnections_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to true.
+     * </pre>
+     *
+     * <code>optional bool reconcile_connections = 125493732;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReconcileConnections() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      reconcileConnections_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object region_ = "";
     /**
      *
@@ -4864,7 +4994,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4927,7 +5057,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4944,7 +5074,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4966,7 +5096,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4984,7 +5114,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5047,7 +5177,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5064,7 +5194,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5086,7 +5216,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5104,7 +5234,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetService field is set.
      */
     public boolean hasTargetService() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5167,7 +5297,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       targetService_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5184,7 +5314,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTargetService() {
       targetService_ = getDefaultInstance().getTargetService();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5206,7 +5336,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       targetService_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

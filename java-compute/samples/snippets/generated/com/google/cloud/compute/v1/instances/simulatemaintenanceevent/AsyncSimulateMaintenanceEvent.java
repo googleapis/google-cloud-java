@@ -39,6 +39,7 @@ public class AsyncSimulateMaintenanceEvent {
           SimulateMaintenanceEventInstanceRequest.newBuilder()
               .setInstance("instance555127957")
               .setProject("project-309310695")
+              .setRequestId("requestId693933066")
               .setZone("zone3744684")
               .build();
       ApiFuture<Operation> future =

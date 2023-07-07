@@ -52,7 +52,7 @@ public interface AcceleratorsOrBuilder
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -64,7 +64,7 @@ public interface AcceleratorsOrBuilder
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -76,7 +76,7 @@ public interface AcceleratorsOrBuilder
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>

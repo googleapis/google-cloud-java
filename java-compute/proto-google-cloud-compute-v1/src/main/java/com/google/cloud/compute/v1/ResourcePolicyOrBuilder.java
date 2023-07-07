@@ -83,6 +83,49 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return Whether the diskConsistencyGroupPolicy field is set.
+   */
+  boolean hasDiskConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return The diskConsistencyGroupPolicy.
+   */
+  com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+      getDiskConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder
+      getDiskConsistencyGroupPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource policy for instances for placement configuration.
    * </pre>
    *

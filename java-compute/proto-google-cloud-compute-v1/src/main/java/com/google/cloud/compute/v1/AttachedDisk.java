@@ -45,6 +45,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mode_ = "";
+    savedState_ = "";
     source_ = "";
     type_ = "";
   }
@@ -535,6 +536,163 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.AttachedDisk.SavedState}
+   */
+  public enum SavedState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SAVED_STATE = 0;</code>
+     */
+    UNDEFINED_SAVED_STATE(0),
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Disk state has not been preserved.
+     * </pre>
+     *
+     * <code>DISK_SAVED_STATE_UNSPECIFIED = 391290831;</code>
+     */
+    DISK_SAVED_STATE_UNSPECIFIED(391290831),
+    /**
+     *
+     *
+     * <pre>
+     * Disk state has been preserved.
+     * </pre>
+     *
+     * <code>PRESERVED = 254159736;</code>
+     */
+    PRESERVED(254159736),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SAVED_STATE = 0;</code>
+     */
+    public static final int UNDEFINED_SAVED_STATE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Disk state has not been preserved.
+     * </pre>
+     *
+     * <code>DISK_SAVED_STATE_UNSPECIFIED = 391290831;</code>
+     */
+    public static final int DISK_SAVED_STATE_UNSPECIFIED_VALUE = 391290831;
+    /**
+     *
+     *
+     * <pre>
+     * Disk state has been preserved.
+     * </pre>
+     *
+     * <code>PRESERVED = 254159736;</code>
+     */
+    public static final int PRESERVED_VALUE = 254159736;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SavedState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SavedState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_SAVED_STATE;
+        case 391290831:
+          return DISK_SAVED_STATE_UNSPECIFIED;
+        case 254159736:
+          return PRESERVED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SavedState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SavedState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SavedState>() {
+          public SavedState findValueByNumber(int number) {
+            return SavedState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.AttachedDisk.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final SavedState[] VALUES = values();
+
+    public static SavedState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SavedState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AttachedDisk.SavedState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
    * </pre>
    *
@@ -632,7 +790,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.AttachedDisk.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.compute.v1.AttachedDisk.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final Type[] VALUES = values();
@@ -1408,6 +1566,75 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SAVED_STATE_FIELD_NUMBER = 411587801;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedState_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return Whether the savedState field is set.
+   */
+  @java.lang.Override
+  public boolean hasSavedState() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return The savedState.
+   */
+  @java.lang.Override
+  public java.lang.String getSavedState() {
+    java.lang.Object ref = savedState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      savedState_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return The bytes for savedState.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSavedStateBytes() {
+    java.lang.Object ref = savedState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      savedState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER = 192356867;
   private com.google.cloud.compute.v1.InitialStateConfig shieldedInstanceInitialState_;
   /**
@@ -1425,7 +1652,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShieldedInstanceInitialState() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1482,7 +1709,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSource() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1549,7 +1776,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1623,7 +1850,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1641,10 +1868,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(142758425, forceAttach_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(192356867, getShieldedInstanceInitialState());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1658,6 +1885,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < licenses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 411587801, savedState_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(464761403, autoDelete_);
@@ -1683,7 +1913,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1704,10 +1934,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(142758425, forceAttach_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192356867, getShieldedInstanceInitialState());
@@ -1730,6 +1960,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getLicensesList().size();
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(411587801, savedState_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
@@ -1801,6 +2034,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (hasMode() != other.hasMode()) return false;
     if (hasMode()) {
       if (!getMode().equals(other.getMode())) return false;
+    }
+    if (hasSavedState() != other.hasSavedState()) return false;
+    if (hasSavedState()) {
+      if (!getSavedState().equals(other.getSavedState())) return false;
     }
     if (hasShieldedInstanceInitialState() != other.hasShieldedInstanceInitialState()) return false;
     if (hasShieldedInstanceInitialState()) {
@@ -1881,6 +2118,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (hasMode()) {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + getMode().hashCode();
+    }
+    if (hasSavedState()) {
+      hash = (37 * hash) + SAVED_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getSavedState().hashCode();
     }
     if (hasShieldedInstanceInitialState()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER;
@@ -2073,6 +2314,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       kind_ = "";
       licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       mode_ = "";
+      savedState_ = "";
       shieldedInstanceInitialState_ = null;
       if (shieldedInstanceInitialStateBuilder_ != null) {
         shieldedInstanceInitialStateBuilder_.dispose();
@@ -2187,19 +2429,23 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.savedState_ = savedState_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.shieldedInstanceInitialState_ =
             shieldedInstanceInitialStateBuilder_ == null
                 ? shieldedInstanceInitialState_
                 : shieldedInstanceInitialStateBuilder_.build();
-        to_bitField0_ |= 0x00001000;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.source_ = source_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.type_ = type_;
+        result.source_ = source_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2332,17 +2578,22 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (other.hasSavedState()) {
+        savedState_ = other.savedState_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
       if (other.hasShieldedInstanceInitialState()) {
         mergeShieldedInstanceInitialState(other.getShieldedInstanceInitialState());
       }
       if (other.hasSource()) {
         source_ = other.source_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2392,7 +2643,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 28604882
             case 141576362:
@@ -2436,14 +2687,14 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             case 1417887962:
               {
                 source_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1417887962
             case 1538854938:
               {
                 input.readMessage(
                     getShieldedInstanceInitialStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1538854938
             case -2121681878:
@@ -2472,6 +2723,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
                 licenses_.add(s);
                 break;
               } // case -1593826670
+            case -1002264886:
+              {
+                savedState_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -1002264886
             case -576876072:
               {
                 autoDelete_ = input.readBool();
@@ -4401,6 +4658,132 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object savedState_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @return Whether the savedState field is set.
+     */
+    public boolean hasSavedState() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @return The savedState.
+     */
+    public java.lang.String getSavedState() {
+      java.lang.Object ref = savedState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        savedState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @return The bytes for savedState.
+     */
+    public com.google.protobuf.ByteString getSavedStateBytes() {
+      java.lang.Object ref = savedState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        savedState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @param value The savedState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      savedState_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSavedState() {
+      savedState_ = getDefaultInstance().getSavedState();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+     * Check the SavedState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string saved_state = 411587801;</code>
+     *
+     * @param value The bytes for savedState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      savedState_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.InitialStateConfig shieldedInstanceInitialState_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InitialStateConfig,
@@ -4421,7 +4804,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceInitialState field is set.
      */
     public boolean hasShieldedInstanceInitialState() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4466,7 +4849,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4488,7 +4871,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4506,7 +4889,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceInitialState(
         com.google.cloud.compute.v1.InitialStateConfig value) {
       if (shieldedInstanceInitialStateBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && shieldedInstanceInitialState_ != null
             && shieldedInstanceInitialState_
                 != com.google.cloud.compute.v1.InitialStateConfig.getDefaultInstance()) {
@@ -4517,7 +4900,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4533,7 +4916,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearShieldedInstanceInitialState() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       shieldedInstanceInitialState_ = null;
       if (shieldedInstanceInitialStateBuilder_ != null) {
         shieldedInstanceInitialStateBuilder_.dispose();
@@ -4555,7 +4938,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.InitialStateConfig.Builder
         getShieldedInstanceInitialStateBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getShieldedInstanceInitialStateFieldBuilder().getBuilder();
     }
@@ -4621,7 +5004,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4684,7 +5067,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       source_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4701,7 +5084,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSource() {
       source_ = getDefaultInstance().getSource();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4723,7 +5106,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       source_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4742,7 +5125,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4808,7 +5191,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4826,7 +5209,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4849,7 +5232,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

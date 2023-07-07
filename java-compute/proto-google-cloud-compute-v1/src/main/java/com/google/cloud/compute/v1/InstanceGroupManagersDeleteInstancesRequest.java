@@ -73,7 +73,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -87,7 +87,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -101,7 +101,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -116,7 +116,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -577,7 +577,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -592,7 +592,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -606,7 +606,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -621,7 +621,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -636,7 +636,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -659,7 +659,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -681,7 +681,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -700,7 +700,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>
@@ -718,7 +718,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      *
      *
      * <pre>
-     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+     * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
      * </pre>
      *
      * <code>repeated string instances = 29097598;</code>

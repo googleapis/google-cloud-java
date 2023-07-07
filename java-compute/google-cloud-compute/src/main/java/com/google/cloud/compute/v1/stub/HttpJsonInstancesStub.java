@@ -1942,6 +1942,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

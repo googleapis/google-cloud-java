@@ -193,6 +193,43 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    *
    * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return Whether the pathTemplateMatch field is set.
+   */
+  boolean hasPathTemplateMatch();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The pathTemplateMatch.
+   */
+  java.lang.String getPathTemplateMatch();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The bytes for pathTemplateMatch.
+   */
+  com.google.protobuf.ByteString getPathTemplateMatchBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /. The value must be from 1 to 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
    * </pre>
    *

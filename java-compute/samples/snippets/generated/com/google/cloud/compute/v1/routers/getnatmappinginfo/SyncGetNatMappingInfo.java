@@ -38,6 +38,7 @@ public class SyncGetNatMappingInfo {
           GetNatMappingInfoRoutersRequest.newBuilder()
               .setFilter("filter-1274492040")
               .setMaxResults(1128457243)
+              .setNatName("natName1727733580")
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")

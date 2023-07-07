@@ -209,6 +209,8 @@ public class ResourcePoliciesClientTest {
         ResourcePolicy.newBuilder()
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setDiskConsistencyGroupPolicy(
+                ResourcePolicyDiskConsistencyGroupPolicy.newBuilder().build())
             .setGroupPlacementPolicy(ResourcePolicyGroupPlacementPolicy.newBuilder().build())
             .setId(3355)
             .setInstanceSchedulePolicy(ResourcePolicyInstanceSchedulePolicy.newBuilder().build())

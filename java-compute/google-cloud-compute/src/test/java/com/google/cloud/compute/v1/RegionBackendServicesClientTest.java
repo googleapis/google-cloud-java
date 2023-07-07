@@ -180,6 +180,7 @@ public class RegionBackendServicesClientTest {
             .setLocalityLbPolicy("localityLbPolicy-1807450933")
             .setLogConfig(BackendServiceLogConfig.newBuilder().build())
             .setMaxStreamDuration(Duration.newBuilder().build())
+            .putAllMetadatas(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setOutlierDetection(OutlierDetection.newBuilder().build())
