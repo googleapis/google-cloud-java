@@ -57,7 +57,6 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,7 +69,6 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -77,30 +77,31 @@ public final class ProcurementService {
           + "ge_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"y\n\022ListOr"
           + "dersResponse\022J\n\006orders\030\001 \003(\0132:.google.cl"
           + "oud.commerce.consumer.procurement.v1alph"
-          + "a1.Order\022\027\n\017next_page_token\030\002 \001(\t2\354\005\n\032Co"
+          + "a1.Order\022\027\n\017next_page_token\030\002 \001(\t2\374\005\n\032Co"
           + "nsumerProcurementService\022\317\001\n\nPlaceOrder\022"
           + "F.google.cloud.commerce.consumer.procure"
           + "ment.v1alpha1.PlaceOrderRequest\032\035.google"
           + ".longrunning.Operation\"Z\312A\033\n\005Order\022\022Plac"
           + "eOrderMetadata\202\323\344\223\0026\"1/v1alpha1/{parent="
-          + "billingAccounts/*}/orders:place:\001*\022\301\001\n\010G"
+          + "billingAccounts/*}/orders:place:\001*\022\310\001\n\010G"
           + "etOrder\022D.google.cloud.commerce.consumer"
           + ".procurement.v1alpha1.GetOrderRequest\032:."
           + "google.cloud.commerce.consumer.procureme"
-          + "nt.v1alpha1.Order\"3\202\323\344\223\002-\022+/v1alpha1/{na"
-          + "me=billingAccounts/*/orders/*}\022\322\001\n\nListO"
-          + "rders\022F.google.cloud.commerce.consumer.p"
-          + "rocurement.v1alpha1.ListOrdersRequest\032G."
-          + "google.cloud.commerce.consumer.procureme"
-          + "nt.v1alpha1.ListOrdersResponse\"3\202\323\344\223\002-\022+"
-          + "/v1alpha1/{parent=billingAccounts/*}/ord"
-          + "ers\032c\312A/cloudcommerceconsumerprocurement"
-          + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\226\001\n7com.google."
-          + "cloud.commerce.consumer.procurement.v1al"
-          + "pha1P\001ZYcloud.google.com/go/commerce/con"
-          + "sumer/procurement/apiv1alpha1/procuremen"
-          + "tpb;procurementpbb\006proto3"
+          + "nt.v1alpha1.Order\":\332A\004name\202\323\344\223\002-\022+/v1alp"
+          + "ha1/{name=billingAccounts/*/orders/*}\022\333\001"
+          + "\n\nListOrders\022F.google.cloud.commerce.con"
+          + "sumer.procurement.v1alpha1.ListOrdersReq"
+          + "uest\032G.google.cloud.commerce.consumer.pr"
+          + "ocurement.v1alpha1.ListOrdersResponse\"<\332"
+          + "A\006parent\202\323\344\223\002-\022+/v1alpha1/{parent=billin"
+          + "gAccounts/*}/orders\032c\312A/cloudcommercecon"
+          + "sumerprocurement.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "B\226\001\n7com.google.cloud.commerce.consumer."
+          + "procurement.v1alpha1P\001ZYcloud.google.com"
+          + "/go/commerce/consumer/procurement/apiv1a"
+          + "lpha1/procurementpb;procurementpbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,6 +158,7 @@ public final class ProcurementService {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);

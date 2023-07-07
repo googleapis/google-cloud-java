@@ -242,6 +242,11 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1alpha1/{name=billingAccounts/*/orders/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha1/{name=billingAccounts/*/orders/*/orderAttributions/*/operations/*}")
+                                .build())
                         .build())
                 .build());
 

@@ -39,8 +39,8 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
  *     ConsumerProcurementServiceClient.create()) {
- *   GetOrderRequest request = GetOrderRequest.newBuilder().setName("name3373707").build();
- *   Order response = consumerProcurementServiceClient.getOrder(request);
+ *   String name = "name3373707";
+ *   Order response = consumerProcurementServiceClient.getOrder(name);
  * }
  * }</pre>
  */

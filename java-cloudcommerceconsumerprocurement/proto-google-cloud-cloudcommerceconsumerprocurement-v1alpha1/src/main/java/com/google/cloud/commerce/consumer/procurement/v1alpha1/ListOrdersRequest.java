@@ -22,7 +22,8 @@ package com.google.cloud.commerce.consumer.procurement.v1alpha1;
  *
  *
  * <pre>
- * Request message for [ConsumerProcurementService.ListOrders][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.ListOrders].
+ * Request message for
+ * [ConsumerProcurementService.ListOrders][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.ListOrders].
  * </pre>
  *
  * Protobuf type {@code google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest}
@@ -462,7 +463,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [ConsumerProcurementService.ListOrders][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.ListOrders].
+   * Request message for
+   * [ConsumerProcurementService.ListOrders][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.ListOrders].
    * </pre>
    *
    * Protobuf type {@code google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest}
