@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,7 +161,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
@@ -316,7 +316,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
