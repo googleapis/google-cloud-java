@@ -1126,6 +1126,73 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return A list containing the customAudiences.
+   */
+  java.util.List<java.lang.String> getCustomAudiencesList();
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return The count of customAudiences.
+   */
+  int getCustomAudiencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The customAudiences at the given index.
+   */
+  java.lang.String getCustomAudiences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the customAudiences at the given index.
+   */
+  com.google.protobuf.ByteString getCustomAudiencesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *
