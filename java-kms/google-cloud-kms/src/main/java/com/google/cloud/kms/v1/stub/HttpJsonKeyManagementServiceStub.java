@@ -73,6 +73,10 @@ import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
+import com.google.cloud.kms.v1.RawDecryptRequest;
+import com.google.cloud.kms.v1.RawDecryptResponse;
+import com.google.cloud.kms.v1.RawEncryptRequest;
+import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -892,6 +896,80 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RawEncryptRequest, RawEncryptResponse>
+      rawEncryptMethodDescriptor =
+          ApiMethodDescriptor.<RawEncryptRequest, RawEncryptResponse>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RawEncrypt")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RawEncryptRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:rawEncrypt",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RawEncryptRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RawEncryptRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RawEncryptResponse>newBuilder()
+                      .setDefaultInstance(RawEncryptResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RawDecryptRequest, RawDecryptResponse>
+      rawDecryptMethodDescriptor =
+          ApiMethodDescriptor.<RawDecryptRequest, RawDecryptResponse>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RawDecrypt")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RawDecryptRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:rawDecrypt",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RawDecryptRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RawDecryptRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RawDecryptResponse>newBuilder()
+                      .setDefaultInstance(RawDecryptResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<AsymmetricSignRequest, AsymmetricSignResponse>
       asymmetricSignMethodDescriptor =
           ApiMethodDescriptor.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
@@ -1305,6 +1383,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
       restoreCryptoKeyVersionCallable;
   private final UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable;
   private final UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable;
+  private final UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable;
+  private final UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable;
   private final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable;
   private final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
       asymmetricDecryptCallable;
@@ -1609,6 +1689,28 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptTransportSettings =
+        HttpJsonCallSettings.<RawEncryptRequest, RawEncryptResponse>newBuilder()
+            .setMethodDescriptor(rawEncryptMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptTransportSettings =
+        HttpJsonCallSettings.<RawDecryptRequest, RawDecryptResponse>newBuilder()
+            .setMethodDescriptor(rawDecryptMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
         asymmetricSignTransportSettings =
             HttpJsonCallSettings.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
@@ -1819,6 +1921,12 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     this.decryptCallable =
         callableFactory.createUnaryCallable(
             decryptTransportSettings, settings.decryptSettings(), clientContext);
+    this.rawEncryptCallable =
+        callableFactory.createUnaryCallable(
+            rawEncryptTransportSettings, settings.rawEncryptSettings(), clientContext);
+    this.rawDecryptCallable =
+        callableFactory.createUnaryCallable(
+            rawDecryptTransportSettings, settings.rawDecryptSettings(), clientContext);
     this.asymmetricSignCallable =
         callableFactory.createUnaryCallable(
             asymmetricSignTransportSettings, settings.asymmetricSignSettings(), clientContext);
@@ -1887,6 +1995,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     methodDescriptors.add(restoreCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(encryptMethodDescriptor);
     methodDescriptors.add(decryptMethodDescriptor);
+    methodDescriptors.add(rawEncryptMethodDescriptor);
+    methodDescriptors.add(rawDecryptMethodDescriptor);
     methodDescriptors.add(asymmetricSignMethodDescriptor);
     methodDescriptors.add(asymmetricDecryptMethodDescriptor);
     methodDescriptors.add(macSignMethodDescriptor);
@@ -2033,6 +2143,16 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   @Override
   public UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable() {
     return decryptCallable;
+  }
+
+  @Override
+  public UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable() {
+    return rawEncryptCallable;
+  }
+
+  @Override
+  public UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable() {
+    return rawDecryptCallable;
   }
 
   @Override

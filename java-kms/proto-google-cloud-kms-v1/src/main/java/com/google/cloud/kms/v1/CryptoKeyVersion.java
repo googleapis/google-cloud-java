@@ -157,6 +157,26 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * AES-GCM (Galois Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_GCM = 41;</code>
+     */
+    AES_128_GCM(41),
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_GCM = 19;</code>
+     */
+    AES_256_GCM(19),
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -453,6 +473,26 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
      */
     public static final int GOOGLE_SYMMETRIC_ENCRYPTION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_GCM = 41;</code>
+     */
+    public static final int AES_128_GCM_VALUE = 41;
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_GCM = 19;</code>
+     */
+    public static final int AES_256_GCM_VALUE = 19;
     /**
      *
      *
@@ -759,6 +799,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
         case 1:
           return GOOGLE_SYMMETRIC_ENCRYPTION;
+        case 41:
+          return AES_128_GCM;
+        case 19:
+          return AES_256_GCM;
         case 2:
           return RSA_SIGN_PSS_2048_SHA256;
         case 3:
