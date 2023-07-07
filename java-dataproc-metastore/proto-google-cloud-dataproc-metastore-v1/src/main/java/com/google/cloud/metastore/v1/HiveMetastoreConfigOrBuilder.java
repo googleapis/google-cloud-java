@@ -177,6 +177,35 @@ public interface HiveMetastoreConfigOrBuilder
    *
    *
    * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointProtocol.
+   */
+  int getEndpointProtocolValue();
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The endpointProtocol.
+   */
+  com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol getEndpointProtocol();
+
+  /**
+   *
+   *
+   * <pre>
    * A mapping of Hive metastore version to the auxiliary version
    * configuration. When specified, a secondary Hive metastore service is
    * created along with the primary service. All auxiliary versions must be less

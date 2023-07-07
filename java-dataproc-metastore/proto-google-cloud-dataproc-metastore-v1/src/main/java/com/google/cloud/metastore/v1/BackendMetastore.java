@@ -87,6 +87,16 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The backend metastore is BigQuery.
+     * </pre>
+     *
+     * <code>BIGQUERY = 2;</code>
+     */
+    BIGQUERY(2),
+    /**
+     *
+     *
+     * <pre>
      * The backend metastore is Dataproc Metastore.
      * </pre>
      *
@@ -106,6 +116,16 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * <code>METASTORE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int METASTORE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The backend metastore is BigQuery.
+     * </pre>
+     *
+     * <code>BIGQUERY = 2;</code>
+     */
+    public static final int BIGQUERY_VALUE = 2;
     /**
      *
      *
@@ -143,6 +163,8 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return METASTORE_TYPE_UNSPECIFIED;
+        case 2:
+          return BIGQUERY;
         case 3:
           return DATAPROC_METASTORE;
         default:
