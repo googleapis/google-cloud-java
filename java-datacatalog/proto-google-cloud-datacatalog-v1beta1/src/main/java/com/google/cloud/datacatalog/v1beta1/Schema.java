@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,8 +70,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>
@@ -86,8 +86,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>
@@ -103,8 +103,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>
@@ -119,8 +119,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>
@@ -135,8 +135,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>
@@ -558,8 +558,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -577,8 +577,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -596,8 +596,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -615,8 +615,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -640,8 +640,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -663,8 +663,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -688,8 +688,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -713,8 +713,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -736,8 +736,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -759,8 +759,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -782,8 +782,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -804,8 +804,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -826,8 +826,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -841,8 +841,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -861,8 +861,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -881,8 +881,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -897,8 +897,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>
@@ -914,8 +914,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+     * can be specified.
      * </pre>
      *
      * <code>

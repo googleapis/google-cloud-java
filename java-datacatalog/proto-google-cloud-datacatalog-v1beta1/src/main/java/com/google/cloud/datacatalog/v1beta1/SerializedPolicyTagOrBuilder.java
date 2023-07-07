@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,37 @@ public interface SerializedPolicyTagOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+   * Resource name of the policy tag.
+   *
+   * This field will be ignored when calling ImportTaxonomies.
+   * </pre>
+   *
+   * <code>string policy_tag = 1;</code>
+   *
+   * @return The policyTag.
+   */
+  java.lang.String getPolicyTag();
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the policy tag.
+   *
+   * This field will be ignored when calling ImportTaxonomies.
+   * </pre>
+   *
+   * <code>string policy_tag = 1;</code>
+   *
+   * @return The bytes for policyTag.
+   */
+  com.google.protobuf.ByteString getPolicyTagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +69,8 @@ public interface SerializedPolicyTagOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

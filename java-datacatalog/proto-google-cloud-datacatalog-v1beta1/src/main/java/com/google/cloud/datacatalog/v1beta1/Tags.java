@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,31 +106,32 @@ public final class Tags {
           + "catalog.v1beta1.TagTemplateField:\0028\001:p\352A"
           + "m\n&datacatalog.googleapis.com/TagTemplat"
           + "e\022Cprojects/{project}/locations/{locatio"
-          + "n}/tagTemplates/{tag_template}\"\251\002\n\020TagTe"
+          + "n}/tagTemplates/{tag_template}\"\276\002\n\020TagTe"
           + "mplateField\022\022\n\004name\030\006 \001(\tB\004\342A\001\003\022\024\n\014displ"
           + "ay_name\030\001 \001(\t\022?\n\004type\030\002 \001(\0132+.google.clo"
           + "ud.datacatalog.v1beta1.FieldTypeB\004\342A\001\002\022\023"
-          + "\n\013is_required\030\003 \001(\010\022\r\n\005order\030\005 \001(\005:\205\001\352A\201"
-          + "\001\n+datacatalog.googleapis.com/TagTemplat"
-          + "eField\022Rprojects/{project}/locations/{lo"
-          + "cation}/tagTemplates/{tag_template}/fiel"
-          + "ds/{field}\"\250\003\n\tFieldType\022S\n\016primitive_ty"
-          + "pe\030\001 \001(\01629.google.cloud.datacatalog.v1be"
-          + "ta1.FieldType.PrimitiveTypeH\000\022I\n\tenum_ty"
-          + "pe\030\002 \001(\01324.google.cloud.datacatalog.v1be"
-          + "ta1.FieldType.EnumTypeH\000\032\213\001\n\010EnumType\022V\n"
-          + "\016allowed_values\030\001 \003(\0132>.google.cloud.dat"
-          + "acatalog.v1beta1.FieldType.EnumType.Enum"
-          + "Value\032\'\n\tEnumValue\022\032\n\014display_name\030\001 \001(\t"
-          + "B\004\342A\001\002\"`\n\rPrimitiveType\022\036\n\032PRIMITIVE_TYP"
-          + "E_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022"
-          + "\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declB\337\001"
-          + "\n$com.google.cloud.datacatalog.v1beta1P\001"
-          + "ZFcloud.google.com/go/datacatalog/apiv1b"
-          + "eta1/datacatalogpb;datacatalogpb\370\001\001\252\002 Go"
-          + "ogle.Cloud.DataCatalog.V1Beta1\312\002 Google\\"
-          + "Cloud\\DataCatalog\\V1beta1\352\002#Google::Clou"
-          + "d::DataCatalog::V1beta1b\006proto3"
+          + "\n\013is_required\030\003 \001(\010\022\023\n\013description\030\004 \001(\t"
+          + "\022\r\n\005order\030\005 \001(\005:\205\001\352A\201\001\n+datacatalog.goog"
+          + "leapis.com/TagTemplateField\022Rprojects/{p"
+          + "roject}/locations/{location}/tagTemplate"
+          + "s/{tag_template}/fields/{field}\"\250\003\n\tFiel"
+          + "dType\022S\n\016primitive_type\030\001 \001(\01629.google.c"
+          + "loud.datacatalog.v1beta1.FieldType.Primi"
+          + "tiveTypeH\000\022I\n\tenum_type\030\002 \001(\01324.google.c"
+          + "loud.datacatalog.v1beta1.FieldType.EnumT"
+          + "ypeH\000\032\213\001\n\010EnumType\022V\n\016allowed_values\030\001 \003"
+          + "(\0132>.google.cloud.datacatalog.v1beta1.Fi"
+          + "eldType.EnumType.EnumValue\032\'\n\tEnumValue\022"
+          + "\032\n\014display_name\030\001 \001(\tB\004\342A\001\002\"`\n\rPrimitive"
+          + "Type\022\036\n\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006"
+          + "DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMEST"
+          + "AMP\020\004B\013\n\ttype_declB\337\001\n$com.google.cloud."
+          + "datacatalog.v1beta1P\001ZFcloud.google.com/"
+          + "go/datacatalog/apiv1beta1/datacatalogpb;"
+          + "datacatalogpb\370\001\001\252\002 Google.Cloud.DataCata"
+          + "log.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V"
+          + "1beta1\352\002#Google::Cloud::DataCatalog::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -205,7 +206,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1beta1_TagTemplateField_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Type", "IsRequired", "Order",
+              "Name", "DisplayName", "Type", "IsRequired", "Description", "Order",
             });
     internal_static_google_cloud_datacatalog_v1beta1_FieldType_descriptor =
         getDescriptor().getMessageTypes().get(4);

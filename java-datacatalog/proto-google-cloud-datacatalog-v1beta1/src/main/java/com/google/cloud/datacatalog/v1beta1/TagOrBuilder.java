@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,8 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
+   * Required. The resource name of the tag template that this tag uses.
+   * Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *
@@ -78,7 +79,8 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
+   * Required. The resource name of the tag template that this tag uses.
+   * Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *
@@ -175,9 +177,9 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
-   * must have at least 1 field and at most 500 fields.
+   * Required. This maps the ID of a tag field to the value of and additional
+   * information about that field. Valid field IDs are defined by the tag's
+   * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
    * <code>
@@ -189,9 +191,9 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
-   * must have at least 1 field and at most 500 fields.
+   * Required. This maps the ID of a tag field to the value of and additional
+   * information about that field. Valid field IDs are defined by the tag's
+   * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
    * <code>
@@ -206,9 +208,9 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
-   * must have at least 1 field and at most 500 fields.
+   * Required. This maps the ID of a tag field to the value of and additional
+   * information about that field. Valid field IDs are defined by the tag's
+   * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
    * <code>
@@ -220,9 +222,9 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
-   * must have at least 1 field and at most 500 fields.
+   * Required. This maps the ID of a tag field to the value of and additional
+   * information about that field. Valid field IDs are defined by the tag's
+   * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
    * <code>
@@ -238,9 +240,9 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
-   * must have at least 1 field and at most 500 fields.
+   * Required. This maps the ID of a tag field to the value of and additional
+   * information about that field. Valid field IDs are defined by the tag's
+   * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
    * <code>

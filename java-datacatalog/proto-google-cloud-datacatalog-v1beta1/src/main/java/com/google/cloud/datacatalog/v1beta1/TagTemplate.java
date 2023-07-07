@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.datacatalog.v1beta1;
  *
  * <pre>
  * A tag template defines a tag, which can have one or more typed fields.
- * The template is used to create and attach the tag to GCP resources.
+ * The template is used to create and attach the tag to Google Cloud resources.
  * [Tag template
  * roles](https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
  * provide permissions to create, edit, and use the template. See, for example,
@@ -537,7 +537,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A tag template defines a tag, which can have one or more typed fields.
-   * The template is used to create and attach the tag to GCP resources.
+   * The template is used to create and attach the tag to Google Cloud resources.
    * [Tag template
    * roles](https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
    * provide permissions to create, edit, and use the template. See, for example,

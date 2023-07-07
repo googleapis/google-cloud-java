@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,7 +118,8 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>
@@ -132,7 +133,8 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>
@@ -146,7 +148,8 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,66 +67,67 @@ public final class PolicyTagManagerSerializationProto {
       "\nDgoogle/cloud/datacatalog/v1beta1/polic"
           + "ytagmanagerserialization.proto\022 google.c"
           + "loud.datacatalog.v1beta1\032\034google/api/ann"
-          + "otations.proto\032\037google/api/field_behavio"
-          + "r.proto\032\031google/api/resource.proto\0327goog"
-          + "le/cloud/datacatalog/v1beta1/policytagma"
-          + "nager.proto\032\032google/iam/v1/policy.proto\032"
-          + "\027google/api/client.proto\"\221\001\n\022SerializedT"
-          + "axonomy\022\032\n\014display_name\030\001 \001(\tB\004\342A\001\002\022\023\n\013d"
-          + "escription\030\002 \001(\t\022J\n\013policy_tags\030\003 \003(\01325."
-          + "google.cloud.datacatalog.v1beta1.Seriali"
-          + "zedPolicyTag\"\230\001\n\023SerializedPolicyTag\022\032\n\014"
-          + "display_name\030\002 \001(\tB\004\342A\001\002\022\023\n\013description\030"
-          + "\003 \001(\t\022P\n\021child_policy_tags\030\004 \003(\01325.googl"
-          + "e.cloud.datacatalog.v1beta1.SerializedPo"
-          + "licyTag\"\252\001\n\027ImportTaxonomiesRequest\022<\n\006p"
+          + "otations.proto\032\027google/api/client.proto\032"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\0327google/cloud/dataca"
+          + "talog/v1beta1/policytagmanager.proto\"\350\001\n"
+          + "\022SerializedTaxonomy\022\032\n\014display_name\030\001 \001("
+          + "\tB\004\342A\001\002\022\023\n\013description\030\002 \001(\t\022J\n\013policy_t"
+          + "ags\030\003 \003(\01325.google.cloud.datacatalog.v1b"
+          + "eta1.SerializedPolicyTag\022U\n\026activated_po"
+          + "licy_types\030\004 \003(\01625.google.cloud.datacata"
+          + "log.v1beta1.Taxonomy.PolicyType\"\254\001\n\023Seri"
+          + "alizedPolicyTag\022\022\n\npolicy_tag\030\001 \001(\t\022\032\n\014d"
+          + "isplay_name\030\002 \001(\tB\004\342A\001\002\022\023\n\013description\030\003"
+          + " \001(\t\022P\n\021child_policy_tags\030\004 \003(\01325.google"
+          + ".cloud.datacatalog.v1beta1.SerializedPol"
+          + "icyTag\"\252\001\n\027ImportTaxonomiesRequest\022<\n\006pa"
+          + "rent\030\001 \001(\tB,\342A\001\002\372A%\022#datacatalog.googlea"
+          + "pis.com/Taxonomy\022G\n\rinline_source\030\002 \001(\0132"
+          + "..google.cloud.datacatalog.v1beta1.Inlin"
+          + "eSourceH\000B\010\n\006source\"^\n\014InlineSource\022N\n\nt"
+          + "axonomies\030\001 \003(\01324.google.cloud.datacatal"
+          + "og.v1beta1.SerializedTaxonomyB\004\342A\001\002\"Z\n\030I"
+          + "mportTaxonomiesResponse\022>\n\ntaxonomies\030\001 "
+          + "\003(\0132*.google.cloud.datacatalog.v1beta1.T"
+          + "axonomy\"\311\001\n\027ExportTaxonomiesRequest\022<\n\006p"
           + "arent\030\001 \001(\tB,\342A\001\002\372A%\022#datacatalog.google"
-          + "apis.com/Taxonomy\022G\n\rinline_source\030\002 \001(\013"
-          + "2..google.cloud.datacatalog.v1beta1.Inli"
-          + "neSourceH\000B\010\n\006source\"^\n\014InlineSource\022N\n\n"
-          + "taxonomies\030\001 \003(\01324.google.cloud.datacata"
-          + "log.v1beta1.SerializedTaxonomyB\004\342A\001\002\"Z\n\030"
-          + "ImportTaxonomiesResponse\022>\n\ntaxonomies\030\001"
-          + " \003(\0132*.google.cloud.datacatalog.v1beta1."
-          + "Taxonomy\"\311\001\n\027ExportTaxonomiesRequest\022<\n\006"
-          + "parent\030\001 \001(\tB,\342A\001\002\372A%\022#datacatalog.googl"
-          + "eapis.com/Taxonomy\022@\n\ntaxonomies\030\002 \003(\tB,"
-          + "\342A\001\002\372A%\n#datacatalog.googleapis.com/Taxo"
-          + "nomy\022\037\n\025serialized_taxonomies\030\003 \001(\010H\000B\r\n"
-          + "\013destination\"d\n\030ExportTaxonomiesResponse"
-          + "\022H\n\ntaxonomies\030\001 \003(\01324.google.cloud.data"
-          + "catalog.v1beta1.SerializedTaxonomy2\222\004\n\035P"
-          + "olicyTagManagerSerialization\022\320\001\n\020ImportT"
-          + "axonomies\0229.google.cloud.datacatalog.v1b"
-          + "eta1.ImportTaxonomiesRequest\032:.google.cl"
-          + "oud.datacatalog.v1beta1.ImportTaxonomies"
-          + "Response\"E\202\323\344\223\002?\":/v1beta1/{parent=proje"
-          + "cts/*/locations/*}/taxonomies:import:\001*\022"
-          + "\315\001\n\020ExportTaxonomies\0229.google.cloud.data"
-          + "catalog.v1beta1.ExportTaxonomiesRequest\032"
-          + ":.google.cloud.datacatalog.v1beta1.Expor"
-          + "tTaxonomiesResponse\"B\202\323\344\223\002<\022:/v1beta1/{p"
-          + "arent=projects/*/locations/*}/taxonomies"
-          + ":export\032N\312A\032datacatalog.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\203\002\n$com.google.cloud.datacatalog"
-          + ".v1beta1B\"PolicyTagManagerSerializationP"
-          + "rotoP\001ZFcloud.google.com/go/datacatalog/"
-          + "apiv1beta1/datacatalogpb;datacatalogpb\370\001"
-          + "\001\252\002 Google.Cloud.DataCatalog.V1Beta1\312\002 G"
-          + "oogle\\Cloud\\DataCatalog\\V1beta1\352\002#Google"
-          + "::Cloud::DataCatalog::V1beta1b\006proto3"
+          + "apis.com/Taxonomy\022@\n\ntaxonomies\030\002 \003(\tB,\342"
+          + "A\001\002\372A%\n#datacatalog.googleapis.com/Taxon"
+          + "omy\022\037\n\025serialized_taxonomies\030\003 \001(\010H\000B\r\n\013"
+          + "destination\"d\n\030ExportTaxonomiesResponse\022"
+          + "H\n\ntaxonomies\030\001 \003(\01324.google.cloud.datac"
+          + "atalog.v1beta1.SerializedTaxonomy2\222\004\n\035Po"
+          + "licyTagManagerSerialization\022\320\001\n\020ImportTa"
+          + "xonomies\0229.google.cloud.datacatalog.v1be"
+          + "ta1.ImportTaxonomiesRequest\032:.google.clo"
+          + "ud.datacatalog.v1beta1.ImportTaxonomiesR"
+          + "esponse\"E\202\323\344\223\002?\":/v1beta1/{parent=projec"
+          + "ts/*/locations/*}/taxonomies:import:\001*\022\315"
+          + "\001\n\020ExportTaxonomies\0229.google.cloud.datac"
+          + "atalog.v1beta1.ExportTaxonomiesRequest\032:"
+          + ".google.cloud.datacatalog.v1beta1.Export"
+          + "TaxonomiesResponse\"B\202\323\344\223\002<\022:/v1beta1/{pa"
+          + "rent=projects/*/locations/*}/taxonomies:"
+          + "export\032N\312A\032datacatalog.googleapis.com\322A."
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atformB\203\002\n$com.google.cloud.datacatalog."
+          + "v1beta1B\"PolicyTagManagerSerializationPr"
+          + "otoP\001ZFcloud.google.com/go/datacatalog/a"
+          + "piv1beta1/datacatalogpb;datacatalogpb\370\001\001"
+          + "\252\002 Google.Cloud.DataCatalog.V1Beta1\312\002 Go"
+          + "ogle\\Cloud\\DataCatalog\\V1beta1\352\002#Google:"
+          + ":Cloud::DataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto.getDescriptor(),
-              com.google.iam.v1.PolicyProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_datacatalog_v1beta1_SerializedTaxonomy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -134,7 +135,7 @@ public final class PolicyTagManagerSerializationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1beta1_SerializedTaxonomy_descriptor,
             new java.lang.String[] {
-              "DisplayName", "Description", "PolicyTags",
+              "DisplayName", "Description", "PolicyTags", "ActivatedPolicyTypes",
             });
     internal_static_google_cloud_datacatalog_v1beta1_SerializedPolicyTag_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -142,7 +143,7 @@ public final class PolicyTagManagerSerializationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1beta1_SerializedPolicyTag_descriptor,
             new java.lang.String[] {
-              "DisplayName", "Description", "ChildPolicyTags",
+              "PolicyTag", "DisplayName", "Description", "ChildPolicyTags",
             });
     internal_static_google_cloud_datacatalog_v1beta1_ImportTaxonomiesRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -194,11 +195,10 @@ public final class PolicyTagManagerSerializationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto.getDescriptor();
-    com.google.iam.v1.PolicyProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

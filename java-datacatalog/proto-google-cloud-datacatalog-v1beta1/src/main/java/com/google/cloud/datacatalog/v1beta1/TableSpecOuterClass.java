@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,16 @@ public final class TableSpecOuterClass {
           + "gQueryDateShardedSpec\022:\n\007dataset\030\001 \001(\tB)"
           + "\342A\001\003\372A\"\n datacatalog.googleapis.com/Entr"
           + "y\022\032\n\014table_prefix\030\002 \001(\tB\004\342A\001\003\022\031\n\013shard_c"
-          + "ount\030\003 \001(\003B\004\342A\001\003*[\n\017TableSourceType\022!\n\035T"
+          + "ount\030\003 \001(\003B\004\342A\001\003*{\n\017TableSourceType\022!\n\035T"
           + "ABLE_SOURCE_TYPE_UNSPECIFIED\020\000\022\021\n\rBIGQUE"
-          + "RY_VIEW\020\002\022\022\n\016BIGQUERY_TABLE\020\005B\337\001\n$com.go"
-          + "ogle.cloud.datacatalog.v1beta1P\001ZFcloud."
-          + "google.com/go/datacatalog/apiv1beta1/dat"
-          + "acatalogpb;datacatalogpb\370\001\001\252\002 Google.Clo"
-          + "ud.DataCatalog.V1Beta1\312\002 Google\\Cloud\\Da"
-          + "taCatalog\\V1beta1\352\002#Google::Cloud::DataC"
-          + "atalog::V1beta1b\006proto3"
+          + "RY_VIEW\020\002\022\022\n\016BIGQUERY_TABLE\020\005\022\036\n\032BIGQUER"
+          + "Y_MATERIALIZED_VIEW\020\007B\337\001\n$com.google.clo"
+          + "ud.datacatalog.v1beta1P\001ZFcloud.google.c"
+          + "om/go/datacatalog/apiv1beta1/datacatalog"
+          + "pb;datacatalogpb\370\001\001\252\002 Google.Cloud.DataC"
+          + "atalog.V1Beta1\312\002 Google\\Cloud\\DataCatalo"
+          + "g\\V1beta1\352\002#Google::Cloud::DataCatalog::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

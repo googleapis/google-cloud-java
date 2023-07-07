@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,8 +72,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The
+   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
    *
    * Examples:
@@ -104,8 +104,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The
+   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
    *
    * Examples:
@@ -598,8 +598,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
      *
      * Examples:
@@ -629,8 +629,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
      *
      * Examples:
@@ -660,8 +660,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
      *
      * Examples:
@@ -690,8 +690,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
      *
      * Examples:
@@ -716,8 +716,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
      *
      * Examples:

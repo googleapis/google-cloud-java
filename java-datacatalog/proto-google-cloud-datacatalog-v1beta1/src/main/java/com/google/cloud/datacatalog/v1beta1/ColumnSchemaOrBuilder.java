@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,9 +102,9 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are required,
-   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
-   * Default mode is `NULLABLE`.
+   * Optional. A column's mode indicates whether the values in this column are
+   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
+   * supported. Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -116,9 +116,9 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are required,
-   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
-   * Default mode is `NULLABLE`.
+   * Optional. A column's mode indicates whether the values in this column are
+   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
+   * supported. Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,7 +131,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -143,7 +144,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -155,7 +157,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -167,7 +170,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -180,7 +184,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>

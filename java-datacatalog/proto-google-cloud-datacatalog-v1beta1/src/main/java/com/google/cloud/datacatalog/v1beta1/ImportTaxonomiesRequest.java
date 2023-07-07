@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,8 +117,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource name of project that the newly created taxonomies will
-   * belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>
@@ -143,8 +143,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource name of project that the newly created taxonomies will
-   * belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -186,7 +186,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -204,7 +204,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -639,8 +639,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource name of project that the newly created taxonomies will
-     * belong to.
+     * Required. Resource name of project that the imported taxonomies will belong
+     * to.
      * </pre>
      *
      * <code>
@@ -664,8 +664,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource name of project that the newly created taxonomies will
-     * belong to.
+     * Required. Resource name of project that the imported taxonomies will belong
+     * to.
      * </pre>
      *
      * <code>
@@ -689,8 +689,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource name of project that the newly created taxonomies will
-     * belong to.
+     * Required. Resource name of project that the imported taxonomies will belong
+     * to.
      * </pre>
      *
      * <code>
@@ -713,8 +713,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource name of project that the newly created taxonomies will
-     * belong to.
+     * Required. Resource name of project that the imported taxonomies will belong
+     * to.
      * </pre>
      *
      * <code>
@@ -733,8 +733,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource name of project that the newly created taxonomies will
-     * belong to.
+     * Required. Resource name of project that the imported taxonomies will belong
+     * to.
      * </pre>
      *
      * <code>
@@ -764,7 +764,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -779,7 +779,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -804,7 +804,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -826,7 +826,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -846,7 +846,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -878,7 +878,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -903,7 +903,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -915,7 +915,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -935,7 +935,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import
+     * Inline source used for taxonomies to be imported.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
