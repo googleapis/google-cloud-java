@@ -4445,6 +4445,33 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     com.google.container.v1beta1.NodePool.PlacementPolicy.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The tpuTopology.
+     */
+    java.lang.String getTpuTopology();
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The bytes for tpuTopology.
+     */
+    com.google.protobuf.ByteString getTpuTopologyBytes();
   }
   /**
    *
@@ -4467,6 +4494,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     private PlacementPolicy() {
       type_ = 0;
+      tpuTopology_ = "";
     }
 
     @java.lang.Override
@@ -4668,6 +4696,59 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int TPU_TOPOLOGY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tpuTopology_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The tpuTopology.
+     */
+    @java.lang.Override
+    public java.lang.String getTpuTopology() {
+      java.lang.Object ref = tpuTopology_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tpuTopology_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The bytes for tpuTopology.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTpuTopologyBytes() {
+      java.lang.Object ref = tpuTopology_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tpuTopology_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4687,6 +4768,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tpuTopology_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4700,6 +4784,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           != com.google.container.v1beta1.NodePool.PlacementPolicy.Type.TYPE_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tpuTopology_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4718,6 +4805,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           (com.google.container.v1beta1.NodePool.PlacementPolicy) obj;
 
       if (type_ != other.type_) return false;
+      if (!getTpuTopology().equals(other.getTpuTopology())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4731,6 +4819,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
+      hash = (53 * hash) + getTpuTopology().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4874,6 +4964,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         type_ = 0;
+        tpuTopology_ = "";
         return this;
       }
 
@@ -4912,6 +5003,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tpuTopology_ = tpuTopology_;
         }
       }
 
@@ -4966,6 +5060,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (!other.getTpuTopology().isEmpty()) {
+          tpuTopology_ = other.tpuTopology_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4998,6 +5097,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  tpuTopology_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5105,6 +5210,117 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tpuTopology_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return The tpuTopology.
+       */
+      public java.lang.String getTpuTopology() {
+        java.lang.Object ref = tpuTopology_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tpuTopology_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return The bytes for tpuTopology.
+       */
+      public com.google.protobuf.ByteString getTpuTopologyBytes() {
+        java.lang.Object ref = tpuTopology_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tpuTopology_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @param value The tpuTopology to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTpuTopology(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tpuTopology_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTpuTopology() {
+        tpuTopology_ = getDefaultInstance().getTpuTopology();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @param value The bytes for tpuTopology to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTpuTopologyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        tpuTopology_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5681,7 +5897,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3762
+   *     google/container/v1beta1/cluster_service.proto;l=3794
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -5709,7 +5925,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3762
+   *     google/container/v1beta1/cluster_service.proto;l=3794
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -8542,7 +8758,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3762
+     *     google/container/v1beta1/cluster_service.proto;l=3794
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -8569,7 +8785,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3762
+     *     google/container/v1beta1/cluster_service.proto;l=3794
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -8596,7 +8812,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3762
+     *     google/container/v1beta1/cluster_service.proto;l=3794
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8622,7 +8838,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3762
+     *     google/container/v1beta1/cluster_service.proto;l=3794
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8644,7 +8860,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3762
+     *     google/container/v1beta1/cluster_service.proto;l=3794
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

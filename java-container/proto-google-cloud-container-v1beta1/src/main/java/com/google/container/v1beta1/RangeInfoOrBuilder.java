@@ -18,24 +18,46 @@
 
 package com.google.container.v1beta1;
 
-public interface KalmConfigOrBuilder
+public interface RangeInfoOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.KalmConfig)
+    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.RangeInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Whether KALM is enabled for this cluster.
+   * Output only. [Output only] Name of a range.
    * </pre>
    *
-   * <code>bool enabled = 1 [deprecated = true];</code>
+   * <code>string range_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1282
-   * @return The enabled.
+   * @return The rangeName.
    */
-  @java.lang.Deprecated
-  boolean getEnabled();
+  java.lang.String getRangeName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Name of a range.
+   * </pre>
+   *
+   * <code>string range_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rangeName.
+   */
+  com.google.protobuf.ByteString getRangeNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the range.
+   * </pre>
+   *
+   * <code>double utilization = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The utilization.
+   */
+  double getUtilization();
 }

@@ -1547,6 +1547,27 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         : podCidrOverprovisionConfig_;
   }
 
+  public static final int POD_IPV4_RANGE_UTILIZATION_FIELD_NUMBER = 16;
+  private double podIpv4RangeUtilization_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the IPv4 range for pod.
+   * The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The podIpv4RangeUtilization.
+   */
+  @java.lang.Override
+  public double getPodIpv4RangeUtilization() {
+    return podIpv4RangeUtilization_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1579,6 +1600,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (podCidrOverprovisionConfig_ != null) {
       output.writeMessage(13, getPodCidrOverprovisionConfig());
     }
+    if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
+      output.writeDouble(16, podIpv4RangeUtilization_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1609,6 +1633,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, getPodCidrOverprovisionConfig());
+    }
+    if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(16, podIpv4RangeUtilization_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1642,6 +1669,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (!getPodCidrOverprovisionConfig().equals(other.getPodCidrOverprovisionConfig()))
         return false;
     }
+    if (java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization())
+        != java.lang.Double.doubleToLongBits(other.getPodIpv4RangeUtilization())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1671,6 +1700,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + POD_CIDR_OVERPROVISION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPodCidrOverprovisionConfig().hashCode();
     }
+    hash = (37 * hash) + POD_IPV4_RANGE_UTILIZATION_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1834,6 +1868,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         podCidrOverprovisionConfigBuilder_.dispose();
         podCidrOverprovisionConfigBuilder_ = null;
       }
+      podIpv4RangeUtilization_ = 0D;
       return this;
     }
 
@@ -1896,6 +1931,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
             podCidrOverprovisionConfigBuilder_ == null
                 ? podCidrOverprovisionConfig_
                 : podCidrOverprovisionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.podIpv4RangeUtilization_ = podIpv4RangeUtilization_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1967,6 +2005,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasPodCidrOverprovisionConfig()) {
         mergePodCidrOverprovisionConfig(other.getPodCidrOverprovisionConfig());
       }
+      if (other.getPodIpv4RangeUtilization() != 0D) {
+        setPodIpv4RangeUtilization(other.getPodIpv4RangeUtilization());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2031,6 +2072,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 106
+            case 129:
+              {
+                podIpv4RangeUtilization_ = input.readDouble();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 129
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3048,6 +3095,68 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         podCidrOverprovisionConfig_ = null;
       }
       return podCidrOverprovisionConfigBuilder_;
+    }
+
+    private double podIpv4RangeUtilization_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The podIpv4RangeUtilization.
+     */
+    @java.lang.Override
+    public double getPodIpv4RangeUtilization() {
+      return podIpv4RangeUtilization_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The podIpv4RangeUtilization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodIpv4RangeUtilization(double value) {
+
+      podIpv4RangeUtilization_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPodIpv4RangeUtilization() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      podIpv4RangeUtilization_ = 0D;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

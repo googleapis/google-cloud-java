@@ -283,4 +283,20 @@ public interface NodeNetworkConfigOrBuilder
    */
   com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder
       getPodCidrOverprovisionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the IPv4 range for pod.
+   * The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The podIpv4RangeUtilization.
+   */
+  double getPodIpv4RangeUtilization();
 }
