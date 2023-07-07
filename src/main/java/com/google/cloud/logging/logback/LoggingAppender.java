@@ -86,8 +86,8 @@ import java.util.Set;
  *         &lt;logDestinationProjectId&gt;String&lt;/logDestinationProjectId&gt;
  *
  *         &lt;!-- Optional: add custom labels to log entries using {@link LoggingEnhancer} classes --&gt;
- *         &lt;enhancer&gt;com.example.enhancers.TestLoggingEnhancer&lt/enhancer&gt;
- *         &lt;enhancer&gt;com.example.enhancers.AnotherEnhancer&lt/enhancer&gt;
+ *         &lt;enhancer&gt;com.example.enhancers.TestLoggingEnhancer&lt;/enhancer&gt;
+ *         &lt;enhancer&gt;com.example.enhancers.AnotherEnhancer&lt;/enhancer&gt;
  *
  *         &lt;!-- Optional: specifies if a batch's valid entries should be written even if some other entry failed due to an error. Defaults to {@code true} --&gt;
  *         &lt;partialSuccess&gt;true&lt;/partialSuccess&gt;
@@ -159,9 +159,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Sets the LOG_ID part of the <a href="log
-   * name">https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.log_name</a>
-   * for which the logs are ingested.
+   * Sets the LOG_ID part of the <a
+   * href="https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.log_name">log
+   * name</a> for which the logs are ingested.
    *
    * @param log LOG_ID part of the name
    */
@@ -185,9 +185,10 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Sets the path to the <a href="credential
-   * file">https://cloud.google.com/iam/docs/creating-managing-service-account-keys</a>. If not set
-   * the appender will use {@link GoogleCredentials#getApplicationDefault()} to authenticate.
+   * Sets the path to the <a
+   * href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">credential
+   * file</a>. If not set the appender will use {@link GoogleCredentials#getApplicationDefault()} to
+   * authenticate.
    *
    * @param credentialsFile the path to the credentials file.
    */
