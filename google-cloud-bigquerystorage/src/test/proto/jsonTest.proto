@@ -156,6 +156,17 @@ message TestTimestamp {
   optional int64 test_saformat = 8;
 }
 
+message TestRepeatedTimestamp {
+  repeated int64 test_string_repeated = 1;
+  repeated int64 test_string_t_z_repeated = 2;
+  repeated int64 test_long_repeated = 3;
+  repeated int64 test_int_repeated = 4;
+  repeated int64 test_float_repeated = 5;
+  repeated int64 test_offset_repeated = 6;
+  repeated int64 test_timezone_repeated = 7;
+  repeated int64 test_saformat_repeated = 8;
+}
+
 message TestDate {
   optional int32 test_string = 1;
   optional int32 test_long = 2;
