@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.16.1](https://github.com/googleapis/java-datastore/compare/v2.16.0...v2.16.1) (2023-07-10)
+
+
+### Documentation
+
+* Fix javadoc errors ([#1126](https://github.com/googleapis/java-datastore/issues/1126)) ([d4b11bb](https://github.com/googleapis/java-datastore/commit/d4b11bbf9198b446365b25617614434865d7e285))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#1130](https://github.com/googleapis/java-datastore/issues/1130)) ([2181847](https://github.com/googleapis/java-datastore/commit/2181847666bce403743677b06f90b34e5ae180a3))
+
 ## [2.16.0](https://github.com/googleapis/java-datastore/compare/v2.15.0...v2.16.0) (2023-06-22)
 
 
