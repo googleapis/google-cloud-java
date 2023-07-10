@@ -78,7 +78,7 @@ public class SourceSnippets {
   // [START securitycenter_list_sources]
   static ImmutableList<Source> listSources(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request to list sources in an organization/ project/ folder.
+      // Start setting up a request to list sources in an organization, project, or folder.
       // Parent must be in one of the following formats:
       //    OrganizationName organizationName = OrganizationName.of("organization-id");
       //    ProjectName projectName = ProjectName.of("project-id");

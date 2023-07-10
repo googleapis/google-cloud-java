@@ -370,7 +370,7 @@ public class FindingSnippets {
    * Group all findings under an organization across all sources by their specified properties (e.g.
    * category).
    *
-   * @param organizationName The organization to group all findings for.
+   * @param organizationName: The organization to group all findings for.
    */
   // [START securitycenter_group_all_findings]
   static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
