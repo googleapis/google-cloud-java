@@ -1143,7 +1143,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
    * </pre>
    *
    * <code>optional bool allow_global_access = 499409674;</code>
@@ -1158,7 +1158,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
    * </pre>
    *
    * <code>optional bool allow_global_access = 499409674;</code>
@@ -4847,7 +4847,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
      * </pre>
      *
      * <code>optional bool allow_global_access = 499409674;</code>
@@ -4862,7 +4862,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
      * </pre>
      *
      * <code>optional bool allow_global_access = 499409674;</code>
@@ -4877,7 +4877,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
      * </pre>
      *
      * <code>optional bool allow_global_access = 499409674;</code>
@@ -4896,7 +4896,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
      * </pre>
      *
      * <code>optional bool allow_global_access = 499409674;</code>

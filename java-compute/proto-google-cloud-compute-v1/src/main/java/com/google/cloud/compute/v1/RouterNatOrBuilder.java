@@ -27,6 +27,46 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return Whether the autoNetworkTier field is set.
+   */
+  boolean hasAutoNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The autoNetworkTier.
+   */
+  java.lang.String getAutoNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The bytes for autoNetworkTier.
+   */
+  com.google.protobuf.ByteString getAutoNetworkTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *

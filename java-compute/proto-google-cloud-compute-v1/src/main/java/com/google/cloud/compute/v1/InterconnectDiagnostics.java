@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Diagnostics information about interconnect, contains detailed and current technical information about Google's side of the connection.
+ * Diagnostics information about the Interconnect connection, which contains detailed and current technical information about Google's side of the connection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectDiagnostics}
@@ -977,7 +977,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Diagnostics information about interconnect, contains detailed and current technical information about Google's side of the connection.
+   * Diagnostics information about the Interconnect connection, which contains detailed and current technical information about Google's side of the connection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectDiagnostics}

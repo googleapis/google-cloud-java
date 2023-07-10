@@ -163,7 +163,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
+   * The IP address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -175,7 +175,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
+   * The IP address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -187,7 +187,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
+   * The IP address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
