@@ -294,28 +294,28 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     @Override
     public BigtableBatchingCallSettings build() {
       Preconditions.checkState(batchingSettings != null, "batchingSettings must be set");
-      FlowControlSettings defaultSettings = batchingSettings.getFlowControlSettings();
+      FlowControlSettings flowControlSettings = batchingSettings.getFlowControlSettings();
       Preconditions.checkState(
-          defaultSettings.getMaxOutstandingElementCount() != null,
+          flowControlSettings.getMaxOutstandingElementCount() != null,
           "maxOutstandingElementCount must be set in BatchingSettings#FlowControlSettings");
       Preconditions.checkState(
-          defaultSettings.getMaxOutstandingRequestBytes() != null,
+          flowControlSettings.getMaxOutstandingRequestBytes() != null,
           "maxOutstandingRequestBytes must be set in BatchingSettings#FlowControlSettings");
       Preconditions.checkArgument(
           batchingSettings.getElementCountThreshold() == null
-              || defaultSettings.getMaxOutstandingElementCount()
-                  >= batchingSettings.getElementCountThreshold(),
-          "if elementCountThreshold is set in BatchingSettings, maxOutstandingElementCount must be >= elementCountThreshold");
+              || flowControlSettings.getMaxOutstandingElementCount()
+                  > batchingSettings.getElementCountThreshold(),
+          "if batch elementCountThreshold is set in BatchingSettings, flow control maxOutstandingElementCount must be > elementCountThreshold");
       Preconditions.checkArgument(
           batchingSettings.getRequestByteThreshold() == null
-              || defaultSettings.getMaxOutstandingRequestBytes()
-                  >= batchingSettings.getRequestByteThreshold(),
-          "if requestByteThreshold is set in BatchingSettings, getMaxOutstandingRequestBytes must be >= getRequestByteThreshold");
+              || flowControlSettings.getMaxOutstandingRequestBytes()
+                  > batchingSettings.getRequestByteThreshold(),
+          "if batch requestByteThreshold is set in BatchingSettings, flow control maxOutstandingRequestBytes must be > getRequestByteThreshold");
       // Combine static FlowControlSettings with latency based throttling settings to create
       // DynamicFlowControlSettings.
       if (isLatencyBasedThrottlingEnabled()) {
-        long maxThrottlingElementCount = defaultSettings.getMaxOutstandingElementCount();
-        long maxThrottlingRequestByteCount = defaultSettings.getMaxOutstandingRequestBytes();
+        long maxThrottlingElementCount = flowControlSettings.getMaxOutstandingElementCount();
+        long maxThrottlingRequestByteCount = flowControlSettings.getMaxOutstandingRequestBytes();
         //  The maximum in flight element count is pretty high. Set the initial parallelism to 25%
         //  of the maximum and then work up or down. This reduction should reduce the
         // impacts of a bursty job, such as those found in Dataflow.
@@ -332,7 +332,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
         }
         dynamicFlowControlSettings =
             DynamicFlowControlSettings.newBuilder()
-                .setLimitExceededBehavior(defaultSettings.getLimitExceededBehavior())
+                .setLimitExceededBehavior(flowControlSettings.getLimitExceededBehavior())
                 .setInitialOutstandingElementCount(initialElementCount)
                 .setMaxOutstandingElementCount(maxThrottlingElementCount)
                 .setMinOutstandingElementCount(minElementCount)
@@ -343,13 +343,15 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
       } else {
         dynamicFlowControlSettings =
             DynamicFlowControlSettings.newBuilder()
-                .setLimitExceededBehavior(defaultSettings.getLimitExceededBehavior())
-                .setInitialOutstandingElementCount(defaultSettings.getMaxOutstandingElementCount())
-                .setMaxOutstandingElementCount(defaultSettings.getMaxOutstandingElementCount())
-                .setMinOutstandingElementCount(defaultSettings.getMaxOutstandingElementCount())
-                .setInitialOutstandingRequestBytes(defaultSettings.getMaxOutstandingRequestBytes())
-                .setMinOutstandingRequestBytes(defaultSettings.getMaxOutstandingRequestBytes())
-                .setMaxOutstandingRequestBytes(defaultSettings.getMaxOutstandingRequestBytes())
+                .setLimitExceededBehavior(flowControlSettings.getLimitExceededBehavior())
+                .setInitialOutstandingElementCount(
+                    flowControlSettings.getMaxOutstandingElementCount())
+                .setMaxOutstandingElementCount(flowControlSettings.getMaxOutstandingElementCount())
+                .setMinOutstandingElementCount(flowControlSettings.getMaxOutstandingElementCount())
+                .setInitialOutstandingRequestBytes(
+                    flowControlSettings.getMaxOutstandingRequestBytes())
+                .setMinOutstandingRequestBytes(flowControlSettings.getMaxOutstandingRequestBytes())
+                .setMaxOutstandingRequestBytes(flowControlSettings.getMaxOutstandingRequestBytes())
                 .build();
       }
       return new BigtableBatchingCallSettings(this);

@@ -176,8 +176,8 @@ public class BigtableBatchingCallSettingsTest {
             BatchingSettings.newBuilder()
                 .setFlowControlSettings(
                     FlowControlSettings.newBuilder()
-                        .setMaxOutstandingElementCount(10L)
-                        .setMaxOutstandingRequestBytes(10L)
+                        .setMaxOutstandingElementCount(11L)
+                        .setMaxOutstandingRequestBytes(11L)
                         .build())
                 .setElementCountThreshold(10L)
                 .setRequestByteThreshold(10L)

@@ -20,6 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.batching.BatchResource;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingDescriptor;
@@ -422,6 +423,8 @@ public class MetricsTracerTest {
   public void testBatchMutateRowsThrottledTime() throws Exception {
     FlowController flowController = Mockito.mock(FlowController.class);
     BatchingDescriptor batchingDescriptor = Mockito.mock(MutateRowsBatchingDescriptor.class);
+    when(batchingDescriptor.createResource(any())).thenReturn(new FakeBatchResource());
+    when(batchingDescriptor.createEmptyResource()).thenReturn(new FakeBatchResource());
     // Mock throttling
     final long throttled = 50;
     doAnswer(
@@ -485,5 +488,30 @@ public class MetricsTracerTest {
   @SuppressWarnings("unchecked")
   private static <T> StreamObserver<T> anyObserver(Class<T> returnType) {
     return (StreamObserver<T>) any(returnType);
+  }
+
+  private class FakeBatchResource implements BatchResource {
+
+    FakeBatchResource() {}
+
+    @Override
+    public BatchResource add(BatchResource resource) {
+      return new FakeBatchResource();
+    }
+
+    @Override
+    public long getElementCount() {
+      return 1;
+    }
+
+    @Override
+    public long getByteCount() {
+      return 1;
+    }
+
+    @Override
+    public boolean shouldFlush(long maxElementThreshold, long maxBytesThreshold) {
+      return false;
+    }
   }
 }

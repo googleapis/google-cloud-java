@@ -207,8 +207,8 @@ public class BuiltinMetricsTracerTest {
                 .setDelayThreshold(Duration.ofHours(1))
                 .setFlowControlSettings(
                     FlowControlSettings.newBuilder()
-                        .setMaxOutstandingElementCount((long) batchElementCount)
-                        .setMaxOutstandingRequestBytes(1000L)
+                        .setMaxOutstandingElementCount((long) batchElementCount + 1)
+                        .setMaxOutstandingRequestBytes(1001L)
                         .build())
                 .build());
     stubSettingsBuilder.setTracerFactory(mockFactory);
@@ -477,6 +477,9 @@ public class BuiltinMetricsTracerTest {
       for (int i = 0; i < 6; i++) {
         batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
       }
+
+      // closing the batcher to trigger the third flush
+      batcher.close();
 
       int expectedNumRequests = 6 / batchElementCount;
       ArgumentCaptor<Long> throttledTime = ArgumentCaptor.forClass(Long.class);

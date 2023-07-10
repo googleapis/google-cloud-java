@@ -959,7 +959,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     public EnhancedBigtableStubSettings build() {
       Preconditions.checkState(projectId != null, "Project id must be set");
       Preconditions.checkState(instanceId != null, "Instance id must be set");
-
       if (isRefreshingChannel) {
         Preconditions.checkArgument(
             getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider,
