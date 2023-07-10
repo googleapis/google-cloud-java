@@ -144,6 +144,42 @@ public interface RestoreAgentRequestOrBuilder
    *
    *
    * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return Whether the gitSource field is set.
+   */
+  boolean hasGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return The gitSource.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource getGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource git_source = 6;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSourceOrBuilder
+      getGitSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Agent restore mode. If not specified, `KEEP` is assumed.
    * </pre>
    *

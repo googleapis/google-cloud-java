@@ -386,7 +386,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=257
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=285
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -457,6 +457,48 @@ public interface AgentOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return Whether the gitIntegrationSettings field is set.
+   */
+  boolean hasGitIntegrationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return The gitIntegrationSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings getGitIntegrationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder
+      getGitIntegrationSettingsOrBuilder();
 
   /**
    *

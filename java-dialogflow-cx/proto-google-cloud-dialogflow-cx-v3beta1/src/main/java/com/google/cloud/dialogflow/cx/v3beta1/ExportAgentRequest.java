@@ -225,6 +225,878 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat)
   }
 
+  public interface GitDestinationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Tracking branch for the git push.
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The trackingBranch.
+     */
+    java.lang.String getTrackingBranch();
+    /**
+     *
+     *
+     * <pre>
+     * Tracking branch for the git push.
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The bytes for trackingBranch.
+     */
+    com.google.protobuf.ByteString getTrackingBranchBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Commit message for the git push.
+     * </pre>
+     *
+     * <code>string commit_message = 2;</code>
+     *
+     * @return The commitMessage.
+     */
+    java.lang.String getCommitMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Commit message for the git push.
+     * </pre>
+     *
+     * <code>string commit_message = 2;</code>
+     *
+     * @return The bytes for commitMessage.
+     */
+    com.google.protobuf.ByteString getCommitMessageBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for exporting to a git branch.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination}
+   */
+  public static final class GitDestination extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)
+      GitDestinationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GitDestination.newBuilder() to construct.
+    private GitDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GitDestination() {
+      trackingBranch_ = "";
+      commitMessage_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GitDestination();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentRequest_GitDestination_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentRequest_GitDestination_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.class,
+              com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder
+                  .class);
+    }
+
+    public static final int TRACKING_BRANCH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object trackingBranch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Tracking branch for the git push.
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The trackingBranch.
+     */
+    @java.lang.Override
+    public java.lang.String getTrackingBranch() {
+      java.lang.Object ref = trackingBranch_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trackingBranch_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tracking branch for the git push.
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The bytes for trackingBranch.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTrackingBranchBytes() {
+      java.lang.Object ref = trackingBranch_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        trackingBranch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMIT_MESSAGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object commitMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Commit message for the git push.
+     * </pre>
+     *
+     * <code>string commit_message = 2;</code>
+     *
+     * @return The commitMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getCommitMessage() {
+      java.lang.Object ref = commitMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        commitMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit message for the git push.
+     * </pre>
+     *
+     * <code>string commit_message = 2;</code>
+     *
+     * @return The bytes for commitMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCommitMessageBytes() {
+      java.lang.Object ref = commitMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        commitMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, trackingBranch_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commitMessage_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, commitMessage_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, trackingBranch_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commitMessage_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, commitMessage_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination other =
+          (com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination) obj;
+
+      if (!getTrackingBranch().equals(other.getTrackingBranch())) return false;
+      if (!getCommitMessage().equals(other.getCommitMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRACKING_BRANCH_FIELD_NUMBER;
+      hash = (53 * hash) + getTrackingBranch().hashCode();
+      hash = (37 * hash) + COMMIT_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getCommitMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for exporting to a git branch.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentRequest_GitDestination_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentRequest_GitDestination_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.class,
+                com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trackingBranch_ = "";
+        commitMessage_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentRequest_GitDestination_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination build() {
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination result =
+            new com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trackingBranch_ = trackingBranch_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.commitMessage_ = commitMessage_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+                .getDefaultInstance()) return this;
+        if (!other.getTrackingBranch().isEmpty()) {
+          trackingBranch_ = other.trackingBranch_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getCommitMessage().isEmpty()) {
+          commitMessage_ = other.commitMessage_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  trackingBranch_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  commitMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object trackingBranch_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Tracking branch for the git push.
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return The trackingBranch.
+       */
+      public java.lang.String getTrackingBranch() {
+        java.lang.Object ref = trackingBranch_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trackingBranch_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Tracking branch for the git push.
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return The bytes for trackingBranch.
+       */
+      public com.google.protobuf.ByteString getTrackingBranchBytes() {
+        java.lang.Object ref = trackingBranch_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          trackingBranch_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Tracking branch for the git push.
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @param value The trackingBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackingBranch(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trackingBranch_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Tracking branch for the git push.
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackingBranch() {
+        trackingBranch_ = getDefaultInstance().getTrackingBranch();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Tracking branch for the git push.
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @param value The bytes for trackingBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackingBranchBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        trackingBranch_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object commitMessage_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Commit message for the git push.
+       * </pre>
+       *
+       * <code>string commit_message = 2;</code>
+       *
+       * @return The commitMessage.
+       */
+      public java.lang.String getCommitMessage() {
+        java.lang.Object ref = commitMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          commitMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Commit message for the git push.
+       * </pre>
+       *
+       * <code>string commit_message = 2;</code>
+       *
+       * @return The bytes for commitMessage.
+       */
+      public com.google.protobuf.ByteString getCommitMessageBytes() {
+        java.lang.Object ref = commitMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          commitMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Commit message for the git push.
+       * </pre>
+       *
+       * <code>string commit_message = 2;</code>
+       *
+       * @param value The commitMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommitMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commitMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Commit message for the git push.
+       * </pre>
+       *
+       * <code>string commit_message = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCommitMessage() {
+        commitMessage_ = getDefaultInstance().getCommitMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Commit message for the git push.
+       * </pre>
+       *
+       * <code>string commit_message = 2;</code>
+       *
+       * @param value The bytes for commitMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommitMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        commitMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GitDestination> PARSER =
+        new com.google.protobuf.AbstractParser<GitDestination>() {
+          @java.lang.Override
+          public GitDestination parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GitDestination> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GitDestination> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -453,6 +1325,66 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int GIT_DESTINATION_FIELD_NUMBER = 6;
+  private com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination gitDestination_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gitDestination field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitDestination() {
+    return gitDestination_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gitDestination.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+      getGitDestination() {
+    return gitDestination_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+            .getDefaultInstance()
+        : gitDestination_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder
+      getGitDestinationOrBuilder() {
+    return gitDestination_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+            .getDefaultInstance()
+        : gitDestination_;
+  }
+
   public static final int INCLUDE_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER = 7;
   private boolean includeBigqueryExportSettings_ = false;
   /**
@@ -501,6 +1433,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, environment_);
     }
+    if (gitDestination_ != null) {
+      output.writeMessage(6, getGitDestination());
+    }
     if (includeBigqueryExportSettings_ != false) {
       output.writeBool(7, includeBigqueryExportSettings_);
     }
@@ -528,6 +1463,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, environment_);
     }
+    if (gitDestination_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGitDestination());
+    }
     if (includeBigqueryExportSettings_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(7, includeBigqueryExportSettings_);
@@ -552,6 +1490,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!getAgentUri().equals(other.getAgentUri())) return false;
     if (dataFormat_ != other.dataFormat_) return false;
     if (!getEnvironment().equals(other.getEnvironment())) return false;
+    if (hasGitDestination() != other.hasGitDestination()) return false;
+    if (hasGitDestination()) {
+      if (!getGitDestination().equals(other.getGitDestination())) return false;
+    }
     if (getIncludeBigqueryExportSettings() != other.getIncludeBigqueryExportSettings())
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -573,6 +1515,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + dataFormat_;
     hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironment().hashCode();
+    if (hasGitDestination()) {
+      hash = (37 * hash) + GIT_DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getGitDestination().hashCode();
+    }
     hash = (37 * hash) + INCLUDE_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeBigqueryExportSettings());
@@ -721,6 +1667,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       agentUri_ = "";
       dataFormat_ = 0;
       environment_ = "";
+      gitDestination_ = null;
+      if (gitDestinationBuilder_ != null) {
+        gitDestinationBuilder_.dispose();
+        gitDestinationBuilder_ = null;
+      }
       includeBigqueryExportSettings_ = false;
       return this;
     }
@@ -771,6 +1722,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         result.environment_ = environment_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.gitDestination_ =
+            gitDestinationBuilder_ == null ? gitDestination_ : gitDestinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.includeBigqueryExportSettings_ = includeBigqueryExportSettings_;
       }
     }
@@ -839,6 +1794,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasGitDestination()) {
+        mergeGitDestination(other.getGitDestination());
+      }
       if (other.getIncludeBigqueryExportSettings() != false) {
         setIncludeBigqueryExportSettings(other.getIncludeBigqueryExportSettings());
       }
@@ -892,10 +1850,16 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getGitDestinationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             case 56:
               {
                 includeBigqueryExportSettings_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -1424,6 +2388,219 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        gitDestination_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination,
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder>
+        gitDestinationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gitDestination field is set.
+     */
+    public boolean hasGitDestination() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gitDestination.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+        getGitDestination() {
+      if (gitDestinationBuilder_ == null) {
+        return gitDestination_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+                .getDefaultInstance()
+            : gitDestination_;
+      } else {
+        return gitDestinationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGitDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination value) {
+      if (gitDestinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gitDestination_ = value;
+      } else {
+        gitDestinationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGitDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder
+            builderForValue) {
+      if (gitDestinationBuilder_ == null) {
+        gitDestination_ = builderForValue.build();
+      } else {
+        gitDestinationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGitDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination value) {
+      if (gitDestinationBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && gitDestination_ != null
+            && gitDestination_
+                != com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+                    .getDefaultInstance()) {
+          getGitDestinationBuilder().mergeFrom(value);
+        } else {
+          gitDestination_ = value;
+        }
+      } else {
+        gitDestinationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGitDestination() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      gitDestination_ = null;
+      if (gitDestinationBuilder_ != null) {
+        gitDestinationBuilder_.dispose();
+        gitDestinationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder
+        getGitDestinationBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getGitDestinationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder
+        getGitDestinationOrBuilder() {
+      if (gitDestinationBuilder_ != null) {
+        return gitDestinationBuilder_.getMessageOrBuilder();
+      } else {
+        return gitDestination_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination
+                .getDefaultInstance()
+            : gitDestination_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git branch to export the agent to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination,
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder>
+        getGitDestinationFieldBuilder() {
+      if (gitDestinationBuilder_ == null) {
+        gitDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination,
+                com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder>(
+                getGitDestination(), getParentForChildren(), isClean());
+        gitDestination_ = null;
+      }
+      return gitDestinationBuilder_;
+    }
+
     private boolean includeBigqueryExportSettings_;
     /**
      *
@@ -1457,7 +2634,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     public Builder setIncludeBigqueryExportSettings(boolean value) {
 
       includeBigqueryExportSettings_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1474,7 +2651,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIncludeBigqueryExportSettings() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       includeBigqueryExportSettings_ = false;
       onChanged();
       return this;

@@ -81,6 +81,2598 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.Agent.Builder.class);
   }
 
+  public interface GitIntegrationSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     *
+     * @return Whether the githubSettings field is set.
+     */
+    boolean hasGithubSettings();
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     *
+     * @return The githubSettings.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+        getGithubSettings();
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettingsOrBuilder
+        getGithubSettingsOrBuilder();
+
+    com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GitSettingsCase
+        getGitSettingsCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for connecting to Git repository for an agent.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings}
+   */
+  public static final class GitIntegrationSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)
+      GitIntegrationSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GitIntegrationSettings.newBuilder() to construct.
+    private GitIntegrationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GitIntegrationSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GitIntegrationSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder.class);
+    }
+
+    public interface GithubSettingsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The unique repository display name for the GitHub repository.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
+       */
+      java.lang.String getDisplayName();
+      /**
+       *
+       *
+       * <pre>
+       * The unique repository display name for the GitHub repository.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      com.google.protobuf.ByteString getDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The GitHub repository URI related to the agent.
+       * </pre>
+       *
+       * <code>string repository_uri = 2;</code>
+       *
+       * @return The repositoryUri.
+       */
+      java.lang.String getRepositoryUri();
+      /**
+       *
+       *
+       * <pre>
+       * The GitHub repository URI related to the agent.
+       * </pre>
+       *
+       * <code>string repository_uri = 2;</code>
+       *
+       * @return The bytes for repositoryUri.
+       */
+      com.google.protobuf.ByteString getRepositoryUriBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The branch of the GitHub repository tracked for this agent.
+       * </pre>
+       *
+       * <code>string tracking_branch = 3;</code>
+       *
+       * @return The trackingBranch.
+       */
+      java.lang.String getTrackingBranch();
+      /**
+       *
+       *
+       * <pre>
+       * The branch of the GitHub repository tracked for this agent.
+       * </pre>
+       *
+       * <code>string tracking_branch = 3;</code>
+       *
+       * @return The bytes for trackingBranch.
+       */
+      com.google.protobuf.ByteString getTrackingBranchBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The access token used to authenticate the access to the GitHub
+       * repository.
+       * </pre>
+       *
+       * <code>string access_token = 4;</code>
+       *
+       * @return The accessToken.
+       */
+      java.lang.String getAccessToken();
+      /**
+       *
+       *
+       * <pre>
+       * The access token used to authenticate the access to the GitHub
+       * repository.
+       * </pre>
+       *
+       * <code>string access_token = 4;</code>
+       *
+       * @return The bytes for accessToken.
+       */
+      com.google.protobuf.ByteString getAccessTokenBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @return A list containing the branches.
+       */
+      java.util.List<java.lang.String> getBranchesList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @return The count of branches.
+       */
+      int getBranchesCount();
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The branches at the given index.
+       */
+      java.lang.String getBranches(int index);
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the branches at the given index.
+       */
+      com.google.protobuf.ByteString getBranchesBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings of integration with GitHub.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings}
+     */
+    public static final class GithubSettings extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+        GithubSettingsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use GithubSettings.newBuilder() to construct.
+      private GithubSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private GithubSettings() {
+        displayName_ = "";
+        repositoryUri_ = "";
+        trackingBranch_ = "";
+        accessToken_ = "";
+        branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new GithubSettings();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                    .class,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                    .Builder.class);
+      }
+
+      public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The unique repository display name for the GitHub repository.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
+       */
+      @java.lang.Override
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unique repository display name for the GitHub repository.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REPOSITORY_URI_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object repositoryUri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The GitHub repository URI related to the agent.
+       * </pre>
+       *
+       * <code>string repository_uri = 2;</code>
+       *
+       * @return The repositoryUri.
+       */
+      @java.lang.Override
+      public java.lang.String getRepositoryUri() {
+        java.lang.Object ref = repositoryUri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repositoryUri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The GitHub repository URI related to the agent.
+       * </pre>
+       *
+       * <code>string repository_uri = 2;</code>
+       *
+       * @return The bytes for repositoryUri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRepositoryUriBytes() {
+        java.lang.Object ref = repositoryUri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          repositoryUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TRACKING_BRANCH_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object trackingBranch_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The branch of the GitHub repository tracked for this agent.
+       * </pre>
+       *
+       * <code>string tracking_branch = 3;</code>
+       *
+       * @return The trackingBranch.
+       */
+      @java.lang.Override
+      public java.lang.String getTrackingBranch() {
+        java.lang.Object ref = trackingBranch_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trackingBranch_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The branch of the GitHub repository tracked for this agent.
+       * </pre>
+       *
+       * <code>string tracking_branch = 3;</code>
+       *
+       * @return The bytes for trackingBranch.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTrackingBranchBytes() {
+        java.lang.Object ref = trackingBranch_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          trackingBranch_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ACCESS_TOKEN_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object accessToken_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The access token used to authenticate the access to the GitHub
+       * repository.
+       * </pre>
+       *
+       * <code>string access_token = 4;</code>
+       *
+       * @return The accessToken.
+       */
+      @java.lang.Override
+      public java.lang.String getAccessToken() {
+        java.lang.Object ref = accessToken_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessToken_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The access token used to authenticate the access to the GitHub
+       * repository.
+       * </pre>
+       *
+       * <code>string access_token = 4;</code>
+       *
+       * @return The bytes for accessToken.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAccessTokenBytes() {
+        java.lang.Object ref = accessToken_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          accessToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int BRANCHES_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList branches_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @return A list containing the branches.
+       */
+      public com.google.protobuf.ProtocolStringList getBranchesList() {
+        return branches_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @return The count of branches.
+       */
+      public int getBranchesCount() {
+        return branches_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The branches at the given index.
+       */
+      public java.lang.String getBranches(int index) {
+        return branches_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of branches configured to be used from Dialogflow.
+       * </pre>
+       *
+       * <code>repeated string branches = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the branches at the given index.
+       */
+      public com.google.protobuf.ByteString getBranchesBytes(int index) {
+        return branches_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryUri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, repositoryUri_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trackingBranch_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, accessToken_);
+        }
+        for (int i = 0; i < branches_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, branches_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryUri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, repositoryUri_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trackingBranch_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, accessToken_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < branches_.size(); i++) {
+            dataSize += computeStringSizeNoTag(branches_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getBranchesList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+                obj;
+
+        if (!getDisplayName().equals(other.getDisplayName())) return false;
+        if (!getRepositoryUri().equals(other.getRepositoryUri())) return false;
+        if (!getTrackingBranch().equals(other.getTrackingBranch())) return false;
+        if (!getAccessToken().equals(other.getAccessToken())) return false;
+        if (!getBranchesList().equals(other.getBranchesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayName().hashCode();
+        hash = (37 * hash) + REPOSITORY_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getRepositoryUri().hashCode();
+        hash = (37 * hash) + TRACKING_BRANCH_FIELD_NUMBER;
+        hash = (53 * hash) + getTrackingBranch().hashCode();
+        hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessToken().hashCode();
+        if (getBranchesCount() > 0) {
+          hash = (37 * hash) + BRANCHES_FIELD_NUMBER;
+          hash = (53 * hash) + getBranchesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings of integration with GitHub.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettingsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                      .class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          displayName_ = "";
+          repositoryUri_ = "";
+          trackingBranch_ = "";
+          accessToken_ = "";
+          branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              result =
+                  new com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                      .GithubSettings(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.displayName_ = displayName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.repositoryUri_ = repositoryUri_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.trackingBranch_ = trackingBranch_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.accessToken_ = accessToken_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            branches_.makeImmutable();
+            result.branches_ = branches_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                  .getDefaultInstance()) return this;
+          if (!other.getDisplayName().isEmpty()) {
+            displayName_ = other.displayName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getRepositoryUri().isEmpty()) {
+            repositoryUri_ = other.repositoryUri_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getTrackingBranch().isEmpty()) {
+            trackingBranch_ = other.trackingBranch_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (!other.getAccessToken().isEmpty()) {
+            accessToken_ = other.accessToken_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          if (!other.branches_.isEmpty()) {
+            if (branches_.isEmpty()) {
+              branches_ = other.branches_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureBranchesIsMutable();
+              branches_.addAll(other.branches_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    displayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    repositoryUri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    trackingBranch_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    accessToken_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureBranchesIsMutable();
+                    branches_.add(s);
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object displayName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The unique repository display name for the GitHub repository.
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return The displayName.
+         */
+        public java.lang.String getDisplayName() {
+          java.lang.Object ref = displayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            displayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The unique repository display name for the GitHub repository.
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return The bytes for displayName.
+         */
+        public com.google.protobuf.ByteString getDisplayNameBytes() {
+          java.lang.Object ref = displayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            displayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The unique repository display name for the GitHub repository.
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @param value The displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          displayName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The unique repository display name for the GitHub repository.
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisplayName() {
+          displayName_ = getDefaultInstance().getDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The unique repository display name for the GitHub repository.
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @param value The bytes for displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          displayName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object repositoryUri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The GitHub repository URI related to the agent.
+         * </pre>
+         *
+         * <code>string repository_uri = 2;</code>
+         *
+         * @return The repositoryUri.
+         */
+        public java.lang.String getRepositoryUri() {
+          java.lang.Object ref = repositoryUri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            repositoryUri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The GitHub repository URI related to the agent.
+         * </pre>
+         *
+         * <code>string repository_uri = 2;</code>
+         *
+         * @return The bytes for repositoryUri.
+         */
+        public com.google.protobuf.ByteString getRepositoryUriBytes() {
+          java.lang.Object ref = repositoryUri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            repositoryUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The GitHub repository URI related to the agent.
+         * </pre>
+         *
+         * <code>string repository_uri = 2;</code>
+         *
+         * @param value The repositoryUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRepositoryUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          repositoryUri_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The GitHub repository URI related to the agent.
+         * </pre>
+         *
+         * <code>string repository_uri = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRepositoryUri() {
+          repositoryUri_ = getDefaultInstance().getRepositoryUri();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The GitHub repository URI related to the agent.
+         * </pre>
+         *
+         * <code>string repository_uri = 2;</code>
+         *
+         * @param value The bytes for repositoryUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRepositoryUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          repositoryUri_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object trackingBranch_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The branch of the GitHub repository tracked for this agent.
+         * </pre>
+         *
+         * <code>string tracking_branch = 3;</code>
+         *
+         * @return The trackingBranch.
+         */
+        public java.lang.String getTrackingBranch() {
+          java.lang.Object ref = trackingBranch_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            trackingBranch_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The branch of the GitHub repository tracked for this agent.
+         * </pre>
+         *
+         * <code>string tracking_branch = 3;</code>
+         *
+         * @return The bytes for trackingBranch.
+         */
+        public com.google.protobuf.ByteString getTrackingBranchBytes() {
+          java.lang.Object ref = trackingBranch_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            trackingBranch_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The branch of the GitHub repository tracked for this agent.
+         * </pre>
+         *
+         * <code>string tracking_branch = 3;</code>
+         *
+         * @param value The trackingBranch to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTrackingBranch(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trackingBranch_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The branch of the GitHub repository tracked for this agent.
+         * </pre>
+         *
+         * <code>string tracking_branch = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTrackingBranch() {
+          trackingBranch_ = getDefaultInstance().getTrackingBranch();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The branch of the GitHub repository tracked for this agent.
+         * </pre>
+         *
+         * <code>string tracking_branch = 3;</code>
+         *
+         * @param value The bytes for trackingBranch to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTrackingBranchBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          trackingBranch_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object accessToken_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The access token used to authenticate the access to the GitHub
+         * repository.
+         * </pre>
+         *
+         * <code>string access_token = 4;</code>
+         *
+         * @return The accessToken.
+         */
+        public java.lang.String getAccessToken() {
+          java.lang.Object ref = accessToken_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            accessToken_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The access token used to authenticate the access to the GitHub
+         * repository.
+         * </pre>
+         *
+         * <code>string access_token = 4;</code>
+         *
+         * @return The bytes for accessToken.
+         */
+        public com.google.protobuf.ByteString getAccessTokenBytes() {
+          java.lang.Object ref = accessToken_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            accessToken_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The access token used to authenticate the access to the GitHub
+         * repository.
+         * </pre>
+         *
+         * <code>string access_token = 4;</code>
+         *
+         * @param value The accessToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccessToken(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          accessToken_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The access token used to authenticate the access to the GitHub
+         * repository.
+         * </pre>
+         *
+         * <code>string access_token = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAccessToken() {
+          accessToken_ = getDefaultInstance().getAccessToken();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The access token used to authenticate the access to the GitHub
+         * repository.
+         * </pre>
+         *
+         * <code>string access_token = 4;</code>
+         *
+         * @param value The bytes for accessToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccessTokenBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          accessToken_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList branches_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureBranchesIsMutable() {
+          if (!branches_.isModifiable()) {
+            branches_ = new com.google.protobuf.LazyStringArrayList(branches_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @return A list containing the branches.
+         */
+        public com.google.protobuf.ProtocolStringList getBranchesList() {
+          branches_.makeImmutable();
+          return branches_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @return The count of branches.
+         */
+        public int getBranchesCount() {
+          return branches_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The branches at the given index.
+         */
+        public java.lang.String getBranches(int index) {
+          return branches_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the branches at the given index.
+         */
+        public com.google.protobuf.ByteString getBranchesBytes(int index) {
+          return branches_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The branches to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBranches(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBranchesIsMutable();
+          branches_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param value The branches to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBranches(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBranchesIsMutable();
+          branches_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param values The branches to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllBranches(java.lang.Iterable<java.lang.String> values) {
+          ensureBranchesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, branches_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBranches() {
+          branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of branches configured to be used from Dialogflow.
+         * </pre>
+         *
+         * <code>repeated string branches = 5;</code>
+         *
+         * @param value The bytes of the branches to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBranchesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureBranchesIsMutable();
+          branches_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                .GithubSettings();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettings
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GithubSettings> PARSER =
+          new com.google.protobuf.AbstractParser<GithubSettings>() {
+            @java.lang.Override
+            public GithubSettings parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<GithubSettings> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GithubSettings> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int gitSettingsCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object gitSettings_;
+
+    public enum GitSettingsCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      GITHUB_SETTINGS(1),
+      GITSETTINGS_NOT_SET(0);
+      private final int value;
+
+      private GitSettingsCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static GitSettingsCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static GitSettingsCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return GITHUB_SETTINGS;
+          case 0:
+            return GITSETTINGS_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public GitSettingsCase getGitSettingsCase() {
+      return GitSettingsCase.forNumber(gitSettingsCase_);
+    }
+
+    public static final int GITHUB_SETTINGS_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     *
+     * @return Whether the githubSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasGithubSettings() {
+      return gitSettingsCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     *
+     * @return The githubSettings.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+        getGithubSettings() {
+      if (gitSettingsCase_ == 1) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+            gitSettings_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHub settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+            .GithubSettingsOrBuilder
+        getGithubSettingsOrBuilder() {
+      if (gitSettingsCase_ == 1) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+            gitSettings_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (gitSettingsCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+                gitSettings_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (gitSettingsCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings)
+                    gitSettings_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings) obj;
+
+      if (!getGitSettingsCase().equals(other.getGitSettingsCase())) return false;
+      switch (gitSettingsCase_) {
+        case 1:
+          if (!getGithubSettings().equals(other.getGithubSettings())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (gitSettingsCase_) {
+        case 1:
+          hash = (37 * hash) + GITHUB_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getGithubSettings().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for connecting to Git repository for an agent.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (githubSettingsBuilder_ != null) {
+          githubSettingsBuilder_.clear();
+        }
+        gitSettingsCase_ = 0;
+        gitSettings_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings result) {
+        result.gitSettingsCase_ = gitSettingsCase_;
+        result.gitSettings_ = this.gitSettings_;
+        if (gitSettingsCase_ == 1 && githubSettingsBuilder_ != null) {
+          result.gitSettings_ = githubSettingsBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                .getDefaultInstance()) return this;
+        switch (other.getGitSettingsCase()) {
+          case GITHUB_SETTINGS:
+            {
+              mergeGithubSettings(other.getGithubSettings());
+              break;
+            }
+          case GITSETTINGS_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getGithubSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  gitSettingsCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int gitSettingsCase_ = 0;
+      private java.lang.Object gitSettings_;
+
+      public GitSettingsCase getGitSettingsCase() {
+        return GitSettingsCase.forNumber(gitSettingsCase_);
+      }
+
+      public Builder clearGitSettings() {
+        gitSettingsCase_ = 0;
+        gitSettings_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                  .GithubSettingsOrBuilder>
+          githubSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       *
+       * @return Whether the githubSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasGithubSettings() {
+        return gitSettingsCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       *
+       * @return The githubSettings.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+          getGithubSettings() {
+        if (githubSettingsBuilder_ == null) {
+          if (gitSettingsCase_ == 1) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                    .GithubSettings)
+                gitSettings_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              .getDefaultInstance();
+        } else {
+          if (gitSettingsCase_ == 1) {
+            return githubSettingsBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      public Builder setGithubSettings(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              value) {
+        if (githubSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gitSettings_ = value;
+          onChanged();
+        } else {
+          githubSettingsBuilder_.setMessage(value);
+        }
+        gitSettingsCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      public Builder setGithubSettings(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings.Builder
+              builderForValue) {
+        if (githubSettingsBuilder_ == null) {
+          gitSettings_ = builderForValue.build();
+          onChanged();
+        } else {
+          githubSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        gitSettingsCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      public Builder mergeGithubSettings(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              value) {
+        if (githubSettingsBuilder_ == null) {
+          if (gitSettingsCase_ == 1
+              && gitSettings_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                      .GithubSettings.getDefaultInstance()) {
+            gitSettings_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                                .GithubSettings)
+                            gitSettings_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            gitSettings_ = value;
+          }
+          onChanged();
+        } else {
+          if (gitSettingsCase_ == 1) {
+            githubSettingsBuilder_.mergeFrom(value);
+          } else {
+            githubSettingsBuilder_.setMessage(value);
+          }
+        }
+        gitSettingsCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      public Builder clearGithubSettings() {
+        if (githubSettingsBuilder_ == null) {
+          if (gitSettingsCase_ == 1) {
+            gitSettingsCase_ = 0;
+            gitSettings_ = null;
+            onChanged();
+          }
+        } else {
+          if (gitSettingsCase_ == 1) {
+            gitSettingsCase_ = 0;
+            gitSettings_ = null;
+          }
+          githubSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              .Builder
+          getGithubSettingsBuilder() {
+        return getGithubSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+              .GithubSettingsOrBuilder
+          getGithubSettingsOrBuilder() {
+        if ((gitSettingsCase_ == 1) && (githubSettingsBuilder_ != null)) {
+          return githubSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (gitSettingsCase_ == 1) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                    .GithubSettings)
+                gitSettings_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * GitHub settings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings github_settings = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                  .GithubSettingsOrBuilder>
+          getGithubSettingsFieldBuilder() {
+        if (githubSettingsBuilder_ == null) {
+          if (!(gitSettingsCase_ == 1)) {
+            gitSettings_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                    .getDefaultInstance();
+          }
+          githubSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                      .GithubSettings,
+                  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.GithubSettings
+                      .Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                      .GithubSettingsOrBuilder>(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                          .GithubSettings)
+                      gitSettings_,
+                  getParentForChildren(),
+                  isClean());
+          gitSettings_ = null;
+        }
+        gitSettingsCase_ = 1;
+        onChanged();
+        return githubSettingsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GitIntegrationSettings> PARSER =
+        new com.google.protobuf.AbstractParser<GitIntegrationSettings>() {
+          @java.lang.Override
+          public GitIntegrationSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GitIntegrationSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GitIntegrationSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -682,7 +3274,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=257
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=285
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -781,6 +3373,65 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     return advancedSettings_ == null
         ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
         : advancedSettings_;
+  }
+
+  public static final int GIT_INTEGRATION_SETTINGS_FIELD_NUMBER = 30;
+  private com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+      gitIntegrationSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return Whether the gitIntegrationSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitIntegrationSettings() {
+    return gitIntegrationSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return The gitIntegrationSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+      getGitIntegrationSettings() {
+    return gitIntegrationSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.getDefaultInstance()
+        : gitIntegrationSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder
+      getGitIntegrationSettingsOrBuilder() {
+    return gitIntegrationSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.getDefaultInstance()
+        : gitIntegrationSettings_;
   }
 
   public static final int TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER = 31;
@@ -897,6 +3548,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (locked_ != false) {
       output.writeBool(27, locked_);
     }
+    if (gitIntegrationSettings_ != null) {
+      output.writeMessage(30, getGitIntegrationSettings());
+    }
     if (textToSpeechSettings_ != null) {
       output.writeMessage(31, getTextToSpeechSettings());
     }
@@ -957,6 +3611,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (locked_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, locked_);
     }
+    if (gitIntegrationSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(30, getGitIntegrationSettings());
+    }
     if (textToSpeechSettings_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(31, getTextToSpeechSettings());
@@ -997,6 +3655,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
     if (hasAdvancedSettings()) {
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+    }
+    if (hasGitIntegrationSettings() != other.hasGitIntegrationSettings()) return false;
+    if (hasGitIntegrationSettings()) {
+      if (!getGitIntegrationSettings().equals(other.getGitIntegrationSettings())) return false;
     }
     if (hasTextToSpeechSettings() != other.hasTextToSpeechSettings()) return false;
     if (hasTextToSpeechSettings()) {
@@ -1046,6 +3708,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSettings()) {
       hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSettings().hashCode();
+    }
+    if (hasGitIntegrationSettings()) {
+      hash = (37 * hash) + GIT_INTEGRATION_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getGitIntegrationSettings().hashCode();
     }
     if (hasTextToSpeechSettings()) {
       hash = (37 * hash) + TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER;
@@ -1223,6 +3889,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.dispose();
         advancedSettingsBuilder_ = null;
       }
+      gitIntegrationSettings_ = null;
+      if (gitIntegrationSettingsBuilder_ != null) {
+        gitIntegrationSettingsBuilder_.dispose();
+        gitIntegrationSettingsBuilder_ = null;
+      }
       textToSpeechSettings_ = null;
       if (textToSpeechSettingsBuilder_ != null) {
         textToSpeechSettingsBuilder_.dispose();
@@ -1312,6 +3983,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.gitIntegrationSettings_ =
+            gitIntegrationSettingsBuilder_ == null
+                ? gitIntegrationSettings_
+                : gitIntegrationSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.textToSpeechSettings_ =
             textToSpeechSettingsBuilder_ == null
                 ? textToSpeechSettings_
@@ -1429,6 +4106,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdvancedSettings()) {
         mergeAdvancedSettings(other.getAdvancedSettings());
       }
+      if (other.hasGitIntegrationSettings()) {
+        mergeGitIntegrationSettings(other.getGitIntegrationSettings());
+      }
       if (other.hasTextToSpeechSettings()) {
         mergeTextToSpeechSettings(other.getTextToSpeechSettings());
       }
@@ -1545,11 +4225,18 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 216
+            case 242:
+              {
+                input.readMessage(
+                    getGitIntegrationSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 242
             case 250:
               {
                 input.readMessage(
                     getTextToSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 250
             default:
@@ -2956,7 +5643,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=257
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=285
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -2977,7 +5664,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=257
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=285
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -3002,7 +5689,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=257
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=285
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3323,6 +6010,219 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return advancedSettingsBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        gitIntegrationSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder>
+        gitIntegrationSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     *
+     * @return Whether the gitIntegrationSettings field is set.
+     */
+    public boolean hasGitIntegrationSettings() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     *
+     * @return The gitIntegrationSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+        getGitIntegrationSettings() {
+      if (gitIntegrationSettingsBuilder_ == null) {
+        return gitIntegrationSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                .getDefaultInstance()
+            : gitIntegrationSettings_;
+      } else {
+        return gitIntegrationSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public Builder setGitIntegrationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings value) {
+      if (gitIntegrationSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gitIntegrationSettings_ = value;
+      } else {
+        gitIntegrationSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public Builder setGitIntegrationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder
+            builderForValue) {
+      if (gitIntegrationSettingsBuilder_ == null) {
+        gitIntegrationSettings_ = builderForValue.build();
+      } else {
+        gitIntegrationSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public Builder mergeGitIntegrationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings value) {
+      if (gitIntegrationSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && gitIntegrationSettings_ != null
+            && gitIntegrationSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                    .getDefaultInstance()) {
+          getGitIntegrationSettingsBuilder().mergeFrom(value);
+        } else {
+          gitIntegrationSettings_ = value;
+        }
+      } else {
+        gitIntegrationSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public Builder clearGitIntegrationSettings() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      gitIntegrationSettings_ = null;
+      if (gitIntegrationSettingsBuilder_ != null) {
+        gitIntegrationSettingsBuilder_.dispose();
+        gitIntegrationSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder
+        getGitIntegrationSettingsBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getGitIntegrationSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder
+        getGitIntegrationSettingsOrBuilder() {
+      if (gitIntegrationSettingsBuilder_ != null) {
+        return gitIntegrationSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return gitIntegrationSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
+                .getDefaultInstance()
+            : gitIntegrationSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Git integration settings for this agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings git_integration_settings = 30;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder>
+        getGitIntegrationSettingsFieldBuilder() {
+      if (gitIntegrationSettingsBuilder_ == null) {
+        gitIntegrationSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder>(
+                getGitIntegrationSettings(), getParentForChildren(), isClean());
+        gitIntegrationSettings_ = null;
+      }
+      return gitIntegrationSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings textToSpeechSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings,
@@ -3343,7 +6243,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textToSpeechSettings field is set.
      */
     public boolean hasTextToSpeechSettings() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -3388,7 +6288,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3410,7 +6310,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3428,7 +6328,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTextToSpeechSettings(
         com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings value) {
       if (textToSpeechSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && textToSpeechSettings_ != null
             && textToSpeechSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings
@@ -3440,7 +6340,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3456,7 +6356,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTextToSpeechSettings() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       textToSpeechSettings_ = null;
       if (textToSpeechSettingsBuilder_ != null) {
         textToSpeechSettingsBuilder_.dispose();
@@ -3478,7 +6378,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings.Builder
         getTextToSpeechSettingsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getTextToSpeechSettingsFieldBuilder().getBuilder();
     }
