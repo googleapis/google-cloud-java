@@ -42,7 +42,7 @@ public interface SpeechContextOrBuilder
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the phrases.
    */
@@ -66,7 +66,7 @@ public interface SpeechContextOrBuilder
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of phrases.
    */
@@ -90,7 +90,7 @@ public interface SpeechContextOrBuilder
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The phrases at the given index.
@@ -115,7 +115,7 @@ public interface SpeechContextOrBuilder
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the phrases at the given index.
@@ -137,7 +137,7 @@ public interface SpeechContextOrBuilder
    * find a value that fits your use case with binary search.
    * </pre>
    *
-   * <code>float boost = 2;</code>
+   * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The boost.
    */

@@ -30,7 +30,9 @@ public interface InputAudioConfigOrBuilder
    * Required. Audio encoding of the audio content to process.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
@@ -42,7 +44,9 @@ public interface InputAudioConfigOrBuilder
    * Required. Audio encoding of the audio content to process.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The audioEncoding.
    */
@@ -53,13 +57,12 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to
-   * [Cloud Speech API
+   * Refer to [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
    * more details.
    * </pre>
    *
-   * <code>int32 sample_rate_hertz = 2;</code>
+   * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sampleRateHertz.
    */
@@ -76,7 +79,7 @@ public interface InputAudioConfigOrBuilder
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The languageCode.
    */
@@ -92,7 +95,7 @@ public interface InputAudioConfigOrBuilder
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -135,7 +138,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -159,7 +162,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -183,7 +186,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -208,7 +211,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */

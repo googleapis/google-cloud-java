@@ -87,7 +87,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the phrases.
    */
@@ -113,7 +113,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of phrases.
    */
@@ -139,7 +139,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The phrases at the given index.
@@ -166,7 +166,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * limits.
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the phrases at the given index.
@@ -192,7 +192,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * find a value that fits your use case with binary search.
    * </pre>
    *
-   * <code>float boost = 2;</code>
+   * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The boost.
    */
@@ -608,7 +608,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the phrases.
      */
@@ -635,7 +635,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of phrases.
      */
@@ -661,7 +661,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The phrases at the given index.
@@ -688,7 +688,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the phrases at the given index.
@@ -715,7 +715,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The phrases to set.
@@ -750,7 +750,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The phrases to add.
      * @return This builder for chaining.
@@ -784,7 +784,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The phrases to add.
      * @return This builder for chaining.
@@ -815,7 +815,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -845,7 +845,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * limits.
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the phrases to add.
      * @return This builder for chaining.
@@ -878,7 +878,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * find a value that fits your use case with binary search.
      * </pre>
      *
-     * <code>float boost = 2;</code>
+     * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The boost.
      */
@@ -901,7 +901,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * find a value that fits your use case with binary search.
      * </pre>
      *
-     * <code>float boost = 2;</code>
+     * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The boost to set.
      * @return This builder for chaining.
@@ -928,7 +928,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * find a value that fits your use case with binary search.
      * </pre>
      *
-     * <code>float boost = 2;</code>
+     * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
