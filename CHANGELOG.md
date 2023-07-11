@@ -1,5 +1,59 @@
 # Changelog
 
+## [1.15.0](https://github.com/googleapis/google-cloud-java/compare/v1.14.0...v1.15.0) (2023-07-11)
+
+
+### Features
+
+* [analyticsdata] add `CreateAudienceList`, `QueryAudienceList`,`GetAudienceList`,`ListAudienceLists` methods to the Data API v1 alpha ([#9632](https://github.com/googleapis/google-cloud-java/issues/9632)) ([86f2bb3](https://github.com/googleapis/google-cloud-java/commit/86f2bb3c25a6218738fb5a8a6f76e7103084c166))
+* [batch] Add gpu driver version field ([#9609](https://github.com/googleapis/google-cloud-java/issues/9609)) ([79b80a3](https://github.com/googleapis/google-cloud-java/commit/79b80a34531fb60e3bd4e83ba67a3c24019b1229))
+* [bigqueryconnection] add support for Salesforce connections, which are usable only by allowlisted partners ([#9621](https://github.com/googleapis/google-cloud-java/issues/9621)) ([d072400](https://github.com/googleapis/google-cloud-java/commit/d0724008036834954d14c940d470afdfab22fc70))
+* [cloudbuild] Add GitLabConfig and fetchGitRefs for Cloud Build Repositories ([#9588](https://github.com/googleapis/google-cloud-java/issues/9588)) ([fb44667](https://github.com/googleapis/google-cloud-java/commit/fb44667ed5f259e69453310050d1c091f73d805a))
+* [cloudbuild] add repositoryevent to buildtrigger ([fb44667](https://github.com/googleapis/google-cloud-java/commit/fb44667ed5f259e69453310050d1c091f73d805a))
+* [cloudbuild] added e2-medium machine type ([#9620](https://github.com/googleapis/google-cloud-java/issues/9620)) ([9c52160](https://github.com/googleapis/google-cloud-java/commit/9c52160d40a182f2b09641e66f11eee8b441a66d))
+* [cloudcommerceconsumerprocurement] permit duplicate display names ([#9615](https://github.com/googleapis/google-cloud-java/issues/9615)) ([491c157](https://github.com/googleapis/google-cloud-java/commit/491c1579092bc5552a8f1c3f8d753b2cbcea0366))
+* [clouddeploy] added support routeUpdateWaitTime field for Deployment Strategies ([#9630](https://github.com/googleapis/google-cloud-java/issues/9630)) ([16d930f](https://github.com/googleapis/google-cloud-java/commit/16d930f612b8e37a46a2bf3807a49bfb0d6b7a28))
+* [cloudkms] add interoperable symmetric encryption system ([#9598](https://github.com/googleapis/google-cloud-java/issues/9598)) ([04424f2](https://github.com/googleapis/google-cloud-java/commit/04424f2d0198826f1cb4a7c3d893b2b242df4ed8))
+* [compute] Update Compute Engine API to revision 20230610 ([#820](https://github.com/googleapis/google-cloud-java/issues/820)) ([#9597](https://github.com/googleapis/google-cloud-java/issues/9597)) ([38b6cb1](https://github.com/googleapis/google-cloud-java/commit/38b6cb1f29ec51e277a5b77600abed465f27e3f8))
+* [compute] Update Compute Engine API to revision 20230701 ([#821](https://github.com/googleapis/google-cloud-java/issues/821)) ([#9628](https://github.com/googleapis/google-cloud-java/issues/9628)) ([ca0d2db](https://github.com/googleapis/google-cloud-java/commit/ca0d2db0652b937b4bada719a25e705b7b859ddf))
+* [contactcenterinsights] Support topic model type V2 ([#9616](https://github.com/googleapis/google-cloud-java/issues/9616)) ([0f4c25d](https://github.com/googleapis/google-cloud-java/commit/0f4c25da50fc00855faa712c30b8793039106cc6))
+* [container] Add `KUBE_DNS` option to `DNSConfig.cluster_dns` ([ef39c21](https://github.com/googleapis/google-cloud-java/commit/ef39c217bd22fe28a5264cbadf4403e15ad95f50))
+* [container] Add `KUBE_DNS` option to `DNSConfig.cluster_dns` ([#9592](https://github.com/googleapis/google-cloud-java/issues/9592)) ([ef39c21](https://github.com/googleapis/google-cloud-java/commit/ef39c217bd22fe28a5264cbadf4403e15ad95f50))
+* [container] add a flag to toggle the Kubelet read only port ([#9608](https://github.com/googleapis/google-cloud-java/issues/9608)) ([333aff0](https://github.com/googleapis/google-cloud-java/commit/333aff0df2f131b2525e38ab1f68bfbbed032e9b))
+* [datacatalog] added rpc RenameTagTemplateFieldEnumValue ([#9614](https://github.com/googleapis/google-cloud-java/issues/9614)) ([cc2e2ff](https://github.com/googleapis/google-cloud-java/commit/cc2e2ff1ae033ddb24c99ad0ece351b1129dadbe))
+* [dialogflow-cx] added GitIntegrationSettings to the Agent ([#9624](https://github.com/googleapis/google-cloud-java/issues/9624)) ([2e5fde3](https://github.com/googleapis/google-cloud-java/commit/2e5fde30b7d72ce6d7a2ba11a0472714c3c6519f))
+* [dialogflow-cx] added GitIntegrationSettings to the Agent ([#9631](https://github.com/googleapis/google-cloud-java/issues/9631)) ([68b12a0](https://github.com/googleapis/google-cloud-java/commit/68b12a0604b7205c6aa6c56ffa732028b33224df))
+* [gke-backup] added new restore scope options ([#9586](https://github.com/googleapis/google-cloud-java/issues/9586)) ([c35bd0b](https://github.com/googleapis/google-cloud-java/commit/c35bd0b7d4a5dad90b7d228952b0fbd17d97a838))
+* [maps-routing] Add HTML Navigation Instructions feature to ComputeRoutes ([#9589](https://github.com/googleapis/google-cloud-java/issues/9589)) ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* [metastore] added Admin Interface (v1) ([#9612](https://github.com/googleapis/google-cloud-java/issues/9612)) ([9cb69a8](https://github.com/googleapis/google-cloud-java/commit/9cb69a817b44e7daa18e205c38a5046c845d0164))
+* [run] Adds support for custom audiences ([#9618](https://github.com/googleapis/google-cloud-java/issues/9618)) ([29d1eb1](https://github.com/googleapis/google-cloud-java/commit/29d1eb102184d9fd6ea000ac13c8e5a098fb7e0a))
+* [speech] add `model` and `language_codes` fields in `RecognitionConfig` message + enable default `_` recognizer ([#9613](https://github.com/googleapis/google-cloud-java/issues/9613)) ([d14537e](https://github.com/googleapis/google-cloud-java/commit/d14537ee70e82031a3a008e122a7c386a111eadc))
+* [storagetransfer] add event driven transfer configuration ([#9585](https://github.com/googleapis/google-cloud-java/issues/9585)) ([9632eaf](https://github.com/googleapis/google-cloud-java/commit/9632eaf5b5dfb21d75f852c1422ce1a6fe44c5a4))
+* [transcoder] added support for segment template manifest generation with DASH ([#9629](https://github.com/googleapis/google-cloud-java/issues/9629)) ([3c74216](https://github.com/googleapis/google-cloud-java/commit/3c74216586e53c04291d4d66f9235eb910a3446b))
+* Add more navigation instruction maneuvers ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* Add more toll pass values ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* add Tier 1 cluster-level API network_performance_config ([ef39c21](https://github.com/googleapis/google-cloud-java/commit/ef39c217bd22fe28a5264cbadf4403e15ad95f50))
+* add Tier 1 cluster-level API network_performance_config ([ef39c21](https://github.com/googleapis/google-cloud-java/commit/ef39c217bd22fe28a5264cbadf4403e15ad95f50))
+* Add TrafficModel feature in ComputeRoutes and ComputeRouteMatrix ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* Add Waypoint Optimization feature to ComputeRoutes ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* Support returning localized values in ComputeRoutes and ComputeRouteMatrix ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+* Support Transit routes in ComputeRoutes and ComputeRouteMatrix ([7be2b86](https://github.com/googleapis/google-cloud-java/commit/7be2b864cd3180a464dd9b4f2aa7c439f9741013))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20230617-2.0.0 ([#9559](https://github.com/googleapis/google-cloud-java/issues/9559)) ([a698f51](https://github.com/googleapis/google-cloud-java/commit/a698f51b8ef94ebfa043f3d4e497c701b73ef30d))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.16 ([#9580](https://github.com/googleapis/google-cloud-java/issues/9580)) ([f4d8639](https://github.com/googleapis/google-cloud-java/commit/f4d8639b48199526485326a112ab9426869c7c76))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.17 ([#9584](https://github.com/googleapis/google-cloud-java/issues/9584)) ([4508367](https://github.com/googleapis/google-cloud-java/commit/450836784b90ec9ae3085b9b8f3f9977fde60d17))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
+### Documentation
+
+* [dialogflow] added google.api.field_behavior for some fields in audio_config ([#9626](https://github.com/googleapis/google-cloud-java/issues/9626)) ([be099c7](https://github.com/googleapis/google-cloud-java/commit/be099c7692e9e179bde3737c09b97c8a01610628))
+* [tpu] minor updates in comments ([#9619](https://github.com/googleapis/google-cloud-java/issues/9619)) ([6cebb8d](https://github.com/googleapis/google-cloud-java/commit/6cebb8d61fc6f9ee5edc0b0878efeac217e21fe8))
+* **scc-samples:** update comments to include new parent types ([#9596](https://github.com/googleapis/google-cloud-java/issues/9596)) ([1927bfc](https://github.com/googleapis/google-cloud-java/commit/1927bfc0582dfbfb1ac3a3ae502362dd720416c4))
+
 ## [1.14.0](https://github.com/googleapis/google-cloud-java/compare/v1.13.0...v1.14.0) (2023-06-23)
 
 
