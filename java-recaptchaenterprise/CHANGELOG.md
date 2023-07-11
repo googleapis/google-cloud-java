@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.18.0 (2023-07-11)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
 ## 3.17.0 (2023-06-23)
 
 ### Dependencies
