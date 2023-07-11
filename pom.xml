@@ -173,7 +173,7 @@
 
   </modules>
 
-  <!-- Do  not deploy the aggregator POM -->
+  <!-- Do not deploy the aggregator POM -->
   <build>
     <plugins>
       <plugin>
