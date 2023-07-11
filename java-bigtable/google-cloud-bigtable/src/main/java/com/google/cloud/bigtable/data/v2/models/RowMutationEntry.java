@@ -33,6 +33,8 @@ import javax.annotation.Nonnull;
 public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializable {
   private static final long serialVersionUID = 1974738836742298192L;
 
+  static final int MAX_MUTATION = 100000;
+
   private final ByteString key;
   private final Mutation mutation;
 
@@ -180,6 +182,11 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
 
   @InternalApi
   public MutateRowsRequest.Entry toProto() {
+    Preconditions.checkArgument(
+        mutation.getMutations().size() <= MAX_MUTATION,
+        String.format(
+            "Too many mutations, got %s, limit is %s",
+            mutation.getMutations().size(), MAX_MUTATION));
     return MutateRowsRequest.Entry.newBuilder()
         .setRowKey(key)
         .addAllMutations(mutation.getMutations())

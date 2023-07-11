@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchEntry;
+import com.google.api.gax.batching.BatchResource;
 import com.google.api.gax.batching.BatchingDescriptor;
 import com.google.api.gax.batching.BatchingRequestBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -88,6 +89,17 @@ public class MutateRowsBatchingDescriptor
   @Override
   public long countBytes(RowMutationEntry entry) {
     return entry.toProto().getSerializedSize();
+  }
+
+  @Override
+  public BatchResource createResource(RowMutationEntry element) {
+    long byteCount = countBytes(element);
+    return MutateRowsBatchResource.create(1, byteCount, element.toProto().getMutationsCount());
+  }
+
+  @Override
+  public BatchResource createEmptyResource() {
+    return MutateRowsBatchResource.create(0, 0, 0);
   }
 
   /**

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import static com.google.cloud.bigtable.data.v2.models.RowMutationEntry.MAX_MUTATION;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -39,6 +41,8 @@ public final class BulkMutation implements Serializable, Cloneable {
 
   private final String tableId;
   private transient MutateRowsRequest.Builder builder;
+
+  private long mutationCountSum = 0;
 
   public static BulkMutation create(String tableId) {
     return new BulkMutation(tableId);
@@ -80,6 +84,14 @@ public final class BulkMutation implements Serializable, Cloneable {
   public BulkMutation add(@Nonnull ByteString rowKey, @Nonnull Mutation mutation) {
     Preconditions.checkNotNull(rowKey);
     Preconditions.checkNotNull(mutation);
+
+    long mutationCount = mutation.getMutations().size();
+    Preconditions.checkArgument(
+        mutationCountSum + mutationCount <= MAX_MUTATION,
+        String.format(
+            "Too many mutations, got %s, limit is %s",
+            mutationCountSum + mutationCount, MAX_MUTATION));
+    this.mutationCountSum += mutationCount;
 
     builder.addEntries(
         MutateRowsRequest.Entry.newBuilder()

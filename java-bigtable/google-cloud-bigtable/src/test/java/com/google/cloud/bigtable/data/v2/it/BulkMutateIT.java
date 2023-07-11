@@ -16,8 +16,10 @@
 package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.gax.batching.BatcherImpl;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlEventStats;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -25,6 +27,7 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import java.io.IOException;
 import java.util.Objects;
@@ -33,6 +36,7 @@ import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class BulkMutateIT {
@@ -81,6 +85,54 @@ public class BulkMutateIT {
                   Query.create(testEnvRule.env().getTableId())
                       .rowKey(rowPrefix + "test-key" + initial));
       assertThat(row.getCells()).hasSize(1);
+    }
+  }
+
+  @Test
+  public void testManyMutations() throws IOException, InterruptedException {
+    // Emulator is very slow and will take a long time for the test to run
+    assume()
+        .withMessage("testManyMutations is not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    BigtableDataSettings settings = testEnvRule.env().getDataClientSettings();
+    String rowPrefix = UUID.randomUUID().toString();
+
+    BatchingSettings batchingSettings =
+        settings.getStubSettings().bulkMutateRowsSettings().getBatchingSettings();
+
+    settings
+        .toBuilder()
+        .stubSettings()
+        .bulkMutateRowsSettings()
+        .setBatchingSettings(
+            batchingSettings.toBuilder().setDelayThreshold(Duration.ofHours(1)).build());
+    try (BigtableDataClient client = BigtableDataClient.create(settings);
+        BatcherImpl<RowMutationEntry, Void, BulkMutation, Void> batcher =
+            (BatcherImpl<RowMutationEntry, Void, BulkMutation, Void>)
+                client.newBulkMutationBatcher(testEnvRule.env().getTableId())) {
+
+      String familyId = testEnvRule.env().getFamilyId();
+      for (int i = 0; i < 2; i++) {
+        String key = rowPrefix + "test-key";
+        RowMutationEntry rowMutationEntry = RowMutationEntry.create(key);
+        // Create mutation entries with many columns. The batcher should flush every time.
+        for (long j = 0; j < 50001; j++) {
+          rowMutationEntry.setCell(familyId, "q" + j + i, j);
+        }
+        batcher.add(rowMutationEntry);
+      }
+      batcher.flush();
+      // Query a key to make sure the write succeeded
+      Row row =
+          testEnvRule
+              .env()
+              .getDataClient()
+              .readRowsCallable()
+              .first()
+              .call(Query.create(testEnvRule.env().getTableId()).rowKey(rowPrefix + "test-key"));
+      assertThat(row.getCells()).hasSize(100002);
     }
   }
 }

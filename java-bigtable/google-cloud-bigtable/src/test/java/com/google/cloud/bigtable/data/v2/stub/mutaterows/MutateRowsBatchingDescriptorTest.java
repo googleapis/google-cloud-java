@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchEntry;
+import com.google.api.gax.batching.BatchResource;
 import com.google.api.gax.batching.BatchingRequestBuilder;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.DeadlineExceededException;
@@ -179,5 +180,24 @@ public class MutateRowsBatchingDescriptorTest {
     assertThat(actualThrowable)
         .hasCauseThat()
         .isEqualTo(serverError.getFailedMutations().get(1).getError());
+  }
+
+  @Test
+  public void shouldFlushTest() {
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    RowMutationEntry entryWithManyMutations = RowMutationEntry.create("key1");
+    for (int i = 0; i < 100000; i++) {
+      entryWithManyMutations.setCell("f", "q", "v" + i);
+    }
+    RowMutationEntry entryWithSingleEntry = RowMutationEntry.create("key1").setCell("f", "q", "v");
+    BatchResource resourceWithManyMutations = underTest.createResource(entryWithManyMutations);
+    BatchResource resourceWithSingleMutation = underTest.createResource(entryWithSingleEntry);
+
+    assertThat(resourceWithManyMutations.shouldFlush(1, 20 * 1000 * 1000)).isFalse();
+    assertThat(
+            resourceWithManyMutations
+                .add(resourceWithSingleMutation)
+                .shouldFlush(3, 20 * 1000 * 1000))
+        .isTrue();
   }
 }

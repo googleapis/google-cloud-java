@@ -439,7 +439,6 @@ public class MetricsTracerTest {
         .reserve(any(Long.class), any(Long.class));
     when(flowController.getMaxElementCountLimit()).thenReturn(null);
     when(flowController.getMaxRequestBytesLimit()).thenReturn(null);
-    when(batchingDescriptor.countBytes(any())).thenReturn(1l);
     when(batchingDescriptor.newRequestBuilder(any())).thenCallRealMethod();
 
     doAnswer(

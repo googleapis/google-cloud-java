@@ -28,6 +28,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -171,5 +172,32 @@ public class BulkMutationTest {
     assertThat(overriddenRequest.getTableName())
         .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
+
+  @Test
+  public void testManyMutations() {
+    BulkMutation bulkMutation = BulkMutation.create(TABLE_ID);
+
+    try {
+      for (int i = 0; i < 3; i++) {
+        String key = "key" + i;
+        Mutation mutation = Mutation.create();
+        for (int j = 0; j < 50000; j++) {
+          mutation.setCell("f", "q" + j, "value");
+        }
+        bulkMutation.add(key, mutation);
+      }
+      Assert.fail("Test should fail with IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Too many mutations");
+    }
+
+    // we should be able to add 10000 mutations
+    bulkMutation = BulkMutation.create(TABLE_ID);
+    Mutation mutation = Mutation.create();
+    for (int i = 0; i < 100000; i++) {
+      mutation.setCell("f", "q" + i, "value");
+    }
+    bulkMutation.add("key", mutation);
   }
 }
