@@ -202,6 +202,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -256,6 +257,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -310,6 +312,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -367,6 +370,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -424,6 +428,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -547,6 +552,7 @@ public class AgentsClientTest {
             .setEnvironment(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
+            .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
             .setIncludeBigqueryExportSettings(true)
             .build();
 
@@ -561,6 +567,7 @@ public class AgentsClientTest {
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
     Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
     Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getGitDestination(), actualRequest.getGitDestination());
     Assert.assertEquals(
         request.getIncludeBigqueryExportSettings(),
         actualRequest.getIncludeBigqueryExportSettings());
@@ -583,6 +590,7 @@ public class AgentsClientTest {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
               .setIncludeBigqueryExportSettings(true)
               .build();
       client.exportAgentAsync(request).get();
@@ -619,6 +627,7 @@ public class AgentsClientTest {
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
     Assert.assertEquals(request.getAgentContent(), actualRequest.getAgentContent());
+    Assert.assertEquals(request.getGitSource(), actualRequest.getGitSource());
     Assert.assertEquals(request.getRestoreOption(), actualRequest.getRestoreOption());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

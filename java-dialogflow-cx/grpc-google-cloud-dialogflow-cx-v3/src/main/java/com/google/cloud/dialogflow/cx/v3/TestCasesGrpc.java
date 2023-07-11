@@ -809,7 +809,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     default void listTestCaseResults(
@@ -1067,7 +1068,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public void listTestCaseResults(
@@ -1283,7 +1285,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse listTestCaseResults(
@@ -1496,7 +1499,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

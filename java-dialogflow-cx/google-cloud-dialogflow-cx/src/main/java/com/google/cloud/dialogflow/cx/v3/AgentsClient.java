@@ -840,6 +840,7 @@ public class AgentsClient implements BackgroundResource {
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
+   *           .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
    *           .setIncludeBigqueryExportSettings(true)
    *           .build();
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
@@ -882,6 +883,7 @@ public class AgentsClient implements BackgroundResource {
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
+   *           .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
    *           .setIncludeBigqueryExportSettings(true)
    *           .build();
    *   OperationFuture<ExportAgentResponse, Struct> future =
@@ -924,6 +926,7 @@ public class AgentsClient implements BackgroundResource {
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
+   *           .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
    *           .setIncludeBigqueryExportSettings(true)
    *           .build();
    *   ApiFuture<Operation> future = agentsClient.exportAgentCallable().futureCall(request);

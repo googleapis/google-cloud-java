@@ -1340,7 +1340,8 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches a list of results for a given test case.
+   * Fetches the list of run results for the given test case. A maximum of 100 results are kept for
+   * each test case.
    *
    * <p>Sample code:
    *
@@ -1374,7 +1375,8 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches a list of results for a given test case.
+   * Fetches the list of run results for the given test case. A maximum of 100 results are kept for
+   * each test case.
    *
    * <p>Sample code:
    *
@@ -1407,7 +1409,8 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches a list of results for a given test case.
+   * Fetches the list of run results for the given test case. A maximum of 100 results are kept for
+   * each test case.
    *
    * <p>Sample code:
    *
@@ -1442,7 +1445,8 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches a list of results for a given test case.
+   * Fetches the list of run results for the given test case. A maximum of 100 results are kept for
+   * each test case.
    *
    * <p>Sample code:
    *
@@ -1477,7 +1481,8 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches a list of results for a given test case.
+   * Fetches the list of run results for the given test case. A maximum of 100 results are kept for
+   * each test case.
    *
    * <p>Sample code:
    *

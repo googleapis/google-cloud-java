@@ -206,6 +206,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -266,6 +267,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -326,6 +328,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -388,6 +391,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -450,6 +454,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -472,6 +477,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -520,6 +526,7 @@ public class AgentsClientHttpJsonTest {
               .setEnableSpellCorrection(true)
               .setLocked(true)
               .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+              .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
               .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -628,6 +635,7 @@ public class AgentsClientHttpJsonTest {
             .setEnvironment(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
+            .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
             .setIncludeBigqueryExportSettings(true)
             .build();
 
@@ -664,6 +672,7 @@ public class AgentsClientHttpJsonTest {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
               .setIncludeBigqueryExportSettings(true)
               .build();
       client.exportAgentAsync(request).get();

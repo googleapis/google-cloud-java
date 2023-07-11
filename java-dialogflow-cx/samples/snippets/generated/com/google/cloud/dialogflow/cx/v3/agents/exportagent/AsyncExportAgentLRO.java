@@ -45,6 +45,7 @@ public class AsyncExportAgentLRO {
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
+              .setGitDestination(ExportAgentRequest.GitDestination.newBuilder().build())
               .setIncludeBigqueryExportSettings(true)
               .build();
       OperationFuture<ExportAgentResponse, Struct> future =
