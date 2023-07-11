@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.24.0 (2023-07-11)
+
+### Features
+
+* add interoperable symmetric encryption system ([#9598](https://github.com/googleapis/google-cloud-java/issues/9598)) ([04424f2](https://github.com/googleapis/google-cloud-java/commit/04424f2d0198826f1cb4a7c3d893b2b242df4ed8))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
 ## 2.23.0 (2023-06-23)
 
 ### Dependencies

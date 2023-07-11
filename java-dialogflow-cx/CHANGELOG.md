@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.32.0 (2023-07-11)
+
+### Features
+
+* added GitIntegrationSettings to the Agent ([#9624](https://github.com/googleapis/google-cloud-java/issues/9624)) ([2e5fde3](https://github.com/googleapis/google-cloud-java/commit/2e5fde30b7d72ce6d7a2ba11a0472714c3c6519f))
+* added GitIntegrationSettings to the Agent ([#9631](https://github.com/googleapis/google-cloud-java/issues/9631)) ([68b12a0](https://github.com/googleapis/google-cloud-java/commit/68b12a0604b7205c6aa6c56ffa732028b33224df))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
 ## 0.31.0 (2023-06-23)
 
 ### Features
