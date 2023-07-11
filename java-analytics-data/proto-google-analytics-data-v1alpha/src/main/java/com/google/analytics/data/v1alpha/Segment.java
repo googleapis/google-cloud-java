@@ -131,7 +131,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
    * The name for this segment. If unspecified, segments are named "Segment".
    * This name defines string value returned by the `segment` dimension. The
    * `segment` dimension prefixes segment names by the 1-based index number of
-   * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+   * the segment in the request (for example "1. Segment", "2. Segment", etc.).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -157,7 +157,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
    * The name for this segment. If unspecified, segments are named "Segment".
    * This name defines string value returned by the `segment` dimension. The
    * `segment` dimension prefixes segment names by the 1-based index number of
-   * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+   * the segment in the request (for example "1. Segment", "2. Segment", etc.).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -824,7 +824,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      * The name for this segment. If unspecified, segments are named "Segment".
      * This name defines string value returned by the `segment` dimension. The
      * `segment` dimension prefixes segment names by the 1-based index number of
-     * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+     * the segment in the request (for example "1. Segment", "2. Segment", etc.).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -849,7 +849,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      * The name for this segment. If unspecified, segments are named "Segment".
      * This name defines string value returned by the `segment` dimension. The
      * `segment` dimension prefixes segment names by the 1-based index number of
-     * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+     * the segment in the request (for example "1. Segment", "2. Segment", etc.).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -874,7 +874,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      * The name for this segment. If unspecified, segments are named "Segment".
      * This name defines string value returned by the `segment` dimension. The
      * `segment` dimension prefixes segment names by the 1-based index number of
-     * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+     * the segment in the request (for example "1. Segment", "2. Segment", etc.).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -898,7 +898,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      * The name for this segment. If unspecified, segments are named "Segment".
      * This name defines string value returned by the `segment` dimension. The
      * `segment` dimension prefixes segment names by the 1-based index number of
-     * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+     * the segment in the request (for example "1. Segment", "2. Segment", etc.).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -918,7 +918,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      * The name for this segment. If unspecified, segments are named "Segment".
      * This name defines string value returned by the `segment` dimension. The
      * `segment` dimension prefixes segment names by the 1-based index number of
-     * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+     * the segment in the request (for example "1. Segment", "2. Segment", etc.).
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -74,10 +74,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The distinctive name for this step. If unspecified, steps will be named
-   * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-   * string value returned by the `funnelStepName` dimension. For example,
-   * specifying `name = Purchase` in the request's third funnel step will
-   * produce `3. Purchase` in the funnel report response.
+   * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+   * defines string value returned by the `funnelStepName` dimension. For
+   * example, specifying `name = Purchase` in the request's third funnel step
+   * will produce `3. Purchase` in the funnel report response.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -101,10 +101,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The distinctive name for this step. If unspecified, steps will be named
-   * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-   * string value returned by the `funnelStepName` dimension. For example,
-   * specifying `name = Purchase` in the request's third funnel step will
-   * produce `3. Purchase` in the funnel report response.
+   * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+   * defines string value returned by the `funnelStepName` dimension. For
+   * example, specifying `name = Purchase` in the request's third funnel step
+   * will produce `3. Purchase` in the funnel report response.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -724,10 +724,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The distinctive name for this step. If unspecified, steps will be named
-     * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-     * string value returned by the `funnelStepName` dimension. For example,
-     * specifying `name = Purchase` in the request's third funnel step will
-     * produce `3. Purchase` in the funnel report response.
+     * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+     * defines string value returned by the `funnelStepName` dimension. For
+     * example, specifying `name = Purchase` in the request's third funnel step
+     * will produce `3. Purchase` in the funnel report response.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -750,10 +750,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The distinctive name for this step. If unspecified, steps will be named
-     * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-     * string value returned by the `funnelStepName` dimension. For example,
-     * specifying `name = Purchase` in the request's third funnel step will
-     * produce `3. Purchase` in the funnel report response.
+     * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+     * defines string value returned by the `funnelStepName` dimension. For
+     * example, specifying `name = Purchase` in the request's third funnel step
+     * will produce `3. Purchase` in the funnel report response.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -776,10 +776,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The distinctive name for this step. If unspecified, steps will be named
-     * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-     * string value returned by the `funnelStepName` dimension. For example,
-     * specifying `name = Purchase` in the request's third funnel step will
-     * produce `3. Purchase` in the funnel report response.
+     * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+     * defines string value returned by the `funnelStepName` dimension. For
+     * example, specifying `name = Purchase` in the request's third funnel step
+     * will produce `3. Purchase` in the funnel report response.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -801,10 +801,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The distinctive name for this step. If unspecified, steps will be named
-     * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-     * string value returned by the `funnelStepName` dimension. For example,
-     * specifying `name = Purchase` in the request's third funnel step will
-     * produce `3. Purchase` in the funnel report response.
+     * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+     * defines string value returned by the `funnelStepName` dimension. For
+     * example, specifying `name = Purchase` in the request's third funnel step
+     * will produce `3. Purchase` in the funnel report response.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -822,10 +822,10 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The distinctive name for this step. If unspecified, steps will be named
-     * by a 1 based indexed name (i.e. "0. ", "1. ", etc.). This name defines
-     * string value returned by the `funnelStepName` dimension. For example,
-     * specifying `name = Purchase` in the request's third funnel step will
-     * produce `3. Purchase` in the funnel report response.
+     * by a 1 based indexed name (for example "0. ", "1. ", etc.). This name
+     * defines string value returned by the `funnelStepName` dimension. For
+     * example, specifying `name = Purchase` in the request's third funnel step
+     * will produce `3. Purchase` in the funnel report response.
      * </pre>
      *
      * <code>string name = 1;</code>
