@@ -215,4 +215,31 @@ public interface MuxStreamOrBuilder
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
    */
   com.google.cloud.video.transcoder.v1.SegmentSettingsOrBuilder getSegmentSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The encryptionId.
+   */
+  java.lang.String getEncryptionId();
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The bytes for encryptionId.
+   */
+  com.google.protobuf.ByteString getEncryptionIdBytes();
 }

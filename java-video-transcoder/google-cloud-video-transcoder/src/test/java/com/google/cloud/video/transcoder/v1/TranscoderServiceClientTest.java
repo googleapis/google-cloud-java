@@ -96,6 +96,7 @@ public class TranscoderServiceClientTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -145,6 +146,7 @@ public class TranscoderServiceClientTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -282,6 +284,7 @@ public class TranscoderServiceClientTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -328,6 +331,7 @@ public class TranscoderServiceClientTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 

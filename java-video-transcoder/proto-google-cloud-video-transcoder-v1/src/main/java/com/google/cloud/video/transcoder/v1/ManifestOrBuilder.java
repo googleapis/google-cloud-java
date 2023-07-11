@@ -54,7 +54,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -149,4 +149,41 @@ public interface ManifestOrBuilder
    * @return The bytes of the muxStreams at the given index.
    */
   com.google.protobuf.ByteString getMuxStreamsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return Whether the dash field is set.
+   */
+  boolean hasDash();
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return The dash.
+   */
+  com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDash();
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   */
+  com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder getDashOrBuilder();
+
+  com.google.cloud.video.transcoder.v1.Manifest.ManifestConfigCase getManifestConfigCase();
 }
