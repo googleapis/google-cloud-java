@@ -732,10 +732,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gke field is set.
    */
@@ -747,10 +748,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gke.
    */
@@ -765,10 +767,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder() {
@@ -783,10 +786,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the anthosCluster field is set.
    */
@@ -798,10 +803,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The anthosCluster.
    */
@@ -816,10 +823,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
@@ -834,10 +843,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the run field is set.
    */
@@ -849,10 +860,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The run.
    */
@@ -867,10 +880,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
@@ -885,10 +900,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the multiTarget field is set.
    */
@@ -900,10 +917,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The multiTarget.
    */
@@ -918,10 +937,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
@@ -3422,10 +3443,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the gke field is set.
      */
@@ -3437,10 +3459,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The gke.
      */
@@ -3462,10 +3485,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGke(com.google.cloud.deploy.v1.GkeCluster value) {
       if (gkeBuilder_ == null) {
@@ -3484,10 +3508,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGke(com.google.cloud.deploy.v1.GkeCluster.Builder builderForValue) {
       if (gkeBuilder_ == null) {
@@ -3503,10 +3528,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGke(com.google.cloud.deploy.v1.GkeCluster value) {
       if (gkeBuilder_ == null) {
@@ -3535,10 +3561,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGke() {
       if (gkeBuilder_ == null) {
@@ -3560,10 +3587,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.GkeCluster.Builder getGkeBuilder() {
       return getGkeFieldBuilder().getBuilder();
@@ -3572,10 +3600,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder() {
@@ -3592,10 +3621,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.GkeCluster,
@@ -3630,10 +3660,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the anthosCluster field is set.
      */
@@ -3645,10 +3677,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The anthosCluster.
      */
@@ -3670,10 +3704,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
       if (anthosClusterBuilder_ == null) {
@@ -3692,10 +3728,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAnthosCluster(
         com.google.cloud.deploy.v1.AnthosCluster.Builder builderForValue) {
@@ -3712,10 +3750,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
       if (anthosClusterBuilder_ == null) {
@@ -3744,10 +3784,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAnthosCluster() {
       if (anthosClusterBuilder_ == null) {
@@ -3769,10 +3811,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.AnthosCluster.Builder getAnthosClusterBuilder() {
       return getAnthosClusterFieldBuilder().getBuilder();
@@ -3781,10 +3825,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
@@ -3801,10 +3847,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.AnthosCluster,
@@ -3839,10 +3887,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the run field is set.
      */
@@ -3854,10 +3904,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The run.
      */
@@ -3879,10 +3931,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
       if (runBuilder_ == null) {
@@ -3901,10 +3955,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation.Builder builderForValue) {
       if (runBuilder_ == null) {
@@ -3920,10 +3976,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
       if (runBuilder_ == null) {
@@ -3953,10 +4011,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearRun() {
       if (runBuilder_ == null) {
@@ -3978,10 +4038,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.CloudRunLocation.Builder getRunBuilder() {
       return getRunFieldBuilder().getBuilder();
@@ -3990,10 +4052,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
@@ -4010,10 +4074,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.CloudRunLocation,
@@ -4048,10 +4114,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the multiTarget field is set.
      */
@@ -4063,10 +4131,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The multiTarget.
      */
@@ -4088,10 +4158,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
       if (multiTargetBuilder_ == null) {
@@ -4110,10 +4182,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget.Builder builderForValue) {
       if (multiTargetBuilder_ == null) {
@@ -4129,10 +4203,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
       if (multiTargetBuilder_ == null) {
@@ -4161,10 +4237,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMultiTarget() {
       if (multiTargetBuilder_ == null) {
@@ -4186,10 +4264,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.MultiTarget.Builder getMultiTargetBuilder() {
       return getMultiTargetFieldBuilder().getBuilder();
@@ -4198,10 +4278,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
@@ -4218,10 +4300,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.MultiTarget,

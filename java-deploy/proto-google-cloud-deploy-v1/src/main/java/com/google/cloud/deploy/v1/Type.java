@@ -52,6 +52,26 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Resource state changed.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_STATE_CHANGE = 3;</code>
+   */
+  TYPE_RESOURCE_STATE_CHANGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * A process aborted.
+   * </pre>
+   *
+   * <code>TYPE_PROCESS_ABORTED = 4;</code>
+   */
+  TYPE_PROCESS_ABORTED(4),
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -82,6 +102,26 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_PUBSUB_NOTIFICATION_FAILURE = 1;</code>
    */
   public static final int TYPE_PUBSUB_NOTIFICATION_FAILURE_VALUE = 1;
+  /**
+   *
+   *
+   * <pre>
+   * Resource state changed.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_STATE_CHANGE = 3;</code>
+   */
+  public static final int TYPE_RESOURCE_STATE_CHANGE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A process aborted.
+   * </pre>
+   *
+   * <code>TYPE_PROCESS_ABORTED = 4;</code>
+   */
+  public static final int TYPE_PROCESS_ABORTED_VALUE = 4;
   /**
    *
    *
@@ -121,6 +161,10 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
         return TYPE_UNSPECIFIED;
       case 1:
         return TYPE_PUBSUB_NOTIFICATION_FAILURE;
+      case 3:
+        return TYPE_RESOURCE_STATE_CHANGE;
+      case 4:
+        return TYPE_PROCESS_ABORTED;
       case 2:
         return TYPE_RENDER_STATUES_CHANGE;
       default:
