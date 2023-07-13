@@ -506,9 +506,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * Return rows in lexiographical descending order of the row keys. The row
    * contents will not be affected by this flag.
-   * Example result set: [
-   * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
-   * "f:col2": "v2"} ].
+   *
+   * Example result set:
+   *
+   *     [
+   *       {key: "k2", "f:col1": "v1", "f:col2": "v1"},
+   *       {key: "k1", "f:col1": "v2", "f:col2": "v2"}
+   *     ]
    * </pre>
    *
    * <code>bool reversed = 7;</code>
@@ -1788,9 +1792,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * Return rows in lexiographical descending order of the row keys. The row
      * contents will not be affected by this flag.
-     * Example result set: [
-     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
-     * "f:col2": "v2"} ].
+     *
+     * Example result set:
+     *
+     *     [
+     *       {key: "k2", "f:col1": "v1", "f:col2": "v1"},
+     *       {key: "k1", "f:col1": "v2", "f:col2": "v2"}
+     *     ]
      * </pre>
      *
      * <code>bool reversed = 7;</code>
@@ -1810,9 +1818,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * Return rows in lexiographical descending order of the row keys. The row
      * contents will not be affected by this flag.
-     * Example result set: [
-     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
-     * "f:col2": "v2"} ].
+     *
+     * Example result set:
+     *
+     *     [
+     *       {key: "k2", "f:col1": "v1", "f:col2": "v1"},
+     *       {key: "k1", "f:col1": "v2", "f:col2": "v2"}
+     *     ]
      * </pre>
      *
      * <code>bool reversed = 7;</code>
@@ -1836,9 +1848,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * Return rows in lexiographical descending order of the row keys. The row
      * contents will not be affected by this flag.
-     * Example result set: [
-     * {key: "k2", "f:col1": "v1", "f:col2": "v1"}, {key: "k1", "f:col1": "v2",
-     * "f:col2": "v2"} ].
+     *
+     * Example result set:
+     *
+     *     [
+     *       {key: "k2", "f:col1": "v1", "f:col2": "v1"},
+     *       {key: "k1", "f:col1": "v2", "f:col2": "v2"}
+     *     ]
      * </pre>
      *
      * <code>bool reversed = 7;</code>
