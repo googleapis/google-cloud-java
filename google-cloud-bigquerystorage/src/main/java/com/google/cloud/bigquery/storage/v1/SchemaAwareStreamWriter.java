@@ -21,13 +21,15 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
+import com.google.cloud.bigquery.storage.v1.Exceptions.RowIndexToErrorException;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
-import com.google.protobuf.Message;
+import com.google.protobuf.DynamicMessage;
 import com.google.rpc.Code;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -124,19 +126,23 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     this.streamWriter = streamWriterBuilder.setWriterSchema(this.protoSchema).build();
   }
 
-  private Message buildMessage(T item)
+  private List<DynamicMessage> buildMessage(Iterable<T> items)
       throws InterruptedException, DescriptorValidationException, IOException {
     try {
       return this.toProtoConverter.convertToProtoMessage(
-          this.descriptor, this.tableSchema, item, ignoreUnknownFields);
-    } catch (Exceptions.DataHasUnknownFieldException ex) {
+          this.descriptor, this.tableSchema, items, ignoreUnknownFields);
+    } catch (RowIndexToErrorException ex) {
+      // We only retry for data unknown error.
+      if (!ex.hasDataUnknownError) {
+        throw ex;
+      }
       // Directly return error when stream writer refresh is disabled.
       if (this.skipRefreshStreamWriter) {
         throw ex;
       }
       LOG.warning(
-          "Saw unknown field "
-              + ex.getFieldName()
+          "Saw unknown field error during proto message conversin within error messages"
+              + ex.rowIndexToErrorMessage
               + ", try to refresh the writer with updated schema, stream: "
               + streamName);
       GetWriteStreamRequest writeStreamRequest =
@@ -147,7 +153,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       WriteStream writeStream = client.getWriteStream(writeStreamRequest);
       refreshWriter(writeStream.getTableSchema());
       return this.toProtoConverter.convertToProtoMessage(
-          this.descriptor, this.tableSchema, item, ignoreUnknownFields);
+          this.descriptor, this.tableSchema, items, ignoreUnknownFields);
     }
   }
   /**
@@ -169,7 +175,6 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       if (!this.skipRefreshStreamWriter && this.streamWriter.getUpdatedSchema() != null) {
         refreshWriter(this.streamWriter.getUpdatedSchema());
       }
-
       ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
       // Any error in convertToProtoMessage will throw an
       // IllegalArgumentException/IllegalStateException/NullPointerException.
@@ -177,29 +182,15 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       // After the conversion is finished an AppendSerializtionError exception that contains all the
       // conversion errors will be thrown.
       Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
-      int i = -1;
-      for (T item : items) {
-        i += 1;
-        try {
-          Message protoMessage = buildMessage(item);
-          rowsBuilder.addSerializedRows(protoMessage.toByteString());
-        } catch (IllegalArgumentException exception) {
-          if (exception instanceof Exceptions.FieldParseError) {
-            Exceptions.FieldParseError ex = (Exceptions.FieldParseError) exception;
-            rowIndexToErrorMessage.put(
-                i,
-                "Field "
-                    + ex.getFieldName()
-                    + " failed to convert to "
-                    + ex.getBqType()
-                    + ". Error: "
-                    + ex.getCause().getMessage());
-          } else {
-            rowIndexToErrorMessage.put(i, exception.getMessage());
-          }
-        } catch (InterruptedException ex) {
-          throw new RuntimeException(ex);
+      try {
+        List<DynamicMessage> protoMessages = buildMessage(items);
+        for (DynamicMessage dynamicMessage : protoMessages) {
+          rowsBuilder.addSerializedRows(dynamicMessage.toByteString());
         }
+      } catch (RowIndexToErrorException exception) {
+        rowIndexToErrorMessage = exception.rowIndexToErrorMessage;
+      } catch (InterruptedException ex) {
+        throw new RuntimeException(ex);
       }
 
       if (!rowIndexToErrorMessage.isEmpty()) {

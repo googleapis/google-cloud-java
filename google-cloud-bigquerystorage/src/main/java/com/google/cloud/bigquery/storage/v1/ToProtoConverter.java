@@ -17,11 +17,12 @@ package com.google.cloud.bigquery.storage.v1;
 
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
+import java.util.List;
 
 public interface ToProtoConverter<T> {
-  DynamicMessage convertToProtoMessage(
+  List<DynamicMessage> convertToProtoMessage(
       Descriptors.Descriptor protoSchema,
       TableSchema tableSchema,
-      T inputObject,
+      Iterable<T> inputObject,
       boolean ignoreUnknownFields);
 }

@@ -157,5 +157,17 @@
     <className>com/google/cloud/bigquery/storage/v1/JsonStreamWriter</className>
     <method>boolean isDone()</method>
   </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ToProtoConverter</className>
+    <method>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Object, boolean)</method>
+    <to>java.util.List</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ToProtoConverter</className>
+    <method>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Object, boolean)</method>
+    <to>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Iterable, boolean)</to>
+  </difference>
 </differences>
 

@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.pathtemplate.ValidationException;
+import com.google.cloud.bigquery.storage.v1.Exceptions.RowIndexToErrorException;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Doubles;
@@ -29,7 +30,10 @@ import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -140,7 +144,10 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
   }
 
   /**
-   * Converts input message to Protobuf
+   * Converts input message to Protobuf.
+   *
+   * <p>WARNING: it's much more efficient to call the other APIs accepting json array if the jsons
+   * share the same table schema.
    *
    * @param protoSchema the schema of the output Protobuf schems.
    * @param tableSchema tha underlying table schema for which Protobuf is being built.
@@ -149,14 +156,36 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    *     schema should be accepted.
    * @return Converted message in Protobuf format.
    */
-  @Override
   public DynamicMessage convertToProtoMessage(
       Descriptor protoSchema, TableSchema tableSchema, Object json, boolean ignoreUnknownFields) {
     return convertToProtoMessage(protoSchema, tableSchema, (JSONObject) json, ignoreUnknownFields);
   }
 
   /**
+   * Converts Json array to list of Protobuf
+   *
+   * @param protoSchema the schema of the output Protobuf schems.
+   * @param tableSchema tha underlying table schema for which Protobuf is being built.
+   * @param jsonArray the input JSON array converted to Protobuf.
+   * @param ignoreUnknownFields flag indicating that the additional fields not present in the output
+   *     schema should be accepted.
+   * @return Converted message in Protobuf format.
+   */
+  @Override
+  public List<DynamicMessage> convertToProtoMessage(
+      Descriptor protoSchema,
+      TableSchema tableSchema,
+      Iterable<Object> jsonArray,
+      boolean ignoreUnknownFields) {
+    return convertToProtoMessage(
+        protoSchema, tableSchema, (JSONArray) jsonArray, ignoreUnknownFields);
+  }
+
+  /**
    * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
+   *
+   * <p>WARNING: it's much more efficient to call the other APIs accepting json array if the jsons
+   * share the same table schema.
    *
    * @param protoSchema
    * @param json
@@ -173,6 +202,9 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
 
   /**
    * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
+   *
+   * <p>WARNING: it's much more efficient to call the other APIs accepting json array if the jsons
+   * share the same table schema.
    *
    * @param protoSchema
    * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
@@ -194,6 +226,9 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
   /**
    * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
    *
+   * <p>WARNING: it's much more efficient to call the other APIs accepting json array if the jsons
+   * share the same table schema.
+   *
    * @param protoSchema
    * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
    *     NUMERIC, BIGNUMERIC
@@ -208,9 +243,46 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
     Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
     Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
-
     return convertToProtoMessage(
         protoSchema, tableSchema.getFieldsList(), json, "root", ignoreUnknownFields);
+  }
+
+  /**
+   * Converts Json array to list of protocol buffer messages given the protocol buffer descriptor.
+   *
+   * @param protoSchema
+   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
+   *     NUMERIC, BIGNUMERIC
+   * @param jsonArray
+   * @param ignoreUnknownFields allows unknown fields in JSON input to be ignored.
+   * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
+   */
+  public List<DynamicMessage> convertToProtoMessage(
+      Descriptor protoSchema,
+      TableSchema tableSchema,
+      JSONArray jsonArray,
+      boolean ignoreUnknownFields)
+      throws IllegalArgumentException {
+    Preconditions.checkNotNull(jsonArray, "jsonArray is null.");
+    Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
+    Preconditions.checkNotNull(tableSchema, "tableSchema is null.");
+    Preconditions.checkState(jsonArray.length() != 0, "jsonArray is empty.");
+
+    return convertToProtoMessage(
+        protoSchema, tableSchema.getFieldsList(), jsonArray, "root", ignoreUnknownFields);
+  }
+
+  private DynamicMessage convertToProtoMessage(
+      Descriptor protoSchema,
+      List<TableFieldSchema> tableSchema,
+      JSONObject jsonObject,
+      String jsonScope,
+      boolean ignoreUnknownFields) {
+    JSONArray jsonArray = new JSONArray();
+    jsonArray.put(jsonObject);
+    return convertToProtoMessage(
+            protoSchema, tableSchema, jsonArray, jsonScope, ignoreUnknownFields)
+        .get(0);
   }
 
   /**
@@ -221,84 +293,162 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * @param jsonScope Debugging purposes
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
-  private DynamicMessage convertToProtoMessage(
+  private List<DynamicMessage> convertToProtoMessage(
       Descriptor protoSchema,
       List<TableFieldSchema> tableSchema,
-      JSONObject json,
+      JSONArray jsonArray,
       String jsonScope,
       boolean ignoreUnknownFields)
-      throws IllegalArgumentException {
+      throws RowIndexToErrorException {
+    List<DynamicMessage> messageList = new ArrayList<>();
+    Map<String, FieldDescriptorAndFieldTableSchema> jsonNameToMetadata = new HashMap<>();
+    Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
 
-    DynamicMessage.Builder protoMsg = DynamicMessage.newBuilder(protoSchema);
-    String[] jsonNames = JSONObject.getNames(json);
-    if (jsonNames == null) {
-      return protoMsg.build();
-    }
-    for (String jsonName : jsonNames) {
-      // We want lowercase here to support case-insensitive data writes.
-      // The protobuf descriptor that is used is assumed to have all lowercased fields
-      String jsonFieldLocator = jsonName.toLowerCase();
-
-      // If jsonName is not compatible with proto naming convention, we should look by its
-      // placeholder name.
-      if (!BigQuerySchemaUtil.isProtoCompatible(jsonFieldLocator)) {
-        jsonFieldLocator = BigQuerySchemaUtil.generatePlaceholderFieldName(jsonFieldLocator);
-      }
-      String currentScope = jsonScope + "." + jsonName;
-      FieldDescriptor field = protoSchema.findFieldByName(jsonFieldLocator);
-      if (field == null && !ignoreUnknownFields) {
-        throw new Exceptions.DataHasUnknownFieldException(currentScope);
-      } else if (field == null) {
-        continue;
-      }
-      TableFieldSchema fieldSchema = null;
-      if (tableSchema != null) {
-        // protoSchema is generated from tableSchema so their field ordering should match.
-        fieldSchema = tableSchema.get(field.getIndex());
-        if (!fieldSchema.getName().toLowerCase().equals(BigQuerySchemaUtil.getFieldName(field))) {
-          throw new ValidationException(
-              "Field at index "
-                  + field.getIndex()
-                  + " has mismatch names ("
-                  + fieldSchema.getName()
-                  + ") ("
-                  + field.getName()
-                  + ")");
-        }
-      }
+    boolean hasDataUnknownError = false;
+    for (int i = 0; i < jsonArray.length(); i++) {
       try {
-        if (!field.isRepeated()) {
-          fillField(
-              protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
-        } else {
-          fillRepeatedField(
-              protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
+        DynamicMessage.Builder protoMsg = DynamicMessage.newBuilder(protoSchema);
+        JSONObject jsonObject = jsonArray.getJSONObject(i);
+        String[] jsonNames = JSONObject.getNames(jsonObject);
+        if (jsonNames == null) {
+          messageList.add(protoMsg.build());
+          continue;
         }
-      } catch (Exceptions.FieldParseError ex) {
-        throw ex;
-      } catch (Exception ex) {
-        // This function is recursively called, so this throw will be caught and throw directly out
-        // by the catch
-        // above.
-        throw new Exceptions.FieldParseError(
-            currentScope,
-            fieldSchema != null ? fieldSchema.getType().name() : field.getType().name(),
-            ex);
+        for (String jsonName : jsonNames) {
+          String currentScope = jsonScope + "." + jsonName;
+          FieldDescriptorAndFieldTableSchema fieldDescriptorAndFieldTableSchema =
+              jsonNameToMetadata.computeIfAbsent(
+                  currentScope,
+                  k -> {
+                    return computeDescriptorAndSchema(
+                        currentScope, ignoreUnknownFields, jsonName, protoSchema, tableSchema);
+                  });
+          if (fieldDescriptorAndFieldTableSchema == null) {
+            continue;
+          }
+          FieldDescriptor field = fieldDescriptorAndFieldTableSchema.fieldDescriptor;
+          TableFieldSchema tableFieldSchema = fieldDescriptorAndFieldTableSchema.tableFieldSchema;
+          try {
+            if (!field.isRepeated()) {
+              fillField(
+                  protoMsg,
+                  field,
+                  tableFieldSchema,
+                  jsonObject,
+                  jsonName,
+                  currentScope,
+                  ignoreUnknownFields);
+            } else {
+              fillRepeatedField(
+                  protoMsg,
+                  field,
+                  tableFieldSchema,
+                  jsonObject,
+                  jsonName,
+                  currentScope,
+                  ignoreUnknownFields);
+            }
+          } catch (Exceptions.FieldParseError ex) {
+            throw ex;
+          } catch (Exception ex) {
+            // This function is recursively called, so this throw will be caught and throw directly
+            // out by the catch above.
+            throw new Exceptions.FieldParseError(
+                currentScope,
+                tableFieldSchema != null
+                    ? tableFieldSchema.getType().name()
+                    : field.getType().name(),
+                ex);
+          }
+        }
+        DynamicMessage msg;
+        try {
+          msg = protoMsg.build();
+        } catch (UninitializedMessageException e) {
+          String errorMsg = e.getMessage();
+          int idxOfColon = errorMsg.indexOf(":");
+          String missingFieldName = errorMsg.substring(idxOfColon + 2);
+          throw new IllegalArgumentException(
+              String.format(
+                  "JSONObject does not have the required field %s.%s.",
+                  jsonScope, missingFieldName));
+        }
+        messageList.add(msg);
+      } catch (IllegalArgumentException exception) {
+        if (exception instanceof Exceptions.DataHasUnknownFieldException) {
+          hasDataUnknownError = true;
+        }
+        if (exception instanceof Exceptions.FieldParseError) {
+          Exceptions.FieldParseError ex = (Exceptions.FieldParseError) exception;
+          rowIndexToErrorMessage.put(
+              i,
+              "Field "
+                  + ex.getFieldName()
+                  + " failed to convert to "
+                  + ex.getBqType()
+                  + ". Error: "
+                  + ex.getCause().getMessage());
+        } else {
+          rowIndexToErrorMessage.put(i, exception.getMessage());
+        }
       }
     }
-
-    DynamicMessage msg;
-    try {
-      msg = protoMsg.build();
-    } catch (UninitializedMessageException e) {
-      String errorMsg = e.getMessage();
-      int idxOfColon = errorMsg.indexOf(":");
-      String missingFieldName = errorMsg.substring(idxOfColon + 2);
-      throw new IllegalArgumentException(
-          String.format(
-              "JSONObject does not have the required field %s.%s.", jsonScope, missingFieldName));
+    if (!rowIndexToErrorMessage.isEmpty()) {
+      throw new RowIndexToErrorException(rowIndexToErrorMessage, hasDataUnknownError);
     }
-    return msg;
+    return messageList;
+  }
+
+  private static final class FieldDescriptorAndFieldTableSchema {
+    TableFieldSchema tableFieldSchema;
+
+    // Field descriptor
+    FieldDescriptor fieldDescriptor;
+  }
+
+  private FieldDescriptorAndFieldTableSchema computeDescriptorAndSchema(
+      String currentScope,
+      boolean ignoreUnknownFields,
+      String jsonName,
+      Descriptor protoSchema,
+      List<TableFieldSchema> tableFieldSchemaList) {
+
+    // We want lowercase here to support case-insensitive data writes.
+    // The protobuf descriptor that is used is assumed to have all lowercased fields
+    String jsonFieldLocator = jsonName.toLowerCase();
+
+    // If jsonName is not compatible with proto naming convention, we should look by its
+    // placeholder name.
+    if (!BigQuerySchemaUtil.isProtoCompatible(jsonFieldLocator)) {
+      jsonFieldLocator = BigQuerySchemaUtil.generatePlaceholderFieldName(jsonFieldLocator);
+    }
+
+    FieldDescriptor field = protoSchema.findFieldByName(jsonFieldLocator);
+    if (field == null && !ignoreUnknownFields) {
+      throw new Exceptions.DataHasUnknownFieldException(currentScope);
+    } else if (field == null) {
+      return null;
+    }
+    TableFieldSchema fieldSchema = null;
+    if (tableFieldSchemaList != null) {
+      // protoSchema is generated from tableSchema so their field ordering should match.
+      fieldSchema = tableFieldSchemaList.get(field.getIndex());
+      if (!fieldSchema.getName().toLowerCase().equals(BigQuerySchemaUtil.getFieldName(field))) {
+        throw new ValidationException(
+            "Field at index "
+                + field.getIndex()
+                + " has mismatch names ("
+                + fieldSchema.getName()
+                + ") ("
+                + field.getName()
+                + ")");
+      }
+    }
+    FieldDescriptorAndFieldTableSchema fieldDescriptorAndFieldTableSchema =
+        new FieldDescriptorAndFieldTableSchema();
+    fieldDescriptorAndFieldTableSchema.fieldDescriptor = field;
+    fieldDescriptorAndFieldTableSchema.tableFieldSchema = fieldSchema;
+    return fieldDescriptorAndFieldTableSchema;
   }
 
   /**
@@ -321,7 +471,6 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
       String currentScope,
       boolean ignoreUnknownFields)
       throws IllegalArgumentException {
-
     java.lang.Object val = json.get(exactJsonKeyName);
     if (val == JSONObject.NULL) {
       return;

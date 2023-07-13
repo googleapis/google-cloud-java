@@ -259,6 +259,29 @@ public final class Exceptions {
     }
   }
 
+  /** This exception is thrown from proto converter to wrap the row index to error mapping. */
+  static class RowIndexToErrorException extends IllegalArgumentException {
+    Map<Integer, String> rowIndexToErrorMessage;
+
+    boolean hasDataUnknownError;
+
+    public RowIndexToErrorException(
+        Map<Integer, String> rowIndexToErrorMessage, boolean hasDataUnknownError) {
+      this.rowIndexToErrorMessage = rowIndexToErrorMessage;
+      this.hasDataUnknownError = hasDataUnknownError;
+    }
+
+    // This message should not be exposed to the user directly.
+    // Please examine individual row's error through `rowIndexToErrorMessage`.
+    public String getMessage() {
+      return "The map of row index to error message is " + rowIndexToErrorMessage.toString();
+    }
+
+    public boolean hasDataUnknownError() {
+      return hasDataUnknownError;
+    }
+  }
+
   /** This exception is used internally to handle field level parsing errors. */
   public static class FieldParseError extends IllegalArgumentException {
     private final String fieldName;
