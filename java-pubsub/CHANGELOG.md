@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.123.18](https://github.com/googleapis/java-pubsub/compare/v1.123.17...v1.123.18) (2023-07-17)
+
+
+### Documentation
+
+* Tightened requirements on cloud storage subscription filename suffixes ([#1639](https://github.com/googleapis/java-pubsub/issues/1639)) ([34a182a](https://github.com/googleapis/java-pubsub/commit/34a182a1655c843cd728850b278ba2e9ce9a5680))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.21.0 ([#1650](https://github.com/googleapis/java-pubsub/issues/1650)) ([69879d4](https://github.com/googleapis/java-pubsub/commit/69879d4c9d7a220f9c5a38b144d49e71ad3b94d0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#1651](https://github.com/googleapis/java-pubsub/issues/1651)) ([83fdbe2](https://github.com/googleapis/java-pubsub/commit/83fdbe2435d8fa03b5648272a794874ff910fcb6))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.23.4 ([#1649](https://github.com/googleapis/java-pubsub/issues/1649)) ([9f9c5ca](https://github.com/googleapis/java-pubsub/commit/9f9c5ca2abddde274c79cf36bf2aea91b7b8b455))
+* Update dependency org.apache.avro:avro to v1.11.2 ([#1646](https://github.com/googleapis/java-pubsub/issues/1646)) ([5859fe4](https://github.com/googleapis/java-pubsub/commit/5859fe4c6540fa577942f38e117798d3c3cdc498))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.2 ([#1654](https://github.com/googleapis/java-pubsub/issues/1654)) ([05445f0](https://github.com/googleapis/java-pubsub/commit/05445f0ccf1cd78a604ec267d7a146cdd1770c59))
+
 ## [1.123.17](https://github.com/googleapis/java-pubsub/compare/v1.123.16...v1.123.17) (2023-06-26)
 
 
