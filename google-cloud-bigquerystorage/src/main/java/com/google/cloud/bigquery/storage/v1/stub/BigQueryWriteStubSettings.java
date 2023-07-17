@@ -259,7 +259,9 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
           "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.UNAVAILABLE,
+                  StatusCode.Code.RESOURCE_EXHAUSTED)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 

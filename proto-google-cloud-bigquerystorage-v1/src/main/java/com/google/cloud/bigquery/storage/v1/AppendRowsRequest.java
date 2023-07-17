@@ -24,9 +24,10 @@ package com.google.cloud.bigquery.storage.v1;
  * <pre>
  * Request message for `AppendRows`.
  *
- * Due to the nature of AppendRows being a bidirectional streaming RPC, certain
- * parts of the AppendRowsRequest need only be specified for the first request
- * sent each time the gRPC network connection is opened/reopened.
+ * Because AppendRows is a bidirectional streaming RPC, certain parts of the
+ * AppendRowsRequest need only be specified for the first request before
+ * switching table destinations. You can also switch table destinations within
+ * the same connection for the default stream.
  *
  * The size of a single AppendRowsRequest must be less than 10 MB in size.
  * Requests larger than this return an error, typically `INVALID_ARGUMENT`.
@@ -85,10 +86,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An enum to indicate how to interpret missing values. Missing values are
-   * fields present in user schema but missing in rows. A missing value can
-   * represent a NULL or a column default value defined in BigQuery table
-   * schema.
+   * An enum to indicate how to interpret missing values of fields that are
+   * present in user schema but missing in rows. A missing value can represent a
+   * NULL or a column default value defined in BigQuery table schema.
    * </pre>
    *
    * Protobuf enum {@code
@@ -260,9 +260,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -274,9 +279,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -288,9 +298,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -390,9 +405,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -407,9 +427,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -426,9 +451,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Proto schema used to serialize the data.  This value only needs to be
-     * provided as part of the first request on a gRPC network connection,
-     * and will be ignored for subsequent requests on the connection.
+     * The protocol buffer schema used to serialize the data. Provide this value
+     * whenever:
+     *
+     * * You send the first request of an RPC connection.
+     *
+     * * You change the input schema.
+     *
+     * * You specify a new destination table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -915,9 +945,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -931,9 +966,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -953,9 +993,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -977,9 +1022,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -999,9 +1049,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -1027,9 +1082,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -1048,9 +1108,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -1064,9 +1129,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -1084,9 +1154,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Proto schema used to serialize the data.  This value only needs to be
-       * provided as part of the first request on a gRPC network connection,
-       * and will be ignored for subsequent requests on the connection.
+       * The protocol buffer schema used to serialize the data. Provide this value
+       * whenever:
+       *
+       * * You send the first request of an RPC connection.
+       *
+       * * You change the input schema.
+       *
+       * * You specify a new destination table.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1.ProtoSchema writer_schema = 1;</code>
@@ -1440,10 +1515,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The write_stream identifies the target of the append operation,
-   * and only needs to be specified as part of the first request on the gRPC
-   * connection. If provided for subsequent requests, it must match the value of
-   * the first request.
+   * Required. The write_stream identifies the append operation. It must be
+   * provided in the following scenarios:
+   *
+   * * In the first request to an AppendRows connection.
+   *
+   * * In all subsequent requests to an AppendRows connection, if you use the
+   * same connection to write to multiple tables or change the input schema for
+   * default streams.
    *
    * For explicitly created write streams, the format is:
    *
@@ -1452,6 +1531,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    * For the special default stream, the format is:
    *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+   *
+   * An example of a possible sequence of requests with write_stream fields
+   * within a single connection:
+   *
+   * * r1: {write_stream: stream_name_1}
+   *
+   * * r2: {write_stream: /&#42;omit*&#47;}
+   *
+   * * r3: {write_stream: /&#42;omit*&#47;}
+   *
+   * * r4: {write_stream: stream_name_2}
+   *
+   * * r5: {write_stream: stream_name_2}
+   *
+   * The destination changed in request_4, so the write_stream field must be
+   * populated in all subsequent requests in this stream.
    * </pre>
    *
    * <code>
@@ -1476,10 +1571,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The write_stream identifies the target of the append operation,
-   * and only needs to be specified as part of the first request on the gRPC
-   * connection. If provided for subsequent requests, it must match the value of
-   * the first request.
+   * Required. The write_stream identifies the append operation. It must be
+   * provided in the following scenarios:
+   *
+   * * In the first request to an AppendRows connection.
+   *
+   * * In all subsequent requests to an AppendRows connection, if you use the
+   * same connection to write to multiple tables or change the input schema for
+   * default streams.
    *
    * For explicitly created write streams, the format is:
    *
@@ -1488,6 +1587,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    * For the special default stream, the format is:
    *
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+   *
+   * An example of a possible sequence of requests with write_stream fields
+   * within a single connection:
+   *
+   * * r1: {write_stream: stream_name_1}
+   *
+   * * r2: {write_stream: /&#42;omit*&#47;}
+   *
+   * * r3: {write_stream: /&#42;omit*&#47;}
+   *
+   * * r4: {write_stream: stream_name_2}
+   *
+   * * r5: {write_stream: stream_name_2}
+   *
+   * The destination changed in request_4, so the write_stream field must be
+   * populated in all subsequent requests in this stream.
    * </pre>
    *
    * <code>
@@ -2248,9 +2363,10 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Request message for `AppendRows`.
    *
-   * Due to the nature of AppendRows being a bidirectional streaming RPC, certain
-   * parts of the AppendRowsRequest need only be specified for the first request
-   * sent each time the gRPC network connection is opened/reopened.
+   * Because AppendRows is a bidirectional streaming RPC, certain parts of the
+   * AppendRowsRequest need only be specified for the first request before
+   * switching table destinations. You can also switch table destinations within
+   * the same connection for the default stream.
    *
    * The size of a single AppendRowsRequest must be less than 10 MB in size.
    * Requests larger than this return an error, typically `INVALID_ARGUMENT`.
@@ -2563,10 +2679,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The write_stream identifies the target of the append operation,
-     * and only needs to be specified as part of the first request on the gRPC
-     * connection. If provided for subsequent requests, it must match the value of
-     * the first request.
+     * Required. The write_stream identifies the append operation. It must be
+     * provided in the following scenarios:
+     *
+     * * In the first request to an AppendRows connection.
+     *
+     * * In all subsequent requests to an AppendRows connection, if you use the
+     * same connection to write to multiple tables or change the input schema for
+     * default streams.
      *
      * For explicitly created write streams, the format is:
      *
@@ -2575,6 +2695,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * For the special default stream, the format is:
      *
      * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+     *
+     * An example of a possible sequence of requests with write_stream fields
+     * within a single connection:
+     *
+     * * r1: {write_stream: stream_name_1}
+     *
+     * * r2: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r3: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r4: {write_stream: stream_name_2}
+     *
+     * * r5: {write_stream: stream_name_2}
+     *
+     * The destination changed in request_4, so the write_stream field must be
+     * populated in all subsequent requests in this stream.
      * </pre>
      *
      * <code>
@@ -2598,10 +2734,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The write_stream identifies the target of the append operation,
-     * and only needs to be specified as part of the first request on the gRPC
-     * connection. If provided for subsequent requests, it must match the value of
-     * the first request.
+     * Required. The write_stream identifies the append operation. It must be
+     * provided in the following scenarios:
+     *
+     * * In the first request to an AppendRows connection.
+     *
+     * * In all subsequent requests to an AppendRows connection, if you use the
+     * same connection to write to multiple tables or change the input schema for
+     * default streams.
      *
      * For explicitly created write streams, the format is:
      *
@@ -2610,6 +2750,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * For the special default stream, the format is:
      *
      * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+     *
+     * An example of a possible sequence of requests with write_stream fields
+     * within a single connection:
+     *
+     * * r1: {write_stream: stream_name_1}
+     *
+     * * r2: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r3: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r4: {write_stream: stream_name_2}
+     *
+     * * r5: {write_stream: stream_name_2}
+     *
+     * The destination changed in request_4, so the write_stream field must be
+     * populated in all subsequent requests in this stream.
      * </pre>
      *
      * <code>
@@ -2633,10 +2789,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The write_stream identifies the target of the append operation,
-     * and only needs to be specified as part of the first request on the gRPC
-     * connection. If provided for subsequent requests, it must match the value of
-     * the first request.
+     * Required. The write_stream identifies the append operation. It must be
+     * provided in the following scenarios:
+     *
+     * * In the first request to an AppendRows connection.
+     *
+     * * In all subsequent requests to an AppendRows connection, if you use the
+     * same connection to write to multiple tables or change the input schema for
+     * default streams.
      *
      * For explicitly created write streams, the format is:
      *
@@ -2645,6 +2805,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * For the special default stream, the format is:
      *
      * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+     *
+     * An example of a possible sequence of requests with write_stream fields
+     * within a single connection:
+     *
+     * * r1: {write_stream: stream_name_1}
+     *
+     * * r2: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r3: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r4: {write_stream: stream_name_2}
+     *
+     * * r5: {write_stream: stream_name_2}
+     *
+     * The destination changed in request_4, so the write_stream field must be
+     * populated in all subsequent requests in this stream.
      * </pre>
      *
      * <code>
@@ -2667,10 +2843,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The write_stream identifies the target of the append operation,
-     * and only needs to be specified as part of the first request on the gRPC
-     * connection. If provided for subsequent requests, it must match the value of
-     * the first request.
+     * Required. The write_stream identifies the append operation. It must be
+     * provided in the following scenarios:
+     *
+     * * In the first request to an AppendRows connection.
+     *
+     * * In all subsequent requests to an AppendRows connection, if you use the
+     * same connection to write to multiple tables or change the input schema for
+     * default streams.
      *
      * For explicitly created write streams, the format is:
      *
@@ -2679,6 +2859,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * For the special default stream, the format is:
      *
      * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+     *
+     * An example of a possible sequence of requests with write_stream fields
+     * within a single connection:
+     *
+     * * r1: {write_stream: stream_name_1}
+     *
+     * * r2: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r3: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r4: {write_stream: stream_name_2}
+     *
+     * * r5: {write_stream: stream_name_2}
+     *
+     * The destination changed in request_4, so the write_stream field must be
+     * populated in all subsequent requests in this stream.
      * </pre>
      *
      * <code>
@@ -2697,10 +2893,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The write_stream identifies the target of the append operation,
-     * and only needs to be specified as part of the first request on the gRPC
-     * connection. If provided for subsequent requests, it must match the value of
-     * the first request.
+     * Required. The write_stream identifies the append operation. It must be
+     * provided in the following scenarios:
+     *
+     * * In the first request to an AppendRows connection.
+     *
+     * * In all subsequent requests to an AppendRows connection, if you use the
+     * same connection to write to multiple tables or change the input schema for
+     * default streams.
      *
      * For explicitly created write streams, the format is:
      *
@@ -2709,6 +2909,22 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * For the special default stream, the format is:
      *
      * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
+     *
+     * An example of a possible sequence of requests with write_stream fields
+     * within a single connection:
+     *
+     * * r1: {write_stream: stream_name_1}
+     *
+     * * r2: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r3: {write_stream: /&#42;omit*&#47;}
+     *
+     * * r4: {write_stream: stream_name_2}
+     *
+     * * r5: {write_stream: stream_name_2}
+     *
+     * The destination changed in request_4, so the write_stream field must be
+     * populated in all subsequent requests in this stream.
      * </pre>
      *
      * <code>

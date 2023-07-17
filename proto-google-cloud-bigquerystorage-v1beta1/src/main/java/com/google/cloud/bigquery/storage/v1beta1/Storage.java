@@ -12454,7 +12454,6 @@ public final class Storage {
               : status_;
         }
       }
-
       /**
        *
        *
@@ -12487,7 +12486,6 @@ public final class Storage {
               com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.Builder,
               com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatusOrBuilder>
           throttleStatusBuilder_;
-
       /**
        *
        *
@@ -12503,7 +12501,6 @@ public final class Storage {
       public boolean hasThrottleStatus() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -12526,7 +12523,6 @@ public final class Storage {
           return throttleStatusBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -12551,7 +12547,6 @@ public final class Storage {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12574,7 +12569,6 @@ public final class Storage {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12604,7 +12598,6 @@ public final class Storage {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12625,7 +12618,6 @@ public final class Storage {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12642,7 +12634,6 @@ public final class Storage {
         onChanged();
         return getThrottleStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -12664,7 +12655,6 @@ public final class Storage {
               : throttleStatus_;
         }
       }
-
       /**
        *
        *
