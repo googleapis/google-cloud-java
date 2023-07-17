@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.40.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.39.1...v2.40.0) (2023-07-17)
+
+
+### Features
+
+* Add ResourceExhausted to retryable error for Write API unary calls ([#2178](https://github.com/googleapis/java-bigquerystorage/issues/2178)) ([d9b526a](https://github.com/googleapis/java-bigquerystorage/commit/d9b526a2e4109ef5ed95fb74373f2f13b06c7c54))
+* Improve json to proto conversion by caching schema ([#2179](https://github.com/googleapis/java-bigquerystorage/issues/2179)) ([afc550a](https://github.com/googleapis/java-bigquerystorage/commit/afc550aeacb0e3f26440eeb70d2cebbf65922c07))
+
+
+### Bug Fixes
+
+* Interpret Integer and Float values for TIMESTAMP as microseconds ([#2175](https://github.com/googleapis/java-bigquerystorage/issues/2175)) ([e5bb5d0](https://github.com/googleapis/java-bigquerystorage/commit/e5bb5d099ea0272c4bd447b7f8fef5207c14ffc5))
+* Support DATETIME field that has a space between date and time and has only date ([#2176](https://github.com/googleapis/java-bigquerystorage/issues/2176)) ([494ce85](https://github.com/googleapis/java-bigquerystorage/commit/494ce8513e8925b4330a2bf45641ba38db625c1d))
+
+
+### Dependencies
+
+* Update dependency com.google.auto.value:auto-value to v1.10.2 ([#2171](https://github.com/googleapis/java-bigquerystorage/issues/2171)) ([721908d](https://github.com/googleapis/java-bigquerystorage/commit/721908d412f1d82aff9aed8edcf727fc5b1bf950))
+* Update dependency com.google.auto.value:auto-value-annotations to v1.10.2 ([#2172](https://github.com/googleapis/java-bigquerystorage/issues/2172)) ([8a51fae](https://github.com/googleapis/java-bigquerystorage/commit/8a51fae180ced3b362acc350999157d3d6e0da6a))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.29.0 ([#2168](https://github.com/googleapis/java-bigquerystorage/issues/2168)) ([50ca432](https://github.com/googleapis/java-bigquerystorage/commit/50ca432854851f7cc89cb50a327d9641000b81ee))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.30.0 ([#2184](https://github.com/googleapis/java-bigquerystorage/issues/2184)) ([87f93a9](https://github.com/googleapis/java-bigquerystorage/commit/87f93a921c62cd71808cddc35382bbaabb7da54b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#2180](https://github.com/googleapis/java-bigquerystorage/issues/2180)) ([7ce19e7](https://github.com/googleapis/java-bigquerystorage/commit/7ce19e7a4ca47df9590c1023abcc459248b1fec2))
+* Update dependency org.apache.avro:avro to v1.11.2 ([#2177](https://github.com/googleapis/java-bigquerystorage/issues/2177)) ([75ce0b5](https://github.com/googleapis/java-bigquerystorage/commit/75ce0b5d7009bbb47b91c222390cfe864b8bd84e))
+
 ## [2.39.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.39.0...v2.39.1) (2023-06-22)
 
 
