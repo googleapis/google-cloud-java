@@ -340,6 +340,7 @@ public abstract class JobStatistics implements Serializable {
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
+    private final SearchStats searchStats;
     private final List<QueryParameter> queryParameters;
 
     /**
@@ -424,6 +425,7 @@ public abstract class JobStatistics implements Serializable {
       private List<TimelineSample> timeline;
       private Schema schema;
       private List<QueryParameter> queryParameters;
+      private SearchStats searchStats;
 
       private Builder() {}
 
@@ -470,6 +472,9 @@ public abstract class JobStatistics implements Serializable {
           }
           if (statisticsPb.getQuery().getSchema() != null) {
             this.schema = Schema.fromPb(statisticsPb.getQuery().getSchema());
+          }
+          if (statisticsPb.getQuery().getSearchStatistics() != null) {
+            this.searchStats = SearchStats.fromPb(statisticsPb.getQuery().getSearchStatistics());
           }
           if (statisticsPb.getQuery().getDmlStats() != null) {
             this.dmlStats = DmlStats.fromPb(statisticsPb.getQuery().getDmlStats());
@@ -572,6 +577,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setSearchStats(SearchStats searchStats) {
+        this.searchStats = searchStats;
+        return self();
+      }
+
       Builder setQueryParameters(List<QueryParameter> queryParameters) {
         this.queryParameters = queryParameters;
         return self();
@@ -603,6 +613,7 @@ public abstract class JobStatistics implements Serializable {
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
+      this.searchStats = builder.searchStats;
       this.queryParameters = builder.queryParameters;
     }
 
@@ -725,6 +736,15 @@ public abstract class JobStatistics implements Serializable {
     }
 
     /**
+     * Statistics for a search query. Populated as part of JobStatistics2. Provides information
+     * about how indexes are used in search queries. If an index is not used, you can retrieve
+     * debugging information about the reason why.
+     */
+    public SearchStats getSearchStats() {
+      return searchStats;
+    }
+
+    /**
      * Standard SQL only: Returns a list of undeclared query parameters detected during a dry run
      * validation.
      */
@@ -743,6 +763,7 @@ public abstract class JobStatistics implements Serializable {
           .add("queryPlan", queryPlan)
           .add("timeline", timeline)
           .add("schema", schema)
+          .add("searchStats", searchStats)
           .add("queryParameters", queryParameters);
     }
 
@@ -765,6 +786,7 @@ public abstract class JobStatistics implements Serializable {
           totalBytesProcessed,
           queryPlan,
           schema,
+          searchStats,
           queryParameters);
     }
 
@@ -806,6 +828,9 @@ public abstract class JobStatistics implements Serializable {
       }
       if (schema != null) {
         queryStatisticsPb.setSchema(schema.toPb());
+      }
+      if (searchStats != null) {
+        queryStatisticsPb.setSearchStatistics(searchStats.toPb());
       }
       if (queryParameters != null) {
         queryStatisticsPb.setUndeclaredQueryParameters(queryParameters);

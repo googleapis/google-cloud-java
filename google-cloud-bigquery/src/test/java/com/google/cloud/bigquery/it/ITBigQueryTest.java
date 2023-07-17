@@ -5088,6 +5088,31 @@ public class ITBigQueryTest {
     }
   }
 
+  @Test
+  public void testQueryJobWithSearchReturnsSearchStatistics() throws InterruptedException {
+    String tableName = "test_query_job_table";
+    String query =
+        "SELECT * FROM "
+            + TABLE_ID.getTable()
+            + "         WHERE search(StringField, \"stringValue\")";
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      QueryJobConfiguration configuration =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DatasetId.of(DATASET))
+              .setDestinationTable(destinationTable)
+              .build();
+      Job remoteJob = bigquery.create(JobInfo.of(configuration));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+      JobStatistics.QueryStatistics stats = remoteJob.getStatistics();
+      assertNotNull(stats.getSearchStats());
+      assertEquals(stats.getSearchStats().getIndexUsageMode(), "UNUSED");
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
   /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryJobWithRangePartitioning() throws InterruptedException {

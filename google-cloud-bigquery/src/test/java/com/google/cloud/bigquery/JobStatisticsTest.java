@@ -159,6 +159,9 @@ public class JobStatisticsTest {
       ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
   private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
+  private static final String UNUSED_INDEX_USAGE_MODE = "UNUSED";
+  private static final SearchStats SEARCH_STATS =
+      SearchStats.newBuilder().setIndexUsageMode(UNUSED_INDEX_USAGE_MODE).build();
   private static final QueryStatistics QUERY_STATISTICS =
       QueryStatistics.newBuilder()
           .setCreationTimestamp(CREATION_TIME)
@@ -182,6 +185,7 @@ public class JobStatisticsTest {
           .setQueryPlan(QUERY_PLAN)
           .setTimeline(TIMELINE)
           .setSchema(SCHEMA)
+          .setSearchStats(SEARCH_STATS)
           .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE =
       QueryStatistics.newBuilder()
@@ -190,6 +194,7 @@ public class JobStatisticsTest {
           .setStartTime(START_TIME)
           .setBillingTier(BILLING_TIER)
           .setCacheHit(CACHE_HIT)
+          .setSearchStats(SEARCH_STATS)
           .build();
   private static final ScriptStackFrame STATEMENT_STACK_FRAME =
       ScriptStackFrame.newBuilder()
@@ -407,6 +412,8 @@ public class JobStatisticsTest {
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
     assertEquals(expected.getReferencedTables(), value.getReferencedTables());
     assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(
+        expected.getSearchStats().getIndexUsageMode(), value.getSearchStats().getIndexUsageMode());
     assertEquals(expected.getStatementType(), value.getStatementType());
     assertEquals(expected.getTimeline(), value.getTimeline());
   }
