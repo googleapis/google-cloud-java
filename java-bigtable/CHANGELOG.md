@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.25.0](https://github.com/googleapis/java-bigtable/compare/v2.24.1...v2.25.0) (2023-07-14)
+
+
+### Features
+
+* Change stream retention to create and update table ([#1823](https://github.com/googleapis/java-bigtable/issues/1823)) ([05fca58](https://github.com/googleapis/java-bigtable/commit/05fca581d4225769cc581e26e679e6bca105055b))
+
+
+### Bug Fixes
+
+* Fix batch mutation limit ([#1808](https://github.com/googleapis/java-bigtable/issues/1808)) ([ed24d4f](https://github.com/googleapis/java-bigtable/commit/ed24d4fdc67c6d0af66ea055ba1ad7f7c037a361))
+* Update default sample row key attempt timeout to 5 min ([#1827](https://github.com/googleapis/java-bigtable/issues/1827)) ([2f363ef](https://github.com/googleapis/java-bigtable/commit/2f363ef3636c2810c322bb5978cc586f8aec2ef2))
+
+
+### Documentation
+
+* Fix formatting for reversed order field example ([#1836](https://github.com/googleapis/java-bigtable/issues/1836)) ([10a0426](https://github.com/googleapis/java-bigtable/commit/10a0426f580b86b26541b95a778bb8b7f6562383))
+* Increase the maximum retention period for a Cloud Bigtable backup from 30 days to 90 days ([#1826](https://github.com/googleapis/java-bigtable/issues/1826)) ([159fe38](https://github.com/googleapis/java-bigtable/commit/159fe3857735c9061672fc951388215edb0a324c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.22.0 ([#1838](https://github.com/googleapis/java-bigtable/issues/1838)) ([fba2c49](https://github.com/googleapis/java-bigtable/commit/fba2c49e9e71209289497f53868aa561c0fba7a3))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#1833](https://github.com/googleapis/java-bigtable/issues/1833)) ([cb160af](https://github.com/googleapis/java-bigtable/commit/cb160af8e66ec6693ed0d3286c654a93094b68a3))
+
 ## [2.24.1](https://github.com/googleapis/java-bigtable/compare/v2.24.0...v2.24.1) (2023-06-27)
 
 
