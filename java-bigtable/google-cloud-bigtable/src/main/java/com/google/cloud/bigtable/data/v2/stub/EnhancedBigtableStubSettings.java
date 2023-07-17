@@ -645,16 +645,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setIdleTimeout(Duration.ofMinutes(5))
           .setWaitTimeout(Duration.ofMinutes(5));
 
-      // Point reads should use same defaults as streaming reads, but with a shorter timeout
       readRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readRowSettings
           .setRetryableCodes(readRowsSettings.getRetryableCodes())
-          .setRetrySettings(
-              readRowsSettings()
-                  .getRetrySettings()
-                  .toBuilder()
-                  .setTotalTimeout(IDEMPOTENT_RETRY_SETTINGS.getTotalTimeout())
-                  .build());
+          .setRetrySettings(IDEMPOTENT_RETRY_SETTINGS);
 
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sampleRowKeysSettings
