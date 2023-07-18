@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.40.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.40.0...v2.40.1) (2023-07-18)
+
+
+### Dependencies
+
+* Remove auto value annotation version ([#2188](https://github.com/googleapis/java-bigquerystorage/issues/2188)) ([9186f04](https://github.com/googleapis/java-bigquerystorage/commit/9186f04eefff3a483d39c4c5db7aeb3e213ed4ca))
+
 ## [2.40.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.39.1...v2.40.0) (2023-07-17)
 
 
