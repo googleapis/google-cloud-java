@@ -8,7 +8,7 @@ com.google.api:gax:jar:2.18.2:compile
 com.google.apis:google-api-services-storage:jar:v1-rev20220705-1.32.1:compile
 com.google.auth:google-auth-library-credentials:jar:1.7.0:compile
 com.google.auth:google-auth-library-oauth2-http:jar:1.7.0:compile
-com.google.auto.value:auto-value-annotations:jar:1.10.1:compile
+com.google.auto.value:auto-value-annotations:jar:1.10.2:compile
 com.google.cloud:google-cloud-core-http:jar:2.8.0:compile
 com.google.cloud:google-cloud-core:jar:2.8.0:compile
 com.google.code.findbugs:jsr305:jar:3.0.2:compile
