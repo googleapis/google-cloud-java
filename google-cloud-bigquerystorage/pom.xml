@@ -75,12 +75,11 @@
     <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
-      <version>1.10.2</version>
+      <version>${auto-value-annotation.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value-annotations</artifactId>
-      <version>1.10.2</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
