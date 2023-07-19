@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.5.7](https://github.com/googleapis/java-shared-config/compare/v1.5.6...v1.5.7) (2023-07-19)
+
+
+### Dependencies
+
+* Update auto-value-annotation.version to v1.10.2 ([#632](https://github.com/googleapis/java-shared-config/issues/632)) ([bfa9559](https://github.com/googleapis/java-shared-config/commit/bfa9559bf96802cc717b3e8452d09f495f7e1e90))
+* Update dependency com.google.auto.service:auto-service-annotations to v1.1.1 ([#623](https://github.com/googleapis/java-shared-config/issues/623)) ([3405245](https://github.com/googleapis/java-shared-config/commit/3405245576821db2a10ae6efe22c5a8b656ce026))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.12.1 ([#630](https://github.com/googleapis/java-shared-config/issues/630)) ([3d5a358](https://github.com/googleapis/java-shared-config/commit/3d5a358f7a82fa91869a39d770f4826cfb50e6b9))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.23 ([#627](https://github.com/googleapis/java-shared-config/issues/627)) ([274f269](https://github.com/googleapis/java-shared-config/commit/274f2692e20e8f9e4b390a3da14f7fcd4ecf7bdf))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.3 ([#624](https://github.com/googleapis/java-shared-config/issues/624)) ([88f4043](https://github.com/googleapis/java-shared-config/commit/88f4043f869406cf2a4544dbabdfd9b52365aca8))
+
 ## [1.5.6](https://github.com/googleapis/java-shared-config/compare/v1.5.5...v1.5.6) (2023-06-02)
 
 
