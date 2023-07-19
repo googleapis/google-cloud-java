@@ -177,6 +177,7 @@ public class WriteToDefaultStream {
                       .setKeepAliveWithoutCalls(true)
                       .setChannelsPerCpu(2)
                       .build())
+              .setEnableConnectionPool(true)
               .build();
     }
 
