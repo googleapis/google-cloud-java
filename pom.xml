@@ -125,6 +125,7 @@
     <module>java-os-config</module>
     <module>java-os-login</module>
     <module>java-phishingprotection</module>
+    <module>java-policysimulator</module>
     <module>java-policy-troubleshooter</module>
     <module>java-private-catalog</module>
     <module>java-profiler</module>

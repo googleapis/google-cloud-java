@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.policysimulator.v1",
+  "libraryPackage": "com.google.cloud.policysimulator.v1",
+  "services": {
+    "Simulator": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SimulatorClient",
+          "rpcs": {
+            "CreateReplay": {
+              "methods": ["createReplayAsync", "createReplayAsync", "createReplayOperationCallable", "createReplayCallable"]
+            },
+            "GetReplay": {
+              "methods": ["getReplay", "getReplay", "getReplay", "getReplayCallable"]
+            },
+            "ListReplayResults": {
+              "methods": ["listReplayResults", "listReplayResults", "listReplayResults", "listReplayResultsPagedCallable", "listReplayResultsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

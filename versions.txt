@@ -653,3 +653,6 @@ grpc-google-cloud-discoveryengine-v1:0.17.0:0.17.0
 google-cloud-migrationcenter:0.3.0:0.3.0
 proto-google-cloud-migrationcenter-v1:0.3.0:0.3.0
 grpc-google-cloud-migrationcenter-v1:0.3.0:0.3.0
+google-cloud-policysimulator:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-policysimulator-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-policysimulator-v1:0.0.0:0.0.1-SNAPSHOT
