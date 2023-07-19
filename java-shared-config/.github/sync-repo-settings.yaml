@@ -38,7 +38,6 @@ branchProtectionRules:
     - "Kokoro - Test: Java GraalVM Native Image"
     - "Kokoro - Test: Java 17 GraalVM Native Image"
     - "dependencies (11, java-bigquery)"
-    - "dependencies (11, java-bigqueryconnection)"
     - "dependencies (11, java-spanner)"
     - "dependencies (11, java-storage)"
     - "dependencies (11, java-pubsub)"
