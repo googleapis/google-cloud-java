@@ -16,34 +16,34 @@
 
 package com.google.cloud.documentai.v1beta3.samples;
 
-// [START documentai_v1beta3_generated_DocumentServiceSettings_GetDatasetSchema_sync]
-import com.google.cloud.documentai.v1beta3.DocumentServiceSettings;
-import java.time.Duration;
+// [START documentai_v1beta3_generated_DocumentService_ImportDocuments_sync]
+import com.google.cloud.documentai.v1beta3.DatasetName;
+import com.google.cloud.documentai.v1beta3.DocumentServiceClient;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import java.util.ArrayList;
 
-public class SyncGetDatasetSchema {
+public class SyncImportDocuments {
 
   public static void main(String[] args) throws Exception {
-    syncGetDatasetSchema();
+    syncImportDocuments();
   }
 
-  public static void syncGetDatasetSchema() throws Exception {
+  public static void syncImportDocuments() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    DocumentServiceSettings.Builder documentServiceSettingsBuilder =
-        DocumentServiceSettings.newBuilder();
-    documentServiceSettingsBuilder
-        .getDatasetSchemaSettings()
-        .setRetrySettings(
-            documentServiceSettingsBuilder
-                .getDatasetSchemaSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    DocumentServiceSettings documentServiceSettings = documentServiceSettingsBuilder.build();
+    try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+      ImportDocumentsRequest request =
+          ImportDocumentsRequest.newBuilder()
+              .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .addAllBatchDocumentsImportConfigs(
+                  new ArrayList<ImportDocumentsRequest.BatchDocumentsImportConfig>())
+              .build();
+      ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(request).get();
+    }
   }
 }
-// [END documentai_v1beta3_generated_DocumentServiceSettings_GetDatasetSchema_sync]
+// [END documentai_v1beta3_generated_DocumentService_ImportDocuments_sync]

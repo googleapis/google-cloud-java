@@ -59,6 +59,14 @@ public final class DocumentIoProto {
       internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_OcrConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_OcrConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_OcrConfig_Hints_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -90,12 +98,18 @@ public final class DocumentIoProto {
           + "utputConfig.GcsOutputConfig.ShardingConf"
           + "ig\032@\n\016ShardingConfig\022\027\n\017pages_per_shard\030"
           + "\001 \001(\005\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destinat"
-          + "ionB\315\001\n\036com.google.cloud.documentai.v1B\017"
-          + "DocumentIoProtoP\001Z>cloud.google.com/go/d"
-          + "ocumentai/apiv1/documentaipb;documentaip"
-          + "b\252\002\032Google.Cloud.DocumentAI.V1\312\002\032Google\\"
-          + "Cloud\\DocumentAI\\V1\352\002\035Google::Cloud::Doc"
-          + "umentAI::V1b\006proto3"
+          + "ion\"\201\002\n\tOcrConfig\022:\n\005hints\030\002 \001(\0132+.googl"
+          + "e.cloud.documentai.v1.OcrConfig.Hints\022!\n"
+          + "\031enable_native_pdf_parsing\030\003 \001(\010\022#\n\033enab"
+          + "le_image_quality_scores\030\004 \001(\010\022\034\n\024advance"
+          + "d_ocr_options\030\005 \003(\t\022\025\n\renable_symbol\030\006 \001"
+          + "(\010\022\032\n\022compute_style_info\030\010 \001(\010\032\037\n\005Hints\022"
+          + "\026\n\016language_hints\030\001 \003(\tB\315\001\n\036com.google.c"
+          + "loud.documentai.v1B\017DocumentIoProtoP\001Z>c"
+          + "loud.google.com/go/documentai/apiv1/docu"
+          + "mentaipb;documentaipb\252\002\032Google.Cloud.Doc"
+          + "umentAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352"
+          + "\002\035Google::Cloud::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -170,6 +184,27 @@ public final class DocumentIoProto {
             internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor,
             new java.lang.String[] {
               "PagesPerShard", "PagesOverlap",
+            });
+    internal_static_google_cloud_documentai_v1_OcrConfig_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_documentai_v1_OcrConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_OcrConfig_descriptor,
+            new java.lang.String[] {
+              "Hints",
+              "EnableNativePdfParsing",
+              "EnableImageQualityScores",
+              "AdvancedOcrOptions",
+              "EnableSymbol",
+              "ComputeStyleInfo",
+            });
+    internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor =
+        internal_static_google_cloud_documentai_v1_OcrConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_documentai_v1_OcrConfig_Hints_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor,
+            new java.lang.String[] {
+              "LanguageHints",
             });
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

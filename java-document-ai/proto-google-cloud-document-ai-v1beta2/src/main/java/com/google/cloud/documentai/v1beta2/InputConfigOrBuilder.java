@@ -98,11 +98,12 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Mimetype of the input. Current supported mimetypes are application/pdf,
-   * image/tiff, and image/gif.
-   * In addition, application/json type is supported for requests with
-   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params] field set. The JSON file needs to
-   * be in [Document][google.cloud.documentai.v1beta2.Document] format.
+   * Required. Mimetype of the input. Current supported mimetypes are
+   * application/pdf, image/tiff, and image/gif. In addition, application/json
+   * type is supported for requests with
+   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params]
+   * field set. The JSON file needs to be in
+   * [Document][google.cloud.documentai.v1beta2.Document] format.
    * </pre>
    *
    * <code>string mime_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -114,11 +115,12 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Mimetype of the input. Current supported mimetypes are application/pdf,
-   * image/tiff, and image/gif.
-   * In addition, application/json type is supported for requests with
-   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params] field set. The JSON file needs to
-   * be in [Document][google.cloud.documentai.v1beta2.Document] format.
+   * Required. Mimetype of the input. Current supported mimetypes are
+   * application/pdf, image/tiff, and image/gif. In addition, application/json
+   * type is supported for requests with
+   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params]
+   * field set. The JSON file needs to be in
+   * [Document][google.cloud.documentai.v1beta2.Document] format.
    * </pre>
    *
    * <code>string mime_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>

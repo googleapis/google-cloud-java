@@ -14,36 +14,29 @@
  * limitations under the License.
  */
 
-package com.google.cloud.documentai.v1beta3.stub.samples;
+package com.google.cloud.documentai.v1beta3.samples;
 
-// [START documentai_v1beta3_generated_DocumentServiceStubSettings_GetDatasetSchema_sync]
-import com.google.cloud.documentai.v1beta3.stub.DocumentServiceStubSettings;
-import java.time.Duration;
+// [START documentai_v1beta3_generated_DocumentService_ImportDocuments_Datasetname_sync]
+import com.google.cloud.documentai.v1beta3.DatasetName;
+import com.google.cloud.documentai.v1beta3.DocumentServiceClient;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
 
-public class SyncGetDatasetSchema {
+public class SyncImportDocumentsDatasetname {
 
   public static void main(String[] args) throws Exception {
-    syncGetDatasetSchema();
+    syncImportDocumentsDatasetname();
   }
 
-  public static void syncGetDatasetSchema() throws Exception {
+  public static void syncImportDocumentsDatasetname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    DocumentServiceStubSettings.Builder documentServiceSettingsBuilder =
-        DocumentServiceStubSettings.newBuilder();
-    documentServiceSettingsBuilder
-        .getDatasetSchemaSettings()
-        .setRetrySettings(
-            documentServiceSettingsBuilder
-                .getDatasetSchemaSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    DocumentServiceStubSettings documentServiceSettings = documentServiceSettingsBuilder.build();
+    try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(dataset).get();
+    }
   }
 }
-// [END documentai_v1beta3_generated_DocumentServiceStubSettings_GetDatasetSchema_sync]
+// [END documentai_v1beta3_generated_DocumentService_ImportDocuments_Datasetname_sync]
