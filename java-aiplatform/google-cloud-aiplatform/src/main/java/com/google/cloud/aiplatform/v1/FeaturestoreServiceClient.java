@@ -207,7 +207,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -242,7 +242,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -280,7 +280,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
    *     final component of the Featurestore's resource name.
@@ -325,7 +325,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
    *     final component of the Featurestore's resource name.

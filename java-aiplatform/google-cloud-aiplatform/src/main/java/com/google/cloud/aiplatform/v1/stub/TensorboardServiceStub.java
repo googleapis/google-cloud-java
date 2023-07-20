@@ -118,11 +118,6 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getTensorboardCallable()");
   }
 
-  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageCallable() {
-    throw new UnsupportedOperationException("Not implemented: readTensorboardUsageCallable()");
-  }
-
   public OperationCallable<
           UpdateTensorboardRequest, Tensorboard, UpdateTensorboardOperationMetadata>
       updateTensorboardOperationCallable() {
@@ -152,6 +147,11 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTensorboardRequest, Operation> deleteTensorboardCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTensorboardCallable()");
+  }
+
+  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    throw new UnsupportedOperationException("Not implemented: readTensorboardUsageCallable()");
   }
 
   public UnaryCallable<CreateTensorboardExperimentRequest, TensorboardExperiment>

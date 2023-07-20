@@ -21,8 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * The service that manages Vertex AI Dataset and its child resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -492,6 +491,52 @@ public final class DatasetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest,
+          com.google.longrunning.Operation>
+      getDeleteSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSavedQuery",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest,
+          com.google.longrunning.Operation>
+      getDeleteSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest,
+            com.google.longrunning.Operation>
+        getDeleteSavedQueryMethod;
+    if ((getDeleteSavedQueryMethod = DatasetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getDeleteSavedQueryMethod = DatasetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+          DatasetServiceGrpc.getDeleteSavedQueryMethod =
+              getDeleteSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("DeleteSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest,
           com.google.cloud.aiplatform.v1beta1.AnnotationSpec>
       getGetAnnotationSpecMethod;
@@ -630,8 +675,7 @@ public final class DatasetServiceGrpc {
    *
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public interface AsyncService {
@@ -781,6 +825,20 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    default void deleteSavedQuery(
+        com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -812,8 +870,7 @@ public final class DatasetServiceGrpc {
    * Base class for the server implementation of the service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public abstract static class DatasetServiceImplBase
@@ -829,8 +886,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceStub
@@ -1006,6 +1062,22 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public void deleteSavedQuery(
+        com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1041,8 +1113,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceBlockingStub
@@ -1191,6 +1262,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSavedQuery(
+        com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1218,8 +1302,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceFutureStub
@@ -1374,6 +1457,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSavedQuery(com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1409,8 +1505,9 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_LIST_DATA_ITEMS = 7;
   private static final int METHODID_SEARCH_DATA_ITEMS = 8;
   private static final int METHODID_LIST_SAVED_QUERIES = 9;
-  private static final int METHODID_GET_ANNOTATION_SPEC = 10;
-  private static final int METHODID_LIST_ANNOTATIONS = 11;
+  private static final int METHODID_DELETE_SAVED_QUERY = 10;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 11;
+  private static final int METHODID_LIST_ANNOTATIONS = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1488,6 +1585,11 @@ public final class DatasetServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse>)
                   responseObserver);
+          break;
+        case METHODID_DELETE_SAVED_QUERY:
+          serviceImpl.deleteSavedQuery(
+              (com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_ANNOTATION_SPEC:
           serviceImpl.getAnnotationSpec(
@@ -1585,6 +1687,12 @@ public final class DatasetServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse>(
                     service, METHODID_LIST_SAVED_QUERIES)))
         .addMethod(
+            getDeleteSavedQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SAVED_QUERY)))
+        .addMethod(
             getGetAnnotationSpecMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1659,6 +1767,7 @@ public final class DatasetServiceGrpc {
                       .addMethod(getListDataItemsMethod())
                       .addMethod(getSearchDataItemsMethod())
                       .addMethod(getListSavedQueriesMethod())
+                      .addMethod(getDeleteSavedQueryMethod())
                       .addMethod(getGetAnnotationSpecMethod())
                       .addMethod(getListAnnotationsMethod())
                       .build();

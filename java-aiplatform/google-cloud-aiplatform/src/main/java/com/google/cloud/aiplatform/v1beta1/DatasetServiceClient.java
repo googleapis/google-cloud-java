@@ -50,8 +50,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -1643,6 +1642,156 @@ public class DatasetServiceClient implements BackgroundResource {
   public final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesCallable() {
     return stub.listSavedQueriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   SavedQueryName name =
+   *       SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]");
+   *   datasetServiceClient.deleteSavedQueryAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the SavedQuery to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/savedQueries/{saved_query}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(
+      SavedQueryName name) {
+    DeleteSavedQueryRequest request =
+        DeleteSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSavedQueryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String name =
+   *       SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]").toString();
+   *   datasetServiceClient.deleteSavedQueryAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the SavedQuery to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/savedQueries/{saved_query}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(String name) {
+    DeleteSavedQueryRequest request = DeleteSavedQueryRequest.newBuilder().setName(name).build();
+    return deleteSavedQueryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   datasetServiceClient.deleteSavedQueryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(
+      DeleteSavedQueryRequest request) {
+    return deleteSavedQueryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       datasetServiceClient.deleteSavedQueryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    return stub.deleteSavedQueryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datasetServiceClient.deleteSavedQueryCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    return stub.deleteSavedQueryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

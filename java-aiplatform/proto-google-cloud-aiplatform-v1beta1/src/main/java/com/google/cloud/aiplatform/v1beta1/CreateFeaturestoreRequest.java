@@ -74,7 +74,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the Location to create Featurestores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the Location to create Featurestores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -652,7 +652,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Location to create Featurestores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -678,7 +678,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Location to create Featurestores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -704,7 +704,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Location to create Featurestores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -729,7 +729,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Location to create Featurestores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -750,7 +750,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Location to create Featurestores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

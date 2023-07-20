@@ -112,6 +112,7 @@ public interface SearchFeaturesRequestOrBuilder
    * * `featurestore_id`: Supports = comparisons.
    *
    * Examples:
+   *
    * * `description = "foo bar"` --&gt; Any Feature with description exactly equal
    * to `foo bar`
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
@@ -182,6 +183,7 @@ public interface SearchFeaturesRequestOrBuilder
    * * `featurestore_id`: Supports = comparisons.
    *
    * Examples:
+   *
    * * `description = "foo bar"` --&gt; Any Feature with description exactly equal
    * to `foo bar`
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.

@@ -16,6 +16,9 @@
             "DeleteDataset": {
               "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
             },
+            "DeleteSavedQuery": {
+              "methods": ["deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryOperationCallable", "deleteSavedQueryCallable"]
+            },
             "ExportData": {
               "methods": ["exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
             },
