@@ -81,8 +81,8 @@ public interface ListQueuesResponseOrBuilder
    * A token to retrieve next page of results.
    *
    * To return the next page of results, call
-   * [ListQueues][google.cloud.tasks.v2.CloudTasks.ListQueues] with this value as the
-   * [page_token][google.cloud.tasks.v2.ListQueuesRequest.page_token].
+   * [ListQueues][google.cloud.tasks.v2.CloudTasks.ListQueues] with this value
+   * as the [page_token][google.cloud.tasks.v2.ListQueuesRequest.page_token].
    *
    * If the next_page_token is empty, there are no more results.
    *
@@ -101,8 +101,8 @@ public interface ListQueuesResponseOrBuilder
    * A token to retrieve next page of results.
    *
    * To return the next page of results, call
-   * [ListQueues][google.cloud.tasks.v2.CloudTasks.ListQueues] with this value as the
-   * [page_token][google.cloud.tasks.v2.ListQueuesRequest.page_token].
+   * [ListQueues][google.cloud.tasks.v2.CloudTasks.ListQueues] with this value
+   * as the [page_token][google.cloud.tasks.v2.ListQueuesRequest.page_token].
    *
    * If the next_page_token is empty, there are no more results.
    *

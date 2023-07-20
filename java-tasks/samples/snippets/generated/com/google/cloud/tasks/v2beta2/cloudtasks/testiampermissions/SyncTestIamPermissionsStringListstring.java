@@ -18,7 +18,7 @@ package com.google.cloud.tasks.v2beta2.samples;
 
 // [START cloudtasks_v2beta2_generated_CloudTasks_TestIamPermissions_StringListstring_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
-import com.google.cloud.tasks.v2beta2.QueueName;
+import com.google.cloud.tasks.v2beta2.LocationName;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class SyncTestIamPermissionsStringListstring {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-      String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+      String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       List<String> permissions = new ArrayList<>();
       TestIamPermissionsResponse response =
           cloudTasksClient.testIamPermissions(resource, permissions);

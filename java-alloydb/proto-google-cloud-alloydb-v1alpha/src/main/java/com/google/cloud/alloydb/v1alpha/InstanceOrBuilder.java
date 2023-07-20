@@ -945,4 +945,17 @@ public interface InstanceOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy update_policy = 22;</code>
    */
   com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicyOrBuilder getUpdatePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 24;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 }

@@ -14,36 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.cloud.documentai.v1beta3.stub.samples;
+package com.google.cloud.tasks.v2beta3.samples;
 
-// [START documentai_v1beta3_generated_DocumentServiceStubSettings_GetDatasetSchema_sync]
-import com.google.cloud.documentai.v1beta3.stub.DocumentServiceStubSettings;
-import java.time.Duration;
+// [START cloudtasks_v2beta3_generated_CloudTasks_GetLocation_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.Location;
+import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 
-public class SyncGetDatasetSchema {
+public class AsyncGetLocation {
 
   public static void main(String[] args) throws Exception {
-    syncGetDatasetSchema();
+    asyncGetLocation();
   }
 
-  public static void syncGetDatasetSchema() throws Exception {
+  public static void asyncGetLocation() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    DocumentServiceStubSettings.Builder documentServiceSettingsBuilder =
-        DocumentServiceStubSettings.newBuilder();
-    documentServiceSettingsBuilder
-        .getDatasetSchemaSettings()
-        .setRetrySettings(
-            documentServiceSettingsBuilder
-                .getDatasetSchemaSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    DocumentServiceStubSettings documentServiceSettings = documentServiceSettingsBuilder.build();
+    try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      ApiFuture<Location> future = cloudTasksClient.getLocationCallable().futureCall(request);
+      // Do something.
+      Location response = future.get();
+    }
   }
 }
-// [END documentai_v1beta3_generated_DocumentServiceStubSettings_GetDatasetSchema_sync]
+// [END cloudtasks_v2beta3_generated_CloudTasks_GetLocation_async]

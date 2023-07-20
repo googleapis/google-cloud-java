@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `JobRun` resource in the Google Cloud Deploy API.
+ * A `JobRun` resource in the Cloud Deploy API.
  *
  * A `JobRun` contains information of a single `Rollout` job evaluation.
  * </pre>
@@ -1347,7 +1347,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `JobRun` resource in the Google Cloud Deploy API.
+   * A `JobRun` resource in the Cloud Deploy API.
    *
    * A `JobRun` contains information of a single `Rollout` job evaluation.
    * </pre>

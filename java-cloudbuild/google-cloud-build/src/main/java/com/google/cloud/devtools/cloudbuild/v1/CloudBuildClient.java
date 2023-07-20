@@ -734,9 +734,9 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
-   *       generation of the object, the new build will use the current object, which may be
-   *       different from the original build source.
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
    *   <li>If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
@@ -794,9 +794,9 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
-   *       generation of the object, the new build will use the current object, which may be
-   *       different from the original build source.
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
    *   <li>If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
@@ -855,9 +855,9 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
-   *       generation of the object, the new build will use the current object, which may be
-   *       different from the original build source.
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
    *   <li>If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
@@ -916,9 +916,9 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
-   *       generation of the object, the new build will use the current object, which may be
-   *       different from the original build source.
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
    *   <li>If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
@@ -1622,6 +1622,11 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Runs a `BuildTrigger` at a particular source revision.
    *
+   * <p>To run a regional or global trigger, use the POST request that includes the location
+   * endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run).
+   * The POST request that does not include the location endpoint in the path can only be used when
+   * running global triggers.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1640,7 +1645,8 @@ public class CloudBuildClient implements BackgroundResource {
    *
    * @param projectId Required. ID of the project.
    * @param triggerId Required. ID of the trigger.
-   * @param source Source to build against this trigger.
+   * @param source Source to build against this trigger. Branch and tag names cannot consist of
+   *     regular expressions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Build, BuildOperationMetadata> runBuildTriggerAsync(
@@ -1657,6 +1663,11 @@ public class CloudBuildClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs a `BuildTrigger` at a particular source revision.
+   *
+   * <p>To run a regional or global trigger, use the POST request that includes the location
+   * endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run).
+   * The POST request that does not include the location endpoint in the path can only be used when
+   * running global triggers.
    *
    * <p>Sample code:
    *
@@ -1690,6 +1701,11 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Runs a `BuildTrigger` at a particular source revision.
    *
+   * <p>To run a regional or global trigger, use the POST request that includes the location
+   * endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run).
+   * The POST request that does not include the location endpoint in the path can only be used when
+   * running global triggers.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1721,6 +1737,11 @@ public class CloudBuildClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs a `BuildTrigger` at a particular source revision.
+   *
+   * <p>To run a regional or global trigger, use the POST request that includes the location
+   * endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run).
+   * The POST request that does not include the location endpoint in the path can only be used when
+   * running global triggers.
    *
    * <p>Sample code:
    *

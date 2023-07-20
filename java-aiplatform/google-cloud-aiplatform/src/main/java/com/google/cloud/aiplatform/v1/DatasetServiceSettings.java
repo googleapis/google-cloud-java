@@ -171,6 +171,17 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     return ((DatasetServiceStubSettings) getStubSettings()).listSavedQueriesSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public UnaryCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQuerySettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).deleteSavedQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public OperationCallSettings<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).deleteSavedQueryOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAnnotationSpec. */
   public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).getAnnotationSpecSettings();
@@ -390,6 +401,18 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
         listSavedQueriesSettings() {
       return getStubSettingsBuilder().listSavedQueriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    public UnaryCallSettings.Builder<DeleteSavedQueryRequest, Operation>
+        deleteSavedQuerySettings() {
+      return getStubSettingsBuilder().deleteSavedQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    public OperationCallSettings.Builder<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+        deleteSavedQueryOperationSettings() {
+      return getStubSettingsBuilder().deleteSavedQueryOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAnnotationSpec. */

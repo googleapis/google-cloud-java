@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Represents a NasTrial details along with it's parameters. If there is a
+ * Represents a NasTrial details along with its parameters. If there is a
  * corresponding train NasTrial, the train NasTrial is also returned.
  * </pre>
  *
@@ -478,7 +478,7 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a NasTrial details along with it's parameters. If there is a
+   * Represents a NasTrial details along with its parameters. If there is a
    * corresponding train NasTrial, the train NasTrial is also returned.
    * </pre>
    *

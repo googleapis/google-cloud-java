@@ -77,6 +77,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies the manner in which the build should be verified, if at all.
+   *
+   * If a verified build is requested, and any part of the process to generate
+   * and upload provenance fails, the build will also fail.
+   *
+   * If the build does not request verification then that process may occur, but
+   * is not guaranteed to. If it does occur and fails, the build will not fail.
+   *
+   * For more information, see [Viewing Build
+   * Provenance](https://cloud.google.com/build/docs/securing-builds/view-build-provenance).
    * </pre>
    *
    * Protobuf enum {@code google.devtools.cloudbuild.v1.BuildOptions.VerifyOption}
@@ -576,7 +585,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the behavior when writing build logs to Google Cloud Storage.
+   * Specifies the behavior when writing build logs to Cloud Storage.
    * </pre>
    *
    * Protobuf enum {@code google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption}
@@ -596,7 +605,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Build logs should be streamed to Google Cloud Storage.
+     * Build logs should be streamed to Cloud Storage.
      * </pre>
      *
      * <code>STREAM_ON = 1;</code>
@@ -606,7 +615,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Build logs should not be streamed to Google Cloud Storage; they will be
+     * Build logs should not be streamed to Cloud Storage; they will be
      * written when the build is completed.
      * </pre>
      *
@@ -630,7 +639,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Build logs should be streamed to Google Cloud Storage.
+     * Build logs should be streamed to Cloud Storage.
      * </pre>
      *
      * <code>STREAM_ON = 1;</code>
@@ -640,7 +649,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Build logs should not be streamed to Google Cloud Storage; they will be
+     * Build logs should not be streamed to Cloud Storage; they will be
      * written when the build is completed.
      * </pre>
      *
@@ -2061,7 +2070,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -2078,7 +2087,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -2110,7 +2119,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2136,7 +2145,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -4022,7 +4031,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to define build log streaming behavior to Google Cloud
+     * Option to define build log streaming behavior to Cloud
      * Storage.
      * </pre>
      *
@@ -4040,7 +4049,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to define build log streaming behavior to Google Cloud
+     * Option to define build log streaming behavior to Cloud
      * Storage.
      * </pre>
      *
@@ -4061,7 +4070,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to define build log streaming behavior to Google Cloud
+     * Option to define build log streaming behavior to Cloud
      * Storage.
      * </pre>
      *
@@ -4083,7 +4092,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to define build log streaming behavior to Google Cloud
+     * Option to define build log streaming behavior to Cloud
      * Storage.
      * </pre>
      *
@@ -4108,7 +4117,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to define build log streaming behavior to Google Cloud
+     * Option to define build log streaming behavior to Cloud
      * Storage.
      * </pre>
      *
@@ -4136,7 +4145,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4161,7 +4170,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4186,7 +4195,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4210,7 +4219,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4230,7 +4239,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2139
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */

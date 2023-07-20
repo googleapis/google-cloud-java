@@ -1725,10 +1725,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Denotes that this `ProcessorVersion` is managed by Google.
+   * Output only. Denotes that this `ProcessorVersion` is managed by Google.
    * </pre>
    *
-   * <code>bool google_managed = 11;</code>
+   * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The googleManaged.
    */
@@ -3473,10 +3473,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this `ProcessorVersion` is managed by Google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The googleManaged.
      */
@@ -3488,10 +3488,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this `ProcessorVersion` is managed by Google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The googleManaged to set.
      * @return This builder for chaining.
@@ -3507,10 +3507,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this `ProcessorVersion` is managed by Google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

@@ -107,9 +107,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -120,9 +119,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -136,9 +134,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -149,9 +146,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -166,9 +162,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -180,8 +175,7 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -201,8 +195,7 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -225,8 +218,7 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -246,8 +238,7 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -271,8 +262,7 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -692,8 +682,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
@@ -708,8 +698,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>

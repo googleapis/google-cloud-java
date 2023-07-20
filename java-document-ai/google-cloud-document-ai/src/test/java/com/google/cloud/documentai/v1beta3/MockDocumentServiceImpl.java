@@ -81,6 +81,69 @@ public class MockDocumentServiceImpl extends DocumentServiceImplBase {
   }
 
   @Override
+  public void importDocuments(
+      ImportDocumentsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportDocuments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDocument(
+      GetDocumentRequest request, StreamObserver<GetDocumentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GetDocumentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GetDocumentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDocument, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GetDocumentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteDocuments(
+      BatchDeleteDocumentsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteDocuments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getDatasetSchema(
       GetDatasetSchemaRequest request, StreamObserver<DatasetSchema> responseObserver) {
     Object response = responses.poll();

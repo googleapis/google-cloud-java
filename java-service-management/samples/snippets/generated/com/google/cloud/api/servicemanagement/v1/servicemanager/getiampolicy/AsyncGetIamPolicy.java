@@ -14,36 +14,37 @@
  * limitations under the License.
  */
 
-package com.google.cloud.documentai.v1beta3.samples;
+package com.google.cloud.api.servicemanagement.v1.samples;
 
-// [START documentai_v1beta3_generated_DocumentServiceSettings_GetDatasetSchema_sync]
-import com.google.cloud.documentai.v1beta3.DocumentServiceSettings;
-import java.time.Duration;
+// [START servicemanagement_v1_generated_ServiceManager_GetIamPolicy_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.api.servicemanagement.v1.ServiceManagerClient;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
 
-public class SyncGetDatasetSchema {
+public class AsyncGetIamPolicy {
 
   public static void main(String[] args) throws Exception {
-    syncGetDatasetSchema();
+    asyncGetIamPolicy();
   }
 
-  public static void syncGetDatasetSchema() throws Exception {
+  public static void asyncGetIamPolicy() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    DocumentServiceSettings.Builder documentServiceSettingsBuilder =
-        DocumentServiceSettings.newBuilder();
-    documentServiceSettingsBuilder
-        .getDatasetSchemaSettings()
-        .setRetrySettings(
-            documentServiceSettingsBuilder
-                .getDatasetSchemaSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    DocumentServiceSettings documentServiceSettings = documentServiceSettingsBuilder.build();
+    try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      ApiFuture<Policy> future = serviceManagerClient.getIamPolicyCallable().futureCall(request);
+      // Do something.
+      Policy response = future.get();
+    }
   }
 }
-// [END documentai_v1beta3_generated_DocumentServiceSettings_GetDatasetSchema_sync]
+// [END servicemanagement_v1_generated_ServiceManager_GetIamPolicy_async]

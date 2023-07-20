@@ -226,6 +226,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -241,6 +242,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -256,6 +258,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1020,6 +1023,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1034,6 +1038,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1052,6 +1057,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1074,6 +1080,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1093,6 +1100,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1118,6 +1126,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1137,6 +1146,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1151,6 +1161,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -1167,6 +1178,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Source to build against this trigger.
+     * Branch and tag names cannot consist of regular expressions.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>

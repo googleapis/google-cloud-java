@@ -43,6 +43,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     serviceAccount_ = "";
     network_ = "";
+    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     templateUri_ = "";
   }
 
@@ -3965,6 +3966,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * characters, underscores and dashes. International characters are allowed.
    *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -3993,6 +3997,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * characters, underscores and dashes. International characters are allowed.
    *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -4012,6 +4019,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * characters, underscores and dashes. International characters are allowed.
    *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -4038,6 +4048,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * characters, underscores and dashes. International characters are allowed.
    *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -4300,6 +4313,98 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @return A list containing the reservedIpRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
+    return reservedIpRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @return The count of reservedIpRanges.
+   */
+  public int getReservedIpRangesCount() {
+    return reservedIpRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The reservedIpRanges at the given index.
+   */
+  public java.lang.String getReservedIpRanges(int index) {
+    return reservedIpRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the reservedIpRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getReservedIpRangesBytes(int index) {
+    return reservedIpRanges_.getByteString(index);
+  }
+
   public static final int TEMPLATE_URI_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
@@ -4484,6 +4589,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (templateMetadata_ != null) {
       output.writeMessage(20, getTemplateMetadata());
     }
+    for (int i = 0; i < reservedIpRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, reservedIpRanges_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4553,6 +4661,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (templateMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getTemplateMetadata());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < reservedIpRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(reservedIpRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getReservedIpRangesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4611,6 +4727,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (!getTemplateUri().equals(other.getTemplateUri())) return false;
     if (hasTemplateMetadata() != other.hasTemplateMetadata()) return false;
     if (hasTemplateMetadata()) {
@@ -4677,6 +4794,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    if (getReservedIpRangesCount() > 0) {
+      hash = (37 * hash) + RESERVED_IP_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getReservedIpRangesList().hashCode();
+    }
     hash = (37 * hash) + TEMPLATE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getTemplateUri().hashCode();
     if (hasTemplateMetadata()) {
@@ -4893,6 +5014,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       serviceAccount_ = "";
       network_ = "";
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       templateUri_ = "";
       templateMetadata_ = null;
       if (templateMetadataBuilder_ != null) {
@@ -4985,9 +5107,13 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         result.network_ = network_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.templateUri_ = templateUri_;
+        reservedIpRanges_.makeImmutable();
+        result.reservedIpRanges_ = reservedIpRanges_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.templateUri_ = templateUri_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.templateMetadata_ =
             templateMetadataBuilder_ == null ? templateMetadata_ : templateMetadataBuilder_.build();
       }
@@ -5091,9 +5217,19 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00004000;
         onChanged();
       }
+      if (!other.reservedIpRanges_.isEmpty()) {
+        if (reservedIpRanges_.isEmpty()) {
+          reservedIpRanges_ = other.reservedIpRanges_;
+          bitField0_ |= 0x00008000;
+        } else {
+          ensureReservedIpRangesIsMutable();
+          reservedIpRanges_.addAll(other.reservedIpRanges_);
+        }
+        onChanged();
+      }
       if (!other.getTemplateUri().isEmpty()) {
         templateUri_ = other.templateUri_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasTemplateMetadata()) {
@@ -5224,16 +5360,23 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             case 154:
               {
                 templateUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             case 162:
               {
                 input.readMessage(
                     getTemplateMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 162
+            case 202:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReservedIpRangesIsMutable();
+                reservedIpRanges_.add(s);
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6960,6 +7103,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -6988,6 +7134,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7007,6 +7156,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7033,6 +7185,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7065,6 +7220,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7093,6 +7251,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7119,6 +7280,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * characters, underscores and dashes. International characters are allowed.
      *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
+     *
+     * Note there is some reserved label key for Vertex AI Pipelines.
+     * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -7826,6 +7990,243 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureReservedIpRangesIsMutable() {
+      if (!reservedIpRanges_.isModifiable()) {
+        reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
+      }
+      bitField0_ |= 0x00008000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @return A list containing the reservedIpRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
+      reservedIpRanges_.makeImmutable();
+      return reservedIpRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @return The count of reservedIpRanges.
+     */
+    public int getReservedIpRangesCount() {
+      return reservedIpRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The reservedIpRanges at the given index.
+     */
+    public java.lang.String getReservedIpRanges(int index) {
+      return reservedIpRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the reservedIpRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getReservedIpRangesBytes(int index) {
+      return reservedIpRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reservedIpRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedIpRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.set(index, value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param value The reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservedIpRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param values The reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureReservedIpRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservedIpRanges() {
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this Pipeline Job's workload.
+     *
+     * If set, we will deploy the Pipeline Job's workload within the provided ip
+     * ranges. Otherwise, the job will be deployed to any ip ranges under the
+     * provided VPC network.
+     *
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 25;</code>
+     *
+     * @param value The bytes of the reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservedIpRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object templateUri_ = "";
     /**
      *
@@ -7894,7 +8295,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       templateUri_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7913,7 +8314,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTemplateUri() {
       templateUri_ = getDefaultInstance().getTemplateUri();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -7937,7 +8338,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       templateUri_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7964,7 +8365,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the templateMetadata field is set.
      */
     public boolean hasTemplateMetadata() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -8013,7 +8414,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         templateMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8037,7 +8438,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         templateMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8057,7 +8458,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTemplateMetadata(
         com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata value) {
       if (templateMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && templateMetadata_ != null
             && templateMetadata_
                 != com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata
@@ -8069,7 +8470,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         templateMetadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8087,7 +8488,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTemplateMetadata() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       templateMetadata_ = null;
       if (templateMetadataBuilder_ != null) {
         templateMetadataBuilder_.dispose();
@@ -8111,7 +8512,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata.Builder
         getTemplateMetadataBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getTemplateMetadataFieldBuilder().getBuilder();
     }

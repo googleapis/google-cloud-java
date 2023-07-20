@@ -108,7 +108,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use KubeDNS for DNS resolution
+     * Use KubeDNS for DNS resolution.
      * </pre>
      *
      * <code>KUBE_DNS = 3;</code>
@@ -151,7 +151,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use KubeDNS for DNS resolution
+     * Use KubeDNS for DNS resolution.
      * </pre>
      *
      * <code>KUBE_DNS = 3;</code>

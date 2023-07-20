@@ -73,4 +73,66 @@ public interface AdditionalPodRangesConfigOrBuilder
    * @return The bytes of the podRangeNames at the given index.
    */
   com.google.protobuf.ByteString getPodRangeNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.container.v1.RangeInfo> getPodRangeInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.RangeInfo getPodRangeInfo(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPodRangeInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.RangeInfoOrBuilder>
+      getPodRangeInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.RangeInfoOrBuilder getPodRangeInfoOrBuilder(int index);
 }

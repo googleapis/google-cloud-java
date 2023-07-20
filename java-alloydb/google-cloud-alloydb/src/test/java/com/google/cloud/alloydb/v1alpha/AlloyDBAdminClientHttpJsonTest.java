@@ -218,6 +218,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -283,6 +284,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,6 +350,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -422,6 +425,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -496,6 +500,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -529,6 +534,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -582,6 +588,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
               .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
               .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -706,6 +713,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -776,6 +784,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -846,6 +855,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +940,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1004,6 +1015,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1176,6 +1188,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1239,6 +1252,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1304,6 +1318,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1376,6 +1391,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1448,6 +1464,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1521,6 +1538,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1653,6 +1671,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1684,6 +1703,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1735,6 +1755,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
               .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1859,6 +1880,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1927,6 +1949,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1997,6 +2020,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2067,6 +2091,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2139,6 +2164,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2207,6 +2233,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2374,6 +2401,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2434,6 +2463,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2494,6 +2525,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2563,6 +2596,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2632,6 +2667,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2660,6 +2697,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2708,6 +2747,8 @@ public class AlloyDBAdminClientHttpJsonTest {
               .putAllAnnotations(new HashMap<String, String>())
               .setSizeBytes(-1796325715)
               .setExpiryTime(Timestamp.newBuilder().build())
+              .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();

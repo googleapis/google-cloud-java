@@ -103,13 +103,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -118,13 +116,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return The outputConfig.
    */
@@ -133,13 +129,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    */
   com.google.cloud.documentai.v1beta2.OutputConfigOrBuilder getOutputConfigOrBuilder();
 

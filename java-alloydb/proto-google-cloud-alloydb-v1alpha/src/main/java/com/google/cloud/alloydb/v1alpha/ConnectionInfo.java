@@ -192,7 +192,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -212,7 +212,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -232,7 +232,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -253,7 +253,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -991,7 +991,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @return A list containing the pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1012,7 +1012,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @return The count of pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1032,7 +1032,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param index The index of the element to return.
      * @return The pemCertificateChain at the given index.
      */
@@ -1053,7 +1053,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param index The index of the value to return.
      * @return The bytes of the pemCertificateChain at the given index.
      */
@@ -1074,7 +1074,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param index The index to set the value at.
      * @param value The pemCertificateChain to set.
      * @return This builder for chaining.
@@ -1103,7 +1103,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param value The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1131,7 +1131,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param values The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1156,7 +1156,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1180,7 +1180,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=894
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=900
      * @param value The bytes of the pemCertificateChain to add.
      * @return This builder for chaining.
      */

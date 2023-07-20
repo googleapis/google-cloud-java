@@ -21,8 +21,7 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
- * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * <p>Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>Sample for DatasetServiceClient:
  *

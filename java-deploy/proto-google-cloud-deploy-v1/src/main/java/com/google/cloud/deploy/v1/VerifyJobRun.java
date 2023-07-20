@@ -91,7 +91,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [required
+     * Cloud Deploy has insufficient permissions. See [required
      * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
@@ -133,8 +133,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
@@ -158,7 +158,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [required
+     * Cloud Deploy has insufficient permissions. See [required
      * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
@@ -200,8 +200,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>

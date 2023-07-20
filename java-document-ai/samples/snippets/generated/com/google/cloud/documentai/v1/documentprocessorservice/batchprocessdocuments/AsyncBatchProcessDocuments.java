@@ -22,6 +22,7 @@ import com.google.cloud.documentai.v1.BatchDocumentsInputConfig;
 import com.google.cloud.documentai.v1.BatchProcessRequest;
 import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessorName;
 import com.google.longrunning.Operation;
 
@@ -45,6 +46,7 @@ public class AsyncBatchProcessDocuments {
               .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)
+              .setProcessOptions(ProcessOptions.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);

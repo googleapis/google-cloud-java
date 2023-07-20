@@ -33,6 +33,7 @@ import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.Dataset;
 import com.google.cloud.aiplatform.v1beta1.DeleteDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataResponse;
@@ -158,6 +159,15 @@ public abstract class DatasetServiceStub implements BackgroundResource {
   public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listSavedQueriesCallable()");
+  }
+
+  public OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSavedQueryOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSavedQueryCallable()");
   }
 
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {

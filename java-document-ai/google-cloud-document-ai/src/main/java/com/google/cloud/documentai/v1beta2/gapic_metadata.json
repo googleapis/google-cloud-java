@@ -13,6 +13,12 @@
             "BatchProcessDocuments": {
               "methods": ["batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsOperationCallable", "batchProcessDocumentsCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ProcessDocument": {
               "methods": ["processDocument", "processDocumentCallable"]
             }

@@ -46,6 +46,11 @@ import com.google.api.servicemanagement.v1.SubmitConfigSourceRequest;
 import com.google.api.servicemanagement.v1.SubmitConfigSourceResponse;
 import com.google.api.servicemanagement.v1.UndeleteServiceRequest;
 import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -162,6 +167,19 @@ public abstract class ServiceManagerStub implements BackgroundResource {
   public UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     throw new UnsupportedOperationException("Not implemented: generateConfigReportCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

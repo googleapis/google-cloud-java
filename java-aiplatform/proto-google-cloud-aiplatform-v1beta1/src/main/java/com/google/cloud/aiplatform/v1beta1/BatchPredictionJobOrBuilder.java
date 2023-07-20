@@ -89,6 +89,11 @@ public interface BatchPredictionJobOrBuilder
    *              or
    *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
    * if no version is specified, the default version will be deployed.
+   *
+   * The model resource could also be a publisher model.
+   *  Example: `publishers/{publisher}/models/{model}`
+   *              or
+   *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -112,6 +117,11 @@ public interface BatchPredictionJobOrBuilder
    *              or
    *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
    * if no version is specified, the default version will be deployed.
+   *
+   * The model resource could also be a publisher model.
+   *  Example: `publishers/{publisher}/models/{model}`
+   *              or
+   *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>

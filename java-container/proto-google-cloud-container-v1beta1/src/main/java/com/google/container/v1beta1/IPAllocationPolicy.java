@@ -1486,7 +1486,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. [Output only] The utilization of the cluster default IPv4
-   * range for pod. The ratio is Usage/[Total number of IPs in the secondary
+   * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
    * range], Usage=numNodes*numZones*podIPsPerNode.
    * </pre>
    *
@@ -5039,7 +5039,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for pod. The ratio is Usage/[Total number of IPs in the secondary
+     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
      * range], Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *
@@ -5058,7 +5058,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for pod. The ratio is Usage/[Total number of IPs in the secondary
+     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
      * range], Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *
@@ -5081,7 +5081,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for pod. The ratio is Usage/[Total number of IPs in the secondary
+     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
      * range], Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *

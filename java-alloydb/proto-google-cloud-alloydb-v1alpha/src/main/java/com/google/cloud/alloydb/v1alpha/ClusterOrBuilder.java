@@ -432,13 +432,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for databaseVersion.
@@ -448,13 +449,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The databaseVersion.
@@ -1023,6 +1025,19 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfigOrBuilder getPrimaryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 30;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   com.google.cloud.alloydb.v1alpha.Cluster.SourceCase getSourceCase();
 }

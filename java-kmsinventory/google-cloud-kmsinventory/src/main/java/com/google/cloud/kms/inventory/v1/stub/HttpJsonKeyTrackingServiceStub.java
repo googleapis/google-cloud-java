@@ -120,6 +120,8 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                             serializer.putQueryParam(fields, "cryptoKey", request.getCryptoKey());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceTypes", request.getResourceTypesList());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
