@@ -46,6 +46,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -475,6 +476,7 @@ public class CloudBillingClientHttpJsonTest {
     }
   }
 
+  @Ignore("Ignore until https://github.com/googleapis/sdk-platform-java/issues/1780 is resolved")
   @Test
   public void getProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
