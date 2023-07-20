@@ -180,4 +180,29 @@ public interface NodeKubeletConfigOrBuilder
    * @return The podPidsLimit.
    */
   long getPodPidsLimit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+   *
+   * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
+   */
+  boolean hasInsecureKubeletReadonlyPortEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+   *
+   * @return The insecureKubeletReadonlyPortEnabled.
+   */
+  boolean getInsecureKubeletReadonlyPortEnabled();
 }

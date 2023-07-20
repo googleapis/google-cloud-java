@@ -282,4 +282,158 @@ public interface NodeNetworkConfigOrBuilder
    */
   com.google.container.v1.PodCIDROverprovisionConfigOrBuilder
       getPodCidrOverprovisionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+      getAdditionalNodeNetworkConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  com.google.container.v1.AdditionalNodeNetworkConfig getAdditionalNodeNetworkConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  int getAdditionalNodeNetworkConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+      getAdditionalNodeNetworkConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder
+      getAdditionalNodeNetworkConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+      getAdditionalPodNetworkConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodNetworkConfig getAdditionalPodNetworkConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  int getAdditionalPodNetworkConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+      getAdditionalPodNetworkConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodNetworkConfigOrBuilder
+      getAdditionalPodNetworkConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the IPv4 range for the pod.
+   * The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The podIpv4RangeUtilization.
+   */
+  double getPodIpv4RangeUtilization();
 }
