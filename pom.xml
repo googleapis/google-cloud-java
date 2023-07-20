@@ -114,6 +114,7 @@
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
+    <module>java-netapp</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>
     <module>java-network-security</module>

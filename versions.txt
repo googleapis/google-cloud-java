@@ -653,3 +653,6 @@ grpc-google-cloud-discoveryengine-v1:0.17.0:0.18.0-SNAPSHOT
 google-cloud-migrationcenter:0.3.0:0.4.0-SNAPSHOT
 proto-google-cloud-migrationcenter-v1:0.3.0:0.4.0-SNAPSHOT
 grpc-google-cloud-migrationcenter-v1:0.3.0:0.4.0-SNAPSHOT
+google-cloud-netapp:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-netapp-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-netapp-v1beta1:0.0.0:0.0.1-SNAPSHOT
