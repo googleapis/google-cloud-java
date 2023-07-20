@@ -681,4 +681,64 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expiryQuantity field is set.
+   */
+  boolean hasExpiryQuantity();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expiryQuantity.
+   */
+  com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry getExpiryQuantity();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder getExpiryQuantityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 21;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 }

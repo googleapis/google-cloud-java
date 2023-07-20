@@ -372,6 +372,26 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
     }
   }
 
+  public static final int USE_METADATA_EXCHANGE_FIELD_NUMBER = 6;
+  private boolean useMetadataExchange_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional hint to the endpoint to generate a client
+   * ceritificate that can be used by AlloyDB connectors to exchange additional
+   * metadata with the server after TLS handshake.
+   * </pre>
+   *
+   * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useMetadataExchange.
+   */
+  @java.lang.Override
+  public boolean getUseMetadataExchange() {
+    return useMetadataExchange_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -401,6 +421,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, publicKey_);
     }
+    if (useMetadataExchange_ != false) {
+      output.writeBool(6, useMetadataExchange_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -424,6 +447,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, publicKey_);
+    }
+    if (useMetadataExchange_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useMetadataExchange_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -449,6 +475,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
       if (!getCertDuration().equals(other.getCertDuration())) return false;
     }
     if (!getPublicKey().equals(other.getPublicKey())) return false;
+    if (getUseMetadataExchange() != other.getUseMetadataExchange()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -472,6 +499,8 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
     }
     hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getPublicKey().hashCode();
+    hash = (37 * hash) + USE_METADATA_EXCHANGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseMetadataExchange());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -624,6 +653,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
         certDurationBuilder_ = null;
       }
       publicKey_ = "";
+      useMetadataExchange_ = false;
       return this;
     }
 
@@ -677,6 +707,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.publicKey_ = publicKey_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.useMetadataExchange_ = useMetadataExchange_;
       }
     }
 
@@ -751,6 +784,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getUseMetadataExchange() != false) {
+        setUseMetadataExchange(other.getUseMetadataExchange());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -807,6 +843,12 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                useMetadataExchange_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1564,6 +1606,65 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
       checkByteStringIsUtf8(value);
       publicKey_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean useMetadataExchange_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional hint to the endpoint to generate a client
+     * ceritificate that can be used by AlloyDB connectors to exchange additional
+     * metadata with the server after TLS handshake.
+     * </pre>
+     *
+     * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useMetadataExchange.
+     */
+    @java.lang.Override
+    public boolean getUseMetadataExchange() {
+      return useMetadataExchange_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional hint to the endpoint to generate a client
+     * ceritificate that can be used by AlloyDB connectors to exchange additional
+     * metadata with the server after TLS handshake.
+     * </pre>
+     *
+     * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useMetadataExchange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseMetadataExchange(boolean value) {
+
+      useMetadataExchange_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional hint to the endpoint to generate a client
+     * ceritificate that can be used by AlloyDB connectors to exchange additional
+     * metadata with the server after TLS handshake.
+     * </pre>
+     *
+     * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseMetadataExchange() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      useMetadataExchange_ = false;
       onChanged();
       return this;
     }
