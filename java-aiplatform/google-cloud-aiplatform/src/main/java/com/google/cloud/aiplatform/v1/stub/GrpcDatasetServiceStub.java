@@ -37,6 +37,7 @@ import com.google.cloud.aiplatform.v1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1.Dataset;
 import com.google.cloud.aiplatform.v1.DeleteDatasetRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest;
 import com.google.cloud.aiplatform.v1.ExportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportDataRequest;
 import com.google.cloud.aiplatform.v1.ExportDataResponse;
@@ -179,6 +180,16 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteSavedQueryRequest, Operation>
+      deleteSavedQueryMethodDescriptor =
+          MethodDescriptor.<DeleteSavedQueryRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.DatasetService/DeleteSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecMethodDescriptor =
           MethodDescriptor.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -276,6 +287,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
       listSavedQueriesCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
       listSavedQueriesPagedCallable;
+  private final UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable;
+  private final OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable;
   private final UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable;
   private final UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse>
       listAnnotationsCallable;
@@ -436,6 +450,16 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQueryTransportSettings =
+        GrpcCallSettings.<DeleteSavedQueryRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecTransportSettings =
         GrpcCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
             .setMethodDescriptor(getAnnotationSpecMethodDescriptor)
@@ -575,6 +599,15 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     this.listSavedQueriesPagedCallable =
         callableFactory.createPagedCallable(
             listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
+    this.deleteSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            deleteSavedQueryTransportSettings, settings.deleteSavedQuerySettings(), clientContext);
+    this.deleteSavedQueryOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSavedQueryTransportSettings,
+            settings.deleteSavedQueryOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getAnnotationSpecCallable =
         callableFactory.createUnaryCallable(
             getAnnotationSpecTransportSettings,
@@ -711,6 +744,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
       listSavedQueriesPagedCallable() {
     return listSavedQueriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    return deleteSavedQueryCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    return deleteSavedQueryOperationCallable;
   }
 
   @Override

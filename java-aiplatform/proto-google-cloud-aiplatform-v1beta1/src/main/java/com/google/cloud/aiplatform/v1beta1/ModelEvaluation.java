@@ -1101,7 +1101,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1137,7 +1137,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1173,7 +1173,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1306,7 +1306,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1345,7 +1345,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1388,7 +1388,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * list of slices, with limitation of two slices. The first slice of data
      * will be the slice_a. The second slice in the list (slice_b) will be
      * compared against the first slice. If only a single slice is provided,
-     * then slice_a will be compared against “not slice_a”.
+     * then slice_a will be compared against "not slice_a".
      * Below are examples with feature "education" with value "low", "medium",
      * "high" in the dataset:
      *
@@ -1897,7 +1897,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -1936,7 +1936,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -1983,7 +1983,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2031,7 +2031,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2077,7 +2077,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2130,7 +2130,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2174,7 +2174,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2214,7 +2214,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *
@@ -2259,7 +2259,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        * list of slices, with limitation of two slices. The first slice of data
        * will be the slice_a. The second slice in the list (slice_b) will be
        * compared against the first slice. If only a single slice is provided,
-       * then slice_a will be compared against “not slice_a”.
+       * then slice_a will be compared against "not slice_a".
        * Below are examples with feature "education" with value "low", "medium",
        * "high" in the dataset:
        *

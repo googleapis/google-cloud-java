@@ -339,6 +339,25 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
   }
 
+  public static final int DATA_ITEM_COUNT_FIELD_NUMBER = 10;
+  private long dataItemCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of DataItems in this Dataset. Only apply for
+   * non-structured Dataset.
+   * </pre>
+   *
+   * <code>int64 data_item_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dataItemCount.
+   */
+  @java.lang.Override
+  public long getDataItemCount() {
+    return dataItemCount_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -904,6 +923,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < savedQueries_.size(); i++) {
       output.writeMessage(9, savedQueries_.get(i));
     }
+    if (dataItemCount_ != 0L) {
+      output.writeInt64(10, dataItemCount_);
+    }
     if (encryptionSpec_ != null) {
       output.writeMessage(11, getEncryptionSpec());
     }
@@ -956,6 +978,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < savedQueries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, savedQueries_.get(i));
     }
+    if (dataItemCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, dataItemCount_);
+    }
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
     }
@@ -989,6 +1014,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (getDataItemCount() != other.getDataItemCount()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -1028,6 +1054,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+    hash = (37 * hash) + DATA_ITEM_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataItemCount());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1220,6 +1248,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      dataItemCount_ = 0L;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1238,7 +1267,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         savedQueries_ = null;
         savedQueriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -1282,9 +1311,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.Dataset result) {
       if (savedQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           savedQueries_ = java.util.Collections.unmodifiableList(savedQueries_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.savedQueries_ = savedQueries_;
       } else {
@@ -1310,23 +1339,26 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.dataItemCount_ = dataItemCount_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.etag_ = etag_;
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
       }
     }
@@ -1399,6 +1431,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (other.getDataItemCount() != 0L) {
+        setDataItemCount(other.getDataItemCount());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1407,16 +1442,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       if (savedQueriesBuilder_ == null) {
         if (!other.savedQueries_.isEmpty()) {
           if (savedQueries_.isEmpty()) {
             savedQueries_ = other.savedQueries_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSavedQueriesIsMutable();
             savedQueries_.addAll(other.savedQueries_);
@@ -1429,7 +1464,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             savedQueriesBuilder_.dispose();
             savedQueriesBuilder_ = null;
             savedQueries_ = other.savedQueries_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             savedQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSavedQueriesFieldBuilder()
@@ -1444,7 +1479,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMetadataArtifact().isEmpty()) {
         metadataArtifact_ = other.metadataArtifact_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1494,19 +1529,19 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
@@ -1518,7 +1553,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
@@ -1540,10 +1575,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 80:
+              {
+                dataItemCount_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
             case 90:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 130:
@@ -1555,7 +1596,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             case 138:
               {
                 metadataArtifact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 138
             default:
@@ -2205,6 +2246,62 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return metadataBuilder_;
     }
 
+    private long dataItemCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of DataItems in this Dataset. Only apply for
+     * non-structured Dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dataItemCount.
+     */
+    @java.lang.Override
+    public long getDataItemCount() {
+      return dataItemCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of DataItems in this Dataset. Only apply for
+     * non-structured Dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The dataItemCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataItemCount(long value) {
+
+      dataItemCount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of DataItems in this Dataset. Only apply for
+     * non-structured Dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataItemCount() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      dataItemCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2225,7 +2322,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2269,7 +2366,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2290,7 +2387,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2307,7 +2404,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2317,7 +2414,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2333,7 +2430,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2354,7 +2451,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2426,7 +2523,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2470,7 +2567,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2491,7 +2588,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2508,7 +2605,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2518,7 +2615,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2534,7 +2631,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2555,7 +2652,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2672,7 +2769,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2690,7 +2787,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2713,7 +2810,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2735,7 +2832,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -2880,7 +2977,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2918,7 +3015,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2953,7 +3050,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2982,7 +3079,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -2990,10 +3087,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSavedQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         savedQueries_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.SavedQuery>(savedQueries_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3277,7 +3374,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSavedQueries() {
       if (savedQueriesBuilder_ == null) {
         savedQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         savedQueriesBuilder_.clear();
@@ -3444,7 +3541,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.SavedQuery,
                 com.google.cloud.aiplatform.v1beta1.SavedQuery.Builder,
                 com.google.cloud.aiplatform.v1beta1.SavedQueryOrBuilder>(
-                savedQueries_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                savedQueries_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         savedQueries_ = null;
       }
       return savedQueriesBuilder_;
@@ -3469,7 +3566,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3511,7 +3608,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3532,7 +3629,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3548,7 +3645,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
@@ -3559,7 +3656,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3574,7 +3671,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -3594,7 +3691,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -3716,7 +3813,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       metadataArtifact_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3736,7 +3833,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMetadataArtifact() {
       metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3761,7 +3858,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       metadataArtifact_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

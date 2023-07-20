@@ -120,6 +120,7 @@ public class DatasetServiceClientTest {
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setDataItemCount(2014260376)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -180,6 +181,7 @@ public class DatasetServiceClientTest {
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setDataItemCount(2014260376)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -240,6 +242,7 @@ public class DatasetServiceClientTest {
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setDataItemCount(2014260376)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -289,6 +292,7 @@ public class DatasetServiceClientTest {
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setDataItemCount(2014260376)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -338,6 +342,7 @@ public class DatasetServiceClientTest {
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setDataItemCount(2014260376)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -999,6 +1004,92 @@ public class DatasetServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSavedQueryTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSavedQueryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    SavedQueryName name =
+        SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]");
+
+    client.deleteSavedQueryAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSavedQueryRequest actualRequest = ((DeleteSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSavedQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      SavedQueryName name =
+          SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]");
+      client.deleteSavedQueryAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSavedQueryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSavedQueryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSavedQueryAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSavedQueryRequest actualRequest = ((DeleteSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSavedQueryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSavedQueryAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

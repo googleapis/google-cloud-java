@@ -459,128 +459,6 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of monthly active users for a given TensorBoard instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
-   *   ReadTensorboardUsageResponse response =
-   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
-   * }
-   * }</pre>
-   *
-   * @param tensorboard Required. The name of the Tensorboard resource. Format:
-   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ReadTensorboardUsageResponse readTensorboardUsage(TensorboardName tensorboard) {
-    ReadTensorboardUsageRequest request =
-        ReadTensorboardUsageRequest.newBuilder()
-            .setTensorboard(tensorboard == null ? null : tensorboard.toString())
-            .build();
-    return readTensorboardUsage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns a list of monthly active users for a given TensorBoard instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   String tensorboard =
-   *       TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
-   *   ReadTensorboardUsageResponse response =
-   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
-   * }
-   * }</pre>
-   *
-   * @param tensorboard Required. The name of the Tensorboard resource. Format:
-   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ReadTensorboardUsageResponse readTensorboardUsage(String tensorboard) {
-    ReadTensorboardUsageRequest request =
-        ReadTensorboardUsageRequest.newBuilder().setTensorboard(tensorboard).build();
-    return readTensorboardUsage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns a list of monthly active users for a given TensorBoard instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   ReadTensorboardUsageRequest request =
-   *       ReadTensorboardUsageRequest.newBuilder()
-   *           .setTensorboard(
-   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
-   *           .build();
-   *   ReadTensorboardUsageResponse response =
-   *       tensorboardServiceClient.readTensorboardUsage(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ReadTensorboardUsageResponse readTensorboardUsage(
-      ReadTensorboardUsageRequest request) {
-    return readTensorboardUsageCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns a list of monthly active users for a given TensorBoard instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   ReadTensorboardUsageRequest request =
-   *       ReadTensorboardUsageRequest.newBuilder()
-   *           .setTensorboard(
-   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
-   *           .build();
-   *   ApiFuture<ReadTensorboardUsageResponse> future =
-   *       tensorboardServiceClient.readTensorboardUsageCallable().futureCall(request);
-   *   // Do something.
-   *   ReadTensorboardUsageResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageCallable() {
-    return stub.readTensorboardUsageCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Updates a Tensorboard.
    *
    * <p>Sample code:
@@ -1025,6 +903,248 @@ public class TensorboardServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTensorboardRequest, Operation> deleteTensorboardCallable() {
     return stub.deleteTensorboardCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(TensorboardName tensorboard) {
+    ReadTensorboardUsageRequest request =
+        ReadTensorboardUsageRequest.newBuilder()
+            .setTensorboard(tensorboard == null ? null : tensorboard.toString())
+            .build();
+    return readTensorboardUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String tensorboard =
+   *       TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(String tensorboard) {
+    ReadTensorboardUsageRequest request =
+        ReadTensorboardUsageRequest.newBuilder().setTensorboard(tensorboard).build();
+    return readTensorboardUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardUsageRequest request =
+   *       ReadTensorboardUsageRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(
+      ReadTensorboardUsageRequest request) {
+    return readTensorboardUsageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardUsageRequest request =
+   *       ReadTensorboardUsageRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ApiFuture<ReadTensorboardUsageResponse> future =
+   *       tensorboardServiceClient.readTensorboardUsageCallable().futureCall(request);
+   *   // Do something.
+   *   ReadTensorboardUsageResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    return stub.readTensorboardUsageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the storage size for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+   *   ReadTensorboardSizeResponse response =
+   *       tensorboardServiceClient.readTensorboardSize(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardSizeResponse readTensorboardSize(TensorboardName tensorboard) {
+    ReadTensorboardSizeRequest request =
+        ReadTensorboardSizeRequest.newBuilder()
+            .setTensorboard(tensorboard == null ? null : tensorboard.toString())
+            .build();
+    return readTensorboardSize(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the storage size for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String tensorboard =
+   *       TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
+   *   ReadTensorboardSizeResponse response =
+   *       tensorboardServiceClient.readTensorboardSize(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardSizeResponse readTensorboardSize(String tensorboard) {
+    ReadTensorboardSizeRequest request =
+        ReadTensorboardSizeRequest.newBuilder().setTensorboard(tensorboard).build();
+    return readTensorboardSize(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the storage size for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardSizeRequest request =
+   *       ReadTensorboardSizeRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ReadTensorboardSizeResponse response = tensorboardServiceClient.readTensorboardSize(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardSizeResponse readTensorboardSize(ReadTensorboardSizeRequest request) {
+    return readTensorboardSizeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the storage size for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardSizeRequest request =
+   *       ReadTensorboardSizeRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ApiFuture<ReadTensorboardSizeResponse> future =
+   *       tensorboardServiceClient.readTensorboardSizeCallable().futureCall(request);
+   *   // Do something.
+   *   ReadTensorboardSizeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable() {
+    return stub.readTensorboardSizeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

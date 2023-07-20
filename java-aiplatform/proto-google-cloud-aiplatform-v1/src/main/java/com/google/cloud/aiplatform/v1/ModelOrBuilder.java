@@ -564,10 +564,13 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * This field is populated if the model is produced by a pipeline job.
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
    * </pre>
    *
-   * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The pipelineJob.
    */
@@ -576,10 +579,13 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * This field is populated if the model is produced by a pipeline job.
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
    * </pre>
    *
-   * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for pipelineJob.
    */
