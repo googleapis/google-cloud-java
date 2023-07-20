@@ -65,6 +65,10 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
@@ -95,6 +99,11 @@
     <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

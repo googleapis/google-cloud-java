@@ -25,6 +25,9 @@
             "GenerateConfigReport": {
               "methods": ["generateConfigReport", "generateConfigReport", "generateConfigReportCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetService": {
               "methods": ["getService", "getService", "getServiceCallable"]
             },
@@ -43,8 +46,14 @@
             "ListServices": {
               "methods": ["listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
             "SubmitConfigSource": {
               "methods": ["submitConfigSourceAsync", "submitConfigSourceAsync", "submitConfigSourceOperationCallable", "submitConfigSourceCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UndeleteService": {
               "methods": ["undeleteServiceAsync", "undeleteServiceAsync", "undeleteServiceOperationCallable", "undeleteServiceCallable"]
