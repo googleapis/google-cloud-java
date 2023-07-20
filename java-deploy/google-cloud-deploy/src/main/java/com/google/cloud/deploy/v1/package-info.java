@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Deploy API
+ * A client to Cloud Deploy API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
