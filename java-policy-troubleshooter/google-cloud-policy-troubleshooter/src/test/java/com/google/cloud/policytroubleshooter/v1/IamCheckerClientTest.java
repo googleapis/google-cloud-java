@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
+import com.google.rpc.Status;
 import google.cloud.policytroubleshooter.v1.Explanations;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -83,6 +84,7 @@ public class IamCheckerClientTest {
         TroubleshootIamPolicyResponse.newBuilder()
             .setAccess(Explanations.AccessState.forNumber(0))
             .addAllExplainedPolicies(new ArrayList<Explanations.ExplainedPolicy>())
+            .addAllErrors(new ArrayList<Status>())
             .build();
     mockIamChecker.addResponse(expectedResponse);
 

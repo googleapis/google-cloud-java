@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.policytroubleshooter.v1.stub.HttpJsonIamCheckerStub;
+import com.google.rpc.Status;
 import google.cloud.policytroubleshooter.v1.Explanations;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -78,6 +79,7 @@ public class IamCheckerClientHttpJsonTest {
         TroubleshootIamPolicyResponse.newBuilder()
             .setAccess(Explanations.AccessState.forNumber(0))
             .addAllExplainedPolicies(new ArrayList<Explanations.ExplainedPolicy>())
+            .addAllErrors(new ArrayList<Status>())
             .build();
     mockService.addResponse(expectedResponse);
 

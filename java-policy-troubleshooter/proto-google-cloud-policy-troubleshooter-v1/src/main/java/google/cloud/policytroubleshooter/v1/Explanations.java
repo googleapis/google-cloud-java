@@ -30,7 +30,7 @@ public final class Explanations {
    *
    *
    * <pre>
-   * Whether a member has a permission for a resource.
+   * Whether a principal has a permission for a resource.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.policytroubleshooter.v1.AccessState}
@@ -40,7 +40,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ACCESS_STATE_UNSPECIFIED = 0;</code>
@@ -50,7 +50,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member has the permission.
+     * The principal has the permission.
      * </pre>
      *
      * <code>GRANTED = 1;</code>
@@ -60,7 +60,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member does not have the permission.
+     * The principal does not have the permission.
      * </pre>
      *
      * <code>NOT_GRANTED = 2;</code>
@@ -70,8 +70,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member has the permission only if a condition expression evaluates to
-     * `true`.
+     * The principal has the permission only if a condition expression evaluates
+     * to `true`.
      * </pre>
      *
      * <code>UNKNOWN_CONDITIONAL = 3;</code>
@@ -95,7 +95,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ACCESS_STATE_UNSPECIFIED = 0;</code>
@@ -105,7 +105,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member has the permission.
+     * The principal has the permission.
      * </pre>
      *
      * <code>GRANTED = 1;</code>
@@ -115,7 +115,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member does not have the permission.
+     * The principal does not have the permission.
      * </pre>
      *
      * <code>NOT_GRANTED = 2;</code>
@@ -125,8 +125,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * The member has the permission only if a condition expression evaluates to
-     * `true`.
+     * The principal has the permission only if a condition expression evaluates
+     * to `true`.
      * </pre>
      *
      * <code>UNKNOWN_CONDITIONAL = 3;</code>
@@ -237,7 +237,8 @@ public final class Explanations {
    *
    *
    * <pre>
-   * The extent to which a single data point contributes to an overall
+   * The extent to which a single data point, such as the existence of a binding
+   * or whether a binding includes a specific principal, contributes to an overall
    * determination.
    * </pre>
    *
@@ -248,7 +249,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>HEURISTIC_RELEVANCE_UNSPECIFIED = 0;</code>
@@ -283,7 +284,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>HEURISTIC_RELEVANCE_UNSPECIFIED = 0;</code>
@@ -409,13 +410,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The member, or principal, whose access you want to check, in the form of
-     * the email address that represents that member. For example,
+     * Required. The principal whose access you want to check, in the form of
+     * the email address that represents that principal. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
      *
-     * The member must be a Google Account or a service account. Other types of
-     * members are not supported.
+     * The principal must be a Google Account or a service account. Other types of
+     * principals are not supported.
      * </pre>
      *
      * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -427,13 +428,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The member, or principal, whose access you want to check, in the form of
-     * the email address that represents that member. For example,
+     * Required. The principal whose access you want to check, in the form of
+     * the email address that represents that principal. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
      *
-     * The member must be a Google Account or a service account. Other types of
-     * members are not supported.
+     * The principal must be a Google Account or a service account. Other types of
+     * principals are not supported.
      * </pre>
      *
      * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -479,7 +480,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The IAM permission to check for the specified member and resource.
+     * Required. The IAM permission to check for the specified principal and
+     * resource.
      *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
@@ -497,7 +499,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The IAM permission to check for the specified member and resource.
+     * Required. The IAM permission to check for the specified principal and
+     * resource.
      *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
@@ -516,7 +519,7 @@ public final class Explanations {
    *
    *
    * <pre>
-   * Information about the member, resource, and permission to check.
+   * Information about the principal, resource, and permission to check.
    * </pre>
    *
    * Protobuf type {@code google.cloud.policytroubleshooter.v1.AccessTuple}
@@ -566,13 +569,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The member, or principal, whose access you want to check, in the form of
-     * the email address that represents that member. For example,
+     * Required. The principal whose access you want to check, in the form of
+     * the email address that represents that principal. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
      *
-     * The member must be a Google Account or a service account. Other types of
-     * members are not supported.
+     * The principal must be a Google Account or a service account. Other types of
+     * principals are not supported.
      * </pre>
      *
      * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,13 +598,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The member, or principal, whose access you want to check, in the form of
-     * the email address that represents that member. For example,
+     * Required. The principal whose access you want to check, in the form of
+     * the email address that represents that principal. For example,
      * `alice&#64;example.com` or
      * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
      *
-     * The member must be a Google Account or a service account. Other types of
-     * members are not supported.
+     * The principal must be a Google Account or a service account. Other types of
+     * principals are not supported.
      * </pre>
      *
      * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -688,7 +691,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The IAM permission to check for the specified member and resource.
+     * Required. The IAM permission to check for the specified principal and
+     * resource.
      *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
@@ -717,7 +721,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. The IAM permission to check for the specified member and resource.
+     * Required. The IAM permission to check for the specified principal and
+     * resource.
      *
      * For a complete list of IAM permissions, see
      * https://cloud.google.com/iam/help/permissions/reference.
@@ -926,7 +931,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Information about the member, resource, and permission to check.
+     * Information about the principal, resource, and permission to check.
      * </pre>
      *
      * Protobuf type {@code google.cloud.policytroubleshooter.v1.AccessTuple}
@@ -1147,13 +1152,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The member, or principal, whose access you want to check, in the form of
-       * the email address that represents that member. For example,
+       * Required. The principal whose access you want to check, in the form of
+       * the email address that represents that principal. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
        *
-       * The member must be a Google Account or a service account. Other types of
-       * members are not supported.
+       * The principal must be a Google Account or a service account. Other types of
+       * principals are not supported.
        * </pre>
        *
        * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1175,13 +1180,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The member, or principal, whose access you want to check, in the form of
-       * the email address that represents that member. For example,
+       * Required. The principal whose access you want to check, in the form of
+       * the email address that represents that principal. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
        *
-       * The member must be a Google Account or a service account. Other types of
-       * members are not supported.
+       * The principal must be a Google Account or a service account. Other types of
+       * principals are not supported.
        * </pre>
        *
        * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1203,13 +1208,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The member, or principal, whose access you want to check, in the form of
-       * the email address that represents that member. For example,
+       * Required. The principal whose access you want to check, in the form of
+       * the email address that represents that principal. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
        *
-       * The member must be a Google Account or a service account. Other types of
-       * members are not supported.
+       * The principal must be a Google Account or a service account. Other types of
+       * principals are not supported.
        * </pre>
        *
        * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1230,13 +1235,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The member, or principal, whose access you want to check, in the form of
-       * the email address that represents that member. For example,
+       * Required. The principal whose access you want to check, in the form of
+       * the email address that represents that principal. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
        *
-       * The member must be a Google Account or a service account. Other types of
-       * members are not supported.
+       * The principal must be a Google Account or a service account. Other types of
+       * principals are not supported.
        * </pre>
        *
        * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1253,13 +1258,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The member, or principal, whose access you want to check, in the form of
-       * the email address that represents that member. For example,
+       * Required. The principal whose access you want to check, in the form of
+       * the email address that represents that principal. For example,
        * `alice&#64;example.com` or
        * `my-service-account&#64;my-project.iam.gserviceaccount.com`.
        *
-       * The member must be a Google Account or a service account. Other types of
-       * members are not supported.
+       * The principal must be a Google Account or a service account. Other types of
+       * principals are not supported.
        * </pre>
        *
        * <code>string principal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1409,7 +1414,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The IAM permission to check for the specified member and resource.
+       * Required. The IAM permission to check for the specified principal and
+       * resource.
        *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
@@ -1437,7 +1443,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The IAM permission to check for the specified member and resource.
+       * Required. The IAM permission to check for the specified principal and
+       * resource.
        *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
@@ -1465,7 +1472,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The IAM permission to check for the specified member and resource.
+       * Required. The IAM permission to check for the specified principal and
+       * resource.
        *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
@@ -1492,7 +1500,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The IAM permission to check for the specified member and resource.
+       * Required. The IAM permission to check for the specified principal and
+       * resource.
        *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
@@ -1515,7 +1524,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. The IAM permission to check for the specified member and resource.
+       * Required. The IAM permission to check for the specified principal and
+       * resource.
        *
        * For a complete list of IAM permissions, see
        * https://cloud.google.com/iam/help/permissions/reference.
@@ -1617,12 +1627,12 @@ public final class Explanations {
      *
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
-     * specified member for the specified resource.
+     * specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another policy that overrides
-     * this policy. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this policy. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -1636,12 +1646,12 @@ public final class Explanations {
      *
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
-     * specified member for the specified resource.
+     * specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another policy that overrides
-     * this policy. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this policy. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -1738,8 +1748,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -1755,8 +1765,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -1772,8 +1782,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -1788,8 +1798,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -1806,8 +1816,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -1908,12 +1918,12 @@ public final class Explanations {
      *
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
-     * specified member for the specified resource.
+     * specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another policy that overrides
-     * this policy. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this policy. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -1930,12 +1940,12 @@ public final class Explanations {
      *
      * <pre>
      * Indicates whether _this policy_ provides the specified permission to the
-     * specified member for the specified resource.
+     * specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another policy that overrides
-     * this policy. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this policy. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -2081,8 +2091,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -2101,8 +2111,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -2122,8 +2132,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -2141,8 +2151,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -2161,8 +2171,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how each binding in the policy affects the member's ability,
-     * or inability, to use the permission for the resource.
+     * Details about how each binding in the policy affects the principal's
+     * ability, or inability, to use the permission for the resource.
      *
      * If the sender of the request does not have access to the policy, this field
      * is omitted.
@@ -2747,12 +2757,12 @@ public final class Explanations {
        *
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
-       * specified member for the specified resource.
+       * specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another policy that overrides
-       * this policy. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this policy. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -2769,12 +2779,12 @@ public final class Explanations {
        *
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
-       * specified member for the specified resource.
+       * specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another policy that overrides
-       * this policy. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this policy. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -2794,12 +2804,12 @@ public final class Explanations {
        *
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
-       * specified member for the specified resource.
+       * specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another policy that overrides
-       * this policy. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this policy. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -2820,12 +2830,12 @@ public final class Explanations {
        *
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
-       * specified member for the specified resource.
+       * specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another policy that overrides
-       * this policy. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this policy. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -2849,12 +2859,12 @@ public final class Explanations {
        *
        * <pre>
        * Indicates whether _this policy_ provides the specified permission to the
-       * specified member for the specified resource.
+       * specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another policy that overrides
-       * this policy. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this policy. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -3239,8 +3249,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3262,8 +3272,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3284,8 +3294,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3307,8 +3317,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3336,8 +3346,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3364,8 +3374,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3393,8 +3403,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3422,8 +3432,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3449,8 +3459,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3477,8 +3487,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3505,8 +3515,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3530,8 +3540,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3555,8 +3565,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3574,8 +3584,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3597,8 +3607,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3622,8 +3632,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3644,8 +3654,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3667,8 +3677,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about how each binding in the policy affects the member's ability,
-       * or inability, to use the permission for the resource.
+       * Details about how each binding in the policy affects the principal's
+       * ability, or inability, to use the permission for the resource.
        *
        * If the sender of the request does not have access to the policy, this field
        * is omitted.
@@ -3894,13 +3904,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. Indicates whether _this binding_ provides the specified permission to the
-     * specified member for the specified resource.
+     * Required. Indicates whether _this binding_ provides the specified
+     * permission to the specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another binding that overrides
-     * this binding. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this binding. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -3915,13 +3925,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. Indicates whether _this binding_ provides the specified permission to the
-     * specified member for the specified resource.
+     * Required. Indicates whether _this binding_ provides the specified
+     * permission to the specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another binding that overrides
-     * this binding. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this binding. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -4032,24 +4042,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -4063,24 +4073,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -4101,24 +4111,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -4136,24 +4146,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -4173,24 +4183,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -4233,11 +4243,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -4249,11 +4259,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -4265,11 +4275,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -4280,8 +4290,8 @@ public final class Explanations {
    *
    *
    * <pre>
-   * Details about how a binding in a policy affects a member's ability to use a
-   * permission.
+   * Details about how a binding in a policy affects a principal's ability to use
+   * a permission.
    * </pre>
    *
    * Protobuf type {@code google.cloud.policytroubleshooter.v1.BindingExplanation}
@@ -4350,7 +4360,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Reserved for future use.
+       * Default value. This value is unused.
        * </pre>
        *
        * <code>ROLE_PERMISSION_UNSPECIFIED = 0;</code>
@@ -4393,7 +4403,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Reserved for future use.
+       * Default value. This value is unused.
        * </pre>
        *
        * <code>ROLE_PERMISSION_UNSPECIFIED = 0;</code>
@@ -4523,7 +4533,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Whether the binding includes the member.
+     * Whether the binding includes the principal.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.policytroubleshooter.v1.BindingExplanation.Membership}
@@ -4533,7 +4543,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Reserved for future use.
+       * Default value. This value is unused.
        * </pre>
        *
        * <code>MEMBERSHIP_UNSPECIFIED = 0;</code>
@@ -4543,12 +4553,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The binding includes the member. The member can be included directly
-       * or indirectly. For example:
+       * The binding includes the principal. The principal can be included
+       * directly or indirectly. For example:
        *
-       * * A member is included directly if that member is listed in the binding.
-       * * A member is included indirectly if that member is in a Google group or
-       *   G Suite domain that is listed in the binding.
+       * * A principal is included directly if that principal is listed in the
+       *   binding.
+       * * A principal is included indirectly if that principal is in a Google
+       *   group or Google Workspace domain that is listed in the binding.
        * </pre>
        *
        * <code>MEMBERSHIP_INCLUDED = 1;</code>
@@ -4558,7 +4569,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The binding does not include the member.
+       * The binding does not include the principal.
        * </pre>
        *
        * <code>MEMBERSHIP_NOT_INCLUDED = 2;</code>
@@ -4578,7 +4589,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The member is an unsupported type. Only Google Accounts and service
+       * The principal is an unsupported type. Only Google Accounts and service
        * accounts are supported.
        * </pre>
        *
@@ -4592,7 +4603,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Reserved for future use.
+       * Default value. This value is unused.
        * </pre>
        *
        * <code>MEMBERSHIP_UNSPECIFIED = 0;</code>
@@ -4602,12 +4613,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The binding includes the member. The member can be included directly
-       * or indirectly. For example:
+       * The binding includes the principal. The principal can be included
+       * directly or indirectly. For example:
        *
-       * * A member is included directly if that member is listed in the binding.
-       * * A member is included indirectly if that member is in a Google group or
-       *   G Suite domain that is listed in the binding.
+       * * A principal is included directly if that principal is listed in the
+       *   binding.
+       * * A principal is included indirectly if that principal is in a Google
+       *   group or Google Workspace domain that is listed in the binding.
        * </pre>
        *
        * <code>MEMBERSHIP_INCLUDED = 1;</code>
@@ -4617,7 +4629,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The binding does not include the member.
+       * The binding does not include the principal.
        * </pre>
        *
        * <code>MEMBERSHIP_NOT_INCLUDED = 2;</code>
@@ -4637,7 +4649,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The member is an unsupported type. Only Google Accounts and service
+       * The principal is an unsupported type. Only Google Accounts and service
        * accounts are supported.
        * </pre>
        *
@@ -4743,7 +4755,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether the binding includes the member.
+       * Indicates whether the binding includes the principal.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -4756,7 +4768,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether the binding includes the member.
+       * Indicates whether the binding includes the principal.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -4771,8 +4783,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The relevance of the member's status to the overall determination for the
-       * binding.
+       * The relevance of the principal's status to the overall determination for
+       * the binding.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -4784,8 +4796,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The relevance of the member's status to the overall determination for the
-       * binding.
+       * The relevance of the principal's status to the overall determination for
+       * the binding.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -4798,7 +4810,7 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about whether the binding includes the member.
+     * Details about whether the binding includes the principal.
      * </pre>
      *
      * Protobuf type {@code
@@ -4848,7 +4860,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether the binding includes the member.
+       * Indicates whether the binding includes the principal.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -4864,7 +4876,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether the binding includes the member.
+       * Indicates whether the binding includes the principal.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -4890,8 +4902,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The relevance of the member's status to the overall determination for the
-       * binding.
+       * The relevance of the principal's status to the overall determination for
+       * the binding.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -4906,8 +4918,8 @@ public final class Explanations {
        *
        *
        * <pre>
-       * The relevance of the member's status to the overall determination for the
-       * binding.
+       * The relevance of the principal's status to the overall determination for
+       * the binding.
        * </pre>
        *
        * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5137,7 +5149,7 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Details about whether the binding includes the member.
+       * Details about whether the binding includes the principal.
        * </pre>
        *
        * Protobuf type {@code
@@ -5361,7 +5373,7 @@ public final class Explanations {
          *
          *
          * <pre>
-         * Indicates whether the binding includes the member.
+         * Indicates whether the binding includes the principal.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -5377,7 +5389,7 @@ public final class Explanations {
          *
          *
          * <pre>
-         * Indicates whether the binding includes the member.
+         * Indicates whether the binding includes the principal.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -5396,7 +5408,7 @@ public final class Explanations {
          *
          *
          * <pre>
-         * Indicates whether the binding includes the member.
+         * Indicates whether the binding includes the principal.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -5419,7 +5431,7 @@ public final class Explanations {
          *
          *
          * <pre>
-         * Indicates whether the binding includes the member.
+         * Indicates whether the binding includes the principal.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -5442,7 +5454,7 @@ public final class Explanations {
          *
          *
          * <pre>
-         * Indicates whether the binding includes the member.
+         * Indicates whether the binding includes the principal.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.BindingExplanation.Membership membership = 1;
@@ -5462,8 +5474,8 @@ public final class Explanations {
          *
          *
          * <pre>
-         * The relevance of the member's status to the overall determination for the
-         * binding.
+         * The relevance of the principal's status to the overall determination for
+         * the binding.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5478,8 +5490,8 @@ public final class Explanations {
          *
          *
          * <pre>
-         * The relevance of the member's status to the overall determination for the
-         * binding.
+         * The relevance of the principal's status to the overall determination for
+         * the binding.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5497,8 +5509,8 @@ public final class Explanations {
          *
          *
          * <pre>
-         * The relevance of the member's status to the overall determination for the
-         * binding.
+         * The relevance of the principal's status to the overall determination for
+         * the binding.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5518,8 +5530,8 @@ public final class Explanations {
          *
          *
          * <pre>
-         * The relevance of the member's status to the overall determination for the
-         * binding.
+         * The relevance of the principal's status to the overall determination for
+         * the binding.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5541,8 +5553,8 @@ public final class Explanations {
          *
          *
          * <pre>
-         * The relevance of the member's status to the overall determination for the
-         * binding.
+         * The relevance of the principal's status to the overall determination for
+         * the binding.
          * </pre>
          *
          * <code>.google.cloud.policytroubleshooter.v1.HeuristicRelevance relevance = 2;</code>
@@ -5634,13 +5646,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. Indicates whether _this binding_ provides the specified permission to the
-     * specified member for the specified resource.
+     * Required. Indicates whether _this binding_ provides the specified
+     * permission to the specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another binding that overrides
-     * this binding. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this binding. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -5658,13 +5670,13 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Required. Indicates whether _this binding_ provides the specified permission to the
-     * specified member for the specified resource.
+     * Required. Indicates whether _this binding_ provides the specified
+     * permission to the specified principal for the specified resource.
      *
-     * This field does _not_ indicate whether the member actually has the
+     * This field does _not_ indicate whether the principal actually has the
      * permission for the resource. There might be another binding that overrides
-     * this binding. To determine whether the member actually has the permission,
-     * use the `access` field in the
+     * this binding. To determine whether the principal actually has the
+     * permission, use the `access` field in the
      * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
      * </pre>
      *
@@ -5879,24 +5891,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -5926,24 +5938,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -5964,24 +5976,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -6012,24 +6024,24 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Indicates whether each member in the binding includes the member specified
-     * in the request, either directly or indirectly. Each key identifies a member
-     * in the binding, and each value indicates whether the member in the binding
-     * includes the member in the request.
+     * Indicates whether each principal in the binding includes the principal
+     * specified in the request, either directly or indirectly. Each key
+     * identifies a principal in the binding, and each value indicates whether the
+     * principal in the binding includes the principal in the request.
      *
-     * For example, suppose that a binding includes the following members:
+     * For example, suppose that a binding includes the following principals:
      *
      * * `user:alice&#64;example.com`
      * * `group:product-eng&#64;example.com`
      *
      * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-     * member of the group `group:product-eng&#64;example.com`.
+     * principal of the group `group:product-eng&#64;example.com`.
      *
-     * For the first member in the binding, the key is `user:alice&#64;example.com`,
-     * and the `membership` field in the value is set to
+     * For the first principal in the binding, the key is
+     * `user:alice&#64;example.com`, and the `membership` field in the value is set to
      * `MEMBERSHIP_NOT_INCLUDED`.
      *
-     * For the second member in the binding, the key is
+     * For the second principal in the binding, the key is
      * `group:product-eng&#64;example.com`, and the `membership` field in the value is
      * set to `MEMBERSHIP_INCLUDED`.
      * </pre>
@@ -6101,11 +6113,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -6120,11 +6132,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -6139,11 +6151,11 @@ public final class Explanations {
      *
      *
      * <pre>
-     * A condition expression that prevents access unless the expression evaluates
-     * to `true`.
+     * A condition expression that prevents this binding from granting access
+     * unless the expression evaluates to `true`.
      *
      * To learn about IAM Conditions, see
-     * http://cloud.google.com/iam/help/conditions/overview.
+     * https://cloud.google.com/iam/help/conditions/overview.
      * </pre>
      *
      * <code>.google.type.Expr condition = 7;</code>
@@ -6415,8 +6427,8 @@ public final class Explanations {
      *
      *
      * <pre>
-     * Details about how a binding in a policy affects a member's ability to use a
-     * permission.
+     * Details about how a binding in a policy affects a principal's ability to use
+     * a permission.
      * </pre>
      *
      * Protobuf type {@code google.cloud.policytroubleshooter.v1.BindingExplanation}
@@ -6723,13 +6735,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. Indicates whether _this binding_ provides the specified permission to the
-       * specified member for the specified resource.
+       * Required. Indicates whether _this binding_ provides the specified
+       * permission to the specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another binding that overrides
-       * this binding. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this binding. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -6747,13 +6759,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. Indicates whether _this binding_ provides the specified permission to the
-       * specified member for the specified resource.
+       * Required. Indicates whether _this binding_ provides the specified
+       * permission to the specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another binding that overrides
-       * this binding. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this binding. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -6774,13 +6786,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. Indicates whether _this binding_ provides the specified permission to the
-       * specified member for the specified resource.
+       * Required. Indicates whether _this binding_ provides the specified
+       * permission to the specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another binding that overrides
-       * this binding. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this binding. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -6802,13 +6814,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. Indicates whether _this binding_ provides the specified permission to the
-       * specified member for the specified resource.
+       * Required. Indicates whether _this binding_ provides the specified
+       * permission to the specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another binding that overrides
-       * this binding. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this binding. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -6833,13 +6845,13 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Required. Indicates whether _this binding_ provides the specified permission to the
-       * specified member for the specified resource.
+       * Required. Indicates whether _this binding_ provides the specified
+       * permission to the specified principal for the specified resource.
        *
-       * This field does _not_ indicate whether the member actually has the
+       * This field does _not_ indicate whether the principal actually has the
        * permission for the resource. There might be another binding that overrides
-       * this binding. To determine whether the member actually has the permission,
-       * use the `access` field in the
+       * this binding. To determine whether the principal actually has the
+       * permission, use the `access` field in the
        * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
        * </pre>
        *
@@ -7246,24 +7258,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7293,24 +7305,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7331,24 +7343,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7380,24 +7392,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7433,24 +7445,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7480,24 +7492,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7524,24 +7536,24 @@ public final class Explanations {
        *
        *
        * <pre>
-       * Indicates whether each member in the binding includes the member specified
-       * in the request, either directly or indirectly. Each key identifies a member
-       * in the binding, and each value indicates whether the member in the binding
-       * includes the member in the request.
+       * Indicates whether each principal in the binding includes the principal
+       * specified in the request, either directly or indirectly. Each key
+       * identifies a principal in the binding, and each value indicates whether the
+       * principal in the binding includes the principal in the request.
        *
-       * For example, suppose that a binding includes the following members:
+       * For example, suppose that a binding includes the following principals:
        *
        * * `user:alice&#64;example.com`
        * * `group:product-eng&#64;example.com`
        *
        * You want to troubleshoot access for `user:bob&#64;example.com`. This user is a
-       * member of the group `group:product-eng&#64;example.com`.
+       * principal of the group `group:product-eng&#64;example.com`.
        *
-       * For the first member in the binding, the key is `user:alice&#64;example.com`,
-       * and the `membership` field in the value is set to
+       * For the first principal in the binding, the key is
+       * `user:alice&#64;example.com`, and the `membership` field in the value is set to
        * `MEMBERSHIP_NOT_INCLUDED`.
        *
-       * For the second member in the binding, the key is
+       * For the second principal in the binding, the key is
        * `group:product-eng&#64;example.com`, and the `membership` field in the value is
        * set to `MEMBERSHIP_INCLUDED`.
        * </pre>
@@ -7668,11 +7680,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7686,11 +7698,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7708,11 +7720,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7734,11 +7746,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7757,11 +7769,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7786,11 +7798,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7809,11 +7821,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7827,11 +7839,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
@@ -7847,11 +7859,11 @@ public final class Explanations {
        *
        *
        * <pre>
-       * A condition expression that prevents access unless the expression evaluates
-       * to `true`.
+       * A condition expression that prevents this binding from granting access
+       * unless the expression evaluates to `true`.
        *
        * To learn about IAM Conditions, see
-       * http://cloud.google.com/iam/help/conditions/overview.
+       * https://cloud.google.com/iam/help/conditions/overview.
        * </pre>
        *
        * <code>.google.type.Expr condition = 7;</code>
