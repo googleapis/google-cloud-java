@@ -25,11 +25,17 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetQueue": {
               "methods": ["getQueue", "getQueue", "getQueue", "getQueueCallable"]
             },
             "GetTask": {
               "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListQueues": {
               "methods": ["listQueues", "listQueues", "listQueues", "listQueuesPagedCallable", "listQueuesCallable"]

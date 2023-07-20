@@ -178,6 +178,41 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
+   * An http_target is used to override the target values for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpTarget http_target = 17;</code>
+   *
+   * @return Whether the httpTarget field is set.
+   */
+  boolean hasHttpTarget();
+  /**
+   *
+   *
+   * <pre>
+   * An http_target is used to override the target values for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpTarget http_target = 17;</code>
+   *
+   * @return The httpTarget.
+   */
+  com.google.cloud.tasks.v2beta2.HttpTarget getHttpTarget();
+  /**
+   *
+   *
+   * <pre>
+   * An http_target is used to override the target values for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpTarget http_target = 17;</code>
+   */
+  com.google.cloud.tasks.v2beta2.HttpTargetOrBuilder getHttpTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Rate limits for task dispatches.
    *
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -325,7 +360,7 @@ public interface QueueOrBuilder
    * <pre>
    * Output only. The state of the queue.
    *
-   * `state` can only be changed by calling
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or
    * uploading
@@ -345,7 +380,7 @@ public interface QueueOrBuilder
    * <pre>
    * Output only. The state of the queue.
    *
-   * `state` can only be changed by calling
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or
    * uploading
