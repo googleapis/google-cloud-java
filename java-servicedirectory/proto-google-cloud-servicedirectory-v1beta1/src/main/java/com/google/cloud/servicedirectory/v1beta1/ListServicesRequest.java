@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
+ * The request message for
+ * [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListServicesRequest}
@@ -228,6 +229,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    * *   `doesnotexist.foo=bar` returns an empty list. Note that service
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any services, it returns no results
+   * *   `attributes.managed_registration=true` returns services that are
+   * managed
+   *     by a GCP product or service
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
@@ -280,6 +284,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    * *   `doesnotexist.foo=bar` returns an empty list. Note that service
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any services, it returns no results
+   * *   `attributes.managed_registration=true` returns services that are
+   * managed
+   *     by a GCP product or service
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
@@ -571,7 +578,8 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
+   * The request message for
+   * [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListServicesRequest}
@@ -1128,6 +1136,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      * *   `doesnotexist.foo=bar` returns an empty list. Note that service
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any services, it returns no results
+     * *   `attributes.managed_registration=true` returns services that are
+     * managed
+     *     by a GCP product or service
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1179,6 +1190,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      * *   `doesnotexist.foo=bar` returns an empty list. Note that service
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any services, it returns no results
+     * *   `attributes.managed_registration=true` returns services that are
+     * managed
+     *     by a GCP product or service
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1230,6 +1244,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      * *   `doesnotexist.foo=bar` returns an empty list. Note that service
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any services, it returns no results
+     * *   `attributes.managed_registration=true` returns services that are
+     * managed
+     *     by a GCP product or service
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1280,6 +1297,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      * *   `doesnotexist.foo=bar` returns an empty list. Note that service
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any services, it returns no results
+     * *   `attributes.managed_registration=true` returns services that are
+     * managed
+     *     by a GCP product or service
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1326,6 +1346,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      * *   `doesnotexist.foo=bar` returns an empty list. Note that service
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any services, it returns no results
+     * *   `attributes.managed_registration=true` returns services that are
+     * managed
+     *     by a GCP product or service
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).

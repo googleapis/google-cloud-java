@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint].
+ * The request message for
+ * [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint].
  * This should not be used to lookup endpoints at runtime. Instead, use
  * the `resolve` method.
  * </pre>
@@ -283,7 +284,8 @@ public final class GetEndpointRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint].
+   * The request message for
+   * [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint].
    * This should not be used to lookup endpoints at runtime. Instead, use
    * the `resolve` method.
    * </pre>

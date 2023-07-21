@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The response message for [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+ * The response message for
+ * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ResolveServiceResponse}
@@ -259,7 +260,8 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The response message for [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * The response message for
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ResolveServiceResponse}

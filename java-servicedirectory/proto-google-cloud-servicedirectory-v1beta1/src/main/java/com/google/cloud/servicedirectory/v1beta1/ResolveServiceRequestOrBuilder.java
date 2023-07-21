@@ -56,8 +56,8 @@ public interface ResolveServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of endpoints to return. Defaults to 25. Maximum is 100.
-   * If a value less than one is specified, the Default is used.
+   * Optional. The maximum number of endpoints to return. Defaults to 25.
+   * Maximum is 100. If a value less than one is specified, the Default is used.
    * If a value greater than the Maximum is specified, the Maximum is used.
    * </pre>
    *
@@ -95,6 +95,9 @@ public interface ResolveServiceRequestOrBuilder
    * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
    *     returns endpoints that have name that is alphabetically later than the
    *     string, so "endpoint-e" is returned but "endpoint-a" is not
+   * *
+   * `name=projects/my-project/locations/us-central1/namespaces/my-namespace/services/my-service/endpoints/ep-1`
+   *      returns the endpoint that has an endpoint_id equal to `ep-1`
    * *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
    *     `owner` in annotation key but value is not `sd` AND have key/value
    *      `foo=bar`
@@ -139,6 +142,9 @@ public interface ResolveServiceRequestOrBuilder
    * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
    *     returns endpoints that have name that is alphabetically later than the
    *     string, so "endpoint-e" is returned but "endpoint-a" is not
+   * *
+   * `name=projects/my-project/locations/us-central1/namespaces/my-namespace/services/my-service/endpoints/ep-1`
+   *      returns the endpoint that has an endpoint_id equal to `ep-1`
    * *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
    *     `owner` in annotation key but value is not `sd` AND have key/value
    *      `foo=bar`

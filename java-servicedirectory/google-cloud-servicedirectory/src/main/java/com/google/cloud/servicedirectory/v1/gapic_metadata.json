@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "LookupServiceClient",
           "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ResolveService": {
               "methods": ["resolveService", "resolveServiceCallable"]
             }
@@ -46,6 +52,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetNamespace": {
               "methods": ["getNamespace", "getNamespace", "getNamespace", "getNamespaceCallable"]
             },
@@ -54,6 +63,9 @@
             },
             "ListEndpoints": {
               "methods": ["listEndpoints", "listEndpoints", "listEndpoints", "listEndpointsPagedCallable", "listEndpointsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListNamespaces": {
               "methods": ["listNamespaces", "listNamespaces", "listNamespaces", "listNamespacesPagedCallable", "listNamespacesCallable"]

@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace].
+ * The request message for
+ * [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest}
@@ -426,7 +427,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace].
+   * The request message for
+   * [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest}

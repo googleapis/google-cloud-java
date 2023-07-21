@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace].
+ * The request message for
+ * [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest}
@@ -348,7 +349,8 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace].
+   * The request message for
+   * [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest}
