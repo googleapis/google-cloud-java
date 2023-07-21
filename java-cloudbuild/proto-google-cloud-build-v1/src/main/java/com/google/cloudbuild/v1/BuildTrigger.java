@@ -94,6 +94,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     AUTODETECT(18),
     BUILD(4),
     FILENAME(8),
+    GIT_FILE_SOURCE(24),
     BUILDTEMPLATE_NOT_SET(0);
     private final int value;
 
@@ -118,6 +119,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
           return BUILD;
         case 8:
           return FILENAME;
+        case 24:
+          return GIT_FILE_SOURCE;
         case 0:
           return BUILDTEMPLATE_NOT_SET;
         default:
@@ -824,6 +827,57 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int GIT_FILE_SOURCE_FIELD_NUMBER = 24;
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return Whether the gitFileSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitFileSource() {
+    return buildTemplateCase_ == 24;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return The gitFileSource.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitFileSource getGitFileSource() {
+    if (buildTemplateCase_ == 24) {
+      return (com.google.cloudbuild.v1.GitFileSource) buildTemplate_;
+    }
+    return com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitFileSourceOrBuilder getGitFileSourceOrBuilder() {
+    if (buildTemplateCase_ == 24) {
+      return (com.google.cloudbuild.v1.GitFileSource) buildTemplate_;
+    }
+    return com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -1238,6 +1292,71 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_TO_BUILD_FIELD_NUMBER = 26;
+  private com.google.cloudbuild.v1.GitRepoSource sourceToBuild_;
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return Whether the sourceToBuild field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceToBuild() {
+    return sourceToBuild_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return The sourceToBuild.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitRepoSource getSourceToBuild() {
+    return sourceToBuild_ == null
+        ? com.google.cloudbuild.v1.GitRepoSource.getDefaultInstance()
+        : sourceToBuild_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitRepoSourceOrBuilder getSourceToBuildOrBuilder() {
+    return sourceToBuild_ == null
+        ? com.google.cloudbuild.v1.GitRepoSource.getDefaultInstance()
+        : sourceToBuild_;
+  }
+
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 33;
 
   @SuppressWarnings("serial")
@@ -1406,6 +1525,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, name_);
     }
+    if (buildTemplateCase_ == 24) {
+      output.writeMessage(24, (com.google.cloudbuild.v1.GitFileSource) buildTemplate_);
+    }
+    if (sourceToBuild_ != null) {
+      output.writeMessage(26, getSourceToBuild());
+    }
     if (pubsubConfig_ != null) {
       output.writeMessage(29, getPubsubConfig());
     }
@@ -1501,6 +1626,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, name_);
     }
+    if (buildTemplateCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloudbuild.v1.GitFileSource) buildTemplate_);
+    }
+    if (sourceToBuild_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSourceToBuild());
+    }
     if (pubsubConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getPubsubConfig());
     }
@@ -1565,6 +1698,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!getIgnoredFilesList().equals(other.getIgnoredFilesList())) return false;
     if (!getIncludedFilesList().equals(other.getIncludedFilesList())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (hasSourceToBuild() != other.hasSourceToBuild()) return false;
+    if (hasSourceToBuild()) {
+      if (!getSourceToBuild().equals(other.getSourceToBuild())) return false;
+    }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (hasRepositoryEventConfig() != other.hasRepositoryEventConfig()) return false;
     if (hasRepositoryEventConfig()) {
@@ -1580,6 +1717,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getFilename().equals(other.getFilename())) return false;
+        break;
+      case 24:
+        if (!getGitFileSource().equals(other.getGitFileSource())) return false;
         break;
       case 0:
       default:
@@ -1643,6 +1783,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    if (hasSourceToBuild()) {
+      hash = (37 * hash) + SOURCE_TO_BUILD_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceToBuild().hashCode();
+    }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
     if (hasRepositoryEventConfig()) {
@@ -1661,6 +1805,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + FILENAME_FIELD_NUMBER;
         hash = (53 * hash) + getFilename().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + GIT_FILE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGitFileSource().hashCode();
         break;
       case 0:
       default:
@@ -1852,6 +2000,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (buildBuilder_ != null) {
         buildBuilder_.clear();
       }
+      if (gitFileSourceBuilder_ != null) {
+        gitFileSourceBuilder_.clear();
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1862,6 +2013,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filter_ = "";
+      sourceToBuild_ = null;
+      if (sourceToBuildBuilder_ != null) {
+        sourceToBuildBuilder_.dispose();
+        sourceToBuildBuilder_ = null;
+      }
       serviceAccount_ = "";
       repositoryEventConfig_ = null;
       if (repositoryEventConfigBuilder_ != null) {
@@ -1938,31 +2094,35 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         result.webhookConfig_ =
             webhookConfigBuilder_ == null ? webhookConfig_ : webhookConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.disabled_ = disabled_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.substitutions_ = internalGetSubstitutions();
         result.substitutions_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         ignoredFiles_.makeImmutable();
         result.ignoredFiles_ = ignoredFiles_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         includedFiles_.makeImmutable();
         result.includedFiles_ = includedFiles_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.filter_ = filter_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.sourceToBuild_ =
+            sourceToBuildBuilder_ == null ? sourceToBuild_ : sourceToBuildBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.repositoryEventConfig_ =
             repositoryEventConfigBuilder_ == null
                 ? repositoryEventConfig_
@@ -1975,6 +2135,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       result.buildTemplate_ = this.buildTemplate_;
       if (buildTemplateCase_ == 4 && buildBuilder_ != null) {
         result.buildTemplate_ = buildBuilder_.build();
+      }
+      if (buildTemplateCase_ == 24 && gitFileSourceBuilder_ != null) {
+        result.buildTemplate_ = gitFileSourceBuilder_.build();
       }
     }
 
@@ -2072,11 +2235,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         setDisabled(other.getDisabled());
       }
       internalGetMutableSubstitutions().mergeFrom(other.internalGetSubstitutions());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       if (!other.ignoredFiles_.isEmpty()) {
         if (ignoredFiles_.isEmpty()) {
           ignoredFiles_ = other.ignoredFiles_;
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00010000;
         } else {
           ensureIgnoredFilesIsMutable();
           ignoredFiles_.addAll(other.ignoredFiles_);
@@ -2086,7 +2249,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.includedFiles_.isEmpty()) {
         if (includedFiles_.isEmpty()) {
           includedFiles_ = other.includedFiles_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00020000;
         } else {
           ensureIncludedFilesIsMutable();
           includedFiles_.addAll(other.includedFiles_);
@@ -2095,12 +2258,15 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.hasSourceToBuild()) {
+        mergeSourceToBuild(other.getSourceToBuild());
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasRepositoryEventConfig()) {
@@ -2122,6 +2288,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             buildTemplateCase_ = 8;
             buildTemplate_ = other.buildTemplate_;
             onChanged();
+            break;
+          }
+        case GIT_FILE_SOURCE:
+          {
+            mergeGitFileSource(other.getGitFileSource());
             break;
           }
         case BUILDTEMPLATE_NOT_SET:
@@ -2170,7 +2341,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 42
             case 58:
@@ -2189,7 +2360,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 72
             case 82:
@@ -2207,7 +2378,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSubstitutions()
                     .getMutableMap()
                     .put(substitutions__.getKey(), substitutions__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 90
             case 106:
@@ -2249,6 +2420,18 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 170
+            case 194:
+              {
+                input.readMessage(getGitFileSourceFieldBuilder().getBuilder(), extensionRegistry);
+                buildTemplateCase_ = 24;
+                break;
+              } // case 194
+            case 210:
+              {
+                input.readMessage(getSourceToBuildFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 210
             case 234:
               {
                 input.readMessage(getPubsubConfigFieldBuilder().getBuilder(), extensionRegistry);
@@ -2258,7 +2441,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             case 242:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 242
             case 250:
@@ -2270,7 +2453,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             case 266:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 266
             case 274:
@@ -2283,7 +2466,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getRepositoryEventConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 314
             default:
@@ -4232,6 +4415,215 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitFileSource,
+            com.google.cloudbuild.v1.GitFileSource.Builder,
+            com.google.cloudbuild.v1.GitFileSourceOrBuilder>
+        gitFileSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     *
+     * @return Whether the gitFileSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitFileSource() {
+      return buildTemplateCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     *
+     * @return The gitFileSource.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.GitFileSource getGitFileSource() {
+      if (gitFileSourceBuilder_ == null) {
+        if (buildTemplateCase_ == 24) {
+          return (com.google.cloudbuild.v1.GitFileSource) buildTemplate_;
+        }
+        return com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+      } else {
+        if (buildTemplateCase_ == 24) {
+          return gitFileSourceBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    public Builder setGitFileSource(com.google.cloudbuild.v1.GitFileSource value) {
+      if (gitFileSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buildTemplate_ = value;
+        onChanged();
+      } else {
+        gitFileSourceBuilder_.setMessage(value);
+      }
+      buildTemplateCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    public Builder setGitFileSource(
+        com.google.cloudbuild.v1.GitFileSource.Builder builderForValue) {
+      if (gitFileSourceBuilder_ == null) {
+        buildTemplate_ = builderForValue.build();
+        onChanged();
+      } else {
+        gitFileSourceBuilder_.setMessage(builderForValue.build());
+      }
+      buildTemplateCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    public Builder mergeGitFileSource(com.google.cloudbuild.v1.GitFileSource value) {
+      if (gitFileSourceBuilder_ == null) {
+        if (buildTemplateCase_ == 24
+            && buildTemplate_ != com.google.cloudbuild.v1.GitFileSource.getDefaultInstance()) {
+          buildTemplate_ =
+              com.google.cloudbuild.v1.GitFileSource.newBuilder(
+                      (com.google.cloudbuild.v1.GitFileSource) buildTemplate_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          buildTemplate_ = value;
+        }
+        onChanged();
+      } else {
+        if (buildTemplateCase_ == 24) {
+          gitFileSourceBuilder_.mergeFrom(value);
+        } else {
+          gitFileSourceBuilder_.setMessage(value);
+        }
+      }
+      buildTemplateCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    public Builder clearGitFileSource() {
+      if (gitFileSourceBuilder_ == null) {
+        if (buildTemplateCase_ == 24) {
+          buildTemplateCase_ = 0;
+          buildTemplate_ = null;
+          onChanged();
+        }
+      } else {
+        if (buildTemplateCase_ == 24) {
+          buildTemplateCase_ = 0;
+          buildTemplate_ = null;
+        }
+        gitFileSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    public com.google.cloudbuild.v1.GitFileSource.Builder getGitFileSourceBuilder() {
+      return getGitFileSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.GitFileSourceOrBuilder getGitFileSourceOrBuilder() {
+      if ((buildTemplateCase_ == 24) && (gitFileSourceBuilder_ != null)) {
+        return gitFileSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (buildTemplateCase_ == 24) {
+          return (com.google.cloudbuild.v1.GitFileSource) buildTemplate_;
+        }
+        return com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file source describing the local or remote Build template.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitFileSource,
+            com.google.cloudbuild.v1.GitFileSource.Builder,
+            com.google.cloudbuild.v1.GitFileSourceOrBuilder>
+        getGitFileSourceFieldBuilder() {
+      if (gitFileSourceBuilder_ == null) {
+        if (!(buildTemplateCase_ == 24)) {
+          buildTemplate_ = com.google.cloudbuild.v1.GitFileSource.getDefaultInstance();
+        }
+        gitFileSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitFileSource,
+                com.google.cloudbuild.v1.GitFileSource.Builder,
+                com.google.cloudbuild.v1.GitFileSourceOrBuilder>(
+                (com.google.cloudbuild.v1.GitFileSource) buildTemplate_,
+                getParentForChildren(),
+                isClean());
+        buildTemplate_ = null;
+      }
+      buildTemplateCase_ = 24;
+      onChanged();
+      return gitFileSourceBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4252,7 +4644,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4296,7 +4688,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4317,7 +4709,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4334,7 +4726,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4344,7 +4736,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4360,7 +4752,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4381,7 +4773,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4464,7 +4856,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4480,7 +4872,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       disabled_ = false;
       onChanged();
       return this;
@@ -4506,7 +4898,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!substitutions_.isMutable()) {
         substitutions_ = substitutions_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return substitutions_;
     }
@@ -4595,7 +4987,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSubstitutions() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableSubstitutions().getMutableMap().clear();
       return this;
     }
@@ -4619,7 +5011,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSubstitutions() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableSubstitutions().getMutableMap();
     }
     /**
@@ -4640,7 +5032,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableSubstitutions().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -4655,7 +5047,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSubstitutions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSubstitutions().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -4666,7 +5058,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!ignoredFiles_.isModifiable()) {
         ignoredFiles_ = new com.google.protobuf.LazyStringArrayList(ignoredFiles_);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -4786,7 +5178,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.set(index, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4816,7 +5208,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.add(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4843,7 +5235,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIgnoredFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIgnoredFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ignoredFiles_);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4868,7 +5260,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIgnoredFiles() {
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       ;
       onChanged();
       return this;
@@ -4900,7 +5292,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.add(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4912,7 +5304,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!includedFiles_.isModifiable()) {
         includedFiles_ = new com.google.protobuf.LazyStringArrayList(includedFiles_);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
     }
     /**
      *
@@ -5027,7 +5419,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedFilesIsMutable();
       includedFiles_.set(index, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5056,7 +5448,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedFilesIsMutable();
       includedFiles_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5082,7 +5474,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIncludedFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIncludedFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedFiles_);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5106,7 +5498,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIncludedFiles() {
       includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       ;
       onChanged();
       return this;
@@ -5137,7 +5529,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIncludedFilesIsMutable();
       includedFiles_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5204,7 +5596,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5221,7 +5613,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5243,9 +5635,238 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloudbuild.v1.GitRepoSource sourceToBuild_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitRepoSource,
+            com.google.cloudbuild.v1.GitRepoSource.Builder,
+            com.google.cloudbuild.v1.GitRepoSourceOrBuilder>
+        sourceToBuildBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     *
+     * @return Whether the sourceToBuild field is set.
+     */
+    public boolean hasSourceToBuild() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     *
+     * @return The sourceToBuild.
+     */
+    public com.google.cloudbuild.v1.GitRepoSource getSourceToBuild() {
+      if (sourceToBuildBuilder_ == null) {
+        return sourceToBuild_ == null
+            ? com.google.cloudbuild.v1.GitRepoSource.getDefaultInstance()
+            : sourceToBuild_;
+      } else {
+        return sourceToBuildBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public Builder setSourceToBuild(com.google.cloudbuild.v1.GitRepoSource value) {
+      if (sourceToBuildBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceToBuild_ = value;
+      } else {
+        sourceToBuildBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public Builder setSourceToBuild(
+        com.google.cloudbuild.v1.GitRepoSource.Builder builderForValue) {
+      if (sourceToBuildBuilder_ == null) {
+        sourceToBuild_ = builderForValue.build();
+      } else {
+        sourceToBuildBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public Builder mergeSourceToBuild(com.google.cloudbuild.v1.GitRepoSource value) {
+      if (sourceToBuildBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && sourceToBuild_ != null
+            && sourceToBuild_ != com.google.cloudbuild.v1.GitRepoSource.getDefaultInstance()) {
+          getSourceToBuildBuilder().mergeFrom(value);
+        } else {
+          sourceToBuild_ = value;
+        }
+      } else {
+        sourceToBuildBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public Builder clearSourceToBuild() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      sourceToBuild_ = null;
+      if (sourceToBuildBuilder_ != null) {
+        sourceToBuildBuilder_.dispose();
+        sourceToBuildBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public com.google.cloudbuild.v1.GitRepoSource.Builder getSourceToBuildBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getSourceToBuildFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    public com.google.cloudbuild.v1.GitRepoSourceOrBuilder getSourceToBuildOrBuilder() {
+      if (sourceToBuildBuilder_ != null) {
+        return sourceToBuildBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceToBuild_ == null
+            ? com.google.cloudbuild.v1.GitRepoSource.getDefaultInstance()
+            : sourceToBuild_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The repo and ref of the repository from which to build. This field
+     * is used only for those triggers that do not respond to SCM events.
+     * Triggers that respond to such events build source at whatever commit
+     * caused the event.
+     * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+     * triggers.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitRepoSource,
+            com.google.cloudbuild.v1.GitRepoSource.Builder,
+            com.google.cloudbuild.v1.GitRepoSourceOrBuilder>
+        getSourceToBuildFieldBuilder() {
+      if (sourceToBuildBuilder_ == null) {
+        sourceToBuildBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitRepoSource,
+                com.google.cloudbuild.v1.GitRepoSource.Builder,
+                com.google.cloudbuild.v1.GitRepoSourceOrBuilder>(
+                getSourceToBuild(), getParentForChildren(), isClean());
+        sourceToBuild_ = null;
+      }
+      return sourceToBuildBuilder_;
     }
 
     private java.lang.Object serviceAccount_ = "";
@@ -5322,7 +5943,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5343,7 +5964,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5369,7 +5990,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5394,7 +6015,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the repositoryEventConfig field is set.
      */
     public boolean hasRepositoryEventConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -5438,7 +6059,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         repositoryEventConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5460,7 +6081,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         repositoryEventConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5478,7 +6099,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRepositoryEventConfig(
         com.google.cloudbuild.v1.RepositoryEventConfig value) {
       if (repositoryEventConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && repositoryEventConfig_ != null
             && repositoryEventConfig_
                 != com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()) {
@@ -5489,7 +6110,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         repositoryEventConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5505,7 +6126,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRepositoryEventConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       repositoryEventConfig_ = null;
       if (repositoryEventConfigBuilder_ != null) {
         repositoryEventConfigBuilder_.dispose();
@@ -5527,7 +6148,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloudbuild.v1.RepositoryEventConfig.Builder
         getRepositoryEventConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getRepositoryEventConfigFieldBuilder().getBuilder();
     }
