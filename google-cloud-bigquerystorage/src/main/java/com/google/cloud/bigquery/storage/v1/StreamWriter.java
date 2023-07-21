@@ -215,6 +215,7 @@ public class StreamWriter implements AutoCloseable {
                   builder.maxRetryDuration,
                   builder.limitExceededBehavior,
                   builder.traceId,
+                  builder.compressorName,
                   clientSettings));
     } else {
       if (!isDefaultStream(streamName)) {
@@ -276,6 +277,7 @@ public class StreamWriter implements AutoCloseable {
                         builder.maxRetryDuration,
                         builder.limitExceededBehavior,
                         builder.traceId,
+                        builder.compressorName,
                         client.getSettings());
                   }));
       validateFetchedConnectonPool(builder);
@@ -598,6 +600,8 @@ public class StreamWriter implements AutoCloseable {
 
     private java.time.Duration maxRetryDuration = Duration.ofMinutes(5);
 
+    private String compressorName = null;
+
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);
       this.client = null;
@@ -713,6 +717,16 @@ public class StreamWriter implements AutoCloseable {
      */
     public Builder setMaxRetryDuration(java.time.Duration maxRetryDuration) {
       this.maxRetryDuration = maxRetryDuration;
+      return this;
+    }
+
+    public Builder setCompressorName(String compressorName) {
+      Preconditions.checkNotNull(compressorName);
+      Preconditions.checkArgument(
+          compressorName.equals("gzip"),
+          "Compression of type \"%s\" isn't supported, only \"gzip\" compression is supported.",
+          compressorName);
+      this.compressorName = compressorName;
       return this;
     }
 

@@ -41,6 +41,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Pool of connections to accept appends and distirbute to different connections. */
@@ -91,6 +92,10 @@ public class ConnectionWorkerPool {
    * TraceId for debugging purpose.
    */
   private final String traceId;
+  /*
+   * Sets the compression to use for the calls
+   */
+  private String compressorName;
 
   /** Used for test on the number of times createWorker is called. */
   private final AtomicInteger testValueCreateConnectionCount = new AtomicInteger(0);
@@ -199,12 +204,14 @@ public class ConnectionWorkerPool {
       java.time.Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
+      @Nullable String comperssorName,
       BigQueryWriteSettings clientSettings) {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.maxRetryDuration = maxRetryDuration;
     this.limitExceededBehavior = limitExceededBehavior;
     this.traceId = traceId;
+    this.compressorName = comperssorName;
     this.clientSettings = clientSettings;
     this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
   }
@@ -379,6 +386,7 @@ public class ConnectionWorkerPool {
             maxRetryDuration,
             limitExceededBehavior,
             traceId,
+            compressorName,
             clientSettings);
     connectionWorkerPool.add(connectionWorker);
     log.info(

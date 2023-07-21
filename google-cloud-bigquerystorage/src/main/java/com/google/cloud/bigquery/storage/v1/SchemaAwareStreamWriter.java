@@ -62,6 +62,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
   private Descriptor descriptor;
   private TableSchema tableSchema;
   private ProtoSchema protoSchema;
+  private String CompressorName;
 
   // During some sitaution we want to skip stream writer refresh for updated schema. e.g. when
   // the user provides the table schema, we should always use that schema.
@@ -92,7 +93,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         builder.endpoint,
         builder.flowControlSettings,
         builder.traceIdBase,
-        builder.traceId);
+        builder.traceId,
+        builder.compressorName);
     streamWriterBuilder.setEnableConnectionPool(builder.enableConnectionPool);
     streamWriterBuilder.setLocation(builder.location);
     this.streamWriter = streamWriterBuilder.build();
@@ -276,7 +278,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       @Nullable String endpoint,
       @Nullable FlowControlSettings flowControlSettings,
       @Nullable String traceIdBase,
-      @Nullable String traceId) {
+      @Nullable String traceId,
+      @Nullable String compressorName) {
     if (channelProvider != null) {
       streamWriterBuilder.setChannelProvider(channelProvider);
     }
@@ -315,6 +318,9 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         streamWriterBuilder.setLimitExceededBehavior(
             flowControlSettings.getLimitExceededBehavior());
       }
+    }
+    if (compressorName != null) {
+      streamWriterBuilder.setCompressorName(compressorName);
     }
   }
 
@@ -425,6 +431,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     // Indicates whether multiplexing mode is enabled.
     private boolean enableConnectionPool = false;
     private String location;
+    private String compressorName;
 
     private static final String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -606,6 +613,17 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
             "Specified location " + location + " does not match the system value " + this.location);
       }
       this.location = location;
+      return this;
+    }
+
+    /**
+     * Sets the compression to use for the calls. The compressor must be of type gzip.
+     *
+     * @param compressorName
+     * @return Builder
+     */
+    public Builder<T> setCompressorName(String compressorName) {
+      this.compressorName = compressorName;
       return this;
     }
 

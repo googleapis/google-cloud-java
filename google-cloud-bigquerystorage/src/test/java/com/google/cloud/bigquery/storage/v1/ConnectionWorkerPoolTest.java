@@ -477,6 +477,7 @@ public class ConnectionWorkerPoolTest {
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
+        null,
         clientSettings);
   }
 }

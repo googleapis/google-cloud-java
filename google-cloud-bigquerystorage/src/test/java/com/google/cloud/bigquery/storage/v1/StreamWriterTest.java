@@ -950,6 +950,20 @@ public class StreamWriterTest {
   }
 
   @Test
+  public void testWrongCompressionType() throws Exception {
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              StreamWriter.newBuilder(TEST_STREAM_1, client).setCompressorName("not-gzip").build();
+            });
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is supported."));
+  }
+
+  @Test
   public void testThrowExceptionWhileWithinAppendLoop_MaxWaitTimeExceed() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter.setMaxRequestCallbackWaitTime(java.time.Duration.ofSeconds(1));

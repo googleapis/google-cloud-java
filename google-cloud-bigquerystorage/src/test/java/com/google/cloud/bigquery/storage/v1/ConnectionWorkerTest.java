@@ -333,6 +333,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
     testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
@@ -388,6 +389,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
     testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
@@ -451,6 +453,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
     StatusRuntimeException ex =
         assertThrows(
@@ -481,6 +484,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
     StatusRuntimeException ex =
         assertThrows(
@@ -532,6 +536,7 @@ public class ConnectionWorkerTest {
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
+        null,
         client.getSettings());
   }
 
@@ -625,6 +630,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
     testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(3));
 
@@ -681,6 +687,7 @@ public class ConnectionWorkerTest {
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
             TEST_TRACE_ID,
+            null,
             client.getSettings());
 
     long appendCount = 10;

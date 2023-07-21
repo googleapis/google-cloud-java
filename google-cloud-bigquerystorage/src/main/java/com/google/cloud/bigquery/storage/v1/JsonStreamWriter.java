@@ -337,6 +337,17 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
+     * Sets the compression to use for the calls. The compressor must be of type gzip.
+     *
+     * @param compressorName
+     * @return Builder
+     */
+    public Builder setCompressorName(String compressorName) {
+      this.schemaAwareStreamWriterBuilder.setCompressorName(compressorName);
+      return this;
+    }
+
+    /**
      * Builds JsonStreamWriter
      *
      * @return JsonStreamWriter

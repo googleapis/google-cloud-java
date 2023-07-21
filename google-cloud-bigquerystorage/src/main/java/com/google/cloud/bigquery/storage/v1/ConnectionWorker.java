@@ -53,6 +53,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
@@ -119,6 +120,10 @@ class ConnectionWorker implements AutoCloseable {
    */
   private final String traceId;
 
+  /*
+   * Enables compression on the wire.
+   */
+  private String compressorName = null;
   /*
    * Tracks current inflight requests in the stream.
    */
@@ -253,6 +258,7 @@ class ConnectionWorker implements AutoCloseable {
       Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
+      @Nullable String compressorName,
       BigQueryWriteSettings clientSettings)
       throws IOException {
     this.lock = new ReentrantLock();
@@ -274,6 +280,7 @@ class ConnectionWorker implements AutoCloseable {
     this.traceId = traceId;
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
+    this.compressorName = compressorName;
     // Always recreate a client for connection worker.
     HashMap<String, String> newHeaders = new HashMap<>();
     newHeaders.putAll(clientSettings.toBuilder().getHeaderProvider().getHeaders());
@@ -343,7 +350,8 @@ class ConnectionWorker implements AutoCloseable {
               public void run(Throwable finalStatus) {
                 doneCallback(finalStatus);
               }
-            });
+            },
+            this.compressorName);
     log.info("Finish connecting stream: " + streamName + " id: " + writerId);
   }
 

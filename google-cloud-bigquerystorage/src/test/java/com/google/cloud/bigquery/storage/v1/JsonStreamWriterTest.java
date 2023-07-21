@@ -1452,4 +1452,20 @@ public class JsonStreamWriterTest {
           missingValueMap);
     }
   }
+
+  @Test
+  public void testWrongCompressionType() throws Exception {
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+                  .setCompressorName("not-gzip")
+                  .build();
+            });
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is supported."));
+  }
 }
