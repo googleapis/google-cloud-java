@@ -196,11 +196,14 @@ public final class SimulatorProto {
           + "ltsZ<\022:/v1/{parent=organizations/*/locat"
           + "ions/*/replays/*}/results\032R\312A\036policysimu"
           + "lator.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\211\001\n#com.go"
+          + "eapis.com/auth/cloud-platformB\362\001\n#com.go"
           + "ogle.cloud.policysimulator.v1B\016Simulator"
           + "ProtoP\001ZMcloud.google.com/go/policysimul"
           + "ator/apiv1/policysimulatorpb;policysimul"
-          + "atorpb\370\001\001b\006proto3"
+          + "atorpb\370\001\001\252\002\037Google.Cloud.PolicySimulator"
+          + ".V1\312\002\037Google\\Cloud\\PolicySimulator\\V1\352\002\""
+          + "Google::Cloud::PolicySimulator::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

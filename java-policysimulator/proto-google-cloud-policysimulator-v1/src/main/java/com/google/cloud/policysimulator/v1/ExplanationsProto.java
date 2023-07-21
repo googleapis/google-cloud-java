@@ -103,11 +103,13 @@ public final class ExplanationsProto {
           + "ANTED\020\002\022\027\n\023UNKNOWN_CONDITIONAL\020\003\022\027\n\023UNKN"
           + "OWN_INFO_DENIED\020\004*O\n\022HeuristicRelevance\022"
           + "#\n\037HEURISTIC_RELEVANCE_UNSPECIFIED\020\000\022\n\n\006"
-          + "NORMAL\020\001\022\010\n\004HIGH\020\002B\214\001\n#com.google.cloud."
+          + "NORMAL\020\001\022\010\n\004HIGH\020\002B\365\001\n#com.google.cloud."
           + "policysimulator.v1B\021ExplanationsProtoP\001Z"
           + "Mcloud.google.com/go/policysimulator/api"
           + "v1/policysimulatorpb;policysimulatorpb\370\001"
-          + "\001b\006proto3"
+          + "\001\252\002\037Google.Cloud.PolicySimulator.V1\312\002\037Go"
+          + "ogle\\Cloud\\PolicySimulator\\V1\352\002\"Google::"
+          + "Cloud::PolicySimulator::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
