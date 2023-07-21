@@ -177,6 +177,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    AES_128_CBC(42),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    AES_256_CBC(43),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    AES_128_CTR(44),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    AES_256_CTR(45),
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -497,6 +537,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    public static final int AES_128_CBC_VALUE = 42;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    public static final int AES_256_CBC_VALUE = 43;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    public static final int AES_128_CTR_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    public static final int AES_256_CTR_VALUE = 45;
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -803,6 +883,14 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return AES_128_GCM;
         case 19:
           return AES_256_GCM;
+        case 42:
+          return AES_128_CBC;
+        case 43:
+          return AES_256_CBC;
+        case 44:
+          return AES_128_CTR;
+        case 45:
+          return AES_256_CTR;
         case 2:
           return RSA_SIGN_PSS_2048_SHA256;
         case 3:
