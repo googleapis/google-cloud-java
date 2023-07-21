@@ -335,8 +335,8 @@ public class ResourceSettingsServiceClientHttpJsonTest {
             .setSetting(
                 Setting.newBuilder()
                     .setName(
-                        SettingName.ofProjectNumberSettingNameName(
-                                "[PROJECT_NUMBER]", "[SETTING_NAME]")
+                        SettingName.ofOrganizationSettingNameName(
+                                "[ORGANIZATION]", "[SETTING_NAME]")
                             .toString())
                     .setMetadata(SettingMetadata.newBuilder().build())
                     .setLocalValue(Value.newBuilder().build())
@@ -376,8 +376,8 @@ public class ResourceSettingsServiceClientHttpJsonTest {
               .setSetting(
                   Setting.newBuilder()
                       .setName(
-                          SettingName.ofProjectNumberSettingNameName(
-                                  "[PROJECT_NUMBER]", "[SETTING_NAME]")
+                          SettingName.ofOrganizationSettingNameName(
+                                  "[ORGANIZATION]", "[SETTING_NAME]")
                               .toString())
                       .setMetadata(SettingMetadata.newBuilder().build())
                       .setLocalValue(Value.newBuilder().build())

@@ -824,7 +824,8 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Ignore(
+      "Ignore until https://github.com/googleapis/sdk-platform-java/issues/1839 is resolved. Remove from preserve regex.")
   @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -882,7 +883,8 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Ignore(
+      "Ignore until https://github.com/googleapis/sdk-platform-java/issues/1839 is resolved. Remove from preserve regex.")
   @Test
   public void getIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -938,7 +940,8 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Ignore(
+      "Ignore until https://github.com/googleapis/sdk-platform-java/issues/1839 is resolved. Remove from preserve regex.")
   @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
