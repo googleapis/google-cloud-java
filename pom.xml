@@ -114,6 +114,7 @@
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
+    <module>java-netapp</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>
     <module>java-network-security</module>
@@ -125,6 +126,7 @@
     <module>java-os-config</module>
     <module>java-os-login</module>
     <module>java-phishingprotection</module>
+    <module>java-policysimulator</module>
     <module>java-policy-troubleshooter</module>
     <module>java-private-catalog</module>
     <module>java-profiler</module>

@@ -2507,6 +2507,835 @@ public class LivestreamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a Asset with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Asset asset = Asset.newBuilder().build();
+   *   String assetId = "assetId-704776149";
+   *   Asset response = livestreamServiceClient.createAssetAsync(parent, asset, assetId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent location for the resource, in the form of:
+   *     `projects/{project}/locations/{location}`.
+   * @param asset Required. The asset resource to be created.
+   * @param assetId Required. The ID of the asset resource to be created. This value must be 1-63
+   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
+      LocationName parent, Asset asset, String assetId) {
+    CreateAssetRequest request =
+        CreateAssetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAsset(asset)
+            .setAssetId(assetId)
+            .build();
+    return createAssetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Asset with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Asset asset = Asset.newBuilder().build();
+   *   String assetId = "assetId-704776149";
+   *   Asset response = livestreamServiceClient.createAssetAsync(parent, asset, assetId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent location for the resource, in the form of:
+   *     `projects/{project}/locations/{location}`.
+   * @param asset Required. The asset resource to be created.
+   * @param assetId Required. The ID of the asset resource to be created. This value must be 1-63
+   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
+      String parent, Asset asset, String assetId) {
+    CreateAssetRequest request =
+        CreateAssetRequest.newBuilder()
+            .setParent(parent)
+            .setAsset(asset)
+            .setAssetId(assetId)
+            .build();
+    return createAssetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Asset with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateAssetRequest request =
+   *       CreateAssetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAsset(Asset.newBuilder().build())
+   *           .setAssetId("assetId-704776149")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Asset response = livestreamServiceClient.createAssetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
+      CreateAssetRequest request) {
+    return createAssetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Asset with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateAssetRequest request =
+   *       CreateAssetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAsset(Asset.newBuilder().build())
+   *           .setAssetId("assetId-704776149")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Asset, OperationMetadata> future =
+   *       livestreamServiceClient.createAssetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Asset response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable() {
+    return stub.createAssetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Asset with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateAssetRequest request =
+   *       CreateAssetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAsset(Asset.newBuilder().build())
+   *           .setAssetId("assetId-704776149")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.createAssetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable() {
+    return stub.createAssetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified asset if it is not used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+   *   livestreamServiceClient.deleteAssetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the asset resource, in the form of:
+   *     `projects/{project}/locations/{location}/assets/{assetId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(AssetName name) {
+    DeleteAssetRequest request =
+        DeleteAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteAssetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified asset if it is not used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString();
+   *   livestreamServiceClient.deleteAssetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the asset resource, in the form of:
+   *     `projects/{project}/locations/{location}/assets/{assetId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(String name) {
+    DeleteAssetRequest request = DeleteAssetRequest.newBuilder().setName(name).build();
+    return deleteAssetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified asset if it is not used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteAssetRequest request =
+   *       DeleteAssetRequest.newBuilder()
+   *           .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   livestreamServiceClient.deleteAssetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(
+      DeleteAssetRequest request) {
+    return deleteAssetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified asset if it is not used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteAssetRequest request =
+   *       DeleteAssetRequest.newBuilder()
+   *           .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       livestreamServiceClient.deleteAssetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable() {
+    return stub.deleteAssetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified asset if it is not used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteAssetRequest request =
+   *       DeleteAssetRequest.newBuilder()
+   *           .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.deleteAssetCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable() {
+    return stub.deleteAssetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified asset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+   *   Asset response = livestreamServiceClient.getAsset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/assets/{asset}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Asset getAsset(AssetName name) {
+    GetAssetRequest request =
+        GetAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAsset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified asset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString();
+   *   Asset response = livestreamServiceClient.getAsset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/assets/{asset}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Asset getAsset(String name) {
+    GetAssetRequest request = GetAssetRequest.newBuilder().setName(name).build();
+    return getAsset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified asset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetAssetRequest request =
+   *       GetAssetRequest.newBuilder()
+   *           .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+   *           .build();
+   *   Asset response = livestreamServiceClient.getAsset(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Asset getAsset(GetAssetRequest request) {
+    return getAssetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified asset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetAssetRequest request =
+   *       GetAssetRequest.newBuilder()
+   *           .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+   *           .build();
+   *   ApiFuture<Asset> future = livestreamServiceClient.getAssetCallable().futureCall(request);
+   *   // Do something.
+   *   Asset response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAssetRequest, Asset> getAssetCallable() {
+    return stub.getAssetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all assets in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Asset element : livestreamServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent location for the resource, in the form of:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(LocationName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all assets in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Asset element : livestreamServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent location for the resource, in the form of:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(String parent) {
+    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all assets in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Asset element : livestreamServiceClient.listAssets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(ListAssetsRequest request) {
+    return listAssetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all assets in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Asset> future =
+   *       livestreamServiceClient.listAssetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Asset element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    return stub.listAssetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all assets in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAssetsResponse response = livestreamServiceClient.listAssetsCallable().call(request);
+   *     for (Asset element : response.getAssetsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return stub.listAssetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   PoolName name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]");
+   *   Pool response = livestreamServiceClient.getPool(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the pool resource, in the form of:
+   *     `projects/{project}/locations/{location}/pools/{poolId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Pool getPool(PoolName name) {
+    GetPoolRequest request =
+        GetPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString();
+   *   Pool response = livestreamServiceClient.getPool(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the pool resource, in the form of:
+   *     `projects/{project}/locations/{location}/pools/{poolId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Pool getPool(String name) {
+    GetPoolRequest request = GetPoolRequest.newBuilder().setName(name).build();
+    return getPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetPoolRequest request =
+   *       GetPoolRequest.newBuilder()
+   *           .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+   *           .build();
+   *   Pool response = livestreamServiceClient.getPool(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Pool getPool(GetPoolRequest request) {
+    return getPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetPoolRequest request =
+   *       GetPoolRequest.newBuilder()
+   *           .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+   *           .build();
+   *   ApiFuture<Pool> future = livestreamServiceClient.getPoolCallable().futureCall(request);
+   *   // Do something.
+   *   Pool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPoolRequest, Pool> getPoolCallable() {
+    return stub.getPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   Pool pool = Pool.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Pool response = livestreamServiceClient.updatePoolAsync(pool, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param pool Required. The pool resource to be updated.
+   * @param updateMask Field mask is used to specify the fields to be overwritten in the Pool
+   *     resource by the update. You can only update the following fields:
+   *     <ul>
+   *       <li>`networkConfig`
+   *     </ul>
+   *     <p>The fields specified in the update_mask are relative to the resource, not the full
+   *     request. A field will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Pool, OperationMetadata> updatePoolAsync(
+      Pool pool, FieldMask updateMask) {
+    UpdatePoolRequest request =
+        UpdatePoolRequest.newBuilder().setPool(pool).setUpdateMask(updateMask).build();
+    return updatePoolAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdatePoolRequest request =
+   *       UpdatePoolRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setPool(Pool.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Pool response = livestreamServiceClient.updatePoolAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Pool, OperationMetadata> updatePoolAsync(UpdatePoolRequest request) {
+    return updatePoolOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdatePoolRequest request =
+   *       UpdatePoolRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setPool(Pool.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Pool, OperationMetadata> future =
+   *       livestreamServiceClient.updatePoolOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Pool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable() {
+    return stub.updatePoolOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdatePoolRequest request =
+   *       UpdatePoolRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setPool(Pool.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.updatePoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable() {
+    return stub.updatePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2910,6 +3739,79 @@ public class LivestreamServiceClient implements BackgroundResource {
     protected ListEventsFixedSizeCollection createCollection(
         List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAssetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAssetsRequest,
+          ListAssetsResponse,
+          Asset,
+          ListAssetsPage,
+          ListAssetsFixedSizeCollection> {
+
+    public static ApiFuture<ListAssetsPagedResponse> createAsync(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ApiFuture<ListAssetsResponse> futureResponse) {
+      ApiFuture<ListAssetsPage> futurePage =
+          ListAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListAssetsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListAssetsPagedResponse(ListAssetsPage page) {
+      super(page, ListAssetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAssetsPage
+      extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
+
+    private ListAssetsPage(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ListAssetsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAssetsPage createEmptyPage() {
+      return new ListAssetsPage(null, null);
+    }
+
+    @Override
+    protected ListAssetsPage createPage(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ListAssetsResponse response) {
+      return new ListAssetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAssetsPage> createPageAsync(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ApiFuture<ListAssetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAssetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAssetsRequest,
+          ListAssetsResponse,
+          Asset,
+          ListAssetsPage,
+          ListAssetsFixedSizeCollection> {
+
+    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAssetsFixedSizeCollection createEmptyCollection() {
+      return new ListAssetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAssetsFixedSizeCollection createCollection(
+        List<ListAssetsPage> pages, int collectionSize) {
+      return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -47,20 +47,21 @@ public final class NamespaceProto {
       "\n0google/cloud/servicedirectory/v1/names"
           + "pace.proto\022 google.cloud.servicedirector"
           + "y.v1\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\"\215\002\n\tNamespace\022\022"
+          + "oogle/api/resource.proto\"\240\002\n\tNamespace\022\022"
           + "\n\004name\030\001 \001(\tB\004\342A\001\005\022M\n\006labels\030\002 \003(\01327.goo"
           + "gle.cloud.servicedirectory.v1.Namespace."
-          + "LabelsEntryB\004\342A\001\001\032-\n\013LabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n)servicedi"
-          + "rectory.googleapis.com/Namespace\022>projec"
-          + "ts/{project}/locations/{location}/namesp"
-          + "aces/{namespace}B\371\001\n$com.google.cloud.se"
-          + "rvicedirectory.v1B\016NamespaceProtoP\001ZPclo"
-          + "ud.google.com/go/servicedirectory/apiv1/"
-          + "servicedirectorypb;servicedirectorypb\370\001\001"
-          + "\252\002 Google.Cloud.ServiceDirectory.V1\312\002 Go"
-          + "ogle\\Cloud\\ServiceDirectory\\V1\352\002#Google:"
-          + ":Cloud::ServiceDirectory::V1b\006proto3"
+          + "LabelsEntryB\004\342A\001\001\022\021\n\003uid\030\005 \001(\tB\004\342A\001\003\032-\n\013"
+          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+          + "\0028\001:n\352Ak\n)servicedirectory.googleapis.co"
+          + "m/Namespace\022>projects/{project}/location"
+          + "s/{location}/namespaces/{namespace}B\371\001\n$"
+          + "com.google.cloud.servicedirectory.v1B\016Na"
+          + "mespaceProtoP\001ZPcloud.google.com/go/serv"
+          + "icedirectory/apiv1/servicedirectorypb;se"
+          + "rvicedirectorypb\370\001\001\252\002 Google.Cloud.Servi"
+          + "ceDirectory.V1\312\002 Google\\Cloud\\ServiceDir"
+          + "ectory\\V1\352\002#Google::Cloud::ServiceDirect"
+          + "ory::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -75,7 +76,7 @@ public final class NamespaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1_Namespace_descriptor,
             new java.lang.String[] {
-              "Name", "Labels",
+              "Name", "Labels", "Uid",
             });
     internal_static_google_cloud_servicedirectory_v1_Namespace_LabelsEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1_Namespace_descriptor
