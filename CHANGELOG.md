@@ -1,5 +1,44 @@
 # Changelog
 
+## [1.16.0](https://github.com/googleapis/google-cloud-java/compare/v1.15.0...v1.16.0) (2023-07-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* [documentai] removed id field from Document message ([#9642](https://github.com/googleapis/google-cloud-java/issues/9642))
+
+### Features
+
+* [aiplatform] add data_item_count to Dataset ([#9636](https://github.com/googleapis/google-cloud-java/issues/9636)) ([5a82003](https://github.com/googleapis/google-cloud-java/commit/5a82003b7e93ccccf8ff82753a0b3a275564fd96))
+* [alloydb] add metadata exchange support for AlloyDB connectors ([#9639](https://github.com/googleapis/google-cloud-java/issues/9639)) ([c411402](https://github.com/googleapis/google-cloud-java/commit/c41140202e1474ee4436011d51bd607d42f15d5a))
+* [cloudbuild] add git_file_source and git_repo_source to build_trigger ([#9673](https://github.com/googleapis/google-cloud-java/issues/9673)) ([6f96d9c](https://github.com/googleapis/google-cloud-java/commit/6f96d9c155fac34deecef125490430a7bc73fbe1))
+* [cloudbuild] Add routing information in Cloud Build GRPC clients ([#9635](https://github.com/googleapis/google-cloud-java/issues/9635)) ([88ad198](https://github.com/googleapis/google-cloud-java/commit/88ad19815908dc995e4467f14fddc0f5c5dbeec5))
+* [cloudkms] add interoperable symmetric encryption system ([#9667](https://github.com/googleapis/google-cloud-java/issues/9667)) ([a60caeb](https://github.com/googleapis/google-cloud-java/commit/a60caebee4af73c1cb86b4597fc69fb257c1cb20))
+* [cloudtasks] increase timeout of RPC methods to 20s for v2 ([#9646](https://github.com/googleapis/google-cloud-java/issues/9646)) ([9caae4d](https://github.com/googleapis/google-cloud-java/commit/9caae4d63f52ae1305806623452a2cac62f05fc1))
+* [container] Add Multi-networking API ([#9638](https://github.com/googleapis/google-cloud-java/issues/9638)) ([843b17b](https://github.com/googleapis/google-cloud-java/commit/843b17bd983002c94343aef0c27ff61d296f84b6))
+* [documentai] removed id field from Document message ([#9642](https://github.com/googleapis/google-cloud-java/issues/9642)) ([0205042](https://github.com/googleapis/google-cloud-java/commit/02050426e9d69f17bc3a4e376086108f0d48ec28))
+* [kmsinventory] add resource_types to SearchAllResources, to allow filtering by resource type ([#9641](https://github.com/googleapis/google-cloud-java/issues/9641)) ([1e8aa17](https://github.com/googleapis/google-cloud-java/commit/1e8aa175e7b41042cc4244380df765a2b78f60c2))
+* [livestream] added support for slate events which allow users to create and insert a slate into a live stream to replace the main live stream content ([#9665](https://github.com/googleapis/google-cloud-java/issues/9665)) ([9679beb](https://github.com/googleapis/google-cloud-java/commit/9679beb02f6ca20e532cd4267c5773447b816b64))
+* [netapp] new module for netapp ([#9668](https://github.com/googleapis/google-cloud-java/issues/9668)) ([b0c37db](https://github.com/googleapis/google-cloud-java/commit/b0c37db8afe9e922169c5590698e2dc0c014448c))
+* [policysimulator] new module for policysimulator ([#9669](https://github.com/googleapis/google-cloud-java/issues/9669)) ([ebee6cb](https://github.com/googleapis/google-cloud-java/commit/ebee6cb75f23b99e296985037641dc8c66026686))
+* [policytroubleshooter] include errors in troubleshoot response ([#9649](https://github.com/googleapis/google-cloud-java/issues/9649)) ([c7c7860](https://github.com/googleapis/google-cloud-java/commit/c7c786015b0a6ce0423ec58c645d4c1ce9a46a28))
+* [servicedirectory] added network and uid fields in Endpoint message ([#9666](https://github.com/googleapis/google-cloud-java/issues/9666)) ([378391e](https://github.com/googleapis/google-cloud-java/commit/378391ec0294a59c7c1669d15d763cbecf75d1b6))
+
+
+### Bug Fixes
+
+* [policysimulator] add missing options for policysimulator ([#9672](https://github.com/googleapis/google-cloud-java/issues/9672)) ([56c3922](https://github.com/googleapis/google-cloud-java/commit/56c3922c321d70de3d867cf55569e47a4c044389))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.18 ([#9647](https://github.com/googleapis/google-cloud-java/issues/9647)) ([90e4d66](https://github.com/googleapis/google-cloud-java/commit/90e4d66fd9e3658df5bcae3bc89afdc25a458d65))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.7 ([#9651](https://github.com/googleapis/google-cloud-java/issues/9651)) ([c88d623](https://github.com/googleapis/google-cloud-java/commit/c88d623d12a4342b74e31d6a6a05cde0debe871f))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#9655](https://github.com/googleapis/google-cloud-java/issues/9655)) ([affebee](https://github.com/googleapis/google-cloud-java/commit/affebeeb37b1cf88ad5964684e1f112cababcab7))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.24.0 ([#9571](https://github.com/googleapis/google-cloud-java/issues/9571)) ([7ab2869](https://github.com/googleapis/google-cloud-java/commit/7ab2869b697e3377d99b9e5a8b8ba7992c5c3141))
+
+
+### Documentation
+
+* [clouddeploy] small documentation updates ([#9653](https://github.com/googleapis/google-cloud-java/issues/9653)) ([e77037d](https://github.com/googleapis/google-cloud-java/commit/e77037d7d00798e8d8da5e3bcf7dd9bca3735472))
+* [servicemanagement] update docs to existing services ([#9583](https://github.com/googleapis/google-cloud-java/issues/9583)) ([36f5b3c](https://github.com/googleapis/google-cloud-java/commit/36f5b3c40559421bfeaabcdc0f4275e7b4ad90c0))
+
 ## [1.15.0](https://github.com/googleapis/google-cloud-java/compare/v1.14.0...v1.15.0) (2023-07-11)
 
 
