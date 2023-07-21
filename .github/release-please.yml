@@ -7,3 +7,8 @@ branches:
     bumpMinorPreMajor: true
     handleGHRelease: true
     branch: 1.0.x
+  - primaryBranch: main
+    releaseType: java-backport
+    manifest: true
+    handleGHRelease: true
+    branch: 1.13.x
