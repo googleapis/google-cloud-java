@@ -476,7 +476,8 @@ public class CloudBillingClientHttpJsonTest {
     }
   }
 
-  @Ignore("Ignore until https://github.com/googleapis/sdk-platform-java/issues/1780 is resolved")
+  @Ignore(
+      "Ignore until https://github.com/googleapis/sdk-platform-java/issues/1780 is resolved. Remove this file from preserve regex.")
   @Test
   public void getProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
