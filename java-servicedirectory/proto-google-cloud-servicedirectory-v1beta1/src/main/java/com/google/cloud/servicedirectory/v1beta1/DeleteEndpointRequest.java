@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint].
+ * The request message for
+ * [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteEndpointRequest}
@@ -281,7 +282,8 @@ public final class DeleteEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint].
+   * The request message for
+   * [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteEndpointRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace].
+ * The request message for
+ * [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteNamespaceRequest}
@@ -281,7 +282,8 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace].
+   * The request message for
+   * [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteNamespaceRequest}

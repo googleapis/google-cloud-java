@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.DeleteService][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService].
+ * The request message for
+ * [RegistrationService.DeleteService][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteServiceRequest}
@@ -281,7 +282,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [RegistrationService.DeleteService][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService].
+   * The request message for
+   * [RegistrationService.DeleteService][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.DeleteServiceRequest}

@@ -22,8 +22,9 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
- * This should not be used for looking up a service. Insead, use the `resolve`
+ * The request message for
+ * [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
+ * This should not be used for looking up a service. Instead, use the `resolve`
  * method as it contains all endpoints and associated metadata.
  * </pre>
  *
@@ -283,8 +284,9 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
-   * This should not be used for looking up a service. Insead, use the `resolve`
+   * The request message for
+   * [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
+   * This should not be used for looking up a service. Instead, use the `resolve`
    * method as it contains all endpoints and associated metadata.
    * </pre>
    *
