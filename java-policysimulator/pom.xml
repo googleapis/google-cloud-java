@@ -50,4 +50,5 @@
     <module>proto-google-cloud-policysimulator-v1</module>
     <module>google-cloud-policysimulator-bom</module>
   </modules>
-</project>
+
+  </project>
