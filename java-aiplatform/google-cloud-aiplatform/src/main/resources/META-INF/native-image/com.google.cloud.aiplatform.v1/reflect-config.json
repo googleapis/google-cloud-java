@@ -2070,6 +2070,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.aiplatform.v1.CreateScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.CreateScheduleRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.aiplatform.v1.CreateSpecialistPoolOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -2944,6 +2962,24 @@
   },
   {
     "name": "com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.DeleteScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.DeleteScheduleRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -5256,6 +5292,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.aiplatform.v1.GetScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.GetScheduleRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.aiplatform.v1.GetSpecialistPoolRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -6832,6 +6886,42 @@
   },
   {
     "name": "com.google.cloud.aiplatform.v1.ListSavedQueriesResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.ListSchedulesRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.ListSchedulesRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.ListSchedulesResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.ListSchedulesResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -8559,6 +8649,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.aiplatform.v1.PauseScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.PauseScheduleRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.aiplatform.v1.PipelineFailurePolicy",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -9765,6 +9873,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.aiplatform.v1.ResumeScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.ResumeScheduleRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.aiplatform.v1.SampleConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -9874,6 +10000,51 @@
   },
   {
     "name": "com.google.cloud.aiplatform.v1.Scalar$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.Schedule",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.Schedule$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.Schedule$RunResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.Schedule$RunResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.Schedule$State",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -11350,6 +11521,24 @@
   },
   {
     "name": "com.google.cloud.aiplatform.v1.UpdateModelRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.UpdateScheduleRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.UpdateScheduleRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
