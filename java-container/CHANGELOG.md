@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.25.0 (2023-07-21)
+
+### Features
+
+* Add Multi-networking API ([#9638](https://github.com/googleapis/google-cloud-java/issues/9638)) ([843b17b](https://github.com/googleapis/google-cloud-java/commit/843b17bd983002c94343aef0c27ff61d296f84b6))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.7 ([#9651](https://github.com/googleapis/google-cloud-java/issues/9651)) ([c88d623](https://github.com/googleapis/google-cloud-java/commit/c88d623d12a4342b74e31d6a6a05cde0debe871f))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#9655](https://github.com/googleapis/google-cloud-java/issues/9655)) ([affebee](https://github.com/googleapis/google-cloud-java/commit/affebeeb37b1cf88ad5964684e1f112cababcab7))
+
+
 ## 2.24.0 (2023-07-11)
 
 ### Features
