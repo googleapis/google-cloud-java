@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.41.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.40.1...v2.41.0) (2023-07-24)
+
+
+### Features
+
+* Add enable connection pool to sample ([#2192](https://github.com/googleapis/java-bigquerystorage/issues/2192)) ([c2642de](https://github.com/googleapis/java-bigquerystorage/commit/c2642de07556381490c92eedf25b17d36218c2f8))
+* Support gRPC Compression ([#2197](https://github.com/googleapis/java-bigquerystorage/issues/2197)) ([642e345](https://github.com/googleapis/java-bigquerystorage/commit/642e3452f3b490d6d85b61dfd1a1bb82e175d565))
+
+
+### Bug Fixes
+
+* Reduce StreamConnection visibility since it is not supposed to be public. ([#2196](https://github.com/googleapis/java-bigquerystorage/issues/2196)) ([addbcdf](https://github.com/googleapis/java-bigquerystorage/commit/addbcdf04e330a76e29e41b1e8f4ca04ad96ed00))
+* Update SchemaAwareStreamWriter comment to down recommend it. ([#2195](https://github.com/googleapis/java-bigquerystorage/issues/2195)) ([4897c05](https://github.com/googleapis/java-bigquerystorage/commit/4897c05aeb7cddff20fb530d64034cc143c24d91))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.30.1 ([#2191](https://github.com/googleapis/java-bigquerystorage/issues/2191)) ([da4f2e5](https://github.com/googleapis/java-bigquerystorage/commit/da4f2e5e801daad1136eb4a3e753e486cef194e7))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#2199](https://github.com/googleapis/java-bigquerystorage/issues/2199)) ([fc8f4fb](https://github.com/googleapis/java-bigquerystorage/commit/fc8f4fbae333db08ae21730a61a8993c3e1f9897))
+
 ## [2.40.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.40.0...v2.40.1) (2023-07-18)
 
 
