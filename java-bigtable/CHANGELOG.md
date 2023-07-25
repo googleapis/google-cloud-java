@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.25.1](https://github.com/googleapis/java-bigtable/compare/v2.25.0...v2.25.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* Update the readRow attempt timeouts to be inline with unary rpcs instead of scans ([#1834](https://github.com/googleapis/java-bigtable/issues/1834)) ([168c33e](https://github.com/googleapis/java-bigtable/commit/168c33e3135755cc5a1105f18bf93ade5e1219dc))
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.0 ([#1847](https://github.com/googleapis/java-bigtable/issues/1847)) ([825faaa](https://github.com/googleapis/java-bigtable/commit/825faaad93a5062e6f34ff699cc02701b69e56ab))
+* Update shared dependencies ([#1845](https://github.com/googleapis/java-bigtable/issues/1845)) ([88e1892](https://github.com/googleapis/java-bigtable/commit/88e18922b4e1da398c51441aff014bca5f3bb746))
+* Update the Java code generator (gapic-generator-java) to 2.23.1 ([#1846](https://github.com/googleapis/java-bigtable/issues/1846)) ([78fd837](https://github.com/googleapis/java-bigtable/commit/78fd837987780c62137354fbbe41e71050948405))
+
 ## [2.25.0](https://github.com/googleapis/java-bigtable/compare/v2.24.1...v2.25.0) (2023-07-14)
 
 
