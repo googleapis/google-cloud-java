@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.31.0](https://github.com/googleapis/java-bigquery/compare/v2.30.1...v2.31.0) (2023-07-25)
+
+
+### Features
+
+* Adds Exception handling to handle ALREADY EXISTS error ([#2788](https://github.com/googleapis/java-bigquery/issues/2788)) ([67a07ea](https://github.com/googleapis/java-bigquery/commit/67a07ea45c4635a2e9d43220d4bc34780eb512ef))
+
+
+### Dependencies
+
+* Update arrow.version to v12.0.1 ([#2750](https://github.com/googleapis/java-bigquery/issues/2750)) ([f92bee5](https://github.com/googleapis/java-bigquery/commit/f92bee558f6de070fb9f525bb47a824dc2c53e07))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.24.0 ([#2811](https://github.com/googleapis/java-bigquery/issues/2811)) ([b660063](https://github.com/googleapis/java-bigquery/commit/b6600635e01f930fa19769cb2594ef4f43226124))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.28.0 ([#2812](https://github.com/googleapis/java-bigquery/issues/2812)) ([921716d](https://github.com/googleapis/java-bigquery/commit/921716d54ea34f1914d16f7774124175be488087))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#2806](https://github.com/googleapis/java-bigquery/issues/2806)) ([df3cd76](https://github.com/googleapis/java-bigquery/commit/df3cd761b5111bb0f174f691765697aa1bcbebde))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.0 ([#2808](https://github.com/googleapis/java-bigquery/issues/2808)) ([694f711](https://github.com/googleapis/java-bigquery/commit/694f7111d7497126d429c5dda17f44f661279582))
+* Update github/codeql-action action to v2.21.0 ([#2803](https://github.com/googleapis/java-bigquery/issues/2803)) ([c6c536c](https://github.com/googleapis/java-bigquery/commit/c6c536c618908425f288fa0e6f516df2cc6a4b97))
+
 ## [2.30.1](https://github.com/googleapis/java-bigquery/compare/v2.30.0...v2.30.1) (2023-07-18)
 
 
