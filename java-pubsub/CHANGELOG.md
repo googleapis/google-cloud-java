@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.123.19](https://github.com/googleapis/java-pubsub/compare/v1.123.18...v1.123.19) (2023-07-25)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.30.1 ([#1656](https://github.com/googleapis/java-pubsub/issues/1656)) ([4fe4bc4](https://github.com/googleapis/java-pubsub/commit/4fe4bc49d82753e3e185f0a2c4694d80e48808f7))
+* Update dependency com.google.cloud:google-cloud-core to v2.21.1 ([#1662](https://github.com/googleapis/java-pubsub/issues/1662)) ([e10292c](https://github.com/googleapis/java-pubsub/commit/e10292c16f24870a91584f716545ff210302a7bc))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#1663](https://github.com/googleapis/java-pubsub/issues/1663)) ([50f4ff1](https://github.com/googleapis/java-pubsub/commit/50f4ff10140699a02d1ec550b05ff6d1aa39c762))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.0 ([#1666](https://github.com/googleapis/java-pubsub/issues/1666)) ([d8712a3](https://github.com/googleapis/java-pubsub/commit/d8712a31459b8f9497dff7a866c8a8795ca60af9))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.3 ([#1665](https://github.com/googleapis/java-pubsub/issues/1665)) ([ad1c515](https://github.com/googleapis/java-pubsub/commit/ad1c5157eadc4bf2d43b7dc332ac4150d732912d))
+
 ## [1.123.18](https://github.com/googleapis/java-pubsub/compare/v1.123.17...v1.123.18) (2023-07-17)
 
 
