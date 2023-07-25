@@ -90,8 +90,8 @@ function generate_modified_modules_list() {
   # grep returns 1 (error code) and exits the pipeline if there is no match
   # If there is no match, it will return true so the rest of the commands can run
   git config --global --add safe.directory $(realpath .)
-  modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
-  printf "Modified files:\n%s\n" "${modified_files}"
+#  modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
+#  printf "Modified files:\n%s\n" "${modified_files}"
 
   # Generate the list of valid maven modules
   maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
@@ -104,25 +104,25 @@ function generate_modified_modules_list() {
 
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
-  parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
-  shared_dependencies_modified=$(echo "${modified_files}" | grep -E '^java-shared-dependencies' || true)
-  if [[ (-n $parent_pom_modified) || (-n $shared_dependencies_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
+#  parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
+#  shared_dependencies_modified=$(echo "${modified_files}" | grep -E '^java-shared-dependencies' || true)
+#  if [[ (-n $parent_pom_modified) || (-n $shared_dependencies_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
-  else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
-    printf "Files in java modules:\n%s\n" "${modules}"
-    if [[ -n $modules ]]; then
-      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
-      for module in $modules; do
-        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
-          modified_module_list+=("${module}")
-        fi
-      done
-    else
-      echo "Found no changes in the java modules"
-    fi
-  fi
+#  else
+#    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+#    printf "Files in java modules:\n%s\n" "${modules}"
+#    if [[ -n $modules ]]; then
+#      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
+#      for module in $modules; do
+#        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
+#          modified_module_list+=("${module}")
+#        fi
+#      done
+#    else
+#      echo "Found no changes in the java modules"
+#    fi
+#  fi
 }
 
 function run_integration_tests() {

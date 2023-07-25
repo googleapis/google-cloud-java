@@ -1,18 +1,18 @@
 name: Merge Repository
-on:
+'on':
   schedule:
-    - cron: '0 1 * * *' # nightly at 1 am UTC
+    - cron: 0 1 * * *
   push:
-    branches: [ main ]
+    branches:
+      - 1.13.x
     paths:
       - generation/**
   pull_request:
-    branches: [ main ]
+    branches:
+      - 1.13.x
     paths:
       - generation/**
-
-  workflow_dispatch:
-
+  workflow_dispatch: null
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,12 +30,19 @@ jobs:
         run: mvn test -T 1C -B
       - name: Push monorepo to branch
         if: ${{ github.event_name != 'pull_request' }}
-        run: |
+        run: >
           cd generation/monorepo/google-cloud-java-merged
-          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+
+          git remote add monorepo https://${{ github.actor }}:${{ github.token
+          }}@github.com/${{ github.repository }}.git
+
           git push -f monorepo main:bootstrap_output
       - name: Push diff to branch
-        run: |
+        run: >
           cd generation/monorepo/diff
-          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -f monorepo main:bootstrap_output_diff_${{ github.event_name }}
+
+          git remote add monorepo https://${{ github.actor }}:${{ github.token
+          }}@github.com/${{ github.repository }}.git
+
+          git push -f monorepo main:bootstrap_output_diff_${{ github.event_name
+          }}
