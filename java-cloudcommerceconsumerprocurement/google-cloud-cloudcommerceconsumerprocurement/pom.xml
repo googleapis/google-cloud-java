@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-cloudcommerceconsumerprocurement-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</artifactId>
     </dependency>
     <dependency>
@@ -76,6 +80,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-cloudcommerceconsumerprocurement-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

@@ -36,8 +36,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-cloudcommerceconsumerprocurement-v1</artifactId>
+        <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudcommerceconsumerprocurement-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</artifactId>
         <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-cloudcommerceconsumerprocurement-v1</artifactId>
+        <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudcommerceconsumerprocurement-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
