@@ -682,7 +682,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * When true, write the subscription name, message_id, publish_time,
-     * attributes, and ordering_key as additional fields in the output.
+     * attributes, and ordering_key as additional fields in the output. The
+     * subscription name, message_id, and publish_time fields are put in their
+     * own fields while all other message properties other than data (for
+     * example, an ordering_key, if present) are added as entries in the
+     * attributes map.
      * </pre>
      *
      * <code>bool write_metadata = 1;</code>
@@ -741,7 +745,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * When true, write the subscription name, message_id, publish_time,
-     * attributes, and ordering_key as additional fields in the output.
+     * attributes, and ordering_key as additional fields in the output. The
+     * subscription name, message_id, and publish_time fields are put in their
+     * own fields while all other message properties other than data (for
+     * example, an ordering_key, if present) are added as entries in the
+     * attributes map.
      * </pre>
      *
      * <code>bool write_metadata = 1;</code>
@@ -1104,7 +1112,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output.
+       * attributes, and ordering_key as additional fields in the output. The
+       * subscription name, message_id, and publish_time fields are put in their
+       * own fields while all other message properties other than data (for
+       * example, an ordering_key, if present) are added as entries in the
+       * attributes map.
        * </pre>
        *
        * <code>bool write_metadata = 1;</code>
@@ -1120,7 +1132,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output.
+       * attributes, and ordering_key as additional fields in the output. The
+       * subscription name, message_id, and publish_time fields are put in their
+       * own fields while all other message properties other than data (for
+       * example, an ordering_key, if present) are added as entries in the
+       * attributes map.
        * </pre>
        *
        * <code>bool write_metadata = 1;</code>
@@ -1140,7 +1156,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output.
+       * attributes, and ordering_key as additional fields in the output. The
+       * subscription name, message_id, and publish_time fields are put in their
+       * own fields while all other message properties other than data (for
+       * example, an ordering_key, if present) are added as entries in the
+       * attributes map.
        * </pre>
        *
        * <code>bool write_metadata = 1;</code>
