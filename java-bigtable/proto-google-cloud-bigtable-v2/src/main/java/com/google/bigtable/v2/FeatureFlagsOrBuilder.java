@@ -50,4 +50,18 @@ public interface FeatureFlagsOrBuilder
    * @return The mutateRowsRateLimit.
    */
   boolean getMutateRowsRateLimit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports the last_scanned_row field
+   * in ReadRowsResponse for long-running sparse scans.
+   * </pre>
+   *
+   * <code>bool last_scanned_row_responses = 4;</code>
+   *
+   * @return The lastScannedRowResponses.
+   */
+  boolean getLastScannedRowResponses();
 }

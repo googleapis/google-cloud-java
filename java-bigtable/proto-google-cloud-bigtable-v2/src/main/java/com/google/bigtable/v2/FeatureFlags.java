@@ -105,6 +105,25 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     return mutateRowsRateLimit_;
   }
 
+  public static final int LAST_SCANNED_ROW_RESPONSES_FIELD_NUMBER = 4;
+  private boolean lastScannedRowResponses_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports the last_scanned_row field
+   * in ReadRowsResponse for long-running sparse scans.
+   * </pre>
+   *
+   * <code>bool last_scanned_row_responses = 4;</code>
+   *
+   * @return The lastScannedRowResponses.
+   */
+  @java.lang.Override
+  public boolean getLastScannedRowResponses() {
+    return lastScannedRowResponses_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -125,6 +144,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (mutateRowsRateLimit_ != false) {
       output.writeBool(3, mutateRowsRateLimit_);
     }
+    if (lastScannedRowResponses_ != false) {
+      output.writeBool(4, lastScannedRowResponses_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -139,6 +161,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
     if (mutateRowsRateLimit_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, mutateRowsRateLimit_);
+    }
+    if (lastScannedRowResponses_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, lastScannedRowResponses_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -157,6 +182,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
     if (getReverseScans() != other.getReverseScans()) return false;
     if (getMutateRowsRateLimit() != other.getMutateRowsRateLimit()) return false;
+    if (getLastScannedRowResponses() != other.getLastScannedRowResponses()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -172,6 +198,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReverseScans());
     hash = (37 * hash) + MUTATE_ROWS_RATE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMutateRowsRateLimit());
+    hash = (37 * hash) + LAST_SCANNED_ROW_RESPONSES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLastScannedRowResponses());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,6 +347,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       reverseScans_ = false;
       mutateRowsRateLimit_ = false;
+      lastScannedRowResponses_ = false;
       return this;
     }
 
@@ -359,6 +388,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.mutateRowsRateLimit_ = mutateRowsRateLimit_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastScannedRowResponses_ = lastScannedRowResponses_;
       }
     }
 
@@ -413,6 +445,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       if (other.getMutateRowsRateLimit() != false) {
         setMutateRowsRateLimit(other.getMutateRowsRateLimit());
       }
+      if (other.getLastScannedRowResponses() != false) {
+        setLastScannedRowResponses(other.getLastScannedRowResponses());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +486,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                lastScannedRowResponses_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -578,6 +619,62 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMutateRowsRateLimit() {
       bitField0_ = (bitField0_ & ~0x00000002);
       mutateRowsRateLimit_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean lastScannedRowResponses_;
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports the last_scanned_row field
+     * in ReadRowsResponse for long-running sparse scans.
+     * </pre>
+     *
+     * <code>bool last_scanned_row_responses = 4;</code>
+     *
+     * @return The lastScannedRowResponses.
+     */
+    @java.lang.Override
+    public boolean getLastScannedRowResponses() {
+      return lastScannedRowResponses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports the last_scanned_row field
+     * in ReadRowsResponse for long-running sparse scans.
+     * </pre>
+     *
+     * <code>bool last_scanned_row_responses = 4;</code>
+     *
+     * @param value The lastScannedRowResponses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLastScannedRowResponses(boolean value) {
+
+      lastScannedRowResponses_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client supports the last_scanned_row field
+     * in ReadRowsResponse for long-running sparse scans.
+     * </pre>
+     *
+     * <code>bool last_scanned_row_responses = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLastScannedRowResponses() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lastScannedRowResponses_ = false;
       onChanged();
       return this;
     }
