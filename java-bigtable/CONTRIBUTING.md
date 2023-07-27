@@ -70,6 +70,9 @@ mvn install -DskipUnitTests
 mvn install -DskipTests
 ```
 
+## Formatting the code
+
+To auto-format any code changes, run ``mvn com.coveo:fmt-maven-plugin:format``.
 
 ## Native Image Testing
 Native Image testing is enabled for tests that follow a particular naming
