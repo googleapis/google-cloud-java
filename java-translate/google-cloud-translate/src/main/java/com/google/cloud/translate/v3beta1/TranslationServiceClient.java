@@ -846,8 +846,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
@@ -913,8 +913,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
