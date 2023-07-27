@@ -109,6 +109,7 @@ public class BuiltinMetricsTracerTest {
   private static final long FAKE_SERVER_TIMING = 50;
   private static final long SERVER_LATENCY = 100;
   private static final long APPLICATION_LATENCY = 200;
+  private static final long SLEEP_VARIABILITY = 15;
 
   private static final long CHANNEL_BLOCKING_LATENCY = 75;
 
@@ -353,7 +354,11 @@ public class BuiltinMetricsTracerTest {
         .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
 
     assertThat(counter.get()).isEqualTo(fakeService.getResponseCounter().get());
-    assertThat(applicationLatency.getValue()).isAtLeast(APPLICATION_LATENCY * counter.get());
+    // Thread.sleep might not sleep for the requested amount depending on the interrupt period
+    // defined by the OS.
+    // On linux this is ~1ms but on windows may be as high as 15-20ms.
+    assertThat(applicationLatency.getValue())
+        .isAtLeast((APPLICATION_LATENCY - SLEEP_VARIABILITY) * counter.get());
     assertThat(applicationLatency.getValue())
         .isAtMost(operationLatency.getValue() - SERVER_LATENCY);
   }

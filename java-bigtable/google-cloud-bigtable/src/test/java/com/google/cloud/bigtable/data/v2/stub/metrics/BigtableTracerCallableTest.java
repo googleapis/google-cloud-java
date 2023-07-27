@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
@@ -54,7 +55,6 @@ import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import io.opencensus.impl.stats.StatsComponentImpl;
 import io.opencensus.stats.StatsComponent;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
@@ -74,7 +74,7 @@ public class BigtableTracerCallableTest {
 
   private FakeService fakeService = new FakeService();
 
-  private final StatsComponent localStats = new StatsComponentImpl();
+  private final StatsComponent localStats = new SimpleStatsComponent();
   private EnhancedBigtableStub stub;
   private EnhancedBigtableStub noHeaderStub;
   private int attempts;
@@ -157,10 +157,9 @@ public class BigtableTracerCallableTest {
   }
 
   @Test
-  public void testGFELatencyMetricReadRows() throws InterruptedException {
-    stub.readRowsCallable().call(Query.create(TABLE_ID));
-
-    Thread.sleep(WAIT_FOR_METRICS_TIME_MS);
+  public void testGFELatencyMetricReadRows() {
+    ServerStream<?> call = stub.readRowsCallable().call(Query.create(TABLE_ID));
+    call.forEach(r -> {});
 
     long latency =
         StatsTestUtils.getAggregationValueAsLong(
