@@ -13,5 +13,5 @@
 # limitations under the License.
 docker:
   image: gcr.io/cloud-devrel-public-resources/owlbot-java:latest
-  digest: sha256:46d2d262cd285c638656c8bde468011b723dc0c7ffd6a5ecc2650fe639c82e8f
-# created: 2023-07-24T14:21:17.707234503Z
+  digest: sha256:3a95f1b9b1102865ca551b76be51d2bdb850900c4db2f6d79269e7af81ac8f84
+# created: 2023-07-27T18:37:44.251188775Z
