@@ -659,3 +659,5 @@ grpc-google-cloud-policysimulator-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-netapp:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-netapp-v1beta1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-netapp-v1beta1:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-netapp-v1:0.1.0:0.2.0-SNAPSHOT
+grpc-google-cloud-netapp-v1:0.1.0:0.2.0-SNAPSHOT
