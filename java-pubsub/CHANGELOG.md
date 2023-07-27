@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.124.0](https://github.com/googleapis/java-pubsub/compare/v1.123.20...v1.124.0) (2023-07-27)
+
+
+### Features
+
+* Setup 1.123.x lts branch ([#1676](https://github.com/googleapis/java-pubsub/issues/1676)) ([a60b887](https://github.com/googleapis/java-pubsub/commit/a60b88772d69d367f90bbe61bc4e157338193b0f))
+
+
+### Documentation
+
+* Clarified where ordering_key will be written if write_metadata is set ([#1675](https://github.com/googleapis/java-pubsub/issues/1675)) ([462746c](https://github.com/googleapis/java-pubsub/commit/462746cfbf9b712118b67349f2f4f4cebf45932a))
+
 ## [1.123.20](https://github.com/googleapis/java-pubsub/compare/v1.123.19...v1.123.20) (2023-07-25)
 
 
