@@ -100,6 +100,27 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
   }
 
   @Override
+  public void serverStreamingPredict(
+      StreamingPredictRequest request, StreamObserver<StreamingPredictResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StreamingPredictResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StreamingPredictResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StreamingPredictResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void explain(ExplainRequest request, StreamObserver<ExplainResponse> responseObserver) {
     Object response = responses.poll();
     if (response instanceof ExplainResponse) {
