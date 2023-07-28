@@ -70,7 +70,7 @@ public class BigtableTracerUnaryCallable<RequestT, ResponseT>
     }
   }
 
-  class BigtableTracerUnaryCallback<ResponseT> implements ApiFutureCallback<ResponseT> {
+  private class BigtableTracerUnaryCallback<ResponseT> implements ApiFutureCallback<ResponseT> {
 
     private final BigtableTracer tracer;
     private final GrpcResponseMetadata responseMetadata;
