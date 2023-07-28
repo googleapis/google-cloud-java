@@ -636,8 +636,7 @@ public class StreamWriter implements AutoCloseable {
 
     /**
      * Enable multiplexing for this writer. In multiplexing mode tables will share the same
-     * connection if possible until the connection is overwhelmed. This feature is still under
-     * development, please contact write api team before using.
+     * connection if possible until the connection is overwhelmed.
      *
      * @param enableConnectionPool
      * @return Builder
