@@ -22,7 +22,8 @@ package com.google.datastore.admin.v1;
  *
  *
  * <pre>
- * The request for [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
+ * The request for
+ * [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
  * </pre>
  *
  * Protobuf type {@code google.datastore.admin.v1.GetIndexRequest}
@@ -337,7 +338,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request for [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
+   * The request for
+   * [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
    * </pre>
    *
    * Protobuf type {@code google.datastore.admin.v1.GetIndexRequest}
