@@ -386,9 +386,10 @@ public CloudTasksClient getService() throws IOException {
 Long running operations (LROs) are often used for API calls that are expected to
 take a long time to complete (e.g. provisioning a GCE instance or a Dataflow pipeline).
 The initial API call creates an "operation" on the server and returns an operation ID
-to track its progress.
+to track its progress. LRO RPCs will have the suffix `Async` appended to call
+(i.e. `clusterControllerClient.createClusterAsync()`)
 
-Our generated gRPC clients provide a nice interface for starting the operation and
+Our generated clients provide a nice interface for starting the operation and
 then waiting for the operation to complete. This is accomplished by returning an
 [`OperationFuture`](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.longrunning.OperationFuture).
 When you call `get()` on the `OperationFuture` we poll the operation endpoint to
@@ -396,8 +397,21 @@ check on the operation. These polling operations have a default timeout that
 varies from service to service and will throw a `java.util.concurrent.CancellationException`
 with the message: `Task was cancelled.` after that timeout has been reached.
 
-### Configuring LRO Timeouts
+If you receive a `java.util.concurrent.CancellationException`, it does not mean that
+the backend GCP Operation was cancelled. This exception is thrown from Gax-Java to let
+you know that the client library has stopped polling for the Operation's status (as it respects the
+RetrySetting values). Since the LRO returns a unique Operation ID, you may still manually
+poll for the status.
 
+Note: Gax-Java handles the polling mechanism for you. By default, there is no need
+to manually poll the status yourself.
+
+### Default RetrySettings Values
+Each LRO RPC has a pre-configured default RetrySetting. You can find these values by 
+searching in each Client's `StubSettings`'s class. The default RetrySettings are initialized
+inside the `initDefaults()` method in the nested Builder class.
+
+### Configuring LRO Timeouts
 ```java
 ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
 TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
@@ -414,6 +428,9 @@ settingsBuilder.createClusterOperationSettings()
 		.setPollingAlgorithm(timedRetryAlgorithm);
 ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
+
+Note: The configuration above *only* modifies the LRO RetrySettings for the `createClusterOperation` RPC.
+The other RPCs in the Client will still use each RPC's pre-configured RetrySettings. 
 
 ## Managing Dependencies
 
