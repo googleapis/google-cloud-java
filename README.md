@@ -386,7 +386,7 @@ public CloudTasksClient getService() throws IOException {
 Long running operations (LROs) are often used for API calls that are expected to
 take a long time to complete (e.g. provisioning a GCE instance or a Dataflow pipeline).
 The initial API call creates an "operation" on the server and returns an operation ID
-to track its progress. LRO RPCs will have the suffix `Async` appended to call
+to track its progress. LRO RPCs will have the suffix `Async` appended to the call name
 (i.e. `clusterControllerClient.createClusterAsync()`)
 
 Our generated clients provide a nice interface for starting the operation and
@@ -399,11 +399,11 @@ with the message: `Task was cancelled.` after that timeout has been reached.
 
 If you receive a `java.util.concurrent.CancellationException`, it does not mean that
 the backend GCP Operation was cancelled. This exception is thrown from Gax-Java to let
-you know that the client library has stopped polling for the Operation's status (as it respects the
-RetrySetting values). Since the LRO returns a unique Operation ID, you may still manually
+you know that the client library has stopped polling for the Operation's status (it respects
+the RetrySetting values). Since the LRO returns a unique Operation ID, you may still manually
 poll for the status.
 
-Note: Gax-Java handles the polling mechanism for you. By default, there is no need
+Note: Gax-Java handles the Operation's polling mechanism for you. By default, there is no need
 to manually poll the status yourself.
 
 ### Default RetrySettings Values
