@@ -731,7 +731,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .setTotalTimeout(PRIME_REQUEST_TIMEOUT)
               .build());
 
-      featureFlags = FeatureFlags.newBuilder().setReverseScans(true);
+      featureFlags =
+          FeatureFlags.newBuilder().setReverseScans(true).setLastScannedRowResponses(true);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {

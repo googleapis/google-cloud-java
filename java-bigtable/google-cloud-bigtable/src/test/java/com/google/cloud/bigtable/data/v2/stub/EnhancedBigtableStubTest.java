@@ -243,6 +243,7 @@ public class EnhancedBigtableStubTest {
         FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
 
     assertThat(featureFlags.getReverseScans()).isTrue();
+    assertThat(featureFlags.getLastScannedRowResponses()).isTrue();
   }
 
   @Test

@@ -42,9 +42,18 @@ import org.junit.runners.JUnit4;
 public class RowMergingCallableTest {
   @Test
   public void scanMarker() {
+    ReadRowsResponse.Builder rrr = ReadRowsResponse.newBuilder();
+    rrr.addChunksBuilder()
+        .setRowKey(ByteString.copyFromUtf8("key0"))
+        .setFamilyName(StringValue.of("f1"))
+        .setQualifier(BytesValue.of(ByteString.copyFromUtf8("q1")))
+        .setCommitRow(true);
+
     FakeStreamingApi.ServerStreamingStashCallable<ReadRowsRequest, ReadRowsResponse> inner =
         new ServerStreamingStashCallable<>(
             Lists.newArrayList(
+                // send a row
+                rrr.build(),
                 // send a scan marker
                 ReadRowsResponse.newBuilder()
                     .setLastScannedRowKey(ByteString.copyFromUtf8("key1"))
@@ -56,6 +65,15 @@ public class RowMergingCallableTest {
 
     Truth.assertThat(results)
         .containsExactly(
+            Row.create(
+                ByteString.copyFromUtf8("key0"),
+                Lists.newArrayList(
+                    RowCell.create(
+                        "f1",
+                        ByteString.copyFromUtf8("q1"),
+                        0,
+                        Lists.newArrayList(),
+                        ByteString.EMPTY))),
             Row.create(ByteString.copyFromUtf8("key1"), Lists.<RowCell>newArrayList()));
   }
 
