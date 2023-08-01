@@ -399,9 +399,9 @@ with the message: `Task was cancelled.` after that timeout has been reached.
 
 If you receive a `java.util.concurrent.CancellationException`, it does not mean that
 the backend GCP Operation was cancelled. This exception is thrown from the client library to let
-you know that the client library has stopped polling for the Operation's status (it respects
-the RetrySetting values). Since the LRO returns a unique Operation ID, you may still manually
-poll for the status.
+you know that the client library has stopped polling for the Operation's status. It respects
+the configured values in OperationTimedPollAlgorithm for each RPC. Since the LRO returns a unique
+Operation ID, you may still manually poll for the status.
 
 Note: The client library handles the Operation's polling mechanism for you. By default, there is no need
 to manually poll the status yourself.
