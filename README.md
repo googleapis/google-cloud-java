@@ -384,7 +384,7 @@ public CloudTasksClient getService() throws IOException {
 ## Long Running Operations
 
 Long running operations (LROs) are often used for API calls that are expected to
-take a long time to complete (e.g. provisioning a GCE instance or a Dataflow pipeline).
+take a long time to complete (i.e. provisioning a GCE instance or a Dataflow pipeline).
 The initial API call creates an "operation" on the server and returns an operation ID
 to track its progress. LRO RPCs will have the suffix `Async` appended to the call name
 (i.e. `clusterControllerClient.createClusterAsync()`)
@@ -392,16 +392,16 @@ to track its progress. LRO RPCs will have the suffix `Async` appended to the cal
 Our generated clients provide a nice interface for starting the operation and
 then waiting for the operation to complete. This is accomplished by returning an
 [`OperationFuture`](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.longrunning.OperationFuture).
-When you call `get()` on the `OperationFuture` we poll the operation endpoint to
-check on the operation. These polling operations have a default timeout that
-varies from service to service and will throw a `java.util.concurrent.CancellationException`
-with the message: `Task was cancelled.` after that timeout has been reached.
+When you call `get()` on the `OperationFuture`, the client library will poll the operation endpoint to
+check on the operation. 
 
-If you receive a `java.util.concurrent.CancellationException`, it does not mean that
-the backend GCP Operation was cancelled. This exception is thrown from the client library to let
-you know that the client library has stopped polling for the Operation's status. It respects
-the configured values in OperationTimedPollAlgorithm for each RPC. Since the LRO returns a unique
-Operation ID, you may still manually poll for the status.
+### LRO Timeouts
+The polling operations have a default timeout that varies from service to service.
+The library will throw a `java.util.concurrent.CancellationException`
+with the message: `Task was cancelled.` if the timeout exceeds the operation. A `CancellationException`
+does not mean that the backend GCP Operation was cancelled. This exception is thrown from the
+client library to let you know that the client library has stopped polling for the Operation's status. 
+It respects the configured values in OperationTimedPollAlgorithm for each RPC.
 
 Note: The client library handles the Operation's polling mechanism for you. By default, there is no need
 to manually poll the status yourself.
@@ -410,6 +410,26 @@ to manually poll the status yourself.
 Each LRO RPC has a pre-configured default values. You can find these values by 
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
+
+For example, in AI-Platform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+has these default values:
+```java
+OperationTimedPollAlgorithm.create(
+    RetrySettings.newBuilder()
+        .setInitialRetryDelay(Duration.ofMillis(5000L))
+        .setRetryDelayMultiplier(1.5)
+        .setMaxRetryDelay(Duration.ofMillis(45000L))
+        .setInitialRpcTimeout(Duration.ZERO)
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.ZERO)
+        .setTotalTimeout(Duration.ofMillis(300000L))
+        .build())
+```
+- Total Timeout: 5 minutes
+- Initial Retry Delay (Initial Poll Delay): 5 seconds
+- Max Retry Delay (Initial Poll Delay): 45 seconds
+- Retry Delay Multiplier (Poll Delay Multiplier): 1.5
+
 
 ### Configuring LRO Timeouts
 ```java
