@@ -398,17 +398,17 @@ varies from service to service and will throw a `java.util.concurrent.Cancellati
 with the message: `Task was cancelled.` after that timeout has been reached.
 
 If you receive a `java.util.concurrent.CancellationException`, it does not mean that
-the backend GCP Operation was cancelled. This exception is thrown from Gax-Java to let
+the backend GCP Operation was cancelled. This exception is thrown from the client library to let
 you know that the client library has stopped polling for the Operation's status (it respects
 the RetrySetting values). Since the LRO returns a unique Operation ID, you may still manually
 poll for the status.
 
-Note: Gax-Java handles the Operation's polling mechanism for you. By default, there is no need
+Note: The client library handles the Operation's polling mechanism for you. By default, there is no need
 to manually poll the status yourself.
 
-### Default RetrySettings Values
-Each LRO RPC has a pre-configured default RetrySetting. You can find these values by 
-searching in each Client's `StubSettings`'s class. The default RetrySettings are initialized
+### Default LRO Values
+Each LRO RPC has a pre-configured default values. You can find these values by 
+searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
 ### Configuring LRO Timeouts
