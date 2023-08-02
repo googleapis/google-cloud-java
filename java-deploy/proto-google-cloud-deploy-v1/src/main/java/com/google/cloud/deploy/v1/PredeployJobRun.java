@@ -22,25 +22,23 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * VerifyJobRun contains information specific to a verify `JobRun`.
+ * PredeployJobRun contains information specific to a predeploy `JobRun`.
  * </pre>
  *
- * Protobuf type {@code google.cloud.deploy.v1.VerifyJobRun}
+ * Protobuf type {@code google.cloud.deploy.v1.PredeployJobRun}
  */
-public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
+public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.VerifyJobRun)
-    VerifyJobRunOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PredeployJobRun)
+    PredeployJobRunOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use VerifyJobRun.newBuilder() to construct.
-  private VerifyJobRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PredeployJobRun.newBuilder() to construct.
+  private PredeployJobRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private VerifyJobRun() {
+  private PredeployJobRun() {
     build_ = "";
-    artifactUri_ = "";
-    eventLogPath_ = "";
     failureCause_ = 0;
     failureMessage_ = "";
   }
@@ -48,32 +46,32 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new VerifyJobRun();
+    return new PredeployJobRun();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
-        .internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor;
+        .internal_static_google_cloud_deploy_v1_PredeployJobRun_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.deploy.v1.CloudDeployProto
-        .internal_static_google_cloud_deploy_v1_VerifyJobRun_fieldAccessorTable
+        .internal_static_google_cloud_deploy_v1_PredeployJobRun_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.deploy.v1.VerifyJobRun.class,
-            com.google.cloud.deploy.v1.VerifyJobRun.Builder.class);
+            com.google.cloud.deploy.v1.PredeployJobRun.class,
+            com.google.cloud.deploy.v1.PredeployJobRun.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Well-known verify failures.
+   * Well-known predeploy failures.
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.deploy.v1.VerifyJobRun.FailureCause}
+   * Protobuf enum {@code google.cloud.deploy.v1.PredeployJobRun.FailureCause}
    */
   public enum FailureCause implements com.google.protobuf.ProtocolMessageEnum {
     /**
@@ -102,7 +100,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify operation did not complete successfully; check Cloud Build
+     * The predeploy operation did not complete successfully; check Cloud Build
      * logs.
      * </pre>
      *
@@ -113,7 +111,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The predeploy build did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -123,23 +121,13 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No Skaffold verify configuration was found.
-     * </pre>
-     *
-     * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
-     */
-    VERIFICATION_CONFIG_NOT_FOUND(4),
-    /**
-     *
-     *
-     * <pre>
      * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
      * for additional details.
      * </pre>
      *
-     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 4;</code>
      */
-    CLOUD_BUILD_REQUEST_FAILED(5),
+    CLOUD_BUILD_REQUEST_FAILED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -169,7 +157,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify operation did not complete successfully; check Cloud Build
+     * The predeploy operation did not complete successfully; check Cloud Build
      * logs.
      * </pre>
      *
@@ -180,7 +168,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The predeploy build did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -190,23 +178,13 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No Skaffold verify configuration was found.
-     * </pre>
-     *
-     * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
-     */
-    public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
      * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
      * for additional details.
      * </pre>
      *
-     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 4;</code>
      */
-    public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 5;
+    public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -241,8 +219,6 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         case 3:
           return DEADLINE_EXCEEDED;
         case 4:
-          return VERIFICATION_CONFIG_NOT_FOUND;
-        case 5:
           return CLOUD_BUILD_REQUEST_FAILED;
         default:
           return null;
@@ -273,7 +249,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.deploy.v1.VerifyJobRun.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.deploy.v1.PredeployJobRun.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final FailureCause[] VALUES = values();
@@ -294,7 +270,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.deploy.v1.VerifyJobRun.FailureCause)
+    // @@protoc_insertion_point(enum_scope:google.cloud.deploy.v1.PredeployJobRun.FailureCause)
   }
 
   public static final int BUILD_FIELD_NUMBER = 1;
@@ -306,8 +282,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
-   * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * used to execute the custom actions associated with the predeploy Job.
+   * Format is projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -333,8 +309,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
-   * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * used to execute the custom actions associated with the predeploy Job.
+   * Format is projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -356,124 +332,18 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ARTIFACT_URI_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object artifactUri_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This
-   * contains the Skaffold event log.
-   * </pre>
-   *
-   * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The artifactUri.
-   */
-  @java.lang.Override
-  public java.lang.String getArtifactUri() {
-    java.lang.Object ref = artifactUri_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      artifactUri_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This
-   * contains the Skaffold event log.
-   * </pre>
-   *
-   * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for artifactUri.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getArtifactUriBytes() {
-    java.lang.Object ref = artifactUri_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      artifactUri_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int EVENT_LOG_PATH_FIELD_NUMBER = 3;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object eventLogPath_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact
-   * URI.
-   * </pre>
-   *
-   * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The eventLogPath.
-   */
-  @java.lang.Override
-  public java.lang.String getEventLogPath() {
-    java.lang.Object ref = eventLogPath_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      eventLogPath_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact
-   * URI.
-   * </pre>
-   *
-   * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for eventLogPath.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getEventLogPathBytes() {
-    java.lang.Object ref = eventLogPath_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      eventLogPath_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FAILURE_CAUSE_FIELD_NUMBER = 4;
+  public static final int FAILURE_CAUSE_FIELD_NUMBER = 2;
   private int failureCause_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified
-   * while the verify is in progress or if it succeeded.
+   * Output only. The reason the predeploy failed. This will always be
+   * unspecified while the predeploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for failureCause.
@@ -486,26 +356,26 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified
-   * while the verify is in progress or if it succeeded.
+   * Output only. The reason the predeploy failed. This will always be
+   * unspecified while the predeploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The failureCause.
    */
   @java.lang.Override
-  public com.google.cloud.deploy.v1.VerifyJobRun.FailureCause getFailureCause() {
-    com.google.cloud.deploy.v1.VerifyJobRun.FailureCause result =
-        com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.forNumber(failureCause_);
+  public com.google.cloud.deploy.v1.PredeployJobRun.FailureCause getFailureCause() {
+    com.google.cloud.deploy.v1.PredeployJobRun.FailureCause result =
+        com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.forNumber(failureCause_);
     return result == null
-        ? com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.UNRECOGNIZED
+        ? com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.UNRECOGNIZED
         : result;
   }
 
-  public static final int FAILURE_MESSAGE_FIELD_NUMBER = 5;
+  public static final int FAILURE_MESSAGE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
@@ -513,10 +383,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the verify failure, if available.
+   * Output only. Additional information about the predeploy failure, if
+   * available.
    * </pre>
    *
-   * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The failureMessage.
    */
@@ -536,10 +407,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the verify failure, if available.
+   * Output only. Additional information about the predeploy failure, if
+   * available.
    * </pre>
    *
-   * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for failureMessage.
    */
@@ -573,19 +445,13 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, build_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactUri_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, artifactUri_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventLogPath_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, eventLogPath_);
-    }
     if (failureCause_
-        != com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.FAILURE_CAUSE_UNSPECIFIED
+        != com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.FAILURE_CAUSE_UNSPECIFIED
             .getNumber()) {
-      output.writeEnum(4, failureCause_);
+      output.writeEnum(2, failureCause_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, failureMessage_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, failureMessage_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -599,19 +465,13 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, build_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactUri_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, artifactUri_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventLogPath_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, eventLogPath_);
-    }
     if (failureCause_
-        != com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.FAILURE_CAUSE_UNSPECIFIED
+        != com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.FAILURE_CAUSE_UNSPECIFIED
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, failureCause_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, failureCause_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, failureMessage_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, failureMessage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -623,14 +483,13 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.deploy.v1.VerifyJobRun)) {
+    if (!(obj instanceof com.google.cloud.deploy.v1.PredeployJobRun)) {
       return super.equals(obj);
     }
-    com.google.cloud.deploy.v1.VerifyJobRun other = (com.google.cloud.deploy.v1.VerifyJobRun) obj;
+    com.google.cloud.deploy.v1.PredeployJobRun other =
+        (com.google.cloud.deploy.v1.PredeployJobRun) obj;
 
     if (!getBuild().equals(other.getBuild())) return false;
-    if (!getArtifactUri().equals(other.getArtifactUri())) return false;
-    if (!getEventLogPath().equals(other.getEventLogPath())) return false;
     if (failureCause_ != other.failureCause_) return false;
     if (!getFailureMessage().equals(other.getFailureMessage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -646,10 +505,6 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + BUILD_FIELD_NUMBER;
     hash = (53 * hash) + getBuild().hashCode();
-    hash = (37 * hash) + ARTIFACT_URI_FIELD_NUMBER;
-    hash = (53 * hash) + getArtifactUri().hashCode();
-    hash = (37 * hash) + EVENT_LOG_PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getEventLogPath().hashCode();
     hash = (37 * hash) + FAILURE_CAUSE_FIELD_NUMBER;
     hash = (53 * hash) + failureCause_;
     hash = (37 * hash) + FAILURE_MESSAGE_FIELD_NUMBER;
@@ -659,71 +514,71 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(byte[] data)
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(java.io.InputStream input)
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseDelimitedFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseDelimitedFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun parseFrom(
+  public static com.google.cloud.deploy.v1.PredeployJobRun parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -740,7 +595,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.deploy.v1.VerifyJobRun prototype) {
+  public static Builder newBuilder(com.google.cloud.deploy.v1.PredeployJobRun prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -758,31 +613,31 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * VerifyJobRun contains information specific to a verify `JobRun`.
+   * PredeployJobRun contains information specific to a predeploy `JobRun`.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.deploy.v1.VerifyJobRun}
+   * Protobuf type {@code google.cloud.deploy.v1.PredeployJobRun}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.VerifyJobRun)
-      com.google.cloud.deploy.v1.VerifyJobRunOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.PredeployJobRun)
+      com.google.cloud.deploy.v1.PredeployJobRunOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
-          .internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor;
+          .internal_static_google_cloud_deploy_v1_PredeployJobRun_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.deploy.v1.CloudDeployProto
-          .internal_static_google_cloud_deploy_v1_VerifyJobRun_fieldAccessorTable
+          .internal_static_google_cloud_deploy_v1_PredeployJobRun_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.deploy.v1.VerifyJobRun.class,
-              com.google.cloud.deploy.v1.VerifyJobRun.Builder.class);
+              com.google.cloud.deploy.v1.PredeployJobRun.class,
+              com.google.cloud.deploy.v1.PredeployJobRun.Builder.class);
     }
 
-    // Construct using com.google.cloud.deploy.v1.VerifyJobRun.newBuilder()
+    // Construct using com.google.cloud.deploy.v1.PredeployJobRun.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -794,8 +649,6 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       build_ = "";
-      artifactUri_ = "";
-      eventLogPath_ = "";
       failureCause_ = 0;
       failureMessage_ = "";
       return this;
@@ -804,17 +657,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.deploy.v1.CloudDeployProto
-          .internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor;
+          .internal_static_google_cloud_deploy_v1_PredeployJobRun_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.deploy.v1.VerifyJobRun getDefaultInstanceForType() {
-      return com.google.cloud.deploy.v1.VerifyJobRun.getDefaultInstance();
+    public com.google.cloud.deploy.v1.PredeployJobRun getDefaultInstanceForType() {
+      return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.deploy.v1.VerifyJobRun build() {
-      com.google.cloud.deploy.v1.VerifyJobRun result = buildPartial();
+    public com.google.cloud.deploy.v1.PredeployJobRun build() {
+      com.google.cloud.deploy.v1.PredeployJobRun result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -822,9 +675,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.deploy.v1.VerifyJobRun buildPartial() {
-      com.google.cloud.deploy.v1.VerifyJobRun result =
-          new com.google.cloud.deploy.v1.VerifyJobRun(this);
+    public com.google.cloud.deploy.v1.PredeployJobRun buildPartial() {
+      com.google.cloud.deploy.v1.PredeployJobRun result =
+          new com.google.cloud.deploy.v1.PredeployJobRun(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -832,21 +685,15 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.deploy.v1.VerifyJobRun result) {
+    private void buildPartial0(com.google.cloud.deploy.v1.PredeployJobRun result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.build_ = build_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.artifactUri_ = artifactUri_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.eventLogPath_ = eventLogPath_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.failureCause_ = failureCause_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.failureMessage_ = failureMessage_;
       }
     }
@@ -886,29 +733,19 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.deploy.v1.VerifyJobRun) {
-        return mergeFrom((com.google.cloud.deploy.v1.VerifyJobRun) other);
+      if (other instanceof com.google.cloud.deploy.v1.PredeployJobRun) {
+        return mergeFrom((com.google.cloud.deploy.v1.PredeployJobRun) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.deploy.v1.VerifyJobRun other) {
-      if (other == com.google.cloud.deploy.v1.VerifyJobRun.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.deploy.v1.PredeployJobRun other) {
+      if (other == com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance()) return this;
       if (!other.getBuild().isEmpty()) {
         build_ = other.build_;
         bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      if (!other.getArtifactUri().isEmpty()) {
-        artifactUri_ = other.artifactUri_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      if (!other.getEventLogPath().isEmpty()) {
-        eventLogPath_ = other.eventLogPath_;
-        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.failureCause_ != 0) {
@@ -916,7 +753,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFailureMessage().isEmpty()) {
         failureMessage_ = other.failureMessage_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -951,30 +788,18 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 18:
+            case 16:
               {
-                artifactUri_ = input.readStringRequireUtf8();
+                failureCause_ = input.readEnum();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 18
+              } // case 16
             case 26:
               {
-                eventLogPath_ = input.readStringRequireUtf8();
+                failureMessage_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 32:
-              {
-                failureCause_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-            case 42:
-              {
-                failureMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1000,8 +825,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
-     * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * used to execute the custom actions associated with the predeploy Job.
+     * Format is projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1026,8 +851,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
-     * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * used to execute the custom actions associated with the predeploy Job.
+     * Format is projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1052,8 +877,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
-     * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * used to execute the custom actions associated with the predeploy Job.
+     * Format is projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1077,8 +902,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
-     * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * used to execute the custom actions associated with the predeploy Job.
+     * Format is projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1098,8 +923,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
-     * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * used to execute the custom actions associated with the predeploy Job.
+     * Format is projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1120,239 +945,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object artifactUri_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This
-     * contains the Skaffold event log.
-     * </pre>
-     *
-     * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The artifactUri.
-     */
-    public java.lang.String getArtifactUri() {
-      java.lang.Object ref = artifactUri_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        artifactUri_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This
-     * contains the Skaffold event log.
-     * </pre>
-     *
-     * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for artifactUri.
-     */
-    public com.google.protobuf.ByteString getArtifactUriBytes() {
-      java.lang.Object ref = artifactUri_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        artifactUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This
-     * contains the Skaffold event log.
-     * </pre>
-     *
-     * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The artifactUri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setArtifactUri(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      artifactUri_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This
-     * contains the Skaffold event log.
-     * </pre>
-     *
-     * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearArtifactUri() {
-      artifactUri_ = getDefaultInstance().getArtifactUri();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This
-     * contains the Skaffold event log.
-     * </pre>
-     *
-     * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for artifactUri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setArtifactUriBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      artifactUri_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object eventLogPath_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact
-     * URI.
-     * </pre>
-     *
-     * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The eventLogPath.
-     */
-    public java.lang.String getEventLogPath() {
-      java.lang.Object ref = eventLogPath_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eventLogPath_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact
-     * URI.
-     * </pre>
-     *
-     * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for eventLogPath.
-     */
-    public com.google.protobuf.ByteString getEventLogPathBytes() {
-      java.lang.Object ref = eventLogPath_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        eventLogPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact
-     * URI.
-     * </pre>
-     *
-     * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The eventLogPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEventLogPath(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      eventLogPath_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact
-     * URI.
-     * </pre>
-     *
-     * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEventLogPath() {
-      eventLogPath_ = getDefaultInstance().getEventLogPath();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact
-     * URI.
-     * </pre>
-     *
-     * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for eventLogPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEventLogPathBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      eventLogPath_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private int failureCause_ = 0;
     /**
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified
-     * while the verify is in progress or if it succeeded.
+     * Output only. The reason the predeploy failed. This will always be
+     * unspecified while the predeploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for failureCause.
@@ -1365,12 +968,12 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified
-     * while the verify is in progress or if it succeeded.
+     * Output only. The reason the predeploy failed. This will always be
+     * unspecified while the predeploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for failureCause to set.
@@ -1378,7 +981,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setFailureCauseValue(int value) {
       failureCause_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1386,44 +989,44 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified
-     * while the verify is in progress or if it succeeded.
+     * Output only. The reason the predeploy failed. This will always be
+     * unspecified while the predeploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The failureCause.
      */
     @java.lang.Override
-    public com.google.cloud.deploy.v1.VerifyJobRun.FailureCause getFailureCause() {
-      com.google.cloud.deploy.v1.VerifyJobRun.FailureCause result =
-          com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.forNumber(failureCause_);
+    public com.google.cloud.deploy.v1.PredeployJobRun.FailureCause getFailureCause() {
+      com.google.cloud.deploy.v1.PredeployJobRun.FailureCause result =
+          com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.forNumber(failureCause_);
       return result == null
-          ? com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.UNRECOGNIZED
+          ? com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.UNRECOGNIZED
           : result;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified
-     * while the verify is in progress or if it succeeded.
+     * Output only. The reason the predeploy failed. This will always be
+     * unspecified while the predeploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The failureCause to set.
      * @return This builder for chaining.
      */
-    public Builder setFailureCause(com.google.cloud.deploy.v1.VerifyJobRun.FailureCause value) {
+    public Builder setFailureCause(com.google.cloud.deploy.v1.PredeployJobRun.FailureCause value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       failureCause_ = value.getNumber();
       onChanged();
       return this;
@@ -1432,18 +1035,18 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified
-     * while the verify is in progress or if it succeeded.
+     * Output only. The reason the predeploy failed. This will always be
+     * unspecified while the predeploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.VerifyJobRun.FailureCause failure_cause = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.deploy.v1.PredeployJobRun.FailureCause failure_cause = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFailureCause() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       failureCause_ = 0;
       onChanged();
       return this;
@@ -1454,10 +1057,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the verify failure, if available.
+     * Output only. Additional information about the predeploy failure, if
+     * available.
      * </pre>
      *
-     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The failureMessage.
      */
@@ -1476,10 +1080,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the verify failure, if available.
+     * Output only. Additional information about the predeploy failure, if
+     * available.
      * </pre>
      *
-     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for failureMessage.
      */
@@ -1498,10 +1103,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the verify failure, if available.
+     * Output only. Additional information about the predeploy failure, if
+     * available.
      * </pre>
      *
-     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The failureMessage to set.
      * @return This builder for chaining.
@@ -1511,7 +1117,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       failureMessage_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1519,16 +1125,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the verify failure, if available.
+     * Output only. Additional information about the predeploy failure, if
+     * available.
      * </pre>
      *
-     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFailureMessage() {
       failureMessage_ = getDefaultInstance().getFailureMessage();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1536,10 +1143,11 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the verify failure, if available.
+     * Output only. Additional information about the predeploy failure, if
+     * available.
      * </pre>
      *
-     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string failure_message = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for failureMessage to set.
      * @return This builder for chaining.
@@ -1550,7 +1158,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       failureMessage_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1566,24 +1174,24 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.VerifyJobRun)
+    // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.PredeployJobRun)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.VerifyJobRun)
-  private static final com.google.cloud.deploy.v1.VerifyJobRun DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.PredeployJobRun)
+  private static final com.google.cloud.deploy.v1.PredeployJobRun DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.deploy.v1.VerifyJobRun();
+    DEFAULT_INSTANCE = new com.google.cloud.deploy.v1.PredeployJobRun();
   }
 
-  public static com.google.cloud.deploy.v1.VerifyJobRun getDefaultInstance() {
+  public static com.google.cloud.deploy.v1.PredeployJobRun getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VerifyJobRun> PARSER =
-      new com.google.protobuf.AbstractParser<VerifyJobRun>() {
+  private static final com.google.protobuf.Parser<PredeployJobRun> PARSER =
+      new com.google.protobuf.AbstractParser<PredeployJobRun>() {
         @java.lang.Override
-        public VerifyJobRun parsePartialFrom(
+        public PredeployJobRun parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1602,17 +1210,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<VerifyJobRun> parser() {
+  public static com.google.protobuf.Parser<PredeployJobRun> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VerifyJobRun> getParserForType() {
+  public com.google.protobuf.Parser<PredeployJobRun> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.deploy.v1.VerifyJobRun getDefaultInstanceForType() {
+  public com.google.cloud.deploy.v1.PredeployJobRun getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

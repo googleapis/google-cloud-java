@@ -115,6 +115,26 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * <code>VERIFY = 3;</code>
      */
     VERIFY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Use for predeploy job execution.
+     * </pre>
+     *
+     * <code>PREDEPLOY = 4;</code>
+     */
+    PREDEPLOY(4),
+    /**
+     *
+     *
+     * <pre>
+     * Use for postdeploy job execution.
+     * </pre>
+     *
+     * <code>POSTDEPLOY = 5;</code>
+     */
+    POSTDEPLOY(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +178,26 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * <code>VERIFY = 3;</code>
      */
     public static final int VERIFY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Use for predeploy job execution.
+     * </pre>
+     *
+     * <code>PREDEPLOY = 4;</code>
+     */
+    public static final int PREDEPLOY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Use for postdeploy job execution.
+     * </pre>
+     *
+     * <code>POSTDEPLOY = 5;</code>
+     */
+    public static final int POSTDEPLOY_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,6 +231,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           return DEPLOY;
         case 3:
           return VERIFY;
+        case 4:
+          return PREDEPLOY;
+        case 5:
+          return POSTDEPLOY;
         default:
           return null;
       }
