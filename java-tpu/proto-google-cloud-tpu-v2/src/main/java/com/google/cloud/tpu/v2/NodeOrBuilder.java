@@ -81,10 +81,10 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * Optional. The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The acceleratorType.
    */
@@ -93,10 +93,10 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * Optional. The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -863,4 +863,44 @@ public interface NodeOrBuilder
    * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
    */
   com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder getAcceleratorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The queuedResource.
+   */
+  java.lang.String getQueuedResource();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for queuedResource.
+   */
+  com.google.protobuf.ByteString getQueuedResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the Node belongs to a Multislice group.
+   * </pre>
+   *
+   * <code>bool multislice_node = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The multisliceNode.
+   */
+  boolean getMultisliceNode();
 }

@@ -212,6 +212,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -274,6 +276,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -336,6 +340,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -407,6 +413,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -568,6 +576,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -641,6 +651,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -714,6 +726,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -744,6 +758,8 @@ public class TpuClientHttpJsonTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -794,6 +810,8 @@ public class TpuClientHttpJsonTest {
               .addAllSymptoms(new ArrayList<Symptom>())
               .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
               .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+              .setQueuedResource("queuedResource94310049")
+              .setMultisliceNode(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodeAsync(node, updateMask).get();
