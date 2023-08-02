@@ -412,7 +412,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -439,7 +441,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -457,7 +461,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -484,7 +490,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -515,7 +523,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -532,7 +542,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -553,7 +565,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
    * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * - 'com.google = FATAL'
+   * - 'root = INFO'
+   * - 'org.apache = DEBUG'
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -981,7 +995,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1008,7 +1024,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1026,7 +1044,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1054,7 +1074,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1086,7 +1108,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1103,7 +1127,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1125,7 +1151,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1156,7 +1184,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1184,7 +1214,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1209,7 +1241,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1235,7 +1269,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
@@ -1257,7 +1293,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
      * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * - 'com.google = FATAL'
+     * - 'root = INFO'
+     * - 'org.apache = DEBUG'
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
