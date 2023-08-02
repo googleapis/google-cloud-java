@@ -410,6 +410,10 @@ try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.c
       clusterControllerClient.createClusterOperationCallable().futureCall(request);
   // Do something.
   Cluster response = future.get();
+} catch (CancellationException e) {
+  // Exceeded the default RPC timeout without the Operation completing.
+  // Library is no longer polling for the Operation status. Consider 
+  // increasing the timeout.
 }
 ```
 
