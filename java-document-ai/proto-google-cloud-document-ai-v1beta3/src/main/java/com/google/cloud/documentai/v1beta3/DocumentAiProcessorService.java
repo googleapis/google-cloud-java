@@ -256,6 +256,10 @@ public final class DocumentAiProcessorService {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_ExternalProcessorVersionSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_ExternalProcessorVersionSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionResponse_fieldAccessorTable;
@@ -514,11 +518,17 @@ public final class DocumentAiProcessorService {
           + "\003 \001(\t\"t\n\027ListEvaluationsResponse\022@\n\013eval"
           + "uations\030\001 \003(\0132+.google.cloud.documentai."
           + "v1beta3.Evaluation\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\"\303\001\n\035ImportProcessorVersionRequest\022S\n"
+          + "\001(\t\"\263\003\n\035ImportProcessorVersionRequest\022S\n"
           + "\030processor_version_source\030\002 \001(\tB/\372A,\n*do"
           + "cumentai.googleapis.com/ProcessorVersion"
-          + "H\000\022C\n\006parent\030\001 \001(\tB3\342A\001\002\372A,\022*documentai."
-          + "googleapis.com/ProcessorVersionB\010\n\006sourc"
+          + "H\000\022\212\001\n!external_processor_version_source"
+          + "\030\003 \001(\0132].google.cloud.documentai.v1beta3"
+          + ".ImportProcessorVersionRequest.ExternalP"
+          + "rocessorVersionSourceH\000\022C\n\006parent\030\001 \001(\tB"
+          + "3\342A\001\002\372A,\022*documentai.googleapis.com/Proc"
+          + "essorVersion\032a\n\036ExternalProcessorVersion"
+          + "Source\022\037\n\021processor_version\030\001 \001(\tB\004\342A\001\002\022"
+          + "\036\n\020service_endpoint\030\002 \001(\tB\004\342A\001\001B\010\n\006sourc"
           + "e\"l\n\036ImportProcessorVersionResponse\022J\n\021p"
           + "rocessor_version\030\001 \001(\tB/\372A,\n*documentai."
           + "googleapis.com/ProcessorVersion\"s\n\036Impor"
@@ -665,14 +675,14 @@ public final class DocumentAiProcessorService {
           + "aluationsResponse\"f\332A\006parent\202\323\344\223\002W\022U/v1b"
           + "eta3/{parent=projects/*/locations/*/proc"
           + "essors/*/processorVersions/*}/evaluation"
-          + "s\022\257\002\n\026ImportProcessorVersion\022>.google.cl"
-          + "oud.documentai.v1beta3.ImportProcessorVe"
+          + "s\022\257\002\n\026ImportProcessorVersion\022>.google.cl",
+      "oud.documentai.v1beta3.ImportProcessorVe"
           + "rsionRequest\032\035.google.longrunning.Operat"
           + "ion\"\265\001\312A@\n\036ImportProcessorVersionRespons"
           + "e\022\036ImportProcessorVersionMetadata\332A\006pare"
           + "nt\202\323\344\223\002c\"^/v1beta3/{parent=projects/*/lo"
-          + "cations/*/processors/*}/processorVersion",
-      "s:importProcessorVersion:\001*\032M\312A\031document"
+          + "cations/*/processors/*}/processorVersion"
+          + "s:importProcessorVersion:\001*\032M\312A\031document"
           + "ai.googleapis.com\322A.https://www.googleap"
           + "is.com/auth/cloud-platformB\303\003\n#com.googl"
           + "e.cloud.documentai.v1beta3B\032DocumentAiPr"
@@ -1193,7 +1203,17 @@ public final class DocumentAiProcessorService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_descriptor,
             new java.lang.String[] {
-              "ProcessorVersionSource", "Parent", "Source",
+              "ProcessorVersionSource", "ExternalProcessorVersionSource", "Parent", "Source",
+            });
+    internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_ExternalProcessorVersionSource_descriptor =
+        internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_ExternalProcessorVersionSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_ExternalProcessorVersionSource_descriptor,
+            new java.lang.String[] {
+              "ProcessorVersion", "ServiceEndpoint",
             });
     internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionResponse_descriptor =
         getDescriptor().getMessageTypes().get(51);
