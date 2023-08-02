@@ -395,6 +395,24 @@ then waiting for the operation to complete. This is accomplished by returning an
 When calling `get()` on the `OperationFuture`, the client library will poll the operation to
 check the operation's status.
 
+For example, take a sample `createCluster` Operation in google-cloud-dataproc v4.20.0:
+```java
+try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+  CreateClusterRequest request =
+      CreateClusterRequest.newBuilder()
+          .setProjectId("{PROJECT_ID}")
+          .setRegion("{REGION}")
+          .setCluster(Cluster.newBuilder().build())
+          .setRequestId("{REQUEST_ID}")
+          .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
+          .build();
+  OperationFuture<Cluster, ClusterOperationMetadata> future =
+      clusterControllerClient.createClusterOperationCallable().futureCall(request);
+  // Do something.
+  Cluster response = future.get();
+}
+```
+
 ### LRO Timeouts
 The polling operations have a default timeout that varies from service to service.
 The library will throw a `java.util.concurrent.CancellationException` with the message:
@@ -432,9 +450,11 @@ Both retries and LROs share the same RetrySettings class. Note the corresponding
 - Retry Delay Multiplier (Multiplier value to increase the poll delay): 1.5
 
 The RPC Timeout values have no use in LROs and can be omitted or set to the default values
-(`Duration.ZERO` for Timeouts or `1.0` for the multiplier)
+(`Duration.ZERO` for Timeouts or `1.0` for the multiplier).
 
 ### Configuring LRO Timeouts
+To configure the LRO values, create an OperationTimedPollAlgorithm object and update the
+RPC's polling algorithm. For example:
 ```java
 ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
 TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
