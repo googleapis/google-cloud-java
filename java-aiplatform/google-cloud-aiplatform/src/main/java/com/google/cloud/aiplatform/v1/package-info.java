@@ -293,6 +293,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= ScheduleServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing Vertex AI's Schedule resources to
+ * periodically launch shceudled runs to make API calls.
+ *
+ * <p>Sample for ScheduleServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Schedule schedule = Schedule.newBuilder().build();
+ *   Schedule response = scheduleServiceClient.createSchedule(parent, schedule);
+ * }
+ * }</pre>
+ *
  * <p>======================= SpecialistPoolServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing Customer SpecialistPools. When

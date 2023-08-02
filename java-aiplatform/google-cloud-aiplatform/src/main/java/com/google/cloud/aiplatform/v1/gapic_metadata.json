@@ -820,11 +820,59 @@
             "RawPredict": {
               "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
             },
+            "ServerStreamingPredict": {
+              "methods": ["serverStreamingPredictCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ScheduleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ScheduleServiceClient",
+          "rpcs": {
+            "CreateSchedule": {
+              "methods": ["createSchedule", "createSchedule", "createSchedule", "createScheduleCallable"]
+            },
+            "DeleteSchedule": {
+              "methods": ["deleteScheduleAsync", "deleteScheduleAsync", "deleteScheduleAsync", "deleteScheduleOperationCallable", "deleteScheduleCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSchedule": {
+              "methods": ["getSchedule", "getSchedule", "getSchedule", "getScheduleCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSchedules": {
+              "methods": ["listSchedules", "listSchedules", "listSchedules", "listSchedulesPagedCallable", "listSchedulesCallable"]
+            },
+            "PauseSchedule": {
+              "methods": ["pauseSchedule", "pauseSchedule", "pauseSchedule", "pauseScheduleCallable"]
+            },
+            "ResumeSchedule": {
+              "methods": ["resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeScheduleCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateSchedule": {
+              "methods": ["updateSchedule", "updateSchedule", "updateScheduleCallable"]
             }
           }
         }

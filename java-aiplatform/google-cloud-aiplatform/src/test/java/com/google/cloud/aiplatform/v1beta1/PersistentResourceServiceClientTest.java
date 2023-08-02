@@ -125,6 +125,7 @@ public class PersistentResourceServiceClientTest {
             .setNetwork("network1843485230")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
             .build();
     Operation resultOperation =
@@ -194,6 +195,7 @@ public class PersistentResourceServiceClientTest {
             .setNetwork("network1843485230")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
             .build();
     Operation resultOperation =
@@ -263,6 +265,7 @@ public class PersistentResourceServiceClientTest {
             .setNetwork("network1843485230")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);
@@ -317,6 +320,7 @@ public class PersistentResourceServiceClientTest {
             .setNetwork("network1843485230")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);

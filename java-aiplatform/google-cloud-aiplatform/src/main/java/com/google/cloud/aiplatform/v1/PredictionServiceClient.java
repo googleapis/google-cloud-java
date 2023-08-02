@@ -24,6 +24,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStub;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStubSettings;
@@ -533,6 +534,41 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return stub.rawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a server-side streaming online prediction request for Vertex LLM streaming.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamingPredictRequest request =
+   *       StreamingPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   ServerStream<StreamingPredictResponse> stream =
+   *       predictionServiceClient.serverStreamingPredictCallable().call(request);
+   *   for (StreamingPredictResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable() {
+    return stub.serverStreamingPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

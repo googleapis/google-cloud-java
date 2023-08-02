@@ -172,7 +172,7 @@ public interface ResourcePoolOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=183
+   *     google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
    * @return The idleReplicaCount.
    */
   @java.lang.Deprecated

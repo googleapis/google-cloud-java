@@ -48,6 +48,18 @@ public final class PersistentResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntimeSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RaySpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RaySpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ServiceAccountSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ServiceAccountSpec_fieldAccessorTable;
@@ -68,8 +80,8 @@ public final class PersistentResourceProto {
           + "c.proto\0327google/cloud/aiplatform/v1beta1"
           + "/machine_resources.proto\032\037google/protobu"
           + "f/timestamp.proto\032\027google/rpc/status.pro"
-          + "to\"\233\010\n\022PersistentResource\022\022\n\004name\030\001 \001(\tB"
-          + "\004\342A\001\003\022\032\n\014display_name\030\002 \001(\tB\004\342A\001\001\022K\n\016res"
+          + "to\"\355\010\n\022PersistentResource\022\022\n\004name\030\001 \001(\tB"
+          + "\004\342A\001\005\022\032\n\014display_name\030\002 \001(\tB\004\342A\001\001\022K\n\016res"
           + "ource_pools\030\004 \003(\0132-.google.cloud.aiplatf"
           + "orm.v1beta1.ResourcePoolB\004\342A\001\002\022N\n\005state\030"
           + "\005 \001(\01629.google.cloud.aiplatform.v1beta1."
@@ -86,40 +98,48 @@ public final class PersistentResourceProto {
           + "\014 \001(\0132/.google.cloud.aiplatform.v1beta1."
           + "EncryptionSpecB\004\342A\001\001\022Y\n\025resource_runtime"
           + "_spec\030\r \001(\01324.google.cloud.aiplatform.v1"
-          + "beta1.ResourceRuntimeSpecB\004\342A\001\001\022 \n\022reser"
-          + "ved_ip_ranges\030\017 \003(\tB\004\342A\001\001\032-\n\013LabelsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"V\n\005Stat"
-          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONING"
-          + "\020\001\022\013\n\007RUNNING\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005"
-          + ":\205\001\352A\201\001\n,aiplatform.googleapis.com/Persi"
-          + "stentResource\022Qprojects/{project}/locati"
-          + "ons/{location}/persistentResources/{pers"
-          + "istent_resource}\"\224\004\n\014ResourcePool\022\020\n\002id\030"
-          + "\001 \001(\tB\004\342A\001\001\022I\n\014machine_spec\030\002 \001(\0132,.goog"
-          + "le.cloud.aiplatform.v1beta1.MachineSpecB"
-          + "\005\342A\002\002\005\022 \n\rreplica_count\030\003 \001(\003B\004\342A\001\001H\000\210\001\001"
-          + "\022B\n\tdisk_spec\030\004 \001(\0132).google.cloud.aipla"
-          + "tform.v1beta1.DiskSpecB\004\342A\001\001\022\"\n\022idle_rep"
-          + "lica_count\030\005 \001(\003B\006\030\001\342A\001\003\022 \n\022used_replica"
-          + "_count\030\006 \001(\003B\004\342A\001\003\022]\n\020autoscaling_spec\030\007"
-          + " \001(\0132=.google.cloud.aiplatform.v1beta1.R"
-          + "esourcePool.AutoscalingSpecB\004\342A\001\001\032\211\001\n\017Au"
-          + "toscalingSpec\022$\n\021min_replica_count\030\001 \001(\003"
-          + "B\004\342A\001\001H\000\210\001\001\022$\n\021max_replica_count\030\002 \001(\003B\004"
-          + "\342A\001\001H\001\210\001\001B\024\n\022_min_replica_countB\024\n\022_max_"
-          + "replica_countB\020\n\016_replica_count\"n\n\023Resou"
-          + "rceRuntimeSpec\022W\n\024service_account_spec\030\002"
-          + " \001(\01323.google.cloud.aiplatform.v1beta1.S"
-          + "erviceAccountSpecB\004\342A\001\001\"`\n\022ServiceAccoun"
-          + "tSpec\022+\n\035enable_custom_service_account\030\001"
-          + " \001(\010B\004\342A\001\002\022\035\n\017service_account\030\002 \001(\tB\004\342A\001"
-          + "\001B\356\001\n#com.google.cloud.aiplatform.v1beta"
-          + "1B\027PersistentResourceProtoP\001ZCcloud.goog"
-          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "beta1.ResourceRuntimeSpecB\004\342A\001\001\022P\n\020resou"
+          + "rce_runtime\030\016 \001(\01320.google.cloud.aiplatf"
+          + "orm.v1beta1.ResourceRuntimeB\004\342A\001\003\022 \n\022res"
+          + "erved_ip_ranges\030\017 \003(\tB\004\342A\001\001\032-\n\013LabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"V\n\005St"
+          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONI"
+          + "NG\020\001\022\013\n\007RUNNING\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR"
+          + "\020\005:\205\001\352A\201\001\n,aiplatform.googleapis.com/Per"
+          + "sistentResource\022Qprojects/{project}/loca"
+          + "tions/{location}/persistentResources/{pe"
+          + "rsistent_resource}\"\224\004\n\014ResourcePool\022\020\n\002i"
+          + "d\030\001 \001(\tB\004\342A\001\001\022I\n\014machine_spec\030\002 \001(\0132,.go"
+          + "ogle.cloud.aiplatform.v1beta1.MachineSpe"
+          + "cB\005\342A\002\002\005\022 \n\rreplica_count\030\003 \001(\003B\004\342A\001\001H\000\210"
+          + "\001\001\022B\n\tdisk_spec\030\004 \001(\0132).google.cloud.aip"
+          + "latform.v1beta1.DiskSpecB\004\342A\001\001\022\"\n\022idle_r"
+          + "eplica_count\030\005 \001(\003B\006\030\001\342A\001\003\022 \n\022used_repli"
+          + "ca_count\030\006 \001(\003B\004\342A\001\003\022]\n\020autoscaling_spec"
+          + "\030\007 \001(\0132=.google.cloud.aiplatform.v1beta1"
+          + ".ResourcePool.AutoscalingSpecB\004\342A\001\001\032\211\001\n\017"
+          + "AutoscalingSpec\022$\n\021min_replica_count\030\001 \001"
+          + "(\003B\004\342A\001\001H\000\210\001\001\022$\n\021max_replica_count\030\002 \001(\003"
+          + "B\004\342A\001\001H\001\210\001\001B\024\n\022_min_replica_countB\024\n\022_ma"
+          + "x_replica_countB\020\n\016_replica_count\"\260\001\n\023Re"
+          + "sourceRuntimeSpec\022W\n\024service_account_spe"
+          + "c\030\002 \001(\01323.google.cloud.aiplatform.v1beta"
+          + "1.ServiceAccountSpecB\004\342A\001\001\022@\n\010ray_spec\030\001"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.R"
+          + "aySpecB\004\342A\001\001\"\"\n\007RaySpec\022\027\n\timage_uri\030\001 \001"
+          + "(\tB\004\342A\001\001\"\241\001\n\017ResourceRuntime\022[\n\013access_u"
+          + "ris\030\001 \003(\0132@.google.cloud.aiplatform.v1be"
+          + "ta1.ResourceRuntime.AccessUrisEntryB\004\342A\001"
+          + "\003\0321\n\017AccessUrisEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"`\n\022ServiceAccountSpec\022+\n\035en"
+          + "able_custom_service_account\030\001 \001(\010B\004\342A\001\002\022"
+          + "\035\n\017service_account\030\002 \001(\tB\004\342A\001\001B\356\001\n#com.g"
+          + "oogle.cloud.aiplatform.v1beta1B\027Persiste"
+          + "ntResourceProtoP\001ZCcloud.google.com/go/a"
+          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
+          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -150,6 +170,7 @@ public final class PersistentResourceProto {
               "Network",
               "EncryptionSpec",
               "ResourceRuntimeSpec",
+              "ResourceRuntime",
               "ReservedIpRanges",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PersistentResource_LabelsEntry_descriptor =
@@ -193,10 +214,36 @@ public final class PersistentResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntimeSpec_descriptor,
             new java.lang.String[] {
-              "ServiceAccountSpec",
+              "ServiceAccountSpec", "RaySpec",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RaySpec_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_RaySpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RaySpec_descriptor,
+            new java.lang.String[] {
+              "ImageUri",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor,
+            new java.lang.String[] {
+              "AccessUris",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ServiceAccountSpec_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ServiceAccountSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ServiceAccountSpec_descriptor,
