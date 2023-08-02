@@ -411,7 +411,7 @@ Each LRO RPC has a pre-configured default values. You can find these values by
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
-For example, in AI-Platform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
 has these default values:
 ```java
 OperationTimedPollAlgorithm.create(
