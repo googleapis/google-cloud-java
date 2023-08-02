@@ -208,12 +208,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -232,12 +232,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -258,12 +258,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -1315,12 +1315,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1338,12 +1338,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1367,12 +1367,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1398,12 +1398,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1427,12 +1427,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1461,12 +1461,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1489,12 +1489,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1512,12 +1512,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1539,12 +1539,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config
-     *     which instructs the speech recognizer how to process the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>

@@ -130,9 +130,9 @@ public interface InputAudioConfigOrBuilder
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
@@ -154,9 +154,9 @@ public interface InputAudioConfigOrBuilder
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
@@ -178,9 +178,9 @@ public interface InputAudioConfigOrBuilder
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
@@ -203,9 +203,9 @@ public interface InputAudioConfigOrBuilder
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
