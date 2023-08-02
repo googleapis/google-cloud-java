@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.16.3](https://github.com/googleapis/java-datastore/compare/v2.16.2...v2.16.3) (2023-08-02)
+
+
+### Documentation
+
+* Specify limit for `properties` in `Index` message in Datastore Admin API ([#1149](https://github.com/googleapis/java-datastore/issues/1149)) ([00a696d](https://github.com/googleapis/java-datastore/commit/00a696d5e0fe2ffe6c9e02abd902d1b533265310))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#1159](https://github.com/googleapis/java-datastore/issues/1159)) ([fcf07d4](https://github.com/googleapis/java-datastore/commit/fcf07d4b5b1f949f1d6b46861406cef88a9a052b))
+* Update dependency com.google.errorprone:error_prone_core to v2.21.0 ([#1158](https://github.com/googleapis/java-datastore/issues/1158)) ([08dbb3a](https://github.com/googleapis/java-datastore/commit/08dbb3ab98870f74b78caa7d160271fccc134ae9))
+
 ## [2.16.2](https://github.com/googleapis/java-datastore/compare/v2.16.1...v2.16.2) (2023-07-25)
 
 
