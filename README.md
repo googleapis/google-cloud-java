@@ -385,23 +385,23 @@ public CloudTasksClient getService() throws IOException {
 
 Long running operations (LROs) are often used for API calls that are expected to
 take a long time to complete (i.e. provisioning a GCE instance or a Dataflow pipeline).
-The initial API call creates an "operation" on the server and returns an operation ID
-to track its progress. LRO RPCs will have the suffix `Async` appended to the call name
+The initial API call creates an "operation" on the server and returns an Operation ID
+to track its progress. LRO RPCs have the suffix `Async` appended to the call name
 (i.e. `clusterControllerClient.createClusterAsync()`)
 
 Our generated clients provide a nice interface for starting the operation and
 then waiting for the operation to complete. This is accomplished by returning an
 [`OperationFuture`](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.longrunning.OperationFuture).
-When you call `get()` on the `OperationFuture`, the client library will poll the operation endpoint to
-check on the operation. 
+When calling `get()` on the `OperationFuture`, the client library will poll the operation to
+check the operation's status.
 
 ### LRO Timeouts
 The polling operations have a default timeout that varies from service to service.
-The library will throw a `java.util.concurrent.CancellationException`
-with the message: `Task was cancelled.` if the timeout exceeds the operation. A `CancellationException`
+The library will throw a `java.util.concurrent.CancellationException` with the message:
+`Task was cancelled.` if the timeout exceeds the operation. A `CancellationException`
 does not mean that the backend GCP Operation was cancelled. This exception is thrown from the
-client library to let you know that the client library has stopped polling for the Operation's status. 
-It respects the configured values in OperationTimedPollAlgorithm for each RPC.
+client library when it has exceeded the total timeout without receiving a successful status from the operation.
+Our client libraries respect the configured values set in the OperationTimedPollAlgorithm for each RPC.
 
 Note: The client library handles the Operation's polling mechanism for you. By default, there is no need
 to manually poll the status yourself.
@@ -425,11 +425,14 @@ OperationTimedPollAlgorithm.create(
         .setTotalTimeout(Duration.ofMillis(300000L))
         .build())
 ```
-- Total Timeout: 5 minutes
-- Initial Retry Delay (Initial Poll Delay): 5 seconds
-- Max Retry Delay (Initial Poll Delay): 45 seconds
-- Retry Delay Multiplier (Poll Delay Multiplier): 1.5
+Both retries and LROs share the same RetrySettings class. Note the corresponding link:
+- Total Timeout (Max Time allowed for polling): 5 minutes
+- Initial Retry Delay (Initial delay before first poll): 5 seconds
+- Max Retry Delay (Maximum delay between each poll): 45 seconds
+- Retry Delay Multiplier (Multiplier value to increase the poll delay): 1.5
 
+The RPC Timeout values have no use in LROs and can be omitted or set to the default values
+(`Duration.ZERO` for Timeouts or `1.0` for the multiplier)
 
 ### Configuring LRO Timeouts
 ```java
