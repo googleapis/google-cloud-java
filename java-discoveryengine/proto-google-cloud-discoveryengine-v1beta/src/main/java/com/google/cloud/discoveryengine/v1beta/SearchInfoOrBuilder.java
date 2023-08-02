@@ -34,14 +34,14 @@ public interface SearchInfoOrBuilder
    * for definition.
    *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
    * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
    * is required for `search` events. Other event types should not set this
-   * field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -60,14 +60,14 @@ public interface SearchInfoOrBuilder
    * for definition.
    *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
    * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
    * is required for `search` events. Other event types should not set this
-   * field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -87,10 +87,10 @@ public interface SearchInfoOrBuilder
    * for definition and syntax.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string order_by = 2;</code>
@@ -109,10 +109,10 @@ public interface SearchInfoOrBuilder
    * for definition and syntax.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string order_by = 2;</code>
@@ -132,10 +132,10 @@ public interface SearchInfoOrBuilder
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
    *
-   * If this field is negative, an INVALID_ARGUMENT is returned.
+   * If this field is negative, an `INVALID_ARGUMENT` is returned.
    *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>optional int32 offset = 3;</code>
@@ -154,10 +154,10 @@ public interface SearchInfoOrBuilder
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
    *
-   * If this field is negative, an INVALID_ARGUMENT is returned.
+   * If this field is negative, an `INVALID_ARGUMENT` is returned.
    *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>optional int32 offset = 3;</code>

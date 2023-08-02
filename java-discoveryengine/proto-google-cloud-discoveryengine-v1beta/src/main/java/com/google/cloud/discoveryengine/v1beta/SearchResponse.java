@@ -3810,6 +3810,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult
             .RefinementAttributeOrBuilder
         getRefinementAttributesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return A list containing the followUpQuestions.
+     */
+    java.util.List<java.lang.String> getFollowUpQuestionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return The count of followUpQuestions.
+     */
+    int getFollowUpQuestionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The followUpQuestions at the given index.
+     */
+    java.lang.String getFollowUpQuestions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the followUpQuestions at the given index.
+     */
+    com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index);
   }
   /**
    *
@@ -3833,6 +3884,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     private GuidedSearchResult() {
       refinementAttributes_ = java.util.Collections.emptyList();
+      followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
@@ -4870,6 +4922,70 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return refinementAttributes_.get(index);
     }
 
+    public static final int FOLLOW_UP_QUESTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList followUpQuestions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return A list containing the followUpQuestions.
+     */
+    public com.google.protobuf.ProtocolStringList getFollowUpQuestionsList() {
+      return followUpQuestions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return The count of followUpQuestions.
+     */
+    public int getFollowUpQuestionsCount() {
+      return followUpQuestions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The followUpQuestions at the given index.
+     */
+    public java.lang.String getFollowUpQuestions(int index) {
+      return followUpQuestions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the followUpQuestions at the given index.
+     */
+    public com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index) {
+      return followUpQuestions_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4887,6 +5003,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < refinementAttributes_.size(); i++) {
         output.writeMessage(1, refinementAttributes_.get(i));
       }
+      for (int i = 0; i < followUpQuestions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, followUpQuestions_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4900,6 +5019,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, refinementAttributes_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < followUpQuestions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(followUpQuestions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFollowUpQuestionsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4919,6 +5046,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult) obj;
 
       if (!getRefinementAttributesList().equals(other.getRefinementAttributesList())) return false;
+      if (!getFollowUpQuestionsList().equals(other.getFollowUpQuestionsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4933,6 +5061,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (getRefinementAttributesCount() > 0) {
         hash = (37 * hash) + REFINEMENT_ATTRIBUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRefinementAttributesList().hashCode();
+      }
+      if (getFollowUpQuestionsCount() > 0) {
+        hash = (37 * hash) + FOLLOW_UP_QUESTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getFollowUpQuestionsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -5092,6 +5224,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           refinementAttributesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -5147,6 +5280,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          followUpQuestions_.makeImmutable();
+          result.followUpQuestions_ = followUpQuestions_;
+        }
       }
 
       @java.lang.Override
@@ -5228,6 +5365,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (!other.followUpQuestions_.isEmpty()) {
+          if (followUpQuestions_.isEmpty()) {
+            followUpQuestions_ = other.followUpQuestions_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureFollowUpQuestionsIsMutable();
+            followUpQuestions_.addAll(other.followUpQuestions_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5271,6 +5418,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFollowUpQuestionsIsMutable();
+                  followUpQuestions_.add(s);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5739,6 +5893,180 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return refinementAttributesBuilder_;
       }
 
+      private com.google.protobuf.LazyStringArrayList followUpQuestions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFollowUpQuestionsIsMutable() {
+        if (!followUpQuestions_.isModifiable()) {
+          followUpQuestions_ = new com.google.protobuf.LazyStringArrayList(followUpQuestions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return A list containing the followUpQuestions.
+       */
+      public com.google.protobuf.ProtocolStringList getFollowUpQuestionsList() {
+        followUpQuestions_.makeImmutable();
+        return followUpQuestions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return The count of followUpQuestions.
+       */
+      public int getFollowUpQuestionsCount() {
+        return followUpQuestions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The followUpQuestions at the given index.
+       */
+      public java.lang.String getFollowUpQuestions(int index) {
+        return followUpQuestions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the followUpQuestions at the given index.
+       */
+      public com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index) {
+        return followUpQuestions_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The followUpQuestions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFollowUpQuestions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param value The followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFollowUpQuestions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param values The followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFollowUpQuestions(java.lang.Iterable<java.lang.String> values) {
+        ensureFollowUpQuestionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, followUpQuestions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFollowUpQuestions() {
+        followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param value The bytes of the followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFollowUpQuestionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5836,6 +6164,87 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for summaryText.
      */
     com.google.protobuf.ByteString getSummaryTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the summarySkippedReasons.
+     */
+    java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        getSummarySkippedReasonsList();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return The count of summarySkippedReasons.
+     */
+    int getSummarySkippedReasonsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The summarySkippedReasons at the given index.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+        getSummarySkippedReasons(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+     */
+    java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+     */
+    int getSummarySkippedReasonsValue(int index);
   }
   /**
    *
@@ -5858,6 +6267,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     private Summary() {
       summaryText_ = "";
+      summarySkippedReasons_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5879,6 +6289,215 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.class,
               com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Enum for summary-skipped reasons.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason}
+     */
+    public enum SummarySkippedReason implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. The summary skipped reason is not specified.
+       * </pre>
+       *
+       * <code>SUMMARY_SKIPPED_REASON_UNSPECIFIED = 0;</code>
+       */
+      SUMMARY_SKIPPED_REASON_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The adversarial query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>ADVERSARIAL_QUERY_IGNORED = 1;</code>
+       */
+      ADVERSARIAL_QUERY_IGNORED(1),
+      /**
+       *
+       *
+       * <pre>
+       * The non-summary seeking query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED = 2;</code>
+       */
+      NON_SUMMARY_SEEKING_QUERY_IGNORED(2),
+      /**
+       *
+       *
+       * <pre>
+       * The out-of-domain query ignored case.
+       *
+       * Google skips the summary if there are no high-relevance search results.
+       * For example, the data store contains facts about company A but the
+       * user query is asking questions about company B.
+       * </pre>
+       *
+       * <code>OUT_OF_DOMAIN_QUERY_IGNORED = 3;</code>
+       */
+      OUT_OF_DOMAIN_QUERY_IGNORED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. The summary skipped reason is not specified.
+       * </pre>
+       *
+       * <code>SUMMARY_SKIPPED_REASON_UNSPECIFIED = 0;</code>
+       */
+      public static final int SUMMARY_SKIPPED_REASON_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The adversarial query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>ADVERSARIAL_QUERY_IGNORED = 1;</code>
+       */
+      public static final int ADVERSARIAL_QUERY_IGNORED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The non-summary seeking query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED = 2;</code>
+       */
+      public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The out-of-domain query ignored case.
+       *
+       * Google skips the summary if there are no high-relevance search results.
+       * For example, the data store contains facts about company A but the
+       * user query is asking questions about company B.
+       * </pre>
+       *
+       * <code>OUT_OF_DOMAIN_QUERY_IGNORED = 3;</code>
+       */
+      public static final int OUT_OF_DOMAIN_QUERY_IGNORED_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SummarySkippedReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SummarySkippedReason forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SUMMARY_SKIPPED_REASON_UNSPECIFIED;
+          case 1:
+            return ADVERSARIAL_QUERY_IGNORED;
+          case 2:
+            return NON_SUMMARY_SEEKING_QUERY_IGNORED;
+          case 3:
+            return OUT_OF_DOMAIN_QUERY_IGNORED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>() {
+                public SummarySkippedReason findValueByNumber(int number) {
+                  return SummarySkippedReason.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SummarySkippedReason[] VALUES = values();
+
+      public static SummarySkippedReason valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SummarySkippedReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason)
     }
 
     public static final int SUMMARY_TEXT_FIELD_NUMBER = 1;
@@ -5932,6 +6551,133 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SUMMARY_SKIPPED_REASONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> summarySkippedReasons_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        summarySkippedReasons_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                    .SummarySkippedReason>() {
+              public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                      .SummarySkippedReason
+                  convert(java.lang.Integer from) {
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+                    result =
+                        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                            .SummarySkippedReason.forNumber(from);
+                return result == null
+                    ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                        .SummarySkippedReason.UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the summarySkippedReasons.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        getSummarySkippedReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>(
+          summarySkippedReasons_, summarySkippedReasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return The count of summarySkippedReasons.
+     */
+    @java.lang.Override
+    public int getSummarySkippedReasonsCount() {
+      return summarySkippedReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The summarySkippedReasons at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+        getSummarySkippedReasons(int index) {
+      return summarySkippedReasons_converter_.convert(summarySkippedReasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList() {
+      return summarySkippedReasons_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+     */
+    @java.lang.Override
+    public int getSummarySkippedReasonsValue(int index) {
+      return summarySkippedReasons_.get(index);
+    }
+
+    private int summarySkippedReasonsMemoizedSerializedSize;
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5946,8 +6692,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, summaryText_);
+      }
+      if (getSummarySkippedReasonsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(summarySkippedReasonsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < summarySkippedReasons_.size(); i++) {
+        output.writeEnumNoTag(summarySkippedReasons_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -5960,6 +6714,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, summaryText_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < summarySkippedReasons_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  summarySkippedReasons_.get(i));
+        }
+        size += dataSize;
+        if (!getSummarySkippedReasonsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        summarySkippedReasonsMemoizedSerializedSize = dataSize;
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5978,6 +6746,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary) obj;
 
       if (!getSummaryText().equals(other.getSummaryText())) return false;
+      if (!summarySkippedReasons_.equals(other.summarySkippedReasons_)) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5991,6 +6760,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SUMMARY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getSummaryText().hashCode();
+      if (getSummarySkippedReasonsCount() > 0) {
+        hash = (37 * hash) + SUMMARY_SKIPPED_REASONS_FIELD_NUMBER;
+        hash = (53 * hash) + summarySkippedReasons_.hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6134,6 +6907,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         summaryText_ = "";
+        summarySkippedReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -6162,11 +6937,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary buildPartial() {
         com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary result =
             new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          summarySkippedReasons_ = java.util.Collections.unmodifiableList(summarySkippedReasons_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.summarySkippedReasons_ = summarySkippedReasons_;
       }
 
       private void buildPartial0(
@@ -6232,6 +7017,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.summarySkippedReasons_.isEmpty()) {
+          if (summarySkippedReasons_.isEmpty()) {
+            summarySkippedReasons_ = other.summarySkippedReasons_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSummarySkippedReasonsIsMutable();
+            summarySkippedReasons_.addAll(other.summarySkippedReasons_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6264,6 +7059,25 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureSummarySkippedReasonsIsMutable();
+                  summarySkippedReasons_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureSummarySkippedReasonsIsMutable();
+                    summarySkippedReasons_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6385,6 +7199,280 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         summaryText_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> summarySkippedReasons_ =
+          java.util.Collections.emptyList();
+
+      private void ensureSummarySkippedReasonsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          summarySkippedReasons_ =
+              new java.util.ArrayList<java.lang.Integer>(summarySkippedReasons_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return A list containing the summarySkippedReasons.
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+          getSummarySkippedReasonsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>(
+            summarySkippedReasons_, summarySkippedReasons_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return The count of summarySkippedReasons.
+       */
+      public int getSummarySkippedReasonsCount() {
+        return summarySkippedReasons_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The summarySkippedReasons at the given index.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+          getSummarySkippedReasons(int index) {
+        return summarySkippedReasons_converter_.convert(summarySkippedReasons_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The summarySkippedReasons to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarySkippedReasons(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param value The summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSummarySkippedReasons(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param values The summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSummarySkippedReasons(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                          .SummarySkippedReason>
+              values) {
+        ensureSummarySkippedReasonsIsMutable();
+        for (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+            value : values) {
+          summarySkippedReasons_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSummarySkippedReasons() {
+        summarySkippedReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+       */
+      public java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList() {
+        return java.util.Collections.unmodifiableList(summarySkippedReasons_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+       */
+      public int getSummarySkippedReasonsValue(int index) {
+        return summarySkippedReasons_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for summarySkippedReasons to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarySkippedReasonsValue(int index, int value) {
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSummarySkippedReasonsValue(int value) {
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSummarySkippedReasonsValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureSummarySkippedReasonsIsMutable();
+        for (int value : values) {
+          summarySkippedReasons_.add(value);
+        }
         onChanged();
         return this;
       }

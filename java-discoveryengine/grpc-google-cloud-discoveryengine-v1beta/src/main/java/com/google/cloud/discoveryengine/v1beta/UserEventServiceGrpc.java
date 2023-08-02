@@ -242,7 +242,7 @@ public final class UserEventServiceGrpc {
      *
      * <pre>
      * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * due to browser restriction of POST-ing to a third-party domain.
      * This method is used only by the Discovery Engine API JavaScript pixel and
      * Google Tag Manager. Users should not call this method directly.
      * </pre>
@@ -330,7 +330,7 @@ public final class UserEventServiceGrpc {
      *
      * <pre>
      * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * due to browser restriction of POST-ing to a third-party domain.
      * This method is used only by the Discovery Engine API JavaScript pixel and
      * Google Tag Manager. Users should not call this method directly.
      * </pre>
@@ -403,7 +403,7 @@ public final class UserEventServiceGrpc {
      *
      * <pre>
      * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * due to browser restriction of POST-ing to a third-party domain.
      * This method is used only by the Discovery Engine API JavaScript pixel and
      * Google Tag Manager. Users should not call this method directly.
      * </pre>
@@ -471,7 +471,7 @@ public final class UserEventServiceGrpc {
      *
      * <pre>
      * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * due to browser restriction of POST-ing to a third-party domain.
      * This method is used only by the Discovery Engine API JavaScript pixel and
      * Google Tag Manager. Users should not call this method directly.
      * </pre>
