@@ -925,6 +925,150 @@ public class ResourcePoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Modify the specified resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resourcePolicy = "resourcePolicy-130903328";
+   *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
+   *   Operation response =
+   *       resourcePoliciesClient
+   *           .patchAsync(project, region, resourcePolicy, resourcePolicyResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param resourcePolicy Id of the resource policy to patch.
+   * @param resourcePolicyResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project, String region, String resourcePolicy, ResourcePolicy resourcePolicyResource) {
+    PatchResourcePolicyRequest request =
+        PatchResourcePolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResourcePolicy(resourcePolicy)
+            .setResourcePolicyResource(resourcePolicyResource)
+            .build();
+    return patchAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modify the specified resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   PatchResourcePolicyRequest request =
+   *       PatchResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   Operation response = resourcePoliciesClient.patchAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchResourcePolicyRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modify the specified resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   PatchResourcePolicyRequest request =
+   *       PatchResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       resourcePoliciesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchResourcePolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modify the specified resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   PatchResourcePolicyRequest request =
+   *       PatchResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   ApiFuture<Operation> future = resourcePoliciesClient.patchCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchResourcePolicyRequest, Operation> patchCallable() {
+    return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
