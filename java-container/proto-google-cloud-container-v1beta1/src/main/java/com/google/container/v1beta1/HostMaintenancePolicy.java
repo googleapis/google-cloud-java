@@ -22,76 +22,95 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration options for Istio addon.
+ * HostMaintenancePolicy contains the maintenance policy for the hosts on which
+ * the GKE VMs run on.
  * </pre>
  *
- * Protobuf type {@code google.container.v1beta1.IstioConfig}
+ * Protobuf type {@code google.container.v1beta1.HostMaintenancePolicy}
  */
-public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
+public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.container.v1beta1.IstioConfig)
-    IstioConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.container.v1beta1.HostMaintenancePolicy)
+    HostMaintenancePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use IstioConfig.newBuilder() to construct.
-  private IstioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use HostMaintenancePolicy.newBuilder() to construct.
+  private HostMaintenancePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private IstioConfig() {
-    auth_ = 0;
+  private HostMaintenancePolicy() {
+    maintenanceInterval_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new IstioConfig();
+    return new HostMaintenancePolicy();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+        .internal_static_google_container_v1beta1_HostMaintenancePolicy_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+        .internal_static_google_container_v1beta1_HostMaintenancePolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1beta1.IstioConfig.class,
-            com.google.container.v1beta1.IstioConfig.Builder.class);
+            com.google.container.v1beta1.HostMaintenancePolicy.class,
+            com.google.container.v1beta1.HostMaintenancePolicy.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Istio auth mode, https://istio.io/docs/concepts/security/mutual-tls.html
+   * Allows selecting how infrastructure upgrades should be applied to the
+   * cluster or node pool.
    * </pre>
    *
-   * Protobuf enum {@code google.container.v1beta1.IstioConfig.IstioAuthMode}
+   * Protobuf enum {@code google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval}
    */
-  public enum IstioAuthMode implements com.google.protobuf.ProtocolMessageEnum {
+  public enum MaintenanceInterval implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
-     * auth not enabled
+     * The maintenance interval is not explicitly specified.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>MAINTENANCE_INTERVAL_UNSPECIFIED = 0;</code>
      */
-    AUTH_NONE(0),
+    MAINTENANCE_INTERVAL_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * Nodes are eligible to receive infrastructure and hypervisor updates as
+     * they become available.  This may result in more maintenance operations
+     * (live migrations or terminations) for the node than the PERIODIC option.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>AS_NEEDED = 1;</code>
      */
-    AUTH_MUTUAL_TLS(1),
+    AS_NEEDED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Nodes receive infrastructure and hypervisor updates on a periodic basis,
+     * minimizing the number of maintenance operations (live migrations or
+     * terminations) on an individual VM.  This may mean underlying VMs will
+     * take longer to receive an update than if it was configured for
+     * AS_NEEDED.  Security updates will still be applied as soon
+     * as they are available.
+     * </pre>
+     *
+     * <code>PERIODIC = 2;</code>
+     */
+    PERIODIC(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -99,22 +118,39 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * auth not enabled
+     * The maintenance interval is not explicitly specified.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>MAINTENANCE_INTERVAL_UNSPECIFIED = 0;</code>
      */
-    public static final int AUTH_NONE_VALUE = 0;
+    public static final int MAINTENANCE_INTERVAL_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * Nodes are eligible to receive infrastructure and hypervisor updates as
+     * they become available.  This may result in more maintenance operations
+     * (live migrations or terminations) for the node than the PERIODIC option.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>AS_NEEDED = 1;</code>
      */
-    public static final int AUTH_MUTUAL_TLS_VALUE = 1;
+    public static final int AS_NEEDED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Nodes receive infrastructure and hypervisor updates on a periodic basis,
+     * minimizing the number of maintenance operations (live migrations or
+     * terminations) on an individual VM.  This may mean underlying VMs will
+     * take longer to receive an update than if it was configured for
+     * AS_NEEDED.  Security updates will still be applied as soon
+     * as they are available.
+     * </pre>
+     *
+     * <code>PERIODIC = 2;</code>
+     */
+    public static final int PERIODIC_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -130,7 +166,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static IstioAuthMode valueOf(int value) {
+    public static MaintenanceInterval valueOf(int value) {
       return forNumber(value);
     }
 
@@ -138,27 +174,31 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static IstioAuthMode forNumber(int value) {
+    public static MaintenanceInterval forNumber(int value) {
       switch (value) {
         case 0:
-          return AUTH_NONE;
+          return MAINTENANCE_INTERVAL_UNSPECIFIED;
         case 1:
-          return AUTH_MUTUAL_TLS;
+          return AS_NEEDED;
+        case 2:
+          return PERIODIC;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>
+        internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode>() {
-          public IstioAuthMode findValueByNumber(int number) {
-            return IstioAuthMode.forNumber(number);
-          }
-        };
+    private static final com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>() {
+              public MaintenanceInterval findValueByNumber(int number) {
+                return MaintenanceInterval.forNumber(number);
+              }
+            };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       if (this == UNRECOGNIZED) {
@@ -173,12 +213,15 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.container.v1beta1.IstioConfig.getDescriptor().getEnumTypes().get(0);
+      return com.google.container.v1beta1.HostMaintenancePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
-    private static final IstioAuthMode[] VALUES = values();
+    private static final MaintenanceInterval[] VALUES = values();
 
-    public static IstioAuthMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static MaintenanceInterval valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
@@ -190,74 +233,71 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private IstioAuthMode(int value) {
+    private MaintenanceInterval(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.IstioConfig.IstioAuthMode)
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval)
   }
 
-  public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_ = false;
+  private int bitField0_;
+  public static final int MAINTENANCE_INTERVAL_FIELD_NUMBER = 1;
+  private int maintenanceInterval_ = 0;
   /**
    *
    *
    * <pre>
-   * Whether Istio is enabled for this cluster.
+   * Specifies the frequency of planned maintenance events.
    * </pre>
    *
-   * <code>bool disabled = 1 [deprecated = true];</code>
+   * <code>
+   * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+   * </code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1429
-   * @return The disabled.
+   * @return Whether the maintenanceInterval field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public boolean getDisabled() {
-    return disabled_;
-  }
-
-  public static final int AUTH_FIELD_NUMBER = 2;
-  private int auth_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
-   * </pre>
-   *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
-   *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1432
-   * @return The enum numeric value on the wire for auth.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public int getAuthValue() {
-    return auth_;
+  public boolean hasMaintenanceInterval() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
+   * Specifies the frequency of planned maintenance events.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
+   * <code>
+   * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+   * </code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1432
-   * @return The auth.
+   * @return The enum numeric value on the wire for maintenanceInterval.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
-    com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-        com.google.container.v1beta1.IstioConfig.IstioAuthMode.forNumber(auth_);
+  public int getMaintenanceIntervalValue() {
+    return maintenanceInterval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+   * </code>
+   *
+   * @return The maintenanceInterval.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval
+      getMaintenanceInterval() {
+    com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval result =
+        com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval.forNumber(
+            maintenanceInterval_);
     return result == null
-        ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+        ? com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval.UNRECOGNIZED
         : result;
   }
 
@@ -275,11 +315,8 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (disabled_ != false) {
-      output.writeBool(1, disabled_);
-    }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      output.writeEnum(2, auth_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(1, maintenanceInterval_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -290,11 +327,8 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (disabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
-    }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, auth_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, maintenanceInterval_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -306,13 +340,16 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.container.v1beta1.IstioConfig)) {
+    if (!(obj instanceof com.google.container.v1beta1.HostMaintenancePolicy)) {
       return super.equals(obj);
     }
-    com.google.container.v1beta1.IstioConfig other = (com.google.container.v1beta1.IstioConfig) obj;
+    com.google.container.v1beta1.HostMaintenancePolicy other =
+        (com.google.container.v1beta1.HostMaintenancePolicy) obj;
 
-    if (getDisabled() != other.getDisabled()) return false;
-    if (auth_ != other.auth_) return false;
+    if (hasMaintenanceInterval() != other.hasMaintenanceInterval()) return false;
+    if (hasMaintenanceInterval()) {
+      if (maintenanceInterval_ != other.maintenanceInterval_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -324,80 +361,80 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
-    hash = (37 * hash) + AUTH_FIELD_NUMBER;
-    hash = (53 * hash) + auth_;
+    if (hasMaintenanceInterval()) {
+      hash = (37 * hash) + MAINTENANCE_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + maintenanceInterval_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(byte[] data)
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.HostMaintenancePolicy parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -414,7 +451,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.container.v1beta1.IstioConfig prototype) {
+  public static Builder newBuilder(com.google.container.v1beta1.HostMaintenancePolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -432,31 +469,32 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration options for Istio addon.
+   * HostMaintenancePolicy contains the maintenance policy for the hosts on which
+   * the GKE VMs run on.
    * </pre>
    *
-   * Protobuf type {@code google.container.v1beta1.IstioConfig}
+   * Protobuf type {@code google.container.v1beta1.HostMaintenancePolicy}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.IstioConfig)
-      com.google.container.v1beta1.IstioConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.HostMaintenancePolicy)
+      com.google.container.v1beta1.HostMaintenancePolicyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_HostMaintenancePolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+          .internal_static_google_container_v1beta1_HostMaintenancePolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1beta1.IstioConfig.class,
-              com.google.container.v1beta1.IstioConfig.Builder.class);
+              com.google.container.v1beta1.HostMaintenancePolicy.class,
+              com.google.container.v1beta1.HostMaintenancePolicy.Builder.class);
     }
 
-    // Construct using com.google.container.v1beta1.IstioConfig.newBuilder()
+    // Construct using com.google.container.v1beta1.HostMaintenancePolicy.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -467,25 +505,24 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      disabled_ = false;
-      auth_ = 0;
+      maintenanceInterval_ = 0;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_HostMaintenancePolicy_descriptor;
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
-      return com.google.container.v1beta1.IstioConfig.getDefaultInstance();
+    public com.google.container.v1beta1.HostMaintenancePolicy getDefaultInstanceForType() {
+      return com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig build() {
-      com.google.container.v1beta1.IstioConfig result = buildPartial();
+    public com.google.container.v1beta1.HostMaintenancePolicy build() {
+      com.google.container.v1beta1.HostMaintenancePolicy result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -493,9 +530,9 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig buildPartial() {
-      com.google.container.v1beta1.IstioConfig result =
-          new com.google.container.v1beta1.IstioConfig(this);
+    public com.google.container.v1beta1.HostMaintenancePolicy buildPartial() {
+      com.google.container.v1beta1.HostMaintenancePolicy result =
+          new com.google.container.v1beta1.HostMaintenancePolicy(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -503,14 +540,14 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartial0(com.google.container.v1beta1.IstioConfig result) {
+    private void buildPartial0(com.google.container.v1beta1.HostMaintenancePolicy result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.disabled_ = disabled_;
+        result.maintenanceInterval_ = maintenanceInterval_;
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.auth_ = auth_;
-      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -548,21 +585,19 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.container.v1beta1.IstioConfig) {
-        return mergeFrom((com.google.container.v1beta1.IstioConfig) other);
+      if (other instanceof com.google.container.v1beta1.HostMaintenancePolicy) {
+        return mergeFrom((com.google.container.v1beta1.HostMaintenancePolicy) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.container.v1beta1.IstioConfig other) {
-      if (other == com.google.container.v1beta1.IstioConfig.getDefaultInstance()) return this;
-      if (other.getDisabled() != false) {
-        setDisabled(other.getDisabled());
-      }
-      if (other.auth_ != 0) {
-        setAuthValue(other.getAuthValue());
+    public Builder mergeFrom(com.google.container.v1beta1.HostMaintenancePolicy other) {
+      if (other == com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance())
+        return this;
+      if (other.hasMaintenanceInterval()) {
+        setMaintenanceInterval(other.getMaintenanceInterval());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -592,16 +627,10 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
               break;
             case 8:
               {
-                disabled_ = input.readBool();
+                maintenanceInterval_ = input.readEnum();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-            case 16:
-              {
-                auth_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -621,43 +650,57 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private boolean disabled_;
+    private int maintenanceInterval_ = 0;
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Specifies the frequency of planned maintenance events.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+     * </code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1429
-     * @return The disabled.
+     * @return Whether the maintenanceInterval field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public boolean getDisabled() {
-      return disabled_;
+    public boolean hasMaintenanceInterval() {
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Specifies the frequency of planned maintenance events.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+     * </code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1429
-     * @param value The disabled to set.
+     * @return The enum numeric value on the wire for maintenanceInterval.
+     */
+    @java.lang.Override
+    public int getMaintenanceIntervalValue() {
+      return maintenanceInterval_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for maintenanceInterval to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setDisabled(boolean value) {
-
-      disabled_ = value;
+    public Builder setMaintenanceIntervalValue(int value) {
+      maintenanceInterval_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -666,110 +709,46 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Specifies the frequency of planned maintenance events.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1429
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      disabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private int auth_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
      * </code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1432
-     * @return The enum numeric value on the wire for auth.
+     * @return The maintenanceInterval.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public int getAuthValue() {
-      return auth_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1432
-     * @param value The enum numeric value on the wire for auth to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setAuthValue(int value) {
-      auth_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1432
-     * @return The auth.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
-      com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-          com.google.container.v1beta1.IstioConfig.IstioAuthMode.forNumber(auth_);
+    public com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval
+        getMaintenanceInterval() {
+      com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval result =
+          com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval.forNumber(
+              maintenanceInterval_);
       return result == null
-          ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+          ? com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval.UNRECOGNIZED
           : result;
     }
     /**
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Specifies the frequency of planned maintenance events.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
      * </code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1432
-     * @param value The auth to set.
+     * @param value The maintenanceInterval to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setAuth(com.google.container.v1beta1.IstioConfig.IstioAuthMode value) {
+    public Builder setMaintenanceInterval(
+        com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
-      auth_ = value.getNumber();
+      bitField0_ |= 0x00000001;
+      maintenanceInterval_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -777,20 +756,18 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Specifies the frequency of planned maintenance events.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * <code>
+     * optional .google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval maintenance_interval = 1;
      * </code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1432
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder clearAuth() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      auth_ = 0;
+    public Builder clearMaintenanceInterval() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      maintenanceInterval_ = 0;
       onChanged();
       return this;
     }
@@ -806,24 +783,24 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.IstioConfig)
+    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.HostMaintenancePolicy)
   }
 
-  // @@protoc_insertion_point(class_scope:google.container.v1beta1.IstioConfig)
-  private static final com.google.container.v1beta1.IstioConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.container.v1beta1.HostMaintenancePolicy)
+  private static final com.google.container.v1beta1.HostMaintenancePolicy DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.container.v1beta1.IstioConfig();
+    DEFAULT_INSTANCE = new com.google.container.v1beta1.HostMaintenancePolicy();
   }
 
-  public static com.google.container.v1beta1.IstioConfig getDefaultInstance() {
+  public static com.google.container.v1beta1.HostMaintenancePolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IstioConfig> PARSER =
-      new com.google.protobuf.AbstractParser<IstioConfig>() {
+  private static final com.google.protobuf.Parser<HostMaintenancePolicy> PARSER =
+      new com.google.protobuf.AbstractParser<HostMaintenancePolicy>() {
         @java.lang.Override
-        public IstioConfig parsePartialFrom(
+        public HostMaintenancePolicy parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -842,17 +819,17 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<IstioConfig> parser() {
+  public static com.google.protobuf.Parser<HostMaintenancePolicy> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IstioConfig> getParserForType() {
+  public com.google.protobuf.Parser<HostMaintenancePolicy> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
+  public com.google.container.v1beta1.HostMaintenancePolicy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
