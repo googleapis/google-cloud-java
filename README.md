@@ -476,8 +476,8 @@ settingsBuilder.createClusterOperationSettings()
 ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
 
-Note: The configuration above *only* modifies the LRO RetrySettings for the `createClusterOperation` RPC.
-The other RPCs in the Client will still use each RPC's pre-configured RetrySettings. 
+Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
+The other RPCs in the Client will still use each RPC's pre-configured LRO values. 
 
 ## Managing Dependencies
 
