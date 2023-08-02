@@ -45,6 +45,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     type_ = 0;
     service_ = 0;
     serviceJob_ = "";
+    executionTrigger_ = 0;
   }
 
   @java.lang.Override
@@ -561,6 +562,167 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.JobEvent.Service)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Job Execution trigger.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.JobEvent.ExecutionTrigger}
+   */
+  public enum ExecutionTrigger implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The job execution trigger is unspecified.
+     * </pre>
+     *
+     * <code>EXECUTION_TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    EXECUTION_TRIGGER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by Dataplex based on trigger spec from task
+     * definition.
+     * </pre>
+     *
+     * <code>TASK_CONFIG = 1;</code>
+     */
+    TASK_CONFIG(1),
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by the explicit call of Task API.
+     * </pre>
+     *
+     * <code>RUN_REQUEST = 2;</code>
+     */
+    RUN_REQUEST(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The job execution trigger is unspecified.
+     * </pre>
+     *
+     * <code>EXECUTION_TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXECUTION_TRIGGER_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by Dataplex based on trigger spec from task
+     * definition.
+     * </pre>
+     *
+     * <code>TASK_CONFIG = 1;</code>
+     */
+    public static final int TASK_CONFIG_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by the explicit call of Task API.
+     * </pre>
+     *
+     * <code>RUN_REQUEST = 2;</code>
+     */
+    public static final int RUN_REQUEST_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExecutionTrigger valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExecutionTrigger forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXECUTION_TRIGGER_UNSPECIFIED;
+        case 1:
+          return TASK_CONFIG;
+        case 2:
+          return RUN_REQUEST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExecutionTrigger> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExecutionTrigger>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExecutionTrigger>() {
+              public ExecutionTrigger findValueByNumber(int number) {
+                return ExecutionTrigger.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.JobEvent.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final ExecutionTrigger[] VALUES = values();
+
+    public static ExecutionTrigger valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExecutionTrigger(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.JobEvent.ExecutionTrigger)
+  }
+
   public static final int MESSAGE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -929,6 +1091,43 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EXECUTION_TRIGGER_FIELD_NUMBER = 11;
+  private int executionTrigger_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The enum numeric value on the wire for executionTrigger.
+   */
+  @java.lang.Override
+  public int getExecutionTriggerValue() {
+    return executionTrigger_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The executionTrigger.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger getExecutionTrigger() {
+    com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger result =
+        com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.forNumber(executionTrigger_);
+    return result == null
+        ? com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -970,6 +1169,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, serviceJob_);
     }
+    if (executionTrigger_
+        != com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.EXECUTION_TRIGGER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, executionTrigger_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1006,6 +1210,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, serviceJob_);
     }
+    if (executionTrigger_
+        != com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.EXECUTION_TRIGGER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, executionTrigger_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1036,6 +1245,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     if (type_ != other.type_) return false;
     if (service_ != other.service_) return false;
     if (!getServiceJob().equals(other.getServiceJob())) return false;
+    if (executionTrigger_ != other.executionTrigger_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1069,6 +1279,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + service_;
     hash = (37 * hash) + SERVICE_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getServiceJob().hashCode();
+    hash = (37 * hash) + EXECUTION_TRIGGER_FIELD_NUMBER;
+    hash = (53 * hash) + executionTrigger_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1225,6 +1437,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
       service_ = 0;
       serviceJob_ = "";
+      executionTrigger_ = 0;
       return this;
     }
 
@@ -1287,6 +1500,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.serviceJob_ = serviceJob_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.executionTrigger_ = executionTrigger_;
       }
     }
 
@@ -1368,6 +1584,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.executionTrigger_ != 0) {
+        setExecutionTriggerValue(other.getExecutionTriggerValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1448,6 +1667,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 88:
+              {
+                executionTrigger_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2462,6 +2687,99 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       serviceJob_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private int executionTrigger_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Job execution trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+     *
+     * @return The enum numeric value on the wire for executionTrigger.
+     */
+    @java.lang.Override
+    public int getExecutionTriggerValue() {
+      return executionTrigger_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job execution trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for executionTrigger to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionTriggerValue(int value) {
+      executionTrigger_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job execution trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+     *
+     * @return The executionTrigger.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger getExecutionTrigger() {
+      com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger result =
+          com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.forNumber(executionTrigger_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job execution trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+     *
+     * @param value The executionTrigger to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionTrigger(
+        com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      executionTrigger_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job execution trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExecutionTrigger() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      executionTrigger_ = 0;
       onChanged();
       return this;
     }

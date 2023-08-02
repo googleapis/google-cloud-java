@@ -83,6 +83,10 @@ public final class TasksProto {
       internal_static_google_cloud_dataplex_v1_Job_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_Job_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -170,7 +174,7 @@ public final class TasksProto {
           + "\001(\t:\0028\001:d\352Aa\n\034dataplex.googleapis.com/Ta"
           + "sk\022Aprojects/{project}/locations/{locati"
           + "on}/lakes/{lake}/tasks/{task}B\010\n\006config\""
-          + "\221\005\n\003Job\0222\n\004name\030\001 \001(\tB$\342A\001\003\372A\035\n\033dataplex"
+          + "\321\007\n\003Job\0222\n\004name\030\001 \001(\tB$\342A\001\003\372A\035\n\033dataplex"
           + ".googleapis.com/Job\022\021\n\003uid\030\002 \001(\tB\004\342A\001\003\0224"
           + "\n\nstart_time\030\003 \001(\0132\032.google.protobuf.Tim"
           + "estampB\004\342A\001\003\0222\n\010end_time\030\004 \001(\0132\032.google."
@@ -179,11 +183,19 @@ public final class TasksProto {
           + "\001\003\022\031\n\013retry_count\030\006 \001(\rB\004\342A\001\003\022<\n\007service"
           + "\030\007 \001(\0162%.google.cloud.dataplex.v1.Job.Se"
           + "rviceB\004\342A\001\003\022\031\n\013service_job\030\010 \001(\tB\004\342A\001\003\022\025"
-          + "\n\007message\030\t \001(\tB\004\342A\001\003\"0\n\007Service\022\027\n\023SERV"
-          + "ICE_UNSPECIFIED\020\000\022\014\n\010DATAPROC\020\001\"r\n\005State"
-          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\n"
-          + "CANCELLING\020\002\022\r\n\tCANCELLED\020\003\022\r\n\tSUCCEEDED"
-          + "\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABORTED\020\006:n\352Ak\n\033datapl"
+          + "\n\007message\030\t \001(\tB\004\342A\001\003\022?\n\006labels\030\n \003(\0132)."
+          + "google.cloud.dataplex.v1.Job.LabelsEntry"
+          + "B\004\342A\001\003\022<\n\007trigger\030\013 \001(\0162%.google.cloud.d"
+          + "ataplex.v1.Job.TriggerB\004\342A\001\003\022J\n\016executio"
+          + "n_spec\030d \001(\0132,.google.cloud.dataplex.v1."
+          + "Task.ExecutionSpecB\004\342A\001\003\032-\n\013LabelsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\007Servi"
+          + "ce\022\027\n\023SERVICE_UNSPECIFIED\020\000\022\014\n\010DATAPROC\020"
+          + "\001\"r\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUN"
+          + "NING\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tCANCELLED\020\003\022\r\n"
+          + "\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABORTED\020\006\"D\n"
+          + "\007Trigger\022\027\n\023TRIGGER_UNSPECIFIED\020\000\022\017\n\013TAS"
+          + "K_CONFIG\020\001\022\017\n\013RUN_REQUEST\020\002:n\352Ak\n\033datapl"
           + "ex.googleapis.com/Job\022Lprojects/{project"
           + "}/locations/{location}/lakes/{lake}/task"
           + "s/{task}/jobs/{job}Bf\n\034com.google.cloud."
@@ -351,6 +363,17 @@ public final class TasksProto {
               "Service",
               "ServiceJob",
               "Message",
+              "Labels",
+              "Trigger",
+              "ExecutionSpec",
+            });
+    internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_Job_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -105,4 +105,46 @@ public interface DataProfileResultOrBuilder
    * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
    */
   com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResult post_scan_actions_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postScanActionsResult field is set.
+   */
+  boolean hasPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResult post_scan_actions_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postScanActionsResult.
+   */
+  com.google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResult getPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResult post_scan_actions_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResultOrBuilder
+      getPostScanActionsResultOrBuilder();
 }
