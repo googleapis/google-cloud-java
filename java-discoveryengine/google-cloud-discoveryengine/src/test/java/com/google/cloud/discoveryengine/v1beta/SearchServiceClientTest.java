@@ -102,6 +102,7 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
@@ -134,6 +135,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
@@ -172,6 +174,7 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)

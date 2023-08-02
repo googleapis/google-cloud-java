@@ -424,12 +424,12 @@ public interface AnalyzeContentRequestOrBuilder
    * participant.
    *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
    *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
@@ -449,12 +449,12 @@ public interface AnalyzeContentRequestOrBuilder
    * participant.
    *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
    *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
@@ -474,12 +474,12 @@ public interface AnalyzeContentRequestOrBuilder
    * participant.
    *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
    *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.

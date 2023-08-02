@@ -195,6 +195,8 @@ public class ConfidentialComputingClientHttpJsonTest {
             .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
             .setGcpCredentials(GcpCredentials.newBuilder().build())
             .setTpmAttestation(TpmAttestation.newBuilder().build())
+            .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+            .setTokenOptions(TokenOptions.newBuilder().build())
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -228,6 +230,8 @@ public class ConfidentialComputingClientHttpJsonTest {
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
               .setGcpCredentials(GcpCredentials.newBuilder().build())
               .setTpmAttestation(TpmAttestation.newBuilder().build())
+              .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+              .setTokenOptions(TokenOptions.newBuilder().build())
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");

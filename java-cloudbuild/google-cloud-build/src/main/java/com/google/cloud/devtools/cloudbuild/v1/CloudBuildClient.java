@@ -1574,6 +1574,7 @@ public class CloudBuildClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .setTrigger(BuildTrigger.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   BuildTrigger response = cloudBuildClient.updateBuildTrigger(request);
    * }
@@ -1606,6 +1607,7 @@ public class CloudBuildClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .setTrigger(BuildTrigger.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<BuildTrigger> future =
    *       cloudBuildClient.updateBuildTriggerCallable().futureCall(request);

@@ -151,16 +151,14 @@ public interface QueryResultOrBuilder
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
    *
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -178,16 +176,14 @@ public interface QueryResultOrBuilder
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
    *
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -205,16 +201,14 @@ public interface QueryResultOrBuilder
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
    *
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>

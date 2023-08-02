@@ -27,6 +27,43 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return Whether the consumerNetwork field is set.
+   */
+  boolean hasConsumerNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The consumerNetwork.
+   */
+  java.lang.String getConsumerNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The bytes for consumerNetwork.
+   */
+  com.google.protobuf.ByteString getConsumerNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The url of a connected endpoint.
    * </pre>
    *

@@ -535,6 +535,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

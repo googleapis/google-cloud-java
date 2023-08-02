@@ -126,7 +126,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
@@ -138,7 +138,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
@@ -150,12 +150,53 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.GuaranteedOrBuilder getGuaranteedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the spot field is set.
+   */
+  boolean hasSpot();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spot.
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResource.Spot getSpot();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResource.SpotOrBuilder getSpotOrBuilder();
 
   /**
    *

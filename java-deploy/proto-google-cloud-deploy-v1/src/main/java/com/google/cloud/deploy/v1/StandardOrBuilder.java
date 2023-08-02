@@ -35,4 +35,92 @@ public interface StandardOrBuilder
    * @return The verify.
    */
   boolean getVerify();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job. If this is not configured,
+   * predeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the predeploy field is set.
+   */
+  boolean hasPredeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job. If this is not configured,
+   * predeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The predeploy.
+   */
+  com.google.cloud.deploy.v1.Predeploy getPredeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job. If this is not configured,
+   * predeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PredeployOrBuilder getPredeployOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job. If this is not configured,
+   * postdeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the postdeploy field is set.
+   */
+  boolean hasPostdeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job. If this is not configured,
+   * postdeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The postdeploy.
+   */
+  com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job. If this is not configured,
+   * postdeploy job will not be present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder();
 }

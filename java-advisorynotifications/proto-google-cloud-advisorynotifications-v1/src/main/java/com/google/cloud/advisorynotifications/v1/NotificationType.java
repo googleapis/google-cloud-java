@@ -58,6 +58,26 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_SENSITIVE_ACTIONS = 2;</code>
    */
   NOTIFICATION_TYPE_SENSITIVE_ACTIONS(2),
+  /**
+   *
+   *
+   * <pre>
+   * General security MSA
+   * </pre>
+   *
+   * <code>NOTIFICATION_TYPE_SECURITY_MSA = 3;</code>
+   */
+  NOTIFICATION_TYPE_SECURITY_MSA(3),
+  /**
+   *
+   *
+   * <pre>
+   * Threat horizons MSA
+   * </pre>
+   *
+   * <code>NOTIFICATION_TYPE_THREAT_HORIZONS = 4;</code>
+   */
+  NOTIFICATION_TYPE_THREAT_HORIZONS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +111,26 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_SENSITIVE_ACTIONS = 2;</code>
    */
   public static final int NOTIFICATION_TYPE_SENSITIVE_ACTIONS_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * General security MSA
+   * </pre>
+   *
+   * <code>NOTIFICATION_TYPE_SECURITY_MSA = 3;</code>
+   */
+  public static final int NOTIFICATION_TYPE_SECURITY_MSA_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Threat horizons MSA
+   * </pre>
+   *
+   * <code>NOTIFICATION_TYPE_THREAT_HORIZONS = 4;</code>
+   */
+  public static final int NOTIFICATION_TYPE_THREAT_HORIZONS_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,6 +162,10 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
         return NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY;
       case 2:
         return NOTIFICATION_TYPE_SENSITIVE_ACTIONS;
+      case 3:
+        return NOTIFICATION_TYPE_SECURITY_MSA;
+      case 4:
+        return NOTIFICATION_TYPE_THREAT_HORIZONS;
       default:
         return null;
     }

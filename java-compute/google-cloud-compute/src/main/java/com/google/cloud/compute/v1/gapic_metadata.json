@@ -2239,6 +2239,9 @@
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },

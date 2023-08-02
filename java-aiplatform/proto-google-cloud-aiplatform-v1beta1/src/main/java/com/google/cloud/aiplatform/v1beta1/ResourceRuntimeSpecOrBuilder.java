@@ -63,4 +63,48 @@ public interface ResourceRuntimeSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ServiceAccountSpecOrBuilder getServiceAccountSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the raySpec field is set.
+   */
+  boolean hasRaySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The raySpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.RaySpec getRaySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder getRaySpecOrBuilder();
 }

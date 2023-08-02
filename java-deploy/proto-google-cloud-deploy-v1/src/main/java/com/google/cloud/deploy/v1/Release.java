@@ -695,7 +695,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
        * because Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -723,6 +723,18 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       CLOUD_BUILD_REQUEST_FAILED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      CUSTOM_ACTION_NOT_FOUND(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -742,7 +754,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
        * because Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -770,6 +782,18 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      public static final int CUSTOM_ACTION_NOT_FOUND_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -803,6 +827,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return EXECUTION_FAILED;
           case 3:
             return CLOUD_BUILD_REQUEST_FAILED;
+          case 5:
+            return CUSTOM_ACTION_NOT_FOUND;
           default:
             return null;
         }

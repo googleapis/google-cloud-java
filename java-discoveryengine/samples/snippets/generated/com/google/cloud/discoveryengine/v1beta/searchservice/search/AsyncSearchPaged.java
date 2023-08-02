@@ -52,6 +52,7 @@ public class AsyncSearchPaged {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)

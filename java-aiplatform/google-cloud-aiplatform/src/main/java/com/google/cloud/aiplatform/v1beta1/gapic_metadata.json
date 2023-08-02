@@ -895,6 +895,9 @@
             "RawPredict": {
               "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
             },
+            "ServerStreamingPredict": {
+              "methods": ["serverStreamingPredictCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

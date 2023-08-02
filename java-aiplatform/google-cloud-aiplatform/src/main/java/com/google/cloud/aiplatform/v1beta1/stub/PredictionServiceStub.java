@@ -21,12 +21,15 @@ import static com.google.cloud.aiplatform.v1beta1.PredictionServiceClient.ListLo
 import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -54,6 +57,11 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
+  }
+
+  public ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: serverStreamingPredictCallable()");
   }
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {

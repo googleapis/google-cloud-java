@@ -40,6 +40,7 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
   private ListDataScanJobsRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -202,6 +203,89 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the ListDataScanJobs
+   * request.
+   *
+   * If unspecified, all datascan jobs will be returned. Multiple filters can be
+   * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+   *
+   * Allowed fields are:
+   *
+   * - `start_time`
+   * - `end_time`
+   *
+   * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+   * 2018-10-08T18:30:00-07:00).
+   *
+   * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+   * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+   * specified start and end times.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the ListDataScanJobs
+   * request.
+   *
+   * If unspecified, all datascan jobs will be returned. Multiple filters can be
+   * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+   *
+   * Allowed fields are:
+   *
+   * - `start_time`
+   * - `end_time`
+   *
+   * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+   * 2018-10-08T18:30:00-07:00).
+   *
+   * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+   * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+   * specified start and end times.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -225,6 +309,9 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -242,6 +329,9 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -262,6 +352,7 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -279,6 +370,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +514,7 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      filter_ = "";
       return this;
     }
 
@@ -465,6 +559,9 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
       }
     }
 
@@ -527,6 +624,11 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -571,6 +673,12 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -900,6 +1008,192 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the ListDataScanJobs
+     * request.
+     *
+     * If unspecified, all datascan jobs will be returned. Multiple filters can be
+     * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+     *
+     * Allowed fields are:
+     *
+     * - `start_time`
+     * - `end_time`
+     *
+     * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+     * 2018-10-08T18:30:00-07:00).
+     *
+     * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+     * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+     * specified start and end times.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the ListDataScanJobs
+     * request.
+     *
+     * If unspecified, all datascan jobs will be returned. Multiple filters can be
+     * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+     *
+     * Allowed fields are:
+     *
+     * - `start_time`
+     * - `end_time`
+     *
+     * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+     * 2018-10-08T18:30:00-07:00).
+     *
+     * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+     * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+     * specified start and end times.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the ListDataScanJobs
+     * request.
+     *
+     * If unspecified, all datascan jobs will be returned. Multiple filters can be
+     * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+     *
+     * Allowed fields are:
+     *
+     * - `start_time`
+     * - `end_time`
+     *
+     * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+     * 2018-10-08T18:30:00-07:00).
+     *
+     * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+     * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+     * specified start and end times.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the ListDataScanJobs
+     * request.
+     *
+     * If unspecified, all datascan jobs will be returned. Multiple filters can be
+     * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+     *
+     * Allowed fields are:
+     *
+     * - `start_time`
+     * - `end_time`
+     *
+     * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+     * 2018-10-08T18:30:00-07:00).
+     *
+     * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+     * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+     * specified start and end times.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the ListDataScanJobs
+     * request.
+     *
+     * If unspecified, all datascan jobs will be returned. Multiple filters can be
+     * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+     *
+     * Allowed fields are:
+     *
+     * - `start_time`
+     * - `end_time`
+     *
+     * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+     * 2018-10-08T18:30:00-07:00).
+     *
+     * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+     * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+     * specified start and end times.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

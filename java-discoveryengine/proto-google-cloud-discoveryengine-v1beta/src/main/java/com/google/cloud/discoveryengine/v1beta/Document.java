@@ -1430,8 +1430,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -1448,8 +1447,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -1469,8 +1467,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -1490,8 +1487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -1507,8 +1503,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -1537,8 +1532,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered
-   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
    * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
@@ -2493,8 +2487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2511,8 +2504,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2539,8 +2531,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2564,8 +2555,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2586,8 +2576,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2619,8 +2608,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2647,8 +2635,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2662,8 +2649,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2685,8 +2671,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2719,8 +2704,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2737,8 +2721,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2768,8 +2751,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2799,8 +2781,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2823,8 +2804,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
@@ -2845,8 +2825,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered
-     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * registered [Schema][google.cloud.discoveryengine.v1beta.Schema] or an
      * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *

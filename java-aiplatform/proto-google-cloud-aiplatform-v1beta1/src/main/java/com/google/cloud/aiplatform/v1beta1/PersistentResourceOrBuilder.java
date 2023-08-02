@@ -27,10 +27,10 @@ public interface PersistentResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of a PersistentResource.
+   * Immutable. Resource name of a PersistentResource.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface PersistentResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of a PersistentResource.
+   * Immutable. Resource name of a PersistentResource.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -564,6 +564,47 @@ public interface PersistentResourceOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ResourceRuntimeSpecOrBuilder
       getResourceRuntimeSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resourceRuntime field is set.
+   */
+  boolean hasResourceRuntime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceRuntime.
+   */
+  com.google.cloud.aiplatform.v1beta1.ResourceRuntime getResourceRuntime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder getResourceRuntimeOrBuilder();
 
   /**
    *

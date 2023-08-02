@@ -129,9 +129,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * For a DocumentInputConfig.gcs_uri provided document, the output file will
    * have a name according to its URI. For example: an input file with URI:
-   * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+   * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
    * "my_bucket" will have an output URI:
-   * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+   * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -139,7 +139,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * If the document was directly provided through the request, then the
    * output document will have the format:
-   * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+   * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -148,7 +148,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    * translation will be equal to the default output URI but have
    * `glossary_translations` instead of `translations`. For the previous
    * example, its glossary URI would be:
-   * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+   * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
    *
    * Thus the max number of output files will be 2 (Translated document,
    * Glossary translated document).
@@ -188,9 +188,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * For a DocumentInputConfig.gcs_uri provided document, the output file will
    * have a name according to its URI. For example: an input file with URI:
-   * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+   * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
    * "my_bucket" will have an output URI:
-   * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+   * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -198,7 +198,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * If the document was directly provided through the request, then the
    * output document will have the format:
-   * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+   * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -207,7 +207,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    * translation will be equal to the default output URI but have
    * `glossary_translations` instead of `translations`. For the previous
    * example, its glossary URI would be:
-   * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+   * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
    *
    * Thus the max number of output files will be 2 (Translated document,
    * Glossary translated document).
@@ -250,9 +250,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * For a DocumentInputConfig.gcs_uri provided document, the output file will
    * have a name according to its URI. For example: an input file with URI:
-   * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+   * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
    * "my_bucket" will have an output URI:
-   * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+   * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -260,7 +260,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    *
    * If the document was directly provided through the request, then the
    * output document will have the format:
-   * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+   * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
    * - [trg] corresponds to the translated file's language code,
    * - [ext] corresponds to the translated file's extension according to its
    * mime type.
@@ -269,7 +269,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
    * translation will be equal to the default output URI but have
    * `glossary_translations` instead of `translations`. For the previous
    * example, its glossary URI would be:
-   * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+   * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
    *
    * Thus the max number of output files will be 2 (Translated document,
    * Glossary translated document).
@@ -796,9 +796,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -806,7 +806,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -815,7 +815,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -855,9 +855,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -865,7 +865,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -874,7 +874,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -924,9 +924,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -934,7 +934,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -943,7 +943,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -990,9 +990,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1000,7 +1000,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1009,7 +1009,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -1054,9 +1054,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1064,7 +1064,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1073,7 +1073,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -1131,9 +1131,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1141,7 +1141,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1150,7 +1150,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -1200,9 +1200,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1210,7 +1210,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1219,7 +1219,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -1256,9 +1256,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1266,7 +1266,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1275,7 +1275,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).
@@ -1320,9 +1320,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * For a DocumentInputConfig.gcs_uri provided document, the output file will
      * have a name according to its URI. For example: an input file with URI:
-     * "gs://a/b/c.[extension]" stored in a gcs_destination bucket with name
+     * `gs://a/b/c.[extension]` stored in a gcs_destination bucket with name
      * "my_bucket" will have an output URI:
-     * "gs://my_bucket/a_b_c_[trg]_translations.[ext]", where
+     * `gs://my_bucket/a_b_c_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1330,7 +1330,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      *
      * If the document was directly provided through the request, then the
      * output document will have the format:
-     * "gs://my_bucket/translated_document_[trg]_translations.[ext], where
+     * `gs://my_bucket/translated_document_[trg]_translations.[ext]`, where
      * - [trg] corresponds to the translated file's language code,
      * - [ext] corresponds to the translated file's extension according to its
      * mime type.
@@ -1339,7 +1339,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * translation will be equal to the default output URI but have
      * `glossary_translations` instead of `translations`. For the previous
      * example, its glossary URI would be:
-     * "gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]".
+     * `gs://my_bucket/a_b_c_[trg]_glossary_translations.[ext]`.
      *
      * Thus the max number of output files will be 2 (Translated document,
      * Glossary translated document).

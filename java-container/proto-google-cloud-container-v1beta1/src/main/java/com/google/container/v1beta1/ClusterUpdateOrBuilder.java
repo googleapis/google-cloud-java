@@ -2147,4 +2147,46 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
    */
   com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return Whether the desiredHostMaintenancePolicy field is set.
+   */
+  boolean hasDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return The desiredHostMaintenancePolicy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+      getDesiredHostMaintenancePolicyOrBuilder();
 }

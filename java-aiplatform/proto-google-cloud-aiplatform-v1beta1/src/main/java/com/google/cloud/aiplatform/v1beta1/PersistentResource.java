@@ -298,10 +298,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Resource name of a PersistentResource.
+   * Immutable. Resource name of a PersistentResource.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -321,10 +321,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Resource name of a PersistentResource.
+   * Immutable. Resource name of a PersistentResource.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -1053,6 +1053,63 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         : resourceRuntimeSpec_;
   }
 
+  public static final int RESOURCE_RUNTIME_FIELD_NUMBER = 14;
+  private com.google.cloud.aiplatform.v1beta1.ResourceRuntime resourceRuntime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resourceRuntime field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceRuntime() {
+    return resourceRuntime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceRuntime.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ResourceRuntime getResourceRuntime() {
+    return resourceRuntime_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ResourceRuntime.getDefaultInstance()
+        : resourceRuntime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime information of the Persistent Resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder
+      getResourceRuntimeOrBuilder() {
+    return resourceRuntime_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ResourceRuntime.getDefaultInstance()
+        : resourceRuntime_;
+  }
+
   public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
@@ -1196,6 +1253,9 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     if (resourceRuntimeSpec_ != null) {
       output.writeMessage(13, getResourceRuntimeSpec());
     }
+    if (resourceRuntime_ != null) {
+      output.writeMessage(14, getResourceRuntime());
+    }
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, reservedIpRanges_.getRaw(i));
     }
@@ -1254,6 +1314,9 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getResourceRuntimeSpec());
     }
+    if (resourceRuntime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getResourceRuntime());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < reservedIpRanges_.size(); i++) {
@@ -1308,6 +1371,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     if (hasResourceRuntimeSpec()) {
       if (!getResourceRuntimeSpec().equals(other.getResourceRuntimeSpec())) return false;
     }
+    if (hasResourceRuntime() != other.hasResourceRuntime()) return false;
+    if (hasResourceRuntime()) {
+      if (!getResourceRuntime().equals(other.getResourceRuntime())) return false;
+    }
     if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1359,6 +1426,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     if (hasResourceRuntimeSpec()) {
       hash = (37 * hash) + RESOURCE_RUNTIME_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getResourceRuntimeSpec().hashCode();
+    }
+    if (hasResourceRuntime()) {
+      hash = (37 * hash) + RESOURCE_RUNTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceRuntime().hashCode();
     }
     if (getReservedIpRangesCount() > 0) {
       hash = (37 * hash) + RESERVED_IP_RANGES_FIELD_NUMBER;
@@ -1569,6 +1640,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         resourceRuntimeSpecBuilder_.dispose();
         resourceRuntimeSpecBuilder_ = null;
       }
+      resourceRuntime_ = null;
+      if (resourceRuntimeBuilder_ != null) {
+        resourceRuntimeBuilder_.dispose();
+        resourceRuntimeBuilder_ = null;
+      }
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -1659,6 +1735,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
                 : resourceRuntimeSpecBuilder_.build();
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.resourceRuntime_ =
+            resourceRuntimeBuilder_ == null ? resourceRuntime_ : resourceRuntimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         reservedIpRanges_.makeImmutable();
         result.reservedIpRanges_ = reservedIpRanges_;
       }
@@ -1775,10 +1855,13 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       if (other.hasResourceRuntimeSpec()) {
         mergeResourceRuntimeSpec(other.getResourceRuntimeSpec());
       }
+      if (other.hasResourceRuntime()) {
+        mergeResourceRuntime(other.getResourceRuntime());
+      }
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -1898,6 +1981,12 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000800;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getResourceRuntimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             case 122:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1929,10 +2018,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Resource name of a PersistentResource.
+     * Immutable. Resource name of a PersistentResource.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The name.
      */
@@ -1951,10 +2040,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Resource name of a PersistentResource.
+     * Immutable. Resource name of a PersistentResource.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for name.
      */
@@ -1973,10 +2062,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Resource name of a PersistentResource.
+     * Immutable. Resource name of a PersistentResource.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1994,10 +2083,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Resource name of a PersistentResource.
+     * Immutable. Resource name of a PersistentResource.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -2011,10 +2100,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Resource name of a PersistentResource.
+     * Immutable. Resource name of a PersistentResource.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4262,6 +4351,210 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return resourceRuntimeSpecBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.ResourceRuntime resourceRuntime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntime,
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntime.Builder,
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder>
+        resourceRuntimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the resourceRuntime field is set.
+     */
+    public boolean hasResourceRuntime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resourceRuntime.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ResourceRuntime getResourceRuntime() {
+      if (resourceRuntimeBuilder_ == null) {
+        return resourceRuntime_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ResourceRuntime.getDefaultInstance()
+            : resourceRuntime_;
+      } else {
+        return resourceRuntimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResourceRuntime(com.google.cloud.aiplatform.v1beta1.ResourceRuntime value) {
+      if (resourceRuntimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceRuntime_ = value;
+      } else {
+        resourceRuntimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResourceRuntime(
+        com.google.cloud.aiplatform.v1beta1.ResourceRuntime.Builder builderForValue) {
+      if (resourceRuntimeBuilder_ == null) {
+        resourceRuntime_ = builderForValue.build();
+      } else {
+        resourceRuntimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeResourceRuntime(com.google.cloud.aiplatform.v1beta1.ResourceRuntime value) {
+      if (resourceRuntimeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && resourceRuntime_ != null
+            && resourceRuntime_
+                != com.google.cloud.aiplatform.v1beta1.ResourceRuntime.getDefaultInstance()) {
+          getResourceRuntimeBuilder().mergeFrom(value);
+        } else {
+          resourceRuntime_ = value;
+        }
+      } else {
+        resourceRuntimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearResourceRuntime() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      resourceRuntime_ = null;
+      if (resourceRuntimeBuilder_ != null) {
+        resourceRuntimeBuilder_.dispose();
+        resourceRuntimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ResourceRuntime.Builder getResourceRuntimeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getResourceRuntimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder
+        getResourceRuntimeOrBuilder() {
+      if (resourceRuntimeBuilder_ != null) {
+        return resourceRuntimeBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceRuntime_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ResourceRuntime.getDefaultInstance()
+            : resourceRuntime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime information of the Persistent Resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ResourceRuntime resource_runtime = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntime,
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntime.Builder,
+            com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder>
+        getResourceRuntimeFieldBuilder() {
+      if (resourceRuntimeBuilder_ == null) {
+        resourceRuntimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ResourceRuntime,
+                com.google.cloud.aiplatform.v1beta1.ResourceRuntime.Builder,
+                com.google.cloud.aiplatform.v1beta1.ResourceRuntimeOrBuilder>(
+                getResourceRuntime(), getParentForChildren(), isClean());
+        resourceRuntime_ = null;
+      }
+      return resourceRuntimeBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -4269,7 +4562,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -4389,7 +4682,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4419,7 +4712,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4446,7 +4739,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4471,7 +4764,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearReservedIpRanges() {
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -4503,7 +4796,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

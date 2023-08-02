@@ -42,6 +42,7 @@ import com.google.cloud.compute.v1.InsertResourcePolicyRequest;
 import com.google.cloud.compute.v1.ListResourcePoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PatchResourcePolicyRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ResourcePolicy;
 import com.google.cloud.compute.v1.ResourcePolicyAggregatedList;
@@ -366,6 +367,68 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PatchResourcePolicyRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchResourcePolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Patch")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchResourcePolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resourcePolicy}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "resourcePolicy", request.getResourcePolicy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "resourcePolicyResource",
+                                      request.getResourcePolicyResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchResourcePolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyResourcePolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
@@ -464,6 +527,9 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       insertOperationCallable;
   private final UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> listCallable;
   private final UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PatchResourcePolicyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchResourcePolicyRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
@@ -589,6 +655,19 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PatchResourcePolicyRequest, Operation> patchTransportSettings =
+        HttpJsonCallSettings.<PatchResourcePolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource_policy", String.valueOf(request.getResourcePolicy()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -654,6 +733,15 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.patchCallable =
+        callableFactory.createUnaryCallable(
+            patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -676,6 +764,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
@@ -733,6 +822,17 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   @Override
   public UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchResourcePolicyRequest, Operation> patchCallable() {
+    return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchResourcePolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

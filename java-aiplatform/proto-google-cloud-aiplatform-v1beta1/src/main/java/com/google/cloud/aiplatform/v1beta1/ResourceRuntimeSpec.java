@@ -120,6 +120,65 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         : serviceAccountSpec_;
   }
 
+  public static final int RAY_SPEC_FIELD_NUMBER = 1;
+  private com.google.cloud.aiplatform.v1beta1.RaySpec raySpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the raySpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRaySpec() {
+    return raySpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The raySpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RaySpec getRaySpec() {
+    return raySpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()
+        : raySpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ray cluster configuration.
+   * Required when creating a dedicated RayCluster on the PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder getRaySpecOrBuilder() {
+    return raySpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()
+        : raySpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -134,6 +193,9 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (raySpec_ != null) {
+      output.writeMessage(1, getRaySpec());
+    }
     if (serviceAccountSpec_ != null) {
       output.writeMessage(2, getServiceAccountSpec());
     }
@@ -146,6 +208,9 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (raySpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRaySpec());
+    }
     if (serviceAccountSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getServiceAccountSpec());
     }
@@ -169,6 +234,10 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     if (hasServiceAccountSpec()) {
       if (!getServiceAccountSpec().equals(other.getServiceAccountSpec())) return false;
     }
+    if (hasRaySpec() != other.hasRaySpec()) return false;
+    if (hasRaySpec()) {
+      if (!getRaySpec().equals(other.getRaySpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +252,10 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     if (hasServiceAccountSpec()) {
       hash = (37 * hash) + SERVICE_ACCOUNT_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getServiceAccountSpec().hashCode();
+    }
+    if (hasRaySpec()) {
+      hash = (37 * hash) + RAY_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getRaySpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -332,6 +405,11 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         serviceAccountSpecBuilder_.dispose();
         serviceAccountSpecBuilder_ = null;
       }
+      raySpec_ = null;
+      if (raySpecBuilder_ != null) {
+        raySpecBuilder_.dispose();
+        raySpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -373,6 +451,9 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             serviceAccountSpecBuilder_ == null
                 ? serviceAccountSpec_
                 : serviceAccountSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.raySpec_ = raySpecBuilder_ == null ? raySpec_ : raySpecBuilder_.build();
       }
     }
 
@@ -425,6 +506,9 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       if (other.hasServiceAccountSpec()) {
         mergeServiceAccountSpec(other.getServiceAccountSpec());
       }
+      if (other.hasRaySpec()) {
+        mergeRaySpec(other.getRaySpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +535,12 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getRaySpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(
@@ -682,6 +772,216 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         serviceAccountSpec_ = null;
       }
       return serviceAccountSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RaySpec raySpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RaySpec,
+            com.google.cloud.aiplatform.v1beta1.RaySpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder>
+        raySpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the raySpec field is set.
+     */
+    public boolean hasRaySpec() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The raySpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RaySpec getRaySpec() {
+      if (raySpecBuilder_ == null) {
+        return raySpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()
+            : raySpec_;
+      } else {
+        return raySpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRaySpec(com.google.cloud.aiplatform.v1beta1.RaySpec value) {
+      if (raySpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        raySpec_ = value;
+      } else {
+        raySpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRaySpec(com.google.cloud.aiplatform.v1beta1.RaySpec.Builder builderForValue) {
+      if (raySpecBuilder_ == null) {
+        raySpec_ = builderForValue.build();
+      } else {
+        raySpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRaySpec(com.google.cloud.aiplatform.v1beta1.RaySpec value) {
+      if (raySpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && raySpec_ != null
+            && raySpec_ != com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()) {
+          getRaySpecBuilder().mergeFrom(value);
+        } else {
+          raySpec_ = value;
+        }
+      } else {
+        raySpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRaySpec() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      raySpec_ = null;
+      if (raySpecBuilder_ != null) {
+        raySpecBuilder_.dispose();
+        raySpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RaySpec.Builder getRaySpecBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRaySpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder getRaySpecOrBuilder() {
+      if (raySpecBuilder_ != null) {
+        return raySpecBuilder_.getMessageOrBuilder();
+      } else {
+        return raySpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()
+            : raySpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ray cluster configuration.
+     * Required when creating a dedicated RayCluster on the PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RaySpec ray_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RaySpec,
+            com.google.cloud.aiplatform.v1beta1.RaySpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder>
+        getRaySpecFieldBuilder() {
+      if (raySpecBuilder_ == null) {
+        raySpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RaySpec,
+                com.google.cloud.aiplatform.v1beta1.RaySpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder>(
+                getRaySpec(), getParentForChildren(), isClean());
+        raySpec_ = null;
+      }
+      return raySpecBuilder_;
     }
 
     @java.lang.Override

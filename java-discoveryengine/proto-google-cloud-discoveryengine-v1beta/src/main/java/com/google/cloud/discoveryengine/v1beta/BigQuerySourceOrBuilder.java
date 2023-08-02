@@ -190,9 +190,9 @@ public interface BigQuerySourceOrBuilder
    *   [Document.json_data][google.cloud.discoveryengine.v1beta.Document.json_data]
    *   or
    *   [Document.struct_data][google.cloud.discoveryengine.v1beta.Document.struct_data].
-   * * `custom`: One custom data per row in arbitrary format that conforms the
-   *   defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the data
-   *   store. This can only be used by the GENERIC Data Store vertical.
+   * * `custom`: One custom data per row in arbitrary format that conforms to
+   *   the defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the
+   *   data store. This can only be used by Gen App Builder.
    * </pre>
    *
    * <code>string data_schema = 6;</code>
@@ -220,9 +220,9 @@ public interface BigQuerySourceOrBuilder
    *   [Document.json_data][google.cloud.discoveryengine.v1beta.Document.json_data]
    *   or
    *   [Document.struct_data][google.cloud.discoveryengine.v1beta.Document.struct_data].
-   * * `custom`: One custom data per row in arbitrary format that conforms the
-   *   defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the data
-   *   store. This can only be used by the GENERIC Data Store vertical.
+   * * `custom`: One custom data per row in arbitrary format that conforms to
+   *   the defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the
+   *   data store. This can only be used by Gen App Builder.
    * </pre>
    *
    * <code>string data_schema = 6;</code>

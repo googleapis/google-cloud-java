@@ -84,6 +84,817 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.SearchRequest.Builder.class);
   }
 
+  public interface ImageQueryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return Whether the imageBytes field is set.
+     */
+    boolean hasImageBytes();
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The imageBytes.
+     */
+    java.lang.String getImageBytes();
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The bytes for imageBytes.
+     */
+    com.google.protobuf.ByteString getImageBytesBytes();
+
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.ImageCase getImageCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the image query input.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery}
+   */
+  public static final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)
+      ImageQueryOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ImageQuery.newBuilder() to construct.
+    private ImageQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ImageQuery() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ImageQuery();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.class,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder.class);
+    }
+
+    private int imageCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object image_;
+
+    public enum ImageCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      IMAGE_BYTES(1),
+      IMAGE_NOT_SET(0);
+      private final int value;
+
+      private ImageCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ImageCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ImageCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return IMAGE_BYTES;
+          case 0:
+            return IMAGE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ImageCase getImageCase() {
+      return ImageCase.forNumber(imageCase_);
+    }
+
+    public static final int IMAGE_BYTES_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return Whether the imageBytes field is set.
+     */
+    public boolean hasImageBytes() {
+      return imageCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The imageBytes.
+     */
+    public java.lang.String getImageBytes() {
+      java.lang.Object ref = "";
+      if (imageCase_ == 1) {
+        ref = image_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (imageCase_ == 1) {
+          image_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The bytes for imageBytes.
+     */
+    public com.google.protobuf.ByteString getImageBytesBytes() {
+      java.lang.Object ref = "";
+      if (imageCase_ == 1) {
+        ref = image_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (imageCase_ == 1) {
+          image_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (imageCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (imageCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery other =
+          (com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery) obj;
+
+      if (!getImageCase().equals(other.getImageCase())) return false;
+      switch (imageCase_) {
+        case 1:
+          if (!getImageBytes().equals(other.getImageBytes())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (imageCase_) {
+        case 1:
+          hash = (37 * hash) + IMAGE_BYTES_FIELD_NUMBER;
+          hash = (53 * hash) + getImageBytes().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the image query input.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.class,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        imageCase_ = 0;
+        image_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery build() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery result =
+            new com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery result) {
+        result.imageCase_ = imageCase_;
+        result.image_ = this.image_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+                .getDefaultInstance()) return this;
+        switch (other.getImageCase()) {
+          case IMAGE_BYTES:
+            {
+              imageCase_ = 1;
+              image_ = other.image_;
+              onChanged();
+              break;
+            }
+          case IMAGE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  imageCase_ = 1;
+                  image_ = s;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int imageCase_ = 0;
+      private java.lang.Object image_;
+
+      public ImageCase getImageCase() {
+        return ImageCase.forNumber(imageCase_);
+      }
+
+      public Builder clearImage() {
+        imageCase_ = 0;
+        image_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return Whether the imageBytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasImageBytes() {
+        return imageCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return The imageBytes.
+       */
+      @java.lang.Override
+      public java.lang.String getImageBytes() {
+        java.lang.Object ref = "";
+        if (imageCase_ == 1) {
+          ref = image_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (imageCase_ == 1) {
+            image_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return The bytes for imageBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getImageBytesBytes() {
+        java.lang.Object ref = "";
+        if (imageCase_ == 1) {
+          ref = image_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (imageCase_ == 1) {
+            image_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @param value The imageBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageCase_ = 1;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearImageBytes() {
+        if (imageCase_ == 1) {
+          imageCase_ = 0;
+          image_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @param value The bytes for imageBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        imageCase_ = 1;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ImageQuery> PARSER =
+        new com.google.protobuf.AbstractParser<ImageQuery>() {
+          @java.lang.Override
+          public ImageQuery parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ImageQuery> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ImageQuery> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface FacetSpecOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec)
@@ -137,7 +948,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum of facet values that should be returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
-     * above 300 will be coerced to 300.
+     * above 300 are coerced to 300.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -313,15 +1124,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enables dynamic position for this facet. If set to true, the position of
      * this facet among all facets in the response is determined automatically.
-     * It will be ordered together with dynamic facets if dynamic
-     * facets is enabled. If set to false, the position of this facet in the
-     * response will be the same as in the request, and it will be ranked before
+     * If dynamic facets are enabled, it is ordered together.
+     * If set to false, the position of this facet in the
+     * response is the same as in the request, and it is ranked before
      * the facets with dynamic position enable and all dynamic facets.
      *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
-     * that the position of rating facet in response will be determined
+     * that the position of rating facet in response is determined
      * automatically.
      *
      * Another example, assuming you have the following facets in the request:
@@ -332,13 +1143,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * "brands", enable_dynamic_position = false
      *
-     * And also you have a dynamic facets enable, which will generate a facet
-     * 'gender'. Then the final order of the facets in the response can be
+     * And also you have a dynamic facets enabled, which generates a facet
+     * `gender`. Then the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
      * "rating") depends on how API orders "gender" and "rating" facets.
-     * However, notice that "price" and "brands" will always be
-     * ranked at 1st and 2nd position since their enable_dynamic_position are
-     * false.
+     * However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * is false.
      * </pre>
      *
      * <code>bool enable_dynamic_position = 4;</code>
@@ -429,7 +1240,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -441,7 +1252,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -453,7 +1264,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -465,7 +1276,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -478,7 +1289,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -494,8 +1305,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -511,8 +1322,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -528,8 +1339,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -546,8 +1357,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -565,7 +1376,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -581,7 +1392,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -597,7 +1408,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -614,7 +1425,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -632,7 +1443,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -648,7 +1459,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -664,7 +1475,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -681,7 +1492,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -876,7 +1687,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -891,7 +1702,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -907,7 +1718,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -922,7 +1733,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -937,7 +1748,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Set only if values should be bucketized into intervals. Must be set
+       * Set only if values should be bucketed into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
        * values. Maximum number of intervals is 30.
        * </pre>
@@ -962,8 +1773,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -981,8 +1792,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -1000,8 +1811,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -1020,8 +1831,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. Only supported on
        * textual fields. For example, suppose "category" has three values
        * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-       * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-       * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
        * is 10.
        * </pre>
        *
@@ -1046,7 +1857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1064,7 +1875,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1082,7 +1893,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1101,7 +1912,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-       * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1126,7 +1937,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1144,7 +1955,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1162,7 +1973,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1181,7 +1992,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-       * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2035,7 +2846,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2053,7 +2864,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2071,7 +2882,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2089,7 +2900,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2114,7 +2925,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2136,7 +2947,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2160,7 +2971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2185,7 +2996,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2207,7 +3018,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2229,7 +3040,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2251,7 +3062,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2272,7 +3083,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2293,7 +3104,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2308,7 +3119,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2327,7 +3138,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2346,7 +3157,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2361,7 +3172,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2378,7 +3189,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Set only if values should be bucketized into intervals. Must be set
+         * Set only if values should be bucketed into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
          * values. Maximum number of intervals is 30.
          * </pre>
@@ -2426,8 +3237,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2446,8 +3257,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2465,8 +3276,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2485,8 +3296,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2505,8 +3316,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2533,8 +3344,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2560,8 +3371,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2584,8 +3395,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2607,8 +3418,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. Only supported on
          * textual fields. For example, suppose "category" has three values
          * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
-         * "restricted_values" to "Action &gt; 2022", the "category" facet will only
-         * contain "Action &gt; 2022". Only supported on textual fields. Maximum
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
          * is 10.
          * </pre>
          *
@@ -2645,7 +3456,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2664,7 +3475,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2682,7 +3493,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2701,7 +3512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2720,7 +3531,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2747,7 +3558,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2773,7 +3584,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2796,7 +3607,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2818,7 +3629,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
-         * "category" facet will only contain "Action &gt; 2022" and "Action &gt; 2021".
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2855,7 +3666,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2874,7 +3685,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2892,7 +3703,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2911,7 +3722,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2930,7 +3741,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2957,7 +3768,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -2983,7 +3794,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -3006,7 +3817,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -3028,7 +3839,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
-         * "category" facet will only contain "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -3426,7 +4237,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum of facet values that should be returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
-     * above 300 will be coerced to 300.
+     * above 300 are coerced to 300.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -3620,15 +4431,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enables dynamic position for this facet. If set to true, the position of
      * this facet among all facets in the response is determined automatically.
-     * It will be ordered together with dynamic facets if dynamic
-     * facets is enabled. If set to false, the position of this facet in the
-     * response will be the same as in the request, and it will be ranked before
+     * If dynamic facets are enabled, it is ordered together.
+     * If set to false, the position of this facet in the
+     * response is the same as in the request, and it is ranked before
      * the facets with dynamic position enable and all dynamic facets.
      *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
-     * that the position of rating facet in response will be determined
+     * that the position of rating facet in response is determined
      * automatically.
      *
      * Another example, assuming you have the following facets in the request:
@@ -3639,13 +4450,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * "brands", enable_dynamic_position = false
      *
-     * And also you have a dynamic facets enable, which will generate a facet
-     * 'gender'. Then the final order of the facets in the response can be
+     * And also you have a dynamic facets enabled, which generates a facet
+     * `gender`. Then the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
      * "rating") depends on how API orders "gender" and "rating" facets.
-     * However, notice that "price" and "brands" will always be
-     * ranked at 1st and 2nd position since their enable_dynamic_position are
-     * false.
+     * However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * is false.
      * </pre>
      *
      * <code>bool enable_dynamic_position = 4;</code>
@@ -4319,7 +5130,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
-       * above 300 will be coerced to 300.
+       * above 300 are coerced to 300.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -4338,7 +5149,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
-       * above 300 will be coerced to 300.
+       * above 300 are coerced to 300.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -4361,7 +5172,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
-       * above 300 will be coerced to 300.
+       * above 300 are coerced to 300.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -4801,15 +5612,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined automatically.
-       * It will be ordered together with dynamic facets if dynamic
-       * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined
+       * that the position of rating facet in response is determined
        * automatically.
        *
        * Another example, assuming you have the following facets in the request:
@@ -4820,13 +5631,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how API orders "gender" and "rating" facets.
-       * However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -4843,15 +5654,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined automatically.
-       * It will be ordered together with dynamic facets if dynamic
-       * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined
+       * that the position of rating facet in response is determined
        * automatically.
        *
        * Another example, assuming you have the following facets in the request:
@@ -4862,13 +5673,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how API orders "gender" and "rating" facets.
-       * However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -4889,15 +5700,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined automatically.
-       * It will be ordered together with dynamic facets if dynamic
-       * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined
+       * that the position of rating facet in response is determined
        * automatically.
        *
        * Another example, assuming you have the following facets in the request:
@@ -4908,13 +5719,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how API orders "gender" and "rating" facets.
-       * However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -8878,8 +9689,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -8893,8 +9704,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -8909,8 +9720,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -8924,7 +9735,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -8939,7 +9750,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -8955,7 +9766,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -9017,8 +9828,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The specification that configs the desired behavior of the UCS content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec}
@@ -9066,41 +9876,59 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of snippets returned in each search result.
-       *
-       * A snippet is an infomartive summary of a content with highlighting for
-       * UI rendering.
-       *
-       * If the matching snippets is less than the max_snippet_count, return all
-       * of the snippets; otherwise, return the max_snippet_count.
-       *
-       * At most 5 snippets will be returned for each SearchResult.
+       * [DEPRECATED] This field is deprecated. To control snippet return, use
+       * `return_snippet` field. For backwards compatibility, we will return
+       * snippet if max_snippet_count &gt; 0.
        * </pre>
        *
-       * <code>int32 max_snippet_count = 1;</code>
+       * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
        * @return The maxSnippetCount.
        */
+      @java.lang.Deprecated
       int getMaxSnippetCount();
 
       /**
        *
        *
        * <pre>
-       * if true, only snippet reference is returned.
+       * [DEPRECATED] This field is deprecated and will have no affect on the
+       * snippet.
        * </pre>
        *
-       * <code>bool reference_only = 2;</code>
+       * <code>bool reference_only = 2 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
        * @return The referenceOnly.
        */
+      @java.lang.Deprecated
       boolean getReferenceOnly();
+
+      /**
+       *
+       *
+       * <pre>
+       * If `true`, then return snippet. If no snippet can be generated, we
+       * return "No snippet is available for this page." A `snippet_status` with
+       * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+       * </pre>
+       *
+       * <code>bool return_snippet = 3;</code>
+       *
+       * @return The returnSnippet.
+       */
+      boolean getReturnSnippet();
     }
     /**
      *
      *
      * <pre>
-     * The specification that configs the snippet in the search results.
+     * A specification for configuring snippets in a search response.
      * </pre>
      *
      * Protobuf type {@code
@@ -9147,22 +9975,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of snippets returned in each search result.
-       *
-       * A snippet is an infomartive summary of a content with highlighting for
-       * UI rendering.
-       *
-       * If the matching snippets is less than the max_snippet_count, return all
-       * of the snippets; otherwise, return the max_snippet_count.
-       *
-       * At most 5 snippets will be returned for each SearchResult.
+       * [DEPRECATED] This field is deprecated. To control snippet return, use
+       * `return_snippet` field. For backwards compatibility, we will return
+       * snippet if max_snippet_count &gt; 0.
        * </pre>
        *
-       * <code>int32 max_snippet_count = 1;</code>
+       * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
        * @return The maxSnippetCount.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public int getMaxSnippetCount() {
         return maxSnippetCount_;
       }
@@ -9173,16 +9999,41 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * if true, only snippet reference is returned.
+       * [DEPRECATED] This field is deprecated and will have no affect on the
+       * snippet.
        * </pre>
        *
-       * <code>bool reference_only = 2;</code>
+       * <code>bool reference_only = 2 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
        * @return The referenceOnly.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getReferenceOnly() {
         return referenceOnly_;
+      }
+
+      public static final int RETURN_SNIPPET_FIELD_NUMBER = 3;
+      private boolean returnSnippet_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * If `true`, then return snippet. If no snippet can be generated, we
+       * return "No snippet is available for this page." A `snippet_status` with
+       * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+       * </pre>
+       *
+       * <code>bool return_snippet = 3;</code>
+       *
+       * @return The returnSnippet.
+       */
+      @java.lang.Override
+      public boolean getReturnSnippet() {
+        return returnSnippet_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -9205,6 +10056,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (referenceOnly_ != false) {
           output.writeBool(2, referenceOnly_);
         }
+        if (returnSnippet_ != false) {
+          output.writeBool(3, returnSnippet_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -9219,6 +10073,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         if (referenceOnly_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, referenceOnly_);
+        }
+        if (returnSnippet_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnSnippet_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -9241,6 +10098,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
         if (getMaxSnippetCount() != other.getMaxSnippetCount()) return false;
         if (getReferenceOnly() != other.getReferenceOnly()) return false;
+        if (getReturnSnippet() != other.getReturnSnippet()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -9256,6 +10114,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getMaxSnippetCount();
         hash = (37 * hash) + REFERENCE_ONLY_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReferenceOnly());
+        hash = (37 * hash) + RETURN_SNIPPET_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnSnippet());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -9383,7 +10243,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The specification that configs the snippet in the search results.
+       * A specification for configuring snippets in a search response.
        * </pre>
        *
        * Protobuf type {@code
@@ -9426,6 +10286,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           maxSnippetCount_ = 0;
           referenceOnly_ = false;
+          returnSnippet_ = false;
           return this;
         }
 
@@ -9476,6 +10337,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.referenceOnly_ = referenceOnly_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.returnSnippet_ = returnSnippet_;
           }
         }
 
@@ -9541,6 +10405,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getReferenceOnly() != false) {
             setReferenceOnly(other.getReferenceOnly());
           }
+          if (other.getReturnSnippet() != false) {
+            setReturnSnippet(other.getReturnSnippet());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -9579,6 +10446,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 24:
+                  {
+                    returnSnippet_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9603,22 +10476,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         *
-         * A snippet is an infomartive summary of a content with highlighting for
-         * UI rendering.
-         *
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
          * @return The maxSnippetCount.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public int getMaxSnippetCount() {
           return maxSnippetCount_;
         }
@@ -9626,22 +10497,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         *
-         * A snippet is an infomartive summary of a content with highlighting for
-         * UI rendering.
-         *
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setMaxSnippetCount(int value) {
 
           maxSnippetCount_ = value;
@@ -9653,21 +10522,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         *
-         * A snippet is an infomartive summary of a content with highlighting for
-         * UI rendering.
-         *
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearMaxSnippetCount() {
           bitField0_ = (bitField0_ & ~0x00000001);
           maxSnippetCount_ = 0;
@@ -9680,14 +10547,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
          * @return The referenceOnly.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public boolean getReferenceOnly() {
           return referenceOnly_;
         }
@@ -9695,14 +10567,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setReferenceOnly(boolean value) {
 
           referenceOnly_ = value;
@@ -9714,16 +10591,80 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearReferenceOnly() {
           bitField0_ = (bitField0_ & ~0x00000002);
           referenceOnly_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean returnSnippet_;
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @return The returnSnippet.
+         */
+        @java.lang.Override
+        public boolean getReturnSnippet() {
+          return returnSnippet_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @param value The returnSnippet to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnSnippet(boolean value) {
+
+          returnSnippet_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnSnippet() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          returnSnippet_ = false;
           onChanged();
           return this;
         }
@@ -9808,12 +10749,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of top results the summary should be generated from.
-       * If the number of returned results is less than summary_result_count,
-       * then the summary would be derived from all the results; otherwise, the
-       * summary would be derived from the top results.
+       * The number of top results to generate the summary from. If the number
+       * of results returned is less than `summaryResultCount`, the summary is
+       * generated from all of the results.
        *
-       * At most 5 results can be used for generating summary.
+       * At most five results can be used to generate a summary.
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -9821,12 +10761,87 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The summaryResultCount.
        */
       int getSummaryResultCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to include citations in the summary. The default
+       * value is `false`.
+       *
+       * When this field is set to `true`, summaries include in-line citation
+       * numbers.
+       *
+       * Example summary including citations:
+       *
+       * BigQuery is Google Cloud's fully managed and completely serverless
+       * enterprise data warehouse [1]. BigQuery supports all data types, works
+       * across clouds, and has built-in machine learning and business
+       * intelligence, all within a unified platform [2, 3].
+       *
+       * The citation numbers refer to the returned search results and are
+       * 1-indexed. For example, [1] means that the sentence is attributed to
+       * the first search result. [2, 3] means that the sentence is attributed
+       * to both the second and third search results.
+       * </pre>
+       *
+       * <code>bool include_citations = 2;</code>
+       *
+       * @return The includeCitations.
+       */
+      boolean getIncludeCitations();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out adversarial queries. The default value
+       * is `false`.
+       *
+       * Google employs search-query classification to detect adversarial
+       * queries. No summary is returned if the search query is classified as an
+       * adversarial query. For example, a user might ask a question regarding
+       * negative comments about the company or submit a query designed to
+       * generate unsafe, policy-violating output. If this field is set to
+       * `true`, we skip generating summaries for adversarial queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_adversarial_query = 3;</code>
+       *
+       * @return The ignoreAdversarialQuery.
+       */
+      boolean getIgnoreAdversarialQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that are not summary-seeking.
+       * The default value is `false`.
+       *
+       * Google employs search-query classification to detect summary-seeking
+       * queries. No summary is returned if the search query is classified as a
+       * non-summary seeking query. For example, `why is the sky blue` and `Who
+       * is the best soccer player in the world?` are summary-seeking queries,
+       * but `SFO airport` and `world cup 2026` are not. They are most likely
+       * navigational queries. If this field is set to `true`, we skip
+       * generating summaries for non-summary seeking queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_non_summary_seeking_query = 4;</code>
+       *
+       * @return The ignoreNonSummarySeekingQuery.
+       */
+      boolean getIgnoreNonSummarySeekingQuery();
     }
     /**
      *
      *
      * <pre>
-     * The specification that configs the summary in the search response.
+     * A specification for configuring a summary returned in a search
+     * response.
      * </pre>
      *
      * Protobuf type {@code
@@ -9873,12 +10888,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of top results the summary should be generated from.
-       * If the number of returned results is less than summary_result_count,
-       * then the summary would be derived from all the results; otherwise, the
-       * summary would be derived from the top results.
+       * The number of top results to generate the summary from. If the number
+       * of results returned is less than `summaryResultCount`, the summary is
+       * generated from all of the results.
        *
-       * At most 5 results can be used for generating summary.
+       * At most five results can be used to generate a summary.
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -9888,6 +10902,95 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public int getSummaryResultCount() {
         return summaryResultCount_;
+      }
+
+      public static final int INCLUDE_CITATIONS_FIELD_NUMBER = 2;
+      private boolean includeCitations_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to include citations in the summary. The default
+       * value is `false`.
+       *
+       * When this field is set to `true`, summaries include in-line citation
+       * numbers.
+       *
+       * Example summary including citations:
+       *
+       * BigQuery is Google Cloud's fully managed and completely serverless
+       * enterprise data warehouse [1]. BigQuery supports all data types, works
+       * across clouds, and has built-in machine learning and business
+       * intelligence, all within a unified platform [2, 3].
+       *
+       * The citation numbers refer to the returned search results and are
+       * 1-indexed. For example, [1] means that the sentence is attributed to
+       * the first search result. [2, 3] means that the sentence is attributed
+       * to both the second and third search results.
+       * </pre>
+       *
+       * <code>bool include_citations = 2;</code>
+       *
+       * @return The includeCitations.
+       */
+      @java.lang.Override
+      public boolean getIncludeCitations() {
+        return includeCitations_;
+      }
+
+      public static final int IGNORE_ADVERSARIAL_QUERY_FIELD_NUMBER = 3;
+      private boolean ignoreAdversarialQuery_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out adversarial queries. The default value
+       * is `false`.
+       *
+       * Google employs search-query classification to detect adversarial
+       * queries. No summary is returned if the search query is classified as an
+       * adversarial query. For example, a user might ask a question regarding
+       * negative comments about the company or submit a query designed to
+       * generate unsafe, policy-violating output. If this field is set to
+       * `true`, we skip generating summaries for adversarial queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_adversarial_query = 3;</code>
+       *
+       * @return The ignoreAdversarialQuery.
+       */
+      @java.lang.Override
+      public boolean getIgnoreAdversarialQuery() {
+        return ignoreAdversarialQuery_;
+      }
+
+      public static final int IGNORE_NON_SUMMARY_SEEKING_QUERY_FIELD_NUMBER = 4;
+      private boolean ignoreNonSummarySeekingQuery_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that are not summary-seeking.
+       * The default value is `false`.
+       *
+       * Google employs search-query classification to detect summary-seeking
+       * queries. No summary is returned if the search query is classified as a
+       * non-summary seeking query. For example, `why is the sky blue` and `Who
+       * is the best soccer player in the world?` are summary-seeking queries,
+       * but `SFO airport` and `world cup 2026` are not. They are most likely
+       * navigational queries. If this field is set to `true`, we skip
+       * generating summaries for non-summary seeking queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_non_summary_seeking_query = 4;</code>
+       *
+       * @return The ignoreNonSummarySeekingQuery.
+       */
+      @java.lang.Override
+      public boolean getIgnoreNonSummarySeekingQuery() {
+        return ignoreNonSummarySeekingQuery_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -9907,6 +11010,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (summaryResultCount_ != 0) {
           output.writeInt32(1, summaryResultCount_);
         }
+        if (includeCitations_ != false) {
+          output.writeBool(2, includeCitations_);
+        }
+        if (ignoreAdversarialQuery_ != false) {
+          output.writeBool(3, ignoreAdversarialQuery_);
+        }
+        if (ignoreNonSummarySeekingQuery_ != false) {
+          output.writeBool(4, ignoreNonSummarySeekingQuery_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -9918,6 +11030,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         size = 0;
         if (summaryResultCount_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, summaryResultCount_);
+        }
+        if (includeCitations_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeCitations_);
+        }
+        if (ignoreAdversarialQuery_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, ignoreAdversarialQuery_);
+        }
+        if (ignoreNonSummarySeekingQuery_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  4, ignoreNonSummarySeekingQuery_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -9939,6 +11062,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 obj;
 
         if (getSummaryResultCount() != other.getSummaryResultCount()) return false;
+        if (getIncludeCitations() != other.getIncludeCitations()) return false;
+        if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
+        if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
+          return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -9952,6 +11079,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + SUMMARY_RESULT_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getSummaryResultCount();
+        hash = (37 * hash) + INCLUDE_CITATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeCitations());
+        hash = (37 * hash) + IGNORE_ADVERSARIAL_QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreAdversarialQuery());
+        hash = (37 * hash) + IGNORE_NON_SUMMARY_SEEKING_QUERY_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -10079,7 +11214,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The specification that configs the summary in the search response.
+       * A specification for configuring a summary returned in a search
+       * response.
        * </pre>
        *
        * Protobuf type {@code
@@ -10121,6 +11257,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           summaryResultCount_ = 0;
+          includeCitations_ = false;
+          ignoreAdversarialQuery_ = false;
+          ignoreNonSummarySeekingQuery_ = false;
           return this;
         }
 
@@ -10168,6 +11307,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.summaryResultCount_ = summaryResultCount_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.includeCitations_ = includeCitations_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.ignoreAdversarialQuery_ = ignoreAdversarialQuery_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
           }
         }
 
@@ -10230,6 +11378,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getSummaryResultCount() != 0) {
             setSummaryResultCount(other.getSummaryResultCount());
           }
+          if (other.getIncludeCitations() != false) {
+            setIncludeCitations(other.getIncludeCitations());
+          }
+          if (other.getIgnoreAdversarialQuery() != false) {
+            setIgnoreAdversarialQuery(other.getIgnoreAdversarialQuery());
+          }
+          if (other.getIgnoreNonSummarySeekingQuery() != false) {
+            setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -10262,6 +11419,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000001;
                     break;
                   } // case 8
+                case 16:
+                  {
+                    includeCitations_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    ignoreAdversarialQuery_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 32:
+                  {
+                    ignoreNonSummarySeekingQuery_ = input.readBool();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10286,12 +11461,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of top results the summary should be generated from.
-         * If the number of returned results is less than summary_result_count,
-         * then the summary would be derived from all the results; otherwise, the
-         * summary would be derived from the top results.
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
          *
-         * At most 5 results can be used for generating summary.
+         * At most five results can be used to generate a summary.
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -10306,12 +11480,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of top results the summary should be generated from.
-         * If the number of returned results is less than summary_result_count,
-         * then the summary would be derived from all the results; otherwise, the
-         * summary would be derived from the top results.
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
          *
-         * At most 5 results can be used for generating summary.
+         * At most five results can be used to generate a summary.
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -10330,12 +11503,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of top results the summary should be generated from.
-         * If the number of returned results is less than summary_result_count,
-         * then the summary would be derived from all the results; otherwise, the
-         * summary would be derived from the top results.
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
          *
-         * At most 5 results can be used for generating summary.
+         * At most five results can be used to generate a summary.
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -10345,6 +11517,270 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder clearSummaryResultCount() {
           bitField0_ = (bitField0_ & ~0x00000001);
           summaryResultCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean includeCitations_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @return The includeCitations.
+         */
+        @java.lang.Override
+        public boolean getIncludeCitations() {
+          return includeCitations_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @param value The includeCitations to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeCitations(boolean value) {
+
+          includeCitations_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeCitations() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          includeCitations_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean ignoreAdversarialQuery_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @return The ignoreAdversarialQuery.
+         */
+        @java.lang.Override
+        public boolean getIgnoreAdversarialQuery() {
+          return ignoreAdversarialQuery_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @param value The ignoreAdversarialQuery to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreAdversarialQuery(boolean value) {
+
+          ignoreAdversarialQuery_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreAdversarialQuery() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ignoreAdversarialQuery_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean ignoreNonSummarySeekingQuery_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @return The ignoreNonSummarySeekingQuery.
+         */
+        @java.lang.Override
+        public boolean getIgnoreNonSummarySeekingQuery() {
+          return ignoreNonSummarySeekingQuery_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @param value The ignoreNonSummarySeekingQuery to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreNonSummarySeekingQuery(boolean value) {
+
+          ignoreNonSummarySeekingQuery_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreNonSummarySeekingQuery() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ignoreNonSummarySeekingQuery_ = false;
           onChanged();
           return this;
         }
@@ -10429,17 +11865,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The max number of extractive answers returned in each search result.
+       * The maximum number of extractive answers returned in each search
+       * result.
        *
        * An extractive answer is a verbatim answer extracted from the original
-       * document, which provides precise and contextually relevant answer to
+       * document, which provides a precise and contextually relevant answer to
        * the search query.
        *
        * If the number of matching answers is less than the
-       * extractive_answer_count, return all of the answers; otherwise, return
-       * the extractive_answer_count.
+       * `max_extractive_answer_count`, return all of the answers. Otherwise,
+       * return the `max_extractive_answer_count`.
        *
-       * At most 5 answers will be returned for each SearchResult.
+       * At most one answer is returned for each
+       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_answer_count = 1;</code>
@@ -10453,17 +11891,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The max number of extractive segments returned in each search result.
+       * Only applied if the
+       * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+       * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED]
+       * or
+       * [DataStore.solution_types][google.cloud.discoveryengine.v1beta.DataStore.solution_types]
+       * is
+       * [SOLUTION_TYPE_CHAT][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_CHAT].
        *
        * An extractive segment is a text segment extracted from the original
-       * document which is relevant to the search query and in general more
-       * verbose than an extrative answer. The segment could then be used as
+       * document that is relevant to the search query, and, in general, more
+       * verbose than an extractive answer. The segment could then be used as
        * input for LLMs to generate summaries and answers.
        *
-       * If the number of matching segments is less than the
-       * max_extractive_segment_count, return all of the segments; otherwise,
-       * return the max_extractive_segment_count.
+       * If the number of matching segments is less than
+       * `max_extractive_segment_count`, return all of the segments. Otherwise,
+       * return the `max_extractive_segment_count`.
        *
-       * Currently one segment will be returned for each SearchResult.
+       * Currently one segment is returned for each
+       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_segment_count = 2;</code>
@@ -10476,7 +11922,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specification that configs the extractive content in search results.
+     * A specification for configuring the extractive content in a search
+     * response.
      * </pre>
      *
      * Protobuf type {@code
@@ -10523,17 +11970,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The max number of extractive answers returned in each search result.
+       * The maximum number of extractive answers returned in each search
+       * result.
        *
        * An extractive answer is a verbatim answer extracted from the original
-       * document, which provides precise and contextually relevant answer to
+       * document, which provides a precise and contextually relevant answer to
        * the search query.
        *
        * If the number of matching answers is less than the
-       * extractive_answer_count, return all of the answers; otherwise, return
-       * the extractive_answer_count.
+       * `max_extractive_answer_count`, return all of the answers. Otherwise,
+       * return the `max_extractive_answer_count`.
        *
-       * At most 5 answers will be returned for each SearchResult.
+       * At most one answer is returned for each
+       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_answer_count = 1;</code>
@@ -10552,17 +12001,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The max number of extractive segments returned in each search result.
+       * Only applied if the
+       * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+       * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED]
+       * or
+       * [DataStore.solution_types][google.cloud.discoveryengine.v1beta.DataStore.solution_types]
+       * is
+       * [SOLUTION_TYPE_CHAT][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_CHAT].
        *
        * An extractive segment is a text segment extracted from the original
-       * document which is relevant to the search query and in general more
-       * verbose than an extrative answer. The segment could then be used as
+       * document that is relevant to the search query, and, in general, more
+       * verbose than an extractive answer. The segment could then be used as
        * input for LLMs to generate summaries and answers.
        *
-       * If the number of matching segments is less than the
-       * max_extractive_segment_count, return all of the segments; otherwise,
-       * return the max_extractive_segment_count.
+       * If the number of matching segments is less than
+       * `max_extractive_segment_count`, return all of the segments. Otherwise,
+       * return the `max_extractive_segment_count`.
        *
-       * Currently one segment will be returned for each SearchResult.
+       * Currently one segment is returned for each
+       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_segment_count = 2;</code>
@@ -10779,7 +12236,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The specification that configs the extractive content in search results.
+       * A specification for configuring the extractive content in a search
+       * response.
        * </pre>
        *
        * Protobuf type {@code
@@ -11007,17 +12465,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The max number of extractive answers returned in each search result.
+         * The maximum number of extractive answers returned in each search
+         * result.
          *
          * An extractive answer is a verbatim answer extracted from the original
-         * document, which provides precise and contextually relevant answer to
+         * document, which provides a precise and contextually relevant answer to
          * the search query.
          *
          * If the number of matching answers is less than the
-         * extractive_answer_count, return all of the answers; otherwise, return
-         * the extractive_answer_count.
+         * `max_extractive_answer_count`, return all of the answers. Otherwise,
+         * return the `max_extractive_answer_count`.
          *
-         * At most 5 answers will be returned for each SearchResult.
+         * At most one answer is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_answer_count = 1;</code>
@@ -11032,17 +12492,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The max number of extractive answers returned in each search result.
+         * The maximum number of extractive answers returned in each search
+         * result.
          *
          * An extractive answer is a verbatim answer extracted from the original
-         * document, which provides precise and contextually relevant answer to
+         * document, which provides a precise and contextually relevant answer to
          * the search query.
          *
          * If the number of matching answers is less than the
-         * extractive_answer_count, return all of the answers; otherwise, return
-         * the extractive_answer_count.
+         * `max_extractive_answer_count`, return all of the answers. Otherwise,
+         * return the `max_extractive_answer_count`.
          *
-         * At most 5 answers will be returned for each SearchResult.
+         * At most one answer is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_answer_count = 1;</code>
@@ -11061,17 +12523,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The max number of extractive answers returned in each search result.
+         * The maximum number of extractive answers returned in each search
+         * result.
          *
          * An extractive answer is a verbatim answer extracted from the original
-         * document, which provides precise and contextually relevant answer to
+         * document, which provides a precise and contextually relevant answer to
          * the search query.
          *
          * If the number of matching answers is less than the
-         * extractive_answer_count, return all of the answers; otherwise, return
-         * the extractive_answer_count.
+         * `max_extractive_answer_count`, return all of the answers. Otherwise,
+         * return the `max_extractive_answer_count`.
          *
-         * At most 5 answers will be returned for each SearchResult.
+         * At most one answer is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_answer_count = 1;</code>
@@ -11091,17 +12555,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The max number of extractive segments returned in each search result.
+         * Only applied if the
+         * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+         * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED]
+         * or
+         * [DataStore.solution_types][google.cloud.discoveryengine.v1beta.DataStore.solution_types]
+         * is
+         * [SOLUTION_TYPE_CHAT][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_CHAT].
          *
          * An extractive segment is a text segment extracted from the original
-         * document which is relevant to the search query and in general more
-         * verbose than an extrative answer. The segment could then be used as
+         * document that is relevant to the search query, and, in general, more
+         * verbose than an extractive answer. The segment could then be used as
          * input for LLMs to generate summaries and answers.
          *
-         * If the number of matching segments is less than the
-         * max_extractive_segment_count, return all of the segments; otherwise,
-         * return the max_extractive_segment_count.
+         * If the number of matching segments is less than
+         * `max_extractive_segment_count`, return all of the segments. Otherwise,
+         * return the `max_extractive_segment_count`.
          *
-         * Currently one segment will be returned for each SearchResult.
+         * Currently one segment is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -11117,17 +12589,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The max number of extractive segments returned in each search result.
+         * Only applied if the
+         * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+         * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED]
+         * or
+         * [DataStore.solution_types][google.cloud.discoveryengine.v1beta.DataStore.solution_types]
+         * is
+         * [SOLUTION_TYPE_CHAT][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_CHAT].
          *
          * An extractive segment is a text segment extracted from the original
-         * document which is relevant to the search query and in general more
-         * verbose than an extrative answer. The segment could then be used as
+         * document that is relevant to the search query, and, in general, more
+         * verbose than an extractive answer. The segment could then be used as
          * input for LLMs to generate summaries and answers.
          *
-         * If the number of matching segments is less than the
-         * max_extractive_segment_count, return all of the segments; otherwise,
-         * return the max_extractive_segment_count.
+         * If the number of matching segments is less than
+         * `max_extractive_segment_count`, return all of the segments. Otherwise,
+         * return the `max_extractive_segment_count`.
          *
-         * Currently one segment will be returned for each SearchResult.
+         * Currently one segment is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -11147,17 +12627,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The max number of extractive segments returned in each search result.
+         * Only applied if the
+         * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+         * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED]
+         * or
+         * [DataStore.solution_types][google.cloud.discoveryengine.v1beta.DataStore.solution_types]
+         * is
+         * [SOLUTION_TYPE_CHAT][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_CHAT].
          *
          * An extractive segment is a text segment extracted from the original
-         * document which is relevant to the search query and in general more
-         * verbose than an extrative answer. The segment could then be used as
+         * document that is relevant to the search query, and, in general, more
+         * verbose than an extractive answer. The segment could then be used as
          * input for LLMs to generate summaries and answers.
          *
-         * If the number of matching segments is less than the
-         * max_extractive_segment_count, return all of the segments; otherwise,
-         * return the max_extractive_segment_count.
+         * If the number of matching segments is less than
+         * `max_extractive_segment_count`, return all of the segments. Otherwise,
+         * return the `max_extractive_segment_count`.
          *
-         * Currently one segment will be returned for each SearchResult.
+         * Currently one segment is returned for each
+         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -11250,8 +12738,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -11268,8 +12756,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -11290,8 +12778,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -11315,7 +12803,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -11333,7 +12821,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -11355,7 +12843,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no summary spec provided, there will be no summary in the
+     * If `summarySpec` is not specified, summaries are not included in the
      * search response.
      * </pre>
      *
@@ -11641,8 +13129,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specification that configs the desired behavior of the UCS content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec}
@@ -11890,8 +13377,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -11907,8 +13394,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -11932,8 +13419,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -11959,8 +13446,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -11984,8 +13471,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -12016,8 +13503,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -12038,8 +13525,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -12057,8 +13544,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -12081,8 +13568,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -12123,7 +13610,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12140,7 +13627,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12165,7 +13652,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12192,7 +13679,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12217,7 +13704,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12249,7 +13736,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12271,7 +13758,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12290,7 +13777,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12314,7 +13801,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no summary spec provided, there will be no summary in the
+       * If `summarySpec` is not specified, summaries are not included in the
        * search response.
        * </pre>
        *
@@ -12822,6 +14309,57 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IMAGE_QUERY_FIELD_NUMBER = 19;
+  private com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery imageQuery_;
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return Whether the imageQuery field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageQuery() {
+    return imageQuery_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return The imageQuery.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery getImageQuery() {
+    return imageQuery_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.getDefaultInstance()
+        : imageQuery_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder
+      getImageQueryOrBuilder() {
+    return imageQuery_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.getDefaultInstance()
+        : imageQuery_;
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
   /**
@@ -12830,7 +14368,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to a reasonable value. The maximum
-   * allowed value is 100. Values above 100 will be coerced to 100.
+   * allowed value is 100. Values above 100 are coerced to 100.
    *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
@@ -13001,12 +14539,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The order in which documents are returned. Document can be ordered by
+   * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-   * object. Leave it unset if ordered by relevance. OrderBy expression is
+   * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -13029,12 +14567,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The order in which documents are returned. Document can be ordered by
+   * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-   * object. Leave it unset if ordered by relevance. OrderBy expression is
+   * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -13061,8 +14599,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -13078,8 +14617,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -13097,8 +14637,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -13401,7 +14942,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -13419,7 +14960,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -13441,7 +14982,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -13465,7 +15006,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -13483,7 +15024,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -13505,7 +15046,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -13605,8 +15146,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -13623,8 +15163,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -13645,8 +15184,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -13669,7 +15207,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether to turn on safe search. This is only supported for
-   * [ContentConfig.PUBLIC_WEBSITE][].
+   * website search.
    * </pre>
    *
    * <code>bool safe_search = 20;</code>
@@ -13902,6 +15440,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userPseudoId_);
     }
+    if (imageQuery_ != null) {
+      output.writeMessage(19, getImageQuery());
+    }
     if (safeSearch_ != false) {
       output.writeBool(20, safeSearch_);
     }
@@ -13972,6 +15513,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userPseudoId_);
     }
+    if (imageQuery_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getImageQuery());
+    }
     if (safeSearch_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, safeSearch_);
     }
@@ -14010,6 +15554,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getServingConfig().equals(other.getServingConfig())) return false;
     if (!getBranch().equals(other.getBranch())) return false;
     if (!getQuery().equals(other.getQuery())) return false;
+    if (hasImageQuery() != other.hasImageQuery()) return false;
+    if (hasImageQuery()) {
+      if (!getImageQuery().equals(other.getImageQuery())) return false;
+    }
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (getOffset() != other.getOffset()) return false;
@@ -14057,6 +15605,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getBranch().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
+    if (hasImageQuery()) {
+      hash = (37 * hash) + IMAGE_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getImageQuery().hashCode();
+    }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -14272,6 +15824,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       servingConfig_ = "";
       branch_ = "";
       query_ = "";
+      imageQuery_ = null;
+      if (imageQueryBuilder_ != null) {
+        imageQueryBuilder_.dispose();
+        imageQueryBuilder_ = null;
+      }
       pageSize_ = 0;
       pageToken_ = "";
       offset_ = 0;
@@ -14288,7 +15845,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         facetSpecs_ = null;
         facetSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -14351,9 +15908,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1beta.SearchRequest result) {
       if (facetSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           facetSpecs_ = java.util.Collections.unmodifiableList(facetSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.facetSpecs_ = facetSpecs_;
       } else {
@@ -14373,55 +15930,58 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.query_ = query_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.imageQuery_ = imageQueryBuilder_ == null ? imageQuery_ : imageQueryBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pageToken_ = pageToken_;
+        result.pageSize_ = pageSize_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.offset_ = offset_;
+        result.pageToken_ = pageToken_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.filter_ = filter_;
+        result.offset_ = offset_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.orderBy_ = orderBy_;
+        result.filter_ = filter_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.params_ = internalGetParams();
         result.params_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.queryExpansionSpec_ =
             queryExpansionSpecBuilder_ == null
                 ? queryExpansionSpec_
                 : queryExpansionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.contentSearchSpec_ =
             contentSearchSpecBuilder_ == null
                 ? contentSearchSpec_
                 : contentSearchSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.safeSearch_ = safeSearch_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -14488,12 +16048,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasImageQuery()) {
+        mergeImageQuery(other.getImageQuery());
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getOffset() != 0) {
@@ -14501,12 +16064,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasUserInfo()) {
@@ -14516,7 +16079,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.facetSpecs_.isEmpty()) {
           if (facetSpecs_.isEmpty()) {
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureFacetSpecsIsMutable();
             facetSpecs_.addAll(other.facetSpecs_);
@@ -14529,7 +16092,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             facetSpecsBuilder_.dispose();
             facetSpecsBuilder_ = null;
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             facetSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFacetSpecsFieldBuilder()
@@ -14543,7 +16106,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         mergeBoostSpec(other.getBoostSpec());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       if (other.hasQueryExpansionSpec()) {
         mergeQueryExpansionSpec(other.getQueryExpansionSpec());
       }
@@ -14552,7 +16115,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasContentSearchSpec()) {
@@ -14562,7 +16125,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         setSafeSearch(other.getSafeSearch());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -14610,31 +16173,31 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 offset_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 orderBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -14654,7 +16217,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
@@ -14666,39 +16229,45 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(
                     getQueryExpansionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
+            case 154:
+              {
+                input.readMessage(getImageQueryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 154
             case 160:
               {
                 safeSearch_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 170
             case 178:
@@ -14710,14 +16279,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 178
             case 194:
               {
                 input.readMessage(
                     getContentSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 194
             default:
@@ -15102,6 +16671,196 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery imageQuery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder>
+        imageQueryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     *
+     * @return Whether the imageQuery field is set.
+     */
+    public boolean hasImageQuery() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     *
+     * @return The imageQuery.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery getImageQuery() {
+      if (imageQueryBuilder_ == null) {
+        return imageQuery_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.getDefaultInstance()
+            : imageQuery_;
+      } else {
+        return imageQueryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder setImageQuery(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery value) {
+      if (imageQueryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageQuery_ = value;
+      } else {
+        imageQueryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder setImageQuery(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder builderForValue) {
+      if (imageQueryBuilder_ == null) {
+        imageQuery_ = builderForValue.build();
+      } else {
+        imageQueryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder mergeImageQuery(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery value) {
+      if (imageQueryBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && imageQuery_ != null
+            && imageQuery_
+                != com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery
+                    .getDefaultInstance()) {
+          getImageQueryBuilder().mergeFrom(value);
+        } else {
+          imageQuery_ = value;
+        }
+      } else {
+        imageQueryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder clearImageQuery() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      imageQuery_ = null;
+      if (imageQueryBuilder_ != null) {
+        imageQueryBuilder_.dispose();
+        imageQueryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder
+        getImageQueryBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getImageQueryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder
+        getImageQueryOrBuilder() {
+      if (imageQueryBuilder_ != null) {
+        return imageQueryBuilder_.getMessageOrBuilder();
+      } else {
+        return imageQuery_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.getDefaultInstance()
+            : imageQuery_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder>
+        getImageQueryFieldBuilder() {
+      if (imageQueryBuilder_ == null) {
+        imageQueryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder>(
+                getImageQuery(), getParentForChildren(), isClean());
+        imageQuery_ = null;
+      }
+      return imageQueryBuilder_;
+    }
+
     private int pageSize_;
     /**
      *
@@ -15109,7 +16868,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
-     * allowed value is 100. Values above 100 will be coerced to 100.
+     * allowed value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -15128,7 +16887,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
-     * allowed value is 100. Values above 100 will be coerced to 100.
+     * allowed value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -15141,7 +16900,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -15151,7 +16910,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
-     * allowed value is 100. Values above 100 will be coerced to 100.
+     * allowed value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -15161,7 +16920,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -15250,7 +17009,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -15274,7 +17033,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -15303,7 +17062,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -15353,7 +17112,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setOffset(int value) {
 
       offset_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -15376,7 +17135,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       offset_ = 0;
       onChanged();
       return this;
@@ -15456,7 +17215,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -15477,7 +17236,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -15503,7 +17262,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -15513,12 +17272,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order in which documents are returned. Document can be ordered by
+     * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-     * object. Leave it unset if ordered by relevance. OrderBy expression is
+     * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
      * <code>string order_by = 8;</code>
@@ -15540,12 +17299,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order in which documents are returned. Document can be ordered by
+     * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-     * object. Leave it unset if ordered by relevance. OrderBy expression is
+     * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
      * <code>string order_by = 8;</code>
@@ -15567,12 +17326,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order in which documents are returned. Document can be ordered by
+     * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-     * object. Leave it unset if ordered by relevance. OrderBy expression is
+     * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
      * <code>string order_by = 8;</code>
@@ -15585,7 +17344,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       orderBy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15593,12 +17352,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order in which documents are returned. Document can be ordered by
+     * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-     * object. Leave it unset if ordered by relevance. OrderBy expression is
+     * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
      * <code>string order_by = 8;</code>
@@ -15607,7 +17366,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOrderBy() {
       orderBy_ = getDefaultInstance().getOrderBy();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -15615,12 +17374,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order in which documents are returned. Document can be ordered by
+     * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-     * object. Leave it unset if ordered by relevance. OrderBy expression is
+     * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
      * <code>string order_by = 8;</code>
@@ -15634,7 +17393,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       orderBy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15650,8 +17409,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15659,15 +17419,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15688,8 +17449,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15703,7 +17465,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15712,8 +17474,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15725,7 +17488,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15734,15 +17497,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
      */
     public Builder mergeUserInfo(com.google.cloud.discoveryengine.v1beta.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && userInfo_ != null
             && userInfo_ != com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()) {
           getUserInfoBuilder().mergeFrom(value);
@@ -15752,7 +17516,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15761,14 +17525,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
      */
     public Builder clearUserInfo() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
@@ -15782,14 +17547,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.UserInfo.Builder getUserInfoBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
@@ -15798,8 +17564,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15818,8 +17585,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -15845,11 +17613,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         facetSpecs_ = java.util.Collections.emptyList();
 
     private void ensureFacetSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         facetSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec>(facetSpecs_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -16118,7 +17886,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFacetSpecs() {
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         facetSpecsBuilder_.clear();
@@ -16276,7 +18044,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec,
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpecOrBuilder>(
-                facetSpecs_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                facetSpecs_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         facetSpecs_ = null;
       }
       return facetSpecsBuilder_;
@@ -16300,7 +18068,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boostSpec field is set.
      */
     public boolean hasBoostSpec() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -16341,7 +18109,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -16361,7 +18129,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -16377,7 +18145,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBoostSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec value) {
       if (boostSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && boostSpec_ != null
             && boostSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec
@@ -16389,7 +18157,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -16403,7 +18171,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
      */
     public Builder clearBoostSpec() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -16423,7 +18191,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder
         getBoostSpecBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
@@ -16490,7 +18258,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return params_;
     }
@@ -16607,7 +18375,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -16638,7 +18406,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -16666,7 +18434,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableParams().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -16688,7 +18456,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllParams(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -16704,7 +18472,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16714,14 +18482,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionSpec field is set.
      */
     public boolean hasQueryExpansionSpec() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16746,7 +18514,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16763,7 +18531,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -16772,7 +18540,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16787,7 +18555,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -16796,7 +18564,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16806,7 +18574,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec value) {
       if (queryExpansionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && queryExpansionSpec_ != null
             && queryExpansionSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec
@@ -16818,7 +18586,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -16827,7 +18595,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16835,7 +18603,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionSpec() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       queryExpansionSpec_ = null;
       if (queryExpansionSpecBuilder_ != null) {
         queryExpansionSpecBuilder_.dispose();
@@ -16849,7 +18617,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16858,7 +18626,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.Builder
         getQueryExpansionSpecBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
@@ -16867,7 +18635,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16890,7 +18658,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -16926,7 +18694,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -16936,14 +18704,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -16968,7 +18736,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -16985,7 +18753,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -16994,7 +18762,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17009,7 +18777,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -17018,7 +18786,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17028,7 +18796,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec
@@ -17040,7 +18808,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -17049,7 +18817,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17057,7 +18825,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -17071,7 +18839,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17080,7 +18848,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -17089,7 +18857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17112,7 +18880,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -17237,7 +19005,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -17267,7 +19035,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -17302,7 +19070,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -17318,8 +19086,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17329,14 +19096,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentSearchSpec field is set.
      */
     public boolean hasContentSearchSpec() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17360,8 +19126,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17378,7 +19143,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -17386,8 +19151,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17402,7 +19166,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -17410,8 +19174,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17421,7 +19184,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContentSearchSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec value) {
       if (contentSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && contentSearchSpec_ != null
             && contentSearchSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
@@ -17433,7 +19196,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -17441,8 +19204,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17450,7 +19212,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContentSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       contentSearchSpec_ = null;
       if (contentSearchSpecBuilder_ != null) {
         contentSearchSpecBuilder_.dispose();
@@ -17463,8 +19225,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17473,7 +19234,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.Builder
         getContentSearchSpecBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getContentSearchSpecFieldBuilder().getBuilder();
     }
@@ -17481,8 +19242,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17504,8 +19264,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -17535,7 +19294,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -17551,7 +19310,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -17562,7 +19321,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSafeSearch(boolean value) {
 
       safeSearch_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -17571,7 +19330,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -17579,7 +19338,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSafeSearch() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       safeSearch_ = false;
       onChanged();
       return this;
@@ -17605,7 +19364,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return userLabels_;
     }
@@ -17754,7 +19513,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -17793,7 +19552,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -17829,7 +19588,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -17859,7 +19618,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 

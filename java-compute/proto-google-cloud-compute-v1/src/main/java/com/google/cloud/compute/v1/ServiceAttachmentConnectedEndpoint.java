@@ -39,6 +39,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   private ServiceAttachmentConnectedEndpoint() {
+    consumerNetwork_ = "";
     endpoint_ = "";
     status_ = "";
   }
@@ -296,6 +297,72 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   private int bitField0_;
+  public static final int CONSUMER_NETWORK_FIELD_NUMBER = 254357221;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumerNetwork_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return Whether the consumerNetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsumerNetwork() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The consumerNetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getConsumerNetwork() {
+    java.lang.Object ref = consumerNetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consumerNetwork_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The bytes for consumerNetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConsumerNetworkBytes() {
+    java.lang.Object ref = consumerNetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      consumerNetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENDPOINT_FIELD_NUMBER = 130489749;
 
   @SuppressWarnings("serial")
@@ -313,7 +380,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasEndpoint() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -377,7 +444,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -413,7 +480,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -478,13 +545,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 254357221, consumerNetwork_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
     }
     getUnknownFields().writeTo(output);
@@ -496,13 +566,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(254357221, consumerNetwork_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -521,6 +594,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint other =
         (com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint) obj;
 
+    if (hasConsumerNetwork() != other.hasConsumerNetwork()) return false;
+    if (hasConsumerNetwork()) {
+      if (!getConsumerNetwork().equals(other.getConsumerNetwork())) return false;
+    }
     if (hasEndpoint() != other.hasEndpoint()) return false;
     if (hasEndpoint()) {
       if (!getEndpoint().equals(other.getEndpoint())) return false;
@@ -544,6 +621,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasConsumerNetwork()) {
+      hash = (37 * hash) + CONSUMER_NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getConsumerNetwork().hashCode();
+    }
     if (hasEndpoint()) {
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
@@ -696,6 +777,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      consumerNetwork_ = "";
       endpoint_ = "";
       pscConnectionId_ = 0L;
       status_ = "";
@@ -739,16 +821,20 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.endpoint_ = endpoint_;
+        result.consumerNetwork_ = consumerNetwork_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
+        result.endpoint_ = endpoint_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.status_ = status_;
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -800,9 +886,14 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.getDefaultInstance())
         return this;
+      if (other.hasConsumerNetwork()) {
+        consumerNetwork_ = other.consumerNetwork_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasEndpoint()) {
         endpoint_ = other.endpoint_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPscConnectionId()) {
@@ -810,7 +901,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -842,19 +933,25 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case 1043917994:
               {
                 endpoint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1043917994
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1450082194
+            case 2034857770:
+              {
+                consumerNetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 2034857770
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1958308120
             default:
@@ -876,6 +973,126 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
     private int bitField0_;
 
+    private java.lang.Object consumerNetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @return Whether the consumerNetwork field is set.
+     */
+    public boolean hasConsumerNetwork() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @return The consumerNetwork.
+     */
+    public java.lang.String getConsumerNetwork() {
+      java.lang.Object ref = consumerNetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consumerNetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @return The bytes for consumerNetwork.
+     */
+    public com.google.protobuf.ByteString getConsumerNetworkBytes() {
+      java.lang.Object ref = consumerNetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        consumerNetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @param value The consumerNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumerNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      consumerNetwork_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConsumerNetwork() {
+      consumerNetwork_ = getDefaultInstance().getConsumerNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The url of the consumer network.
+     * </pre>
+     *
+     * <code>optional string consumer_network = 254357221;</code>
+     *
+     * @param value The bytes for consumerNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumerNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      consumerNetwork_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object endpoint_ = "";
     /**
      *
@@ -889,7 +1106,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the endpoint field is set.
      */
     public boolean hasEndpoint() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -952,7 +1169,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       endpoint_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,7 +1186,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearEndpoint() {
       endpoint_ = getDefaultInstance().getEndpoint();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -991,7 +1208,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       endpoint_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1010,7 +1227,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1042,7 +1259,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1058,7 +1275,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -1078,7 +1295,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1144,7 +1361,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1162,7 +1379,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1185,7 +1402,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

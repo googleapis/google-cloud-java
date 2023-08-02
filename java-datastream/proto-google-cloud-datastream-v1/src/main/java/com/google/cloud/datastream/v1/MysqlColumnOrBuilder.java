@@ -151,4 +151,30 @@ public interface MysqlColumnOrBuilder
    * @return The ordinalPosition.
    */
   int getOrdinalPosition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Column precision.
+   * </pre>
+   *
+   * <code>int32 precision = 8;</code>
+   *
+   * @return The precision.
+   */
+  int getPrecision();
+
+  /**
+   *
+   *
+   * <pre>
+   * Column scale.
+   * </pre>
+   *
+   * <code>int32 scale = 9;</code>
+   *
+   * @return The scale.
+   */
+  int getScale();
 }

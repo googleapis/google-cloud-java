@@ -184,7 +184,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -198,7 +198,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -229,7 +229,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -247,7 +247,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
