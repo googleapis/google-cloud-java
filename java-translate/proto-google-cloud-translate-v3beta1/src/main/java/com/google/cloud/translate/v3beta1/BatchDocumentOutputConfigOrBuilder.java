@@ -58,19 +58,19 @@ public interface BatchDocumentOutputConfigOrBuilder
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
-   * gs://translation_output/a_b_c_[trg]_translation.[extension]
+   * `gs://translation_output/a_b_c_[trg]_translation.[extension]`
    * `glossary_translation_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.[extension] The
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.[extension]`. The
    * output document will maintain the same file format as the input document.
    *
    * The naming format of error output files follows (for target language code
-   * [trg]): `error_output`: gs://translation_test/a_b_c_[trg]_errors.txt
+   * [trg]): `error_output`: `gs://translation_test/a_b_c_[trg]_errors.txt`
    * `glossary_error_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.txt The error
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.txt` The error
    * output is a txt file containing error details.
    * </pre>
    *
@@ -114,19 +114,19 @@ public interface BatchDocumentOutputConfigOrBuilder
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
-   * gs://translation_output/a_b_c_[trg]_translation.[extension]
+   * `gs://translation_output/a_b_c_[trg]_translation.[extension]`
    * `glossary_translation_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.[extension] The
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.[extension]`. The
    * output document will maintain the same file format as the input document.
    *
    * The naming format of error output files follows (for target language code
-   * [trg]): `error_output`: gs://translation_test/a_b_c_[trg]_errors.txt
+   * [trg]): `error_output`: `gs://translation_test/a_b_c_[trg]_errors.txt`
    * `glossary_error_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.txt The error
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.txt` The error
    * output is a txt file containing error details.
    * </pre>
    *
@@ -170,19 +170,19 @@ public interface BatchDocumentOutputConfigOrBuilder
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
-   * gs://translation_output/a_b_c_[trg]_translation.[extension]
+   * `gs://translation_output/a_b_c_[trg]_translation.[extension]`
    * `glossary_translation_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.[extension] The
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.[extension]`. The
    * output document will maintain the same file format as the input document.
    *
    * The naming format of error output files follows (for target language code
-   * [trg]): `error_output`: gs://translation_test/a_b_c_[trg]_errors.txt
+   * [trg]): `error_output`: `gs://translation_test/a_b_c_[trg]_errors.txt`
    * `glossary_error_output`:
-   * gs://translation_test/a_b_c_[trg]_glossary_translation.txt The error
+   * `gs://translation_test/a_b_c_[trg]_glossary_translation.txt` The error
    * output is a txt file containing error details.
    * </pre>
    *
