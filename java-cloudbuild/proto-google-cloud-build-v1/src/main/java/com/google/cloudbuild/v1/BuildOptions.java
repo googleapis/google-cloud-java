@@ -2064,6 +2064,25 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     return dynamicSubstitutions_;
   }
 
+  public static final int AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER = 22;
+  private boolean automapSubstitutions_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for all build steps.
+   * </pre>
+   *
+   * <code>bool automap_substitutions = 22;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  @java.lang.Override
+  public boolean getAutomapSubstitutions() {
+    return automapSubstitutions_;
+  }
+
   public static final int LOG_STREAMING_OPTION_FIELD_NUMBER = 5;
   private int logStreamingOption_ = 0;
   /**
@@ -2119,7 +2138,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2145,7 +2164,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -2649,6 +2668,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(21, defaultLogsBucketBehavior_);
     }
+    if (automapSubstitutions_ != false) {
+      output.writeBool(22, automapSubstitutions_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2728,6 +2750,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, defaultLogsBucketBehavior_);
     }
+    if (automapSubstitutions_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, automapSubstitutions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2749,6 +2774,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     if (substitutionOption_ != other.substitutionOption_) return false;
     if (getDynamicSubstitutions() != other.getDynamicSubstitutions()) return false;
+    if (getAutomapSubstitutions() != other.getAutomapSubstitutions()) return false;
     if (logStreamingOption_ != other.logStreamingOption_) return false;
     if (!getWorkerPool().equals(other.getWorkerPool())) return false;
     if (hasPool() != other.hasPool()) return false;
@@ -2785,6 +2811,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + substitutionOption_;
     hash = (37 * hash) + DYNAMIC_SUBSTITUTIONS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDynamicSubstitutions());
+    hash = (37 * hash) + AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomapSubstitutions());
     hash = (37 * hash) + LOG_STREAMING_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + logStreamingOption_;
     hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
@@ -2954,6 +2982,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       diskSizeGb_ = 0L;
       substitutionOption_ = 0;
       dynamicSubstitutions_ = false;
+      automapSubstitutions_ = false;
       logStreamingOption_ = 0;
       workerPool_ = "";
       pool_ = null;
@@ -2970,7 +2999,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       defaultLogsBucketBehavior_ = 0;
       return this;
     }
@@ -3014,9 +3043,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       result.sourceProvenanceHash_ = sourceProvenanceHash_;
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.volumes_ = volumes_;
       } else {
@@ -3042,26 +3071,29 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         result.dynamicSubstitutions_ = dynamicSubstitutions_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.logStreamingOption_ = logStreamingOption_;
+        result.automapSubstitutions_ = automapSubstitutions_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.workerPool_ = workerPool_;
+        result.logStreamingOption_ = logStreamingOption_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.pool_ = poolBuilder_ == null ? pool_ : poolBuilder_.build();
+        result.workerPool_ = workerPool_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.logging_ = logging_;
+        result.pool_ = poolBuilder_ == null ? pool_ : poolBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.logging_ = logging_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         env_.makeImmutable();
         result.env_ = env_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         secretEnv_.makeImmutable();
         result.secretEnv_ = secretEnv_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.defaultLogsBucketBehavior_ = defaultLogsBucketBehavior_;
       }
     }
@@ -3136,12 +3168,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (other.getDynamicSubstitutions() != false) {
         setDynamicSubstitutions(other.getDynamicSubstitutions());
       }
+      if (other.getAutomapSubstitutions() != false) {
+        setAutomapSubstitutions(other.getAutomapSubstitutions());
+      }
       if (other.logStreamingOption_ != 0) {
         setLogStreamingOptionValue(other.getLogStreamingOptionValue());
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasPool()) {
@@ -3153,7 +3188,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -3163,7 +3198,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -3174,7 +3209,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -3187,7 +3222,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -3266,7 +3301,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 logStreamingOption_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 40
             case 48:
@@ -3278,13 +3313,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 workerPool_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 88:
               {
                 logging_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
@@ -3322,15 +3357,21 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             case 154:
               {
                 input.readMessage(getPoolFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 154
             case 168:
               {
                 defaultLogsBucketBehavior_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 168
+            case 176:
+              {
+                automapSubstitutions_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4026,6 +4067,62 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean automapSubstitutions_;
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for all build steps.
+     * </pre>
+     *
+     * <code>bool automap_substitutions = 22;</code>
+     *
+     * @return The automapSubstitutions.
+     */
+    @java.lang.Override
+    public boolean getAutomapSubstitutions() {
+      return automapSubstitutions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for all build steps.
+     * </pre>
+     *
+     * <code>bool automap_substitutions = 22;</code>
+     *
+     * @param value The automapSubstitutions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutomapSubstitutions(boolean value) {
+
+      automapSubstitutions_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for all build steps.
+     * </pre>
+     *
+     * <code>bool automap_substitutions = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutomapSubstitutions() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      automapSubstitutions_ = false;
+      onChanged();
+      return this;
+    }
+
     private int logStreamingOption_ = 0;
     /**
      *
@@ -4062,7 +4159,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setLogStreamingOptionValue(int value) {
       logStreamingOption_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4108,7 +4205,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       logStreamingOption_ = value.getNumber();
       onChanged();
       return this;
@@ -4128,7 +4225,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogStreamingOption() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       logStreamingOption_ = 0;
       onChanged();
       return this;
@@ -4145,7 +4242,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4170,7 +4267,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4195,7 +4292,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4205,7 +4302,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       workerPool_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4219,13 +4316,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearWorkerPool() {
       workerPool_ = getDefaultInstance().getWorkerPool();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4239,7 +4336,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2252
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */
@@ -4250,7 +4347,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       workerPool_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4279,7 +4376,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pool field is set.
      */
     public boolean hasPool() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4331,7 +4428,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         poolBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4357,7 +4454,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         poolBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4378,7 +4475,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePool(com.google.cloudbuild.v1.BuildOptions.PoolOption value) {
       if (poolBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && pool_ != null
             && pool_ != com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()) {
           getPoolBuilder().mergeFrom(value);
@@ -4388,7 +4485,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         poolBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4408,7 +4505,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPool() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       pool_ = null;
       if (poolBuilder_ != null) {
         poolBuilder_.dispose();
@@ -4433,7 +4530,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder getPoolBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getPoolFieldBuilder().getBuilder();
     }
@@ -4525,7 +4622,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setLoggingValue(int value) {
       logging_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4566,7 +4663,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       logging_ = value.getNumber();
       onChanged();
       return this;
@@ -4584,7 +4681,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogging() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       logging_ = 0;
       onChanged();
       return this;
@@ -4597,7 +4694,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!env_.isModifiable()) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -4702,7 +4799,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4729,7 +4826,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4753,7 +4850,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnv(java.lang.Iterable<java.lang.String> values) {
       ensureEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, env_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4775,7 +4872,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEnv() {
       env_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -4804,7 +4901,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnvIsMutable();
       env_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4816,7 +4913,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!secretEnv_.isModifiable()) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -4911,7 +5008,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4936,7 +5033,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4958,7 +5055,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSecretEnv(java.lang.Iterable<java.lang.String> values) {
       ensureSecretEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretEnv_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4978,7 +5075,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSecretEnv() {
       secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -5005,7 +5102,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5014,9 +5111,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>(volumes_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5317,7 +5414,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -5494,7 +5591,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Volume,
                 com.google.cloudbuild.v1.Volume.Builder,
                 com.google.cloudbuild.v1.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -5534,7 +5631,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDefaultLogsBucketBehaviorValue(int value) {
       defaultLogsBucketBehavior_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5580,7 +5677,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       defaultLogsBucketBehavior_ = value.getNumber();
       onChanged();
       return this;
@@ -5599,7 +5696,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultLogsBucketBehavior() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       defaultLogsBucketBehavior_ = 0;
       onChanged();
       return this;
