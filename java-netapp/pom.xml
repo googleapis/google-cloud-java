@@ -41,26 +41,14 @@
         <artifactId>grpc-google-cloud-netapp-v1</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-netapp-v1:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-netapp-v1beta1</artifactId>
-        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-netapp-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-netapp-v1beta1</artifactId>
-        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-netapp-v1beta1:current} -->
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <modules>
     <module>google-cloud-netapp</module>
-    <module>grpc-google-cloud-netapp-v1beta1</module>
     <module>grpc-google-cloud-netapp-v1</module>
-    <module>proto-google-cloud-netapp-v1beta1</module>
     <module>proto-google-cloud-netapp-v1</module>
     <module>google-cloud-netapp-bom</module>
   </modules>
 
-  </project>
+</project>
