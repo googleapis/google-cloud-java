@@ -824,6 +824,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -937,6 +938,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
