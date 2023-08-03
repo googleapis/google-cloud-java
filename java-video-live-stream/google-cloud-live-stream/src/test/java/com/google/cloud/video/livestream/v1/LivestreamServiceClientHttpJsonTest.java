@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -1700,6 +1701,575 @@ public class LivestreamServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAssetTest() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Asset asset = Asset.newBuilder().build();
+    String assetId = "assetId-704776149";
+
+    Asset actualResponse = client.createAssetAsync(parent, asset, assetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAssetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Asset asset = Asset.newBuilder().build();
+      String assetId = "assetId-704776149";
+      client.createAssetAsync(parent, asset, assetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAssetTest2() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Asset asset = Asset.newBuilder().build();
+    String assetId = "assetId-704776149";
+
+    Asset actualResponse = client.createAssetAsync(parent, asset, assetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAssetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Asset asset = Asset.newBuilder().build();
+      String assetId = "assetId-704776149";
+      client.createAssetAsync(parent, asset, assetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAssetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+
+    client.deleteAssetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAssetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+      client.deleteAssetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAssetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3075/locations/location-3075/assets/asset-3075";
+
+    client.deleteAssetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAssetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3075/locations/location-3075/assets/asset-3075";
+      client.deleteAssetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getAssetTest() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+
+    Asset actualResponse = client.getAsset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAssetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+      client.getAsset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAssetTest2() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3075/locations/location-3075/assets/asset-3075";
+
+    Asset actualResponse = client.getAsset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAssetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3075/locations/location-3075/assets/asset-3075";
+      client.getAsset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest() throws Exception {
+    Asset responsesElement = Asset.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAssetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest2() throws Exception {
+    Asset responsesElement = Asset.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAssetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPoolTest() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PoolName name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]");
+
+    Pool actualResponse = client.getPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPoolExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PoolName name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]");
+      client.getPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPoolTest2() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-2637/locations/location-2637/pools/pool-2637";
+
+    Pool actualResponse = client.getPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPoolExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-2637/locations/location-2637/pools/pool-2637";
+      client.getPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePoolTest() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Pool pool =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Pool actualResponse = client.updatePoolAsync(pool, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updatePoolExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Pool pool =
+          Pool.newBuilder()
+              .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePoolAsync(pool, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

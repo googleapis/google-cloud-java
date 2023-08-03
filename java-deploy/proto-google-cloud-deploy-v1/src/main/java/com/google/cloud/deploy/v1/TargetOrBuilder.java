@@ -130,7 +130,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -144,7 +144,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -161,7 +161,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -175,7 +175,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -193,7 +193,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -208,8 +208,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -229,8 +228,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -253,8 +251,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -274,8 +271,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -299,8 +295,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -409,10 +404,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gke field is set.
    */
@@ -421,10 +417,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gke.
    */
@@ -433,10 +430,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder();
 
@@ -444,10 +442,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the anthosCluster field is set.
    */
@@ -456,10 +456,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The anthosCluster.
    */
@@ -468,10 +470,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder();
 
@@ -479,10 +483,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the run field is set.
    */
@@ -491,10 +497,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The run.
    */
@@ -503,10 +511,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder();
 
@@ -514,10 +524,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the multiTarget field is set.
    */
@@ -526,10 +538,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The multiTarget.
    */
@@ -538,10 +552,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder();
 

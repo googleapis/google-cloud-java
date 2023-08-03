@@ -49,29 +49,30 @@ public final class IAMCheckerProto {
           + "shooter.v1\0327google/cloud/policytroublesh"
           + "ooter/v1/explanations.proto\032\034google/api/"
           + "annotations.proto\032\027google/api/client.pro"
-          + "to\"g\n\034TroubleshootIamPolicyRequest\022G\n\014ac"
-          + "cess_tuple\030\001 \001(\01321.google.cloud.policytr"
-          + "oubleshooter.v1.AccessTuple\"\265\001\n\035Troubles"
-          + "hootIamPolicyResponse\022A\n\006access\030\001 \001(\01621."
-          + "google.cloud.policytroubleshooter.v1.Acc"
-          + "essState\022Q\n\022explained_policies\030\002 \003(\01325.g"
-          + "oogle.cloud.policytroubleshooter.v1.Expl"
-          + "ainedPolicy2\251\002\n\nIamChecker\022\301\001\n\025Troublesh"
-          + "ootIamPolicy\022B.google.cloud.policytroubl"
-          + "eshooter.v1.TroubleshootIamPolicyRequest"
-          + "\032C.google.cloud.policytroubleshooter.v1."
-          + "TroubleshootIamPolicyResponse\"\037\202\323\344\223\002\031\"\024/"
-          + "v1/iam:troubleshoot:\001*\032W\312A#policytrouble"
-          + "shooter.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\226\002\n(com."
-          + "google.cloud.policytroubleshooter.v1B\017IA"
-          + "MCheckerProtoP\001Z\\cloud.google.com/go/pol"
-          + "icytroubleshooter/apiv1/policytroublesho"
-          + "oterpb;policytroubleshooterpb\370\001\001\252\002$Googl"
-          + "e.Cloud.PolicyTroubleshooter.V1\312\002$Google"
-          + "\\Cloud\\PolicyTroubleshooter\\V1\352\002\'Google:"
-          + ":Cloud::PolicyTroubleshooter::V1P\000b\006prot"
-          + "o3"
+          + "to\032\027google/rpc/status.proto\"g\n\034Troublesh"
+          + "ootIamPolicyRequest\022G\n\014access_tuple\030\001 \001("
+          + "\01321.google.cloud.policytroubleshooter.v1"
+          + ".AccessTuple\"\331\001\n\035TroubleshootIamPolicyRe"
+          + "sponse\022A\n\006access\030\001 \001(\01621.google.cloud.po"
+          + "licytroubleshooter.v1.AccessState\022Q\n\022exp"
+          + "lained_policies\030\002 \003(\01325.google.cloud.pol"
+          + "icytroubleshooter.v1.ExplainedPolicy\022\"\n\006"
+          + "errors\030\003 \003(\0132\022.google.rpc.Status2\251\002\n\nIam"
+          + "Checker\022\301\001\n\025TroubleshootIamPolicy\022B.goog"
+          + "le.cloud.policytroubleshooter.v1.Trouble"
+          + "shootIamPolicyRequest\032C.google.cloud.pol"
+          + "icytroubleshooter.v1.TroubleshootIamPoli"
+          + "cyResponse\"\037\202\323\344\223\002\031\"\024/v1/iam:troubleshoot"
+          + ":\001*\032W\312A#policytroubleshooter.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB\226\002\n(com.google.cloud.policy"
+          + "troubleshooter.v1B\017IAMCheckerProtoP\001Z\\cl"
+          + "oud.google.com/go/policytroubleshooter/a"
+          + "piv1/policytroubleshooterpb;policytroubl"
+          + "eshooterpb\370\001\001\252\002$Google.Cloud.PolicyTroub"
+          + "leshooter.V1\312\002$Google\\Cloud\\PolicyTroubl"
+          + "eshooter\\V1\352\002\'Google::Cloud::PolicyTroub"
+          + "leshooter::V1P\000b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,6 +81,7 @@ public final class IAMCheckerProto {
               google.cloud.policytroubleshooter.v1.Explanations.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_policytroubleshooter_v1_TroubleshootIamPolicyRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -95,7 +97,7 @@ public final class IAMCheckerProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_policytroubleshooter_v1_TroubleshootIamPolicyResponse_descriptor,
             new java.lang.String[] {
-              "Access", "ExplainedPolicies",
+              "Access", "ExplainedPolicies", "Errors",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -107,6 +109,7 @@ public final class IAMCheckerProto {
     google.cloud.policytroubleshooter.v1.Explanations.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

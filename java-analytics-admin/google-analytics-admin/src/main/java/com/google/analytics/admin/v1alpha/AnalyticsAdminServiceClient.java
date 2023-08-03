@@ -4240,7 +4240,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param measurementProtocolSecret Required. The measurement protocol secret to update.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MeasurementProtocolSecret updateMeasurementProtocolSecret(

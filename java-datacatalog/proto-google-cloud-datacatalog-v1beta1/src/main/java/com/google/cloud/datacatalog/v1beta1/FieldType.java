@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -251,17 +251,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -269,51 +258,18 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     java.util.List<com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue>
         getAllowedValuesList();
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
     com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue getAllowedValues(int index);
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
     int getAllowedValuesCount();
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -322,17 +278,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
             ? extends com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValueOrBuilder>
         getAllowedValuesOrBuilderList();
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -385,7 +330,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty string.
+       * Required. The display name of the enum value. Must not be an empty
+       * string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -397,7 +343,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty string.
+       * Required. The display name of the enum value. Must not be an empty
+       * string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -450,7 +397,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty string.
+       * Required. The display name of the enum value. Must not be an empty
+       * string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -473,7 +421,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty string.
+       * Required. The display name of the enum value. Must not be an empty
+       * string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -846,7 +795,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty string.
+         * Required. The display name of the enum value. Must not be an empty
+         * string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,7 +818,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty string.
+         * Required. The display name of the enum value. Must not be an empty
+         * string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,7 +841,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty string.
+         * Required. The display name of the enum value. Must not be an empty
+         * string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -911,7 +863,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty string.
+         * Required. The display name of the enum value. Must not be an empty
+         * string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -928,7 +881,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty string.
+         * Required. The display name of the enum value. Must not be an empty
+         * string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1020,17 +974,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue>
         allowedValues_;
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -1041,17 +984,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return allowedValues_;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -1063,17 +995,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return allowedValues_;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -1083,17 +1004,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return allowedValues_.size();
     }
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -1104,17 +1014,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return allowedValues_.get(index);
     }
     /**
-     *
-     *
-     * <pre>
-     * Required on create; optional on update. The set of allowed values for
-     * this enum. This set must not be empty, the display names of the values in
-     * this set must not be empty and the display names of the values must be
-     * case-insensitively unique within this set. Currently, enum values can
-     * only be added to the list of allowed values. Deletion and renaming of
-     * enum values are not supported. Can have up to 500 allowed values.
-     * </pre>
-     *
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
@@ -1534,17 +1433,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           allowedValuesBuilder_;
 
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1558,17 +1446,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1581,17 +1458,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1605,17 +1471,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1635,17 +1490,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1664,17 +1508,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1694,17 +1527,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1724,17 +1546,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1752,17 +1563,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1781,17 +1581,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1810,17 +1599,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1836,17 +1614,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1862,17 +1629,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1882,17 +1638,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return getAllowedValuesFieldBuilder().getBuilder(index);
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1906,17 +1651,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1931,17 +1665,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1954,17 +1677,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance());
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>
@@ -1978,17 +1690,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance());
       }
       /**
-       *
-       *
-       * <pre>
-       * Required on create; optional on update. The set of allowed values for
-       * this enum. This set must not be empty, the display names of the values in
-       * this set must not be empty and the display names of the values must be
-       * case-insensitively unique within this set. Currently, enum values can
-       * only be added to the list of allowed values. Deletion and renaming of
-       * enum values are not supported. Can have up to 500 allowed values.
-       * </pre>
-       *
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
        * </code>

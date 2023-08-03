@@ -161,7 +161,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -186,7 +186,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1696,7 +1696,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The BCP-47 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1720,7 +1720,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The BCP-47 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1744,7 +1744,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The BCP-47 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1767,7 +1767,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The BCP-47 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1786,7 +1786,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The BCP-47 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>

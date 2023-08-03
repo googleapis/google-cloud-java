@@ -16,6 +16,9 @@
             "DeleteDataset": {
               "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
             },
+            "DeleteSavedQuery": {
+              "methods": ["deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryOperationCallable", "deleteSavedQueryCallable"]
+            },
             "ExportData": {
               "methods": ["exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
             },
@@ -779,6 +782,42 @@
         }
       }
     },
+    "PersistentResourceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PersistentResourceServiceClient",
+          "rpcs": {
+            "CreatePersistentResource": {
+              "methods": ["createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceOperationCallable", "createPersistentResourceCallable"]
+            },
+            "DeletePersistentResource": {
+              "methods": ["deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceOperationCallable", "deletePersistentResourceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPersistentResource": {
+              "methods": ["getPersistentResource", "getPersistentResource", "getPersistentResource", "getPersistentResourceCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPersistentResources": {
+              "methods": ["listPersistentResources", "listPersistentResources", "listPersistentResources", "listPersistentResourcesPagedCallable", "listPersistentResourcesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "PipelineService": {
       "clients": {
         "grpc": {
@@ -855,6 +894,9 @@
             },
             "RawPredict": {
               "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
+            },
+            "ServerStreamingPredict": {
+              "methods": ["serverStreamingPredictCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -1026,6 +1068,9 @@
             },
             "ReadTensorboardBlobData": {
               "methods": ["readTensorboardBlobDataCallable"]
+            },
+            "ReadTensorboardSize": {
+              "methods": ["readTensorboardSize", "readTensorboardSize", "readTensorboardSize", "readTensorboardSizeCallable"]
             },
             "ReadTensorboardTimeSeriesData": {
               "methods": ["readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesDataCallable"]

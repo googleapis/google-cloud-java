@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,7 +127,7 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Number of results to return in a single search page.
+   * Upper bound on the number of results you can get in a single response.
    *
    * Can't be negative or 0, defaults to 10 in this case.
    * The maximum number is 1000. If exceeded, throws an "invalid argument"
@@ -191,6 +191,13 @@ public interface SearchCatalogRequestOrBuilder
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
    * * `default` that can only be descending
    *
+   * Search queries don't guarantee full recall. Results that match your query
+   * might not be returned, even in subsequent result pages. Additionally,
+   * returned (and not returned) results can vary if you repeat search queries.
+   * If you are experiencing recall issues and you don't have to fetch the
+   * results in any specific order, consider setting this parameter to
+   * `default`.
+   *
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -211,6 +218,13 @@ public interface SearchCatalogRequestOrBuilder
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
    * * `default` that can only be descending
    *
+   * Search queries don't guarantee full recall. Results that match your query
+   * might not be returned, even in subsequent result pages. Additionally,
+   * returned (and not returned) results can vary if you repeat search queries.
+   * If you are experiencing recall issues and you don't have to fetch the
+   * results in any specific order, consider setting this parameter to
+   * `default`.
+   *
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -219,4 +233,21 @@ public interface SearchCatalogRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, uses searchAll permission granted on organizations from
+   * `include_org_ids` and projects from `include_project_ids` instead of the
+   * fine grained per resource permissions when filtering the search results.
+   * The only allowed `order_by` criteria for admin_search mode is `default`.
+   * Using this flags guarantees a full recall of the search results.
+   * </pre>
+   *
+   * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The adminSearch.
+   */
+  boolean getAdminSearch();
 }

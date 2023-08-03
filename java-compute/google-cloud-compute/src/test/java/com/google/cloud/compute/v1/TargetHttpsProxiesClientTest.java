@@ -211,6 +211,7 @@ public class TargetHttpsProxiesClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
+            .setHttpKeepAliveTimeoutSec(2057938782)
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")

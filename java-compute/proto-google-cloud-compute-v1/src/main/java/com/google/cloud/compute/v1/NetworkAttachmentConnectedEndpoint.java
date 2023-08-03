@@ -307,7 +307,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -322,7 +322,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -345,7 +345,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -440,7 +440,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -454,7 +454,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -468,7 +468,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -483,7 +483,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1118,7 +1118,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1132,7 +1132,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1154,7 +1154,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1176,7 +1176,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1197,7 +1197,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1214,7 +1214,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1367,7 +1367,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1382,7 +1382,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1396,7 +1396,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1411,7 +1411,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1426,7 +1426,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1449,7 +1449,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1471,7 +1471,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1490,7 +1490,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1508,7 +1508,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>

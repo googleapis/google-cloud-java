@@ -102,7 +102,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
    * </pre>
    *
    * <code>optional uint32 peer_gateway_interface = 214380385;</code>
@@ -117,7 +117,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
    * </pre>
    *
    * <code>optional uint32 peer_gateway_interface = 214380385;</code>
@@ -677,7 +677,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
      * </pre>
      *
      * <code>optional uint32 peer_gateway_interface = 214380385;</code>
@@ -692,7 +692,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
      * </pre>
      *
      * <code>optional uint32 peer_gateway_interface = 214380385;</code>
@@ -707,7 +707,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
      * </pre>
      *
      * <code>optional uint32 peer_gateway_interface = 214380385;</code>
@@ -726,7 +726,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
      * </pre>
      *
      * <code>optional uint32 peer_gateway_interface = 214380385;</code>

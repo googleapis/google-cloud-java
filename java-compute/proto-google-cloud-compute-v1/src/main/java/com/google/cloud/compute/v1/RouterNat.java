@@ -38,6 +38,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
   }
 
   private RouterNat() {
+    autoNetworkTier_ = "";
     drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
     endpointTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
@@ -67,6 +68,209 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.RouterNat.class,
             com.google.cloud.compute.v1.RouterNat.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.RouterNat.AutoNetworkTier}
+   */
+  public enum AutoNetworkTier implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_AUTO_NETWORK_TIER = 0;</code>
+     */
+    UNDEFINED_AUTO_NETWORK_TIER(0),
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    FIXED_STANDARD(310464328),
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
+    PREMIUM(399530551),
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    STANDARD(484642493),
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    STANDARD_OVERRIDES_FIXED_STANDARD(465847234),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_AUTO_NETWORK_TIER = 0;</code>
+     */
+    public static final int UNDEFINED_AUTO_NETWORK_TIER_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    public static final int FIXED_STANDARD_VALUE = 310464328;
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
+    public static final int PREMIUM_VALUE = 399530551;
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    public static final int STANDARD_VALUE = 484642493;
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    public static final int STANDARD_OVERRIDES_FIXED_STANDARD_VALUE = 465847234;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AutoNetworkTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AutoNetworkTier forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_AUTO_NETWORK_TIER;
+        case 310464328:
+          return FIXED_STANDARD;
+        case 399530551:
+          return PREMIUM;
+        case 484642493:
+          return STANDARD;
+        case 465847234:
+          return STANDARD_OVERRIDES_FIXED_STANDARD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AutoNetworkTier> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AutoNetworkTier>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AutoNetworkTier>() {
+              public AutoNetworkTier findValueByNumber(int number) {
+                return AutoNetworkTier.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AutoNetworkTier[] VALUES = values();
+
+    public static AutoNetworkTier valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AutoNetworkTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNat.AutoNetworkTier)
   }
 
   /**
@@ -201,7 +405,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final EndpointTypes[] VALUES = values();
@@ -360,7 +564,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final NatIpAllocateOption[] VALUES = values();
@@ -389,7 +593,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat}
@@ -542,7 +746,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final SourceSubnetworkIpRangesToNat[] VALUES = values();
@@ -568,6 +772,75 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int AUTO_NETWORK_TIER_FIELD_NUMBER = 269770211;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoNetworkTier_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return Whether the autoNetworkTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoNetworkTier() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The autoNetworkTier.
+   */
+  @java.lang.Override
+  public java.lang.String getAutoNetworkTier() {
+    java.lang.Object ref = autoNetworkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoNetworkTier_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The bytes for autoNetworkTier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAutoNetworkTierBytes() {
+    java.lang.Object ref = autoNetworkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      autoNetworkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DRAIN_NAT_IPS_FIELD_NUMBER = 504078535;
 
   @SuppressWarnings("serial")
@@ -647,7 +920,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnableDynamicPortAllocation() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -674,7 +947,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnableEndpointIndependentMapping() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
@@ -769,7 +1042,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIcmpIdleTimeoutSec() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -802,7 +1075,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLogConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -852,7 +1125,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaxPortsPerVm() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -885,7 +1158,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMinPortsPerVm() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -920,7 +1193,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -987,7 +1260,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNatIpAllocateOption() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1181,7 +1454,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -1191,13 +1464,13 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSubnetworkIpRangesToNat() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -1221,7 +1494,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -1334,7 +1607,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTcpEstablishedIdleTimeoutSec() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1367,7 +1640,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTcpTimeWaitTimeoutSec() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1400,7 +1673,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTcpTransitoryIdleTimeoutSec() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1433,7 +1706,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUdpIdleTimeoutSec() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1465,13 +1738,13 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(3647562, icmpIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt32(64919878, udpIdleTimeoutSec_);
     }
     for (int i = 0; i < rules_.size(); i++) {
@@ -1480,32 +1753,35 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < natIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 117635086, natIps_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(186193587, minPortsPerVm_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(205028774, tcpTransitoryIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(223098349, tcpEstablishedIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(250062049, maxPortsPerVm_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 252213211, sourceSubnetworkIpRangesToNat_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(259441819, enableEndpointIndependentMapping_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 269770211, autoNetworkTier_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(351299741, getLogConfig());
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
       output.writeMessage(415853125, subnetworks_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 429726845, natIpAllocateOption_);
     }
     for (int i = 0; i < endpointTypes_.size(); i++) {
@@ -1515,10 +1791,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < drainNatIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504078535, drainNatIps_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(513596925, tcpTimeWaitTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(532106402, enableDynamicPortAllocation_);
     }
     getUnknownFields().writeTo(output);
@@ -1530,13 +1806,13 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3647562, icmpIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(64919878, udpIdleTimeoutSec_);
     }
     for (int i = 0; i < rules_.size(); i++) {
@@ -1550,40 +1826,43 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getNatIpsList().size();
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(186193587, minPortsPerVm_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               205028774, tcpTransitoryIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               223098349, tcpEstablishedIdleTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(250062049, maxPortsPerVm_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               252213211, sourceSubnetworkIpRangesToNat_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               259441819, enableEndpointIndependentMapping_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269770211, autoNetworkTier_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(415853125, subnetworks_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(429726845, natIpAllocateOption_);
     }
@@ -1603,11 +1882,11 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getDrainNatIpsList().size();
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(513596925, tcpTimeWaitTimeoutSec_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               532106402, enableDynamicPortAllocation_);
@@ -1627,6 +1906,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.RouterNat other = (com.google.cloud.compute.v1.RouterNat) obj;
 
+    if (hasAutoNetworkTier() != other.hasAutoNetworkTier()) return false;
+    if (hasAutoNetworkTier()) {
+      if (!getAutoNetworkTier().equals(other.getAutoNetworkTier())) return false;
+    }
     if (!getDrainNatIpsList().equals(other.getDrainNatIpsList())) return false;
     if (hasEnableDynamicPortAllocation() != other.hasEnableDynamicPortAllocation()) return false;
     if (hasEnableDynamicPortAllocation()) {
@@ -1700,6 +1983,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAutoNetworkTier()) {
+      hash = (37 * hash) + AUTO_NETWORK_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoNetworkTier().hashCode();
+    }
     if (getDrainNatIpsCount() > 0) {
       hash = (37 * hash) + DRAIN_NAT_IPS_FIELD_NUMBER;
       hash = (53 * hash) + getDrainNatIpsList().hashCode();
@@ -1924,6 +2211,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      autoNetworkTier_ = "";
       drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableDynamicPortAllocation_ = false;
       enableEndpointIndependentMapping_ = false;
@@ -1945,7 +2233,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       sourceSubnetworkIpRangesToNat_ = "";
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
@@ -1953,7 +2241,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         subnetworks_ = null;
         subnetworksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       tcpEstablishedIdleTimeoutSec_ = 0;
       tcpTimeWaitTimeoutSec_ = 0;
       tcpTransitoryIdleTimeoutSec_ = 0;
@@ -1995,18 +2283,18 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouterNat result) {
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
       if (subnetworksBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           subnetworks_ = java.util.Collections.unmodifiableList(subnetworks_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.subnetworks_ = subnetworks_;
       } else {
@@ -2016,70 +2304,74 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.compute.v1.RouterNat result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoNetworkTier_ = autoNetworkTier_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         drainNatIps_.makeImmutable();
         result.drainNatIps_ = drainNatIps_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.enableDynamicPortAllocation_ = enableDynamicPortAllocation_;
-        to_bitField0_ |= 0x00000001;
-      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.enableEndpointIndependentMapping_ = enableEndpointIndependentMapping_;
+        result.enableDynamicPortAllocation_ = enableDynamicPortAllocation_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableEndpointIndependentMapping_ = enableEndpointIndependentMapping_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         endpointTypes_.makeImmutable();
         result.endpointTypes_ = endpointTypes_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.icmpIdleTimeoutSec_ = icmpIdleTimeoutSec_;
-        to_bitField0_ |= 0x00000004;
-      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
+        result.icmpIdleTimeoutSec_ = icmpIdleTimeoutSec_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.maxPortsPerVm_ = maxPortsPerVm_;
+        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.minPortsPerVm_ = minPortsPerVm_;
+        result.maxPortsPerVm_ = maxPortsPerVm_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.name_ = name_;
+        result.minPortsPerVm_ = minPortsPerVm_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.natIpAllocateOption_ = natIpAllocateOption_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.natIpAllocateOption_ = natIpAllocateOption_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         natIps_.makeImmutable();
         result.natIps_ = natIps_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.sourceSubnetworkIpRangesToNat_ = sourceSubnetworkIpRangesToNat_;
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.tcpEstablishedIdleTimeoutSec_ = tcpEstablishedIdleTimeoutSec_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.tcpTimeWaitTimeoutSec_ = tcpTimeWaitTimeoutSec_;
+        result.tcpEstablishedIdleTimeoutSec_ = tcpEstablishedIdleTimeoutSec_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.tcpTransitoryIdleTimeoutSec_ = tcpTransitoryIdleTimeoutSec_;
+        result.tcpTimeWaitTimeoutSec_ = tcpTimeWaitTimeoutSec_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.udpIdleTimeoutSec_ = udpIdleTimeoutSec_;
+        result.tcpTransitoryIdleTimeoutSec_ = tcpTransitoryIdleTimeoutSec_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.udpIdleTimeoutSec_ = udpIdleTimeoutSec_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2129,10 +2421,15 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterNat other) {
       if (other == com.google.cloud.compute.v1.RouterNat.getDefaultInstance()) return this;
+      if (other.hasAutoNetworkTier()) {
+        autoNetworkTier_ = other.autoNetworkTier_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.drainNatIps_.isEmpty()) {
         if (drainNatIps_.isEmpty()) {
           drainNatIps_ = other.drainNatIps_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         } else {
           ensureDrainNatIpsIsMutable();
           drainNatIps_.addAll(other.drainNatIps_);
@@ -2148,7 +2445,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (!other.endpointTypes_.isEmpty()) {
         if (endpointTypes_.isEmpty()) {
           endpointTypes_ = other.endpointTypes_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         } else {
           ensureEndpointTypesIsMutable();
           endpointTypes_.addAll(other.endpointTypes_);
@@ -2169,18 +2466,18 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasNatIpAllocateOption()) {
         natIpAllocateOption_ = other.natIpAllocateOption_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.natIps_.isEmpty()) {
         if (natIps_.isEmpty()) {
           natIps_ = other.natIps_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureNatIpsIsMutable();
           natIps_.addAll(other.natIps_);
@@ -2191,7 +2488,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2204,7 +2501,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -2216,14 +2513,14 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceSubnetworkIpRangesToNat()) {
         sourceSubnetworkIpRangesToNat_ = other.sourceSubnetworkIpRangesToNat_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (subnetworksBuilder_ == null) {
         if (!other.subnetworks_.isEmpty()) {
           if (subnetworks_.isEmpty()) {
             subnetworks_ = other.subnetworks_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureSubnetworksIsMutable();
             subnetworks_.addAll(other.subnetworks_);
@@ -2236,7 +2533,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             subnetworksBuilder_.dispose();
             subnetworksBuilder_ = null;
             subnetworks_ = other.subnetworks_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             subnetworksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubnetworksFieldBuilder()
@@ -2287,19 +2584,19 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26989658
             case 29180496:
               {
                 icmpIdleTimeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 29180496
             case 519359024:
               {
                 udpIdleTimeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 519359024
             case 870991802:
@@ -2325,43 +2622,49 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             case 1489548696:
               {
                 minPortsPerVm_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1489548696
             case 1640230192:
               {
                 tcpTransitoryIdleTimeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1640230192
             case 1784786792:
               {
                 tcpEstablishedIdleTimeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1784786792
             case 2000496392:
               {
                 maxPortsPerVm_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 2000496392
             case 2017705690:
               {
                 sourceSubnetworkIpRangesToNat_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 2017705690
             case 2075534552:
               {
                 enableEndpointIndependentMapping_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 2075534552
+            case -2136805606:
+              {
+                autoNetworkTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -2136805606
             case -1484569366:
               {
                 input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1484569366
             case -968142294:
@@ -2381,7 +2684,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             case -857152534:
               {
                 natIpAllocateOption_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -857152534
             case -273896838:
@@ -2401,13 +2704,13 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             case -186191896:
               {
                 tcpTimeWaitTimeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -186191896
             case -38116080:
               {
                 enableDynamicPortAllocation_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -38116080
             default:
@@ -2429,6 +2732,132 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object autoNetworkTier_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @return Whether the autoNetworkTier field is set.
+     */
+    public boolean hasAutoNetworkTier() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @return The autoNetworkTier.
+     */
+    public java.lang.String getAutoNetworkTier() {
+      java.lang.Object ref = autoNetworkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoNetworkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @return The bytes for autoNetworkTier.
+     */
+    public com.google.protobuf.ByteString getAutoNetworkTierBytes() {
+      java.lang.Object ref = autoNetworkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        autoNetworkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @param value The autoNetworkTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoNetworkTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      autoNetworkTier_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoNetworkTier() {
+      autoNetworkTier_ = getDefaultInstance().getAutoNetworkTier();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+     * Check the AutoNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_network_tier = 269770211;</code>
+     *
+     * @param value The bytes for autoNetworkTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoNetworkTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      autoNetworkTier_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList drainNatIps_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -2436,7 +2865,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (!drainNatIps_.isModifiable()) {
         drainNatIps_ = new com.google.protobuf.LazyStringArrayList(drainNatIps_);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2516,7 +2945,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDrainNatIpsIsMutable();
       drainNatIps_.set(index, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2538,7 +2967,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDrainNatIpsIsMutable();
       drainNatIps_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2557,7 +2986,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDrainNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureDrainNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, drainNatIps_);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2574,7 +3003,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDrainNatIps() {
       drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -2598,7 +3027,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDrainNatIpsIsMutable();
       drainNatIps_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2617,7 +3046,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasEnableDynamicPortAllocation() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2649,7 +3078,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableDynamicPortAllocation(boolean value) {
 
       enableDynamicPortAllocation_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2665,7 +3094,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableDynamicPortAllocation() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableDynamicPortAllocation_ = false;
       onChanged();
       return this;
@@ -2679,7 +3108,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasEnableEndpointIndependentMapping() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
@@ -2699,7 +3128,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableEndpointIndependentMapping(boolean value) {
 
       enableEndpointIndependentMapping_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2709,7 +3138,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableEndpointIndependentMapping() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableEndpointIndependentMapping_ = false;
       onChanged();
       return this;
@@ -2722,7 +3151,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (!endpointTypes_.isModifiable()) {
         endpointTypes_ = new com.google.protobuf.LazyStringArrayList(endpointTypes_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2807,7 +3236,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEndpointTypesIsMutable();
       endpointTypes_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2830,7 +3259,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEndpointTypesIsMutable();
       endpointTypes_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2850,7 +3279,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEndpointTypes(java.lang.Iterable<java.lang.String> values) {
       ensureEndpointTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, endpointTypes_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2868,7 +3297,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEndpointTypes() {
       endpointTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -2893,7 +3322,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEndpointTypesIsMutable();
       endpointTypes_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2912,7 +3341,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIcmpIdleTimeoutSec() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2944,7 +3373,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setIcmpIdleTimeoutSec(int value) {
 
       icmpIdleTimeoutSec_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2960,7 +3389,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIcmpIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       icmpIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -2984,7 +3413,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3024,7 +3453,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3044,7 +3473,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3059,7 +3488,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.RouterNatLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && logConfig_ != null
             && logConfig_ != com.google.cloud.compute.v1.RouterNatLogConfig.getDefaultInstance()) {
           getLogConfigBuilder().mergeFrom(value);
@@ -3069,7 +3498,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3083,7 +3512,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
      */
     public Builder clearLogConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       logConfig_ = null;
       if (logConfigBuilder_ != null) {
         logConfigBuilder_.dispose();
@@ -3102,7 +3531,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.RouterNatLogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -3164,7 +3593,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxPortsPerVm() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3196,7 +3625,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxPortsPerVm(int value) {
 
       maxPortsPerVm_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3212,7 +3641,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxPortsPerVm() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxPortsPerVm_ = 0;
       onChanged();
       return this;
@@ -3232,7 +3661,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMinPortsPerVm() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3264,7 +3693,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinPortsPerVm(int value) {
 
       minPortsPerVm_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3280,7 +3709,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinPortsPerVm() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       minPortsPerVm_ = 0;
       onChanged();
       return this;
@@ -3299,7 +3728,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3362,7 +3791,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3379,7 +3808,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3401,7 +3830,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3420,7 +3849,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the natIpAllocateOption field is set.
      */
     public boolean hasNatIpAllocateOption() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3486,7 +3915,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       natIpAllocateOption_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3504,7 +3933,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNatIpAllocateOption() {
       natIpAllocateOption_ = getDefaultInstance().getNatIpAllocateOption();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3527,7 +3956,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       natIpAllocateOption_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3539,7 +3968,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (!natIps_.isModifiable()) {
         natIps_ = new com.google.protobuf.LazyStringArrayList(natIps_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -3619,7 +4048,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNatIpsIsMutable();
       natIps_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3641,7 +4070,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNatIpsIsMutable();
       natIps_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3660,7 +4089,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natIps_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3677,7 +4106,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNatIps() {
       natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -3701,7 +4130,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNatIpsIsMutable();
       natIps_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3710,9 +4139,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatRule>(rules_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3927,7 +4356,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -4048,7 +4477,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterNatRule,
                 com.google.cloud.compute.v1.RouterNatRule.Builder,
                 com.google.cloud.compute.v1.RouterNatRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -4059,7 +4488,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4068,13 +4497,13 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSubnetworkIpRangesToNat field is set.
      */
     public boolean hasSourceSubnetworkIpRangesToNat() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4097,7 +4526,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4120,7 +4549,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4134,7 +4563,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSubnetworkIpRangesToNat_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4142,7 +4571,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4152,7 +4581,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSubnetworkIpRangesToNat() {
       sourceSubnetworkIpRangesToNat_ = getDefaultInstance().getSourceSubnetworkIpRangesToNat();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4160,7 +4589,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
      * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
@@ -4175,7 +4604,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSubnetworkIpRangesToNat_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4184,11 +4613,11 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         subnetworks_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>(
                 subnetworks_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4418,7 +4847,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubnetworks() {
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         subnetworksBuilder_.clear();
@@ -4551,7 +4980,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNat,
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder,
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder>(
-                subnetworks_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                subnetworks_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         subnetworks_ = null;
       }
       return subnetworksBuilder_;
@@ -4571,7 +5000,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpEstablishedIdleTimeoutSec() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4603,7 +5032,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setTcpEstablishedIdleTimeoutSec(int value) {
 
       tcpEstablishedIdleTimeoutSec_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4619,7 +5048,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpEstablishedIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       tcpEstablishedIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4639,7 +5068,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpTimeWaitTimeoutSec() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4671,7 +5100,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setTcpTimeWaitTimeoutSec(int value) {
 
       tcpTimeWaitTimeoutSec_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4687,7 +5116,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpTimeWaitTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       tcpTimeWaitTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4707,7 +5136,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpTransitoryIdleTimeoutSec() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4739,7 +5168,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setTcpTransitoryIdleTimeoutSec(int value) {
 
       tcpTransitoryIdleTimeoutSec_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4755,7 +5184,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpTransitoryIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       tcpTransitoryIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4775,7 +5204,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasUdpIdleTimeoutSec() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4807,7 +5236,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder setUdpIdleTimeoutSec(int value) {
 
       udpIdleTimeoutSec_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4823,7 +5252,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUdpIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       udpIdleTimeoutSec_ = 0;
       onChanged();
       return this;

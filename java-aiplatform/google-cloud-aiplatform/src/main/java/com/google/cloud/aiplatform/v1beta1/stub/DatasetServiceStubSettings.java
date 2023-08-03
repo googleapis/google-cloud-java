@@ -58,6 +58,7 @@ import com.google.cloud.aiplatform.v1beta1.DataItemView;
 import com.google.cloud.aiplatform.v1beta1.Dataset;
 import com.google.cloud.aiplatform.v1beta1.DeleteDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataResponse;
@@ -170,6 +171,9 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final PagedCallSettings<
           ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
       listSavedQueriesSettings;
+  private final UnaryCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQuerySettings;
+  private final OperationCallSettings<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationSettings;
   private final UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecSettings;
   private final PagedCallSettings<
@@ -595,6 +599,17 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     return listSavedQueriesSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public UnaryCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQuerySettings() {
+    return deleteSavedQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public OperationCallSettings<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationSettings() {
+    return deleteSavedQueryOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAnnotationSpec. */
   public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
     return getAnnotationSpecSettings;
@@ -723,6 +738,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
     searchDataItemsSettings = settingsBuilder.searchDataItemsSettings().build();
     listSavedQueriesSettings = settingsBuilder.listSavedQueriesSettings().build();
+    deleteSavedQuerySettings = settingsBuilder.deleteSavedQuerySettings().build();
+    deleteSavedQueryOperationSettings = settingsBuilder.deleteSavedQueryOperationSettings().build();
     getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
     listAnnotationsSettings = settingsBuilder.listAnnotationsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -765,6 +782,11 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final PagedCallSettings.Builder<
             ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
         listSavedQueriesSettings;
+    private final UnaryCallSettings.Builder<DeleteSavedQueryRequest, Operation>
+        deleteSavedQuerySettings;
+    private final OperationCallSettings.Builder<
+            DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+        deleteSavedQueryOperationSettings;
     private final UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
         getAnnotationSpecSettings;
     private final PagedCallSettings.Builder<
@@ -829,6 +851,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       listDataItemsSettings = PagedCallSettings.newBuilder(LIST_DATA_ITEMS_PAGE_STR_FACT);
       searchDataItemsSettings = PagedCallSettings.newBuilder(SEARCH_DATA_ITEMS_PAGE_STR_FACT);
       listSavedQueriesSettings = PagedCallSettings.newBuilder(LIST_SAVED_QUERIES_PAGE_STR_FACT);
+      deleteSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSavedQueryOperationSettings = OperationCallSettings.newBuilder();
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnnotationsSettings = PagedCallSettings.newBuilder(LIST_ANNOTATIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -849,6 +873,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               listDataItemsSettings,
               searchDataItemsSettings,
               listSavedQueriesSettings,
+              deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
               listLocationsSettings,
@@ -876,6 +901,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       listDataItemsSettings = settings.listDataItemsSettings.toBuilder();
       searchDataItemsSettings = settings.searchDataItemsSettings.toBuilder();
       listSavedQueriesSettings = settings.listSavedQueriesSettings.toBuilder();
+      deleteSavedQuerySettings = settings.deleteSavedQuerySettings.toBuilder();
+      deleteSavedQueryOperationSettings = settings.deleteSavedQueryOperationSettings.toBuilder();
       getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
       listAnnotationsSettings = settings.listAnnotationsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -896,6 +923,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               listDataItemsSettings,
               searchDataItemsSettings,
               listSavedQueriesSettings,
+              deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
               listLocationsSettings,
@@ -966,6 +994,11 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
       builder
           .listSavedQueriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSavedQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1101,6 +1134,30 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .deleteSavedQueryOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSavedQueryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1210,6 +1267,20 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
             ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
         listSavedQueriesSettings() {
       return listSavedQueriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    public UnaryCallSettings.Builder<DeleteSavedQueryRequest, Operation>
+        deleteSavedQuerySettings() {
+      return deleteSavedQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+        deleteSavedQueryOperationSettings() {
+      return deleteSavedQueryOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAnnotationSpec. */

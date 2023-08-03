@@ -33,6 +33,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationResponse;
 import com.google.cloud.metastore.v1.Backup;
 import com.google.cloud.metastore.v1.CreateBackupRequest;
 import com.google.cloud.metastore.v1.CreateMetadataImportRequest;
@@ -51,7 +53,11 @@ import com.google.cloud.metastore.v1.ListServicesRequest;
 import com.google.cloud.metastore.v1.ListServicesResponse;
 import com.google.cloud.metastore.v1.MetadataExport;
 import com.google.cloud.metastore.v1.MetadataImport;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseRequest;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseResponse;
 import com.google.cloud.metastore.v1.OperationMetadata;
+import com.google.cloud.metastore.v1.QueryMetadataRequest;
+import com.google.cloud.metastore.v1.QueryMetadataResponse;
 import com.google.cloud.metastore.v1.Restore;
 import com.google.cloud.metastore.v1.RestoreServiceRequest;
 import com.google.cloud.metastore.v1.Service;
@@ -224,6 +230,37 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<QueryMetadataRequest, Operation>
+      queryMetadataMethodDescriptor =
+          MethodDescriptor.<QueryMetadataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/QueryMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MoveTableToDatabaseRequest, Operation>
+      moveTableToDatabaseMethodDescriptor =
+          MethodDescriptor.<MoveTableToDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/MoveTableToDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MoveTableToDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationMethodDescriptor =
+          MethodDescriptor.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.metastore.v1.DataprocMetastore/AlterMetadataResourceLocation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AlterMetadataResourceLocationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -310,6 +347,20 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
   private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable;
+  private final UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable;
+  private final OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable;
+  private final UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable;
+  private final OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable;
+  private final UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable;
+  private final OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -516,6 +567,37 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
+        GrpcCallSettings.<QueryMetadataRequest, Operation>newBuilder()
+            .setMethodDescriptor(queryMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseTransportSettings =
+        GrpcCallSettings.<MoveTableToDatabaseRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveTableToDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationTransportSettings =
+            GrpcCallSettings.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+                .setMethodDescriptor(alterMetadataResourceLocationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service", String.valueOf(request.getService()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -684,6 +766,37 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
         callableFactory.createOperationCallable(
             deleteBackupTransportSettings,
             settings.deleteBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.queryMetadataCallable =
+        callableFactory.createUnaryCallable(
+            queryMetadataTransportSettings, settings.queryMetadataSettings(), clientContext);
+    this.queryMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            queryMetadataTransportSettings,
+            settings.queryMetadataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.moveTableToDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseSettings(),
+            clientContext);
+    this.moveTableToDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.alterMetadataResourceLocationCallable =
+        callableFactory.createUnaryCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationSettings(),
+            clientContext);
+    this.alterMetadataResourceLocationOperationCallable =
+        callableFactory.createOperationCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -859,6 +972,44 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable() {
     return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable() {
+    return queryMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable() {
+    return queryMetadataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable() {
+    return moveTableToDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable() {
+    return moveTableToDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable() {
+    return alterMetadataResourceLocationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable() {
+    return alterMetadataResourceLocationOperationCallable;
   }
 
   @Override

@@ -340,7 +340,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -355,7 +355,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -378,7 +378,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1420,7 +1420,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1434,7 +1434,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1456,7 +1456,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1478,7 +1478,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1499,7 +1499,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1516,7 +1516,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>

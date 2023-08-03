@@ -363,6 +363,43 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return Whether the nextHopHub field is set.
+   */
+  boolean hasNextHopHub();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return The nextHopHub.
+   */
+  java.lang.String getNextHopHub();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return The bytes for nextHopHub.
+   */
+  com.google.protobuf.ByteString getNextHopHubBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
    * </pre>
    *

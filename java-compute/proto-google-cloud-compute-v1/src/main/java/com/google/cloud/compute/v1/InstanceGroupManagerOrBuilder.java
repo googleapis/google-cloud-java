@@ -383,6 +383,49 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   *
+   * @return Whether the instanceLifecyclePolicy field is set.
+   */
+  boolean hasInstanceLifecyclePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   *
+   * @return The instanceLifecyclePolicy.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy
+      getInstanceLifecyclePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
+      getInstanceLifecyclePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *

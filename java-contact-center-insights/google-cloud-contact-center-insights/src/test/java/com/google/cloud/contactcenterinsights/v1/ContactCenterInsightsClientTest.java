@@ -1253,6 +1253,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1308,6 +1309,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1363,6 +1365,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1410,6 +1413,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1454,6 +1458,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 

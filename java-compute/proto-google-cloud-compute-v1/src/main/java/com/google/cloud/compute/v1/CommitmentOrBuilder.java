@@ -609,7 +609,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -621,7 +621,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -633,7 +633,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>

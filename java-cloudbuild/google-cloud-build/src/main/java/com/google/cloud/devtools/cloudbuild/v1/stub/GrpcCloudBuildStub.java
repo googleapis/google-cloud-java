@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
@@ -294,6 +295,41 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate CREATE_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate LIST_BUILDS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate CANCEL_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate RETRY_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate APPROVE_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate UPDATE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate RUN_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate CREATE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate DELETE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate UPDATE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate LIST_WORKER_POOLS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+
   public static final GrpcCloudBuildStub create(CloudBuildStubSettings settings)
       throws IOException {
     return new GrpcCloudBuildStub(settings, ClientContext.create(settings));
@@ -338,8 +374,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(request.getParent(), "location", CREATE_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -349,9 +384,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("id", String.valueOf(request.getId()));
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(request.getName(), "location", GET_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -361,8 +394,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(request.getParent(), "location", LIST_BUILDS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -372,9 +404,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("id", String.valueOf(request.getId()));
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(request.getName(), "location", CANCEL_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -384,9 +414,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("id", String.valueOf(request.getId()));
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(request.getName(), "location", RETRY_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -396,7 +424,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add(request.getName(), "location", APPROVE_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -406,8 +434,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add(
+                      request.getParent(), "location", CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -417,9 +445,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
-                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  builder.add(request.getName(), "location", GET_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -430,8 +456,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add(
+                          request.getParent(), "location", LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
                 .build();
@@ -441,9 +467,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
-                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  builder.add(request.getName(), "location", DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -453,11 +477,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
-                  builder.add(
-                      "trigger.resource_name",
-                      String.valueOf(request.getTrigger().getResourceName()));
-                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  if (request.getTrigger() != null) {
+                    builder.add(
+                        request.getTrigger().getResourceName(),
+                        "location",
+                        UPDATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  }
                   return builder.build();
                 })
             .build();
@@ -467,9 +492,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  builder.add("project_id", String.valueOf(request.getProjectId()));
-                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  builder.add(request.getName(), "location", RUN_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -493,7 +516,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
+                  builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -503,7 +526,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -513,7 +536,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -523,8 +546,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "worker_pool.name", String.valueOf(request.getWorkerPool().getName()));
+                  if (request.getWorkerPool() != null) {
+                    builder.add(
+                        request.getWorkerPool().getName(),
+                        "location",
+                        UPDATE_WORKER_POOL_0_PATH_TEMPLATE);
+                  }
                   return builder.build();
                 })
             .build();
@@ -535,7 +562,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
+                      builder.add(
+                          request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
                 .build();

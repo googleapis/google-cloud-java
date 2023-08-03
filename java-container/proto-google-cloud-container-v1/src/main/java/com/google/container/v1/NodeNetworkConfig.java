@@ -40,6 +40,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
   private NodeNetworkConfig() {
     podRange_ = "";
     podIpv4CidrBlock_ = "";
+    additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
+    additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1262,6 +1264,207 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         : podCidrOverprovisionConfig_;
   }
 
+  public static final int ADDITIONAL_NODE_NETWORK_CONFIGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+      additionalNodeNetworkConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+      getAdditionalNodeNetworkConfigsList() {
+    return additionalNodeNetworkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+      getAdditionalNodeNetworkConfigsOrBuilderList() {
+    return additionalNodeNetworkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdditionalNodeNetworkConfigsCount() {
+    return additionalNodeNetworkConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AdditionalNodeNetworkConfig getAdditionalNodeNetworkConfigs(
+      int index) {
+    return additionalNodeNetworkConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder
+      getAdditionalNodeNetworkConfigsOrBuilder(int index) {
+    return additionalNodeNetworkConfigs_.get(index);
+  }
+
+  public static final int ADDITIONAL_POD_NETWORK_CONFIGS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+      additionalPodNetworkConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+      getAdditionalPodNetworkConfigsList() {
+    return additionalPodNetworkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+      getAdditionalPodNetworkConfigsOrBuilderList() {
+    return additionalPodNetworkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdditionalPodNetworkConfigsCount() {
+    return additionalPodNetworkConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AdditionalPodNetworkConfig getAdditionalPodNetworkConfigs(
+      int index) {
+    return additionalPodNetworkConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AdditionalPodNetworkConfigOrBuilder
+      getAdditionalPodNetworkConfigsOrBuilder(int index) {
+    return additionalPodNetworkConfigs_.get(index);
+  }
+
+  public static final int POD_IPV4_RANGE_UTILIZATION_FIELD_NUMBER = 16;
+  private double podIpv4RangeUtilization_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the IPv4 range for the pod.
+   * The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The podIpv4RangeUtilization.
+   */
+  @java.lang.Override
+  public double getPodIpv4RangeUtilization() {
+    return podIpv4RangeUtilization_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1294,6 +1497,15 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (podCidrOverprovisionConfig_ != null) {
       output.writeMessage(13, getPodCidrOverprovisionConfig());
     }
+    for (int i = 0; i < additionalNodeNetworkConfigs_.size(); i++) {
+      output.writeMessage(14, additionalNodeNetworkConfigs_.get(i));
+    }
+    for (int i = 0; i < additionalPodNetworkConfigs_.size(); i++) {
+      output.writeMessage(15, additionalPodNetworkConfigs_.get(i));
+    }
+    if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
+      output.writeDouble(16, podIpv4RangeUtilization_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1324,6 +1536,19 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, getPodCidrOverprovisionConfig());
+    }
+    for (int i = 0; i < additionalNodeNetworkConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, additionalNodeNetworkConfigs_.get(i));
+    }
+    for (int i = 0; i < additionalPodNetworkConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, additionalPodNetworkConfigs_.get(i));
+    }
+    if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(16, podIpv4RangeUtilization_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1357,6 +1582,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (!getPodCidrOverprovisionConfig().equals(other.getPodCidrOverprovisionConfig()))
         return false;
     }
+    if (!getAdditionalNodeNetworkConfigsList().equals(other.getAdditionalNodeNetworkConfigsList()))
+      return false;
+    if (!getAdditionalPodNetworkConfigsList().equals(other.getAdditionalPodNetworkConfigsList()))
+      return false;
+    if (java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization())
+        != java.lang.Double.doubleToLongBits(other.getPodIpv4RangeUtilization())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1386,6 +1617,19 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + POD_CIDR_OVERPROVISION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPodCidrOverprovisionConfig().hashCode();
     }
+    if (getAdditionalNodeNetworkConfigsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_NODE_NETWORK_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalNodeNetworkConfigsList().hashCode();
+    }
+    if (getAdditionalPodNetworkConfigsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_POD_NETWORK_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalPodNetworkConfigsList().hashCode();
+    }
+    hash = (37 * hash) + POD_IPV4_RANGE_UTILIZATION_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1528,6 +1772,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNetworkPerformanceConfigFieldBuilder();
         getPodCidrOverprovisionConfigFieldBuilder();
+        getAdditionalNodeNetworkConfigsFieldBuilder();
+        getAdditionalPodNetworkConfigsFieldBuilder();
       }
     }
 
@@ -1549,6 +1795,21 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         podCidrOverprovisionConfigBuilder_.dispose();
         podCidrOverprovisionConfigBuilder_ = null;
       }
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
+      } else {
+        additionalNodeNetworkConfigs_ = null;
+        additionalNodeNetworkConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
+      } else {
+        additionalPodNetworkConfigs_ = null;
+        additionalPodNetworkConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
+      podIpv4RangeUtilization_ = 0D;
       return this;
     }
 
@@ -1576,11 +1837,35 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.NodeNetworkConfig buildPartial() {
       com.google.container.v1.NodeNetworkConfig result =
           new com.google.container.v1.NodeNetworkConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.NodeNetworkConfig result) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          additionalNodeNetworkConfigs_ =
+              java.util.Collections.unmodifiableList(additionalNodeNetworkConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.additionalNodeNetworkConfigs_ = additionalNodeNetworkConfigs_;
+      } else {
+        result.additionalNodeNetworkConfigs_ = additionalNodeNetworkConfigsBuilder_.build();
+      }
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          additionalPodNetworkConfigs_ =
+              java.util.Collections.unmodifiableList(additionalPodNetworkConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.additionalPodNetworkConfigs_ = additionalPodNetworkConfigs_;
+      } else {
+        result.additionalPodNetworkConfigs_ = additionalPodNetworkConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.container.v1.NodeNetworkConfig result) {
@@ -1611,6 +1896,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
             podCidrOverprovisionConfigBuilder_ == null
                 ? podCidrOverprovisionConfig_
                 : podCidrOverprovisionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.podIpv4RangeUtilization_ = podIpv4RangeUtilization_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1682,6 +1970,64 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasPodCidrOverprovisionConfig()) {
         mergePodCidrOverprovisionConfig(other.getPodCidrOverprovisionConfig());
       }
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        if (!other.additionalNodeNetworkConfigs_.isEmpty()) {
+          if (additionalNodeNetworkConfigs_.isEmpty()) {
+            additionalNodeNetworkConfigs_ = other.additionalNodeNetworkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureAdditionalNodeNetworkConfigsIsMutable();
+            additionalNodeNetworkConfigs_.addAll(other.additionalNodeNetworkConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalNodeNetworkConfigs_.isEmpty()) {
+          if (additionalNodeNetworkConfigsBuilder_.isEmpty()) {
+            additionalNodeNetworkConfigsBuilder_.dispose();
+            additionalNodeNetworkConfigsBuilder_ = null;
+            additionalNodeNetworkConfigs_ = other.additionalNodeNetworkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            additionalNodeNetworkConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdditionalNodeNetworkConfigsFieldBuilder()
+                    : null;
+          } else {
+            additionalNodeNetworkConfigsBuilder_.addAllMessages(
+                other.additionalNodeNetworkConfigs_);
+          }
+        }
+      }
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        if (!other.additionalPodNetworkConfigs_.isEmpty()) {
+          if (additionalPodNetworkConfigs_.isEmpty()) {
+            additionalPodNetworkConfigs_ = other.additionalPodNetworkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureAdditionalPodNetworkConfigsIsMutable();
+            additionalPodNetworkConfigs_.addAll(other.additionalPodNetworkConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalPodNetworkConfigs_.isEmpty()) {
+          if (additionalPodNetworkConfigsBuilder_.isEmpty()) {
+            additionalPodNetworkConfigsBuilder_.dispose();
+            additionalPodNetworkConfigsBuilder_ = null;
+            additionalPodNetworkConfigs_ = other.additionalPodNetworkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            additionalPodNetworkConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdditionalPodNetworkConfigsFieldBuilder()
+                    : null;
+          } else {
+            additionalPodNetworkConfigsBuilder_.addAllMessages(other.additionalPodNetworkConfigs_);
+          }
+        }
+      }
+      if (other.getPodIpv4RangeUtilization() != 0D) {
+        setPodIpv4RangeUtilization(other.getPodIpv4RangeUtilization());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1746,6 +2092,40 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 106
+            case 114:
+              {
+                com.google.container.v1.AdditionalNodeNetworkConfig m =
+                    input.readMessage(
+                        com.google.container.v1.AdditionalNodeNetworkConfig.parser(),
+                        extensionRegistry);
+                if (additionalNodeNetworkConfigsBuilder_ == null) {
+                  ensureAdditionalNodeNetworkConfigsIsMutable();
+                  additionalNodeNetworkConfigs_.add(m);
+                } else {
+                  additionalNodeNetworkConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.container.v1.AdditionalPodNetworkConfig m =
+                    input.readMessage(
+                        com.google.container.v1.AdditionalPodNetworkConfig.parser(),
+                        extensionRegistry);
+                if (additionalPodNetworkConfigsBuilder_ == null) {
+                  ensureAdditionalPodNetworkConfigsIsMutable();
+                  additionalPodNetworkConfigs_.add(m);
+                } else {
+                  additionalPodNetworkConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 129:
+              {
+                podIpv4RangeUtilization_ = input.readDouble();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 129
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2754,6 +3134,908 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         podCidrOverprovisionConfig_ = null;
       }
       return podCidrOverprovisionConfigBuilder_;
+    }
+
+    private java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+        additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureAdditionalNodeNetworkConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        additionalNodeNetworkConfigs_ =
+            new java.util.ArrayList<com.google.container.v1.AdditionalNodeNetworkConfig>(
+                additionalNodeNetworkConfigs_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AdditionalNodeNetworkConfig,
+            com.google.container.v1.AdditionalNodeNetworkConfig.Builder,
+            com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+        additionalNodeNetworkConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+        getAdditionalNodeNetworkConfigsList() {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalNodeNetworkConfigs_);
+      } else {
+        return additionalNodeNetworkConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public int getAdditionalNodeNetworkConfigsCount() {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        return additionalNodeNetworkConfigs_.size();
+      } else {
+        return additionalNodeNetworkConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalNodeNetworkConfig getAdditionalNodeNetworkConfigs(
+        int index) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        return additionalNodeNetworkConfigs_.get(index);
+      } else {
+        return additionalNodeNetworkConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder setAdditionalNodeNetworkConfigs(
+        int index, com.google.container.v1.AdditionalNodeNetworkConfig value) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.set(index, value);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder setAdditionalNodeNetworkConfigs(
+        int index, com.google.container.v1.AdditionalNodeNetworkConfig.Builder builderForValue) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder addAdditionalNodeNetworkConfigs(
+        com.google.container.v1.AdditionalNodeNetworkConfig value) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.add(value);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder addAdditionalNodeNetworkConfigs(
+        int index, com.google.container.v1.AdditionalNodeNetworkConfig value) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.add(index, value);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder addAdditionalNodeNetworkConfigs(
+        com.google.container.v1.AdditionalNodeNetworkConfig.Builder builderForValue) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder addAdditionalNodeNetworkConfigs(
+        int index, com.google.container.v1.AdditionalNodeNetworkConfig.Builder builderForValue) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder addAllAdditionalNodeNetworkConfigs(
+        java.lang.Iterable<? extends com.google.container.v1.AdditionalNodeNetworkConfig> values) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, additionalNodeNetworkConfigs_);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder clearAdditionalNodeNetworkConfigs() {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public Builder removeAdditionalNodeNetworkConfigs(int index) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        ensureAdditionalNodeNetworkConfigsIsMutable();
+        additionalNodeNetworkConfigs_.remove(index);
+        onChanged();
+      } else {
+        additionalNodeNetworkConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalNodeNetworkConfig.Builder
+        getAdditionalNodeNetworkConfigsBuilder(int index) {
+      return getAdditionalNodeNetworkConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder
+        getAdditionalNodeNetworkConfigsOrBuilder(int index) {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        return additionalNodeNetworkConfigs_.get(index);
+      } else {
+        return additionalNodeNetworkConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public java.util.List<? extends com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+        getAdditionalNodeNetworkConfigsOrBuilderList() {
+      if (additionalNodeNetworkConfigsBuilder_ != null) {
+        return additionalNodeNetworkConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalNodeNetworkConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalNodeNetworkConfig.Builder
+        addAdditionalNodeNetworkConfigsBuilder() {
+      return getAdditionalNodeNetworkConfigsFieldBuilder()
+          .addBuilder(com.google.container.v1.AdditionalNodeNetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalNodeNetworkConfig.Builder
+        addAdditionalNodeNetworkConfigsBuilder(int index) {
+      return getAdditionalNodeNetworkConfigsFieldBuilder()
+          .addBuilder(
+              index, com.google.container.v1.AdditionalNodeNetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional node networks for this node pool using this list.
+     * Each node network corresponds to an additional interface
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+     * </code>
+     */
+    public java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig.Builder>
+        getAdditionalNodeNetworkConfigsBuilderList() {
+      return getAdditionalNodeNetworkConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AdditionalNodeNetworkConfig,
+            com.google.container.v1.AdditionalNodeNetworkConfig.Builder,
+            com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+        getAdditionalNodeNetworkConfigsFieldBuilder() {
+      if (additionalNodeNetworkConfigsBuilder_ == null) {
+        additionalNodeNetworkConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.AdditionalNodeNetworkConfig,
+                com.google.container.v1.AdditionalNodeNetworkConfig.Builder,
+                com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>(
+                additionalNodeNetworkConfigs_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        additionalNodeNetworkConfigs_ = null;
+      }
+      return additionalNodeNetworkConfigsBuilder_;
+    }
+
+    private java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+        additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureAdditionalPodNetworkConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        additionalPodNetworkConfigs_ =
+            new java.util.ArrayList<com.google.container.v1.AdditionalPodNetworkConfig>(
+                additionalPodNetworkConfigs_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AdditionalPodNetworkConfig,
+            com.google.container.v1.AdditionalPodNetworkConfig.Builder,
+            com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+        additionalPodNetworkConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+        getAdditionalPodNetworkConfigsList() {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalPodNetworkConfigs_);
+      } else {
+        return additionalPodNetworkConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public int getAdditionalPodNetworkConfigsCount() {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        return additionalPodNetworkConfigs_.size();
+      } else {
+        return additionalPodNetworkConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalPodNetworkConfig getAdditionalPodNetworkConfigs(
+        int index) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        return additionalPodNetworkConfigs_.get(index);
+      } else {
+        return additionalPodNetworkConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder setAdditionalPodNetworkConfigs(
+        int index, com.google.container.v1.AdditionalPodNetworkConfig value) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.set(index, value);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder setAdditionalPodNetworkConfigs(
+        int index, com.google.container.v1.AdditionalPodNetworkConfig.Builder builderForValue) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder addAdditionalPodNetworkConfigs(
+        com.google.container.v1.AdditionalPodNetworkConfig value) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.add(value);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder addAdditionalPodNetworkConfigs(
+        int index, com.google.container.v1.AdditionalPodNetworkConfig value) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.add(index, value);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder addAdditionalPodNetworkConfigs(
+        com.google.container.v1.AdditionalPodNetworkConfig.Builder builderForValue) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder addAdditionalPodNetworkConfigs(
+        int index, com.google.container.v1.AdditionalPodNetworkConfig.Builder builderForValue) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder addAllAdditionalPodNetworkConfigs(
+        java.lang.Iterable<? extends com.google.container.v1.AdditionalPodNetworkConfig> values) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, additionalPodNetworkConfigs_);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder clearAdditionalPodNetworkConfigs() {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public Builder removeAdditionalPodNetworkConfigs(int index) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        ensureAdditionalPodNetworkConfigsIsMutable();
+        additionalPodNetworkConfigs_.remove(index);
+        onChanged();
+      } else {
+        additionalPodNetworkConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalPodNetworkConfig.Builder
+        getAdditionalPodNetworkConfigsBuilder(int index) {
+      return getAdditionalPodNetworkConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalPodNetworkConfigOrBuilder
+        getAdditionalPodNetworkConfigsOrBuilder(int index) {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        return additionalPodNetworkConfigs_.get(index);
+      } else {
+        return additionalPodNetworkConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public java.util.List<? extends com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+        getAdditionalPodNetworkConfigsOrBuilderList() {
+      if (additionalPodNetworkConfigsBuilder_ != null) {
+        return additionalPodNetworkConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalPodNetworkConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalPodNetworkConfig.Builder
+        addAdditionalPodNetworkConfigsBuilder() {
+      return getAdditionalPodNetworkConfigsFieldBuilder()
+          .addBuilder(com.google.container.v1.AdditionalPodNetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public com.google.container.v1.AdditionalPodNetworkConfig.Builder
+        addAdditionalPodNetworkConfigsBuilder(int index) {
+      return getAdditionalPodNetworkConfigsFieldBuilder()
+          .addBuilder(
+              index, com.google.container.v1.AdditionalPodNetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * We specify the additional pod networks for this node pool using this list.
+     * Each pod network corresponds to an additional alias IP range for the node
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+     * </code>
+     */
+    public java.util.List<com.google.container.v1.AdditionalPodNetworkConfig.Builder>
+        getAdditionalPodNetworkConfigsBuilderList() {
+      return getAdditionalPodNetworkConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AdditionalPodNetworkConfig,
+            com.google.container.v1.AdditionalPodNetworkConfig.Builder,
+            com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+        getAdditionalPodNetworkConfigsFieldBuilder() {
+      if (additionalPodNetworkConfigsBuilder_ == null) {
+        additionalPodNetworkConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.AdditionalPodNetworkConfig,
+                com.google.container.v1.AdditionalPodNetworkConfig.Builder,
+                com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>(
+                additionalPodNetworkConfigs_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        additionalPodNetworkConfigs_ = null;
+      }
+      return additionalPodNetworkConfigsBuilder_;
+    }
+
+    private double podIpv4RangeUtilization_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The podIpv4RangeUtilization.
+     */
+    @java.lang.Override
+    public double getPodIpv4RangeUtilization() {
+      return podIpv4RangeUtilization_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The podIpv4RangeUtilization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodIpv4RangeUtilization(double value) {
+
+      podIpv4RangeUtilization_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
+     * </pre>
+     *
+     * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPodIpv4RangeUtilization() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      podIpv4RangeUtilization_ = 0D;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

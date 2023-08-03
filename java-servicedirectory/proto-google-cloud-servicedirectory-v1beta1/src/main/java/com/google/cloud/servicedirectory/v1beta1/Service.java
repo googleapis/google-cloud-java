@@ -43,6 +43,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   private Service() {
     name_ = "";
     endpoints_ = java.util.Collections.emptyList();
+    uid_ = "";
   }
 
   @java.lang.Override
@@ -176,10 +177,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -221,10 +218,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -257,10 +250,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -300,10 +289,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -333,7 +318,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -350,7 +336,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -368,7 +355,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -385,7 +373,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -402,7 +391,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -471,9 +461,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -489,9 +479,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -507,9 +497,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -518,6 +508,59 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int UID_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * service.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * service.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -547,6 +590,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     if (updateTime_ != null) {
       output.writeMessage(7, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, uid_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -579,6 +625,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, uid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -606,6 +655,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getUid().equals(other.getUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -635,6 +685,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -816,6 +868,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      uid_ = "";
       return this;
     }
 
@@ -878,6 +931,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.uid_ = uid_;
       }
     }
 
@@ -967,6 +1023,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1037,6 +1098,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 66:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1213,10 +1280,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1259,10 +1322,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1296,10 +1355,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1340,10 +1395,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1390,10 +1441,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1436,10 +1483,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1480,10 +1523,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
      *     not longer than 253 characters in total, followed by a slash (/).
      *     Metadata that fails to meet these requirements are rejected
-     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-     *     for system metadata managed by Service Directory. If the user tries
-     *     to write to these keyspaces, those entries are silently ignored by
-     *     the system
      *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
@@ -1521,7 +1560,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1541,7 +1581,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1561,7 +1602,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1581,7 +1623,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1608,7 +1651,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1632,7 +1676,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1658,7 +1703,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1685,7 +1731,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1709,7 +1756,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1733,7 +1781,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1757,7 +1806,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1780,7 +1830,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1803,7 +1854,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1820,7 +1872,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1841,7 +1894,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1862,7 +1916,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1879,7 +1934,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -1898,7 +1954,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Endpoints associated with this service. Returned on
-     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+     * Control plane clients should use
      * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
@@ -2139,9 +2196,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2157,9 +2214,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2181,9 +2238,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2207,9 +2264,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2230,9 +2287,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2259,9 +2316,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2282,9 +2339,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2300,9 +2357,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2322,9 +2379,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the service was last updated. Note: endpoints being
-     * created/deleted/updated within the service are not considered service
-     * updates for the purpose of this timestamp.
+     * Output only. The timestamp when the service was last updated. Note:
+     * endpoints being created/deleted/updated within the service are not
+     * considered service updates for the purpose of this timestamp.
      * </pre>
      *
      * <code>
@@ -2346,6 +2403,117 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object uid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A globally unique identifier (in UUID4 format) for this
+     * service.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A globally unique identifier (in UUID4 format) for this
+     * service.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A globally unique identifier (in UUID4 format) for this
+     * service.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A globally unique identifier (in UUID4 format) for this
+     * service.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A globally unique identifier (in UUID4 format) for this
+     * service.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

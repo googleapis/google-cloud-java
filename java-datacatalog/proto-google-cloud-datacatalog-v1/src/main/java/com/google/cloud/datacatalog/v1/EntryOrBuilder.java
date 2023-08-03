@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,10 +155,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for entries with types listed in the `EntryType` enum.
    *
-   * Currently, only `FILESET` enum value is allowed. All other entries
-   * created in Data Catalog must use the `user_specified_type`.
+   * For details, see [`EntryType`](#entrytype).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -171,10 +169,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for entries with types listed in the `EntryType` enum.
    *
-   * Currently, only `FILESET` enum value is allowed. All other entries
-   * created in Data Catalog must use the `user_specified_type`.
+   * For details, see [`EntryType`](#entrytype).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -187,10 +183,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for entries with types listed in the `EntryType` enum.
    *
-   * Currently, only `FILESET` enum value is allowed. All other entries
-   * created in Data Catalog must use the `user_specified_type`.
+   * For details, see [`EntryType`](#entrytype).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>

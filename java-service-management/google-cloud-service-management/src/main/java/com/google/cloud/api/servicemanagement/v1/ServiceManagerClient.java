@@ -55,6 +55,11 @@ import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
 import com.google.cloud.api.servicemanagement.v1.stub.ServiceManagerStub;
 import com.google.cloud.api.servicemanagement.v1.stub.ServiceManagerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
@@ -625,8 +630,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(String serviceName) {
@@ -754,8 +759,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeleteServiceResponse, OperationMetadata> undeleteServiceAsync(
@@ -879,8 +884,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConfigsPagedResponse listServiceConfigs(String serviceName) {
@@ -1019,8 +1024,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param configId Required. The id of the service configuration resource.
    *     <p>This field must be specified for the server to return all fields, including
    *     `SourceInfo`.
@@ -1121,8 +1126,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param serviceConfig Required. The service configuration resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1236,8 +1241,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param configSource Required. The source configuration for the service.
    * @param validateOnly Optional. If set, this will result in the generation of a
    *     `google.api.Service` configuration based on the `ConfigSource` provided, but the generated
@@ -1400,13 +1405,14 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param filter Required. Use `filter` to return subset of rollouts. The following filters are
-   *     supported: -- To limit the results to only those in status
-   *     (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use filter='status=SUCCESS' --
-   *     To limit the results to those in status (google.api.servicemanagement.v1.RolloutStatus)
-   *     'CANCELLED' or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+   *     supported:
+   *     <p>-- By [status] [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+   *     `filter='status=SUCCESS'`
+   *     <p>-- By [strategy] [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+   *     `filter='strategy=TrafficPercentStrategy'`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceRolloutsPagedResponse listServiceRollouts(
@@ -1551,8 +1557,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param rolloutId Required. The id of the rollout resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1654,8 +1660,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
-   *     requirements. For example: `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
+   *     For example: `example.googleapis.com`.
    * @param rollout Required. The rollout resource. The `service_name` field is output only.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1912,6 +1918,197 @@ public class ServiceManagerClient implements BackgroundResource {
   public final UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     return stub.generateConfigReportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = serviceManagerClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = serviceManagerClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = serviceManagerClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = serviceManagerClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = serviceManagerClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       serviceManagerClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

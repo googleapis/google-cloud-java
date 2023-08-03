@@ -249,7 +249,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4146
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4254
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -274,7 +274,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4146
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4254
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -427,4 +427,29 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The bytes for imageType.
    */
   com.google.protobuf.ByteString getImageTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 13;</code>
+   *
+   * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
+   */
+  boolean hasInsecureKubeletReadonlyPortEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 13;</code>
+   *
+   * @return The insecureKubeletReadonlyPortEnabled.
+   */
+  boolean getInsecureKubeletReadonlyPortEnabled();
 }

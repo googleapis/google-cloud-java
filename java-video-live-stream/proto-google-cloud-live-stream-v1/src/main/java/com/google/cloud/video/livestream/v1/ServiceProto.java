@@ -28,6 +28,26 @@ public final class ServiceProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_CreateAssetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_CreateAssetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_DeleteAssetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_DeleteAssetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_ListAssetsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_ListAssetsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_ListAssetsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_ListAssetsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_GetAssetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_GetAssetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_fieldAccessorTable;
@@ -111,6 +131,14 @@ public final class ServiceProto {
       internal_static_google_cloud_video_livestream_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_GetPoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_GetPoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_UpdatePoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_UpdatePoolRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -129,166 +157,218 @@ public final class ServiceProto {
           + "s.proto\032#google/longrunning/operations.p"
           + "roto\032\033google/protobuf/empty.proto\032 googl"
           + "e/protobuf/field_mask.proto\032\037google/prot"
-          + "obuf/timestamp.proto\"\302\001\n\024CreateChannelRe"
-          + "quest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\022!livestre"
-          + "am.googleapis.com/Channel\022@\n\007channel\030\002 \001"
-          + "(\0132).google.cloud.video.livestream.v1.Ch"
-          + "annelB\004\342A\001\002\022\030\n\nchannel_id\030\003 \001(\tB\004\342A\001\002\022\022\n"
-          + "\nrequest_id\030\004 \001(\t\"\232\001\n\023ListChannelsReques"
-          + "t\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\022!livestream.g"
-          + "oogleapis.com/Channel\022\021\n\tpage_size\030\002 \001(\005"
-          + "\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010"
-          + "order_by\030\005 \001(\t\"\201\001\n\024ListChannelsResponse\022"
-          + ";\n\010channels\030\001 \003(\0132).google.cloud.video.l"
-          + "ivestream.v1.Channel\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"M\n\021GetChannel"
-          + "Request\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!livestre"
-          + "am.googleapis.com/Channel\"s\n\024DeleteChann"
-          + "elRequest\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!livest"
-          + "ream.googleapis.com/Channel\022\022\n\nrequest_i"
-          + "d\030\002 \001(\t\022\r\n\005force\030\003 \001(\010\"\235\001\n\024UpdateChannel"
-          + "Request\022/\n\013update_mask\030\001 \001(\0132\032.google.pr"
-          + "otobuf.FieldMask\022@\n\007channel\030\002 \001(\0132).goog"
-          + "le.cloud.video.livestream.v1.ChannelB\004\342A"
-          + "\001\002\022\022\n\nrequest_id\030\003 \001(\t\"c\n\023StartChannelRe"
+          + "obuf/timestamp.proto\"\270\001\n\022CreateAssetRequ"
+          + "est\0228\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livestream"
+          + ".googleapis.com/Asset\022<\n\005asset\030\002 \001(\0132\'.g"
+          + "oogle.cloud.video.livestream.v1.AssetB\004\342"
+          + "A\001\002\022\026\n\010asset_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_i"
+          + "d\030\004 \001(\t\"`\n\022DeleteAssetRequest\0226\n\004name\030\001 "
+          + "\001(\tB(\342A\001\002\372A!\n\037livestream.googleapis.com/"
+          + "Asset\022\022\n\nrequest_id\030\002 \001(\t\"\226\001\n\021ListAssets"
+          + "Request\0228\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livest"
+          + "ream.googleapis.com/Asset\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t"
+          + "\022\020\n\010order_by\030\005 \001(\t\"{\n\022ListAssetsResponse"
+          + "\0227\n\006assets\030\001 \003(\0132\'.google.cloud.video.li"
+          + "vestream.v1.Asset\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\022\023\n\013unreachable\030\003 \003(\t\"I\n\017GetAssetReque"
+          + "st\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037livestream.go"
+          + "ogleapis.com/Asset\"\302\001\n\024CreateChannelRequ"
+          + "est\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\022!livestream"
+          + ".googleapis.com/Channel\022@\n\007channel\030\002 \001(\013"
+          + "2).google.cloud.video.livestream.v1.Chan"
+          + "nelB\004\342A\001\002\022\030\n\nchannel_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nr"
+          + "equest_id\030\004 \001(\t\"\232\001\n\023ListChannelsRequest\022"
+          + ":\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\022!livestream.goo"
+          + "gleapis.com/Channel\022\021\n\tpage_size\030\002 \001(\005\022\022"
+          + "\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010or"
+          + "der_by\030\005 \001(\t\"\201\001\n\024ListChannelsResponse\022;\n"
+          + "\010channels\030\001 \003(\0132).google.cloud.video.liv"
+          + "estream.v1.Channel\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"M\n\021GetChannelRe"
           + "quest\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!livestream"
-          + ".googleapis.com/Channel\022\022\n\nrequest_id\030\002 "
-          + "\001(\t\"b\n\022StopChannelRequest\0228\n\004name\030\001 \001(\tB"
-          + "*\342A\001\002\372A#\n!livestream.googleapis.com/Chan"
-          + "nel\022\022\n\nrequest_id\030\002 \001(\t\"\270\001\n\022CreateInputR"
-          + "equest\0228\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livestr"
-          + "eam.googleapis.com/Input\022<\n\005input\030\002 \001(\0132"
+          + ".googleapis.com/Channel\"s\n\024DeleteChannel"
+          + "Request\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!livestre"
+          + "am.googleapis.com/Channel\022\022\n\nrequest_id\030"
+          + "\002 \001(\t\022\r\n\005force\030\003 \001(\010\"\235\001\n\024UpdateChannelRe"
+          + "quest\022/\n\013update_mask\030\001 \001(\0132\032.google.prot"
+          + "obuf.FieldMask\022@\n\007channel\030\002 \001(\0132).google"
+          + ".cloud.video.livestream.v1.ChannelB\004\342A\001\002"
+          + "\022\022\n\nrequest_id\030\003 \001(\t\"c\n\023StartChannelRequ"
+          + "est\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!livestream.g"
+          + "oogleapis.com/Channel\022\022\n\nrequest_id\030\002 \001("
+          + "\t\"b\n\022StopChannelRequest\0228\n\004name\030\001 \001(\tB*\342"
+          + "A\001\002\372A#\n!livestream.googleapis.com/Channe"
+          + "l\022\022\n\nrequest_id\030\002 \001(\t\"\270\001\n\022CreateInputReq"
+          + "uest\0228\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livestrea"
+          + "m.googleapis.com/Input\022<\n\005input\030\002 \001(\0132\'."
+          + "google.cloud.video.livestream.v1.InputB\004"
+          + "\342A\001\002\022\026\n\010input_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_"
+          + "id\030\004 \001(\t\"\226\001\n\021ListInputsRequest\0228\n\006parent"
+          + "\030\001 \001(\tB(\342A\001\002\372A!\022\037livestream.googleapis.c"
+          + "om/Input\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
+          + "n\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001("
+          + "\t\"{\n\022ListInputsResponse\0227\n\006inputs\030\001 \003(\0132"
           + "\'.google.cloud.video.livestream.v1.Input"
-          + "B\004\342A\001\002\022\026\n\010input_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nreques"
-          + "t_id\030\004 \001(\t\"\226\001\n\021ListInputsRequest\0228\n\006pare"
-          + "nt\030\001 \001(\tB(\342A\001\002\372A!\022\037livestream.googleapis"
-          + ".com/Input\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
-          + "ken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 "
-          + "\001(\t\"{\n\022ListInputsResponse\0227\n\006inputs\030\001 \003("
-          + "\0132\'.google.cloud.video.livestream.v1.Inp"
-          + "ut\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachab"
-          + "le\030\003 \003(\t\"I\n\017GetInputRequest\0226\n\004name\030\001 \001("
-          + "\tB(\342A\001\002\372A!\n\037livestream.googleapis.com/In"
-          + "put\"`\n\022DeleteInputRequest\0226\n\004name\030\001 \001(\tB"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable"
+          + "\030\003 \003(\t\"I\n\017GetInputRequest\0226\n\004name\030\001 \001(\tB"
           + "(\342A\001\002\372A!\n\037livestream.googleapis.com/Inpu"
-          + "t\022\022\n\nrequest_id\030\002 \001(\t\"\227\001\n\022UpdateInputReq"
-          + "uest\022/\n\013update_mask\030\001 \001(\0132\032.google.proto"
-          + "buf.FieldMask\022<\n\005input\030\002 \001(\0132\'.google.cl"
-          + "oud.video.livestream.v1.InputB\004\342A\001\002\022\022\n\nr"
-          + "equest_id\030\003 \001(\t\"\270\001\n\022CreateEventRequest\0228"
-          + "\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livestream.goog"
-          + "leapis.com/Event\022<\n\005event\030\002 \001(\0132\'.google"
-          + ".cloud.video.livestream.v1.EventB\004\342A\001\002\022\026"
-          + "\n\010event_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_id\030\004 \001"
-          + "(\t\"\226\001\n\021ListEventsRequest\0228\n\006parent\030\001 \001(\t"
-          + "B(\342A\001\002\372A!\022\037livestream.googleapis.com/Eve"
-          + "nt\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"{\n\022L"
-          + "istEventsResponse\0227\n\006events\030\001 \003(\0132\'.goog"
-          + "le.cloud.video.livestream.v1.Event\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t"
-          + "\"I\n\017GetEventRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372"
-          + "A!\n\037livestream.googleapis.com/Event\"`\n\022D"
-          + "eleteEventRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!"
-          + "\n\037livestream.googleapis.com/Event\022\022\n\nreq"
-          + "uest_id\030\002 \001(\t\"\032\n\030ChannelOperationRespons"
-          + "e\"\351\001\n\021OperationMetadata\0225\n\013create_time\030\001"
-          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222"
-          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
-          + "tampB\004\342A\001\003\022\024\n\006target\030\003 \001(\tB\004\342A\001\003\022\022\n\004verb"
-          + "\030\004 \001(\tB\004\342A\001\003\022$\n\026requested_cancellation\030\005"
-          + " \001(\010B\004\342A\001\003\022\031\n\013api_version\030\006 \001(\tB\004\342A\001\0032\325\031"
-          + "\n\021LivestreamService\022\340\001\n\rCreateChannel\0226."
-          + "google.cloud.video.livestream.v1.CreateC"
-          + "hannelRequest\032\035.google.longrunning.Opera"
-          + "tion\"x\312A\034\n\007Channel\022\021OperationMetadata\332A\031"
-          + "parent,channel,channel_id\202\323\344\223\0027\",/v1/{pa"
-          + "rent=projects/*/locations/*}/channels:\007c"
-          + "hannel\022\274\001\n\014ListChannels\0225.google.cloud.v"
-          + "ideo.livestream.v1.ListChannelsRequest\0326"
-          + ".google.cloud.video.livestream.v1.ListCh"
-          + "annelsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{pa"
-          + "rent=projects/*/locations/*}/channels\022\251\001"
-          + "\n\nGetChannel\0223.google.cloud.video.livest"
-          + "ream.v1.GetChannelRequest\032).google.cloud"
-          + ".video.livestream.v1.Channel\";\332A\004name\202\323\344"
-          + "\223\002.\022,/v1/{name=projects/*/locations/*/ch"
-          + "annels/*}\022\320\001\n\rDeleteChannel\0226.google.clo"
-          + "ud.video.livestream.v1.DeleteChannelRequ"
-          + "est\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadat"
-          + "a\332A\004name\202\323\344\223\002.*,/v1/{name=projects/*/loc"
-          + "ations/*/channels/*}\022\342\001\n\rUpdateChannel\0226"
-          + ".google.cloud.video.livestream.v1.Update"
-          + "ChannelRequest\032\035.google.longrunning.Oper"
-          + "ation\"z\312A\034\n\007Channel\022\021OperationMetadata\332A"
-          + "\023channel,update_mask\202\323\344\223\002?24/v1/{channel"
-          + ".name=projects/*/locations/*/channels/*}"
-          + ":\007channel\022\332\001\n\014StartChannel\0225.google.clou"
-          + "d.video.livestream.v1.StartChannelReques"
-          + "t\032\035.google.longrunning.Operation\"t\312A-\n\030C"
-          + "hannelOperationResponse\022\021OperationMetada"
-          + "ta\332A\004name\202\323\344\223\0027\"2/v1/{name=projects/*/lo"
-          + "cations/*/channels/*}:start:\001*\022\327\001\n\013StopC"
-          + "hannel\0224.google.cloud.video.livestream.v"
-          + "1.StopChannelRequest\032\035.google.longrunnin"
-          + "g.Operation\"s\312A-\n\030ChannelOperationRespon"
-          + "se\022\021OperationMetadata\332A\004name\202\323\344\223\0026\"1/v1/"
-          + "{name=projects/*/locations/*/channels/*}"
-          + ":stop:\001*\022\322\001\n\013CreateInput\0224.google.cloud."
-          + "video.livestream.v1.CreateInputRequest\032\035"
-          + ".google.longrunning.Operation\"n\312A\032\n\005Inpu"
-          + "t\022\021OperationMetadata\332A\025parent,input,inpu"
-          + "t_id\202\323\344\223\0023\"*/v1/{parent=projects/*/locat"
-          + "ions/*}/inputs:\005input\022\264\001\n\nListInputs\0223.g"
-          + "oogle.cloud.video.livestream.v1.ListInpu"
-          + "tsRequest\0324.google.cloud.video.livestrea"
-          + "m.v1.ListInputsResponse\";\332A\006parent\202\323\344\223\002,"
-          + "\022*/v1/{parent=projects/*/locations/*}/in"
-          + "puts\022\241\001\n\010GetInput\0221.google.cloud.video.l"
-          + "ivestream.v1.GetInputRequest\032\'.google.cl"
-          + "oud.video.livestream.v1.Input\"9\332A\004name\202\323"
-          + "\344\223\002,\022*/v1/{name=projects/*/locations/*/i"
-          + "nputs/*}\022\312\001\n\013DeleteInput\0224.google.cloud."
-          + "video.livestream.v1.DeleteInputRequest\032\035"
-          + ".google.longrunning.Operation\"f\312A*\n\025goog"
-          + "le.protobuf.Empty\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002,**/v1/{name=projects/*/location"
-          + "s/*/inputs/*}\022\324\001\n\013UpdateInput\0224.google.c"
-          + "loud.video.livestream.v1.UpdateInputRequ"
-          + "est\032\035.google.longrunning.Operation\"p\312A\032\n"
-          + "\005Input\022\021OperationMetadata\332A\021input,update"
-          + "_mask\202\323\344\223\002920/v1/{input.name=projects/*/"
-          + "locations/*/inputs/*}:\005input\022\312\001\n\013CreateE"
-          + "vent\0224.google.cloud.video.livestream.v1."
-          + "CreateEventRequest\032\'.google.cloud.video."
-          + "livestream.v1.Event\"\\\332A\025parent,event,eve"
-          + "nt_id\202\323\344\223\002>\"5/v1/{parent=projects/*/loca"
-          + "tions/*/channels/*}/events:\005event\022\277\001\n\nLi"
-          + "stEvents\0223.google.cloud.video.livestream"
-          + ".v1.ListEventsRequest\0324.google.cloud.vid"
-          + "eo.livestream.v1.ListEventsResponse\"F\332A\006"
-          + "parent\202\323\344\223\0027\0225/v1/{parent=projects/*/loc"
-          + "ations/*/channels/*}/events\022\254\001\n\010GetEvent"
-          + "\0221.google.cloud.video.livestream.v1.GetE"
-          + "ventRequest\032\'.google.cloud.video.livestr"
-          + "eam.v1.Event\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=p"
-          + "rojects/*/locations/*/channels/*/events/"
-          + "*}\022\241\001\n\013DeleteEvent\0224.google.cloud.video."
-          + "livestream.v1.DeleteEventRequest\032\026.googl"
-          + "e.protobuf.Empty\"D\332A\004name\202\323\344\223\0027*5/v1/{na"
-          + "me=projects/*/locations/*/channels/*/eve"
-          + "nts/*}\032M\312A\031livestream.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\320\002\n$com.google.cloud.video.livestr"
-          + "eam.v1B\014ServiceProtoP\001ZDcloud.google.com"
-          + "/go/video/livestream/apiv1/livestreampb;"
-          + "livestreampb\252\002 Google.Cloud.Video.LiveSt"
-          + "ream.V1\312\002 Google\\Cloud\\Video\\LiveStream\\"
-          + "V1\352\002$Google::Cloud::Video::LiveStream::V"
-          + "1\352Ad\n*secretmanager.googleapis.com/Secre"
-          + "tVersion\0226projects/{project}/secrets/{se"
-          + "cret}/versions/{version}b\006proto3"
+          + "t\"`\n\022DeleteInputRequest\0226\n\004name\030\001 \001(\tB(\342"
+          + "A\001\002\372A!\n\037livestream.googleapis.com/Input\022"
+          + "\022\n\nrequest_id\030\002 \001(\t\"\227\001\n\022UpdateInputReque"
+          + "st\022/\n\013update_mask\030\001 \001(\0132\032.google.protobu"
+          + "f.FieldMask\022<\n\005input\030\002 \001(\0132\'.google.clou"
+          + "d.video.livestream.v1.InputB\004\342A\001\002\022\022\n\nreq"
+          + "uest_id\030\003 \001(\t\"\270\001\n\022CreateEventRequest\0228\n\006"
+          + "parent\030\001 \001(\tB(\342A\001\002\372A!\022\037livestream.google"
+          + "apis.com/Event\022<\n\005event\030\002 \001(\0132\'.google.c"
+          + "loud.video.livestream.v1.EventB\004\342A\001\002\022\026\n\010"
+          + "event_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_id\030\004 \001(\t"
+          + "\"\226\001\n\021ListEventsRequest\0228\n\006parent\030\001 \001(\tB("
+          + "\342A\001\002\372A!\022\037livestream.googleapis.com/Event"
+          + "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022"
+          + "\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"{\n\022Lis"
+          + "tEventsResponse\0227\n\006events\030\001 \003(\0132\'.google"
+          + ".cloud.video.livestream.v1.Event\022\027\n\017next"
+          + "_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"I"
+          + "\n\017GetEventRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!"
+          + "\n\037livestream.googleapis.com/Event\"`\n\022Del"
+          + "eteEventRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037"
+          + "livestream.googleapis.com/Event\022\022\n\nreque"
+          + "st_id\030\002 \001(\t\"\032\n\030ChannelOperationResponse\""
+          + "\351\001\n\021OperationMetadata\0225\n\013create_time\030\001 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n\010"
+          + "end_time\030\002 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\004\342A\001\003\022\024\n\006target\030\003 \001(\tB\004\342A\001\003\022\022\n\004verb\030\004"
+          + " \001(\tB\004\342A\001\003\022$\n\026requested_cancellation\030\005 \001"
+          + "(\010B\004\342A\001\003\022\031\n\013api_version\030\006 \001(\tB\004\342A\001\003\"G\n\016G"
+          + "etPoolRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036li"
+          + "vestream.googleapis.com/Pool\"\224\001\n\021UpdateP"
+          + "oolRequest\022/\n\013update_mask\030\001 \001(\0132\032.google"
+          + ".protobuf.FieldMask\022:\n\004pool\030\002 \001(\0132&.goog"
+          + "le.cloud.video.livestream.v1.PoolB\004\342A\001\002\022"
+          + "\022\n\nrequest_id\030\003 \001(\t2\302\"\n\021LivestreamServic"
+          + "e\022\340\001\n\rCreateChannel\0226.google.cloud.video"
+          + ".livestream.v1.CreateChannelRequest\032\035.go"
+          + "ogle.longrunning.Operation\"x\312A\034\n\007Channel"
+          + "\022\021OperationMetadata\332A\031parent,channel,cha"
+          + "nnel_id\202\323\344\223\0027\",/v1/{parent=projects/*/lo"
+          + "cations/*}/channels:\007channel\022\274\001\n\014ListCha"
+          + "nnels\0225.google.cloud.video.livestream.v1"
+          + ".ListChannelsRequest\0326.google.cloud.vide"
+          + "o.livestream.v1.ListChannelsResponse\"=\332A"
+          + "\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/lo"
+          + "cations/*}/channels\022\251\001\n\nGetChannel\0223.goo"
+          + "gle.cloud.video.livestream.v1.GetChannel"
+          + "Request\032).google.cloud.video.livestream."
+          + "v1.Channel\";\332A\004name\202\323\344\223\002.\022,/v1/{name=pro"
+          + "jects/*/locations/*/channels/*}\022\320\001\n\rDele"
+          + "teChannel\0226.google.cloud.video.livestrea"
+          + "m.v1.DeleteChannelRequest\032\035.google.longr"
+          + "unning.Operation\"h\312A*\n\025google.protobuf.E"
+          + "mpty\022\021OperationMetadata\332A\004name\202\323\344\223\002.*,/v"
+          + "1/{name=projects/*/locations/*/channels/"
+          + "*}\022\342\001\n\rUpdateChannel\0226.google.cloud.vide"
+          + "o.livestream.v1.UpdateChannelRequest\032\035.g"
+          + "oogle.longrunning.Operation\"z\312A\034\n\007Channe"
+          + "l\022\021OperationMetadata\332A\023channel,update_ma"
+          + "sk\202\323\344\223\002?24/v1/{channel.name=projects/*/l"
+          + "ocations/*/channels/*}:\007channel\022\332\001\n\014Star"
+          + "tChannel\0225.google.cloud.video.livestream"
+          + ".v1.StartChannelRequest\032\035.google.longrun"
+          + "ning.Operation\"t\312A-\n\030ChannelOperationRes"
+          + "ponse\022\021OperationMetadata\332A\004name\202\323\344\223\0027\"2/"
+          + "v1/{name=projects/*/locations/*/channels"
+          + "/*}:start:\001*\022\327\001\n\013StopChannel\0224.google.cl"
+          + "oud.video.livestream.v1.StopChannelReque"
+          + "st\032\035.google.longrunning.Operation\"s\312A-\n\030"
+          + "ChannelOperationResponse\022\021OperationMetad"
+          + "ata\332A\004name\202\323\344\223\0026\"1/v1/{name=projects/*/l"
+          + "ocations/*/channels/*}:stop:\001*\022\322\001\n\013Creat"
+          + "eInput\0224.google.cloud.video.livestream.v"
+          + "1.CreateInputRequest\032\035.google.longrunnin"
+          + "g.Operation\"n\312A\032\n\005Input\022\021OperationMetada"
+          + "ta\332A\025parent,input,input_id\202\323\344\223\0023\"*/v1/{p"
+          + "arent=projects/*/locations/*}/inputs:\005in"
+          + "put\022\264\001\n\nListInputs\0223.google.cloud.video."
+          + "livestream.v1.ListInputsRequest\0324.google"
+          + ".cloud.video.livestream.v1.ListInputsRes"
+          + "ponse\";\332A\006parent\202\323\344\223\002,\022*/v1/{parent=proj"
+          + "ects/*/locations/*}/inputs\022\241\001\n\010GetInput\022"
+          + "1.google.cloud.video.livestream.v1.GetIn"
+          + "putRequest\032\'.google.cloud.video.livestre"
+          + "am.v1.Input\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=pr"
+          + "ojects/*/locations/*/inputs/*}\022\312\001\n\013Delet"
+          + "eInput\0224.google.cloud.video.livestream.v"
+          + "1.DeleteInputRequest\032\035.google.longrunnin"
+          + "g.Operation\"f\312A*\n\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\002,**/v1/{na"
+          + "me=projects/*/locations/*/inputs/*}\022\324\001\n\013"
+          + "UpdateInput\0224.google.cloud.video.livestr"
+          + "eam.v1.UpdateInputRequest\032\035.google.longr"
+          + "unning.Operation\"p\312A\032\n\005Input\022\021OperationM"
+          + "etadata\332A\021input,update_mask\202\323\344\223\002920/v1/{"
+          + "input.name=projects/*/locations/*/inputs"
+          + "/*}:\005input\022\312\001\n\013CreateEvent\0224.google.clou"
+          + "d.video.livestream.v1.CreateEventRequest"
+          + "\032\'.google.cloud.video.livestream.v1.Even"
+          + "t\"\\\332A\025parent,event,event_id\202\323\344\223\002>\"5/v1/{"
+          + "parent=projects/*/locations/*/channels/*"
+          + "}/events:\005event\022\277\001\n\nListEvents\0223.google."
+          + "cloud.video.livestream.v1.ListEventsRequ"
+          + "est\0324.google.cloud.video.livestream.v1.L"
+          + "istEventsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/"
+          + "{parent=projects/*/locations/*/channels/"
+          + "*}/events\022\254\001\n\010GetEvent\0221.google.cloud.vi"
+          + "deo.livestream.v1.GetEventRequest\032\'.goog"
+          + "le.cloud.video.livestream.v1.Event\"D\332A\004n"
+          + "ame\202\323\344\223\0027\0225/v1/{name=projects/*/location"
+          + "s/*/channels/*/events/*}\022\241\001\n\013DeleteEvent"
+          + "\0224.google.cloud.video.livestream.v1.Dele"
+          + "teEventRequest\032\026.google.protobuf.Empty\"D"
+          + "\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/loca"
+          + "tions/*/channels/*/events/*}\022\322\001\n\013CreateA"
+          + "sset\0224.google.cloud.video.livestream.v1."
+          + "CreateAssetRequest\032\035.google.longrunning."
+          + "Operation\"n\312A\032\n\005Asset\022\021OperationMetadata"
+          + "\332A\025parent,asset,asset_id\202\323\344\223\0023\"*/v1/{par"
+          + "ent=projects/*/locations/*}/assets:\005asse"
+          + "t\022\312\001\n\013DeleteAsset\0224.google.cloud.video.l"
+          + "ivestream.v1.DeleteAssetRequest\032\035.google"
+          + ".longrunning.Operation\"f\312A*\n\025google.prot"
+          + "obuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
+          + "\002,**/v1/{name=projects/*/locations/*/ass"
+          + "ets/*}\022\241\001\n\010GetAsset\0221.google.cloud.video"
+          + ".livestream.v1.GetAssetRequest\032\'.google."
+          + "cloud.video.livestream.v1.Asset\"9\332A\004name"
+          + "\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*"
+          + "/assets/*}\022\264\001\n\nListAssets\0223.google.cloud"
+          + ".video.livestream.v1.ListAssetsRequest\0324"
+          + ".google.cloud.video.livestream.v1.ListAs"
+          + "setsResponse\";\332A\006parent\202\323\344\223\002,\022*/v1/{pare"
+          + "nt=projects/*/locations/*}/assets\022\235\001\n\007Ge"
+          + "tPool\0220.google.cloud.video.livestream.v1"
+          + ".GetPoolRequest\032&.google.cloud.video.liv"
+          + "estream.v1.Pool\"8\332A\004name\202\323\344\223\002+\022)/v1/{nam"
+          + "e=projects/*/locations/*/pools/*}\022\315\001\n\nUp"
+          + "datePool\0223.google.cloud.video.livestream"
+          + ".v1.UpdatePoolRequest\032\035.google.longrunni"
+          + "ng.Operation\"k\312A\031\n\004Pool\022\021OperationMetada"
+          + "ta\332A\020pool,update_mask\202\323\344\223\00262./v1/{pool.n"
+          + "ame=projects/*/locations/*/pools/*}:\004poo"
+          + "l\032M\312A\031livestream.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "B\241\003\n$com.google.cloud.video.livestream.v"
+          + "1B\014ServiceProtoP\001ZDcloud.google.com/go/v"
+          + "ideo/livestream/apiv1/livestreampb;lives"
+          + "treampb\252\002 Google.Cloud.Video.LiveStream."
+          + "V1\312\002 Google\\Cloud\\Video\\LiveStream\\V1\352\002$"
+          + "Google::Cloud::Video::LiveStream::V1\352Ad\n"
+          + "*secretmanager.googleapis.com/SecretVers"
+          + "ion\0226projects/{project}/secrets/{secret}"
+          + "/versions/{version}\352AN\n\036compute.googleap"
+          + "is.com/Network\022,projects/{project}/globa"
+          + "l/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -304,8 +384,48 @@ public final class ServiceProto {
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_descriptor =
+    internal_static_google_cloud_video_livestream_v1_CreateAssetRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_video_livestream_v1_CreateAssetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_CreateAssetRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Asset", "AssetId", "RequestId",
+            });
+    internal_static_google_cloud_video_livestream_v1_DeleteAssetRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_video_livestream_v1_DeleteAssetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_DeleteAssetRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_video_livestream_v1_ListAssetsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_video_livestream_v1_ListAssetsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_ListAssetsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_video_livestream_v1_ListAssetsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_video_livestream_v1_ListAssetsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_ListAssetsResponse_descriptor,
+            new java.lang.String[] {
+              "Assets", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_video_livestream_v1_GetAssetRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_video_livestream_v1_GetAssetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_GetAssetRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_CreateChannelRequest_descriptor,
@@ -313,7 +433,7 @@ public final class ServiceProto {
               "Parent", "Channel", "ChannelId", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_ListChannelsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_video_livestream_v1_ListChannelsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListChannelsRequest_descriptor,
@@ -321,7 +441,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_video_livestream_v1_ListChannelsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_video_livestream_v1_ListChannelsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListChannelsResponse_descriptor,
@@ -329,7 +449,7 @@ public final class ServiceProto {
               "Channels", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_video_livestream_v1_GetChannelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_video_livestream_v1_GetChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_GetChannelRequest_descriptor,
@@ -337,7 +457,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_video_livestream_v1_DeleteChannelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_video_livestream_v1_DeleteChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_DeleteChannelRequest_descriptor,
@@ -345,7 +465,7 @@ public final class ServiceProto {
               "Name", "RequestId", "Force",
             });
     internal_static_google_cloud_video_livestream_v1_UpdateChannelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_video_livestream_v1_UpdateChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_UpdateChannelRequest_descriptor,
@@ -353,7 +473,7 @@ public final class ServiceProto {
               "UpdateMask", "Channel", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_StartChannelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_video_livestream_v1_StartChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_StartChannelRequest_descriptor,
@@ -361,7 +481,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_StopChannelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_video_livestream_v1_StopChannelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_StopChannelRequest_descriptor,
@@ -369,7 +489,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_CreateInputRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_video_livestream_v1_CreateInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_CreateInputRequest_descriptor,
@@ -377,7 +497,7 @@ public final class ServiceProto {
               "Parent", "Input", "InputId", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_ListInputsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_video_livestream_v1_ListInputsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListInputsRequest_descriptor,
@@ -385,7 +505,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_video_livestream_v1_ListInputsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_video_livestream_v1_ListInputsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListInputsResponse_descriptor,
@@ -393,7 +513,7 @@ public final class ServiceProto {
               "Inputs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_video_livestream_v1_GetInputRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_video_livestream_v1_GetInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_GetInputRequest_descriptor,
@@ -401,7 +521,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_video_livestream_v1_DeleteInputRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_video_livestream_v1_DeleteInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_DeleteInputRequest_descriptor,
@@ -409,7 +529,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_UpdateInputRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_video_livestream_v1_UpdateInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_UpdateInputRequest_descriptor,
@@ -417,7 +537,7 @@ public final class ServiceProto {
               "UpdateMask", "Input", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_CreateEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_video_livestream_v1_CreateEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_CreateEventRequest_descriptor,
@@ -425,7 +545,7 @@ public final class ServiceProto {
               "Parent", "Event", "EventId", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_ListEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_video_livestream_v1_ListEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListEventsRequest_descriptor,
@@ -433,7 +553,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_video_livestream_v1_ListEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_video_livestream_v1_ListEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ListEventsResponse_descriptor,
@@ -441,7 +561,7 @@ public final class ServiceProto {
               "Events", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_video_livestream_v1_GetEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_video_livestream_v1_GetEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_GetEventRequest_descriptor,
@@ -449,7 +569,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_video_livestream_v1_DeleteEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_video_livestream_v1_DeleteEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_DeleteEventRequest_descriptor,
@@ -457,18 +577,34 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_video_livestream_v1_ChannelOperationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_video_livestream_v1_ChannelOperationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_ChannelOperationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_video_livestream_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_video_livestream_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_OperationMetadata_descriptor,
             new java.lang.String[] {
               "CreateTime", "EndTime", "Target", "Verb", "RequestedCancellation", "ApiVersion",
+            });
+    internal_static_google_cloud_video_livestream_v1_GetPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_video_livestream_v1_GetPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_GetPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_video_livestream_v1_UpdatePoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_video_livestream_v1_UpdatePoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_UpdatePoolRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Pool", "RequestId",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

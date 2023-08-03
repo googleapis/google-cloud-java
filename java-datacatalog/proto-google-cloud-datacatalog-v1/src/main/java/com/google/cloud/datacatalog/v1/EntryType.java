@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,18 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * The enum field that lists all the types of entry resources in Data
- * Catalog. For example, a BigQuery table entry has the `TABLE` type.
+ * Metadata automatically ingested from Google Cloud resources like BigQuery
+ * tables or Pub/Sub topics always uses enum values from `EntryType` as the type
+ * of entry.
+ *
+ * Other sources of metadata like Hive or Oracle databases can identify the type
+ * by either using one of the enum values from `EntryType` (for example,
+ * `FILESET` for a Cloud Storage fileset) or specifying a custom value using
+ * the [`Entry`](#resource:-entry) field `user_specified_type`. For more
+ * information, see
+ * [Surface files from Cloud Storage with fileset
+ * entries](/data-catalog/docs/how-to/filesets) or [Create custom entries for
+ * your data sources](/data-catalog/docs/how-to/custom-entries).
  * </pre>
  *
  * Protobuf enum {@code google.cloud.datacatalog.v1.EntryType}
@@ -54,10 +64,10 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. The type of models.
+   * The type of models.
    *
-   * For more information, see [Supported models in BigQuery ML]
-   * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
+   * For more information, see [Supported models in BigQuery
+   * ML](/bigquery/docs/bqml-introduction#supported_models).
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -108,7 +118,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. Connection to a data source. For example, a BigQuery
+   * Connection to a data source. For example, a BigQuery
    * connection.
    * </pre>
    *
@@ -119,7 +129,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. Routine, for example, a BigQuery routine.
+   * Routine, for example, a BigQuery routine.
    * </pre>
    *
    * <code>ROUTINE = 9;</code>
@@ -229,10 +239,10 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. The type of models.
+   * The type of models.
    *
-   * For more information, see [Supported models in BigQuery ML]
-   * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
+   * For more information, see [Supported models in BigQuery
+   * ML](/bigquery/docs/bqml-introduction#supported_models).
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -283,7 +293,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. Connection to a data source. For example, a BigQuery
+   * Connection to a data source. For example, a BigQuery
    * connection.
    * </pre>
    *
@@ -294,7 +304,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. Routine, for example, a BigQuery routine.
+   * Routine, for example, a BigQuery routine.
    * </pre>
    *
    * <code>ROUTINE = 9;</code>

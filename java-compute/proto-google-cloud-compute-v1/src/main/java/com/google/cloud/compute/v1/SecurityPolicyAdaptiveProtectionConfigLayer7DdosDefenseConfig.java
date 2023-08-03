@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configuration options for L7 DDoS detection.
+ * Configuration options for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
  * </pre>
  *
  * Protobuf type {@code
@@ -71,7 +71,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * Protobuf enum {@code
@@ -203,7 +203,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * If set to true, enables CAAP for L7 DDoS detection.
+   * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -218,7 +218,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * If set to true, enables CAAP for L7 DDoS detection.
+   * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -238,7 +238,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
@@ -254,7 +254,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
@@ -278,7 +278,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
@@ -507,7 +507,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for L7 DDoS detection.
+   * Configuration options for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * Protobuf type {@code
@@ -732,7 +732,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * If set to true, enables CAAP for L7 DDoS detection.
+     * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -747,7 +747,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * If set to true, enables CAAP for L7 DDoS detection.
+     * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -762,7 +762,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * If set to true, enables CAAP for L7 DDoS detection.
+     * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -781,7 +781,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * If set to true, enables CAAP for L7 DDoS detection.
+     * If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -800,7 +800,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
@@ -815,7 +815,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
@@ -838,7 +838,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
@@ -861,7 +861,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
@@ -883,7 +883,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
@@ -901,7 +901,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *

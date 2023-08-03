@@ -19,7 +19,9 @@ package com.google.cloud.confidentialcomputing.v1.samples;
 // [START confidentialcomputing_v1_generated_ConfidentialComputing_VerifyAttestation_sync]
 import com.google.cloud.confidentialcomputing.v1.ChallengeName;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialComputingClient;
+import com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo;
 import com.google.cloud.confidentialcomputing.v1.GcpCredentials;
+import com.google.cloud.confidentialcomputing.v1.TokenOptions;
 import com.google.cloud.confidentialcomputing.v1.TpmAttestation;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse;
@@ -43,6 +45,8 @@ public class SyncVerifyAttestation {
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
               .setGcpCredentials(GcpCredentials.newBuilder().build())
               .setTpmAttestation(TpmAttestation.newBuilder().build())
+              .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+              .setTokenOptions(TokenOptions.newBuilder().build())
               .build();
       VerifyAttestationResponse response = confidentialComputingClient.verifyAttestation(request);
     }

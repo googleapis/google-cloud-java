@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,8 +186,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -199,8 +199,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -212,8 +212,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -225,8 +225,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -239,8 +239,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>

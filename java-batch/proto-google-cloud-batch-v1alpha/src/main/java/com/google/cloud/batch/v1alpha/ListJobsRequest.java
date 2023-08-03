@@ -175,11 +175,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -199,11 +199,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -941,11 +941,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Sort results. Supported are "name", "name desc", "create_time",
-     * "create_time desc", and "".
+     * Optional. Sort results. Supported are "name", "name desc", "create_time",
+     * and "create_time desc".
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -964,11 +964,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Sort results. Supported are "name", "name desc", "create_time",
-     * "create_time desc", and "".
+     * Optional. Sort results. Supported are "name", "name desc", "create_time",
+     * and "create_time desc".
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -987,11 +987,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Sort results. Supported are "name", "name desc", "create_time",
-     * "create_time desc", and "".
+     * Optional. Sort results. Supported are "name", "name desc", "create_time",
+     * and "create_time desc".
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1009,11 +1009,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Sort results. Supported are "name", "name desc", "create_time",
-     * "create_time desc", and "".
+     * Optional. Sort results. Supported are "name", "name desc", "create_time",
+     * and "create_time desc".
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1027,11 +1027,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Sort results. Supported are "name", "name desc", "create_time",
-     * "create_time desc", and "".
+     * Optional. Sort results. Supported are "name", "name desc", "create_time",
+     * and "create_time desc".
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.

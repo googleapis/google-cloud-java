@@ -73,6 +73,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.BuildStep.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1107,6 +1108,43 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER = 20;
+  private boolean automapSubstitutions_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return Whether the automapSubstitutions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomapSubstitutions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  @java.lang.Override
+  public boolean getAutomapSubstitutions() {
+    return automapSubstitutions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1176,6 +1214,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, script_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(20, automapSubstitutions_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1267,6 +1308,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, script_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, automapSubstitutions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1308,6 +1352,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (getExitCode() != other.getExitCode()) return false;
     if (!getAllowExitCodesList().equals(other.getAllowExitCodesList())) return false;
     if (!getScript().equals(other.getScript())) return false;
+    if (hasAutomapSubstitutions() != other.hasAutomapSubstitutions()) return false;
+    if (hasAutomapSubstitutions()) {
+      if (getAutomapSubstitutions() != other.getAutomapSubstitutions()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1371,6 +1419,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getScript().hashCode();
+    if (hasAutomapSubstitutions()) {
+      hash = (37 * hash) + AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomapSubstitutions());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1544,6 +1596,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       exitCode_ = 0;
       allowExitCodes_ = emptyIntList();
       script_ = "";
+      automapSubstitutions_ = false;
       return this;
     }
 
@@ -1646,6 +1699,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.script_ = script_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.automapSubstitutions_ = automapSubstitutions_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1813,6 +1872,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00010000;
         onChanged();
       }
+      if (other.hasAutomapSubstitutions()) {
+        setAutomapSubstitutions(other.getAutomapSubstitutions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1963,6 +2025,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 154
+            case 160:
+              {
+                automapSubstitutions_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4921,6 +4989,82 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       script_ = value;
       bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private boolean automapSubstitutions_;
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return Whether the automapSubstitutions field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutomapSubstitutions() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return The automapSubstitutions.
+     */
+    @java.lang.Override
+    public boolean getAutomapSubstitutions() {
+      return automapSubstitutions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @param value The automapSubstitutions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutomapSubstitutions(boolean value) {
+
+      automapSubstitutions_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutomapSubstitutions() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      automapSubstitutions_ = false;
       onChanged();
       return this;
     }

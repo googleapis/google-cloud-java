@@ -16,6 +16,8 @@
 
 package com.google.cloud.documentai.v1beta2;
 
+import static com.google.cloud.documentai.v1beta2.DocumentUnderstandingServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,9 +27,14 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.documentai.v1beta2.stub.DocumentUnderstandingServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -94,6 +101,17 @@ public class DocumentUnderstandingServiceSettings
   /** Returns the object with the settings used for calls to processDocument. */
   public UnaryCallSettings<ProcessDocumentRequest, Document> processDocumentSettings() {
     return ((DocumentUnderstandingServiceStubSettings) getStubSettings()).processDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((DocumentUnderstandingServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((DocumentUnderstandingServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final DocumentUnderstandingServiceSettings create(
@@ -210,6 +228,18 @@ public class DocumentUnderstandingServiceSettings
     /** Returns the builder for the settings used for calls to processDocument. */
     public UnaryCallSettings.Builder<ProcessDocumentRequest, Document> processDocumentSettings() {
       return getStubSettingsBuilder().processDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

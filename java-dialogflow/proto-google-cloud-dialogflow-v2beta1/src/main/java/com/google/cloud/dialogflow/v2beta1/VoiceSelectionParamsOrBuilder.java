@@ -35,7 +35,7 @@ public interface VoiceSelectionParamsOrBuilder
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -52,7 +52,7 @@ public interface VoiceSelectionParamsOrBuilder
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -70,7 +70,9 @@ public interface VoiceSelectionParamsOrBuilder
    * voice with a different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ssmlGender.
    */
@@ -87,7 +89,9 @@ public interface VoiceSelectionParamsOrBuilder
    * voice with a different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ssmlGender.
    */

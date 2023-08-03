@@ -41,6 +41,7 @@ import com.google.cloudbuild.v1.BuildStep;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.BuildTriggerName;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
+import com.google.cloudbuild.v1.GitRepoSource;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
@@ -565,6 +566,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -627,6 +629,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -781,6 +784,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -805,6 +809,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -854,6 +859,7 @@ public class CloudBuildClientHttpJsonTest {
               .addAllIgnoredFiles(new ArrayList<String>())
               .addAllIncludedFiles(new ArrayList<String>())
               .setFilter("filter-1274492040")
+              .setSourceToBuild(GitRepoSource.newBuilder().build())
               .setServiceAccount("serviceAccount1079137720")
               .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
               .build();

@@ -114,6 +114,16 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     return ((AddressesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to move. */
+  public UnaryCallSettings<MoveAddressRequest, Operation> moveSettings() {
+    return ((AddressesStubSettings) getStubSettings()).moveSettings();
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public OperationCallSettings<MoveAddressRequest, Operation, Operation> moveOperationSettings() {
+    return ((AddressesStubSettings) getStubSettings()).moveOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings() {
     return ((AddressesStubSettings) getStubSettings()).setLabelsSettings();
@@ -260,6 +270,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public UnaryCallSettings.Builder<MoveAddressRequest, Operation> moveSettings() {
+      return getStubSettingsBuilder().moveSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public OperationCallSettings.Builder<MoveAddressRequest, Operation, Operation>
+        moveOperationSettings() {
+      return getStubSettingsBuilder().moveOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */

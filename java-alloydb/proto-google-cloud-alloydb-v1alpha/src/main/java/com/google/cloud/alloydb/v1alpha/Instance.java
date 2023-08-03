@@ -6319,6 +6319,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : updatePolicy_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 24;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 24;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6399,6 +6417,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (updatePolicy_ != null) {
       output.writeMessage(22, getUpdatePolicy());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(24, satisfiesPzs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6501,6 +6522,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (updatePolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getUpdatePolicy());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6563,6 +6587,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdatePolicy()) {
       if (!getUpdatePolicy().equals(other.getUpdatePolicy())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6642,6 +6667,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatePolicy().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6870,6 +6897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updatePolicyBuilder_.dispose();
         updatePolicyBuilder_ = null;
       }
+      satisfiesPzs_ = false;
       return this;
     }
 
@@ -6991,6 +7019,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.updatePolicy_ =
             updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
     }
 
@@ -7137,6 +7168,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00100000;
       if (other.hasUpdatePolicy()) {
         mergeUpdatePolicy(other.getUpdatePolicy());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7322,6 +7356,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 178
+            case 192:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 192
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11066,6 +11106,59 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updatePolicy_ = null;
       }
       return updatePolicyBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

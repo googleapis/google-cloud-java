@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,10 +130,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this policy tag. It must: be unique within the parent
-   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-   * spaces; not start or end with spaces; and be at most 200 bytes long when
-   * encoded in UTF-8.
+   * Required. User defined name of this policy tag. It must: be unique within
+   * the parent taxonomy; contain only unicode letters, numbers, underscores,
+   * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+   * long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -156,10 +156,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this policy tag. It must: be unique within the parent
-   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-   * spaces; not start or end with spaces; and be at most 200 bytes long when
-   * encoded in UTF-8.
+   * Required. User defined name of this policy tag. It must: be unique within
+   * the parent taxonomy; contain only unicode letters, numbers, underscores,
+   * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+   * long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -935,10 +935,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -960,10 +960,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -985,10 +985,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1009,10 +1009,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1029,10 +1029,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

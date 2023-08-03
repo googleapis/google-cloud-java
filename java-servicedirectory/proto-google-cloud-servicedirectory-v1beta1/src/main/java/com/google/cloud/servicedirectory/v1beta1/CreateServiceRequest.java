@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.CreateService][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService].
+ * The request message for
+ * [RegistrationService.CreateService][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateServiceRequest}
@@ -424,7 +425,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [RegistrationService.CreateService][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService].
+   * The request message for
+   * [RegistrationService.CreateService][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateServiceRequest}

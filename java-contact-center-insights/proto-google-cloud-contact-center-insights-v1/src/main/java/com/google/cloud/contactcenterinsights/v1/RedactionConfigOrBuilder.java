@@ -58,7 +58,7 @@ public interface RedactionConfigOrBuilder
    * <pre>
    * The fully-qualified DLP inspect template resource name.
    * Format:
-   * `projects/{project}/inspectTemplates/{template}`
+   * `projects/{project}/locations/{location}/inspectTemplates/{template}`
    * </pre>
    *
    * <code>string inspect_template = 2;</code>
@@ -72,7 +72,7 @@ public interface RedactionConfigOrBuilder
    * <pre>
    * The fully-qualified DLP inspect template resource name.
    * Format:
-   * `projects/{project}/inspectTemplates/{template}`
+   * `projects/{project}/locations/{location}/inspectTemplates/{template}`
    * </pre>
    *
    * <code>string inspect_template = 2;</code>

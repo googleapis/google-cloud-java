@@ -51,6 +51,7 @@ import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1beta1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1beta1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse;
@@ -269,6 +270,18 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueMethodDescriptor =
+          MethodDescriptor.<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/RenameTagTemplateFieldEnumValue")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      RenameTagTemplateFieldEnumValueRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
       deleteTagTemplateFieldMethodDescriptor =
           MethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
@@ -369,6 +382,8 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
       updateTagTemplateFieldCallable;
   private final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable;
+  private final UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable;
   private final UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable;
   private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
   private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
@@ -606,6 +621,17 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueTransportSettings =
+            GrpcCallSettings.<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>newBuilder()
+                .setMethodDescriptor(renameTagTemplateFieldEnumValueMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
         GrpcCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
@@ -766,6 +792,11 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             renameTagTemplateFieldTransportSettings,
             settings.renameTagTemplateFieldSettings(),
             clientContext);
+    this.renameTagTemplateFieldEnumValueCallable =
+        callableFactory.createUnaryCallable(
+            renameTagTemplateFieldEnumValueTransportSettings,
+            settings.renameTagTemplateFieldEnumValueSettings(),
+            clientContext);
     this.deleteTagTemplateFieldCallable =
         callableFactory.createUnaryCallable(
             deleteTagTemplateFieldTransportSettings,
@@ -919,6 +950,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     return renameTagTemplateFieldCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable() {
+    return renameTagTemplateFieldEnumValueCallable;
   }
 
   @Override

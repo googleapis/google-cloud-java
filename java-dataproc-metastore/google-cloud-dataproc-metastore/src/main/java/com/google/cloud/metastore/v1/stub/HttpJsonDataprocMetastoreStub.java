@@ -42,6 +42,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationResponse;
 import com.google.cloud.metastore.v1.Backup;
 import com.google.cloud.metastore.v1.CreateBackupRequest;
 import com.google.cloud.metastore.v1.CreateMetadataImportRequest;
@@ -60,7 +62,11 @@ import com.google.cloud.metastore.v1.ListServicesRequest;
 import com.google.cloud.metastore.v1.ListServicesResponse;
 import com.google.cloud.metastore.v1.MetadataExport;
 import com.google.cloud.metastore.v1.MetadataImport;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseRequest;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseResponse;
 import com.google.cloud.metastore.v1.OperationMetadata;
+import com.google.cloud.metastore.v1.QueryMetadataRequest;
+import com.google.cloud.metastore.v1.QueryMetadataResponse;
 import com.google.cloud.metastore.v1.Restore;
 import com.google.cloud.metastore.v1.RestoreServiceRequest;
 import com.google.cloud.metastore.v1.Service;
@@ -95,8 +101,11 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(MoveTableToDatabaseResponse.getDescriptor())
           .add(MetadataImport.getDescriptor())
+          .add(QueryMetadataResponse.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(AlterMetadataResourceLocationResponse.getDescriptor())
           .add(Service.getDescriptor())
           .add(MetadataExport.getDescriptor())
           .add(Backup.getDescriptor())
@@ -688,6 +697,127 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<QueryMetadataRequest, Operation>
+      queryMetadataMethodDescriptor =
+          ApiMethodDescriptor.<QueryMetadataRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/QueryMetadata")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryMetadataRequest>newBuilder()
+                      .setPath(
+                          "/v1/{service=projects/*/locations/*/services/*}:queryMetadata",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "service", request.getService());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearService().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (QueryMetadataRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<MoveTableToDatabaseRequest, Operation>
+      moveTableToDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<MoveTableToDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/MoveTableToDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveTableToDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{service=projects/*/locations/*/services/*}:moveTableToDatabase",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveTableToDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "service", request.getService());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveTableToDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearService().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (MoveTableToDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationMethodDescriptor =
+          ApiMethodDescriptor.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.metastore.v1.DataprocMetastore/AlterMetadataResourceLocation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AlterMetadataResourceLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{service=projects/*/locations/*/services/*}:alterLocation",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AlterMetadataResourceLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "service", request.getService());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AlterMetadataResourceLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearService().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AlterMetadataResourceLocationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -912,6 +1042,20 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
   private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
   private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable;
+  private final UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable;
+  private final OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable;
+  private final UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable;
+  private final OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable;
+  private final UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable;
+  private final OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1163,6 +1307,41 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
+        HttpJsonCallSettings.<QueryMetadataRequest, Operation>newBuilder()
+            .setMethodDescriptor(queryMetadataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<MoveTableToDatabaseRequest, Operation>
+        moveTableToDatabaseTransportSettings =
+            HttpJsonCallSettings.<MoveTableToDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(moveTableToDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service", String.valueOf(request.getService()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationTransportSettings =
+            HttpJsonCallSettings.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+                .setMethodDescriptor(alterMetadataResourceLocationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service", String.valueOf(request.getService()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1339,6 +1518,37 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
             settings.deleteBackupOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.queryMetadataCallable =
+        callableFactory.createUnaryCallable(
+            queryMetadataTransportSettings, settings.queryMetadataSettings(), clientContext);
+    this.queryMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            queryMetadataTransportSettings,
+            settings.queryMetadataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.moveTableToDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseSettings(),
+            clientContext);
+    this.moveTableToDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.alterMetadataResourceLocationCallable =
+        callableFactory.createUnaryCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationSettings(),
+            clientContext);
+    this.alterMetadataResourceLocationOperationCallable =
+        callableFactory.createOperationCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1382,6 +1592,9 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
     methodDescriptors.add(getBackupMethodDescriptor);
     methodDescriptors.add(createBackupMethodDescriptor);
     methodDescriptors.add(deleteBackupMethodDescriptor);
+    methodDescriptors.add(queryMetadataMethodDescriptor);
+    methodDescriptors.add(moveTableToDatabaseMethodDescriptor);
+    methodDescriptors.add(alterMetadataResourceLocationMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1538,6 +1751,44 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
   public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable() {
     return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable() {
+    return queryMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable() {
+    return queryMetadataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable() {
+    return moveTableToDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable() {
+    return moveTableToDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable() {
+    return alterMetadataResourceLocationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable() {
+    return alterMetadataResourceLocationOperationCallable;
   }
 
   @Override

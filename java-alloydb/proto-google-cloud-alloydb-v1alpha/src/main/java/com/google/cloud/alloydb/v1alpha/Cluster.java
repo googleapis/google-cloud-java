@@ -3688,13 +3688,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for databaseVersion.
@@ -3707,13 +3708,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The databaseVersion.
@@ -4542,6 +4544,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : primaryConfig_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 30;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 30;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4635,6 +4655,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (networkConfig_ != null) {
       output.writeMessage(29, getNetworkConfig());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(30, satisfiesPzs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4748,6 +4771,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (networkConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4826,6 +4852,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasPrimaryConfig()) {
       if (!getPrimaryConfig().equals(other.getPrimaryConfig())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -4926,6 +4953,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRIMARY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrimaryConfig().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -5185,6 +5214,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_.dispose();
         primaryConfigBuilder_ = null;
       }
+      satisfiesPzs_ = false;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -5312,6 +5342,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x02000000) != 0)) {
         result.primaryConfig_ =
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
     }
 
@@ -5450,6 +5483,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPrimaryConfig()) {
         mergePrimaryConfig(other.getPrimaryConfig());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
@@ -5665,6 +5701,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 234
+            case 240:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7488,13 +7530,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for databaseVersion.
@@ -7507,13 +7550,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for databaseVersion to set.
@@ -7529,13 +7573,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The databaseVersion.
@@ -7552,13 +7597,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The databaseVersion to set.
@@ -7577,13 +7623,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -10143,6 +10190,59 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfig_ = null;
       }
       return primaryConfigBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

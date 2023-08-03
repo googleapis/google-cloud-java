@@ -155,6 +155,7 @@ public class GlobalForwardingRulesClientTest {
             .setIPProtocol("iPProtocol1348929727")
             .setAllPorts(true)
             .setAllowGlobalAccess(true)
+            .setAllowPscGlobalAccess(true)
             .setBackendService("backendService-1884714623")
             .setBaseForwardingRule("baseForwardingRule124102858")
             .setCreationTimestamp("creationTimestamp-370203401")

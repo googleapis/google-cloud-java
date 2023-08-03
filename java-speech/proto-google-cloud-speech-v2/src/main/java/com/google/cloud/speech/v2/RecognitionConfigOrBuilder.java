@@ -103,6 +103,138 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Which model to use for recognition requests. Select the model
+   * best suited to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which model to use for recognition requests. Select the model
+   * best suited to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  java.util.List<java.lang.String> getLanguageCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  int getLanguageCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  java.lang.String getLanguageCodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language of the supplied audio as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * Language tags are normalized to BCP-47 before they are used eg "en-us"
+   * becomes "en-US".
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
+   * If additional languages are provided, recognition result will contain
+   * recognition in the most likely language detected. The recognition result
+   * will include the language tag of the language detected in the audio.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  com.google.protobuf.ByteString getLanguageCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Speech recognition features to enable.
    * </pre>
    *

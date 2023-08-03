@@ -176,7 +176,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -188,7 +188,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -200,7 +200,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -213,7 +213,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>

@@ -42,6 +42,7 @@ public class AsyncSearchCatalog {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setAdminSearch(true)
               .build();
       ApiFuture<SearchCatalogResult> future =
           dataCatalogClient.searchCatalogPagedCallable().futureCall(request);

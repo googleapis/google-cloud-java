@@ -1,5 +1,31 @@
 # Changelog
 
+## 3.24.0 (2023-07-21)
+
+### Features
+
+* add git_file_source and git_repo_source to build_trigger ([#9673](https://github.com/googleapis/google-cloud-java/issues/9673)) ([6f96d9c](https://github.com/googleapis/google-cloud-java/commit/6f96d9c155fac34deecef125490430a7bc73fbe1))
+* Add routing information in Cloud Build GRPC clients ([#9635](https://github.com/googleapis/google-cloud-java/issues/9635)) ([88ad198](https://github.com/googleapis/google-cloud-java/commit/88ad19815908dc995e4467f14fddc0f5c5dbeec5))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.7 ([#9651](https://github.com/googleapis/google-cloud-java/issues/9651)) ([c88d623](https://github.com/googleapis/google-cloud-java/commit/c88d623d12a4342b74e31d6a6a05cde0debe871f))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#9655](https://github.com/googleapis/google-cloud-java/issues/9655)) ([affebee](https://github.com/googleapis/google-cloud-java/commit/affebeeb37b1cf88ad5964684e1f112cababcab7))
+
+
+## 3.23.0 (2023-07-11)
+
+### Features
+
+* Add GitLabConfig and fetchGitRefs for Cloud Build Repositories ([#9588](https://github.com/googleapis/google-cloud-java/issues/9588)) ([fb44667](https://github.com/googleapis/google-cloud-java/commit/fb44667ed5f259e69453310050d1c091f73d805a))
+* add repositoryevent to buildtrigger ([fb44667](https://github.com/googleapis/google-cloud-java/commit/fb44667ed5f259e69453310050d1c091f73d805a))
+* added e2-medium machine type ([#9620](https://github.com/googleapis/google-cloud-java/issues/9620)) ([9c52160](https://github.com/googleapis/google-cloud-java/commit/9c52160d40a182f2b09641e66f11eee8b441a66d))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
 ## 3.22.0 (2023-06-23)
 
 ### Dependencies

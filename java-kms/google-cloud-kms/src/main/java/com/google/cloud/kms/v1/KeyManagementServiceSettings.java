@@ -211,6 +211,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).decryptSettings();
   }
 
+  /** Returns the object with the settings used for calls to rawEncrypt. */
+  public UnaryCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).rawEncryptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rawDecrypt. */
+  public UnaryCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).rawDecryptSettings();
+  }
+
   /** Returns the object with the settings used for calls to asymmetricSign. */
   public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricSignSettings();
@@ -501,6 +511,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     /** Returns the builder for the settings used for calls to decrypt. */
     public UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings() {
       return getStubSettingsBuilder().decryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rawEncrypt. */
+    public UnaryCallSettings.Builder<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+      return getStubSettingsBuilder().rawEncryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rawDecrypt. */
+    public UnaryCallSettings.Builder<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+      return getStubSettingsBuilder().rawDecryptSettings();
     }
 
     /** Returns the builder for the settings used for calls to asymmetricSign. */

@@ -459,6 +459,28 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
   }
 
   @Override
+  public void renameTagTemplateFieldEnumValue(
+      RenameTagTemplateFieldEnumValueRequest request,
+      StreamObserver<TagTemplateField> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TagTemplateField) {
+      requests.add(request);
+      responseObserver.onNext(((TagTemplateField) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameTagTemplateFieldEnumValue, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TagTemplateField.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteTagTemplateField(
       DeleteTagTemplateFieldRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

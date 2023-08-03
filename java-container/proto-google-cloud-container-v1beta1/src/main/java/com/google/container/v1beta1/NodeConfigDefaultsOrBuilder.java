@@ -92,4 +92,42 @@ public interface NodeConfigDefaultsOrBuilder
    * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
    */
   com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   *
+   * @return Whether the hostMaintenancePolicy field is set.
+   */
+  boolean hasHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   *
+   * @return The hostMaintenancePolicy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy getHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicyOrBuilder getHostMaintenancePolicyOrBuilder();
 }

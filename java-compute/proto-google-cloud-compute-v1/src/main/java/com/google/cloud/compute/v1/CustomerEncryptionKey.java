@@ -74,7 +74,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
    * </pre>
    *
    * <code>optional string kms_key_name = 484373913;</code>
@@ -89,7 +89,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
    * </pre>
    *
    * <code>optional string kms_key_name = 484373913;</code>
@@ -112,7 +112,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
    * </pre>
    *
    * <code>optional string kms_key_name = 484373913;</code>
@@ -872,7 +872,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>
@@ -886,7 +886,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>
@@ -908,7 +908,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>
@@ -930,7 +930,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>
@@ -951,7 +951,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>
@@ -968,7 +968,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
      * </pre>
      *
      * <code>optional string kms_key_name = 484373913;</code>

@@ -42,6 +42,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     fileName_ = "";
     container_ = "";
     elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    encryptionId_ = "";
   }
 
   @java.lang.Override
@@ -365,6 +366,59 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         : segmentSettings_;
   }
 
+  public static final int ENCRYPTION_ID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryptionId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The encryptionId.
+   */
+  @java.lang.Override
+  public java.lang.String getEncryptionId() {
+    java.lang.Object ref = encryptionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      encryptionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The bytes for encryptionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEncryptionIdBytes() {
+    java.lang.Object ref = encryptionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      encryptionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -393,6 +447,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
     if (segmentSettings_ != null) {
       output.writeMessage(5, getSegmentSettings());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encryptionId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -423,6 +480,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     if (segmentSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSegmentSettings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encryptionId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -447,6 +507,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     if (hasSegmentSettings()) {
       if (!getSegmentSettings().equals(other.getSegmentSettings())) return false;
     }
+    if (!getEncryptionId().equals(other.getEncryptionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -472,6 +533,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SEGMENT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSegmentSettings().hashCode();
     }
+    hash = (37 * hash) + ENCRYPTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEncryptionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -620,6 +683,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         segmentSettingsBuilder_.dispose();
         segmentSettingsBuilder_ = null;
       }
+      encryptionId_ = "";
       return this;
     }
 
@@ -672,6 +736,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.segmentSettings_ =
             segmentSettingsBuilder_ == null ? segmentSettings_ : segmentSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.encryptionId_ = encryptionId_;
       }
     }
 
@@ -748,6 +815,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSegmentSettings()) {
         mergeSegmentSettings(other.getSegmentSettings());
       }
+      if (!other.getEncryptionId().isEmpty()) {
+        encryptionId_ = other.encryptionId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -805,6 +877,12 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 58:
+              {
+                encryptionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1582,6 +1660,117 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         segmentSettings_ = null;
       }
       return segmentSettingsBuilder_;
+    }
+
+    private java.lang.Object encryptionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return The encryptionId.
+     */
+    public java.lang.String getEncryptionId() {
+      java.lang.Object ref = encryptionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        encryptionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return The bytes for encryptionId.
+     */
+    public com.google.protobuf.ByteString getEncryptionIdBytes() {
+      java.lang.Object ref = encryptionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        encryptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @param value The encryptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      encryptionId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEncryptionId() {
+      encryptionId_ = getDefaultInstance().getEncryptionId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @param value The bytes for encryptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      encryptionId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

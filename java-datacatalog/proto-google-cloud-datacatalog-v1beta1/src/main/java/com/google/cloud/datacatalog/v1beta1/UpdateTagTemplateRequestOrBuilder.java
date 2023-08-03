@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,12 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
    *
-   * Allowed fields:
-   *
-   *   * `display_name`
-   *
-   * If absent or empty, all of the allowed fields above will be updated.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -86,13 +85,12 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
    *
-   * Allowed fields:
-   *
-   *   * `display_name`
-   *
-   * If absent or empty, all of the allowed fields above will be updated.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -104,13 +102,12 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
    *
-   * Allowed fields:
-   *
-   *   * `display_name`
-   *
-   * If absent or empty, all of the allowed fields above will be updated.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

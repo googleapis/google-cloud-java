@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -64,7 +64,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>

@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDatasetSchema to 30 seconds:
+ * <p>For example, to set the total timeout of getDocument to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -67,10 +67,10 @@ import javax.annotation.Generated;
  * DocumentServiceSettings.Builder documentServiceSettingsBuilder =
  *     DocumentServiceSettings.newBuilder();
  * documentServiceSettingsBuilder
- *     .getDatasetSchemaSettings()
+ *     .getDocumentSettings()
  *     .setRetrySettings(
  *         documentServiceSettingsBuilder
- *             .getDatasetSchemaSettings()
+ *             .getDocumentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -91,6 +91,36 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
   public OperationCallSettings<UpdateDatasetRequest, Dataset, UpdateDatasetOperationMetadata>
       updateDatasetOperationSettings() {
     return ((DocumentServiceStubSettings) getStubSettings()).updateDatasetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public UnaryCallSettings<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).importDocumentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public OperationCallSettings<
+          ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsOperationSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).importDocumentsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDocument. */
+  public UnaryCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).getDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteDocuments. */
+  public UnaryCallSettings<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).batchDeleteDocumentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteDocuments. */
+  public OperationCallSettings<
+          BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsOperationSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings())
+        .batchDeleteDocumentsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getDatasetSchema. */
@@ -240,6 +270,37 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
             UpdateDatasetRequest, Dataset, UpdateDatasetOperationMetadata>
         updateDatasetOperationSettings() {
       return getStubSettingsBuilder().updateDatasetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    public UnaryCallSettings.Builder<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+      return getStubSettingsBuilder().importDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    public OperationCallSettings.Builder<
+            ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+        importDocumentsOperationSettings() {
+      return getStubSettingsBuilder().importDocumentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDocument. */
+    public UnaryCallSettings.Builder<GetDocumentRequest, GetDocumentResponse>
+        getDocumentSettings() {
+      return getStubSettingsBuilder().getDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteDocuments. */
+    public UnaryCallSettings.Builder<BatchDeleteDocumentsRequest, Operation>
+        batchDeleteDocumentsSettings() {
+      return getStubSettingsBuilder().batchDeleteDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteDocuments. */
+    public OperationCallSettings.Builder<
+            BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+        batchDeleteDocumentsOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteDocumentsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getDatasetSchema. */

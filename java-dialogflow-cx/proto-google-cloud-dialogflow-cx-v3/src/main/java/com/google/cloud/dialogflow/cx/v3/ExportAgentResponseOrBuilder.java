@@ -70,7 +70,9 @@ public interface ExportAgentResponseOrBuilder
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -82,7 +84,9 @@ public interface ExportAgentResponseOrBuilder
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -90,6 +94,49 @@ public interface ExportAgentResponseOrBuilder
    * @return The agentContent.
    */
   com.google.protobuf.ByteString getAgentContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return Whether the commitSha field is set.
+   */
+  boolean hasCommitSha();
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The commitSha.
+   */
+  java.lang.String getCommitSha();
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The bytes for commitSha.
+   */
+  com.google.protobuf.ByteString getCommitShaBytes();
 
   com.google.cloud.dialogflow.cx.v3.ExportAgentResponse.AgentCase getAgentCase();
 }

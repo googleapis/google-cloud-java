@@ -26,17 +26,22 @@ package com.google.cloud.speech.v2;
  * [StreamingRecognize][google.cloud.speech.v2.Speech.StreamingRecognize]
  * method. Multiple
  * [StreamingRecognizeRequest][google.cloud.speech.v2.StreamingRecognizeRequest]
- * messages are sent. The first message must contain a
+ * messages are sent in one call.
+ *
+ * If the [Recognizer][google.cloud.speech.v2.Recognizer] referenced by
+ * [recognizer][google.cloud.speech.v2.StreamingRecognizeRequest.recognizer]
+ * contains a fully specified request configuration then the stream may only
+ * contain messages with only
+ * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] set.
+ *
+ * Otherwise the first message must contain a
  * [recognizer][google.cloud.speech.v2.StreamingRecognizeRequest.recognizer] and
- * optionally a
+ * a
  * [streaming_config][google.cloud.speech.v2.StreamingRecognizeRequest.streaming_config]
- * message and must not contain
- * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio]. All
- * subsequent messages must contain
- * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] and must not
- * contain a
- * [streaming_config][google.cloud.speech.v2.StreamingRecognizeRequest.streaming_config]
- * message.
+ * message that together fully specify the request configuration and must not
+ * contain [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio]. All
+ * subsequent messages must only have
+ * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] set.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v2.StreamingRecognizeRequest}
@@ -133,12 +138,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Streaming recognition should start with an initial request having
-   * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-   *
-   * The initial request with configuration can be omitted if the Recognizer
-   * being used has a
-   * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -163,12 +166,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Streaming recognition should start with an initial request having
-   * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-   *
-   * The initial request with configuration can be omitted if the Recognizer
-   * being used has a
-   * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -492,17 +493,22 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * [StreamingRecognize][google.cloud.speech.v2.Speech.StreamingRecognize]
    * method. Multiple
    * [StreamingRecognizeRequest][google.cloud.speech.v2.StreamingRecognizeRequest]
-   * messages are sent. The first message must contain a
+   * messages are sent in one call.
+   *
+   * If the [Recognizer][google.cloud.speech.v2.Recognizer] referenced by
+   * [recognizer][google.cloud.speech.v2.StreamingRecognizeRequest.recognizer]
+   * contains a fully specified request configuration then the stream may only
+   * contain messages with only
+   * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] set.
+   *
+   * Otherwise the first message must contain a
    * [recognizer][google.cloud.speech.v2.StreamingRecognizeRequest.recognizer] and
-   * optionally a
+   * a
    * [streaming_config][google.cloud.speech.v2.StreamingRecognizeRequest.streaming_config]
-   * message and must not contain
-   * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio]. All
-   * subsequent messages must contain
-   * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] and must not
-   * contain a
-   * [streaming_config][google.cloud.speech.v2.StreamingRecognizeRequest.streaming_config]
-   * message.
+   * message that together fully specify the request configuration and must not
+   * contain [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio]. All
+   * subsequent messages must only have
+   * [audio][google.cloud.speech.v2.StreamingRecognizeRequest.audio] set.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v2.StreamingRecognizeRequest}
@@ -742,12 +748,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Streaming recognition should start with an initial request having
-     * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-     *
-     * The initial request with configuration can be omitted if the Recognizer
-     * being used has a
-     * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+     * Required. The name of the Recognizer to use during recognition. The
+     * expected format is
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -771,12 +775,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Streaming recognition should start with an initial request having
-     * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-     *
-     * The initial request with configuration can be omitted if the Recognizer
-     * being used has a
-     * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+     * Required. The name of the Recognizer to use during recognition. The
+     * expected format is
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -800,12 +802,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Streaming recognition should start with an initial request having
-     * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-     *
-     * The initial request with configuration can be omitted if the Recognizer
-     * being used has a
-     * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+     * Required. The name of the Recognizer to use during recognition. The
+     * expected format is
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -828,12 +828,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Streaming recognition should start with an initial request having
-     * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-     *
-     * The initial request with configuration can be omitted if the Recognizer
-     * being used has a
-     * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+     * Required. The name of the Recognizer to use during recognition. The
+     * expected format is
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -852,12 +850,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Streaming recognition should start with an initial request having
-     * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-     *
-     * The initial request with configuration can be omitted if the Recognizer
-     * being used has a
-     * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+     * Required. The name of the Recognizer to use during recognition. The
+     * expected format is
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>

@@ -528,6 +528,46 @@ public interface AttachedDiskOrBuilder
    *
    *
    * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return Whether the savedState field is set.
+   */
+  boolean hasSavedState();
+  /**
+   *
+   *
+   * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return The savedState.
+   */
+  java.lang.String getSavedState();
+  /**
+   *
+   *
+   * <pre>
+   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this field is set to PRESERVED if the LocalSSD data has been saved to a persistent location by customer request. (see the discard_local_ssd option on Stop/Suspend). Read-only in the api.
+   * Check the SavedState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string saved_state = 411587801;</code>
+   *
+   * @return The bytes for savedState.
+   */
+  com.google.protobuf.ByteString getSavedStateBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] shielded vm initial state stored on disk
    * </pre>
    *

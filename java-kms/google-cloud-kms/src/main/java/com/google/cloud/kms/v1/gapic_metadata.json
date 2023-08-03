@@ -130,6 +130,12 @@
             "MacVerify": {
               "methods": ["macVerify", "macVerify", "macVerify", "macVerifyCallable"]
             },
+            "RawDecrypt": {
+              "methods": ["rawDecrypt", "rawDecryptCallable"]
+            },
+            "RawEncrypt": {
+              "methods": ["rawEncrypt", "rawEncryptCallable"]
+            },
             "RestoreCryptoKeyVersion": {
               "methods": ["restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersionCallable"]
             },

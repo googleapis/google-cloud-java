@@ -11,10 +11,10 @@
           "libraryClient": "ConsumerProcurementServiceClient",
           "rpcs": {
             "GetOrder": {
-              "methods": ["getOrder", "getOrderCallable"]
+              "methods": ["getOrder", "getOrder", "getOrderCallable"]
             },
             "ListOrders": {
-              "methods": ["listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
+              "methods": ["listOrders", "listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
             },
             "PlaceOrder": {
               "methods": ["placeOrderAsync", "placeOrderOperationCallable", "placeOrderCallable"]

@@ -504,7 +504,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -519,7 +519,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -542,7 +542,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -735,7 +735,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -750,7 +750,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -773,7 +773,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -2801,7 +2801,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2815,7 +2815,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2837,7 +2837,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2859,7 +2859,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2880,7 +2880,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2897,7 +2897,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3229,7 +3229,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3243,7 +3243,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3265,7 +3265,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3287,7 +3287,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3308,7 +3308,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3325,7 +3325,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>

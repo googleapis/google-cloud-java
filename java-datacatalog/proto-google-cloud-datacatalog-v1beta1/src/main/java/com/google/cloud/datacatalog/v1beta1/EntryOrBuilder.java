@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
+   * Output only. The Data Catalog resource name of the entry in URL format.
+   * Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *
@@ -35,7 +36,9 @@ public interface EntryOrBuilder
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +47,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
+   * Output only. The Data Catalog resource name of the entry in URL format.
+   * Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *
@@ -52,7 +56,9 @@ public interface EntryOrBuilder
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -213,8 +219,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -228,8 +234,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -243,8 +249,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -523,10 +529,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -540,10 +546,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -557,10 +563,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -569,6 +575,47 @@ public interface EntryOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
       getSourceSystemTimestampsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the usageSignal field is set.
+   */
+  boolean hasUsageSignal();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The usageSignal.
+   */
+  com.google.cloud.datacatalog.v1beta1.UsageSignal getUsageSignal();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder getUsageSignalOrBuilder();
 
   com.google.cloud.datacatalog.v1beta1.Entry.EntryTypeCase getEntryTypeCase();
 

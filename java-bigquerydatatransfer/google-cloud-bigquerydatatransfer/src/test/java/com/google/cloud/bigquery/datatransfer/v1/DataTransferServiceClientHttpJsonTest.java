@@ -391,6 +391,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -454,6 +455,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -517,6 +519,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -581,13 +584,15 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
     TransferConfig transferConfig =
         TransferConfig.newBuilder()
             .setName(
-                TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                TransferConfigName.ofProjectLocationTransferConfigName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDataSourceId("dataSourceId-1221402528")
@@ -604,6 +609,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -636,7 +642,8 @@ public class DataTransferServiceClientHttpJsonTest {
       TransferConfig transferConfig =
           TransferConfig.newBuilder()
               .setName(
-                  TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                  TransferConfigName.ofProjectLocationTransferConfigName(
+                          "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                       .toString())
               .setDisplayName("displayName1714148973")
               .setDataSourceId("dataSourceId-1221402528")
@@ -653,6 +660,7 @@ public class DataTransferServiceClientHttpJsonTest {
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
               .setEmailPreferences(EmailPreferences.newBuilder().build())
               .setOwnerInfo(UserInfo.newBuilder().build())
+              .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTransferConfig(transferConfig, updateMask);
@@ -771,6 +779,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -837,6 +846,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

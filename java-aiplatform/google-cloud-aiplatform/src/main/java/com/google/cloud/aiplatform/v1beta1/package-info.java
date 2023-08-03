@@ -21,8 +21,7 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
- * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * <p>Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>Sample for DatasetServiceClient:
  *
@@ -269,6 +268,26 @@
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
  *   Model response = modelServiceClient.getModel(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PersistentResourceServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's machine learning PersistentResource.
+ *
+ * <p>Sample for PersistentResourceServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PersistentResourceServiceClient persistentResourceServiceClient =
+ *     PersistentResourceServiceClient.create()) {
+ *   PersistentResourceName name =
+ *       PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]");
+ *   PersistentResource response = persistentResourceServiceClient.getPersistentResource(name);
  * }
  * }</pre>
  *

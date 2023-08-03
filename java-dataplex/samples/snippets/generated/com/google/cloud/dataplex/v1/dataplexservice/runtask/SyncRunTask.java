@@ -21,6 +21,7 @@ import com.google.cloud.dataplex.v1.DataplexServiceClient;
 import com.google.cloud.dataplex.v1.RunTaskRequest;
 import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.TaskName;
+import java.util.HashMap;
 
 public class SyncRunTask {
 
@@ -38,6 +39,8 @@ public class SyncRunTask {
       RunTaskRequest request =
           RunTaskRequest.newBuilder()
               .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString())
+              .putAllLabels(new HashMap<String, String>())
+              .putAllArgs(new HashMap<String, String>())
               .build();
       RunTaskResponse response = dataplexServiceClient.runTask(request);
     }

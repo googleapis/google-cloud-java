@@ -3788,9 +3788,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3822,9 +3822,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3854,9 +3854,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3874,6 +3874,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setPemCsr("pemCsr-991911478")
    *           .setCertDuration(Duration.newBuilder().build())
    *           .setPublicKey("publicKey1446899510")
+   *           .setUseMetadataExchange(true)
    *           .build();
    *   GenerateClientCertificateResponse response =
    *       alloyDBAdminClient.generateClientCertificate(request);
@@ -3891,9 +3892,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3911,6 +3912,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setPemCsr("pemCsr-991911478")
    *           .setCertDuration(Duration.newBuilder().build())
    *           .setPublicKey("publicKey1446899510")
+   *           .setUseMetadataExchange(true)
    *           .build();
    *   ApiFuture<GenerateClientCertificateResponse> future =
    *       alloyDBAdminClient.generateClientCertificateCallable().futureCall(request);

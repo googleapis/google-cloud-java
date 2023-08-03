@@ -89,8 +89,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [Required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * Cloud Deploy has insufficient permissions. See [Required
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -132,8 +132,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
@@ -157,8 +157,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [Required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * Cloud Deploy has insufficient permissions. See [Required
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -200,8 +200,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>

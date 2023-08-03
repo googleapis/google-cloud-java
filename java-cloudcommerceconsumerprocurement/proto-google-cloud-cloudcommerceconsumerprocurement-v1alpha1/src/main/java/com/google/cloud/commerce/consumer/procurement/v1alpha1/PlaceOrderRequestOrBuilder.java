@@ -59,7 +59,6 @@ public interface PlaceOrderRequestOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,7 +71,6 @@ public interface PlaceOrderRequestOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,7 +83,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -98,7 +97,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -110,7 +110,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -122,7 +123,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -136,7 +138,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>

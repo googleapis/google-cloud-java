@@ -816,7 +816,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Automatically iterates all participants and tries to compile
      * suggestions.
      *
-     * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>bool enable_event_based_suggestion = 3;</code>
@@ -1111,7 +1112,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Automatically iterates all participants and tries to compile
      * suggestions.
      *
-     * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2148,7 +2150,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Automatically iterates all participants and tries to compile
        * suggestions.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2166,7 +2169,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Automatically iterates all participants and tries to compile
        * suggestions.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2188,7 +2192,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Automatically iterates all participants and tries to compile
        * suggestions.
        *
-       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -4635,7 +4640,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -4649,7 +4655,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -4665,7 +4672,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -6755,7 +6763,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * <pre>
      * Dialogflow source setting.
      *
-     * Supported feature: DIALOGFLOW_ASSIST.
+     * Supported feature: DIALOGFLOW_ASSIST, ENTITY_EXTRACTION.
      * </pre>
      *
      * Protobuf type {@code
@@ -7892,7 +7900,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * <pre>
        * Dialogflow source setting.
        *
-       * Supported feature: DIALOGFLOW_ASSIST.
+       * Supported feature: DIALOGFLOW_ASSIST, ENTITY_EXTRACTION.
        * </pre>
        *
        * Protobuf type {@code
@@ -9590,7 +9598,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -9607,7 +9616,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -9632,7 +9642,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+     * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+     * ENTITY_EXTRACTION.
      * </pre>
      *
      * <code>
@@ -10942,7 +10953,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -10959,7 +10971,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -10992,7 +11005,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11019,7 +11033,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11043,7 +11058,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11085,7 +11101,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11112,7 +11129,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11128,7 +11146,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>
@@ -11155,7 +11174,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
+       * Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST,
+       * ENTITY_EXTRACTION.
        * </pre>
        *
        * <code>

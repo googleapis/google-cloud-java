@@ -784,4 +784,33 @@ public interface BuildStepOrBuilder
    * @return The bytes for script.
    */
   com.google.protobuf.ByteString getScriptBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return Whether the automapSubstitutions field is set.
+   */
+  boolean hasAutomapSubstitutions();
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  boolean getAutomapSubstitutions();
 }

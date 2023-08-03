@@ -201,6 +201,50 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return Whether the httpRequest field is set.
+   */
+  boolean hasHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return The httpRequest.
+   */
+  com.google.cloud.tasks.v2beta2.HttpRequest getHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   */
+  com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder getHttpRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time when the task is scheduled to be attempted.
    *
    * For App Engine queues, this is when the task will be attempted or retried.

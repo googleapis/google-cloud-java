@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStubSettings;
@@ -92,6 +93,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to rawPredict. */
   public UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to serverStreamingPredict. */
+  public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).serverStreamingPredictSettings();
   }
 
   /** Returns the object with the settings used for calls to explain. */
@@ -231,6 +238,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to rawPredict. */
     public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
       return getStubSettingsBuilder().rawPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to serverStreamingPredict. */
+    public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings() {
+      return getStubSettingsBuilder().serverStreamingPredictSettings();
     }
 
     /** Returns the builder for the settings used for calls to explain. */

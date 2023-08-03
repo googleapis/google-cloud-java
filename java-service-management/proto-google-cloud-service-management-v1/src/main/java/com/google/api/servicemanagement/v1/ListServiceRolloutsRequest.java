@@ -73,8 +73,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the service.  See the
-   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-   * example: `example.googleapis.com`.
+   * [overview](https://cloud.google.com/service-management/overview) for naming
+   * requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,8 +98,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the service.  See the
-   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-   * example: `example.googleapis.com`.
+   * [overview](https://cloud.google.com/service-management/overview) for naming
+   * requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -199,12 +199,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. Use `filter` to return subset of rollouts.
    * The following filters are supported:
-   *   -- To limit the results to only those in
-   *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-   *      use filter='status=SUCCESS'
-   *   -- To limit the results to those in
-   *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-   *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+   *
+   *  -- By [status]
+   *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+   *  `filter='status=SUCCESS'`
+   *
+   *  -- By [strategy]
+   *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+   *  `filter='strategy=TrafficPercentStrategy'`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -229,12 +231,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. Use `filter` to return subset of rollouts.
    * The following filters are supported:
-   *   -- To limit the results to only those in
-   *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-   *      use filter='status=SUCCESS'
-   *   -- To limit the results to those in
-   *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-   *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+   *
+   *  -- By [status]
+   *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+   *  `filter='status=SUCCESS'`
+   *
+   *  -- By [strategy]
+   *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+   *  `filter='strategy=TrafficPercentStrategy'`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -676,8 +680,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -700,8 +704,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -724,8 +728,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,8 +751,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -766,8 +770,8 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -955,12 +959,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
-     *   -- To limit the results to only those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-     *      use filter='status=SUCCESS'
-     *   -- To limit the results to those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-     *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+     *
+     *  -- By [status]
+     *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+     *  `filter='status=SUCCESS'`
+     *
+     *  -- By [strategy]
+     *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+     *  `filter='strategy=TrafficPercentStrategy'`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -984,12 +990,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
-     *   -- To limit the results to only those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-     *      use filter='status=SUCCESS'
-     *   -- To limit the results to those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-     *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+     *
+     *  -- By [status]
+     *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+     *  `filter='status=SUCCESS'`
+     *
+     *  -- By [strategy]
+     *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+     *  `filter='strategy=TrafficPercentStrategy'`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1013,12 +1021,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
-     *   -- To limit the results to only those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-     *      use filter='status=SUCCESS'
-     *   -- To limit the results to those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-     *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+     *
+     *  -- By [status]
+     *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+     *  `filter='status=SUCCESS'`
+     *
+     *  -- By [strategy]
+     *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+     *  `filter='strategy=TrafficPercentStrategy'`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1041,12 +1051,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
-     *   -- To limit the results to only those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-     *      use filter='status=SUCCESS'
-     *   -- To limit the results to those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-     *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+     *
+     *  -- By [status]
+     *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+     *  `filter='status=SUCCESS'`
+     *
+     *  -- By [strategy]
+     *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+     *  `filter='strategy=TrafficPercentStrategy'`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1065,12 +1077,14 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
-     *   -- To limit the results to only those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
-     *      use filter='status=SUCCESS'
-     *   -- To limit the results to those in
-     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
-     *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+     *
+     *  -- By [status]
+     *  [google.api.servicemanagement.v1.Rollout.RolloutStatus]. For example,
+     *  `filter='status=SUCCESS'`
+     *
+     *  -- By [strategy]
+     *  [google.api.servicemanagement.v1.Rollout.strategy]. For example,
+     *  `filter='strategy=TrafficPercentStrategy'`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = REQUIRED];</code>

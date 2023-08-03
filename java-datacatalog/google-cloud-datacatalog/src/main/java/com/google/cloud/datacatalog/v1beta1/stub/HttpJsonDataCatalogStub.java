@@ -56,6 +56,7 @@ import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1beta1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1beta1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse;
@@ -768,6 +769,43 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueMethodDescriptor =
+          ApiMethodDescriptor.<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/RenameTagTemplateFieldEnumValue")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RenameTagTemplateFieldEnumValueRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/tagTemplates/*/fields/*/enumValues/*}:rename",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RenameTagTemplateFieldEnumValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RenameTagTemplateFieldEnumValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TagTemplateField>newBuilder()
+                      .setDefaultInstance(TagTemplateField.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
       deleteTagTemplateFieldMethodDescriptor =
           ApiMethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
@@ -1090,6 +1128,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
       updateTagTemplateFieldCallable;
   private final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable;
+  private final UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable;
   private final UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable;
   private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
   private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
@@ -1347,6 +1387,19 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueTransportSettings =
+            HttpJsonCallSettings
+                .<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>newBuilder()
+                .setMethodDescriptor(renameTagTemplateFieldEnumValueMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldTransportSettings =
             HttpJsonCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
@@ -1516,6 +1569,11 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
             renameTagTemplateFieldTransportSettings,
             settings.renameTagTemplateFieldSettings(),
             clientContext);
+    this.renameTagTemplateFieldEnumValueCallable =
+        callableFactory.createUnaryCallable(
+            renameTagTemplateFieldEnumValueTransportSettings,
+            settings.renameTagTemplateFieldEnumValueSettings(),
+            clientContext);
     this.deleteTagTemplateFieldCallable =
         callableFactory.createUnaryCallable(
             deleteTagTemplateFieldTransportSettings,
@@ -1574,6 +1632,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
     methodDescriptors.add(createTagTemplateFieldMethodDescriptor);
     methodDescriptors.add(updateTagTemplateFieldMethodDescriptor);
     methodDescriptors.add(renameTagTemplateFieldMethodDescriptor);
+    methodDescriptors.add(renameTagTemplateFieldEnumValueMethodDescriptor);
     methodDescriptors.add(deleteTagTemplateFieldMethodDescriptor);
     methodDescriptors.add(createTagMethodDescriptor);
     methodDescriptors.add(updateTagMethodDescriptor);
@@ -1698,6 +1757,12 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     return renameTagTemplateFieldCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable() {
+    return renameTagTemplateFieldEnumValueCallable;
   }
 
   @Override

@@ -268,6 +268,39 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int HTTP_KEEP_ALIVE_TIMEOUT_SEC_FIELD_NUMBER = 447326046;
+  private int httpKeepAliveTimeoutSec_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+   * </pre>
+   *
+   * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+   *
+   * @return Whether the httpKeepAliveTimeoutSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpKeepAliveTimeoutSec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+   * </pre>
+   *
+   * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+   *
+   * @return The httpKeepAliveTimeoutSec.
+   */
+  @java.lang.Override
+  public int getHttpKeepAliveTimeoutSec() {
+    return httpKeepAliveTimeoutSec_;
+  }
+
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
   /**
@@ -283,7 +316,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -318,7 +351,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -384,7 +417,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -448,7 +481,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasProxyBind() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -483,7 +516,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -549,7 +582,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -615,7 +648,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasUrlMap() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -678,34 +711,37 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(447326046, httpKeepAliveTimeoutSec_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     getUnknownFields().writeTo(output);
@@ -717,35 +753,40 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              447326046, httpKeepAliveTimeoutSec_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -775,6 +816,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
       if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasHttpKeepAliveTimeoutSec() != other.hasHttpKeepAliveTimeoutSec()) return false;
+    if (hasHttpKeepAliveTimeoutSec()) {
+      if (getHttpKeepAliveTimeoutSec() != other.getHttpKeepAliveTimeoutSec()) return false;
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
@@ -826,6 +871,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasHttpKeepAliveTimeoutSec()) {
+      hash = (37 * hash) + HTTP_KEEP_ALIVE_TIMEOUT_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpKeepAliveTimeoutSec();
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -997,6 +1046,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       creationTimestamp_ = "";
       description_ = "";
       fingerprint_ = "";
+      httpKeepAliveTimeoutSec_ = 0;
       id_ = 0L;
       kind_ = "";
       name_ = "";
@@ -1054,32 +1104,36 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
+        result.httpKeepAliveTimeoutSec_ = httpKeepAliveTimeoutSec_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.kind_ = kind_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.proxyBind_ = proxyBind_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.region_ = region_;
+        result.proxyBind_ = proxyBind_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.urlMap_ = urlMap_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.urlMap_ = urlMap_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1144,17 +1198,20 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasHttpKeepAliveTimeoutSec()) {
+        setHttpKeepAliveTimeoutSec(other.getHttpKeepAliveTimeoutSec());
+      }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasProxyBind()) {
@@ -1162,17 +1219,17 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasUrlMap()) {
         urlMap_ = other.urlMap_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1204,19 +1261,19 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26989658
             case 244202930:
@@ -1228,7 +1285,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1111570338
             case 1877428002:
@@ -1240,13 +1297,13 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
             case -2006762640:
               {
                 proxyBind_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -2006762640
             case -1358801822:
               {
                 urlMap_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1358801822
             case -911466526:
@@ -1255,10 +1312,16 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case -911466526
+            case -716358928:
+              {
+                httpKeepAliveTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -716358928
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -645248918
             default:
@@ -1640,6 +1703,74 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int httpKeepAliveTimeoutSec_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+     * </pre>
+     *
+     * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+     *
+     * @return Whether the httpKeepAliveTimeoutSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpKeepAliveTimeoutSec() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+     * </pre>
+     *
+     * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+     *
+     * @return The httpKeepAliveTimeoutSec.
+     */
+    @java.lang.Override
+    public int getHttpKeepAliveTimeoutSec() {
+      return httpKeepAliveTimeoutSec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+     * </pre>
+     *
+     * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+     *
+     * @param value The httpKeepAliveTimeoutSec to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHttpKeepAliveTimeoutSec(int value) {
+
+      httpKeepAliveTimeoutSec_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+     * </pre>
+     *
+     * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHttpKeepAliveTimeoutSec() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      httpKeepAliveTimeoutSec_ = 0;
+      onChanged();
+      return this;
+    }
+
     private long id_;
     /**
      *
@@ -1654,7 +1785,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1686,7 +1817,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1702,7 +1833,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
       onChanged();
       return this;
@@ -1721,7 +1852,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1784,7 +1915,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1801,7 +1932,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1823,7 +1954,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1841,7 +1972,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1904,7 +2035,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1921,7 +2052,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1943,7 +2074,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1962,7 +2093,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasProxyBind() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1994,7 +2125,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public Builder setProxyBind(boolean value) {
 
       proxyBind_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2010,7 +2141,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProxyBind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       proxyBind_ = false;
       onChanged();
       return this;
@@ -2029,7 +2160,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2092,7 +2223,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2109,7 +2240,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2131,7 +2262,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2149,7 +2280,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2212,7 +2343,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2229,7 +2360,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2251,7 +2382,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2269,7 +2400,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the urlMap field is set.
      */
     public boolean hasUrlMap() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2332,7 +2463,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       urlMap_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2349,7 +2480,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearUrlMap() {
       urlMap_ = getDefaultInstance().getUrlMap();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2371,7 +2502,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       urlMap_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

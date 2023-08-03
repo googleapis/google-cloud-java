@@ -312,7 +312,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * NONE
    * REFRESH
@@ -599,7 +599,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * PROACTIVE
    * </pre>
@@ -621,7 +621,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * No action is being proactively performed in order to bring this IGM to its target version distribution (regardless of whether this distribution is expressed using instanceTemplate or versions field).
+     * MIG will apply new configurations to existing VMs only when you selectively target specific or all VMs to be updated.
      * </pre>
      *
      * <code>OPPORTUNISTIC = 429530089;</code>
@@ -644,7 +644,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * No action is being proactively performed in order to bring this IGM to its target version distribution (regardless of whether this distribution is expressed using instanceTemplate or versions field).
+     * MIG will apply new configurations to existing VMs only when you selectively target specific or all VMs to be updated.
      * </pre>
      *
      * <code>OPPORTUNISTIC = 429530089;</code>
@@ -981,7 +981,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -997,7 +997,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -1021,7 +1021,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -1119,7 +1119,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1135,7 +1135,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1159,7 +1159,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2362,7 +2362,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2377,7 +2377,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2400,7 +2400,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2423,7 +2423,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2445,7 +2445,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2463,7 +2463,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -2614,7 +2614,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2629,7 +2629,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2652,7 +2652,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2675,7 +2675,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2697,7 +2697,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2715,7 +2715,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      *
      * <pre>
-     * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

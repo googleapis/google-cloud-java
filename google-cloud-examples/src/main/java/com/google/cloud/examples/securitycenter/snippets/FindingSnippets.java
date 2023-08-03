@@ -40,9 +40,13 @@ import java.util.List;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
-/** Snippets for how to work with Findings in Cloud Security Command Center. */
+/**
+ * Snippets for how to work with Findings in Security Command Center.
+ */
 public class FindingSnippets {
-  private FindingSnippets() {}
+
+  private FindingSnippets() {
+  }
 
   /**
    * Create a finding under a source.
@@ -226,7 +230,14 @@ public class FindingSnippets {
   // [START securitycenter_list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
+      // Input parameters for SourceName must be in one of the following formats:
+      //    * OrganizationName organizationName = OrganizationName.of("organization-id");
+      //      organizationName.getOrganization();
+      //    * ProjectName projectName = ProjectName.of("project-id");
+      //      projectName.getProject();
+      //    * FolderName folderName = FolderName.of("folder-id");
+      //      folderName.getFolder();
+      //
       // "-" Indicates listing across all sources.
       SourceName sourceName = SourceName.of(organizationName.getOrganization(), "-");
 
@@ -257,8 +268,11 @@ public class FindingSnippets {
   // [START securitycenter_list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFilteredFindings(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
-      // /*sourceId=*/"423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       // Create filter to category of MEDIUM_RISK_ONE
       String filter = "category=\"MEDIUM_RISK_ONE\"";
@@ -290,8 +304,11 @@ public class FindingSnippets {
   // [START securitycenter_list_findings_at_time]
   static ImmutableList<ListFindingsResult> listFindingsAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
-      // /*sourceId=*/"423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       // 5 days ago
       Instant fiveDaysAgo = Instant.now().minus(Duration.ofDays(5));
@@ -353,12 +370,18 @@ public class FindingSnippets {
    * Group all findings under an organization across all sources by their specified properties (e.g.
    * category).
    *
-   * @param organizationName The organizatoin to group all findings for.
+   * @param organizationName: The organization to group all findings for.
    */
   // [START securitycenter_group_all_findings]
   static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // Input parameters for 'SourceName' must be in one of the following formats:
+      //    * OrganizationName organizationName = OrganizationName.of("organization-id");
+      //      organizationName.getOrganization();
+      //    * ProjectName projectName = ProjectName.of("project-id");
+      //      projectName.getProject();
+      //    * FolderName folderName = FolderName.of("folder-id");
+      //      folderName.getFolder();
       SourceName sourceName = SourceName.of(organizationName.getOrganization(), "-");
 
       GroupFindingsRequest.Builder request =
@@ -390,8 +413,11 @@ public class FindingSnippets {
   // [START securitycenter_group_findings_with_source]
   static ImmutableList<GroupResult> groupFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
-      // "423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       GroupFindingsRequest.Builder request =
           GroupFindingsRequest.newBuilder().setParent(sourceName.toString()).setGroupBy("category");
@@ -422,8 +448,11 @@ public class FindingSnippets {
   // [START securitycenter_group_active_findings_with_source]
   static ImmutableList<GroupResult> groupActiveFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
-      // "423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       GroupFindingsRequest.Builder request =
           GroupFindingsRequest.newBuilder()
@@ -457,8 +486,11 @@ public class FindingSnippets {
   // [START securitycenter_group_active_findings_with_source_at_time]
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
-      // "423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       // 1 day ago
       Instant oneDayAgo = Instant.now().minusSeconds(60 * 60 * 24);
@@ -500,8 +532,11 @@ public class FindingSnippets {
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAndCompareDuration(
       SourceName sourceName, Duration duration) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
-      // "423432321");
+      // parentId: must be one of the following:
+      //    "organization-id"
+      //    "project-id"
+      //    "folder-id"
+      // SourceName sourceName = SourceName.of(parentId, sourceId);
 
       GroupFindingsRequest.Builder request =
           GroupFindingsRequest.newBuilder()

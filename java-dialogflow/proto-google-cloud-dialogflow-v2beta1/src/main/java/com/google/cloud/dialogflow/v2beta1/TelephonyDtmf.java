@@ -462,7 +462,7 @@ public enum TelephonyDtmf implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor()
         .getEnumTypes()
-        .get(4);
+        .get(0);
   }
 
   private static final TelephonyDtmf[] VALUES = values();

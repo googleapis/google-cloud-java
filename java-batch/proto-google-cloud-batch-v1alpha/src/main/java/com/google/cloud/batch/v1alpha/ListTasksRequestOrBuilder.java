@@ -89,8 +89,7 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Not implemented.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -102,8 +101,7 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Not implemented.
    * </pre>
    *
    * <code>string order_by = 5;</code>

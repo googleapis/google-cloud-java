@@ -85,8 +85,8 @@ public interface RunFunnelReportResponseOrBuilder
    *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -103,8 +103,8 @@ public interface RunFunnelReportResponseOrBuilder
    *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -121,8 +121,8 @@ public interface RunFunnelReportResponseOrBuilder
    *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>

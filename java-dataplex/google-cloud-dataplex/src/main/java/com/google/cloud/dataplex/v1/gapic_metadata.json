@@ -44,6 +44,66 @@
         }
       }
     },
+    "DataTaxonomyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataTaxonomyServiceClient",
+          "rpcs": {
+            "CreateDataAttribute": {
+              "methods": ["createDataAttributeAsync", "createDataAttributeAsync", "createDataAttributeAsync", "createDataAttributeOperationCallable", "createDataAttributeCallable"]
+            },
+            "CreateDataAttributeBinding": {
+              "methods": ["createDataAttributeBindingAsync", "createDataAttributeBindingAsync", "createDataAttributeBindingAsync", "createDataAttributeBindingOperationCallable", "createDataAttributeBindingCallable"]
+            },
+            "CreateDataTaxonomy": {
+              "methods": ["createDataTaxonomyAsync", "createDataTaxonomyAsync", "createDataTaxonomyAsync", "createDataTaxonomyOperationCallable", "createDataTaxonomyCallable"]
+            },
+            "DeleteDataAttribute": {
+              "methods": ["deleteDataAttributeAsync", "deleteDataAttributeAsync", "deleteDataAttributeAsync", "deleteDataAttributeOperationCallable", "deleteDataAttributeCallable"]
+            },
+            "DeleteDataAttributeBinding": {
+              "methods": ["deleteDataAttributeBindingAsync", "deleteDataAttributeBindingAsync", "deleteDataAttributeBindingAsync", "deleteDataAttributeBindingOperationCallable", "deleteDataAttributeBindingCallable"]
+            },
+            "DeleteDataTaxonomy": {
+              "methods": ["deleteDataTaxonomyAsync", "deleteDataTaxonomyAsync", "deleteDataTaxonomyAsync", "deleteDataTaxonomyOperationCallable", "deleteDataTaxonomyCallable"]
+            },
+            "GetDataAttribute": {
+              "methods": ["getDataAttribute", "getDataAttribute", "getDataAttribute", "getDataAttributeCallable"]
+            },
+            "GetDataAttributeBinding": {
+              "methods": ["getDataAttributeBinding", "getDataAttributeBinding", "getDataAttributeBinding", "getDataAttributeBindingCallable"]
+            },
+            "GetDataTaxonomy": {
+              "methods": ["getDataTaxonomy", "getDataTaxonomy", "getDataTaxonomy", "getDataTaxonomyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDataAttributeBindings": {
+              "methods": ["listDataAttributeBindings", "listDataAttributeBindings", "listDataAttributeBindings", "listDataAttributeBindingsPagedCallable", "listDataAttributeBindingsCallable"]
+            },
+            "ListDataAttributes": {
+              "methods": ["listDataAttributes", "listDataAttributes", "listDataAttributes", "listDataAttributesPagedCallable", "listDataAttributesCallable"]
+            },
+            "ListDataTaxonomies": {
+              "methods": ["listDataTaxonomies", "listDataTaxonomies", "listDataTaxonomies", "listDataTaxonomiesPagedCallable", "listDataTaxonomiesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateDataAttribute": {
+              "methods": ["updateDataAttributeAsync", "updateDataAttributeAsync", "updateDataAttributeOperationCallable", "updateDataAttributeCallable"]
+            },
+            "UpdateDataAttributeBinding": {
+              "methods": ["updateDataAttributeBindingAsync", "updateDataAttributeBindingAsync", "updateDataAttributeBindingOperationCallable", "updateDataAttributeBindingCallable"]
+            },
+            "UpdateDataTaxonomy": {
+              "methods": ["updateDataTaxonomyAsync", "updateDataTaxonomyAsync", "updateDataTaxonomyOperationCallable", "updateDataTaxonomyCallable"]
+            }
+          }
+        }
+      }
+    },
     "DataScanService": {
       "clients": {
         "grpc": {

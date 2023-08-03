@@ -377,6 +377,82 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return Whether the provisionedThroughput field is set.
+   */
+  boolean hasProvisionedThroughput();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return The provisionedThroughput.
+   */
+  long getProvisionedThroughput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @return A list containing the replicaZones.
+   */
+  java.util.List<java.lang.String> getReplicaZonesList();
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @return The count of replicaZones.
+   */
+  int getReplicaZonesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaZones at the given index.
+   */
+  java.lang.String getReplicaZones(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaZones at the given index.
+   */
+  com.google.protobuf.ByteString getReplicaZonesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
    * </pre>
    *

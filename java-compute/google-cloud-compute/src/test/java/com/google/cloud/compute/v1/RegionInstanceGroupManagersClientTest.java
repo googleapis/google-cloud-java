@@ -609,6 +609,8 @@ public class RegionInstanceGroupManagersClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setInstanceGroup("instanceGroup-1404696854")
+            .setInstanceLifecyclePolicy(
+                InstanceGroupManagerInstanceLifecyclePolicy.newBuilder().build())
             .setInstanceTemplate("instanceTemplate1009541167")
             .setKind("kind3292052")
             .setListManagedInstancesResults("listManagedInstancesResults1836889817")

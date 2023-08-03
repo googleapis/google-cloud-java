@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.28.0 (2023-07-21)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.7 ([#9651](https://github.com/googleapis/google-cloud-java/issues/9651)) ([c88d623](https://github.com/googleapis/google-cloud-java/commit/c88d623d12a4342b74e31d6a6a05cde0debe871f))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#9655](https://github.com/googleapis/google-cloud-java/issues/9655)) ([affebee](https://github.com/googleapis/google-cloud-java/commit/affebeeb37b1cf88ad5964684e1f112cababcab7))
+
+
+## 1.27.0 (2023-07-11)
+
+### Features
+
+* added rpc RenameTagTemplateFieldEnumValue ([#9614](https://github.com/googleapis/google-cloud-java/issues/9614)) ([cc2e2ff](https://github.com/googleapis/google-cloud-java/commit/cc2e2ff1ae033ddb24c99ad0ece351b1129dadbe))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.0 ([#9622](https://github.com/googleapis/google-cloud-java/issues/9622)) ([3ac3050](https://github.com/googleapis/google-cloud-java/commit/3ac3050250a706e8f9f2d1e435a4983c3cceab82))
+
+
 ## 1.26.0 (2023-06-23)
 
 ### Dependencies

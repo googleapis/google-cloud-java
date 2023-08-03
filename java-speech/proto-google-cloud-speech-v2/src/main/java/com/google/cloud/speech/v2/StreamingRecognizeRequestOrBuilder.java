@@ -27,12 +27,10 @@ public interface StreamingRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Streaming recognition should start with an initial request having
-   * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-   *
-   * The initial request with configuration can be omitted if the Recognizer
-   * being used has a
-   * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -46,12 +44,10 @@ public interface StreamingRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Streaming recognition should start with an initial request having
-   * a `recognizer`. Subsequent requests carry the audio data to be recognized.
-   *
-   * The initial request with configuration can be omitted if the Recognizer
-   * being used has a
-   * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>

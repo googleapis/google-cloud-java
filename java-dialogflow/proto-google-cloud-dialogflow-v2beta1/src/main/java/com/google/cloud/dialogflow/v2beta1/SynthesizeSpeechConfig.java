@@ -69,12 +69,12 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-   * native speed supported by the specific voice. 2.0 is twice as fast, and
-   * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-   * other values &lt; 0.25 or &gt; 4.0 will return an error.
+   * native speed supported by the specific voice. 2.0 is twice as fast, and 0.5
+   * is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other
+   * values &lt; 0.25 or &gt; 4.0 will return an error.
    * </pre>
    *
-   * <code>double speaking_rate = 1;</code>
+   * <code>double speaking_rate = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The speakingRate.
    */
@@ -94,7 +94,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * original pitch.
    * </pre>
    *
-   * <code>double pitch = 2;</code>
+   * <code>double pitch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pitch.
    */
@@ -119,7 +119,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * any value greater than that.
    * </pre>
    *
-   * <code>double volume_gain_db = 3;</code>
+   * <code>double volume_gain_db = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The volumeGainDb.
    */
@@ -142,7 +142,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the effectsProfileId.
    */
@@ -158,7 +158,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of effectsProfileId.
    */
@@ -174,7 +174,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The effectsProfileId at the given index.
@@ -191,7 +191,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the effectsProfileId at the given index.
@@ -209,7 +209,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the voice field is set.
    */
@@ -224,7 +226,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The voice.
    */
@@ -241,7 +245,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
@@ -721,12 +727,12 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * native speed supported by the specific voice. 2.0 is twice as fast, and 0.5
+     * is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other
+     * values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 1;</code>
+     * <code>double speaking_rate = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The speakingRate.
      */
@@ -739,12 +745,12 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * native speed supported by the specific voice. 2.0 is twice as fast, and 0.5
+     * is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other
+     * values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 1;</code>
+     * <code>double speaking_rate = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The speakingRate to set.
      * @return This builder for chaining.
@@ -761,12 +767,12 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * native speed supported by the specific voice. 2.0 is twice as fast, and 0.5
+     * is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other
+     * values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 1;</code>
+     * <code>double speaking_rate = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -787,7 +793,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * original pitch.
      * </pre>
      *
-     * <code>double pitch = 2;</code>
+     * <code>double pitch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pitch.
      */
@@ -804,7 +810,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * original pitch.
      * </pre>
      *
-     * <code>double pitch = 2;</code>
+     * <code>double pitch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pitch to set.
      * @return This builder for chaining.
@@ -825,7 +831,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * original pitch.
      * </pre>
      *
-     * <code>double pitch = 2;</code>
+     * <code>double pitch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -851,7 +857,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 3;</code>
+     * <code>double volume_gain_db = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The volumeGainDb.
      */
@@ -873,7 +879,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 3;</code>
+     * <code>double volume_gain_db = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The volumeGainDb to set.
      * @return This builder for chaining.
@@ -899,7 +905,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 3;</code>
+     * <code>double volume_gain_db = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -928,7 +934,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the effectsProfileId.
      */
@@ -945,7 +952,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of effectsProfileId.
      */
@@ -961,7 +969,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The effectsProfileId at the given index.
@@ -978,7 +987,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the effectsProfileId at the given index.
@@ -995,7 +1005,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The effectsProfileId to set.
@@ -1020,7 +1031,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The effectsProfileId to add.
      * @return This builder for chaining.
@@ -1044,7 +1056,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The effectsProfileId to add.
      * @return This builder for chaining.
@@ -1065,7 +1078,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1085,7 +1099,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * each other in the order they are given.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 5;</code>
+     * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the effectsProfileId to add.
      * @return This builder for chaining.
@@ -1115,7 +1130,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the voice field is set.
      */
@@ -1129,7 +1146,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The voice.
      */
@@ -1149,7 +1168,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVoice(com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
@@ -1171,7 +1192,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVoice(
         com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder builderForValue) {
@@ -1191,7 +1214,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeVoice(com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
@@ -1217,7 +1242,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearVoice() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1236,7 +1263,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder getVoiceBuilder() {
       bitField0_ |= 0x00000010;
@@ -1250,7 +1279,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
       if (voiceBuilder_ != null) {
@@ -1268,7 +1299,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * Optional. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams,

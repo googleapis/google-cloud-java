@@ -188,6 +188,16 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * </pre>
+     *
+     * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
+     */
+    LIST_OVERHEAD_QUOTA_EXCEED(47618117),
+    /**
+     *
+     *
+     * <pre>
      * A resource depends on a missing type
      * </pre>
      *
@@ -471,6 +481,16 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * </pre>
+     *
+     * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
+     */
+    public static final int LIST_OVERHEAD_QUOTA_EXCEED_VALUE = 47618117;
+    /**
+     *
+     *
+     * <pre>
      * A resource depends on a missing type
      * </pre>
      *
@@ -684,6 +704,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
           return INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB;
         case 481440678:
           return LARGE_DEPLOYMENT_WARNING;
+        case 47618117:
+          return LIST_OVERHEAD_QUOTA_EXCEED;
         case 344505463:
           return MISSING_TYPE_DEPENDENCY;
         case 324964999:

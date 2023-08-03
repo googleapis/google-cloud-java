@@ -223,6 +223,7 @@ public class ServiceAttachmentsClientTest {
             .addAllNatSubnets(new ArrayList<String>())
             .setProducerForwardingRule("producerForwardingRule-1240429621")
             .setPscServiceAttachmentId(Uint128.newBuilder().build())
+            .setReconcileConnections(true)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setTargetService("targetService-6866972")

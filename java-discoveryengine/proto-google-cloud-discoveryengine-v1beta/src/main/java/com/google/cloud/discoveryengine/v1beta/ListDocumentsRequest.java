@@ -78,7 +78,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
    *
-   * If the caller does not have permission to list [Documents][]s under this
+   * If the caller does not have permission to list
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
    * branch, regardless of whether or not this branch exists, a
    * `PERMISSION_DENIED` error is returned.
    * </pre>
@@ -110,7 +111,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
    *
-   * If the caller does not have permission to list [Documents][]s under this
+   * If the caller does not have permission to list
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
    * branch, regardless of whether or not this branch exists, a
    * `PERMISSION_DENIED` error is returned.
    * </pre>
@@ -629,7 +631,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * Use `default_branch` as the branch ID, to list documents under the default
      * branch.
      *
-     * If the caller does not have permission to list [Documents][]s under this
+     * If the caller does not have permission to list
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
      * branch, regardless of whether or not this branch exists, a
      * `PERMISSION_DENIED` error is returned.
      * </pre>
@@ -660,7 +663,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * Use `default_branch` as the branch ID, to list documents under the default
      * branch.
      *
-     * If the caller does not have permission to list [Documents][]s under this
+     * If the caller does not have permission to list
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
      * branch, regardless of whether or not this branch exists, a
      * `PERMISSION_DENIED` error is returned.
      * </pre>
@@ -691,7 +695,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * Use `default_branch` as the branch ID, to list documents under the default
      * branch.
      *
-     * If the caller does not have permission to list [Documents][]s under this
+     * If the caller does not have permission to list
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
      * branch, regardless of whether or not this branch exists, a
      * `PERMISSION_DENIED` error is returned.
      * </pre>
@@ -721,7 +726,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * Use `default_branch` as the branch ID, to list documents under the default
      * branch.
      *
-     * If the caller does not have permission to list [Documents][]s under this
+     * If the caller does not have permission to list
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
      * branch, regardless of whether or not this branch exists, a
      * `PERMISSION_DENIED` error is returned.
      * </pre>
@@ -747,7 +753,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * Use `default_branch` as the branch ID, to list documents under the default
      * branch.
      *
-     * If the caller does not have permission to list [Documents][]s under this
+     * If the caller does not have permission to list
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
      * branch, regardless of whether or not this branch exists, a
      * `PERMISSION_DENIED` error is returned.
      * </pre>

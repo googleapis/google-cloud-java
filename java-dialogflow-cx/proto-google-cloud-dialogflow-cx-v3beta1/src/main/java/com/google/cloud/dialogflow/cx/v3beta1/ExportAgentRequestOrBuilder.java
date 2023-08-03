@@ -165,6 +165,48 @@ public interface ExportAgentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gitDestination field is set.
+   */
+  boolean hasGitDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gitDestination.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination getGitDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.GitDestinationOrBuilder
+      getGitDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Whether to include BigQuery Export setting.
    * </pre>
    *

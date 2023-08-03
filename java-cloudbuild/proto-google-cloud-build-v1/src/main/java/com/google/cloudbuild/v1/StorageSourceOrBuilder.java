@@ -27,7 +27,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -41,7 +41,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -56,10 +56,10 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
+   * Cloud Storage object containing the source.
    *
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -71,10 +71,10 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
+   * Cloud Storage object containing the source.
    *
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -87,7 +87,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage generation for the object. If the generation is
+   * Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *

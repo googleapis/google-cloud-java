@@ -27,6 +27,46 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return Whether the autoNetworkTier field is set.
+   */
+  boolean hasAutoNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The autoNetworkTier.
+   */
+  java.lang.String getAutoNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * Check the AutoNetworkTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string auto_network_tier = 269770211;</code>
+   *
+   * @return The bytes for autoNetworkTier.
+   */
+  com.google.protobuf.ByteString getAutoNetworkTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
@@ -461,7 +501,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -474,7 +514,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -487,7 +527,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
    * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *

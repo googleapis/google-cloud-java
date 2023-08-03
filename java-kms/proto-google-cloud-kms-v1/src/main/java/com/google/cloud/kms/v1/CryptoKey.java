@@ -149,6 +149,20 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * with [RawEncrypt][google.cloud.kms.v1.KeyManagementService.RawEncrypt]
+     * and [RawDecrypt][google.cloud.kms.v1.KeyManagementService.RawDecrypt].
+     * This purpose is meant to be used for interoperable symmetric
+     * encryption and does not support automatic CryptoKey rotation.
+     * </pre>
+     *
+     * <code>RAW_ENCRYPT_DECRYPT = 7;</code>
+     */
+    RAW_ENCRYPT_DECRYPT(7),
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
      * with [MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
      * </pre>
      *
@@ -213,6 +227,20 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * with [RawEncrypt][google.cloud.kms.v1.KeyManagementService.RawEncrypt]
+     * and [RawDecrypt][google.cloud.kms.v1.KeyManagementService.RawDecrypt].
+     * This purpose is meant to be used for interoperable symmetric
+     * encryption and does not support automatic CryptoKey rotation.
+     * </pre>
+     *
+     * <code>RAW_ENCRYPT_DECRYPT = 7;</code>
+     */
+    public static final int RAW_ENCRYPT_DECRYPT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
      * with [MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
      * </pre>
      *
@@ -252,6 +280,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           return ASYMMETRIC_SIGN;
         case 6:
           return ASYMMETRIC_DECRYPT;
+        case 7:
+          return RAW_ENCRYPT_DECRYPT;
         case 9:
           return MAC;
         default:

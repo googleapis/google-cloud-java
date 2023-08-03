@@ -177,11 +177,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * The client-provided short name for the Backup resource.
    * This name must:
    *
-   *  - be between 1 and 63 characters long (inclusive)
-   *  - consist of only lower-case ASCII letters, numbers, and dashes
-   *  - start with a lower-case letter
-   *  - end with a lower-case letter or number
-   *  - be unique within the set of Backups in this BackupPlan
+   * - be between 1 and 63 characters long (inclusive)
+   * - consist of only lower-case ASCII letters, numbers, and dashes
+   * - start with a lower-case letter
+   * - end with a lower-case letter or number
+   * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
    * <code>string backup_id = 3;</code>
@@ -207,11 +207,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * The client-provided short name for the Backup resource.
    * This name must:
    *
-   *  - be between 1 and 63 characters long (inclusive)
-   *  - consist of only lower-case ASCII letters, numbers, and dashes
-   *  - start with a lower-case letter
-   *  - end with a lower-case letter or number
-   *  - be unique within the set of Backups in this BackupPlan
+   * - be between 1 and 63 characters long (inclusive)
+   * - consist of only lower-case ASCII letters, numbers, and dashes
+   * - start with a lower-case letter
+   * - end with a lower-case letter or number
+   * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
    * <code>string backup_id = 3;</code>
@@ -940,11 +940,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * The client-provided short name for the Backup resource.
      * This name must:
      *
-     *  - be between 1 and 63 characters long (inclusive)
-     *  - consist of only lower-case ASCII letters, numbers, and dashes
-     *  - start with a lower-case letter
-     *  - end with a lower-case letter or number
-     *  - be unique within the set of Backups in this BackupPlan
+     * - be between 1 and 63 characters long (inclusive)
+     * - consist of only lower-case ASCII letters, numbers, and dashes
+     * - start with a lower-case letter
+     * - end with a lower-case letter or number
+     * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
      * <code>string backup_id = 3;</code>
@@ -969,11 +969,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * The client-provided short name for the Backup resource.
      * This name must:
      *
-     *  - be between 1 and 63 characters long (inclusive)
-     *  - consist of only lower-case ASCII letters, numbers, and dashes
-     *  - start with a lower-case letter
-     *  - end with a lower-case letter or number
-     *  - be unique within the set of Backups in this BackupPlan
+     * - be between 1 and 63 characters long (inclusive)
+     * - consist of only lower-case ASCII letters, numbers, and dashes
+     * - start with a lower-case letter
+     * - end with a lower-case letter or number
+     * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
      * <code>string backup_id = 3;</code>
@@ -998,11 +998,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * The client-provided short name for the Backup resource.
      * This name must:
      *
-     *  - be between 1 and 63 characters long (inclusive)
-     *  - consist of only lower-case ASCII letters, numbers, and dashes
-     *  - start with a lower-case letter
-     *  - end with a lower-case letter or number
-     *  - be unique within the set of Backups in this BackupPlan
+     * - be between 1 and 63 characters long (inclusive)
+     * - consist of only lower-case ASCII letters, numbers, and dashes
+     * - start with a lower-case letter
+     * - end with a lower-case letter or number
+     * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
      * <code>string backup_id = 3;</code>
@@ -1026,11 +1026,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * The client-provided short name for the Backup resource.
      * This name must:
      *
-     *  - be between 1 and 63 characters long (inclusive)
-     *  - consist of only lower-case ASCII letters, numbers, and dashes
-     *  - start with a lower-case letter
-     *  - end with a lower-case letter or number
-     *  - be unique within the set of Backups in this BackupPlan
+     * - be between 1 and 63 characters long (inclusive)
+     * - consist of only lower-case ASCII letters, numbers, and dashes
+     * - start with a lower-case letter
+     * - end with a lower-case letter or number
+     * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
      * <code>string backup_id = 3;</code>
@@ -1050,11 +1050,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * The client-provided short name for the Backup resource.
      * This name must:
      *
-     *  - be between 1 and 63 characters long (inclusive)
-     *  - consist of only lower-case ASCII letters, numbers, and dashes
-     *  - start with a lower-case letter
-     *  - end with a lower-case letter or number
-     *  - be unique within the set of Backups in this BackupPlan
+     * - be between 1 and 63 characters long (inclusive)
+     * - consist of only lower-case ASCII letters, numbers, and dashes
+     * - start with a lower-case letter
+     * - end with a lower-case letter or number
+     * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
      * <code>string backup_id = 3;</code>

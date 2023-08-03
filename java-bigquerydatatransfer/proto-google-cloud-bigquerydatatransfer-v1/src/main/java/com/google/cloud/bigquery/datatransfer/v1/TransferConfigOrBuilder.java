@@ -576,5 +576,59 @@ public interface TransferConfigOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return Whether the encryptionConfiguration field is set.
+   */
+  boolean hasEncryptionConfiguration();
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return The encryptionConfiguration.
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration getEncryptionConfiguration();
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder
+      getEncryptionConfigurationOrBuilder();
+
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase getDestinationCase();
 }

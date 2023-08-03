@@ -117,10 +117,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return Whether the id field is set.
    */
@@ -131,10 +131,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The id.
    */
@@ -158,10 +158,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The bytes for id.
    */
@@ -187,13 +187,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the name field is set.
    */
@@ -204,13 +203,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -234,13 +232,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -859,10 +856,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return Whether the id field is set.
      */
@@ -874,10 +871,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return The id.
      */
@@ -902,10 +899,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return The bytes for id.
      */
@@ -930,10 +927,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -951,10 +948,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -970,10 +967,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -993,13 +990,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return Whether the name field is set.
      */
@@ -1011,13 +1007,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -1042,13 +1037,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -1073,13 +1067,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1097,13 +1090,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1119,13 +1111,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+     * full name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

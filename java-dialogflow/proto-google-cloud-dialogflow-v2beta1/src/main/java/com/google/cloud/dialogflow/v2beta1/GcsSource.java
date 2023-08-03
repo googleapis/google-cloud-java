@@ -72,7 +72,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *
@@ -467,7 +467,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case.
      * </pre>
      *
@@ -492,7 +492,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case.
      * </pre>
      *
@@ -517,7 +517,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case.
      * </pre>
      *
@@ -541,7 +541,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case.
      * </pre>
      *
@@ -561,7 +561,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Google Cloud Storage URIs for the inputs. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case.
      * </pre>
      *

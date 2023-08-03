@@ -23,7 +23,7 @@ import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
-/** Snippets for how to work with Organizations in Cloud Security Command Center. */
+/** Snippets for how to work with Organizations in Security Command Center. */
 public class OrganizationSnippets {
 
   private OrganizationSnippets() {}

@@ -49,6 +49,7 @@ import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
+import com.google.cloudbuild.v1.GitRepoSource;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
@@ -566,6 +567,7 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -623,6 +625,7 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -761,6 +764,7 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();

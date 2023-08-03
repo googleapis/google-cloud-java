@@ -165,6 +165,65 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         : managedPrometheusConfig_;
   }
 
+  public static final int ADVANCED_DATAPATH_OBSERVABILITY_CONFIG_FIELD_NUMBER = 3;
+  private com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+      advancedDatapathObservabilityConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return Whether the advancedDatapathObservabilityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedDatapathObservabilityConfig() {
+    return advancedDatapathObservabilityConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return The advancedDatapathObservabilityConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+      getAdvancedDatapathObservabilityConfig() {
+    return advancedDatapathObservabilityConfig_ == null
+        ? com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.getDefaultInstance()
+        : advancedDatapathObservabilityConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder
+      getAdvancedDatapathObservabilityConfigOrBuilder() {
+    return advancedDatapathObservabilityConfig_ == null
+        ? com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.getDefaultInstance()
+        : advancedDatapathObservabilityConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +244,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (managedPrometheusConfig_ != null) {
       output.writeMessage(2, getManagedPrometheusConfig());
     }
+    if (advancedDatapathObservabilityConfig_ != null) {
+      output.writeMessage(3, getAdvancedDatapathObservabilityConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -200,6 +262,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (managedPrometheusConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getManagedPrometheusConfig());
+    }
+    if (advancedDatapathObservabilityConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getAdvancedDatapathObservabilityConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -225,6 +292,12 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (hasManagedPrometheusConfig()) {
       if (!getManagedPrometheusConfig().equals(other.getManagedPrometheusConfig())) return false;
     }
+    if (hasAdvancedDatapathObservabilityConfig() != other.hasAdvancedDatapathObservabilityConfig())
+      return false;
+    if (hasAdvancedDatapathObservabilityConfig()) {
+      if (!getAdvancedDatapathObservabilityConfig()
+          .equals(other.getAdvancedDatapathObservabilityConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,6 +316,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (hasManagedPrometheusConfig()) {
       hash = (37 * hash) + MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getManagedPrometheusConfig().hashCode();
+    }
+    if (hasAdvancedDatapathObservabilityConfig()) {
+      hash = (37 * hash) + ADVANCED_DATAPATH_OBSERVABILITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedDatapathObservabilityConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -393,6 +470,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
       }
+      advancedDatapathObservabilityConfig_ = null;
+      if (advancedDatapathObservabilityConfigBuilder_ != null) {
+        advancedDatapathObservabilityConfigBuilder_.dispose();
+        advancedDatapathObservabilityConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -438,6 +520,12 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             managedPrometheusConfigBuilder_ == null
                 ? managedPrometheusConfig_
                 : managedPrometheusConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.advancedDatapathObservabilityConfig_ =
+            advancedDatapathObservabilityConfigBuilder_ == null
+                ? advancedDatapathObservabilityConfig_
+                : advancedDatapathObservabilityConfigBuilder_.build();
       }
     }
 
@@ -492,6 +580,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasManagedPrometheusConfig()) {
         mergeManagedPrometheusConfig(other.getManagedPrometheusConfig());
       }
+      if (other.hasAdvancedDatapathObservabilityConfig()) {
+        mergeAdvancedDatapathObservabilityConfig(other.getAdvancedDatapathObservabilityConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -531,6 +622,14 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getAdvancedDatapathObservabilityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -935,6 +1034,216 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         managedPrometheusConfig_ = null;
       }
       return managedPrometheusConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+        advancedDatapathObservabilityConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfig,
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.Builder,
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder>
+        advancedDatapathObservabilityConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     *
+     * @return Whether the advancedDatapathObservabilityConfig field is set.
+     */
+    public boolean hasAdvancedDatapathObservabilityConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     *
+     * @return The advancedDatapathObservabilityConfig.
+     */
+    public com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+        getAdvancedDatapathObservabilityConfig() {
+      if (advancedDatapathObservabilityConfigBuilder_ == null) {
+        return advancedDatapathObservabilityConfig_ == null
+            ? com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.getDefaultInstance()
+            : advancedDatapathObservabilityConfig_;
+      } else {
+        return advancedDatapathObservabilityConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public Builder setAdvancedDatapathObservabilityConfig(
+        com.google.container.v1beta1.AdvancedDatapathObservabilityConfig value) {
+      if (advancedDatapathObservabilityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedDatapathObservabilityConfig_ = value;
+      } else {
+        advancedDatapathObservabilityConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public Builder setAdvancedDatapathObservabilityConfig(
+        com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.Builder builderForValue) {
+      if (advancedDatapathObservabilityConfigBuilder_ == null) {
+        advancedDatapathObservabilityConfig_ = builderForValue.build();
+      } else {
+        advancedDatapathObservabilityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public Builder mergeAdvancedDatapathObservabilityConfig(
+        com.google.container.v1beta1.AdvancedDatapathObservabilityConfig value) {
+      if (advancedDatapathObservabilityConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && advancedDatapathObservabilityConfig_ != null
+            && advancedDatapathObservabilityConfig_
+                != com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+                    .getDefaultInstance()) {
+          getAdvancedDatapathObservabilityConfigBuilder().mergeFrom(value);
+        } else {
+          advancedDatapathObservabilityConfig_ = value;
+        }
+      } else {
+        advancedDatapathObservabilityConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public Builder clearAdvancedDatapathObservabilityConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      advancedDatapathObservabilityConfig_ = null;
+      if (advancedDatapathObservabilityConfigBuilder_ != null) {
+        advancedDatapathObservabilityConfigBuilder_.dispose();
+        advancedDatapathObservabilityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.Builder
+        getAdvancedDatapathObservabilityConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getAdvancedDatapathObservabilityConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder
+        getAdvancedDatapathObservabilityConfigOrBuilder() {
+      if (advancedDatapathObservabilityConfigBuilder_ != null) {
+        return advancedDatapathObservabilityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedDatapathObservabilityConfig_ == null
+            ? com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.getDefaultInstance()
+            : advancedDatapathObservabilityConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Advanced Datapath Observability features.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfig,
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.Builder,
+            com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder>
+        getAdvancedDatapathObservabilityConfigFieldBuilder() {
+      if (advancedDatapathObservabilityConfigBuilder_ == null) {
+        advancedDatapathObservabilityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AdvancedDatapathObservabilityConfig,
+                com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.Builder,
+                com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder>(
+                getAdvancedDatapathObservabilityConfig(), getParentForChildren(), isClean());
+        advancedDatapathObservabilityConfig_ = null;
+      }
+      return advancedDatapathObservabilityConfigBuilder_;
     }
 
     @java.lang.Override

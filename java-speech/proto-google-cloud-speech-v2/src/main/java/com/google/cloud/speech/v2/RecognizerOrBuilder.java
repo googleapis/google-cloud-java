@@ -106,7 +106,7 @@ public interface RecognizerOrBuilder
    *
    *
    * <pre>
-   * Required. Which model to use for recognition requests. Select the model
+   * Optional. Which model to use for recognition requests. Select the model
    * best suited to your domain to get best results.
    *
    * Guidance for choosing which model to use can be found in the [Transcription
@@ -117,16 +117,19 @@ public interface RecognizerOrBuilder
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
    * </pre>
    *
-   * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=596
    * @return The model.
    */
+  @java.lang.Deprecated
   java.lang.String getModel();
   /**
    *
    *
    * <pre>
-   * Required. Which model to use for recognition requests. Select the model
+   * Optional. Which model to use for recognition requests. Select the model
    * best suited to your domain to get best results.
    *
    * Guidance for choosing which model to use can be found in the [Transcription
@@ -137,17 +140,20 @@ public interface RecognizerOrBuilder
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
    * </pre>
    *
-   * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=596
    * @return The bytes for model.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getModelBytes();
 
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -161,16 +167,21 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=610
    * @return A list containing the languageCodes.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getLanguageCodesList();
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -184,16 +195,21 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=610
    * @return The count of languageCodes.
    */
+  @java.lang.Deprecated
   int getLanguageCodesCount();
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -207,17 +223,22 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=610
    * @param index The index of the element to return.
    * @return The languageCodes at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getLanguageCodes(int index);
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -231,11 +252,16 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=610
    * @param index The index of the value to return.
    * @return The bytes of the languageCodes at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
   /**

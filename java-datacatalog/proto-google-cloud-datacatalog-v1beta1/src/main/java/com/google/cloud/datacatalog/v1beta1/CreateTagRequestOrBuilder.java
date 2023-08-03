@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. Example:
+   * Required. The name of the resource to attach this tag to. Tags can be
+   * attached to Entries. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *
@@ -47,8 +47,8 @@ public interface CreateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. Example:
+   * Required. The name of the resource to attach this tag to. Tags can be
+   * attached to Entries. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *

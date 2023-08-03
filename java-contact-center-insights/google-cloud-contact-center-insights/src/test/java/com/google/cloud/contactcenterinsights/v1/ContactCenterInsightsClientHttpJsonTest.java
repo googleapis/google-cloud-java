@@ -1391,6 +1391,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1448,6 +1449,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1505,6 +1507,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1517,6 +1520,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1555,6 +1559,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .setIssueCount(1779144233)
               .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
               .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIssueModel(issueModel, updateMask);
@@ -1575,6 +1580,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1625,6 +1631,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockService.addResponse(expectedResponse);
 

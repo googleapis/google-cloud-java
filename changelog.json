@@ -4,6 +4,727 @@
     {
       "changes": [
         {
+          "type": "docs",
+          "sha": "e77037d7d00798e8d8da5e3bcf7dd9bca3735472",
+          "message": "[clouddeploy] small documentation updates",
+          "issues": [
+            "9653"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "68dad122-bad8-488e-b20e-02cbdecd289d",
+      "createTime": "2023-07-21T21:39:15.423Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c7c786015b0a6ce0423ec58c645d4c1ce9a46a28",
+          "message": "[policytroubleshooter] include errors in troubleshoot response",
+          "issues": [
+            "9649"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "82470ae3-09c6-4054-b53c-822a049060be",
+      "createTime": "2023-07-21T21:39:15.420Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9caae4d63f52ae1305806623452a2cac62f05fc1",
+          "message": "[cloudtasks] increase timeout of RPC methods to 20s for v2",
+          "issues": [
+            "9646"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tasks",
+      "id": "1bd72c5d-11a8-41da-bc26-5dee75677026",
+      "createTime": "2023-07-21T21:39:15.416Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "02050426e9d69f17bc3a4e376086108f0d48ec28",
+          "message": "[documentai] removed id field from Document message",
+          "issues": [
+            "9642"
+          ],
+          "breakingChangeNote": "[documentai] removed id field from Document message ([#9642](https://github.com/googleapis/google-cloud-java/issues/9642))"
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "dbaa79f4-43f1-43c1-a8cc-7a8d305e0194",
+      "createTime": "2023-07-21T21:39:15.413Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1e8aa175e7b41042cc4244380df765a2b78f60c2",
+          "message": "[kmsinventory] add resource_types to SearchAllResources, to allow filtering by resource type",
+          "issues": [
+            "9641"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kmsinventory",
+      "id": "2e27f06d-0d5e-4ebf-8ded-0ef4e05cea64",
+      "createTime": "2023-07-21T21:39:15.410Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "36f5b3c40559421bfeaabcdc0f4275e7b4ad90c0",
+          "message": "[servicemanagement] update docs to existing services",
+          "issues": [
+            "9583"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-management",
+      "id": "488f3fe9-f85b-49ec-89dd-a9664ad364a7",
+      "createTime": "2023-07-21T21:39:15.408Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c41140202e1474ee4436011d51bd607d42f15d5a",
+          "message": "[alloydb] add metadata exchange support for AlloyDB connectors",
+          "issues": [
+            "9639"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "a08ed353-79c8-477e-8830-dc19cbf56d2c",
+      "createTime": "2023-07-21T21:39:15.405Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "843b17bd983002c94343aef0c27ff61d296f84b6",
+          "message": "[container] Add Multi-networking API",
+          "issues": [
+            "9638"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "d10bd218-83b1-4d77-86ed-4e6edf8d0114",
+      "createTime": "2023-07-21T21:39:15.402Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "5a82003b7e93ccccf8ff82753a0b3a275564fd96",
+          "message": "[aiplatform] add data_item_count to Dataset",
+          "issues": [
+            "9636"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "799f001f-0b73-480c-bdcc-e8fcea9b50c4",
+      "createTime": "2023-07-21T21:39:15.397Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b0c37db8afe9e922169c5590698e2dc0c014448c",
+          "message": "[netapp] new module for netapp",
+          "issues": [
+            "9668"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-netapp",
+      "id": "766eee1d-8a36-4c06-9cc3-2ccfc265e9dc",
+      "createTime": "2023-07-21T21:39:15.395Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a60caebee4af73c1cb86b4597fc69fb257c1cb20",
+          "message": "[cloudkms] add interoperable symmetric encryption system",
+          "issues": [
+            "9667"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "43fdea1e-8dd5-43ad-ab10-8f34460ef4c2",
+      "createTime": "2023-07-21T21:39:15.392Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "378391ec0294a59c7c1669d15d763cbecf75d1b6",
+          "message": "[servicedirectory] added network and uid fields in Endpoint message",
+          "issues": [
+            "9666"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicedirectory",
+      "id": "81d687b4-0173-4d1f-9bf5-faca4812f387",
+      "createTime": "2023-07-21T21:39:15.389Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9679beb02f6ca20e532cd4267c5773447b816b64",
+          "message": "[livestream] added support for slate events which allow users to create and insert a slate into a live stream to replace the main live stream content",
+          "issues": [
+            "9665"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-live-stream",
+      "id": "818e8dc9-fc56-4164-86a7-0b022f8ca972",
+      "createTime": "2023-07-21T21:39:15.386Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "56c3922c321d70de3d867cf55569e47a4c044389",
+          "message": "[policysimulator] add missing options for policysimulator",
+          "issues": [
+            "9672"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "ebee6cb75f23b99e296985037641dc8c66026686",
+          "message": "[policysimulator] new module for policysimulator",
+          "issues": [
+            "9669"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policysimulator",
+      "id": "ec0f747b-4591-41e8-90ec-9fc980e4511c",
+      "createTime": "2023-07-21T21:39:15.383Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6f96d9c155fac34deecef125490430a7bc73fbe1",
+          "message": "[cloudbuild] add git_file_source and git_repo_source to build_trigger",
+          "issues": [
+            "9673"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "88ad19815908dc995e4467f14fddc0f5c5dbeec5",
+          "message": "[cloudbuild] Add routing information in Cloud Build GRPC clients",
+          "issues": [
+            "9635"
+          ]
+        }
+      ],
+      "version": "1.16.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "46d9988b-b639-44bb-a096-1bc1373ced77",
+      "createTime": "2023-07-21T21:39:15.379Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9632eaf5b5dfb21d75f852c1422ce1a6fe44c5a4",
+          "message": "[storagetransfer] add event driven transfer configuration",
+          "issues": [
+            "9585"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage-transfer",
+      "id": "98923bfc-4e67-4057-8656-61823c2e7c46",
+      "createTime": "2023-07-11T17:47:29.251Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c35bd0b7d4a5dad90b7d228952b0fbd17d97a838",
+          "message": "[gke-backup] added new restore scope options",
+          "issues": [
+            "9586"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-backup",
+      "id": "27ce882c-2ac2-451f-9656-f01f0c76c584",
+      "createTime": "2023-07-11T17:47:29.249Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Add Waypoint Optimization feature to ComputeRoutes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Support Transit routes in ComputeRoutes and ComputeRouteMatrix",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Add TrafficModel feature in ComputeRoutes and ComputeRouteMatrix",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Support returning localized values in ComputeRoutes and ComputeRouteMatrix",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Add more navigation instruction maneuvers",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "Add more toll pass values",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7be2b864cd3180a464dd9b4f2aa7c439f9741013",
+          "message": "[maps-routing] Add HTML Navigation Instructions feature to ComputeRoutes",
+          "issues": [
+            "9589"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-routing",
+      "id": "32008b00-6f16-4be1-91ff-e7a6ec4001e2",
+      "createTime": "2023-07-11T17:47:29.245Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d0724008036834954d14c940d470afdfab22fc70",
+          "message": "[bigqueryconnection] add support for Salesforce connections, which are usable only by allowlisted partners",
+          "issues": [
+            "9621"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryconnection",
+      "id": "01a1fcaf-0116-4fb5-819e-79cd5659b0c6",
+      "createTime": "2023-07-11T17:47:29.242Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9c52160d40a182f2b09641e66f11eee8b441a66d",
+          "message": "[cloudbuild] added e2-medium machine type",
+          "issues": [
+            "9620"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "fb44667ed5f259e69453310050d1c091f73d805a",
+          "message": "[cloudbuild] Add GitLabConfig and fetchGitRefs for Cloud Build Repositories",
+          "issues": [
+            "9588"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "fb44667ed5f259e69453310050d1c091f73d805a",
+          "message": "[cloudbuild] add repositoryevent to buildtrigger",
+          "issues": []
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "7245bff3-bea9-4ad3-9135-922885069687",
+      "createTime": "2023-07-11T17:47:29.240Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "6cebb8d61fc6f9ee5edc0b0878efeac217e21fe8",
+          "message": "[tpu] minor updates in comments",
+          "issues": [
+            "9619"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "0bffefce-3b59-49cd-86f0-1a6bd9e08f31",
+      "createTime": "2023-07-11T17:47:29.237Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "29d1eb102184d9fd6ea000ac13c8e5a098fb7e0a",
+          "message": "[run] Adds support for custom audiences",
+          "issues": [
+            "9618"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "ce493bf3-7708-44fe-a5fe-d3bc7283a750",
+      "createTime": "2023-07-11T17:47:29.234Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0f4c25da50fc00855faa712c30b8793039106cc6",
+          "message": "[contactcenterinsights] Support topic model type V2",
+          "issues": [
+            "9616"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "6944ae65-be9d-4923-96fc-55b289ad1128",
+      "createTime": "2023-07-11T17:47:29.232Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "cc2e2ff1ae033ddb24c99ad0ece351b1129dadbe",
+          "message": "[datacatalog] added rpc RenameTagTemplateFieldEnumValue",
+          "issues": [
+            "9614"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "dc356b80-c3dd-4063-ade4-d7db1549fd2e",
+      "createTime": "2023-07-11T17:47:29.228Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d14537ee70e82031a3a008e122a7c386a111eadc",
+          "message": "[speech] add `model` and `language_codes` fields in `RecognitionConfig` message + enable default `_` recognizer",
+          "issues": [
+            "9613"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "309a6a10-72e1-43c2-9098-b3e586dcbbc6",
+      "createTime": "2023-07-11T17:47:29.224Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "04424f2d0198826f1cb4a7c3d893b2b242df4ed8",
+          "message": "[cloudkms] add interoperable symmetric encryption system",
+          "issues": [
+            "9598"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "8e5158c1-7e6e-44fd-b7b5-2be25ffe333b",
+      "createTime": "2023-07-11T17:47:29.221Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "333aff0df2f131b2525e38ab1f68bfbbed032e9b",
+          "message": "[container] add a flag to toggle the Kubelet read only port",
+          "issues": [
+            "9608"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "ef39c217bd22fe28a5264cbadf4403e15ad95f50",
+          "message": "add Tier 1 cluster-level API network_performance_config",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ef39c217bd22fe28a5264cbadf4403e15ad95f50",
+          "message": "[container] Add `KUBE_DNS` option to `DNSConfig.cluster_dns`",
+          "issues": [
+            "9592"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "ef39c217bd22fe28a5264cbadf4403e15ad95f50",
+          "message": "add Tier 1 cluster-level API network_performance_config",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ef39c217bd22fe28a5264cbadf4403e15ad95f50",
+          "message": "[container] Add `KUBE_DNS` option to `DNSConfig.cluster_dns`",
+          "issues": []
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "15e772af-8da1-4d15-8b6c-24cfc9025411",
+      "createTime": "2023-07-11T17:47:29.219Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "79b80a34531fb60e3bd4e83ba67a3c24019b1229",
+          "message": "[batch] Add gpu driver version field",
+          "issues": [
+            "9609"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "a59ef6d2-0fc3-4045-a51a-a3964e916977",
+      "createTime": "2023-07-11T17:47:29.216Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9cb69a817b44e7daa18e205c38a5046c845d0164",
+          "message": "[metastore] added Admin Interface (v1)",
+          "issues": [
+            "9612"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "2670da3c-5b6a-4d09-b61a-fe54e9de39f4",
+      "createTime": "2023-07-11T17:47:29.214Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "491c1579092bc5552a8f1c3f8d753b2cbcea0366",
+          "message": "[cloudcommerceconsumerprocurement] permit duplicate display names",
+          "issues": [
+            "9615"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
+      "id": "ef894acf-7e06-4018-bf0c-d298552414f3",
+      "createTime": "2023-07-11T17:47:29.211Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "be099c7692e9e179bde3737c09b97c8a01610628",
+          "message": "[dialogflow] added google.api.field_behavior for some fields in audio_config",
+          "issues": [
+            "9626"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "869f2576-afe8-491f-bd68-af27d3438fd4",
+      "createTime": "2023-07-11T17:47:29.209Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ca0d2db0652b937b4bada719a25e705b7b859ddf",
+          "message": "[compute] Update Compute Engine API to revision 20230701 (#821)",
+          "issues": [
+            "9628"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "38b6cb1f29ec51e277a5b77600abed465f27e3f8",
+          "message": "[compute] Update Compute Engine API to revision 20230610 (#820)",
+          "issues": [
+            "9597"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "e8e2d9fc-a81c-47c7-8f0b-610384f44cb4",
+      "createTime": "2023-07-11T17:47:29.206Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3c74216586e53c04291d4d66f9235eb910a3446b",
+          "message": "[transcoder] added support for segment template manifest generation with DASH",
+          "issues": [
+            "9629"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "e76793fc-a758-4416-81e0-8c35a6a8d603",
+      "createTime": "2023-07-11T17:47:29.200Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "16d930f612b8e37a46a2bf3807a49bfb0d6b7a28",
+          "message": "[clouddeploy] added support routeUpdateWaitTime field for Deployment Strategies",
+          "issues": [
+            "9630"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "520b5203-2250-4ce4-9cf3-b55b75dca6e8",
+      "createTime": "2023-07-11T17:47:29.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "68b12a0604b7205c6aa6c56ffa732028b33224df",
+          "message": "[dialogflow-cx] added GitIntegrationSettings to the Agent",
+          "issues": [
+            "9631"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "2e5fde30b7d72ce6d7a2ba11a0472714c3c6519f",
+          "message": "[dialogflow-cx] added GitIntegrationSettings to the Agent",
+          "issues": [
+            "9624"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "e5e03312-68bb-4133-922d-54f0d629373f",
+      "createTime": "2023-07-11T17:47:29.195Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "86f2bb3c25a6218738fb5a8a6f76e7103084c166",
+          "message": "[analyticsdata] add `CreateAudienceList`, `QueryAudienceList`,`GetAudienceList`,`ListAudienceLists` methods to the Data API v1 alpha",
+          "issues": [
+            "9632"
+          ]
+        }
+      ],
+      "version": "1.15.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-data",
+      "id": "6385fd6e-ffbb-4b31-94d4-5d0e3516a0b4",
+      "createTime": "2023-07-11T17:47:29.190Z"
+    },
+    {
+      "changes": [
+        {
           "type": "feat",
           "sha": "bb8a4bc8022d232a658c7a43fd57f8e976872143",
           "message": "[vmwareengine] Adding private connection CRUD, updating management subnets and time-limited PC features",
@@ -8011,5 +8732,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-06-23T19:41:27.395Z"
+  "updateTime": "2023-07-21T21:39:15.423Z"
 }

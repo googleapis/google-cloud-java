@@ -67,6 +67,10 @@ import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
+import com.google.cloud.kms.v1.RawDecryptRequest;
+import com.google.cloud.kms.v1.RawDecryptResponse;
+import com.google.cloud.kms.v1.RawEncryptRequest;
+import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -300,6 +304,24 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(DecryptResponse.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<RawEncryptRequest, RawEncryptResponse>
+      rawEncryptMethodDescriptor =
+          MethodDescriptor.<RawEncryptRequest, RawEncryptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RawEncrypt")
+              .setRequestMarshaller(ProtoUtils.marshaller(RawEncryptRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RawEncryptResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RawDecryptRequest, RawDecryptResponse>
+      rawDecryptMethodDescriptor =
+          MethodDescriptor.<RawDecryptRequest, RawDecryptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RawDecrypt")
+              .setRequestMarshaller(ProtoUtils.marshaller(RawDecryptRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RawDecryptResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<AsymmetricSignRequest, AsymmetricSignResponse>
       asymmetricSignMethodDescriptor =
           MethodDescriptor.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
@@ -433,6 +455,8 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       restoreCryptoKeyVersionCallable;
   private final UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable;
   private final UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable;
+  private final UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable;
+  private final UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable;
   private final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable;
   private final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
       asymmetricDecryptCallable;
@@ -716,6 +740,26 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptTransportSettings =
+        GrpcCallSettings.<RawEncryptRequest, RawEncryptResponse>newBuilder()
+            .setMethodDescriptor(rawEncryptMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptTransportSettings =
+        GrpcCallSettings.<RawDecryptRequest, RawDecryptResponse>newBuilder()
+            .setMethodDescriptor(rawDecryptMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
         asymmetricSignTransportSettings =
             GrpcCallSettings.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
@@ -914,6 +958,12 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
     this.decryptCallable =
         callableFactory.createUnaryCallable(
             decryptTransportSettings, settings.decryptSettings(), clientContext);
+    this.rawEncryptCallable =
+        callableFactory.createUnaryCallable(
+            rawEncryptTransportSettings, settings.rawEncryptSettings(), clientContext);
+    this.rawDecryptCallable =
+        callableFactory.createUnaryCallable(
+            rawDecryptTransportSettings, settings.rawDecryptSettings(), clientContext);
     this.asymmetricSignCallable =
         callableFactory.createUnaryCallable(
             asymmetricSignTransportSettings, settings.asymmetricSignSettings(), clientContext);
@@ -1095,6 +1145,16 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   @Override
   public UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable() {
     return decryptCallable;
+  }
+
+  @Override
+  public UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable() {
+    return rawEncryptCallable;
+  }
+
+  @Override
+  public UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable() {
+    return rawDecryptCallable;
   }
 
   @Override

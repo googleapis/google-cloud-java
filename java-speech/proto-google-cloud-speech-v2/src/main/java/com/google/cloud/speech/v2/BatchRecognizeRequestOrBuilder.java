@@ -27,7 +27,10 @@ public interface BatchRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the recognizer to be used for ASR.
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -41,7 +44,10 @@ public interface BatchRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the recognizer to be used for ASR.
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>

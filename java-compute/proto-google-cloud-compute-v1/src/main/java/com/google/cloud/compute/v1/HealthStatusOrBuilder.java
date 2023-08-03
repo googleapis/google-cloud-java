@@ -159,7 +159,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *

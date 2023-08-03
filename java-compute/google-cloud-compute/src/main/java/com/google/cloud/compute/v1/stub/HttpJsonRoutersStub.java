@@ -247,6 +247,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                               serializer.putQueryParam(
                                   fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasNatName()) {
+                              serializer.putQueryParam(fields, "natName", request.getNatName());
+                            }
                             if (request.hasOrderBy()) {
                               serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             }

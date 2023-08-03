@@ -151,6 +151,16 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>PLUS_PAGE = 6;</code>
      */
     PLUS_PAGE(6),
+    /**
+     *
+     *
+     * <pre>
+     * List of strings parameter.
+     * </pre>
+     *
+     * <code>LIST = 7;</code>
+     */
+    LIST(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -225,6 +235,16 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>PLUS_PAGE = 6;</code>
      */
     public static final int PLUS_PAGE_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * List of strings parameter.
+     * </pre>
+     *
+     * <code>LIST = 7;</code>
+     */
+    public static final int LIST_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -264,6 +284,8 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
           return RECORD;
         case 6:
           return PLUS_PAGE;
+        case 7:
+          return LIST;
         default:
           return null;
       }
