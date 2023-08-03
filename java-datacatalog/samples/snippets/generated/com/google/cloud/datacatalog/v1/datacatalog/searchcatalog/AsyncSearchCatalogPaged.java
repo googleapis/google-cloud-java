@@ -43,6 +43,7 @@ public class AsyncSearchCatalogPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setAdminSearch(true)
               .build();
       while (true) {
         SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);

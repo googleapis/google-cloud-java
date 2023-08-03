@@ -41,6 +41,7 @@ public class SyncSearchCatalog {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setAdminSearch(true)
               .build();
       for (SearchCatalogResult element : dataCatalogClient.searchCatalog(request).iterateAll()) {
         // doThingsWith(element);
