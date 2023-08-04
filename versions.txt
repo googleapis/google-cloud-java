@@ -663,3 +663,7 @@ proto-google-cloud-netapp-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-netapp-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudcommerceconsumerprocurement-v1:0.20.0:0.21.0-SNAPSHOT
 grpc-google-cloud-cloudcommerceconsumerprocurement-v1:0.20.0:0.21.0-SNAPSHOT
+google-cloud-java-alloydb-connectors:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-java-alloydb-connectors-v1alpha:0.0.0:0.0.1-SNAPSHOT
+google-cloud-alloydb-connectors:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-alloydb-connectors-v1alpha:0.0.0:0.0.1-SNAPSHOT
