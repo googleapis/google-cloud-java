@@ -240,7 +240,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    * <pre>
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * API returns a maximum of 250,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
    *
    * The API can also return fewer rows than the requested `limit`, if there

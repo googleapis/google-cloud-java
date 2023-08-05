@@ -690,6 +690,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * If false or unspecified, each row with all metrics equal to 0 will not be
    * returned. If true, these rows will be returned if they are not separately
    * removed by a filter.
+   *
+   * Regardless of this `keep_empty_rows` setting, only data recorded by the
+   * Google Analytics (GA4) property can be displayed in a report.
+   *
+   * For example if a property never logs a `purchase` event, then a query for
+   * the `eventName` dimension and  `eventCount` metric will not have a row
+   * eventName: "purchase" and eventCount: 0.
    * </pre>
    *
    * <code>bool keep_empty_rows = 10;</code>
@@ -3928,6 +3935,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -3945,6 +3959,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -3966,6 +3987,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>

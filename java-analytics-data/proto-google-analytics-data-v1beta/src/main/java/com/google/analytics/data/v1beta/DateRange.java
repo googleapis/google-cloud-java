@@ -22,8 +22,8 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * A contiguous set of days: startDate, startDate + 1, ..., endDate. Requests
- * are allowed up to 4 date ranges.
+ * A contiguous set of days: `startDate`, `startDate + 1`, ..., `endDate`.
+ * Requests are allowed up to 4 date ranges.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1beta.DateRange}
@@ -417,8 +417,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A contiguous set of days: startDate, startDate + 1, ..., endDate. Requests
-   * are allowed up to 4 date ranges.
+   * A contiguous set of days: `startDate`, `startDate + 1`, ..., `endDate`.
+   * Requests are allowed up to 4 date ranges.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1beta.DateRange}
