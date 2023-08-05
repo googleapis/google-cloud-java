@@ -166,12 +166,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
-       * projects/{project}/datasets/{dataset}/tables/{table}
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
-       * <code>
-       * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The resultsTable.
        */
@@ -182,12 +180,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
-       * projects/{project}/datasets/{dataset}/tables/{table}
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
-       * <code>
-       * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for resultsTable.
        */
@@ -248,12 +244,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
-       * projects/{project}/datasets/{dataset}/tables/{table}
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
-       * <code>
-       * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The resultsTable.
        */
@@ -275,12 +269,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
-       * projects/{project}/datasets/{dataset}/tables/{table}
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
-       * <code>
-       * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for resultsTable.
        */
@@ -675,12 +667,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * <pre>
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
-         * projects/{project}/datasets/{dataset}/tables/{table}
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
-         * <code>
-         * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-         * </code>
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The resultsTable.
          */
@@ -701,12 +691,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * <pre>
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
-         * projects/{project}/datasets/{dataset}/tables/{table}
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
-         * <code>
-         * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-         * </code>
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for resultsTable.
          */
@@ -727,12 +715,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * <pre>
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
-         * projects/{project}/datasets/{dataset}/tables/{table}
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
-         * <code>
-         * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-         * </code>
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The resultsTable to set.
          * @return This builder for chaining.
@@ -752,12 +738,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * <pre>
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
-         * projects/{project}/datasets/{dataset}/tables/{table}
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
-         * <code>
-         * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-         * </code>
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -773,12 +757,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * <pre>
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
-         * projects/{project}/datasets/{dataset}/tables/{table}
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
-         * <code>
-         * string results_table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-         * </code>
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for resultsTable to set.
          * @return This builder for chaining.
