@@ -18,7 +18,15 @@
 
 package com.google.cloud.netapp.v1;
 
-/** Protobuf type {@code google.cloud.netapp.v1.Snapshot} */
+/**
+ *
+ *
+ * <pre>
+ * Snapshot is a point-in-time version of a Volume's content.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.netapp.v1.Snapshot}
+ */
 public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.Snapshot)
@@ -908,7 +916,15 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.netapp.v1.Snapshot} */
+  /**
+   *
+   *
+   * <pre>
+   * Snapshot is a point-in-time version of a Volume's content.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.netapp.v1.Snapshot}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.netapp.v1.Snapshot)

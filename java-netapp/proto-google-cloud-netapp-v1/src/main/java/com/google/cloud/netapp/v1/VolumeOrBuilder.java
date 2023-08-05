@@ -934,4 +934,77 @@ public interface VolumeOrBuilder
    * @return The hasReplication.
    */
   boolean getHasReplication();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the restrictedActions.
+   */
+  java.util.List<com.google.cloud.netapp.v1.RestrictedAction> getRestrictedActionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of restrictedActions.
+   */
+  int getRestrictedActionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restrictedActions at the given index.
+   */
+  com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for restrictedActions.
+   */
+  java.util.List<java.lang.Integer> getRestrictedActionsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of restrictedActions at the given index.
+   */
+  int getRestrictedActionsValue(int index);
 }

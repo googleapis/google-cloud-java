@@ -55,6 +55,9 @@
             "GetKmsConfig": {
               "methods": ["getKmsConfig", "getKmsConfig", "getKmsConfig", "getKmsConfigCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetReplication": {
               "methods": ["getReplication", "getReplication", "getReplication", "getReplicationCallable"]
             },
@@ -72,6 +75,9 @@
             },
             "ListKmsConfigs": {
               "methods": ["listKmsConfigs", "listKmsConfigs", "listKmsConfigs", "listKmsConfigsPagedCallable", "listKmsConfigsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListReplications": {
               "methods": ["listReplications", "listReplications", "listReplications", "listReplicationsPagedCallable", "listReplicationsCallable"]
