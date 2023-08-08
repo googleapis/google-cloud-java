@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.41.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.41.0...v2.41.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* Remove FAILED_PRECONDITION from connection retry code ([#2214](https://github.com/googleapis/java-bigquerystorage/issues/2214)) ([b8e8a24](https://github.com/googleapis/java-bigquerystorage/commit/b8e8a2489fbd68b24c39ca2d1d90cbb9fc3be715))
+* Remove pre launch comments from enableConnectionPool ([#2215](https://github.com/googleapis/java-bigquerystorage/issues/2215)) ([fb72c18](https://github.com/googleapis/java-bigquerystorage/commit/fb72c181cc07e8870c100bb63a334e3a6e3d1fa3))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.31.0 ([#2206](https://github.com/googleapis/java-bigquerystorage/issues/2206)) ([7d935f0](https://github.com/googleapis/java-bigquerystorage/commit/7d935f094ec679fb1c72541340625c6d05580496))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#2218](https://github.com/googleapis/java-bigquerystorage/issues/2218)) ([4d51a01](https://github.com/googleapis/java-bigquerystorage/commit/4d51a016fb9e2cf65f3b9f490cf0f6802d8ec5de))
+
 ## [2.41.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.40.1...v2.41.0) (2023-07-24)
 
 
