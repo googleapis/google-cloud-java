@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.21.0 (2023-08-08)
+
+### Features
+
+* new service DataTaxonomyService and related messages ([#9688](https://github.com/googleapis/google-cloud-java/issues/9688)) ([205f373](https://github.com/googleapis/google-cloud-java/commit/205f373a32667b27a5f57f88adcb3245262a8f99))
+* remove unused annotation in results_table ([#9739](https://github.com/googleapis/google-cloud-java/issues/9739)) ([037b24a](https://github.com/googleapis/google-cloud-java/commit/037b24a80200ff99089279201fcfe13b7ece4d43))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 1.20.0 (2023-07-21)
 
 ### Dependencies

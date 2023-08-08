@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.23.0 (2023-08-08)
+
+### Features
+
+* Add comment to the unsupported order_by field of ListTasksRequest ([#9684](https://github.com/googleapis/google-cloud-java/issues/9684)) ([c27566e](https://github.com/googleapis/google-cloud-java/commit/c27566e930b4165a6a468351021c222d677478c8))
+* Clarify Batch API proto doc about pubsub notifications ([#9741](https://github.com/googleapis/google-cloud-java/issues/9741)) ([e580ede](https://github.com/googleapis/google-cloud-java/commit/e580ede1be613ac684f4d24f1c9c6d6a392f00b8))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 0.22.0 (2023-07-21)
 
 ### Dependencies

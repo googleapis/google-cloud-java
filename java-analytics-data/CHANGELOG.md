@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.34.0 (2023-08-08)
+
+### Features
+
+* Minor formatting ([#9738](https://github.com/googleapis/google-cloud-java/issues/9738)) ([47fbbd6](https://github.com/googleapis/google-cloud-java/commit/47fbbd653105b65c115836c032bc4494446df528))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 0.33.0 (2023-07-21)
 
 ### Dependencies

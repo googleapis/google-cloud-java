@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.19.0 (2023-08-08)
+
+### Features
+
+* support conversational / multi-turn search ([#9710](https://github.com/googleapis/google-cloud-java/issues/9710)) ([e1fba2b](https://github.com/googleapis/google-cloud-java/commit/e1fba2bf5f4f308905eecc0ba9b234fc167dcf09))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 0.18.0 (2023-07-21)
 
 ### Dependencies

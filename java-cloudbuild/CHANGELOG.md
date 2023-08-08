@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.25.0 (2023-08-08)
+
+### Features
+
+* add update_mask to UpdateBuildTriggerRequest proto ([#9704](https://github.com/googleapis/google-cloud-java/issues/9704)) ([4659951](https://github.com/googleapis/google-cloud-java/commit/46599512aac9c0bf6974a6e74287ae979affdcb2))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 3.24.0 (2023-07-21)
 
 ### Features

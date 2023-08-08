@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.22.0 (2023-08-08)
+
+### Features
+
+* Add precision and scale to MysqlColumn ([#9677](https://github.com/googleapis/google-cloud-java/issues/9677)) ([fd13336](https://github.com/googleapis/google-cloud-java/commit/fd13336adfd4a549e8a1995cf713e14027af4ab3))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 1.21.0 (2023-07-21)
 
 ### Dependencies

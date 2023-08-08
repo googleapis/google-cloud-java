@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.33.0 (2023-08-08)
+
+### Features
+
+* Update Compute Engine API to revision 20230711 ([#836](https://github.com/googleapis/google-cloud-java/issues/836)) ([#9696](https://github.com/googleapis/google-cloud-java/issues/9696)) ([0f6b9f2](https://github.com/googleapis/google-cloud-java/commit/0f6b9f21720123573e15449b618244d399d9e810))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 1.32.0 (2023-07-21)
 
 ### Dependencies
