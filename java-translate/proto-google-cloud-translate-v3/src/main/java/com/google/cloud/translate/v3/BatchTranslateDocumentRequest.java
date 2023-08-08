@@ -928,6 +928,46 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
   }
 
+  public static final int ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER = 11;
+  private boolean enableShadowRemovalNativePdf_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal server to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  @java.lang.Override
+  public boolean getEnableShadowRemovalNativePdf() {
+    return enableShadowRemovalNativePdf_;
+  }
+
+  public static final int ENABLE_ROTATION_CORRECTION_FIELD_NUMBER = 12;
+  private boolean enableRotationCorrection_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  @java.lang.Override
+  public boolean getEnableRotationCorrection() {
+    return enableRotationCorrection_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -968,6 +1008,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         8);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, customizedAttribution_);
+    }
+    if (enableShadowRemovalNativePdf_ != false) {
+      output.writeBool(11, enableShadowRemovalNativePdf_);
+    }
+    if (enableRotationCorrection_ != false) {
+      output.writeBool(12, enableRotationCorrection_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1034,6 +1080,13 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, customizedAttribution_);
     }
+    if (enableShadowRemovalNativePdf_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableShadowRemovalNativePdf_);
+    }
+    if (enableRotationCorrection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableRotationCorrection_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1062,6 +1115,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!internalGetGlossaries().equals(other.internalGetGlossaries())) return false;
     if (!internalGetFormatConversions().equals(other.internalGetFormatConversions())) return false;
     if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
+    if (getEnableShadowRemovalNativePdf() != other.getEnableShadowRemovalNativePdf()) return false;
+    if (getEnableRotationCorrection() != other.getEnableRotationCorrection()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1103,6 +1158,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     hash = (37 * hash) + CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER;
     hash = (53 * hash) + getCustomizedAttribution().hashCode();
+    hash = (37 * hash) + ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableShadowRemovalNativePdf());
+    hash = (37 * hash) + ENABLE_ROTATION_CORRECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRotationCorrection());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1290,6 +1350,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableGlossaries().clear();
       internalGetMutableFormatConversions().clear();
       customizedAttribution_ = "";
+      enableShadowRemovalNativePdf_ = false;
+      enableRotationCorrection_ = false;
       return this;
     }
 
@@ -1368,6 +1430,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.customizedAttribution_ = customizedAttribution_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableShadowRemovalNativePdf_ = enableShadowRemovalNativePdf_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableRotationCorrection_ = enableRotationCorrection_;
       }
     }
 
@@ -1477,6 +1545,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         customizedAttribution_ = other.customizedAttribution_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.getEnableShadowRemovalNativePdf() != false) {
+        setEnableShadowRemovalNativePdf(other.getEnableShadowRemovalNativePdf());
+      }
+      if (other.getEnableRotationCorrection() != false) {
+        setEnableRotationCorrection(other.getEnableRotationCorrection());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1588,6 +1662,18 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 88:
+              {
+                enableShadowRemovalNativePdf_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+            case 96:
+              {
+                enableRotationCorrection_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3567,6 +3653,124 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       customizedAttribution_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableShadowRemovalNativePdf_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableShadowRemovalNativePdf.
+     */
+    @java.lang.Override
+    public boolean getEnableShadowRemovalNativePdf() {
+      return enableShadowRemovalNativePdf_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableShadowRemovalNativePdf to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableShadowRemovalNativePdf(boolean value) {
+
+      enableShadowRemovalNativePdf_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableShadowRemovalNativePdf() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      enableShadowRemovalNativePdf_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableRotationCorrection_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableRotationCorrection.
+     */
+    @java.lang.Override
+    public boolean getEnableRotationCorrection() {
+      return enableRotationCorrection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableRotationCorrection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRotationCorrection(boolean value) {
+
+      enableRotationCorrection_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRotationCorrection() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableRotationCorrection_ = false;
       onChanged();
       return this;
     }

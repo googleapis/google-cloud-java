@@ -52,6 +52,9 @@ public class AsyncBatchTranslateDocumentLRO {
               .putAllModels(new HashMap<String, String>())
               .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
               .putAllFormatConversions(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
           translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
