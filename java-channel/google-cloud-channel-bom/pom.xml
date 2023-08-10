@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -14,13 +14,53 @@
   </parent>
 
   <name>Google Channel Services BOM</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
     BOM for Channel Services
   </description>
 
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>chingor13</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google LLC</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+       <id>neenushaji</id>
+       <name>Neenu Shaji</name>
+       <email>neenushaji@google.com</email>
+       <organization>Google LLC</organization>
+       <roles>
+         <role>Developer</role>
+       </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+  </scm>
+
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <dependencyManagement>
     <dependencies>
@@ -32,13 +72,25 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-channel-v1</artifactId>
-        <version>3.26.0</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-channel-v1</artifactId>
-        <version>3.26.0</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

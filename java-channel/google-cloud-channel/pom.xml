@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -6,7 +6,8 @@
   <version>3.26.0</version><!-- {x-version-update:google-cloud-channel:current} -->
   <packaging>jar</packaging>
   <name>Google Channel Services</name>
-  <description>With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.</description>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>Channel Services With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-channel-parent</artifactId>
@@ -62,6 +63,18 @@
       <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
@@ -71,6 +84,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>
@@ -92,10 +106,34 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    <groupId>com.google.api</groupId>
+      <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>java9</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+  </build>
 </project>

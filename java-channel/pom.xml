@@ -12,7 +12,7 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-jar-parent</artifactId>
+    <artifactId>google-cloud-pom-parent</artifactId>
     <version>1.16.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
@@ -33,13 +33,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-channel-v1</artifactId>
-        <version>3.26.0</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
+        <artifactId>grpc-google-cloud-channel-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-channel-v1</artifactId>
-        <version>3.26.0</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
+        <artifactId>proto-google-cloud-channel-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -50,5 +50,4 @@
     <module>proto-google-cloud-channel-v1</module>
     <module>google-cloud-channel-bom</module>
   </modules>
-
-  </project>
+</project>

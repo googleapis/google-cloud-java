@@ -40,7 +40,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler",
+    value = "by gRPC proto compiler (version 1.56.1)",
     comments = "Source: google/cloud/channel/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudChannelServiceGrpc {
