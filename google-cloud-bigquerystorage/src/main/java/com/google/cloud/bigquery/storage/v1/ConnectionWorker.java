@@ -839,8 +839,24 @@ class ConnectionWorker implements AutoCloseable {
             + streamName
             + " id: "
             + writerId);
-    while (!localQueue.isEmpty()) {
-      localQueue.pollFirst().appendResult.setException(finalStatus);
+    int sizeOfQueue = localQueue.size();
+    for (int i = 0; i < sizeOfQueue; i++) {
+      if (i == 0) {
+        localQueue.pollFirst().appendResult.setException(finalStatus);
+      } else {
+        localQueue
+            .pollFirst()
+            .appendResult
+            .setException(
+                new Exceptions.StreamWriterClosedException(
+                    Status.fromCode(Code.ABORTED)
+                        .withDescription(
+                            "Connection is aborted due to an unrecoverable failure of "
+                                + "another request sharing the connection. Please retry this "
+                                + "request."),
+                    streamName,
+                    writerId));
+      }
     }
   }
 

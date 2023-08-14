@@ -39,6 +39,7 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
+import com.google.cloud.bigquery.storage.v1.Exceptions.StreamWriterClosedException;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Strings;
@@ -666,8 +667,12 @@ public class StreamWriterTest {
 
     // Server close should properly handle all inflight requests.
     for (int i = 0; i < appendCount; i++) {
-      ApiException actualError = assertFutureException(ApiException.class, futures.get(i));
-      assertEquals(Code.INVALID_ARGUMENT, actualError.getStatusCode().getCode());
+      if (i == 0) {
+        ApiException actualError = assertFutureException(ApiException.class, futures.get(i));
+        assertEquals(Code.INVALID_ARGUMENT, actualError.getStatusCode().getCode());
+      } else {
+        assertFutureException(StreamWriterClosedException.class, futures.get(i));
+      }
     }
 
     writer.close();
@@ -988,7 +993,13 @@ public class StreamWriterTest {
           assertThrows(
               ExecutionException.class,
               () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
-      assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+      if (i == 0) {
+        assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+      } else {
+        assertThat(ex.getCause())
+            .hasMessageThat()
+            .contains("Connection is aborted due to an unrecoverable");
+      }
     }
   }
 
@@ -1027,7 +1038,11 @@ public class StreamWriterTest {
       assertEquals(futures.get(0).get().getAppendResult().getOffset().getValue(), 0);
       // after 5 seconds, the requests will bail out.
       for (int i = 1; i < appendCount; i++) {
-        assertFutureException(AbortedException.class, futures.get(i));
+        if (i == 1) {
+          assertFutureException(AbortedException.class, futures.get(i));
+        } else {
+          assertFutureException(StreamWriterClosedException.class, futures.get(i));
+        }
       }
     }
   }
@@ -1048,7 +1063,11 @@ public class StreamWriterTest {
       assertEquals(futures.get(0).get().getAppendResult().getOffset().getValue(), 0);
       // after 5 seconds, the requests will bail out.
       for (int i = 1; i < appendCount; i++) {
-        assertFutureException(AbortedException.class, futures.get(i));
+        if (i == 1) {
+          assertFutureException(AbortedException.class, futures.get(i));
+        } else {
+          assertFutureException(StreamWriterClosedException.class, futures.get(i));
+        }
       }
     }
   }

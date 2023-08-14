@@ -418,7 +418,11 @@ public class ConnectionWorkerTest {
           assertThrows(
               ExecutionException.class,
               () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
-      assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+      if (i == 0) {
+        assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+      } else {
+        assertThat(ex.getCause()).hasMessageThat().contains("Connection is aborted due to ");
+      }
     }
 
     // The future append will directly fail.
@@ -654,7 +658,11 @@ public class ConnectionWorkerTest {
           assertThrows(
               ExecutionException.class,
               () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
-      assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+      if (i == 0) {
+        assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+      } else {
+        assertThat(ex.getCause()).hasMessageThat().contains("Connection is aborted due to ");
+      }
     }
 
     // The future append will directly fail.
