@@ -616,6 +616,7 @@ public class PipelineServiceClientTest {
             .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -677,6 +678,7 @@ public class PipelineServiceClientTest {
             .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -738,6 +740,7 @@ public class PipelineServiceClientTest {
             .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -793,6 +796,7 @@ public class PipelineServiceClientTest {
             .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

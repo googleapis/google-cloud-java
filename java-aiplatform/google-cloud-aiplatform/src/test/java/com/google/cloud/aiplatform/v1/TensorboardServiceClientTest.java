@@ -638,6 +638,78 @@ public class TensorboardServiceClientTest {
   }
 
   @Test
+  public void readTensorboardSizeTest() throws Exception {
+    ReadTensorboardSizeResponse expectedResponse =
+        ReadTensorboardSizeResponse.newBuilder().setStorageSizeByte(-126045758).build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+
+    ReadTensorboardSizeResponse actualResponse = client.readTensorboardSize(tensorboard);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReadTensorboardSizeRequest actualRequest = ((ReadTensorboardSizeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboard.toString(), actualRequest.getTensorboard());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void readTensorboardSizeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+      client.readTensorboardSize(tensorboard);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void readTensorboardSizeTest2() throws Exception {
+    ReadTensorboardSizeResponse expectedResponse =
+        ReadTensorboardSizeResponse.newBuilder().setStorageSizeByte(-126045758).build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    String tensorboard = "tensorboard-266431955";
+
+    ReadTensorboardSizeResponse actualResponse = client.readTensorboardSize(tensorboard);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReadTensorboardSizeRequest actualRequest = ((ReadTensorboardSizeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboard, actualRequest.getTensorboard());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void readTensorboardSizeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      String tensorboard = "tensorboard-266431955";
+      client.readTensorboardSize(tensorboard);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createTensorboardExperimentTest() throws Exception {
     TensorboardExperiment expectedResponse =
         TensorboardExperiment.newBuilder()
