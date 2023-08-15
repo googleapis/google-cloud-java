@@ -11,7 +11,9 @@ public interface UpdateScheduleRequestOrBuilder extends
    * <pre>
    * Required. The Schedule which replaces the resource on the server.
    * The following restrictions will be applied:
+   *
    *   * The scheduled request type cannot be changed.
+   *   * The non-empty fields cannot be unset.
    *   * The output_only fields will be ignored if specified.
    * </pre>
    *
@@ -23,7 +25,9 @@ public interface UpdateScheduleRequestOrBuilder extends
    * <pre>
    * Required. The Schedule which replaces the resource on the server.
    * The following restrictions will be applied:
+   *
    *   * The scheduled request type cannot be changed.
+   *   * The non-empty fields cannot be unset.
    *   * The output_only fields will be ignored if specified.
    * </pre>
    *
@@ -35,7 +39,9 @@ public interface UpdateScheduleRequestOrBuilder extends
    * <pre>
    * Required. The Schedule which replaces the resource on the server.
    * The following restrictions will be applied:
+   *
    *   * The scheduled request type cannot be changed.
+   *   * The non-empty fields cannot be unset.
    *   * The output_only fields will be ignored if specified.
    * </pre>
    *

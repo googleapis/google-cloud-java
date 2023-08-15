@@ -45,4 +45,16 @@ public interface SchedulingOrBuilder extends
    * @return The restartJobOnWorkerRestart.
    */
   boolean getRestartJobOnWorkerRestart();
+
+  /**
+   * <pre>
+   * Optional. Indicates if the job should retry for internal errors after the
+   * job starts running. If true, overrides
+   * `Scheduling.restart_job_on_worker_restart` to false.
+   * </pre>
+   *
+   * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The disableRetries.
+   */
+  boolean getDisableRetries();
 }

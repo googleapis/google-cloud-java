@@ -193,7 +193,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -238,7 +238,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -283,7 +283,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -316,7 +316,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -353,7 +353,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *

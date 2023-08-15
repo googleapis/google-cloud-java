@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
    * @return The savedQuery.
    */
   @java.lang.Override
@@ -1101,7 +1101,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
    * @return The bytes for savedQuery.
    */
   @java.lang.Override
@@ -1255,7 +1255,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
    * @return The annotationsFilter.
    */
   @java.lang.Override
@@ -1280,7 +1280,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
    * @return The bytes for annotationsFilter.
    */
   @java.lang.Override
@@ -1452,7 +1452,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string order_by = 9 [deprecated = true];</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
    * @return The orderBy.
    */
   @java.lang.Override
@@ -1476,7 +1476,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string order_by = 9 [deprecated = true];</code>
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
    * @return The bytes for orderBy.
    */
   @java.lang.Override
@@ -2657,7 +2657,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
      * @return The savedQuery.
      */
     @java.lang.Deprecated public java.lang.String getSavedQuery() {
@@ -2682,7 +2682,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
      * @return The bytes for savedQuery.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2708,7 +2708,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
      * @param value The savedQuery to set.
      * @return This builder for chaining.
      */
@@ -2730,7 +2730,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearSavedQuery() {
@@ -2749,7 +2749,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string saved_query = 2 [deprecated = true, (.google.api.resource_reference) = { ... }</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=449
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=463
      * @param value The bytes for savedQuery to set.
      * @return This builder for chaining.
      */
@@ -3032,7 +3032,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
      * @return The annotationsFilter.
      */
     @java.lang.Deprecated public java.lang.String getAnnotationsFilter() {
@@ -3056,7 +3056,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
      * @return The bytes for annotationsFilter.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3081,7 +3081,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
      * @param value The annotationsFilter to set.
      * @return This builder for chaining.
      */
@@ -3102,7 +3102,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearAnnotationsFilter() {
@@ -3120,7 +3120,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=480
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=494
      * @param value The bytes for annotationsFilter to set.
      * @return This builder for chaining.
      */
@@ -3587,7 +3587,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 9 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
      * @return The orderBy.
      */
     @java.lang.Deprecated public java.lang.String getOrderBy() {
@@ -3610,7 +3610,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 9 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
      * @return The bytes for orderBy.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3634,7 +3634,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 9 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
      * @param value The orderBy to set.
      * @return This builder for chaining.
      */
@@ -3654,7 +3654,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 9 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearOrderBy() {
@@ -3671,7 +3671,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 9 [deprecated = true];</code>
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=504
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=518
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
      */

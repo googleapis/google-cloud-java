@@ -877,6 +877,9 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "CountTokens": {
+              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },

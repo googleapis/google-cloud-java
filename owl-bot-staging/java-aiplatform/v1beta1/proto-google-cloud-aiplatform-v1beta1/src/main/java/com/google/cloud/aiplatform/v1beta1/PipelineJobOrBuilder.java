@@ -623,4 +623,26 @@ java.lang.String defaultValue);
    * <code>.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadataOrBuilder getTemplateMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The scheduleName.
+   */
+  java.lang.String getScheduleName();
+  /**
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for scheduleName.
+   */
+  com.google.protobuf.ByteString
+      getScheduleNameBytes();
 }

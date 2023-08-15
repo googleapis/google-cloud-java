@@ -195,7 +195,7 @@ public final class PersistentResourceServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     default void createPersistentResource(com.google.cloud.aiplatform.v1beta1.CreatePersistentResourceRequest request,
@@ -269,7 +269,7 @@ public final class PersistentResourceServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public void createPersistentResource(com.google.cloud.aiplatform.v1beta1.CreatePersistentResourceRequest request,
@@ -333,7 +333,7 @@ public final class PersistentResourceServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public com.google.longrunning.Operation createPersistentResource(com.google.cloud.aiplatform.v1beta1.CreatePersistentResourceRequest request) {
@@ -393,7 +393,7 @@ public final class PersistentResourceServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createPersistentResource(

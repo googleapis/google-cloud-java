@@ -108,6 +108,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).explainSettings();
   }
 
+  /** Returns the object with the settings used for calls to countTokens. */
+  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).countTokensSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -251,6 +256,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return getStubSettingsBuilder().explainSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to countTokens. */
+    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings() {
+      return getStubSettingsBuilder().countTokensSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

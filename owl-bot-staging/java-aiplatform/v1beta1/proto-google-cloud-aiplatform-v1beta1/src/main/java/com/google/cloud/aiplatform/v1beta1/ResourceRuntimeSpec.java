@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.RaySpec raySpec_;
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.RaySpec, com.google.cloud.aiplatform.v1beta1.RaySpec.Builder, com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder> raySpecBuilder_;
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -775,7 +775,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *

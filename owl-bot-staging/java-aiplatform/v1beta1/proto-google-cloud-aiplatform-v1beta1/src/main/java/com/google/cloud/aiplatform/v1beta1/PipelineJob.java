@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     reservedIpRanges_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     templateUri_ = "";
+    scheduleName_ = "";
   }
 
   @java.lang.Override
@@ -3885,6 +3886,55 @@ java.lang.String defaultValue) {
     return templateMetadata_ == null ? com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata.getDefaultInstance() : templateMetadata_;
   }
 
+  public static final int SCHEDULE_NAME_FIELD_NUMBER = 22;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scheduleName_ = "";
+  /**
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The scheduleName.
+   */
+  @java.lang.Override
+  public java.lang.String getScheduleName() {
+    java.lang.Object ref = scheduleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      scheduleName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for scheduleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getScheduleNameBytes() {
+    java.lang.Object ref = scheduleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      scheduleName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -3952,6 +4002,9 @@ java.lang.String defaultValue) {
     }
     if (templateMetadata_ != null) {
       output.writeMessage(20, getTemplateMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheduleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, scheduleName_);
     }
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, reservedIpRanges_.getRaw(i));
@@ -4033,6 +4086,9 @@ java.lang.String defaultValue) {
     if (templateMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getTemplateMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheduleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, scheduleName_);
     }
     {
       int dataSize = 0;
@@ -4122,6 +4178,8 @@ java.lang.String defaultValue) {
       if (!getTemplateMetadata()
           .equals(other.getTemplateMetadata())) return false;
     }
+    if (!getScheduleName()
+        .equals(other.getScheduleName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4193,6 +4251,8 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + TEMPLATE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getTemplateMetadata().hashCode();
     }
+    hash = (37 * hash) + SCHEDULE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getScheduleName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4409,6 +4469,7 @@ java.lang.String defaultValue) {
         templateMetadataBuilder_.dispose();
         templateMetadataBuilder_ = null;
       }
+      scheduleName_ = "";
       return this;
     }
 
@@ -4517,6 +4578,9 @@ java.lang.String defaultValue) {
         result.templateMetadata_ = templateMetadataBuilder_ == null
             ? templateMetadata_
             : templateMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.scheduleName_ = scheduleName_;
       }
     }
 
@@ -4634,6 +4698,11 @@ java.lang.String defaultValue) {
       }
       if (other.hasTemplateMetadata()) {
         mergeTemplateMetadata(other.getTemplateMetadata());
+      }
+      if (!other.getScheduleName().isEmpty()) {
+        scheduleName_ = other.scheduleName_;
+        bitField0_ |= 0x00040000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4770,6 +4839,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00020000;
               break;
             } // case 162
+            case 178: {
+              scheduleName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 178
             case 202: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureReservedIpRangesIsMutable();
@@ -7458,6 +7532,103 @@ java.lang.String defaultValue) {
         templateMetadata_ = null;
       }
       return templateMetadataBuilder_;
+    }
+
+    private java.lang.Object scheduleName_ = "";
+    /**
+     * <pre>
+     * Output only. The schedule resource name.
+     * Only returned if the Pipeline is created by Schedule API.
+     * </pre>
+     *
+     * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The scheduleName.
+     */
+    public java.lang.String getScheduleName() {
+      java.lang.Object ref = scheduleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scheduleName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The schedule resource name.
+     * Only returned if the Pipeline is created by Schedule API.
+     * </pre>
+     *
+     * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for scheduleName.
+     */
+    public com.google.protobuf.ByteString
+        getScheduleNameBytes() {
+      java.lang.Object ref = scheduleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scheduleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The schedule resource name.
+     * Only returned if the Pipeline is created by Schedule API.
+     * </pre>
+     *
+     * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The scheduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScheduleName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      scheduleName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The schedule resource name.
+     * Only returned if the Pipeline is created by Schedule API.
+     * </pre>
+     *
+     * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScheduleName() {
+      scheduleName_ = getDefaultInstance().getScheduleName();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The schedule resource name.
+     * Only returned if the Pipeline is created by Schedule API.
+     * </pre>
+     *
+     * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for scheduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScheduleNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      scheduleName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

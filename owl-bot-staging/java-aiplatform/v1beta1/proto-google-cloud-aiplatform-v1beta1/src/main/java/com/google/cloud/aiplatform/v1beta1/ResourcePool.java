@@ -745,12 +745,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_ = "";
   /**
    * <pre>
-   * Optional. The unique ID in a PersistentResource to refer the this resource
+   * Immutable. The unique ID in a PersistentResource to refer the this resource
    * pool. User can specify it if need to use it, otherwise we will generate it
    * automatically.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -768,12 +768,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The unique ID in a PersistentResource to refer the this resource
+   * Immutable. The unique ID in a PersistentResource to refer the this resource
    * pool. User can specify it if need to use it, otherwise we will generate it
    * automatically.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -894,24 +894,6 @@ private static final long serialVersionUID = 0L;
     return diskSpec_ == null ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance() : diskSpec_;
   }
 
-  public static final int IDLE_REPLICA_COUNT_FIELD_NUMBER = 5;
-  private long idleReplicaCount_ = 0L;
-  /**
-   * <pre>
-   * Output only. The number of machines currently not in use by training jobs
-   * for this resource pool. Deprecated. Use `used_replica_count` instead.
-   * </pre>
-   *
-   * <code>int64 idle_replica_count = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
-   * @return The idleReplicaCount.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public long getIdleReplicaCount() {
-    return idleReplicaCount_;
-  }
-
   public static final int USED_REPLICA_COUNT_FIELD_NUMBER = 6;
   private long usedReplicaCount_ = 0L;
   /**
@@ -992,9 +974,6 @@ private static final long serialVersionUID = 0L;
     if (diskSpec_ != null) {
       output.writeMessage(4, getDiskSpec());
     }
-    if (idleReplicaCount_ != 0L) {
-      output.writeInt64(5, idleReplicaCount_);
-    }
     if (usedReplicaCount_ != 0L) {
       output.writeInt64(6, usedReplicaCount_);
     }
@@ -1024,10 +1003,6 @@ private static final long serialVersionUID = 0L;
     if (diskSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDiskSpec());
-    }
-    if (idleReplicaCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, idleReplicaCount_);
     }
     if (usedReplicaCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -1069,8 +1044,6 @@ private static final long serialVersionUID = 0L;
       if (!getDiskSpec()
           .equals(other.getDiskSpec())) return false;
     }
-    if (getIdleReplicaCount()
-        != other.getIdleReplicaCount()) return false;
     if (getUsedReplicaCount()
         != other.getUsedReplicaCount()) return false;
     if (hasAutoscalingSpec() != other.hasAutoscalingSpec()) return false;
@@ -1104,9 +1077,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DISK_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getDiskSpec().hashCode();
     }
-    hash = (37 * hash) + IDLE_REPLICA_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getIdleReplicaCount());
     hash = (37 * hash) + USED_REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUsedReplicaCount());
@@ -1262,7 +1232,6 @@ private static final long serialVersionUID = 0L;
         diskSpecBuilder_.dispose();
         diskSpecBuilder_ = null;
       }
-      idleReplicaCount_ = 0L;
       usedReplicaCount_ = 0L;
       autoscalingSpec_ = null;
       if (autoscalingSpecBuilder_ != null) {
@@ -1321,12 +1290,9 @@ private static final long serialVersionUID = 0L;
             : diskSpecBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.idleReplicaCount_ = idleReplicaCount_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.usedReplicaCount_ = usedReplicaCount_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.autoscalingSpec_ = autoscalingSpecBuilder_ == null
             ? autoscalingSpec_
             : autoscalingSpecBuilder_.build();
@@ -1392,9 +1358,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasDiskSpec()) {
         mergeDiskSpec(other.getDiskSpec());
       }
-      if (other.getIdleReplicaCount() != 0L) {
-        setIdleReplicaCount(other.getIdleReplicaCount());
-      }
       if (other.getUsedReplicaCount() != 0L) {
         setUsedReplicaCount(other.getUsedReplicaCount());
       }
@@ -1451,21 +1414,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 40: {
-              idleReplicaCount_ = input.readInt64();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 40
             case 48: {
               usedReplicaCount_ = input.readInt64();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             } // case 48
             case 58: {
               input.readMessage(
                   getAutoscalingSpecFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 58
             default: {
@@ -1488,12 +1446,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * Optional. The unique ID in a PersistentResource to refer the this resource
+     * Immutable. The unique ID in a PersistentResource to refer the this resource
      * pool. User can specify it if need to use it, otherwise we will generate it
      * automatically.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1510,12 +1468,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The unique ID in a PersistentResource to refer the this resource
+     * Immutable. The unique ID in a PersistentResource to refer the this resource
      * pool. User can specify it if need to use it, otherwise we will generate it
      * automatically.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1533,12 +1491,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The unique ID in a PersistentResource to refer the this resource
+     * Immutable. The unique ID in a PersistentResource to refer the this resource
      * pool. User can specify it if need to use it, otherwise we will generate it
      * automatically.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1552,12 +1510,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The unique ID in a PersistentResource to refer the this resource
+     * Immutable. The unique ID in a PersistentResource to refer the this resource
      * pool. User can specify it if need to use it, otherwise we will generate it
      * automatically.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1568,12 +1526,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The unique ID in a PersistentResource to refer the this resource
+     * Immutable. The unique ID in a PersistentResource to refer the this resource
      * pool. User can specify it if need to use it, otherwise we will generate it
      * automatically.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1953,59 +1911,6 @@ private static final long serialVersionUID = 0L;
       return diskSpecBuilder_;
     }
 
-    private long idleReplicaCount_ ;
-    /**
-     * <pre>
-     * Output only. The number of machines currently not in use by training jobs
-     * for this resource pool. Deprecated. Use `used_replica_count` instead.
-     * </pre>
-     *
-     * <code>int64 idle_replica_count = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
-     * @return The idleReplicaCount.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public long getIdleReplicaCount() {
-      return idleReplicaCount_;
-    }
-    /**
-     * <pre>
-     * Output only. The number of machines currently not in use by training jobs
-     * for this resource pool. Deprecated. Use `used_replica_count` instead.
-     * </pre>
-     *
-     * <code>int64 idle_replica_count = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
-     * @param value The idleReplicaCount to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setIdleReplicaCount(long value) {
-
-      idleReplicaCount_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Output only. The number of machines currently not in use by training jobs
-     * for this resource pool. Deprecated. Use `used_replica_count` instead.
-     * </pre>
-     *
-     * <code>int64 idle_replica_count = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearIdleReplicaCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      idleReplicaCount_ = 0L;
-      onChanged();
-      return this;
-    }
-
     private long usedReplicaCount_ ;
     /**
      * <pre>
@@ -2033,7 +1938,7 @@ private static final long serialVersionUID = 0L;
     public Builder setUsedReplicaCount(long value) {
 
       usedReplicaCount_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2047,7 +1952,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearUsedReplicaCount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       usedReplicaCount_ = 0L;
       onChanged();
       return this;
@@ -2065,7 +1970,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the autoscalingSpec field is set.
      */
     public boolean hasAutoscalingSpec() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
@@ -2098,7 +2003,7 @@ private static final long serialVersionUID = 0L;
       } else {
         autoscalingSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2116,7 +2021,7 @@ private static final long serialVersionUID = 0L;
       } else {
         autoscalingSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2129,7 +2034,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAutoscalingSpec(com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec value) {
       if (autoscalingSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000020) != 0) &&
           autoscalingSpec_ != null &&
           autoscalingSpec_ != com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec.getDefaultInstance()) {
           getAutoscalingSpecBuilder().mergeFrom(value);
@@ -2139,7 +2044,7 @@ private static final long serialVersionUID = 0L;
       } else {
         autoscalingSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2151,7 +2056,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec autoscaling_spec = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearAutoscalingSpec() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       autoscalingSpec_ = null;
       if (autoscalingSpecBuilder_ != null) {
         autoscalingSpecBuilder_.dispose();
@@ -2168,7 +2073,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec autoscaling_spec = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec.Builder getAutoscalingSpecBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getAutoscalingSpecFieldBuilder().getBuilder();
     }

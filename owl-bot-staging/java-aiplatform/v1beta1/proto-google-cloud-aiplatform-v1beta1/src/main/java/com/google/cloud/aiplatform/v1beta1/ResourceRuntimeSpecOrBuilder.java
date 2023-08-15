@@ -36,7 +36,7 @@ public interface ResourceRuntimeSpecOrBuilder extends
 
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface ResourceRuntimeSpecOrBuilder extends
   boolean hasRaySpec();
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ResourceRuntimeSpecOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.RaySpec getRaySpec();
   /**
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *

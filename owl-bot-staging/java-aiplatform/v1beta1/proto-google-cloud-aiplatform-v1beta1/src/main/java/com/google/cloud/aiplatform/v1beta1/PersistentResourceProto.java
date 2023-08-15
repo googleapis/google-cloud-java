@@ -104,38 +104,38 @@ public final class PersistentResourceProto {
       "\020\005:\205\001\352A\201\001\n,aiplatform.googleapis.com/Per" +
       "sistentResource\022Qprojects/{project}/loca" +
       "tions/{location}/persistentResources/{pe" +
-      "rsistent_resource}\"\224\004\n\014ResourcePool\022\020\n\002i" +
-      "d\030\001 \001(\tB\004\342A\001\001\022I\n\014machine_spec\030\002 \001(\0132,.go" +
+      "rsistent_resource}\"\360\003\n\014ResourcePool\022\020\n\002i" +
+      "d\030\001 \001(\tB\004\342A\001\005\022I\n\014machine_spec\030\002 \001(\0132,.go" +
       "ogle.cloud.aiplatform.v1beta1.MachineSpe" +
       "cB\005\342A\002\002\005\022 \n\rreplica_count\030\003 \001(\003B\004\342A\001\001H\000\210" +
       "\001\001\022B\n\tdisk_spec\030\004 \001(\0132).google.cloud.aip" +
-      "latform.v1beta1.DiskSpecB\004\342A\001\001\022\"\n\022idle_r" +
-      "eplica_count\030\005 \001(\003B\006\030\001\342A\001\003\022 \n\022used_repli" +
-      "ca_count\030\006 \001(\003B\004\342A\001\003\022]\n\020autoscaling_spec" +
-      "\030\007 \001(\0132=.google.cloud.aiplatform.v1beta1" +
-      ".ResourcePool.AutoscalingSpecB\004\342A\001\001\032\211\001\n\017" +
-      "AutoscalingSpec\022$\n\021min_replica_count\030\001 \001" +
-      "(\003B\004\342A\001\001H\000\210\001\001\022$\n\021max_replica_count\030\002 \001(\003" +
-      "B\004\342A\001\001H\001\210\001\001B\024\n\022_min_replica_countB\024\n\022_ma" +
-      "x_replica_countB\020\n\016_replica_count\"\260\001\n\023Re" +
-      "sourceRuntimeSpec\022W\n\024service_account_spe" +
-      "c\030\002 \001(\01323.google.cloud.aiplatform.v1beta" +
-      "1.ServiceAccountSpecB\004\342A\001\001\022@\n\010ray_spec\030\001" +
-      " \001(\0132(.google.cloud.aiplatform.v1beta1.R" +
-      "aySpecB\004\342A\001\001\"\"\n\007RaySpec\022\027\n\timage_uri\030\001 \001" +
-      "(\tB\004\342A\001\001\"\241\001\n\017ResourceRuntime\022[\n\013access_u" +
-      "ris\030\001 \003(\0132@.google.cloud.aiplatform.v1be" +
-      "ta1.ResourceRuntime.AccessUrisEntryB\004\342A\001" +
-      "\003\0321\n\017AccessUrisEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"`\n\022ServiceAccountSpec\022+\n\035en" +
-      "able_custom_service_account\030\001 \001(\010B\004\342A\001\002\022" +
-      "\035\n\017service_account\030\002 \001(\tB\004\342A\001\001B\356\001\n#com.g" +
-      "oogle.cloud.aiplatform.v1beta1B\027Persiste" +
-      "ntResourceProtoP\001ZCcloud.google.com/go/a" +
-      "iplatform/apiv1beta1/aiplatformpb;aiplat" +
-      "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1" +
-      "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo" +
-      "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+      "latform.v1beta1.DiskSpecB\004\342A\001\001\022 \n\022used_r" +
+      "eplica_count\030\006 \001(\003B\004\342A\001\003\022]\n\020autoscaling_" +
+      "spec\030\007 \001(\0132=.google.cloud.aiplatform.v1b" +
+      "eta1.ResourcePool.AutoscalingSpecB\004\342A\001\001\032" +
+      "\211\001\n\017AutoscalingSpec\022$\n\021min_replica_count" +
+      "\030\001 \001(\003B\004\342A\001\001H\000\210\001\001\022$\n\021max_replica_count\030\002" +
+      " \001(\003B\004\342A\001\001H\001\210\001\001B\024\n\022_min_replica_countB\024\n" +
+      "\022_max_replica_countB\020\n\016_replica_count\"\260\001" +
+      "\n\023ResourceRuntimeSpec\022W\n\024service_account" +
+      "_spec\030\002 \001(\01323.google.cloud.aiplatform.v1" +
+      "beta1.ServiceAccountSpecB\004\342A\001\001\022@\n\010ray_sp" +
+      "ec\030\001 \001(\0132(.google.cloud.aiplatform.v1bet" +
+      "a1.RaySpecB\004\342A\001\001\"\"\n\007RaySpec\022\027\n\timage_uri" +
+      "\030\001 \001(\tB\004\342A\001\001\"\241\001\n\017ResourceRuntime\022[\n\013acce" +
+      "ss_uris\030\001 \003(\0132@.google.cloud.aiplatform." +
+      "v1beta1.ResourceRuntime.AccessUrisEntryB" +
+      "\004\342A\001\003\0321\n\017AccessUrisEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"`\n\022ServiceAccountSpec\022+" +
+      "\n\035enable_custom_service_account\030\001 \001(\010B\004\342" +
+      "A\001\002\022\035\n\017service_account\030\002 \001(\tB\004\342A\001\001B\356\001\n#c" +
+      "om.google.cloud.aiplatform.v1beta1B\027Pers" +
+      "istentResourceProtoP\001ZCcloud.google.com/" +
+      "go/aiplatform/apiv1beta1/aiplatformpb;ai" +
+      "platformpb\252\002\037Google.Cloud.AIPlatform.V1B" +
+      "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002" +
+      "\"Google::Cloud::AIPlatform::V1beta1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -164,7 +164,7 @@ public final class PersistentResourceProto {
     internal_static_google_cloud_aiplatform_v1beta1_ResourcePool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_aiplatform_v1beta1_ResourcePool_descriptor,
-        new java.lang.String[] { "Id", "MachineSpec", "ReplicaCount", "DiskSpec", "IdleReplicaCount", "UsedReplicaCount", "AutoscalingSpec", "ReplicaCount", });
+        new java.lang.String[] { "Id", "MachineSpec", "ReplicaCount", "DiskSpec", "UsedReplicaCount", "AutoscalingSpec", "ReplicaCount", });
     internal_static_google_cloud_aiplatform_v1beta1_ResourcePool_AutoscalingSpec_descriptor =
       internal_static_google_cloud_aiplatform_v1beta1_ResourcePool_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_ResourcePool_AutoscalingSpec_fieldAccessorTable = new

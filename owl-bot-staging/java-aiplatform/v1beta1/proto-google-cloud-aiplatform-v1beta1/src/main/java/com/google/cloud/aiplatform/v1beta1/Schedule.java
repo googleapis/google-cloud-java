@@ -1284,10 +1284,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_ = "";
   /**
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -1305,10 +1305,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -3101,10 +3101,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -3121,10 +3121,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -3142,10 +3142,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -3159,10 +3159,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -3173,10 +3173,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
