@@ -472,5 +472,51 @@ public interface AppendRowsRequestOrBuilder
    */
   int getMissingValueInterpretationsValueOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default missing value interpretation for all columns in the
+   * table. When a value is specified on an `AppendRowsRequest`, it is applied
+   * to all requests on the connection from that point forward, until a
+   * subsequent `AppendRowsRequest` sets it to a different value.
+   * `missing_value_interpretation` can override
+   * `default_missing_value_interpretation`. For example, if you want to write
+   * `NULL` instead of using default values for some columns, you can set
+   * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+   * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultMissingValueInterpretation.
+   */
+  int getDefaultMissingValueInterpretationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default missing value interpretation for all columns in the
+   * table. When a value is specified on an `AppendRowsRequest`, it is applied
+   * to all requests on the connection from that point forward, until a
+   * subsequent `AppendRowsRequest` sets it to a different value.
+   * `missing_value_interpretation` can override
+   * `default_missing_value_interpretation`. For example, if you want to write
+   * `NULL` instead of using default values for some columns, you can set
+   * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+   * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultMissingValueInterpretation.
+   */
+  com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+      getDefaultMissingValueInterpretation();
+
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.RowsCase getRowsCase();
 }

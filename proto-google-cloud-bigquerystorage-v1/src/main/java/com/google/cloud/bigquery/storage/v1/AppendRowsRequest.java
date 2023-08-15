@@ -48,6 +48,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   private AppendRowsRequest() {
     writeStream_ = "";
     traceId_ = "";
+    defaultMissingValueInterpretation_ = 0;
   }
 
   @java.lang.Override
@@ -2119,6 +2120,66 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int DEFAULT_MISSING_VALUE_INTERPRETATION_FIELD_NUMBER = 8;
+  private int defaultMissingValueInterpretation_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default missing value interpretation for all columns in the
+   * table. When a value is specified on an `AppendRowsRequest`, it is applied
+   * to all requests on the connection from that point forward, until a
+   * subsequent `AppendRowsRequest` sets it to a different value.
+   * `missing_value_interpretation` can override
+   * `default_missing_value_interpretation`. For example, if you want to write
+   * `NULL` instead of using default values for some columns, you can set
+   * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+   * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultMissingValueInterpretation.
+   */
+  @java.lang.Override
+  public int getDefaultMissingValueInterpretationValue() {
+    return defaultMissingValueInterpretation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default missing value interpretation for all columns in the
+   * table. When a value is specified on an `AppendRowsRequest`, it is applied
+   * to all requests on the connection from that point forward, until a
+   * subsequent `AppendRowsRequest` sets it to a different value.
+   * `missing_value_interpretation` can override
+   * `default_missing_value_interpretation`. For example, if you want to write
+   * `NULL` instead of using default values for some columns, you can set
+   * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+   * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultMissingValueInterpretation.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+      getDefaultMissingValueInterpretation() {
+    com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation result =
+        com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation.forNumber(
+            defaultMissingValueInterpretation_);
+    return result == null
+        ? com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2157,6 +2218,12 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         internalGetMissingValueInterpretations(),
         MissingValueInterpretationsDefaultEntryHolder.defaultEntry,
         7);
+    if (defaultMissingValueInterpretation_
+        != com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+            .MISSING_VALUE_INTERPRETATION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, defaultMissingValueInterpretation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2193,6 +2260,14 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, missingValueInterpretations__);
     }
+    if (defaultMissingValueInterpretation_
+        != com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+            .MISSING_VALUE_INTERPRETATION_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              8, defaultMissingValueInterpretation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2217,6 +2292,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     if (!getTraceId().equals(other.getTraceId())) return false;
     if (!internalGetMissingValueInterpretations()
         .equals(other.internalGetMissingValueInterpretations())) return false;
+    if (defaultMissingValueInterpretation_ != other.defaultMissingValueInterpretation_)
+      return false;
     if (!getRowsCase().equals(other.getRowsCase())) return false;
     switch (rowsCase_) {
       case 4:
@@ -2248,6 +2325,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + MISSING_VALUE_INTERPRETATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMissingValueInterpretations().hashCode();
     }
+    hash = (37 * hash) + DEFAULT_MISSING_VALUE_INTERPRETATION_FIELD_NUMBER;
+    hash = (53 * hash) + defaultMissingValueInterpretation_;
     switch (rowsCase_) {
       case 4:
         hash = (37 * hash) + PROTO_ROWS_FIELD_NUMBER;
@@ -2435,6 +2514,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       traceId_ = "";
       internalGetMutableMissingValueInterpretations().clear();
+      defaultMissingValueInterpretation_ = 0;
       rowsCase_ = 0;
       rows_ = null;
       return this;
@@ -2486,6 +2566,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.missingValueInterpretations_ = internalGetMissingValueInterpretations();
         result.missingValueInterpretations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.defaultMissingValueInterpretation_ = defaultMissingValueInterpretation_;
       }
     }
 
@@ -2559,6 +2642,10 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       internalGetMutableMissingValueInterpretations()
           .mergeFrom(other.internalGetMissingValueInterpretations());
       bitField0_ |= 0x00000010;
+      if (other.defaultMissingValueInterpretation_ != 0) {
+        setDefaultMissingValueInterpretationValue(
+            other.getDefaultMissingValueInterpretationValue());
+      }
       switch (other.getRowsCase()) {
         case PROTO_ROWS:
           {
@@ -2641,6 +2728,12 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 64:
+              {
+                defaultMissingValueInterpretation_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4002,6 +4095,152 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableMissingValueInterpretations().getMutableMap().putAll(values);
       bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    private int defaultMissingValueInterpretation_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default missing value interpretation for all columns in the
+     * table. When a value is specified on an `AppendRowsRequest`, it is applied
+     * to all requests on the connection from that point forward, until a
+     * subsequent `AppendRowsRequest` sets it to a different value.
+     * `missing_value_interpretation` can override
+     * `default_missing_value_interpretation`. For example, if you want to write
+     * `NULL` instead of using default values for some columns, you can set
+     * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+     * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for defaultMissingValueInterpretation.
+     */
+    @java.lang.Override
+    public int getDefaultMissingValueInterpretationValue() {
+      return defaultMissingValueInterpretation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default missing value interpretation for all columns in the
+     * table. When a value is specified on an `AppendRowsRequest`, it is applied
+     * to all requests on the connection from that point forward, until a
+     * subsequent `AppendRowsRequest` sets it to a different value.
+     * `missing_value_interpretation` can override
+     * `default_missing_value_interpretation`. For example, if you want to write
+     * `NULL` instead of using default values for some columns, you can set
+     * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+     * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for defaultMissingValueInterpretation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultMissingValueInterpretationValue(int value) {
+      defaultMissingValueInterpretation_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default missing value interpretation for all columns in the
+     * table. When a value is specified on an `AppendRowsRequest`, it is applied
+     * to all requests on the connection from that point forward, until a
+     * subsequent `AppendRowsRequest` sets it to a different value.
+     * `missing_value_interpretation` can override
+     * `default_missing_value_interpretation`. For example, if you want to write
+     * `NULL` instead of using default values for some columns, you can set
+     * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+     * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultMissingValueInterpretation.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+        getDefaultMissingValueInterpretation() {
+      com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation result =
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+              .forNumber(defaultMissingValueInterpretation_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default missing value interpretation for all columns in the
+     * table. When a value is specified on an `AppendRowsRequest`, it is applied
+     * to all requests on the connection from that point forward, until a
+     * subsequent `AppendRowsRequest` sets it to a different value.
+     * `missing_value_interpretation` can override
+     * `default_missing_value_interpretation`. For example, if you want to write
+     * `NULL` instead of using default values for some columns, you can set
+     * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+     * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The defaultMissingValueInterpretation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultMissingValueInterpretation(
+        com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      defaultMissingValueInterpretation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default missing value interpretation for all columns in the
+     * table. When a value is specified on an `AppendRowsRequest`, it is applied
+     * to all requests on the connection from that point forward, until a
+     * subsequent `AppendRowsRequest` sets it to a different value.
+     * `missing_value_interpretation` can override
+     * `default_missing_value_interpretation`. For example, if you want to write
+     * `NULL` instead of using default values for some columns, you can set
+     * `default_missing_value_interpretation` to `DEFAULT_VALUE` and at the same
+     * time, set `missing_value_interpretations` to `NULL_VALUE` on those columns.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation default_missing_value_interpretation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultMissingValueInterpretation() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      defaultMissingValueInterpretation_ = 0;
+      onChanged();
       return this;
     }
 

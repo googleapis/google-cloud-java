@@ -216,7 +216,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key Management Service (KMS) service returned an error.
+     * Key Management Service (KMS) service returned an error, which can be
+     * retried.
      * </pre>
      *
      * <code>KMS_SERVICE_ERROR = 13;</code>
@@ -374,7 +375,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key Management Service (KMS) service returned an error.
+     * Key Management Service (KMS) service returned an error, which can be
+     * retried.
      * </pre>
      *
      * <code>KMS_SERVICE_ERROR = 13;</code>

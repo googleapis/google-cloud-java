@@ -32,6 +32,10 @@ import javax.annotation.Generated;
  *
  * <p>The Write API can be used to write data to BigQuery.
  *
+ * <p>The [google.cloud.bigquery.storage.v1
+ * API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1) should be used
+ * instead of the v1beta2 API for BigQueryWrite operations.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *

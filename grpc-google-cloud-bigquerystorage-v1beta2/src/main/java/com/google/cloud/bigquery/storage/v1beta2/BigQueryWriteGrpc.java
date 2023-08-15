@@ -23,6 +23,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * BigQuery Write API.
  * The Write API can be used to write data to BigQuery.
+ * The [google.cloud.bigquery.storage.v1
+ *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+ *   should be used instead of the v1beta2 API for BigQueryWrite operations.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -369,6 +372,9 @@ public final class BigQueryWriteGrpc {
    * <pre>
    * BigQuery Write API.
    * The Write API can be used to write data to BigQuery.
+   * The [google.cloud.bigquery.storage.v1
+   *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+   *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
   public interface AsyncService {
@@ -502,6 +508,9 @@ public final class BigQueryWriteGrpc {
    * <pre>
    * BigQuery Write API.
    * The Write API can be used to write data to BigQuery.
+   * The [google.cloud.bigquery.storage.v1
+   *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+   *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
   public abstract static class BigQueryWriteImplBase
@@ -519,6 +528,9 @@ public final class BigQueryWriteGrpc {
    * <pre>
    * BigQuery Write API.
    * The Write API can be used to write data to BigQuery.
+   * The [google.cloud.bigquery.storage.v1
+   *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+   *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
   public static final class BigQueryWriteStub
@@ -670,6 +682,9 @@ public final class BigQueryWriteGrpc {
    * <pre>
    * BigQuery Write API.
    * The Write API can be used to write data to BigQuery.
+   * The [google.cloud.bigquery.storage.v1
+   *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+   *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
   public static final class BigQueryWriteBlockingStub
@@ -773,6 +788,9 @@ public final class BigQueryWriteGrpc {
    * <pre>
    * BigQuery Write API.
    * The Write API can be used to write data to BigQuery.
+   * The [google.cloud.bigquery.storage.v1
+   *   API](/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1)
+   *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
   public static final class BigQueryWriteFutureStub
