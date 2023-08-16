@@ -70,8 +70,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Name of the table from which this backup was created. This needs
-   * to be in the same instance as the backup. Values are of the form
+   * Required. Immutable. Name of the table from which this backup was created.
+   * This needs to be in the same instance as the backup. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{source_table}`.
    * </pre>
    *
@@ -86,8 +86,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Name of the table from which this backup was created. This needs
-   * to be in the same instance as the backup. Values are of the form
+   * Required. Immutable. Name of the table from which this backup was created.
+   * This needs to be in the same instance as the backup. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{source_table}`.
    * </pre>
    *
@@ -98,6 +98,35 @@ public interface BackupOrBuilder
    * @return The bytes for sourceTable.
    */
   com.google.protobuf.ByteString getSourceTableBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the backup from which this backup was copied. If a
+   * backup is not created by copying a backup, this field will be empty. Values
+   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * </pre>
+   *
+   * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sourceBackup.
+   */
+  java.lang.String getSourceBackup();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the backup from which this backup was copied. If a
+   * backup is not created by copying a backup, this field will be empty. Values
+   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * </pre>
+   *
+   * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for sourceBackup.
+   */
+  com.google.protobuf.ByteString getSourceBackupBytes();
 
   /**
    *
@@ -155,8 +184,9 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
-   * row data in this backup will be no older than this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
+   * request is received).  The row data in this backup will be no older than
+   * this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -171,8 +201,9 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
-   * row data in this backup will be no older than this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
+   * request is received).  The row data in this backup will be no older than
+   * this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -187,8 +218,9 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
-   * row data in this backup will be no older than this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
+   * request is received).  The row data in this backup will be no older than
+   * this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];

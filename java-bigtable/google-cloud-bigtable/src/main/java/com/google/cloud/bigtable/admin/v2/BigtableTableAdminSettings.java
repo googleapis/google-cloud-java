@@ -124,6 +124,8 @@ public final class BigtableTableAdminSettings {
         .add("undeleteTableOperationSettings", stubSettings.undeleteTableOperationSettings())
         .add("updateTableSettings", stubSettings.updateTableSettings())
         .add("updateTableOperationSettings", stubSettings.updateTableOperationSettings())
+        .add("copyBackupSettings", stubSettings.copyBackupSettings())
+        .add("copyBackupOperationSettings", stubSettings.copyBackupOperationSettings())
         .toString();
   }
 

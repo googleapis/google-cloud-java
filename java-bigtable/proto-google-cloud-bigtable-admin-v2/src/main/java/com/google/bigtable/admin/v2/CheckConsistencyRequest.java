@@ -72,8 +72,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique name of the Table for which to check replication consistency.
-   * Values are of the form
+   * Required. The unique name of the Table for which to check replication
+   * consistency. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
@@ -99,8 +99,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique name of the Table for which to check replication consistency.
-   * Values are of the form
+   * Required. The unique name of the Table for which to check replication
+   * consistency. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
@@ -546,8 +546,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the Table for which to check replication consistency.
-     * Values are of the form
+     * Required. The unique name of the Table for which to check replication
+     * consistency. Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -572,8 +572,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the Table for which to check replication consistency.
-     * Values are of the form
+     * Required. The unique name of the Table for which to check replication
+     * consistency. Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -598,8 +598,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the Table for which to check replication consistency.
-     * Values are of the form
+     * Required. The unique name of the Table for which to check replication
+     * consistency. Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -623,8 +623,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the Table for which to check replication consistency.
-     * Values are of the form
+     * Required. The unique name of the Table for which to check replication
+     * consistency. Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -644,8 +644,8 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the Table for which to check replication consistency.
-     * Values are of the form
+     * Required. The unique name of the Table for which to check replication
+     * consistency. Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *

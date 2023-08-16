@@ -22,7 +22,8 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * The request for [UpdateBackup][google.bigtable.admin.v2.BigtableTableAdmin.UpdateBackup].
+ * The request for
+ * [UpdateBackup][google.bigtable.admin.v2.BigtableTableAdmin.UpdateBackup].
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.UpdateBackupRequest}
@@ -69,6 +70,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    * Required. The backup to update. `backup.name`, and the fields to be updated
    * as specified by `update_mask` are required. Other fields are ignored.
    * Update is only supported for the following fields:
+   *
    *  * `backup.expire_time`.
    * </pre>
    *
@@ -88,6 +90,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    * Required. The backup to update. `backup.name`, and the fields to be updated
    * as specified by `update_mask` are required. Other fields are ignored.
    * Update is only supported for the following fields:
+   *
    *  * `backup.expire_time`.
    * </pre>
    *
@@ -107,6 +110,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    * Required. The backup to update. `backup.name`, and the fields to be updated
    * as specified by `update_mask` are required. Other fields are ignored.
    * Update is only supported for the following fields:
+   *
    *  * `backup.expire_time`.
    * </pre>
    *
@@ -361,7 +365,8 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request for [UpdateBackup][google.bigtable.admin.v2.BigtableTableAdmin.UpdateBackup].
+   * The request for
+   * [UpdateBackup][google.bigtable.admin.v2.BigtableTableAdmin.UpdateBackup].
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.UpdateBackupRequest}
@@ -572,6 +577,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -590,6 +596,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -612,6 +619,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -638,6 +646,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -661,6 +670,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -690,6 +700,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -713,6 +724,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -731,6 +743,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *
@@ -751,6 +764,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      * Required. The backup to update. `backup.name`, and the fields to be updated
      * as specified by `update_mask` are required. Other fields are ignored.
      * Update is only supported for the following fields:
+     *
      *  * `backup.expire_time`.
      * </pre>
      *

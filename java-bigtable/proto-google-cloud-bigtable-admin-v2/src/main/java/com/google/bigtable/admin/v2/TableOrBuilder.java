@@ -147,7 +147,7 @@ public interface TableOrBuilder
    *
    * <pre>
    * The column families configured for this table, mapped by column family ID.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
@@ -158,7 +158,7 @@ public interface TableOrBuilder
    *
    * <pre>
    * The column families configured for this table, mapped by column family ID.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
@@ -172,7 +172,7 @@ public interface TableOrBuilder
    *
    * <pre>
    * The column families configured for this table, mapped by column family ID.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
@@ -183,7 +183,7 @@ public interface TableOrBuilder
    *
    * <pre>
    * The column families configured for this table, mapped by column family ID.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
@@ -198,7 +198,7 @@ public interface TableOrBuilder
    *
    * <pre>
    * The column families configured for this table, mapped by column family ID.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
@@ -209,10 +209,10 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
-   * table. Timestamps not matching the granularity will be rejected.
-   * If unspecified at creation time, the value will be set to `MILLIS`.
-   * Views: `SCHEMA_VIEW`, `FULL`.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored
+   * in this table. Timestamps not matching the granularity will be rejected. If
+   * unspecified at creation time, the value will be set to `MILLIS`. Views:
+   * `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
    * <code>
@@ -226,10 +226,10 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
-   * table. Timestamps not matching the granularity will be rejected.
-   * If unspecified at creation time, the value will be set to `MILLIS`.
-   * Views: `SCHEMA_VIEW`, `FULL`.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored
+   * in this table. Timestamps not matching the granularity will be rejected. If
+   * unspecified at creation time, the value will be set to `MILLIS`. Views:
+   * `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
    * <code>
@@ -244,8 +244,8 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a backup), this
-   * field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
    * </pre>
    *
    * <code>
@@ -259,8 +259,8 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a backup), this
-   * field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
    * </pre>
    *
    * <code>
@@ -274,8 +274,8 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a backup), this
-   * field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
    * </pre>
    *
    * <code>
@@ -331,9 +331,11 @@ public interface TableOrBuilder
    * <pre>
    * Set to true to make the table protected against data loss. i.e. deleting
    * the following resources through Admin APIs are prohibited:
-   *   - The table.
-   *   - The column families in the table.
-   *   - The instance containing the table.
+   *
+   * * The table.
+   * * The column families in the table.
+   * * The instance containing the table.
+   *
    * Note one can still delete the data stored in the table through Data APIs.
    * </pre>
    *

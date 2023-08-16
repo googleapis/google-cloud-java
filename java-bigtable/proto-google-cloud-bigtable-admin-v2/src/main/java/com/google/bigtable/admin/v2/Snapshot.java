@@ -239,7 +239,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The unique name of the snapshot.
+   * The unique name of the snapshot.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
@@ -264,7 +264,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The unique name of the snapshot.
+   * The unique name of the snapshot.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
@@ -295,7 +295,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the sourceTable field is set.
    */
@@ -310,7 +312,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The sourceTable.
    */
@@ -327,7 +331,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder() {
@@ -348,7 +354,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * in the meantime.
    * </pre>
    *
-   * <code>int64 data_size_bytes = 3;</code>
+   * <code>int64 data_size_bytes = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dataSizeBytes.
    */
@@ -366,7 +372,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -381,7 +388,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -396,7 +404,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -409,8 +418,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -426,8 +435,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -443,8 +452,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -464,7 +473,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The current state of the snapshot.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -479,7 +490,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Output only. The current state of the snapshot.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -498,7 +511,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Description of the snapshot.
+   * Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -521,7 +534,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Description of the snapshot.
+   * Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -1053,7 +1066,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique name of the snapshot.
+     * The unique name of the snapshot.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
@@ -1077,7 +1090,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique name of the snapshot.
+     * The unique name of the snapshot.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
@@ -1101,7 +1114,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique name of the snapshot.
+     * The unique name of the snapshot.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
@@ -1124,7 +1137,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique name of the snapshot.
+     * The unique name of the snapshot.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
@@ -1143,7 +1156,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique name of the snapshot.
+     * The unique name of the snapshot.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
@@ -1177,7 +1190,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the sourceTable field is set.
      */
@@ -1191,7 +1206,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The sourceTable.
      */
@@ -1211,7 +1228,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSourceTable(com.google.bigtable.admin.v2.Table value) {
       if (sourceTableBuilder_ == null) {
@@ -1233,7 +1252,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSourceTable(com.google.bigtable.admin.v2.Table.Builder builderForValue) {
       if (sourceTableBuilder_ == null) {
@@ -1252,7 +1273,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeSourceTable(com.google.bigtable.admin.v2.Table value) {
       if (sourceTableBuilder_ == null) {
@@ -1277,7 +1300,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSourceTable() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1296,7 +1321,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Table.Builder getSourceTableBuilder() {
       bitField0_ |= 0x00000002;
@@ -1310,7 +1337,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder() {
       if (sourceTableBuilder_ != null) {
@@ -1328,7 +1357,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.Table,
@@ -1358,7 +1389,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * in the meantime.
      * </pre>
      *
-     * <code>int64 data_size_bytes = 3;</code>
+     * <code>int64 data_size_bytes = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The dataSizeBytes.
      */
@@ -1376,7 +1407,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * in the meantime.
      * </pre>
      *
-     * <code>int64 data_size_bytes = 3;</code>
+     * <code>int64 data_size_bytes = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The dataSizeBytes to set.
      * @return This builder for chaining.
@@ -1398,7 +1429,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * in the meantime.
      * </pre>
      *
-     * <code>int64 data_size_bytes = 3;</code>
+     * <code>int64 data_size_bytes = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1422,7 +1453,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1436,7 +1469,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1456,7 +1491,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1478,7 +1515,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1497,7 +1536,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1522,7 +1563,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1541,7 +1584,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000008;
@@ -1555,7 +1600,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1573,7 +1620,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when the snapshot is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1602,8 +1651,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1618,8 +1667,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1640,8 +1689,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1664,8 +1713,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1685,8 +1734,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1712,8 +1761,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1733,8 +1782,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1749,8 +1798,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1769,8 +1818,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the snapshot will be deleted. The maximum amount
-     * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+     * The time when the snapshot will be deleted. The maximum amount of time a
+     * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
      *
@@ -1801,7 +1850,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The current state of the snapshot.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1816,7 +1867,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The current state of the snapshot.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1834,7 +1887,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The current state of the snapshot.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1851,7 +1906,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The current state of the snapshot.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1872,7 +1929,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Output only. The current state of the snapshot.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1888,7 +1947,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Description of the snapshot.
+     * Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -1910,7 +1969,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Description of the snapshot.
+     * Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -1932,7 +1991,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Description of the snapshot.
+     * Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -1953,7 +2012,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Description of the snapshot.
+     * Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -1970,7 +2029,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Description of the snapshot.
+     * Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>

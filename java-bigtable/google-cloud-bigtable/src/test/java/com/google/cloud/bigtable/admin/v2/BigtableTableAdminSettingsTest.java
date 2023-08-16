@@ -136,7 +136,9 @@ public class BigtableTableAdminSettingsTest {
     "undeleteTableSettings",
     "undeleteTableOperationSettings",
     "updateTableSettings",
-    "updateTableOperationSettings"
+    "updateTableOperationSettings",
+    "copyBackupSettings",
+    "copyBackupOperationSettings",
   };
 
   @Test

@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CopyBackupMetadata;
+import com.google.bigtable.admin.v2.CopyBackupRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
@@ -233,6 +235,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   public OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).restoreTableOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to copyBackup. */
+  public UnaryCallSettings<CopyBackupRequest, Operation> copyBackupSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).copyBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to copyBackup. */
+  public OperationCallSettings<CopyBackupRequest, Backup, CopyBackupMetadata>
+      copyBackupOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).copyBackupOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -499,6 +512,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings() {
       return getStubSettingsBuilder().restoreTableOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyBackup. */
+    public UnaryCallSettings.Builder<CopyBackupRequest, Operation> copyBackupSettings() {
+      return getStubSettingsBuilder().copyBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyBackup. */
+    public OperationCallSettings.Builder<CopyBackupRequest, Backup, CopyBackupMetadata>
+        copyBackupOperationSettings() {
+      return getStubSettingsBuilder().copyBackupOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

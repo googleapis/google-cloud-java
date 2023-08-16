@@ -7,4 +7,9 @@
     <className>com/google/bigtable/admin/v2/*Grpc</className>
     <field>METHOD_*</field>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/admin/v2/BigtableTableAdminGrpc*</className>
+    <method>*</method>
+  </difference>
 </differences>

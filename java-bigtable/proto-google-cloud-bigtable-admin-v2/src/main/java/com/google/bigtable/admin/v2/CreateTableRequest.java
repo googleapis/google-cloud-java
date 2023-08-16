@@ -674,8 +674,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the
+   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * Maximum 50 characters.
    * </pre>
    *
@@ -699,8 +699,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the
+   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * Maximum 50 characters.
    * </pre>
    *
@@ -1515,8 +1515,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the
+     * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
      * Maximum 50 characters.
      * </pre>
      *
@@ -1539,8 +1539,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the
+     * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
      * Maximum 50 characters.
      * </pre>
      *
@@ -1563,8 +1563,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the
+     * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
      * Maximum 50 characters.
      * </pre>
      *
@@ -1586,8 +1586,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the
+     * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
      * Maximum 50 characters.
      * </pre>
      *
@@ -1605,8 +1605,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the
+     * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
      * Maximum 50 characters.
      * </pre>
      *

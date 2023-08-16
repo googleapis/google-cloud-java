@@ -969,6 +969,48 @@ public final class BigtableTableAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CopyBackupRequest, com.google.longrunning.Operation>
+      getCopyBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CopyBackup",
+      requestType = com.google.bigtable.admin.v2.CopyBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CopyBackupRequest, com.google.longrunning.Operation>
+      getCopyBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CopyBackupRequest, com.google.longrunning.Operation>
+        getCopyBackupMethod;
+    if ((getCopyBackupMethod = BigtableTableAdminGrpc.getCopyBackupMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getCopyBackupMethod = BigtableTableAdminGrpc.getCopyBackupMethod) == null) {
+          BigtableTableAdminGrpc.getCopyBackupMethod =
+              getCopyBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CopyBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CopyBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CopyBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("CopyBackup"))
+                      .build();
+        }
+      }
+    }
+    return getCopyBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
@@ -1404,8 +1446,8 @@ public final class BigtableTableAdminGrpc {
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
-     * creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
      * </pre>
      */
     default void createBackup(
@@ -1476,8 +1518,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Create a new table by restoring from a completed backup. The new table
-     * must be in the same project as the instance containing the backup.  The
+     * Create a new table by restoring from a completed backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -1491,6 +1532,20 @@ public final class BigtableTableAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRestoreTableMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copy a Cloud Bigtable backup to a new backup in the destination cluster
+     * located in the destination instance and project.
+     * </pre>
+     */
+    default void copyBackup(
+        com.google.bigtable.admin.v2.CopyBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCopyBackupMethod(), responseObserver);
     }
 
     /**
@@ -1528,7 +1583,8 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup resource.
+     * Returns permissions that the caller has on the specified Table or Backup
+     * resource.
      * </pre>
      */
     default void testIamPermissions(
@@ -1868,8 +1924,8 @@ public final class BigtableTableAdminGrpc {
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
-     * creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
      * </pre>
      */
     public void createBackup(
@@ -1949,8 +2005,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Create a new table by restoring from a completed backup. The new table
-     * must be in the same project as the instance containing the backup.  The
+     * Create a new table by restoring from a completed backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -1966,6 +2021,21 @@ public final class BigtableTableAdminGrpc {
           getChannel().newCall(getRestoreTableMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copy a Cloud Bigtable backup to a new backup in the destination cluster
+     * located in the destination instance and project.
+     * </pre>
+     */
+    public void copyBackup(
+        com.google.bigtable.admin.v2.CopyBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCopyBackupMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2007,7 +2077,8 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup resource.
+     * Returns permissions that the caller has on the specified Table or Backup
+     * resource.
      * </pre>
      */
     public void testIamPermissions(
@@ -2287,8 +2358,8 @@ public final class BigtableTableAdminGrpc {
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
-     * creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
@@ -2354,8 +2425,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Create a new table by restoring from a completed backup. The new table
-     * must be in the same project as the instance containing the backup.  The
+     * Create a new table by restoring from a completed backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -2368,6 +2438,20 @@ public final class BigtableTableAdminGrpc {
         com.google.bigtable.admin.v2.RestoreTableRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRestoreTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copy a Cloud Bigtable backup to a new backup in the destination cluster
+     * located in the destination instance and project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyBackup(
+        com.google.bigtable.admin.v2.CopyBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyBackupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2401,7 +2485,8 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup resource.
+     * Returns permissions that the caller has on the specified Table or Backup
+     * resource.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -2682,8 +2767,8 @@ public final class BigtableTableAdminGrpc {
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
-     * creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2750,8 +2835,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Create a new table by restoring from a completed backup. The new table
-     * must be in the same project as the instance containing the backup.  The
+     * Create a new table by restoring from a completed backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -2764,6 +2848,20 @@ public final class BigtableTableAdminGrpc {
         restoreTable(com.google.bigtable.admin.v2.RestoreTableRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRestoreTableMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copy a Cloud Bigtable backup to a new backup in the destination cluster
+     * located in the destination instance and project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        copyBackup(com.google.bigtable.admin.v2.CopyBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCopyBackupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2799,7 +2897,8 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup resource.
+     * Returns permissions that the caller has on the specified Table or Backup
+     * resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2831,9 +2930,10 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_DELETE_BACKUP = 18;
   private static final int METHODID_LIST_BACKUPS = 19;
   private static final int METHODID_RESTORE_TABLE = 20;
-  private static final int METHODID_GET_IAM_POLICY = 21;
-  private static final int METHODID_SET_IAM_POLICY = 22;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
+  private static final int METHODID_COPY_BACKUP = 21;
+  private static final int METHODID_GET_IAM_POLICY = 22;
+  private static final int METHODID_SET_IAM_POLICY = 23;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2962,6 +3062,11 @@ public final class BigtableTableAdminGrpc {
         case METHODID_RESTORE_TABLE:
           serviceImpl.restoreTable(
               (com.google.bigtable.admin.v2.RestoreTableRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_COPY_BACKUP:
+          serviceImpl.copyBackup(
+              (com.google.bigtable.admin.v2.CopyBackupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
@@ -3131,6 +3236,12 @@ public final class BigtableTableAdminGrpc {
                     com.google.bigtable.admin.v2.RestoreTableRequest,
                     com.google.longrunning.Operation>(service, METHODID_RESTORE_TABLE)))
         .addMethod(
+            getCopyBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.CopyBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_COPY_BACKUP)))
+        .addMethod(
             getGetIamPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
@@ -3219,6 +3330,7 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getRestoreTableMethod())
+                      .addMethod(getCopyBackupMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())

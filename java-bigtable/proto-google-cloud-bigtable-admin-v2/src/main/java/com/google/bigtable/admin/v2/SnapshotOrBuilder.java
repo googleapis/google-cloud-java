@@ -27,7 +27,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The unique name of the snapshot.
+   * The unique name of the snapshot.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
@@ -41,7 +41,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The unique name of the snapshot.
+   * The unique name of the snapshot.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
@@ -59,7 +59,9 @@ public interface SnapshotOrBuilder
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the sourceTable field is set.
    */
@@ -71,7 +73,9 @@ public interface SnapshotOrBuilder
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The sourceTable.
    */
@@ -83,7 +87,9 @@ public interface SnapshotOrBuilder
    * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table source_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder();
 
@@ -97,7 +103,7 @@ public interface SnapshotOrBuilder
    * in the meantime.
    * </pre>
    *
-   * <code>int64 data_size_bytes = 3;</code>
+   * <code>int64 data_size_bytes = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dataSizeBytes.
    */
@@ -110,7 +116,8 @@ public interface SnapshotOrBuilder
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -122,7 +129,8 @@ public interface SnapshotOrBuilder
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -134,7 +142,8 @@ public interface SnapshotOrBuilder
    * Output only. The time when the snapshot is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -142,8 +151,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -156,8 +165,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -170,8 +179,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount
-   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * The time when the snapshot will be deleted. The maximum amount of time a
+   * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -186,7 +195,9 @@ public interface SnapshotOrBuilder
    * Output only. The current state of the snapshot.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -198,7 +209,9 @@ public interface SnapshotOrBuilder
    * Output only. The current state of the snapshot.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Snapshot.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -208,7 +221,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. Description of the snapshot.
+   * Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -220,7 +233,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. Description of the snapshot.
+   * Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>

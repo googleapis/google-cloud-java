@@ -301,7 +301,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+   * The progress of the
+   * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
    * operation.
    * </pre>
    *
@@ -317,7 +318,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+   * The progress of the
+   * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
    * operation.
    * </pre>
    *
@@ -335,7 +337,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+   * The progress of the
+   * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
    * operation.
    * </pre>
    *
@@ -1335,7 +1338,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1350,7 +1354,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1371,7 +1376,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1394,7 +1400,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1415,7 +1422,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1441,7 +1449,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1461,7 +1470,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1476,7 +1486,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *
@@ -1495,7 +1506,8 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The progress of the [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
+     * The progress of the
+     * [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable]
      * operation.
      * </pre>
      *

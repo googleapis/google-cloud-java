@@ -49,6 +49,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CopyBackupMetadata;
+import com.google.bigtable.admin.v2.CopyBackupRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
@@ -189,6 +191,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   private final UnaryCallSettings<RestoreTableRequest, Operation> restoreTableSettings;
   private final OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationSettings;
+  private final UnaryCallSettings<CopyBackupRequest, Operation> copyBackupSettings;
+  private final OperationCallSettings<CopyBackupRequest, Backup, CopyBackupMetadata>
+      copyBackupOperationSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -501,6 +506,17 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     return restoreTableOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to copyBackup. */
+  public UnaryCallSettings<CopyBackupRequest, Operation> copyBackupSettings() {
+    return copyBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to copyBackup. */
+  public OperationCallSettings<CopyBackupRequest, Backup, CopyBackupMetadata>
+      copyBackupOperationSettings() {
+    return copyBackupOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
@@ -620,6 +636,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
     restoreTableSettings = settingsBuilder.restoreTableSettings().build();
     restoreTableOperationSettings = settingsBuilder.restoreTableOperationSettings().build();
+    copyBackupSettings = settingsBuilder.copyBackupSettings().build();
+    copyBackupOperationSettings = settingsBuilder.copyBackupOperationSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -675,6 +693,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     private final UnaryCallSettings.Builder<RestoreTableRequest, Operation> restoreTableSettings;
     private final OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings;
+    private final UnaryCallSettings.Builder<CopyBackupRequest, Operation> copyBackupSettings;
+    private final OperationCallSettings.Builder<CopyBackupRequest, Backup, CopyBackupMetadata>
+        copyBackupOperationSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -795,6 +816,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
       restoreTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreTableOperationSettings = OperationCallSettings.newBuilder();
+      copyBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      copyBackupOperationSettings = OperationCallSettings.newBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -822,6 +845,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               deleteBackupSettings,
               listBackupsSettings,
               restoreTableSettings,
+              copyBackupSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -859,6 +883,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
       restoreTableSettings = settings.restoreTableSettings.toBuilder();
       restoreTableOperationSettings = settings.restoreTableOperationSettings.toBuilder();
+      copyBackupSettings = settings.copyBackupSettings.toBuilder();
+      copyBackupOperationSettings = settings.copyBackupOperationSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -886,6 +912,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               deleteBackupSettings,
               listBackupsSettings,
               restoreTableSettings,
+              copyBackupSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -1009,6 +1036,11 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
           .restoreTableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .copyBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getIamPolicySettings()
@@ -1167,6 +1199,29 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .copyBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CopyBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CopyBackupMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1349,6 +1404,19 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings() {
       return restoreTableOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to copyBackup. */
+    public UnaryCallSettings.Builder<CopyBackupRequest, Operation> copyBackupSettings() {
+      return copyBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to copyBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CopyBackupRequest, Backup, CopyBackupMetadata>
+        copyBackupOperationSettings() {
+      return copyBackupOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

@@ -73,8 +73,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be listed.
-   * Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be
+   * listed. Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -99,8 +99,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be listed.
-   * Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be
+   * listed. Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -129,7 +129,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The view to be applied to the returned tables' fields.
-   * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+   * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -145,7 +145,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The view to be applied to the returned tables' fields.
-   * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+   * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -651,8 +651,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be listed.
-     * Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be
+     * listed. Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -676,8 +676,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be listed.
-     * Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be
+     * listed. Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -701,8 +701,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be listed.
-     * Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be
+     * listed. Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -725,8 +725,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be listed.
-     * Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be
+     * listed. Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -745,8 +745,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be listed.
-     * Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be
+     * listed. Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -773,7 +773,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The view to be applied to the returned tables' fields.
-     * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+     * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -789,7 +789,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The view to be applied to the returned tables' fields.
-     * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+     * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -808,7 +808,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The view to be applied to the returned tables' fields.
-     * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+     * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -826,7 +826,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The view to be applied to the returned tables' fields.
-     * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+     * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -848,7 +848,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The view to be applied to the returned tables' fields.
-     * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+     * NAME_ONLY view (default) and REPLICATION_VIEW are supported.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>

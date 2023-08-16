@@ -119,8 +119,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the instance in which to create the restored
-   * table. This instance must be in the same project as the source backup.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>
@@ -146,8 +145,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the instance in which to create the restored
-   * table. This instance must be in the same project as the source backup.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>
@@ -736,8 +734,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the instance in which to create the restored
-     * table. This instance must be in the same project as the source backup.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
      * <code>
@@ -762,8 +759,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the instance in which to create the restored
-     * table. This instance must be in the same project as the source backup.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
      * <code>
@@ -788,8 +784,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the instance in which to create the restored
-     * table. This instance must be in the same project as the source backup.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
      * <code>
@@ -813,8 +808,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the instance in which to create the restored
-     * table. This instance must be in the same project as the source backup.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
      * <code>
@@ -834,8 +828,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the instance in which to create the restored
-     * table. This instance must be in the same project as the source backup.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * table. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
      * <code>

@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CopyBackupMetadata;
+import com.google.bigtable.admin.v2.CopyBackupRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
@@ -208,6 +210,15 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
 
   public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreTableCallable()");
+  }
+
+  public OperationCallable<CopyBackupRequest, Backup, CopyBackupMetadata>
+      copyBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyBackupOperationCallable()");
+  }
+
+  public UnaryCallable<CopyBackupRequest, Operation> copyBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyBackupCallable()");
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
