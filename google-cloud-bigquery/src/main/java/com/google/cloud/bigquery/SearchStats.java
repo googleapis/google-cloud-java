@@ -68,7 +68,7 @@ public abstract class SearchStats implements Serializable {
       searchStatistics.setIndexUsageMode(getIndexUsageMode());
     }
     if (getIndexUnusedReasons() != null) {
-      searchStatistics.setIndexUnusedReason(
+      searchStatistics.setIndexUnusedReasons(
           getIndexUnusedReasons().stream()
               .map(IndexUnusedReason::toPb)
               .collect(Collectors.toList()));
@@ -81,9 +81,9 @@ public abstract class SearchStats implements Serializable {
     if (searchStatistics.getIndexUsageMode() != null) {
       builder.setIndexUsageMode(searchStatistics.getIndexUsageMode());
     }
-    if (searchStatistics.getIndexUnusedReason() != null) {
+    if (searchStatistics.getIndexUnusedReasons() != null) {
       builder.setIndexUnusedReasons(
-          searchStatistics.getIndexUnusedReason().stream()
+          searchStatistics.getIndexUnusedReasons().stream()
               .map(IndexUnusedReason::fromPb)
               .collect(Collectors.toList()));
     }

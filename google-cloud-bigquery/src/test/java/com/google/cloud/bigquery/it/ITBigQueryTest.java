@@ -5090,7 +5090,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testQueryJobWithSearchReturnsSearchStatistics() throws InterruptedException {
+  public void testQueryJobWithSearchReturnsSearchStatisticsUnused() throws InterruptedException {
     String tableName = "test_query_job_table";
     String query =
         "SELECT * FROM "
@@ -5109,6 +5109,10 @@ public class ITBigQueryTest {
       JobStatistics.QueryStatistics stats = remoteJob.getStatistics();
       assertNotNull(stats.getSearchStats());
       assertEquals(stats.getSearchStats().getIndexUsageMode(), "UNUSED");
+      assertNotNull(stats.getSearchStats().getIndexUnusedReasons());
+      assertNotNull(
+          stats.getSearchStats().getIndexUnusedReasons().get(0).getCode(),
+          "INDEX_CONFIG_NOT_AVAILABLE");
     } finally {
       bigquery.delete(destinationTable);
     }
