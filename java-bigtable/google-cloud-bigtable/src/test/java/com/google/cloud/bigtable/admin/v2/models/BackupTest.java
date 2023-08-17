@@ -57,6 +57,8 @@ public class BackupTest {
         com.google.bigtable.admin.v2.Backup.newBuilder()
             .setName("projects/my-project/instances/instance1/clusters/cluster1/backups/backup1")
             .setSourceTable("projects/my-project/instances/instance1/tables/table1")
+            .setSourceBackup(
+                "projects/my-project/instances/instance1/clusters/cluster1/backups/backup2")
             .setExpireTime(expireTime)
             .setStartTime(startTime)
             .setEndTime(endTime)
@@ -68,6 +70,7 @@ public class BackupTest {
 
     assertThat(result.getId()).isEqualTo("backup1");
     assertThat(result.getSourceTableId()).isEqualTo("table1");
+    assertThat(result.getSourceBackupId()).isEqualTo("backup2");
     assertThat(result.getExpireTime())
         .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(expireTime)));
     assertThat(result.getStartTime())

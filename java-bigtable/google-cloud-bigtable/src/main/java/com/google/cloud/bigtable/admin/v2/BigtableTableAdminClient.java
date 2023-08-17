@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTable
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
+import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
@@ -1315,6 +1316,88 @@ public final class BigtableTableAdminClient implements AutoCloseable {
       OptimizeRestoredTableOperationToken token) {
     return transformToVoid(
         stub.awaitOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName()));
+  }
+
+  /**
+   * Copy an existing backup to a new backup in a Cloud Bigtable cluster with the specified
+   * configuration.
+   *
+   * <p>Sample code Note: You want to create the client with project and instance where you want the
+   * new backup to be copied to.
+   *
+   * <pre>{@code
+   * BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]");
+   * CopyBackupRequest request =
+   *         CopyBackupRequest.of(sourceClusterId, sourceBackupId)
+   *             .setDestination(clusterId, backupId)
+   *             .setExpireTime(expireTime);
+   * Backup response = client.copyBackup(request);
+   * }</pre>
+   *
+   * If the source backup is located in a different instance
+   *
+   * <pre>{@code
+   * CopyBackupRequest request =
+   *         CopyBackupRequest.of(sourceClusterId, sourceBackupId)
+   *             .setSourceInstance(sourceInstanceId)
+   *             .setDestination(clusterId, backupId)
+   *             .setExpireTime(expireTime);
+   * Backup response = client.copyBackup(request);
+   * }</pre>
+   *
+   * If the source backup is located in a different project
+   *
+   * <pre>{@code
+   * CopyBackupRequest request =
+   *         CopyBackupRequest.of(sourceClusterId, sourceBackupId)
+   *             .setSourceInstance(sourceProjectId, sourceInstanceId)
+   *             .setDestination(clusterId, backupId)
+   *             .setExpireTime(expireTime);
+   * Backup response = client.copyBackup(request);
+   * }</pre>
+   */
+  public Backup copyBackup(CopyBackupRequest request) {
+    return ApiExceptions.callAndTranslateApiException(copyBackupAsync(request));
+  }
+
+  /**
+   * Creates a copy of a backup from an existing backup in a Cloud Bigtable cluster with the
+   * specified configuration asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * CopyBackupRequest request =
+   *         CopyBackupRequest.of(sourceClusterId, sourceBackupId)
+   *             .setDestination(clusterId, backupId)
+   *             .setExpireTime(expireTime);
+   * ApiFuture<Backup> future = client.copyBackupAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Backup>() {
+   *     public void onSuccess(Backup backup) {
+   *       System.out.println("Successfully create the backup " + backup.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Backup> copyBackupAsync(CopyBackupRequest request) {
+    return ApiFutures.transform(
+        stub.copyBackupOperationCallable().futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Backup, Backup>() {
+          @Override
+          public Backup apply(com.google.bigtable.admin.v2.Backup backupProto) {
+            return Backup.fromProto(backupProto);
+          }
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**

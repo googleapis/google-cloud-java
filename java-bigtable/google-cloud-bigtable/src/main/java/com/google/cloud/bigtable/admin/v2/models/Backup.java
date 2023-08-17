@@ -106,6 +106,11 @@ public class Backup {
     return NameUtil.extractTableIdFromTableName(proto.getSourceTable());
   }
 
+  /** Get the source backup ID from which the backup is copied. */
+  public String getSourceBackupId() {
+    return NameUtil.extractBackupIdFromBackupName(proto.getSourceBackup());
+  }
+
   /** Get the instance ID where this backup is located. */
   public String getInstanceId() {
     return instanceId;
