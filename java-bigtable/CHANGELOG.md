@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.27.0](https://github.com/googleapis/java-bigtable/compare/v2.26.0...v2.27.0) (2023-08-17)
+
+
+### Features
+
+* Copy backup API support ([#1398](https://github.com/googleapis/java-bigtable/issues/1398)) ([558a408](https://github.com/googleapis/java-bigtable/commit/558a408f5fa0566652df923799cf9f7bc03f7194))
+* Publish CopyBackup protos to external customers ([#1883](https://github.com/googleapis/java-bigtable/issues/1883)) ([d6e934f](https://github.com/googleapis/java-bigtable/commit/d6e934fc71e1c1dd4e13492d2f6c4688b6b0d59d))
+
 ## [2.26.0](https://github.com/googleapis/java-bigtable/compare/v2.25.1...v2.26.0) (2023-08-09)
 
 
