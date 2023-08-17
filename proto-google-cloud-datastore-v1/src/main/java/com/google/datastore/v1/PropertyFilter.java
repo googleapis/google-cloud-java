@@ -156,8 +156,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * Requires:
      *
-     * * That `value` is a non-empty `ArrayValue` with at most 10 values.
-     * * No other `IN` or `NOT_IN` is in the same query.
+     * * That `value` is a non-empty `ArrayValue`, subject to disjunction
+     *   limits.
+     * * No `NOT_IN` is in the same query.
      * </pre>
      *
      * <code>IN = 6;</code>
@@ -187,7 +188,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Requires:
      *
      * * That `value` is an entity key.
-     * * No other `HAS_ANCESTOR` is in the same query.
+     * * All evaluated disjunctions must have the same `HAS_ANCESTOR` filter.
      * </pre>
      *
      * <code>HAS_ANCESTOR = 11;</code>
@@ -202,7 +203,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Requires:
      *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
-     * * No other `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
+     * * No other `OR`, `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
      * * That `field` comes first in the `order_by`.
      * </pre>
      *
@@ -296,8 +297,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * Requires:
      *
-     * * That `value` is a non-empty `ArrayValue` with at most 10 values.
-     * * No other `IN` or `NOT_IN` is in the same query.
+     * * That `value` is a non-empty `ArrayValue`, subject to disjunction
+     *   limits.
+     * * No `NOT_IN` is in the same query.
      * </pre>
      *
      * <code>IN = 6;</code>
@@ -327,7 +329,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Requires:
      *
      * * That `value` is an entity key.
-     * * No other `HAS_ANCESTOR` is in the same query.
+     * * All evaluated disjunctions must have the same `HAS_ANCESTOR` filter.
      * </pre>
      *
      * <code>HAS_ANCESTOR = 11;</code>
@@ -342,7 +344,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Requires:
      *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
-     * * No other `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
+     * * No other `OR`, `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
      * * That `field` comes first in the `order_by`.
      * </pre>
      *

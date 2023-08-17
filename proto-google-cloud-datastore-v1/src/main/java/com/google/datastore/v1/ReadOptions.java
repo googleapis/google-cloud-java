@@ -442,9 +442,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reads entities as they were at the given time. This may not be older
-   * than 270 seconds.  This value is only supported for Cloud Firestore in
-   * Datastore mode.
+   * Reads entities as they were at the given time. This value is only
+   * supported for Cloud Firestore in Datastore mode.
+   *
+   * This must be a microsecond precision timestamp within the past one hour,
+   * or if Point-in-Time Recovery is enabled, can additionally be a whole
+   * minute timestamp within the past 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -459,9 +462,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reads entities as they were at the given time. This may not be older
-   * than 270 seconds.  This value is only supported for Cloud Firestore in
-   * Datastore mode.
+   * Reads entities as they were at the given time. This value is only
+   * supported for Cloud Firestore in Datastore mode.
+   *
+   * This must be a microsecond precision timestamp within the past one hour,
+   * or if Point-in-Time Recovery is enabled, can additionally be a whole
+   * minute timestamp within the past 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -479,9 +485,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reads entities as they were at the given time. This may not be older
-   * than 270 seconds.  This value is only supported for Cloud Firestore in
-   * Datastore mode.
+   * Reads entities as they were at the given time. This value is only
+   * supported for Cloud Firestore in Datastore mode.
+   *
+   * This must be a microsecond precision timestamp within the past one hour,
+   * or if Point-in-Time Recovery is enabled, can additionally be a whole
+   * minute timestamp within the past 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1430,9 +1439,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1447,9 +1459,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1474,9 +1489,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1498,9 +1516,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1519,9 +1540,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1553,9 +1577,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1580,9 +1607,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1594,9 +1624,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
@@ -1616,9 +1649,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reads entities as they were at the given time. This may not be older
-     * than 270 seconds.  This value is only supported for Cloud Firestore in
-     * Datastore mode.
+     * Reads entities as they were at the given time. This value is only
+     * supported for Cloud Firestore in Datastore mode.
+     *
+     * This must be a microsecond precision timestamp within the past one hour,
+     * or if Point-in-Time Recovery is enabled, can additionally be a whole
+     * minute timestamp within the past 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>

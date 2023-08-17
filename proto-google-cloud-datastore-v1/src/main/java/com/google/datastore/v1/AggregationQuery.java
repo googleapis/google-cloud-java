@@ -107,6 +107,76 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     *
+     * @return Whether the sum field is set.
+     */
+    boolean hasSum();
+    /**
+     *
+     *
+     * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     *
+     * @return The sum.
+     */
+    com.google.datastore.v1.AggregationQuery.Aggregation.Sum getSum();
+    /**
+     *
+     *
+     * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     */
+    com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder getSumOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     *
+     * @return Whether the avg field is set.
+     */
+    boolean hasAvg();
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     *
+     * @return The avg.
+     */
+    com.google.datastore.v1.AggregationQuery.Aggregation.Avg getAvg();
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     */
+    com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder getAvgOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Optional name of the property to store the result of the
      * aggregation.
      *
@@ -1279,6 +1349,1542 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public interface SumOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.datastore.v1.AggregationQuery.Aggregation.Sum)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return Whether the property field is set.
+       */
+      boolean hasProperty();
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return The property.
+       */
+      com.google.datastore.v1.PropertyReference getProperty();
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       */
+      com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sum of the values of the requested property.
+     *
+     * * Only numeric values will be aggregated. All non-numeric values
+     * including `NULL` are skipped.
+     *
+     * * If the aggregated values contain `NaN`, returns `NaN`. Infinity math
+     * follows IEEE-754 standards.
+     *
+     * * If the aggregated value set is empty, returns 0.
+     *
+     * * Returns a 64-bit integer if all aggregated numbers are integers and the
+     * sum result does not overflow. Otherwise, the result is returned as a
+     * double. Note that even if all the aggregated values are integers, the
+     * result is returned as a double if it cannot fit within a 64-bit signed
+     * integer. When this occurs, the returned value will lose precision.
+     *
+     * * When underflow occurs, floating-point aggregation is non-deterministic.
+     * This means that running the same query repeatedly without any changes to
+     * the underlying values could produce slightly different results each
+     * time. In those cases, values should be stored as integers over
+     * floating-point numbers.
+     * </pre>
+     *
+     * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation.Sum}
+     */
+    public static final class Sum extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.datastore.v1.AggregationQuery.Aggregation.Sum)
+        SumOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Sum.newBuilder() to construct.
+      private Sum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Sum() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Sum();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.datastore.v1.QueryProto
+            .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Sum_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.datastore.v1.QueryProto
+            .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Sum_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.datastore.v1.AggregationQuery.Aggregation.Sum.class,
+                com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder.class);
+      }
+
+      public static final int PROPERTY_FIELD_NUMBER = 1;
+      private com.google.datastore.v1.PropertyReference property_;
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return Whether the property field is set.
+       */
+      @java.lang.Override
+      public boolean hasProperty() {
+        return property_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return The property.
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.PropertyReference getProperty() {
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (property_ != null) {
+          output.writeMessage(1, getProperty());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (property_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProperty());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.datastore.v1.AggregationQuery.Aggregation.Sum)) {
+          return super.equals(obj);
+        }
+        com.google.datastore.v1.AggregationQuery.Aggregation.Sum other =
+            (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) obj;
+
+        if (hasProperty() != other.hasProperty()) return false;
+        if (hasProperty()) {
+          if (!getProperty().equals(other.getProperty())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasProperty()) {
+          hash = (37 * hash) + PROPERTY_FIELD_NUMBER;
+          hash = (53 * hash) + getProperty().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.datastore.v1.AggregationQuery.Aggregation.Sum prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum of the values of the requested property.
+       *
+       * * Only numeric values will be aggregated. All non-numeric values
+       * including `NULL` are skipped.
+       *
+       * * If the aggregated values contain `NaN`, returns `NaN`. Infinity math
+       * follows IEEE-754 standards.
+       *
+       * * If the aggregated value set is empty, returns 0.
+       *
+       * * Returns a 64-bit integer if all aggregated numbers are integers and the
+       * sum result does not overflow. Otherwise, the result is returned as a
+       * double. Note that even if all the aggregated values are integers, the
+       * result is returned as a double if it cannot fit within a 64-bit signed
+       * integer. When this occurs, the returned value will lose precision.
+       *
+       * * When underflow occurs, floating-point aggregation is non-deterministic.
+       * This means that running the same query repeatedly without any changes to
+       * the underlying values could produce slightly different results each
+       * time. In those cases, values should be stored as integers over
+       * floating-point numbers.
+       * </pre>
+       *
+       * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation.Sum}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.datastore.v1.AggregationQuery.Aggregation.Sum)
+          com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Sum_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Sum_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Sum.class,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder.class);
+        }
+
+        // Construct using com.google.datastore.v1.AggregationQuery.Aggregation.Sum.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          property_ = null;
+          if (propertyBuilder_ != null) {
+            propertyBuilder_.dispose();
+            propertyBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Sum_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Sum
+            getDefaultInstanceForType() {
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Sum build() {
+          com.google.datastore.v1.AggregationQuery.Aggregation.Sum result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Sum buildPartial() {
+          com.google.datastore.v1.AggregationQuery.Aggregation.Sum result =
+              new com.google.datastore.v1.AggregationQuery.Aggregation.Sum(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.datastore.v1.AggregationQuery.Aggregation.Sum result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.datastore.v1.AggregationQuery.Aggregation.Sum) {
+            return mergeFrom((com.google.datastore.v1.AggregationQuery.Aggregation.Sum) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.datastore.v1.AggregationQuery.Aggregation.Sum other) {
+          if (other
+              == com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance())
+            return this;
+          if (other.hasProperty()) {
+            mergeProperty(other.getProperty());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.datastore.v1.PropertyReference property_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>
+            propertyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         *
+         * @return Whether the property field is set.
+         */
+        public boolean hasProperty() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         *
+         * @return The property.
+         */
+        public com.google.datastore.v1.PropertyReference getProperty() {
+          if (propertyBuilder_ == null) {
+            return property_ == null
+                ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+                : property_;
+          } else {
+            return propertyBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder setProperty(com.google.datastore.v1.PropertyReference value) {
+          if (propertyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            property_ = value;
+          } else {
+            propertyBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder setProperty(
+            com.google.datastore.v1.PropertyReference.Builder builderForValue) {
+          if (propertyBuilder_ == null) {
+            property_ = builderForValue.build();
+          } else {
+            propertyBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder mergeProperty(com.google.datastore.v1.PropertyReference value) {
+          if (propertyBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && property_ != null
+                && property_ != com.google.datastore.v1.PropertyReference.getDefaultInstance()) {
+              getPropertyBuilder().mergeFrom(value);
+            } else {
+              property_ = value;
+            }
+          } else {
+            propertyBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder clearProperty() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          property_ = null;
+          if (propertyBuilder_ != null) {
+            propertyBuilder_.dispose();
+            propertyBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public com.google.datastore.v1.PropertyReference.Builder getPropertyBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getPropertyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
+          if (propertyBuilder_ != null) {
+            return propertyBuilder_.getMessageOrBuilder();
+          } else {
+            return property_ == null
+                ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+                : property_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>
+            getPropertyFieldBuilder() {
+          if (propertyBuilder_ == null) {
+            propertyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.datastore.v1.PropertyReference,
+                    com.google.datastore.v1.PropertyReference.Builder,
+                    com.google.datastore.v1.PropertyReferenceOrBuilder>(
+                    getProperty(), getParentForChildren(), isClean());
+            property_ = null;
+          }
+          return propertyBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.datastore.v1.AggregationQuery.Aggregation.Sum)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.datastore.v1.AggregationQuery.Aggregation.Sum)
+      private static final com.google.datastore.v1.AggregationQuery.Aggregation.Sum
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.datastore.v1.AggregationQuery.Aggregation.Sum();
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Sum getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Sum> PARSER =
+          new com.google.protobuf.AbstractParser<Sum>() {
+            @java.lang.Override
+            public Sum parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Sum> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Sum> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Sum getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface AvgOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.datastore.v1.AggregationQuery.Aggregation.Avg)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return Whether the property field is set.
+       */
+      boolean hasProperty();
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return The property.
+       */
+      com.google.datastore.v1.PropertyReference getProperty();
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       */
+      com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Average of the values of the requested property.
+     *
+     * * Only numeric values will be aggregated. All non-numeric values
+     * including `NULL` are skipped.
+     *
+     * * If the aggregated values contain `NaN`, returns `NaN`. Infinity math
+     * follows IEEE-754 standards.
+     *
+     * * If the aggregated value set is empty, returns `NULL`.
+     *
+     * * Always returns the result as a double.
+     * </pre>
+     *
+     * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation.Avg}
+     */
+    public static final class Avg extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.datastore.v1.AggregationQuery.Aggregation.Avg)
+        AvgOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Avg.newBuilder() to construct.
+      private Avg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Avg() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Avg();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.datastore.v1.QueryProto
+            .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Avg_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.datastore.v1.QueryProto
+            .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Avg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.datastore.v1.AggregationQuery.Aggregation.Avg.class,
+                com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder.class);
+      }
+
+      public static final int PROPERTY_FIELD_NUMBER = 1;
+      private com.google.datastore.v1.PropertyReference property_;
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return Whether the property field is set.
+       */
+      @java.lang.Override
+      public boolean hasProperty() {
+        return property_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       *
+       * @return The property.
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.PropertyReference getProperty() {
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The property to aggregate on.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (property_ != null) {
+          output.writeMessage(1, getProperty());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (property_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProperty());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.datastore.v1.AggregationQuery.Aggregation.Avg)) {
+          return super.equals(obj);
+        }
+        com.google.datastore.v1.AggregationQuery.Aggregation.Avg other =
+            (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) obj;
+
+        if (hasProperty() != other.hasProperty()) return false;
+        if (hasProperty()) {
+          if (!getProperty().equals(other.getProperty())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasProperty()) {
+          hash = (37 * hash) + PROPERTY_FIELD_NUMBER;
+          hash = (53 * hash) + getProperty().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.datastore.v1.AggregationQuery.Aggregation.Avg prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average of the values of the requested property.
+       *
+       * * Only numeric values will be aggregated. All non-numeric values
+       * including `NULL` are skipped.
+       *
+       * * If the aggregated values contain `NaN`, returns `NaN`. Infinity math
+       * follows IEEE-754 standards.
+       *
+       * * If the aggregated value set is empty, returns `NULL`.
+       *
+       * * Always returns the result as a double.
+       * </pre>
+       *
+       * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation.Avg}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.datastore.v1.AggregationQuery.Aggregation.Avg)
+          com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Avg_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Avg_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Avg.class,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder.class);
+        }
+
+        // Construct using com.google.datastore.v1.AggregationQuery.Aggregation.Avg.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          property_ = null;
+          if (propertyBuilder_ != null) {
+            propertyBuilder_.dispose();
+            propertyBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.datastore.v1.QueryProto
+              .internal_static_google_datastore_v1_AggregationQuery_Aggregation_Avg_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Avg
+            getDefaultInstanceForType() {
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Avg build() {
+          com.google.datastore.v1.AggregationQuery.Aggregation.Avg result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.datastore.v1.AggregationQuery.Aggregation.Avg buildPartial() {
+          com.google.datastore.v1.AggregationQuery.Aggregation.Avg result =
+              new com.google.datastore.v1.AggregationQuery.Aggregation.Avg(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.datastore.v1.AggregationQuery.Aggregation.Avg result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.datastore.v1.AggregationQuery.Aggregation.Avg) {
+            return mergeFrom((com.google.datastore.v1.AggregationQuery.Aggregation.Avg) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.datastore.v1.AggregationQuery.Aggregation.Avg other) {
+          if (other
+              == com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance())
+            return this;
+          if (other.hasProperty()) {
+            mergeProperty(other.getProperty());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.datastore.v1.PropertyReference property_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>
+            propertyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         *
+         * @return Whether the property field is set.
+         */
+        public boolean hasProperty() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         *
+         * @return The property.
+         */
+        public com.google.datastore.v1.PropertyReference getProperty() {
+          if (propertyBuilder_ == null) {
+            return property_ == null
+                ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+                : property_;
+          } else {
+            return propertyBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder setProperty(com.google.datastore.v1.PropertyReference value) {
+          if (propertyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            property_ = value;
+          } else {
+            propertyBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder setProperty(
+            com.google.datastore.v1.PropertyReference.Builder builderForValue) {
+          if (propertyBuilder_ == null) {
+            property_ = builderForValue.build();
+          } else {
+            propertyBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder mergeProperty(com.google.datastore.v1.PropertyReference value) {
+          if (propertyBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && property_ != null
+                && property_ != com.google.datastore.v1.PropertyReference.getDefaultInstance()) {
+              getPropertyBuilder().mergeFrom(value);
+            } else {
+              property_ = value;
+            }
+          } else {
+            propertyBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public Builder clearProperty() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          property_ = null;
+          if (propertyBuilder_ != null) {
+            propertyBuilder_.dispose();
+            propertyBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public com.google.datastore.v1.PropertyReference.Builder getPropertyBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getPropertyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
+          if (propertyBuilder_ != null) {
+            return propertyBuilder_.getMessageOrBuilder();
+          } else {
+            return property_ == null
+                ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+                : property_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The property to aggregate on.
+         * </pre>
+         *
+         * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>
+            getPropertyFieldBuilder() {
+          if (propertyBuilder_ == null) {
+            propertyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.datastore.v1.PropertyReference,
+                    com.google.datastore.v1.PropertyReference.Builder,
+                    com.google.datastore.v1.PropertyReferenceOrBuilder>(
+                    getProperty(), getParentForChildren(), isClean());
+            property_ = null;
+          }
+          return propertyBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.datastore.v1.AggregationQuery.Aggregation.Avg)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.datastore.v1.AggregationQuery.Aggregation.Avg)
+      private static final com.google.datastore.v1.AggregationQuery.Aggregation.Avg
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.datastore.v1.AggregationQuery.Aggregation.Avg();
+      }
+
+      public static com.google.datastore.v1.AggregationQuery.Aggregation.Avg getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Avg> PARSER =
+          new com.google.protobuf.AbstractParser<Avg>() {
+            @java.lang.Override
+            public Avg parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Avg> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Avg> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Avg getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int operatorCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -1289,6 +2895,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       COUNT(1),
+      SUM(2),
+      AVG(3),
       OPERATOR_NOT_SET(0);
       private final int value;
 
@@ -1309,6 +2917,10 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         switch (value) {
           case 1:
             return COUNT;
+          case 2:
+            return SUM;
+          case 3:
+            return AVG;
           case 0:
             return OPERATOR_NOT_SET;
           default:
@@ -1374,6 +2986,108 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         return (com.google.datastore.v1.AggregationQuery.Aggregation.Count) operator_;
       }
       return com.google.datastore.v1.AggregationQuery.Aggregation.Count.getDefaultInstance();
+    }
+
+    public static final int SUM_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     *
+     * @return Whether the sum field is set.
+     */
+    @java.lang.Override
+    public boolean hasSum() {
+      return operatorCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     *
+     * @return The sum.
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.AggregationQuery.Aggregation.Sum getSum() {
+      if (operatorCase_ == 2) {
+        return (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_;
+      }
+      return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sum aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder getSumOrBuilder() {
+      if (operatorCase_ == 2) {
+        return (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_;
+      }
+      return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+    }
+
+    public static final int AVG_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     *
+     * @return Whether the avg field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvg() {
+      return operatorCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     *
+     * @return The avg.
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.AggregationQuery.Aggregation.Avg getAvg() {
+      if (operatorCase_ == 3) {
+        return (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_;
+      }
+      return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Average aggregator.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder getAvgOrBuilder() {
+      if (operatorCase_ == 3) {
+        return (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_;
+      }
+      return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
     }
 
     public static final int ALIAS_FIELD_NUMBER = 7;
@@ -1513,6 +3227,14 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         output.writeMessage(
             1, (com.google.datastore.v1.AggregationQuery.Aggregation.Count) operator_);
       }
+      if (operatorCase_ == 2) {
+        output.writeMessage(
+            2, (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_);
+      }
+      if (operatorCase_ == 3) {
+        output.writeMessage(
+            3, (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alias_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, alias_);
       }
@@ -1529,6 +3251,16 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, (com.google.datastore.v1.AggregationQuery.Aggregation.Count) operator_);
+      }
+      if (operatorCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_);
+      }
+      if (operatorCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alias_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, alias_);
@@ -1555,6 +3287,12 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         case 1:
           if (!getCount().equals(other.getCount())) return false;
           break;
+        case 2:
+          if (!getSum().equals(other.getSum())) return false;
+          break;
+        case 3:
+          if (!getAvg().equals(other.getAvg())) return false;
+          break;
         case 0:
         default:
       }
@@ -1575,6 +3313,14 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         case 1:
           hash = (37 * hash) + COUNT_FIELD_NUMBER;
           hash = (53 * hash) + getCount().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + SUM_FIELD_NUMBER;
+          hash = (53 * hash) + getSum().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + AVG_FIELD_NUMBER;
+          hash = (53 * hash) + getAvg().hashCode();
           break;
         case 0:
         default:
@@ -1724,6 +3470,12 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         if (countBuilder_ != null) {
           countBuilder_.clear();
         }
+        if (sumBuilder_ != null) {
+          sumBuilder_.clear();
+        }
+        if (avgBuilder_ != null) {
+          avgBuilder_.clear();
+        }
         alias_ = "";
         operatorCase_ = 0;
         operator_ = null;
@@ -1764,7 +3516,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
 
       private void buildPartial0(com.google.datastore.v1.AggregationQuery.Aggregation result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.alias_ = alias_;
         }
       }
@@ -1774,6 +3526,12 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         result.operator_ = this.operator_;
         if (operatorCase_ == 1 && countBuilder_ != null) {
           result.operator_ = countBuilder_.build();
+        }
+        if (operatorCase_ == 2 && sumBuilder_ != null) {
+          result.operator_ = sumBuilder_.build();
+        }
+        if (operatorCase_ == 3 && avgBuilder_ != null) {
+          result.operator_ = avgBuilder_.build();
         }
       }
 
@@ -1827,13 +3585,23 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getAlias().isEmpty()) {
           alias_ = other.alias_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         switch (other.getOperatorCase()) {
           case COUNT:
             {
               mergeCount(other.getCount());
+              break;
+            }
+          case SUM:
+            {
+              mergeSum(other.getSum());
+              break;
+            }
+          case AVG:
+            {
+              mergeAvg(other.getAvg());
               break;
             }
           case OPERATOR_NOT_SET:
@@ -1873,10 +3641,22 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
                   operatorCase_ = 1;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(getSumFieldBuilder().getBuilder(), extensionRegistry);
+                  operatorCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getAvgFieldBuilder().getBuilder(), extensionRegistry);
+                  operatorCase_ = 3;
+                  break;
+                } // case 26
               case 58:
                 {
                   alias_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 58
               default:
@@ -2125,6 +3905,430 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         return countBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.datastore.v1.AggregationQuery.Aggregation.Sum,
+              com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder,
+              com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder>
+          sumBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       *
+       * @return Whether the sum field is set.
+       */
+      @java.lang.Override
+      public boolean hasSum() {
+        return operatorCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       *
+       * @return The sum.
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Sum getSum() {
+        if (sumBuilder_ == null) {
+          if (operatorCase_ == 2) {
+            return (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_;
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+        } else {
+          if (operatorCase_ == 2) {
+            return sumBuilder_.getMessage();
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      public Builder setSum(com.google.datastore.v1.AggregationQuery.Aggregation.Sum value) {
+        if (sumBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          operator_ = value;
+          onChanged();
+        } else {
+          sumBuilder_.setMessage(value);
+        }
+        operatorCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      public Builder setSum(
+          com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder builderForValue) {
+        if (sumBuilder_ == null) {
+          operator_ = builderForValue.build();
+          onChanged();
+        } else {
+          sumBuilder_.setMessage(builderForValue.build());
+        }
+        operatorCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      public Builder mergeSum(com.google.datastore.v1.AggregationQuery.Aggregation.Sum value) {
+        if (sumBuilder_ == null) {
+          if (operatorCase_ == 2
+              && operator_
+                  != com.google.datastore.v1.AggregationQuery.Aggregation.Sum
+                      .getDefaultInstance()) {
+            operator_ =
+                com.google.datastore.v1.AggregationQuery.Aggregation.Sum.newBuilder(
+                        (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            operator_ = value;
+          }
+          onChanged();
+        } else {
+          if (operatorCase_ == 2) {
+            sumBuilder_.mergeFrom(value);
+          } else {
+            sumBuilder_.setMessage(value);
+          }
+        }
+        operatorCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      public Builder clearSum() {
+        if (sumBuilder_ == null) {
+          if (operatorCase_ == 2) {
+            operatorCase_ = 0;
+            operator_ = null;
+            onChanged();
+          }
+        } else {
+          if (operatorCase_ == 2) {
+            operatorCase_ = 0;
+            operator_ = null;
+          }
+          sumBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder getSumBuilder() {
+        return getSumFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder getSumOrBuilder() {
+        if ((operatorCase_ == 2) && (sumBuilder_ != null)) {
+          return sumBuilder_.getMessageOrBuilder();
+        } else {
+          if (operatorCase_ == 2) {
+            return (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_;
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sum aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Sum sum = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.datastore.v1.AggregationQuery.Aggregation.Sum,
+              com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder,
+              com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder>
+          getSumFieldBuilder() {
+        if (sumBuilder_ == null) {
+          if (!(operatorCase_ == 2)) {
+            operator_ =
+                com.google.datastore.v1.AggregationQuery.Aggregation.Sum.getDefaultInstance();
+          }
+          sumBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Sum,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Sum.Builder,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.SumOrBuilder>(
+                  (com.google.datastore.v1.AggregationQuery.Aggregation.Sum) operator_,
+                  getParentForChildren(),
+                  isClean());
+          operator_ = null;
+        }
+        operatorCase_ = 2;
+        onChanged();
+        return sumBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.datastore.v1.AggregationQuery.Aggregation.Avg,
+              com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder,
+              com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder>
+          avgBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       *
+       * @return Whether the avg field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvg() {
+        return operatorCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       *
+       * @return The avg.
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Avg getAvg() {
+        if (avgBuilder_ == null) {
+          if (operatorCase_ == 3) {
+            return (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_;
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+        } else {
+          if (operatorCase_ == 3) {
+            return avgBuilder_.getMessage();
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      public Builder setAvg(com.google.datastore.v1.AggregationQuery.Aggregation.Avg value) {
+        if (avgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          operator_ = value;
+          onChanged();
+        } else {
+          avgBuilder_.setMessage(value);
+        }
+        operatorCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      public Builder setAvg(
+          com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder builderForValue) {
+        if (avgBuilder_ == null) {
+          operator_ = builderForValue.build();
+          onChanged();
+        } else {
+          avgBuilder_.setMessage(builderForValue.build());
+        }
+        operatorCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      public Builder mergeAvg(com.google.datastore.v1.AggregationQuery.Aggregation.Avg value) {
+        if (avgBuilder_ == null) {
+          if (operatorCase_ == 3
+              && operator_
+                  != com.google.datastore.v1.AggregationQuery.Aggregation.Avg
+                      .getDefaultInstance()) {
+            operator_ =
+                com.google.datastore.v1.AggregationQuery.Aggregation.Avg.newBuilder(
+                        (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            operator_ = value;
+          }
+          onChanged();
+        } else {
+          if (operatorCase_ == 3) {
+            avgBuilder_.mergeFrom(value);
+          } else {
+            avgBuilder_.setMessage(value);
+          }
+        }
+        operatorCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      public Builder clearAvg() {
+        if (avgBuilder_ == null) {
+          if (operatorCase_ == 3) {
+            operatorCase_ = 0;
+            operator_ = null;
+            onChanged();
+          }
+        } else {
+          if (operatorCase_ == 3) {
+            operatorCase_ = 0;
+            operator_ = null;
+          }
+          avgBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      public com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder getAvgBuilder() {
+        return getAvgFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder getAvgOrBuilder() {
+        if ((operatorCase_ == 3) && (avgBuilder_ != null)) {
+          return avgBuilder_.getMessageOrBuilder();
+        } else {
+          if (operatorCase_ == 3) {
+            return (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_;
+          }
+          return com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Average aggregator.
+       * </pre>
+       *
+       * <code>.google.datastore.v1.AggregationQuery.Aggregation.Avg avg = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.datastore.v1.AggregationQuery.Aggregation.Avg,
+              com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder,
+              com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder>
+          getAvgFieldBuilder() {
+        if (avgBuilder_ == null) {
+          if (!(operatorCase_ == 3)) {
+            operator_ =
+                com.google.datastore.v1.AggregationQuery.Aggregation.Avg.getDefaultInstance();
+          }
+          avgBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Avg,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.Avg.Builder,
+                  com.google.datastore.v1.AggregationQuery.Aggregation.AvgOrBuilder>(
+                  (com.google.datastore.v1.AggregationQuery.Aggregation.Avg) operator_,
+                  getParentForChildren(),
+                  isClean());
+          operator_ = null;
+        }
+        operatorCase_ = 3;
+        onChanged();
+        return avgBuilder_;
+      }
+
       private java.lang.Object alias_ = "";
       /**
        *
@@ -2289,7 +4493,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         alias_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2340,7 +4544,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearAlias() {
         alias_ = getDefaultInstance().getAlias();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2396,7 +4600,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         alias_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
