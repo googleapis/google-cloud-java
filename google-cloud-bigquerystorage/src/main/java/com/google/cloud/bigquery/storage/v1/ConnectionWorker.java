@@ -20,6 +20,7 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
@@ -388,6 +389,11 @@ class ConnectionWorker implements AutoCloseable {
     requestBuilder.setWriteStream(streamWriter.getStreamName());
     requestBuilder.putAllMissingValueInterpretations(
         streamWriter.getMissingValueInterpretationMap());
+    if (streamWriter.getDefaultValueInterpretation()
+        != MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED) {
+      requestBuilder.setDefaultMissingValueInterpretation(
+          streamWriter.getDefaultValueInterpretation());
+    }
     return appendInternal(streamWriter, requestBuilder.build());
   }
 

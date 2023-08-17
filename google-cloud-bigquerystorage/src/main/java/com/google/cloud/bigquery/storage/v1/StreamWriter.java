@@ -22,6 +22,7 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.AppendRequestAndResponse;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
@@ -89,6 +90,13 @@ public class StreamWriter implements AutoCloseable {
    * A String that uniquely identifies this writer.
    */
   private final String writerId = UUID.randomUUID().toString();
+
+  /**
+   * The default missing value interpretation if the column has default value defined but not
+   * presented in the missing value map.
+   */
+  private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
+      MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
 
   /**
    * Stream can access a single connection or a pool of connection depending on whether multiplexing
@@ -201,6 +209,7 @@ public class StreamWriter implements AutoCloseable {
   private StreamWriter(Builder builder) throws IOException {
     this.streamName = builder.streamName;
     this.writerSchema = builder.writerSchema;
+    this.defaultMissingValueInterpretation = builder.defaultMissingValueInterpretation;
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
     if (!builder.enableConnectionPool) {
       this.location = builder.location;
@@ -310,6 +319,10 @@ public class StreamWriter implements AutoCloseable {
   static boolean isDefaultStream(String streamName) {
     Matcher streamMatcher = streamPatternDefaultStream.matcher(streamName);
     return streamMatcher.find();
+  }
+
+  AppendRowsRequest.MissingValueInterpretation getDefaultValueInterpretation() {
+    return defaultMissingValueInterpretation;
   }
 
   static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
@@ -602,6 +615,10 @@ public class StreamWriter implements AutoCloseable {
 
     private String compressorName = null;
 
+    // Default missing value interpretation value.
+    private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
+        MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);
       this.client = null;
@@ -726,6 +743,16 @@ public class StreamWriter implements AutoCloseable {
           "Compression of type \"%s\" isn't supported, only \"gzip\" compression is supported.",
           compressorName);
       this.compressorName = compressorName;
+      return this;
+    }
+
+    /**
+     * Sets the default missing value interpretation value if the column is not presented in the
+     * missing_value_interpretations map.
+     */
+    public Builder setDefaultMissingValueInterpretation(
+        AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
+      this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
       return this;
     }
 

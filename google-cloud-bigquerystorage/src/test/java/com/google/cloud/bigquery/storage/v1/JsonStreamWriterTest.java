@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.storage.test.Test.FlexibleType;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.RepetitionType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
@@ -45,8 +46,10 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -64,6 +67,7 @@ import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
+
   private static final int NUMERIC_SCALE = 9;
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
@@ -514,6 +518,9 @@ public class JsonStreamWriterTest {
                 .getSerializedRows(i),
             expectedProto.toByteString());
       }
+      assertEquals(
+          testBigQueryWrite.getAppendRequests().get(0).getDefaultMissingValueInterpretation(),
+          MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED);
     }
   }
 
@@ -1011,6 +1018,79 @@ public class JsonStreamWriterTest {
     assertEquals(
         testBigQueryWrite.getAppendRequests().get(3).getProtoRows().getWriterSchema(),
         ProtoSchema.getDefaultInstance());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testMissingValueInterpretation_multiplexingCase() throws Exception {
+    // Set min connection count to be 1 to force sharing connection.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setTableSchema(TABLE_SCHEMA)
+            .setLocation("us")
+            .build());
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setTableSchema(TABLE_SCHEMA)
+            .setLocation("us")
+            .build());
+    // The following two writers have different stream name and schema, but will share the same
+    // connection .
+    JsonStreamWriter writer1 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
+            .build();
+    JsonStreamWriter writer2 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM_2)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.NULL_VALUE)
+            .build();
+
+    long appendCountPerStream = 5;
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    JSONObject foo = new JSONObject();
+    foo.put("foo", "aaa");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    // In total insert append `appendCountPerStream` * 4 requests.
+    // We insert using the pattern of
+    // jsonStreamWriter1, jsonStreamWriter1, jsonStreamWriter2, jsonStreamWriter2
+    for (int i = 0; i < appendCountPerStream; i++) {
+      ApiFuture<AppendRowsResponse> appendFuture1 = writer1.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer1.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture3 = writer2.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture4 = writer2.append(jsonArr);
+      appendFuture1.get();
+      appendFuture2.get();
+      appendFuture3.get();
+      appendFuture4.get();
+    }
+
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      AppendRowsRequest appendRowsRequest = testBigQueryWrite.getAppendRequests().get(i);
+      if (i % 4 <= 1) {
+        assertEquals(
+            appendRowsRequest.getDefaultMissingValueInterpretation(),
+            MissingValueInterpretation.DEFAULT_VALUE);
+      } else {
+        assertEquals(
+            appendRowsRequest.getDefaultMissingValueInterpretation(),
+            MissingValueInterpretation.NULL_VALUE);
+      }
+    }
+
     writer1.close();
     writer2.close();
   }

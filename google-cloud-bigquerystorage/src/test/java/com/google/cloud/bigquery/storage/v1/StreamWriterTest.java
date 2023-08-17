@@ -38,6 +38,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StreamWriterClosedException;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
@@ -848,6 +849,73 @@ public class StreamWriterTest {
         assertEquals(
             appendRowsRequest.getProtoRows().getWriterSchema(), ProtoSchema.getDefaultInstance());
         assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_2);
+      }
+      assertEquals(
+          appendRowsRequest.getDefaultMissingValueInterpretation(),
+          MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED);
+    }
+
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testDefaultValueInterpretation_multiplexingCase() throws Exception {
+    // Use the shared connection mode.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    ProtoSchema schema1 = createProtoSchema("Schema1");
+    ProtoSchema schema2 = createProtoSchema("Schema2");
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(schema1)
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2, client)
+            .setWriterSchema(schema2)
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setLocation("US")
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.NULL_VALUE)
+            .build();
+
+    long appendCountPerStream = 5;
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert append `appendCountPerStream` * 4 requests.
+    // We insert using the pattern of streamWriter1, streamWriter1, streamWriter2, streamWriter2
+    for (int i = 0; i < appendCountPerStream; i++) {
+      ApiFuture<AppendRowsResponse> appendFuture1 =
+          writer1.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4);
+      ApiFuture<AppendRowsResponse> appendFuture2 =
+          writer1.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 1);
+      ApiFuture<AppendRowsResponse> appendFuture3 =
+          writer2.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 2);
+      ApiFuture<AppendRowsResponse> appendFuture4 =
+          writer2.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 3);
+      appendFuture1.get();
+      appendFuture2.get();
+      appendFuture3.get();
+      appendFuture4.get();
+    }
+
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      AppendRowsRequest appendRowsRequest = testBigQueryWrite.getAppendRequests().get(i);
+      assertEquals(i, appendRowsRequest.getOffset().getValue());
+      if (i % 4 <= 1) {
+        assertEquals(
+            appendRowsRequest.getDefaultMissingValueInterpretation(),
+            MissingValueInterpretation.DEFAULT_VALUE);
+      } else {
+        assertEquals(
+            appendRowsRequest.getDefaultMissingValueInterpretation(),
+            MissingValueInterpretation.NULL_VALUE);
       }
     }
 

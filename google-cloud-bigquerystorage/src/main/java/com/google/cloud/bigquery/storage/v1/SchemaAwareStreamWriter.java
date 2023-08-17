@@ -20,6 +20,7 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.Exceptions.RowIndexToErrorException;
 import com.google.common.base.Preconditions;
@@ -97,6 +98,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         builder.compressorName);
     streamWriterBuilder.setEnableConnectionPool(builder.enableConnectionPool);
     streamWriterBuilder.setLocation(builder.location);
+    streamWriterBuilder.setDefaultMissingValueInterpretation(
+        builder.defaultMissingValueInterpretation);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
@@ -433,6 +436,9 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     private String location;
     private String compressorName;
 
+    private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
+        MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+
     private static final String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
     private static final String tablePatternString = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)";
@@ -624,6 +630,16 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
      */
     public Builder<T> setCompressorName(String compressorName) {
       this.compressorName = compressorName;
+      return this;
+    }
+
+    /**
+     * Sets the default missing value interpretation value if the column is not presented in the
+     * missing_value_interpretations map.
+     */
+    public Builder setDefaultMissingValueInterpretation(
+        AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
+      this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
       return this;
     }
 
