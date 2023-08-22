@@ -1,0 +1,219 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dataproc.v1",
+  "libraryPackage": "com.google.cloud.dataproc.v1",
+  "services": {
+    "AutoscalingPolicyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutoscalingPolicyServiceClient",
+          "rpcs": {
+            "CreateAutoscalingPolicy": {
+              "methods": ["createAutoscalingPolicy", "createAutoscalingPolicy", "createAutoscalingPolicy", "createAutoscalingPolicy", "createAutoscalingPolicyCallable"]
+            },
+            "DeleteAutoscalingPolicy": {
+              "methods": ["deleteAutoscalingPolicy", "deleteAutoscalingPolicy", "deleteAutoscalingPolicy", "deleteAutoscalingPolicyCallable"]
+            },
+            "GetAutoscalingPolicy": {
+              "methods": ["getAutoscalingPolicy", "getAutoscalingPolicy", "getAutoscalingPolicy", "getAutoscalingPolicyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListAutoscalingPolicies": {
+              "methods": ["listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPoliciesPagedCallable", "listAutoscalingPoliciesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAutoscalingPolicy": {
+              "methods": ["updateAutoscalingPolicy", "updateAutoscalingPolicy", "updateAutoscalingPolicyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BatchController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BatchControllerClient",
+          "rpcs": {
+            "CreateBatch": {
+              "methods": ["createBatchAsync", "createBatchAsync", "createBatchAsync", "createBatchOperationCallable", "createBatchCallable"]
+            },
+            "DeleteBatch": {
+              "methods": ["deleteBatch", "deleteBatch", "deleteBatch", "deleteBatchCallable"]
+            },
+            "GetBatch": {
+              "methods": ["getBatch", "getBatch", "getBatch", "getBatchCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListBatches": {
+              "methods": ["listBatches", "listBatches", "listBatches", "listBatchesPagedCallable", "listBatchesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ClusterController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ClusterControllerClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DiagnoseCluster": {
+              "methods": ["diagnoseClusterAsync", "diagnoseClusterAsync", "diagnoseClusterOperationCallable", "diagnoseClusterCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartCluster": {
+              "methods": ["startClusterAsync", "startClusterOperationCallable", "startClusterCallable"]
+            },
+            "StopCluster": {
+              "methods": ["stopClusterAsync", "stopClusterOperationCallable", "stopClusterCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            }
+          }
+        }
+      }
+    },
+    "JobController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "JobControllerClient",
+          "rpcs": {
+            "CancelJob": {
+              "methods": ["cancelJob", "cancelJob", "cancelJobCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJob", "deleteJob", "deleteJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJobCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SubmitJob": {
+              "methods": ["submitJob", "submitJob", "submitJobCallable"]
+            },
+            "SubmitJobAsOperation": {
+              "methods": ["submitJobAsOperationAsync", "submitJobAsOperationAsync", "submitJobAsOperationOperationCallable", "submitJobAsOperationCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateJob": {
+              "methods": ["updateJob", "updateJobCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NodeGroupController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NodeGroupControllerClient",
+          "rpcs": {
+            "CreateNodeGroup": {
+              "methods": ["createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupOperationCallable", "createNodeGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetNodeGroup": {
+              "methods": ["getNodeGroup", "getNodeGroup", "getNodeGroup", "getNodeGroupCallable"]
+            },
+            "ResizeNodeGroup": {
+              "methods": ["resizeNodeGroupAsync", "resizeNodeGroupAsync", "resizeNodeGroupOperationCallable", "resizeNodeGroupCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "WorkflowTemplateService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkflowTemplateServiceClient",
+          "rpcs": {
+            "CreateWorkflowTemplate": {
+              "methods": ["createWorkflowTemplate", "createWorkflowTemplate", "createWorkflowTemplate", "createWorkflowTemplate", "createWorkflowTemplateCallable"]
+            },
+            "DeleteWorkflowTemplate": {
+              "methods": ["deleteWorkflowTemplate", "deleteWorkflowTemplate", "deleteWorkflowTemplate", "deleteWorkflowTemplateCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetWorkflowTemplate": {
+              "methods": ["getWorkflowTemplate", "getWorkflowTemplate", "getWorkflowTemplate", "getWorkflowTemplateCallable"]
+            },
+            "InstantiateInlineWorkflowTemplate": {
+              "methods": ["instantiateInlineWorkflowTemplateAsync", "instantiateInlineWorkflowTemplateAsync", "instantiateInlineWorkflowTemplateAsync", "instantiateInlineWorkflowTemplateAsync", "instantiateInlineWorkflowTemplateOperationCallable", "instantiateInlineWorkflowTemplateCallable"]
+            },
+            "InstantiateWorkflowTemplate": {
+              "methods": ["instantiateWorkflowTemplateAsync", "instantiateWorkflowTemplateAsync", "instantiateWorkflowTemplateAsync", "instantiateWorkflowTemplateAsync", "instantiateWorkflowTemplateAsync", "instantiateWorkflowTemplateOperationCallable", "instantiateWorkflowTemplateCallable"]
+            },
+            "ListWorkflowTemplates": {
+              "methods": ["listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplatesPagedCallable", "listWorkflowTemplatesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateWorkflowTemplate": {
+              "methods": ["updateWorkflowTemplate", "updateWorkflowTemplate", "updateWorkflowTemplateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
