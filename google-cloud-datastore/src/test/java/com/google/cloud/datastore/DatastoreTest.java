@@ -555,7 +555,7 @@ public class DatastoreTest {
             .build();
     AggregationResult result = getOnlyElement(mockDatastore.runAggregation(getCountQuery));
 
-    assertThat(result.get("total_count")).isEqualTo(209L);
+    assertThat(result.getLong("total_count")).isEqualTo(209L);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 

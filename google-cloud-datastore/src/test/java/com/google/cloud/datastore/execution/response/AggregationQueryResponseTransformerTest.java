@@ -15,13 +15,13 @@
  */
 package com.google.cloud.datastore.execution.response;
 
+import static com.google.cloud.datastore.ProtoTestData.doubleValue;
 import static com.google.cloud.datastore.ProtoTestData.intValue;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.AggregationResult;
 import com.google.cloud.datastore.AggregationResults;
-import com.google.cloud.datastore.LongValue;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.AggregationResultBatch;
 import com.google.datastore.v1.RunAggregationQueryResponse;
@@ -40,7 +40,7 @@ public class AggregationQueryResponseTransformerTest {
       new AggregationQueryResponseTransformer();
 
   @Test
-  public void shouldTransformAggregationQueryResponse() {
+  public void shouldTransformAggregationQueryResponseWithIntValues() {
     Map<String, com.google.datastore.v1.Value> result1 =
         new HashMap<>(
             ImmutableMap.of(
@@ -51,7 +51,7 @@ public class AggregationQueryResponseTransformerTest {
         new HashMap<>(
             ImmutableMap.of(
                 "count", intValue(509),
-                "property_2", intValue(100)));
+                "property_2", intValue((100))));
     Timestamp readTime = Timestamp.now();
 
     AggregationResultBatch resultBatch =
@@ -78,14 +78,54 @@ public class AggregationQueryResponseTransformerTest {
     assertThat(aggregationResults.getReadTime()).isEqualTo(readTime);
   }
 
-  private Map<String, LongValue> toDomainValues(Map<String, com.google.datastore.v1.Value> map) {
+  @Test
+  public void shouldTransformAggregationQueryResponseWithDoubleValues() {
+    Map<String, com.google.datastore.v1.Value> result1 =
+        new HashMap<>(
+            ImmutableMap.of(
+                "count", doubleValue(209.678),
+                "property_2", doubleValue(100.678)));
+
+    Map<String, com.google.datastore.v1.Value> result2 =
+        new HashMap<>(
+            ImmutableMap.of(
+                "count", doubleValue(509.678),
+                "property_2", doubleValue((100.678))));
+    Timestamp readTime = Timestamp.now();
+
+    AggregationResultBatch resultBatch =
+        AggregationResultBatch.newBuilder()
+            .addAggregationResults(
+                com.google.datastore.v1.AggregationResult.newBuilder()
+                    .putAllAggregateProperties(result1)
+                    .build())
+            .addAggregationResults(
+                com.google.datastore.v1.AggregationResult.newBuilder()
+                    .putAllAggregateProperties(result2)
+                    .build())
+            .setReadTime(readTime.toProto())
+            .build();
+    RunAggregationQueryResponse runAggregationQueryResponse =
+        RunAggregationQueryResponse.newBuilder().setBatch(resultBatch).build();
+
+    AggregationResults aggregationResults =
+        responseTransformer.transform(runAggregationQueryResponse);
+
+    assertThat(aggregationResults.size()).isEqualTo(2);
+    assertThat(aggregationResults.get(0)).isEqualTo(new AggregationResult(toDomainValues(result1)));
+    assertThat(aggregationResults.get(1)).isEqualTo(new AggregationResult(toDomainValues(result2)));
+    assertThat(aggregationResults.getReadTime()).isEqualTo(readTime);
+  }
+
+  private Map<String, com.google.cloud.datastore.Value<?>> toDomainValues(
+      Map<String, com.google.datastore.v1.Value> map) {
 
     return map.entrySet().stream()
         .map(
-            (Function<Entry<String, Value>, Entry<String, LongValue>>)
+            (Function<Entry<String, Value>, Entry<String, com.google.cloud.datastore.Value<?>>>)
                 entry ->
                     new SimpleEntry<>(
-                        entry.getKey(), (LongValue) LongValue.fromPb(entry.getValue())))
+                        entry.getKey(), com.google.cloud.datastore.Value.fromPb(entry.getValue())))
         .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
   }
 }

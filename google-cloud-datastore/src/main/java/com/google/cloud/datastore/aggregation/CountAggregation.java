@@ -30,14 +30,7 @@ public class CountAggregation extends Aggregation {
 
   @Override
   public AggregationQuery.Aggregation toPb() {
-    Count.Builder countBuilder = Count.newBuilder();
-
-    AggregationQuery.Aggregation.Builder aggregationBuilder =
-        AggregationQuery.Aggregation.newBuilder().setCount(countBuilder);
-    if (this.getAlias() != null) {
-      aggregationBuilder.setAlias(this.getAlias());
-    }
-    return aggregationBuilder.build();
+    return aggregationBuilder().setCount(Count.newBuilder()).build();
   }
 
   @Override
@@ -49,13 +42,7 @@ public class CountAggregation extends Aggregation {
       return false;
     }
     CountAggregation that = (CountAggregation) o;
-    boolean bothAliasAreNull = getAlias() == null && that.getAlias() == null;
-    if (bothAliasAreNull) {
-      return true;
-    } else {
-      boolean bothArePresent = getAlias() != null && that.getAlias() != null;
-      return bothArePresent && getAlias().equals(that.getAlias());
-    }
+    return Objects.equals(getAlias(), that.getAlias());
   }
 
   @Override

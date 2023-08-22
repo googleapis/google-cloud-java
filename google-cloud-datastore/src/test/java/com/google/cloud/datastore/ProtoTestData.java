@@ -42,6 +42,10 @@ public class ProtoTestData {
     return Value.newBuilder().setIntegerValue(value).build();
   }
 
+  public static Value doubleValue(double value) {
+    return Value.newBuilder().setDoubleValue(value).build();
+  }
+
   public static GqlQueryParameter gqlQueryParameter(Value value) {
     return GqlQueryParameter.newBuilder().setValue(value).build();
   }

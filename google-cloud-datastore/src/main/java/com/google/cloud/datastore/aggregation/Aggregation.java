@@ -38,8 +38,28 @@ public abstract class Aggregation {
   @InternalApi
   public abstract AggregationQuery.Aggregation toPb();
 
+  @InternalApi
+  protected AggregationQuery.Aggregation.Builder aggregationBuilder() {
+    AggregationQuery.Aggregation.Builder aggregationBuilder =
+        AggregationQuery.Aggregation.newBuilder();
+    if (this.getAlias() != null) {
+      aggregationBuilder.setAlias(this.getAlias());
+    }
+    return aggregationBuilder;
+  }
+
   /** Returns a {@link CountAggregation} builder. */
   public static CountAggregation.Builder count() {
     return new CountAggregation.Builder();
+  }
+
+  /** Returns a {@link SumAggregation} builder. */
+  public static SumAggregation.Builder sum(String propertyReference) {
+    return new SumAggregation.Builder().propertyReference(propertyReference);
+  }
+
+  /** Returns a {@link AvgAggregation} builder. */
+  public static AvgAggregation.Builder avg(String propertyReference) {
+    return new AvgAggregation.Builder().propertyReference(propertyReference);
   }
 }
