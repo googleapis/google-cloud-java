@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.17.0](https://github.com/googleapis/java-datastore/compare/v2.16.3...v2.17.0) (2023-08-22)
+
+
+### Features
+
+* Publish proto definitions for SUM/AVG in Datastore ([#1157](https://github.com/googleapis/java-datastore/issues/1157)) ([954320a](https://github.com/googleapis/java-datastore/commit/954320aaefec249c77c757a1610727519a4029bd))
+* Sum and Avg aggregation feature ([#1067](https://github.com/googleapis/java-datastore/issues/1067)) ([56d1001](https://github.com/googleapis/java-datastore/commit/56d1001005cf7d52f8ba3e5258d6401be729bdbf))
+
+
+### Dependencies
+
+* Update dependency com.google.errorprone:error_prone_core to v2.21.1 ([#1163](https://github.com/googleapis/java-datastore/issues/1163)) ([83158b6](https://github.com/googleapis/java-datastore/commit/83158b6172a4a61b3e2a86dea6271ff7f9f84f6b))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.24 ([#1165](https://github.com/googleapis/java-datastore/issues/1165)) ([4094c70](https://github.com/googleapis/java-datastore/commit/4094c702982e4a005a36324892daee451bd16062))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.24 ([#1166](https://github.com/googleapis/java-datastore/issues/1166)) ([70cc371](https://github.com/googleapis/java-datastore/commit/70cc371babd674000fe6f8d78a0f42e75deb5d99))
+
+
+### Documentation
+
+* Update property requirement specifications ([#1169](https://github.com/googleapis/java-datastore/issues/1169)) ([c908837](https://github.com/googleapis/java-datastore/commit/c908837ea953a5fdc87f9c83937646d309806e03))
+
 ## [2.16.3](https://github.com/googleapis/java-datastore/compare/v2.16.2...v2.16.3) (2023-08-02)
 
 
