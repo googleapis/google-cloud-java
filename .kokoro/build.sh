@@ -65,16 +65,6 @@ case ${JOB_TYPE} in
       echo "No Integration Tests to run"
     fi
     ;;
-  graalvm-presubmit)
-    if [ -z "${MAVEN_MODULES}" ]; then
-      echo "MAVEN_MODULES not defined in environment."
-      exit 1
-    fi
-    printf "Running GraalVM checks for:\n%s\n" "${MAVEN_MODULES}"
-    setup_cloud "$MAVEN_MODULES"
-    install_modules
-    run_graalvm_tests "$MAVEN_MODULES"
-    ;;
   graalvm)
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
