@@ -603,7 +603,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
+              .setRetryDelayMultiplier(4.0)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(900000L))
               .setRpcTimeoutMultiplier(1.0)
