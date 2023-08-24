@@ -30,8 +30,11 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
@@ -89,7 +92,8 @@ class MessageDispatcher {
   private final LinkedBlockingQueue<AckRequestData> pendingAcks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<AckRequestData> pendingNacks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<AckRequestData> pendingReceipts = new LinkedBlockingQueue<>();
-
+  private final LinkedHashMap<String, ReceiptCompleteData> outstandingReceipts =
+      new LinkedHashMap<String, ReceiptCompleteData>();
   private final AtomicInteger messageDeadlineSeconds = new AtomicInteger();
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
@@ -350,6 +354,28 @@ class MessageDispatcher {
     }
   }
 
+  private static class ReceiptCompleteData {
+    private OutstandingMessage outstandingMessage;
+    private Boolean receiptComplete;
+
+    private ReceiptCompleteData(OutstandingMessage outstandingMessage) {
+      this.outstandingMessage = outstandingMessage;
+      this.receiptComplete = false;
+    }
+
+    private OutstandingMessage getOutstandingMessage() {
+      return this.outstandingMessage;
+    }
+
+    private Boolean isReceiptComplete() {
+      return this.receiptComplete;
+    }
+
+    private void notifyReceiptComplete() {
+      this.receiptComplete = true;
+    }
+  }
+
   void processReceivedMessages(List<ReceivedMessage> messages) {
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
     List<OutstandingMessage> outstandingBatch = new ArrayList<>(messages.size());
@@ -361,7 +387,13 @@ class MessageDispatcher {
       AckRequestData ackRequestData = builder.build();
       AckHandler ackHandler =
           new AckHandler(ackRequestData, message.getMessage().getSerializedSize(), totalExpiration);
-      if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null) {
+      OutstandingMessage outstandingMessage = new OutstandingMessage(message, ackHandler);
+
+      if (this.exactlyOnceDeliveryEnabled.get()) {
+        // For exactly once deliveries we don't add to outstanding batch because we first
+        // process the receipt modack. If that is successful then we process the message.
+        outstandingReceipts.put(message.getAckId(), new ReceiptCompleteData(outstandingMessage));
+      } else if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null) {
         // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the
         // previously-mapped element.
         // If the previous element is not null, we already have the message and the new one is
@@ -371,12 +403,42 @@ class MessageDispatcher {
         // we want to eventually
         // totally expire so that pubsub service sends us the message again.
         continue;
+      } else {
+        outstandingBatch.add(outstandingMessage);
       }
-      outstandingBatch.add(new OutstandingMessage(message, ackHandler));
       pendingReceipts.add(ackRequestData);
     }
-
     processBatch(outstandingBatch);
+  }
+
+  synchronized void notifyAckSuccess(AckRequestData ackRequestData) {
+
+    if (outstandingReceipts.containsKey(ackRequestData.getAckId())) {
+      outstandingReceipts.get(ackRequestData.getAckId()).notifyReceiptComplete();
+      List<OutstandingMessage> outstandingBatch = new ArrayList<>();
+
+      for (Iterator<Entry<String, ReceiptCompleteData>> it =
+              outstandingReceipts.entrySet().iterator();
+          it.hasNext(); ) {
+        Map.Entry<String, ReceiptCompleteData> receipt = it.next();
+        // If receipt is complete then add to outstandingBatch to process the batch
+        if (receipt.getValue().isReceiptComplete()) {
+          it.remove();
+          if (pendingMessages.putIfAbsent(
+                  receipt.getKey(), receipt.getValue().getOutstandingMessage().ackHandler)
+              == null) {
+            outstandingBatch.add(receipt.getValue().getOutstandingMessage());
+          }
+        } else {
+          break;
+        }
+      }
+      processBatch(outstandingBatch);
+    }
+  }
+
+  synchronized void notifyAckFailed(AckRequestData ackRequestData) {
+    outstandingReceipts.remove(ackRequestData.getAckId());
   }
 
   private void processBatch(List<OutstandingMessage> batch) {
@@ -519,6 +581,7 @@ class MessageDispatcher {
 
   @InternalApi
   void processOutstandingOperations() {
+
     List<ModackRequestData> modackRequestData = new ArrayList<ModackRequestData>();
 
     // Nacks are modacks with an expiration of 0

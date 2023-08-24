@@ -527,6 +527,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         for (AckRequestData ackRequestData : ackRequestDataList) {
           // This will check if a response is needed, and if it has already been set
           ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+          messageDispatcher.notifyAckSuccess(ackRequestData);
           // Remove from our pending operations
           pendingRequests.remove(ackRequestData);
         }
@@ -564,12 +565,15 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         "Permanent error invalid ack id message, will not resend",
                         errorMessage);
                     ackRequestData.setResponse(AckResponse.INVALID, setResponseOnSuccess);
+                    messageDispatcher.notifyAckFailed(ackRequestData);
                   } else {
                     logger.log(Level.INFO, "Unknown error message, will not resend", errorMessage);
                     ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
+                    messageDispatcher.notifyAckFailed(ackRequestData);
                   }
                 } else {
                   ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+                  messageDispatcher.notifyAckSuccess(ackRequestData);
                 }
                 // Remove from our pending
                 pendingRequests.remove(ackRequestData);

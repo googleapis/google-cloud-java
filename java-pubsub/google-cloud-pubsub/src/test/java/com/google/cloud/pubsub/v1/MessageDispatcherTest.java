@@ -140,6 +140,100 @@ public class MessageDispatcherTest {
   }
 
   @Test
+  public void testReceiptModackWithOrderingForExactlyOnceDelivered() {
+
+    MessageReceiverWithAckResponse mockMessageReceiverWithAckResponse =
+        mock(MessageReceiverWithAckResponse.class);
+    MessageDispatcher messageDispatcher = getMessageDispatcher(mockMessageReceiverWithAckResponse);
+    messageDispatcher.setExactlyOnceDeliveryEnabled(true);
+
+    ReceivedMessage TEST_MESSAGE1 =
+        ReceivedMessage.newBuilder()
+            .setAckId("ACK_ID1")
+            .setMessage(
+                PubsubMessage.newBuilder()
+                    .setData(ByteString.copyFromUtf8("message-data1"))
+                    .build())
+            .setDeliveryAttempt(DELIVERY_INFO_COUNT)
+            .build();
+    ReceivedMessage TEST_MESSAGE2 =
+        ReceivedMessage.newBuilder()
+            .setAckId("ACK_ID2")
+            .setMessage(
+                PubsubMessage.newBuilder()
+                    .setData(ByteString.copyFromUtf8("message-data2"))
+                    .build())
+            .setDeliveryAttempt(DELIVERY_INFO_COUNT)
+            .build();
+    ReceivedMessage TEST_MESSAGE3 =
+        ReceivedMessage.newBuilder()
+            .setAckId("ACK_ID3")
+            .setMessage(
+                PubsubMessage.newBuilder()
+                    .setData(ByteString.copyFromUtf8("message-data3"))
+                    .build())
+            .setDeliveryAttempt(DELIVERY_INFO_COUNT)
+            .build();
+
+    messageDispatcher.processReceivedMessages(
+        Arrays.asList(TEST_MESSAGE3, TEST_MESSAGE2, TEST_MESSAGE1));
+
+    messageDispatcher.processOutstandingOperations();
+    verify(mockMessageReceiverWithAckResponse, never())
+        .receiveMessage(eq(TEST_MESSAGE.getMessage()), any(AckReplyConsumerWithResponse.class));
+
+    AckRequestData ackRequestData1 = AckRequestData.newBuilder(TEST_MESSAGE1.getAckId()).build();
+    AckRequestData ackRequestData2 = AckRequestData.newBuilder(TEST_MESSAGE2.getAckId()).build();
+    AckRequestData ackRequestData3 = AckRequestData.newBuilder(TEST_MESSAGE3.getAckId()).build();
+    messageDispatcher.notifyAckSuccess(ackRequestData2);
+    messageDispatcher.processOutstandingOperations();
+
+    messageDispatcher.notifyAckSuccess(ackRequestData1);
+    messageDispatcher.notifyAckSuccess(ackRequestData3);
+    messageDispatcher.processOutstandingOperations();
+
+    verify(mockMessageReceiverWithAckResponse, times(1))
+        .receiveMessage(
+            argThat(new MessageDataMatcher(TEST_MESSAGE3.getMessage().getData())),
+            any(AckReplyConsumerWithResponse.class));
+    verify(mockMessageReceiverWithAckResponse, times(1))
+        .receiveMessage(
+            argThat(new MessageDataMatcher(TEST_MESSAGE2.getMessage().getData())),
+            any(AckReplyConsumerWithResponse.class));
+    verify(mockMessageReceiverWithAckResponse, times(1))
+        .receiveMessage(
+            argThat(new MessageDataMatcher(TEST_MESSAGE1.getMessage().getData())),
+            any(AckReplyConsumerWithResponse.class));
+  }
+
+  @Test
+  public void testReceiptModackForExactlyOnceDelivered() {
+
+    MessageReceiverWithAckResponse mockMessageReceiverWithAckResponse =
+        mock(MessageReceiverWithAckResponse.class);
+    MessageDispatcher messageDispatcher = getMessageDispatcher(mockMessageReceiverWithAckResponse);
+    messageDispatcher.setExactlyOnceDeliveryEnabled(true);
+
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    messageDispatcher.processOutstandingOperations();
+    verify(mockMessageReceiverWithAckResponse, never())
+        .receiveMessage(eq(TEST_MESSAGE.getMessage()), any(AckReplyConsumerWithResponse.class));
+
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    messageDispatcher.notifyAckSuccess(ackRequestData);
+    messageDispatcher.processOutstandingOperations();
+
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockMessageReceiverWithAckResponse, times(1))
+        .receiveMessage(
+            argThat(new MessageDataMatcher(TEST_MESSAGE.getMessage().getData())),
+            any(AckReplyConsumerWithResponse.class));
+  }
+
+  @Test
   public void testReceiptMessageReceiverWithAckResponse() {
     MessageReceiverWithAckResponse mockMessageReceiverWithAckResponse =
         mock(MessageReceiverWithAckResponse.class);
