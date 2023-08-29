@@ -68,7 +68,7 @@ public class AvgAggregationWithPropertyFilter {
         Iterables.getOnlyElement(datastore.runAggregation(customer1SalesAvg));
 
     System.out.printf(
-        "Customer 1 sales avg is %d", customer1SalesAvgQueryResult.getLong("total_sales")); // 184
+        "Customer 1 sales avg is %d", customer1SalesAvgQueryResult.getLong("total_sales")); // 92
   }
 }
 // [END datastore_avg_aggregation_query_with_filters]
