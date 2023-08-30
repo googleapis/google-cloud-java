@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -318,6 +319,55 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .acknowledgeUserDataCollectionSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSKAdNetworkConversionValueSchema. */
+  public UnaryCallSettings<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getSKAdNetworkConversionValueSchemaSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to createSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .createSKAdNetworkConversionValueSchemaSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteSKAdNetworkConversionValueSchemaSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateSKAdNetworkConversionValueSchemaSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listSKAdNetworkConversionValueSchemas.
+   */
+  public PagedCallSettings<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listSKAdNetworkConversionValueSchemasSettings();
+  }
+
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
           SearchChangeHistoryEventsRequest,
@@ -346,6 +396,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateConversionEventSettings();
   }
 
   /** Returns the object with the settings used for calls to getConversionEvent. */
@@ -1226,6 +1282,55 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().acknowledgeUserDataCollectionSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to getSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaSettings() {
+      return getStubSettingsBuilder().getSKAdNetworkConversionValueSchemaSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaSettings() {
+      return getStubSettingsBuilder().createSKAdNetworkConversionValueSchemaSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaSettings() {
+      return getStubSettingsBuilder().deleteSKAdNetworkConversionValueSchemaSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaSettings() {
+      return getStubSettingsBuilder().updateSKAdNetworkConversionValueSchemaSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listSKAdNetworkConversionValueSchemas.
+     */
+    public PagedCallSettings.Builder<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse,
+            ListSKAdNetworkConversionValueSchemasPagedResponse>
+        listSKAdNetworkConversionValueSchemasSettings() {
+      return getStubSettingsBuilder().listSKAdNetworkConversionValueSchemasSettings();
+    }
+
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
@@ -1251,6 +1356,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return getStubSettingsBuilder().createConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings() {
+      return getStubSettingsBuilder().updateConversionEventSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConversionEvent. */

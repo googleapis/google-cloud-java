@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -90,6 +91,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
@@ -112,6 +114,7 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
@@ -146,6 +149,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
@@ -191,6 +195,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
@@ -201,6 +207,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
@@ -211,6 +218,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
+import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -223,6 +231,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
@@ -1631,6 +1640,220 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
               .build();
 
   private static final ApiMethodDescriptor<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSKAdNetworkConversionValueSchema")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetSKAdNetworkConversionValueSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/dataStreams/*/sKAdNetworkConversionValueSchema/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SKAdNetworkConversionValueSchema>newBuilder()
+                      .setDefaultInstance(SKAdNetworkConversionValueSchema.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSKAdNetworkConversionValueSchema")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateSKAdNetworkConversionValueSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*/dataStreams/*}/sKAdNetworkConversionValueSchema",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "skadnetworkConversionValueSchema",
+                                      request.getSkadnetworkConversionValueSchema(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SKAdNetworkConversionValueSchema>newBuilder()
+                      .setDefaultInstance(SKAdNetworkConversionValueSchema.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSKAdNetworkConversionValueSchema")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DeleteSKAdNetworkConversionValueSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/dataStreams/*/sKAdNetworkConversionValueSchema/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSKAdNetworkConversionValueSchema")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<UpdateSKAdNetworkConversionValueSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{skadnetworkConversionValueSchema.name=properties/*/dataStreams/*/sKAdNetworkConversionValueSchema/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "skadnetworkConversionValueSchema.name",
+                                request.getSkadnetworkConversionValueSchema().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSKAdNetworkConversionValueSchemaRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "skadnetworkConversionValueSchema",
+                                      request.getSkadnetworkConversionValueSchema(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SKAdNetworkConversionValueSchema>newBuilder()
+                      .setDefaultInstance(SKAdNetworkConversionValueSchema.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSKAdNetworkConversionValueSchemasRequest,
+                  ListSKAdNetworkConversionValueSchemasResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSKAdNetworkConversionValueSchemas")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListSKAdNetworkConversionValueSchemasRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*/dataStreams/*}/sKAdNetworkConversionValueSchema",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSKAdNetworkConversionValueSchemasRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSKAdNetworkConversionValueSchemasRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListSKAdNetworkConversionValueSchemasResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListSKAdNetworkConversionValueSchemasResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsMethodDescriptor =
           ApiMethodDescriptor
@@ -1775,6 +1998,48 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateConversionEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("conversionEvent", request.getConversionEvent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ConversionEvent>newBuilder()
+                      .setDefaultInstance(ConversionEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventMethodDescriptor =
+          ApiMethodDescriptor.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateConversionEvent")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateConversionEventRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{conversionEvent.name=properties/*/conversionEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversionEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "conversionEvent.name",
+                                request.getConversionEvent().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversionEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -5042,6 +5307,25 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<
           AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
       acknowledgeUserDataCollectionCallable;
+  private final UnaryCallable<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable;
   private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable;
   private final UnaryCallable<
@@ -5053,6 +5337,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       updateGoogleSignalsSettingsCallable;
   private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable;
+  private final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable;
   private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable;
   private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
@@ -5681,6 +5967,82 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<
+            GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaTransportSettings =
+            HttpJsonCallSettings
+                .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(getSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaTransportSettings =
+            HttpJsonCallSettings
+                .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(createSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaTransportSettings =
+            HttpJsonCallSettings.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(updateSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "skadnetwork_conversion_value_schema.name",
+                          String.valueOf(request.getSkadnetworkConversionValueSchema().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse>
+        listSKAdNetworkConversionValueSchemasTransportSettings =
+            HttpJsonCallSettings
+                .<ListSKAdNetworkConversionValueSchemasRequest,
+                    ListSKAdNetworkConversionValueSchemasResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSKAdNetworkConversionValueSchemasMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
             HttpJsonCallSettings
@@ -5731,6 +6093,20 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventTransportSettings =
+            HttpJsonCallSettings.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(updateConversionEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversion_event.name",
+                          String.valueOf(request.getConversionEvent().getName()));
                       return builder.build();
                     })
                 .build();
@@ -6927,6 +7303,36 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             acknowledgeUserDataCollectionTransportSettings,
             settings.acknowledgeUserDataCollectionSettings(),
             clientContext);
+    this.getSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.getSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.createSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            createSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.createSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.deleteSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            deleteSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.deleteSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.updateSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            updateSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.updateSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
     this.searchChangeHistoryEventsCallable =
         callableFactory.createUnaryCallable(
             searchChangeHistoryEventsTransportSettings,
@@ -6951,6 +7357,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         callableFactory.createUnaryCallable(
             createConversionEventTransportSettings,
             settings.createConversionEventSettings(),
+            clientContext);
+    this.updateConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionEventTransportSettings,
+            settings.updateConversionEventSettings(),
             clientContext);
     this.getConversionEventCallable =
         callableFactory.createUnaryCallable(
@@ -7436,10 +7847,16 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(deleteMeasurementProtocolSecretMethodDescriptor);
     methodDescriptors.add(updateMeasurementProtocolSecretMethodDescriptor);
     methodDescriptors.add(acknowledgeUserDataCollectionMethodDescriptor);
+    methodDescriptors.add(getSKAdNetworkConversionValueSchemaMethodDescriptor);
+    methodDescriptors.add(createSKAdNetworkConversionValueSchemaMethodDescriptor);
+    methodDescriptors.add(deleteSKAdNetworkConversionValueSchemaMethodDescriptor);
+    methodDescriptors.add(updateSKAdNetworkConversionValueSchemaMethodDescriptor);
+    methodDescriptors.add(listSKAdNetworkConversionValueSchemasMethodDescriptor);
     methodDescriptors.add(searchChangeHistoryEventsMethodDescriptor);
     methodDescriptors.add(getGoogleSignalsSettingsMethodDescriptor);
     methodDescriptors.add(updateGoogleSignalsSettingsMethodDescriptor);
     methodDescriptors.add(createConversionEventMethodDescriptor);
+    methodDescriptors.add(updateConversionEventMethodDescriptor);
     methodDescriptors.add(getConversionEventMethodDescriptor);
     methodDescriptors.add(deleteConversionEventMethodDescriptor);
     methodDescriptors.add(listConversionEventsMethodDescriptor);
@@ -7769,6 +8186,48 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   }
 
   @Override
+  public UnaryCallable<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable() {
+    return getSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable() {
+    return createSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable() {
+    return deleteSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable() {
+    return updateSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable() {
+    return listSKAdNetworkConversionValueSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable() {
+    return listSKAdNetworkConversionValueSchemasPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     return searchChangeHistoryEventsCallable;
@@ -7796,6 +8255,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return updateConversionEventCallable;
   }
 
   @Override

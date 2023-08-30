@@ -266,22 +266,22 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     return streamingExportEnabled_;
   }
 
-  public static final int INTRADAY_EXPORT_ENABLED_FIELD_NUMBER = 9;
-  private boolean intradayExportEnabled_ = false;
+  public static final int FRESH_DAILY_EXPORT_ENABLED_FIELD_NUMBER = 9;
+  private boolean freshDailyExportEnabled_ = false;
   /**
    *
    *
    * <pre>
-   * If set true, enables intraday export to the linked Google Cloud project.
+   * If set true, enables fresh daily export to the linked Google Cloud project.
    * </pre>
    *
-   * <code>bool intraday_export_enabled = 9;</code>
+   * <code>bool fresh_daily_export_enabled = 9;</code>
    *
-   * @return The intradayExportEnabled.
+   * @return The freshDailyExportEnabled.
    */
   @java.lang.Override
-  public boolean getIntradayExportEnabled() {
-    return intradayExportEnabled_;
+  public boolean getFreshDailyExportEnabled() {
+    return freshDailyExportEnabled_;
   }
 
   public static final int INCLUDE_ADVERTISING_ID_FIELD_NUMBER = 6;
@@ -481,8 +481,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < excludedEvents_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, excludedEvents_.getRaw(i));
     }
-    if (intradayExportEnabled_ != false) {
-      output.writeBool(9, intradayExportEnabled_);
+    if (freshDailyExportEnabled_ != false) {
+      output.writeBool(9, freshDailyExportEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -527,8 +527,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExcludedEventsList().size();
     }
-    if (intradayExportEnabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, intradayExportEnabled_);
+    if (freshDailyExportEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, freshDailyExportEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -554,7 +554,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
     if (getDailyExportEnabled() != other.getDailyExportEnabled()) return false;
     if (getStreamingExportEnabled() != other.getStreamingExportEnabled()) return false;
-    if (getIntradayExportEnabled() != other.getIntradayExportEnabled()) return false;
+    if (getFreshDailyExportEnabled() != other.getFreshDailyExportEnabled()) return false;
     if (getIncludeAdvertisingId() != other.getIncludeAdvertisingId()) return false;
     if (!getExportStreamsList().equals(other.getExportStreamsList())) return false;
     if (!getExcludedEventsList().equals(other.getExcludedEventsList())) return false;
@@ -581,8 +581,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDailyExportEnabled());
     hash = (37 * hash) + STREAMING_EXPORT_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStreamingExportEnabled());
-    hash = (37 * hash) + INTRADAY_EXPORT_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIntradayExportEnabled());
+    hash = (37 * hash) + FRESH_DAILY_EXPORT_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFreshDailyExportEnabled());
     hash = (37 * hash) + INCLUDE_ADVERTISING_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAdvertisingId());
     if (getExportStreamsCount() > 0) {
@@ -741,7 +741,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       dailyExportEnabled_ = false;
       streamingExportEnabled_ = false;
-      intradayExportEnabled_ = false;
+      freshDailyExportEnabled_ = false;
       includeAdvertisingId_ = false;
       exportStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       excludedEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -797,7 +797,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         result.streamingExportEnabled_ = streamingExportEnabled_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.intradayExportEnabled_ = intradayExportEnabled_;
+        result.freshDailyExportEnabled_ = freshDailyExportEnabled_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.includeAdvertisingId_ = includeAdvertisingId_;
@@ -877,8 +877,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       if (other.getStreamingExportEnabled() != false) {
         setStreamingExportEnabled(other.getStreamingExportEnabled());
       }
-      if (other.getIntradayExportEnabled() != false) {
-        setIntradayExportEnabled(other.getIntradayExportEnabled());
+      if (other.getFreshDailyExportEnabled() != false) {
+        setFreshDailyExportEnabled(other.getFreshDailyExportEnabled());
       }
       if (other.getIncludeAdvertisingId() != false) {
         setIncludeAdvertisingId(other.getIncludeAdvertisingId());
@@ -981,7 +981,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
               } // case 66
             case 72:
               {
-                intradayExportEnabled_ = input.readBool();
+                freshDailyExportEnabled_ = input.readBool();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 72
@@ -1558,37 +1558,37 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private boolean intradayExportEnabled_;
+    private boolean freshDailyExportEnabled_;
     /**
      *
      *
      * <pre>
-     * If set true, enables intraday export to the linked Google Cloud project.
+     * If set true, enables fresh daily export to the linked Google Cloud project.
      * </pre>
      *
-     * <code>bool intraday_export_enabled = 9;</code>
+     * <code>bool fresh_daily_export_enabled = 9;</code>
      *
-     * @return The intradayExportEnabled.
+     * @return The freshDailyExportEnabled.
      */
     @java.lang.Override
-    public boolean getIntradayExportEnabled() {
-      return intradayExportEnabled_;
+    public boolean getFreshDailyExportEnabled() {
+      return freshDailyExportEnabled_;
     }
     /**
      *
      *
      * <pre>
-     * If set true, enables intraday export to the linked Google Cloud project.
+     * If set true, enables fresh daily export to the linked Google Cloud project.
      * </pre>
      *
-     * <code>bool intraday_export_enabled = 9;</code>
+     * <code>bool fresh_daily_export_enabled = 9;</code>
      *
-     * @param value The intradayExportEnabled to set.
+     * @param value The freshDailyExportEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setIntradayExportEnabled(boolean value) {
+    public Builder setFreshDailyExportEnabled(boolean value) {
 
-      intradayExportEnabled_ = value;
+      freshDailyExportEnabled_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
@@ -1597,16 +1597,16 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set true, enables intraday export to the linked Google Cloud project.
+     * If set true, enables fresh daily export to the linked Google Cloud project.
      * </pre>
      *
-     * <code>bool intraday_export_enabled = 9;</code>
+     * <code>bool fresh_daily_export_enabled = 9;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearIntradayExportEnabled() {
+    public Builder clearFreshDailyExportEnabled() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      intradayExportEnabled_ = false;
+      freshDailyExportEnabled_ = false;
       onChanged();
       return this;
     }
