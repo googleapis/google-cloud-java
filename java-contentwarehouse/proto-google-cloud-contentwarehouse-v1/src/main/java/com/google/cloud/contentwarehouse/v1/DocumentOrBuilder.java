@@ -637,6 +637,63 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getUpdaterBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dispositionTime field is set.
+   */
+  boolean hasDispositionTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dispositionTime.
+   */
+  com.google.protobuf.Timestamp getDispositionTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDispositionTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the document has a legal hold on it.
+   * </pre>
+   *
+   * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The legalHold.
+   */
+  boolean getLegalHold();
+
   com.google.cloud.contentwarehouse.v1.Document.StructuredContentCase getStructuredContentCase();
 
   com.google.cloud.contentwarehouse.v1.Document.RawDocumentCase getRawDocumentCase();

@@ -202,6 +202,8 @@ public class DocumentServiceClientHttpJsonTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -267,6 +269,8 @@ public class DocumentServiceClientHttpJsonTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -614,6 +618,8 @@ public class DocumentServiceClientHttpJsonTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -679,6 +685,8 @@ public class DocumentServiceClientHttpJsonTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockService.addResponse(expectedResponse);
 

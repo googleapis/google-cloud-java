@@ -394,6 +394,42 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
+  public static final int DOCUMENT_IS_RETENTION_FOLDER_FIELD_NUMBER = 8;
+  private boolean documentIsRetentionFolder_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Document is a folder with retention policy.
+   * </pre>
+   *
+   * <code>bool document_is_retention_folder = 8;</code>
+   *
+   * @return The documentIsRetentionFolder.
+   */
+  @java.lang.Override
+  public boolean getDocumentIsRetentionFolder() {
+    return documentIsRetentionFolder_;
+  }
+
+  public static final int DOCUMENT_IS_LEGAL_HOLD_FOLDER_FIELD_NUMBER = 9;
+  private boolean documentIsLegalHoldFolder_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Document is a folder with legal hold.
+   * </pre>
+   *
+   * <code>bool document_is_legal_hold_folder = 9;</code>
+   *
+   * @return The documentIsLegalHoldFolder.
+   */
+  @java.lang.Override
+  public boolean getDocumentIsLegalHoldFolder() {
+    return documentIsLegalHoldFolder_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -429,6 +465,12 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     if (deleteTime_ != null) {
       output.writeMessage(7, getDeleteTime());
     }
+    if (documentIsRetentionFolder_ != false) {
+      output.writeBool(8, documentIsRetentionFolder_);
+    }
+    if (documentIsLegalHoldFolder_ != false) {
+      output.writeBool(9, documentIsLegalHoldFolder_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -458,6 +500,12 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
     if (deleteTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDeleteTime());
+    }
+    if (documentIsRetentionFolder_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, documentIsRetentionFolder_);
+    }
+    if (documentIsLegalHoldFolder_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, documentIsLegalHoldFolder_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -491,6 +539,8 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     if (hasDeleteTime()) {
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
+    if (getDocumentIsRetentionFolder() != other.getDocumentIsRetentionFolder()) return false;
+    if (getDocumentIsLegalHoldFolder() != other.getDocumentIsLegalHoldFolder()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -522,6 +572,10 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteTime().hashCode();
     }
+    hash = (37 * hash) + DOCUMENT_IS_RETENTION_FOLDER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDocumentIsRetentionFolder());
+    hash = (37 * hash) + DOCUMENT_IS_LEGAL_HOLD_FOLDER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDocumentIsLegalHoldFolder());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -681,6 +735,8 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
+      documentIsRetentionFolder_ = false;
+      documentIsLegalHoldFolder_ = false;
       return this;
     }
 
@@ -737,6 +793,12 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.documentIsRetentionFolder_ = documentIsRetentionFolder_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.documentIsLegalHoldFolder_ = documentIsLegalHoldFolder_;
       }
     }
 
@@ -813,6 +875,12 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
       }
+      if (other.getDocumentIsRetentionFolder() != false) {
+        setDocumentIsRetentionFolder(other.getDocumentIsRetentionFolder());
+      }
+      if (other.getDocumentIsLegalHoldFolder() != false) {
+        setDocumentIsLegalHoldFolder(other.getDocumentIsLegalHoldFolder());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -881,6 +949,18 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                documentIsRetentionFolder_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 72:
+              {
+                documentIsLegalHoldFolder_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1902,6 +1982,112 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         deleteTime_ = null;
       }
       return deleteTimeBuilder_;
+    }
+
+    private boolean documentIsRetentionFolder_;
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with retention policy.
+     * </pre>
+     *
+     * <code>bool document_is_retention_folder = 8;</code>
+     *
+     * @return The documentIsRetentionFolder.
+     */
+    @java.lang.Override
+    public boolean getDocumentIsRetentionFolder() {
+      return documentIsRetentionFolder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with retention policy.
+     * </pre>
+     *
+     * <code>bool document_is_retention_folder = 8;</code>
+     *
+     * @param value The documentIsRetentionFolder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentIsRetentionFolder(boolean value) {
+
+      documentIsRetentionFolder_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with retention policy.
+     * </pre>
+     *
+     * <code>bool document_is_retention_folder = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentIsRetentionFolder() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      documentIsRetentionFolder_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean documentIsLegalHoldFolder_;
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with legal hold.
+     * </pre>
+     *
+     * <code>bool document_is_legal_hold_folder = 9;</code>
+     *
+     * @return The documentIsLegalHoldFolder.
+     */
+    @java.lang.Override
+    public boolean getDocumentIsLegalHoldFolder() {
+      return documentIsLegalHoldFolder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with legal hold.
+     * </pre>
+     *
+     * <code>bool document_is_legal_hold_folder = 9;</code>
+     *
+     * @param value The documentIsLegalHoldFolder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentIsLegalHoldFolder(boolean value) {
+
+      documentIsLegalHoldFolder_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document is a folder with legal hold.
+     * </pre>
+     *
+     * <code>bool document_is_legal_hold_folder = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentIsLegalHoldFolder() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      documentIsLegalHoldFolder_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
