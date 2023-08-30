@@ -173,6 +173,24 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SKIP_REBOOT_FIELD_NUMBER = 3;
+  private boolean skipReboot_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If true, performs lun unmapping without instance reboot.
+   * </pre>
+   *
+   * <code>bool skip_reboot = 3;</code>
+   *
+   * @return The skipReboot.
+   */
+  @java.lang.Override
+  public boolean getSkipReboot() {
+    return skipReboot_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +211,9 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lun_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lun_);
     }
+    if (skipReboot_ != false) {
+      output.writeBool(3, skipReboot_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +228,9 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lun_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lun_);
+    }
+    if (skipReboot_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, skipReboot_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,6 +250,7 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
 
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getLun().equals(other.getLun())) return false;
+    if (getSkipReboot() != other.getSkipReboot()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -241,6 +266,8 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + LUN_FIELD_NUMBER;
     hash = (53 * hash) + getLun().hashCode();
+    hash = (37 * hash) + SKIP_REBOOT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipReboot());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -383,6 +410,7 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       instance_ = "";
       lun_ = "";
+      skipReboot_ = false;
       return this;
     }
 
@@ -424,6 +452,9 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.lun_ = lun_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skipReboot_ = skipReboot_;
       }
     }
 
@@ -483,6 +514,9 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getSkipReboot() != false) {
+        setSkipReboot(other.getSkipReboot());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -521,6 +555,12 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                skipReboot_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -768,6 +808,59 @@ public final class DetachLunRequest extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       lun_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipReboot_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, performs lun unmapping without instance reboot.
+     * </pre>
+     *
+     * <code>bool skip_reboot = 3;</code>
+     *
+     * @return The skipReboot.
+     */
+    @java.lang.Override
+    public boolean getSkipReboot() {
+      return skipReboot_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, performs lun unmapping without instance reboot.
+     * </pre>
+     *
+     * <code>bool skip_reboot = 3;</code>
+     *
+     * @param value The skipReboot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipReboot(boolean value) {
+
+      skipReboot_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, performs lun unmapping without instance reboot.
+     * </pre>
+     *
+     * <code>bool skip_reboot = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipReboot() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      skipReboot_ = false;
       onChanged();
       return this;
     }
