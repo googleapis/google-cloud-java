@@ -94,4 +94,20 @@ public interface CompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1.CompleteQueryResponse.QuerySuggestionOrBuilder
       getQuerySuggestionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the returned suggestions are all tail suggestions.
+   *
+   * For tail matching to be triggered, include_tail_suggestions in the request
+   * must be true and there must be no suggestions that match the full query.
+   * </pre>
+   *
+   * <code>bool tail_match_triggered = 2;</code>
+   *
+   * @return The tailMatchTriggered.
+   */
+  boolean getTailMatchTriggered();
 }

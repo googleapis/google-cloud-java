@@ -66,6 +66,8 @@ public class AsyncSearchPaged {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .build();

@@ -63,6 +63,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.Reply.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface ReferenceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Reply.Reference)
@@ -153,6 +154,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.Reply.Reference}
    */
+  @java.lang.Deprecated
   public static final class Reference extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Reply.Reference)
@@ -1132,14 +1134,18 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * DEPRECATED: use `summary` instead.
    * Text reply.
    * </pre>
    *
-   * <code>string reply = 1;</code>
+   * <code>string reply = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
    * @return The reply.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getReply() {
     java.lang.Object ref = reply_;
     if (ref instanceof java.lang.String) {
@@ -1155,14 +1161,18 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * DEPRECATED: use `summary` instead.
    * Text reply.
    * </pre>
    *
-   * <code>string reply = 1;</code>
+   * <code>string reply = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
    * @return The bytes for reply.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getReplyBytes() {
     java.lang.Object ref = reply_;
     if (ref instanceof java.lang.String) {
@@ -1186,9 +1196,12 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference>
       getReferencesList() {
     return references_;
@@ -1200,9 +1213,12 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder>
       getReferencesOrBuilderList() {
     return references_;
@@ -1214,9 +1230,12 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getReferencesCount() {
     return references_.size();
   }
@@ -1227,9 +1246,12 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.discoveryengine.v1beta.Reply.Reference getReferences(int index) {
     return references_.get(index);
   }
@@ -1240,12 +1262,66 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder getReferencesOrBuilder(
       int index) {
     return references_.get(index);
+  }
+
+  public static final int SUMMARY_FIELD_NUMBER = 3;
+  private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary_;
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   *
+   * @return Whether the summary field is set.
+   */
+  @java.lang.Override
+  public boolean hasSummary() {
+    return summary_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   *
+   * @return The summary.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary getSummary() {
+    return summary_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDefaultInstance()
+        : summary_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder
+      getSummaryOrBuilder() {
+    return summary_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDefaultInstance()
+        : summary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1268,6 +1344,9 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < references_.size(); i++) {
       output.writeMessage(2, references_.get(i));
     }
+    if (summary_ != null) {
+      output.writeMessage(3, getSummary());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1282,6 +1361,9 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < references_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, references_.get(i));
+    }
+    if (summary_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSummary());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1301,6 +1383,10 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
     if (!getReply().equals(other.getReply())) return false;
     if (!getReferencesList().equals(other.getReferencesList())) return false;
+    if (hasSummary() != other.hasSummary()) return false;
+    if (hasSummary()) {
+      if (!getSummary().equals(other.getSummary())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1317,6 +1403,10 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     if (getReferencesCount() > 0) {
       hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getReferencesList().hashCode();
+    }
+    if (hasSummary()) {
+      hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSummary().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1465,6 +1555,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         referencesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      summary_ = null;
+      if (summaryBuilder_ != null) {
+        summaryBuilder_.dispose();
+        summaryBuilder_ = null;
+      }
       return this;
     }
 
@@ -1516,6 +1611,9 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.reply_ = reply_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
       }
     }
 
@@ -1596,6 +1694,9 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasSummary()) {
+        mergeSummary(other.getSummary());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1642,6 +1743,12 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1666,13 +1773,17 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED: use `summary` instead.
      * Text reply.
      * </pre>
      *
-     * <code>string reply = 1;</code>
+     * <code>string reply = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
      * @return The reply.
      */
+    @java.lang.Deprecated
     public java.lang.String getReply() {
       java.lang.Object ref = reply_;
       if (!(ref instanceof java.lang.String)) {
@@ -1688,13 +1799,17 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED: use `summary` instead.
      * Text reply.
      * </pre>
      *
-     * <code>string reply = 1;</code>
+     * <code>string reply = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
      * @return The bytes for reply.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getReplyBytes() {
       java.lang.Object ref = reply_;
       if (ref instanceof String) {
@@ -1710,14 +1825,18 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED: use `summary` instead.
      * Text reply.
      * </pre>
      *
-     * <code>string reply = 1;</code>
+     * <code>string reply = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
      * @param value The reply to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setReply(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1731,13 +1850,17 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED: use `summary` instead.
      * Text reply.
      * </pre>
      *
-     * <code>string reply = 1;</code>
+     * <code>string reply = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearReply() {
       reply_ = getDefaultInstance().getReply();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1748,14 +1871,18 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED: use `summary` instead.
      * Text reply.
      * </pre>
      *
-     * <code>string reply = 1;</code>
+     * <code>string reply = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
      * @param value The bytes for reply to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setReplyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1792,8 +1919,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference>
         getReferencesList() {
       if (referencesBuilder_ == null) {
@@ -1809,8 +1939,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getReferencesCount() {
       if (referencesBuilder_ == null) {
         return references_.size();
@@ -1825,8 +1958,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.discoveryengine.v1beta.Reply.Reference getReferences(int index) {
       if (referencesBuilder_ == null) {
         return references_.get(index);
@@ -1841,8 +1977,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setReferences(
         int index, com.google.cloud.discoveryengine.v1beta.Reply.Reference value) {
       if (referencesBuilder_ == null) {
@@ -1864,8 +2003,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setReferences(
         int index,
         com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder builderForValue) {
@@ -1885,8 +2027,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addReferences(com.google.cloud.discoveryengine.v1beta.Reply.Reference value) {
       if (referencesBuilder_ == null) {
         if (value == null) {
@@ -1907,8 +2052,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addReferences(
         int index, com.google.cloud.discoveryengine.v1beta.Reply.Reference value) {
       if (referencesBuilder_ == null) {
@@ -1930,8 +2078,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addReferences(
         com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder builderForValue) {
       if (referencesBuilder_ == null) {
@@ -1950,8 +2101,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addReferences(
         int index,
         com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder builderForValue) {
@@ -1971,8 +2125,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllReferences(
         java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1beta.Reply.Reference>
             values) {
@@ -1992,8 +2149,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearReferences() {
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
@@ -2011,8 +2171,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeReferences(int index) {
       if (referencesBuilder_ == null) {
         ensureReferencesIsMutable();
@@ -2030,8 +2193,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder getReferencesBuilder(
         int index) {
       return getReferencesFieldBuilder().getBuilder(index);
@@ -2043,8 +2209,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder getReferencesOrBuilder(
         int index) {
       if (referencesBuilder_ == null) {
@@ -2060,8 +2229,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<
             ? extends com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder>
         getReferencesOrBuilderList() {
@@ -2078,8 +2250,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder addReferencesBuilder() {
       return getReferencesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1beta.Reply.Reference.getDefaultInstance());
@@ -2091,8 +2266,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder addReferencesBuilder(
         int index) {
       return getReferencesFieldBuilder()
@@ -2106,8 +2284,11 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * References in the reply.
      * </pre>
      *
-     * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference.Builder>
         getReferencesBuilderList() {
       return getReferencesFieldBuilder().getBuilderList();
@@ -2128,6 +2309,196 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         references_ = null;
       }
       return referencesBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder>
+        summaryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     *
+     * @return Whether the summary field is set.
+     */
+    public boolean hasSummary() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     *
+     * @return The summary.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary getSummary() {
+      if (summaryBuilder_ == null) {
+        return summary_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDefaultInstance()
+            : summary_;
+      } else {
+        return summaryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public Builder setSummary(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary value) {
+      if (summaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        summary_ = value;
+      } else {
+        summaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public Builder setSummary(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder builderForValue) {
+      if (summaryBuilder_ == null) {
+        summary_ = builderForValue.build();
+      } else {
+        summaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public Builder mergeSummary(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary value) {
+      if (summaryBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && summary_ != null
+            && summary_
+                != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                    .getDefaultInstance()) {
+          getSummaryBuilder().mergeFrom(value);
+        } else {
+          summary_ = value;
+        }
+      } else {
+        summaryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public Builder clearSummary() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      summary_ = null;
+      if (summaryBuilder_ != null) {
+        summaryBuilder_.dispose();
+        summaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder
+        getSummaryBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSummaryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder
+        getSummaryOrBuilder() {
+      if (summaryBuilder_ != null) {
+        return summaryBuilder_.getMessageOrBuilder();
+      } else {
+        return summary_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDefaultInstance()
+            : summary_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary based on search results.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder>
+        getSummaryFieldBuilder() {
+      if (summaryBuilder_ == null) {
+        summaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder>(
+                getSummary(), getParentForChildren(), isClean());
+        summary_ = null;
+      }
+      return summaryBuilder_;
     }
 
     @java.lang.Override

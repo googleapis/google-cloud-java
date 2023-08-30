@@ -47,6 +47,7 @@ import javax.annotation.Generated;
  *           .setQuery("query107944136")
  *           .setQueryModel("queryModel-184930495")
  *           .setUserPseudoId("userPseudoId-1155274652")
+ *           .setIncludeTailSuggestions(true)
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -198,6 +199,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setQuery("query107944136")
    *           .setQueryModel("queryModel-184930495")
    *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setIncludeTailSuggestions(true)
    *           .build();
    *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
    * }
@@ -232,6 +234,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setQuery("query107944136")
    *           .setQueryModel("queryModel-184930495")
    *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setIncludeTailSuggestions(true)
    *           .build();
    *   ApiFuture<CompleteQueryResponse> future =
    *       completionServiceClient.completeQueryCallable().futureCall(request);

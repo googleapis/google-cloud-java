@@ -172,11 +172,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * document must
    *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
    * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-   *   `input_uris` will become a document, with the ID set to the first 128
+   *   `input_uris` becomes a document, with the ID set to the first 128
    *   bits of SHA256(URI) encoded as a hex string.
    * * `custom`: One custom data JSON per row in arbitrary format that conforms
-   *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-   *   store. This can only be used by the GENERIC Data Store vertical.
+   *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+   *   data store. This can only be used by Gen App Builder.
+   * * `csv`: A CSV file with header conforming to the defined
+   * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+   *   data store. Each entry after the header is imported as a Document.
+   *   This can only be used by Gen App Builder.
    *
    * Supported values for user even imports:
    *
@@ -213,11 +217,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * document must
    *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
    * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-   *   `input_uris` will become a document, with the ID set to the first 128
+   *   `input_uris` becomes a document, with the ID set to the first 128
    *   bits of SHA256(URI) encoded as a hex string.
    * * `custom`: One custom data JSON per row in arbitrary format that conforms
-   *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-   *   store. This can only be used by the GENERIC Data Store vertical.
+   *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+   *   data store. This can only be used by Gen App Builder.
+   * * `csv`: A CSV file with header conforming to the defined
+   * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+   *   data store. Each entry after the header is imported as a Document.
+   *   This can only be used by Gen App Builder.
    *
    * Supported values for user even imports:
    *
@@ -872,11 +880,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * document must
      *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
      * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-     *   `input_uris` will become a document, with the ID set to the first 128
+     *   `input_uris` becomes a document, with the ID set to the first 128
      *   bits of SHA256(URI) encoded as a hex string.
      * * `custom`: One custom data JSON per row in arbitrary format that conforms
-     *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by the GENERIC Data Store vertical.
+     *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. This can only be used by Gen App Builder.
+     * * `csv`: A CSV file with header conforming to the defined
+     * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. Each entry after the header is imported as a Document.
+     *   This can only be used by Gen App Builder.
      *
      * Supported values for user even imports:
      *
@@ -912,11 +924,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * document must
      *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
      * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-     *   `input_uris` will become a document, with the ID set to the first 128
+     *   `input_uris` becomes a document, with the ID set to the first 128
      *   bits of SHA256(URI) encoded as a hex string.
      * * `custom`: One custom data JSON per row in arbitrary format that conforms
-     *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by the GENERIC Data Store vertical.
+     *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. This can only be used by Gen App Builder.
+     * * `csv`: A CSV file with header conforming to the defined
+     * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. Each entry after the header is imported as a Document.
+     *   This can only be used by Gen App Builder.
      *
      * Supported values for user even imports:
      *
@@ -952,11 +968,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * document must
      *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
      * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-     *   `input_uris` will become a document, with the ID set to the first 128
+     *   `input_uris` becomes a document, with the ID set to the first 128
      *   bits of SHA256(URI) encoded as a hex string.
      * * `custom`: One custom data JSON per row in arbitrary format that conforms
-     *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by the GENERIC Data Store vertical.
+     *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. This can only be used by Gen App Builder.
+     * * `csv`: A CSV file with header conforming to the defined
+     * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. Each entry after the header is imported as a Document.
+     *   This can only be used by Gen App Builder.
      *
      * Supported values for user even imports:
      *
@@ -991,11 +1011,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * document must
      *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
      * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-     *   `input_uris` will become a document, with the ID set to the first 128
+     *   `input_uris` becomes a document, with the ID set to the first 128
      *   bits of SHA256(URI) encoded as a hex string.
      * * `custom`: One custom data JSON per row in arbitrary format that conforms
-     *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by the GENERIC Data Store vertical.
+     *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. This can only be used by Gen App Builder.
+     * * `csv`: A CSV file with header conforming to the defined
+     * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. Each entry after the header is imported as a Document.
+     *   This can only be used by Gen App Builder.
      *
      * Supported values for user even imports:
      *
@@ -1026,11 +1050,15 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * document must
      *   have a valid [Document.id][google.cloud.discoveryengine.v1.Document.id].
      * * `content`: Unstructured data (e.g. PDF, HTML). Each file matched by
-     *   `input_uris` will become a document, with the ID set to the first 128
+     *   `input_uris` becomes a document, with the ID set to the first 128
      *   bits of SHA256(URI) encoded as a hex string.
      * * `custom`: One custom data JSON per row in arbitrary format that conforms
-     *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by the GENERIC Data Store vertical.
+     *   to the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. This can only be used by Gen App Builder.
+     * * `csv`: A CSV file with header conforming to the defined
+     * [Schema][google.cloud.discoveryengine.v1.Schema] of the
+     *   data store. Each entry after the header is imported as a Document.
+     *   This can only be used by Gen App Builder.
      *
      * Supported values for user even imports:
      *

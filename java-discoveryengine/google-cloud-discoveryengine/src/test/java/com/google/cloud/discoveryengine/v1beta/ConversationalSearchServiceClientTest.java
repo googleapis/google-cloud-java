@@ -89,6 +89,7 @@ public class ConversationalSearchServiceClientTest {
         ConverseConversationResponse.newBuilder()
             .setReply(Reply.newBuilder().build())
             .setConversation(Conversation.newBuilder().build())
+            .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSearchResults(new ArrayList<SearchResponse.SearchResult>())
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
@@ -137,6 +138,7 @@ public class ConversationalSearchServiceClientTest {
         ConverseConversationResponse.newBuilder()
             .setReply(Reply.newBuilder().build())
             .setConversation(Conversation.newBuilder().build())
+            .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSearchResults(new ArrayList<SearchResponse.SearchResult>())
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);

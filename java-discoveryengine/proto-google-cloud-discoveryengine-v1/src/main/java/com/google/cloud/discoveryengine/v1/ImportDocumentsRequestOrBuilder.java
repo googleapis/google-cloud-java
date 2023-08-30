@@ -249,7 +249,7 @@ public interface ImportDocumentsRequestOrBuilder
    * `false`, [Document.id][google.cloud.discoveryengine.v1.Document.id]s have
    * to be specified using
    * [id_field][google.cloud.discoveryengine.v1.ImportDocumentsRequest.id_field],
-   * otherwises, documents without IDs will fail to be imported.
+   * otherwise, documents without IDs fail to be imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1.GcsSource] or
@@ -257,7 +257,7 @@ public interface ImportDocumentsRequestOrBuilder
    * [GcsSource.data_schema][google.cloud.discoveryengine.v1.GcsSource.data_schema]
    * or
    * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1.BigQuerySource.data_schema]
-   * is `custom`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
    *
    * <code>bool auto_generate_ids = 8;</code>
@@ -278,12 +278,12 @@ public interface ImportDocumentsRequestOrBuilder
    * For [BigQuerySource][google.cloud.discoveryengine.v1.BigQuerySource] it is
    * the column name of the BigQuery table where the unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column will be used as the
+   * The values of the JSON field or the BigQuery column are used as the
    * [Document.id][google.cloud.discoveryengine.v1.Document.id]s. The JSON field
    * or the BigQuery column must be of string type, and the values must be set
    * as valid strings conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * with 1-63 characters. Otherwise, documents without valid IDs will fail to
-   * be imported.
+   * with 1-63 characters. Otherwise, documents without valid IDs fail to be
+   * imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1.GcsSource] or
@@ -316,12 +316,12 @@ public interface ImportDocumentsRequestOrBuilder
    * For [BigQuerySource][google.cloud.discoveryengine.v1.BigQuerySource] it is
    * the column name of the BigQuery table where the unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column will be used as the
+   * The values of the JSON field or the BigQuery column are used as the
    * [Document.id][google.cloud.discoveryengine.v1.Document.id]s. The JSON field
    * or the BigQuery column must be of string type, and the values must be set
    * as valid strings conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * with 1-63 characters. Otherwise, documents without valid IDs will fail to
-   * be imported.
+   * with 1-63 characters. Otherwise, documents without valid IDs fail to be
+   * imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1.GcsSource] or

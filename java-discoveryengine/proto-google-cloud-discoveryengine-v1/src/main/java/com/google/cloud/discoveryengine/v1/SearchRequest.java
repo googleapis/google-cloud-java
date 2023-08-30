@@ -44,6 +44,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     branch_ = "";
     query_ = "";
     pageToken_ = "";
+    filter_ = "";
+    orderBy_ = "";
+    facetSpecs_ = java.util.Collections.emptyList();
     userPseudoId_ = "";
   }
 
@@ -81,6 +84,7846 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.SearchRequest.Builder.class);
   }
 
+  public interface ImageQueryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return Whether the imageBytes field is set.
+     */
+    boolean hasImageBytes();
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The imageBytes.
+     */
+    java.lang.String getImageBytes();
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The bytes for imageBytes.
+     */
+    com.google.protobuf.ByteString getImageBytesBytes();
+
+    com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.ImageCase getImageCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the image query input.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.ImageQuery}
+   */
+  public static final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)
+      ImageQueryOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ImageQuery.newBuilder() to construct.
+    private ImageQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ImageQuery() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ImageQuery();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ImageQuery_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ImageQuery_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder.class);
+    }
+
+    private int imageCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object image_;
+
+    public enum ImageCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      IMAGE_BYTES(1),
+      IMAGE_NOT_SET(0);
+      private final int value;
+
+      private ImageCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ImageCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ImageCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return IMAGE_BYTES;
+          case 0:
+            return IMAGE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ImageCase getImageCase() {
+      return ImageCase.forNumber(imageCase_);
+    }
+
+    public static final int IMAGE_BYTES_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return Whether the imageBytes field is set.
+     */
+    public boolean hasImageBytes() {
+      return imageCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The imageBytes.
+     */
+    public java.lang.String getImageBytes() {
+      java.lang.Object ref = "";
+      if (imageCase_ == 1) {
+        ref = image_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (imageCase_ == 1) {
+          image_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+     * BMP.
+     * </pre>
+     *
+     * <code>string image_bytes = 1;</code>
+     *
+     * @return The bytes for imageBytes.
+     */
+    public com.google.protobuf.ByteString getImageBytesBytes() {
+      java.lang.Object ref = "";
+      if (imageCase_ == 1) {
+        ref = image_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (imageCase_ == 1) {
+          image_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (imageCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (imageCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery) obj;
+
+      if (!getImageCase().equals(other.getImageCase())) return false;
+      switch (imageCase_) {
+        case 1:
+          if (!getImageBytes().equals(other.getImageBytes())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (imageCase_) {
+        case 1:
+          hash = (37 * hash) + IMAGE_BYTES_FIELD_NUMBER;
+          hash = (53 * hash) + getImageBytes().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the image query input.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.ImageQuery}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ImageQuery_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ImageQuery_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        imageCase_ = 0;
+        image_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ImageQuery_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery result) {
+        result.imageCase_ = imageCase_;
+        result.image_ = this.image_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance())
+          return this;
+        switch (other.getImageCase()) {
+          case IMAGE_BYTES:
+            {
+              imageCase_ = 1;
+              image_ = other.image_;
+              onChanged();
+              break;
+            }
+          case IMAGE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  imageCase_ = 1;
+                  image_ = s;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int imageCase_ = 0;
+      private java.lang.Object image_;
+
+      public ImageCase getImageCase() {
+        return ImageCase.forNumber(imageCase_);
+      }
+
+      public Builder clearImage() {
+        imageCase_ = 0;
+        image_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return Whether the imageBytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasImageBytes() {
+        return imageCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return The imageBytes.
+       */
+      @java.lang.Override
+      public java.lang.String getImageBytes() {
+        java.lang.Object ref = "";
+        if (imageCase_ == 1) {
+          ref = image_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (imageCase_ == 1) {
+            image_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return The bytes for imageBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getImageBytesBytes() {
+        java.lang.Object ref = "";
+        if (imageCase_ == 1) {
+          ref = image_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (imageCase_ == 1) {
+            image_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @param value The imageBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageCase_ = 1;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearImageBytes() {
+        if (imageCase_ == 1) {
+          imageCase_ = 0;
+          image_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Base64 encoded image bytes. Supported image formats: JPEG, PNG, and
+       * BMP.
+       * </pre>
+       *
+       * <code>string image_bytes = 1;</code>
+       *
+       * @param value The bytes for imageBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        imageCase_ = 1;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.ImageQuery)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ImageQuery> PARSER =
+        new com.google.protobuf.AbstractParser<ImageQuery>() {
+          @java.lang.Override
+          public ImageQuery parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ImageQuery> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ImageQuery> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface FacetSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the facetKey field is set.
+     */
+    boolean hasFacetKey();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The facetKey.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey getFacetKey();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder
+        getFacetKeyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum of facet values that should be returned for this facet. If
+     * unspecified, defaults to 20. The maximum allowed value is 300. Values
+     * above 300 are coerced to 300.
+     *
+     * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>int32 limit = 2;</code>
+     *
+     * @return The limit.
+     */
+    int getLimit();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @return A list containing the excludedFilterKeys.
+     */
+    java.util.List<java.lang.String> getExcludedFilterKeysList();
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @return The count of excludedFilterKeys.
+     */
+    int getExcludedFilterKeysCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedFilterKeys at the given index.
+     */
+    java.lang.String getExcludedFilterKeys(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedFilterKeys at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedFilterKeysBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables dynamic position for this facet. If set to true, the position of
+     * this facet among all facets in the response is determined automatically.
+     * If dynamic facets are enabled, it is ordered together.
+     * If set to false, the position of this facet in the
+     * response is the same as in the request, and it is ranked before
+     * the facets with dynamic position enable and all dynamic facets.
+     *
+     * For example, you may always want to have rating facet returned in
+     * the response, but it's not necessarily to always display the rating facet
+     * at the top. In that case, you can set enable_dynamic_position to true so
+     * that the position of rating facet in response is determined
+     * automatically.
+     *
+     * Another example, assuming you have the following facets in the request:
+     *
+     * * "rating", enable_dynamic_position = true
+     *
+     * * "price", enable_dynamic_position = false
+     *
+     * * "brands", enable_dynamic_position = false
+     *
+     * And also you have a dynamic facets enabled, which generates a facet
+     * `gender`. Then the final order of the facets in the response can be
+     * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
+     * "rating") depends on how API orders "gender" and "rating" facets.
+     * However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * is false.
+     * </pre>
+     *
+     * <code>bool enable_dynamic_position = 4;</code>
+     *
+     * @return The enableDynamicPosition.
+     */
+    boolean getEnableDynamicPosition();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A facet specification to perform faceted search.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.FacetSpec}
+   */
+  public static final class FacetSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)
+      FacetSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FacetSpec.newBuilder() to construct.
+    private FacetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FacetSpec() {
+      excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FacetSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder.class);
+    }
+
+    public interface FacetKeyOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Supported textual and numerical facet keys in
+       * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+       * the facet values are computed. Facet key is case-sensitive.
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The key.
+       */
+      java.lang.String getKey();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Supported textual and numerical facet keys in
+       * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+       * the facet values are computed. Facet key is case-sensitive.
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for key.
+       */
+      com.google.protobuf.ByteString getKeyBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      java.util.List<com.google.cloud.discoveryengine.v1.Interval> getIntervalsList();
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      com.google.cloud.discoveryengine.v1.Interval getIntervals(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      int getIntervalsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      java.util.List<? extends com.google.cloud.discoveryengine.v1.IntervalOrBuilder>
+          getIntervalsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      com.google.cloud.discoveryengine.v1.IntervalOrBuilder getIntervalsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @return A list containing the restrictedValues.
+       */
+      java.util.List<java.lang.String> getRestrictedValuesList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @return The count of restrictedValues.
+       */
+      int getRestrictedValuesCount();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The restrictedValues at the given index.
+       */
+      java.lang.String getRestrictedValues(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the restrictedValues at the given index.
+       */
+      com.google.protobuf.ByteString getRestrictedValuesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @return A list containing the prefixes.
+       */
+      java.util.List<java.lang.String> getPrefixesList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @return The count of prefixes.
+       */
+      int getPrefixesCount();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The prefixes at the given index.
+       */
+      java.lang.String getPrefixes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the prefixes at the given index.
+       */
+      com.google.protobuf.ByteString getPrefixesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @return A list containing the contains.
+       */
+      java.util.List<java.lang.String> getContainsList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @return The count of contains.
+       */
+      int getContainsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The contains at the given index.
+       */
+      java.lang.String getContains(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the contains at the given index.
+       */
+      com.google.protobuf.ByteString getContainsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 6;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      boolean getCaseInsensitive();
+
+      /**
+       *
+       *
+       * <pre>
+       * The order in which documents are returned.
+       *
+       * Allowed values are:
+       *
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+       * descending.
+       *
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+       * descending.
+       *   Only applies to textual facets.
+       *
+       * If not set, textual values are sorted in [natural
+       * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+       * intervals are sorted in the order given by
+       * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+       * </pre>
+       *
+       * <code>string order_by = 7;</code>
+       *
+       * @return The orderBy.
+       */
+      java.lang.String getOrderBy();
+      /**
+       *
+       *
+       * <pre>
+       * The order in which documents are returned.
+       *
+       * Allowed values are:
+       *
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+       * descending.
+       *
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+       * descending.
+       *   Only applies to textual facets.
+       *
+       * If not set, textual values are sorted in [natural
+       * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+       * intervals are sorted in the order given by
+       * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+       * </pre>
+       *
+       * <code>string order_by = 7;</code>
+       *
+       * @return The bytes for orderBy.
+       */
+      com.google.protobuf.ByteString getOrderByBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how a facet is computed.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey}
+     */
+    public static final class FacetKey extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)
+        FacetKeyOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use FacetKey.newBuilder() to construct.
+      private FacetKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FacetKey() {
+        key_ = "";
+        intervals_ = java.util.Collections.emptyList();
+        restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        orderBy_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new FacetKey();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_FacetKey_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_FacetKey_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder.class);
+      }
+
+      public static final int KEY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object key_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Supported textual and numerical facet keys in
+       * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+       * the facet values are computed. Facet key is case-sensitive.
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The key.
+       */
+      @java.lang.Override
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Supported textual and numerical facet keys in
+       * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+       * the facet values are computed. Facet key is case-sensitive.
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for key.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INTERVALS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private java.util.List<com.google.cloud.discoveryengine.v1.Interval> intervals_;
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.List<com.google.cloud.discoveryengine.v1.Interval> getIntervalsList() {
+        return intervals_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.List<? extends com.google.cloud.discoveryengine.v1.IntervalOrBuilder>
+          getIntervalsOrBuilderList() {
+        return intervals_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      @java.lang.Override
+      public int getIntervalsCount() {
+        return intervals_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Interval getIntervals(int index) {
+        return intervals_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set only if values should be bucketed into intervals. Must be set
+       * for facets with numerical values. Must not be set for facet with text
+       * values. Maximum number of intervals is 30.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.IntervalOrBuilder getIntervalsOrBuilder(
+          int index) {
+        return intervals_.get(index);
+      }
+
+      public static final int RESTRICTED_VALUES_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList restrictedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @return A list containing the restrictedValues.
+       */
+      public com.google.protobuf.ProtocolStringList getRestrictedValuesList() {
+        return restrictedValues_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @return The count of restrictedValues.
+       */
+      public int getRestrictedValuesCount() {
+        return restrictedValues_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The restrictedValues at the given index.
+       */
+      public java.lang.String getRestrictedValues(int index) {
+        return restrictedValues_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet for the given restricted values. Only supported on
+       * textual fields. For example, suppose "category" has three values
+       * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+       * "restricted_values" to "Action &gt; 2022", the "category" facet only
+       * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+       * is 10.
+       * </pre>
+       *
+       * <code>repeated string restricted_values = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the restrictedValues at the given index.
+       */
+      public com.google.protobuf.ByteString getRestrictedValuesBytes(int index) {
+        return restrictedValues_.getByteString(index);
+      }
+
+      public static final int PREFIXES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList prefixes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @return A list containing the prefixes.
+       */
+      public com.google.protobuf.ProtocolStringList getPrefixesList() {
+        return prefixes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @return The count of prefixes.
+       */
+      public int getPrefixesCount() {
+        return prefixes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The prefixes at the given index.
+       */
+      public java.lang.String getPrefixes(int index) {
+        return prefixes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that start with the given string prefix. For
+       * example, suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+       * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string prefixes = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the prefixes at the given index.
+       */
+      public com.google.protobuf.ByteString getPrefixesBytes(int index) {
+        return prefixes_.getByteString(index);
+      }
+
+      public static final int CONTAINS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList contains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @return A list containing the contains.
+       */
+      public com.google.protobuf.ProtocolStringList getContainsList() {
+        return contains_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @return The count of contains.
+       */
+      public int getContainsCount() {
+        return contains_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The contains at the given index.
+       */
+      public java.lang.String getContains(int index) {
+        return contains_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only get facet values that contains the given strings. For example,
+       * suppose "category" has three values "Action &gt; 2022",
+       * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+       * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+       * Only supported on textual fields. Maximum is 10.
+       * </pre>
+       *
+       * <code>repeated string contains = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the contains at the given index.
+       */
+      public com.google.protobuf.ByteString getContainsBytes(int index) {
+        return contains_.getByteString(index);
+      }
+
+      public static final int CASE_INSENSITIVE_FIELD_NUMBER = 6;
+      private boolean caseInsensitive_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 6;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      @java.lang.Override
+      public boolean getCaseInsensitive() {
+        return caseInsensitive_;
+      }
+
+      public static final int ORDER_BY_FIELD_NUMBER = 7;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object orderBy_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The order in which documents are returned.
+       *
+       * Allowed values are:
+       *
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+       * descending.
+       *
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+       * descending.
+       *   Only applies to textual facets.
+       *
+       * If not set, textual values are sorted in [natural
+       * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+       * intervals are sorted in the order given by
+       * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+       * </pre>
+       *
+       * <code>string order_by = 7;</code>
+       *
+       * @return The orderBy.
+       */
+      @java.lang.Override
+      public java.lang.String getOrderBy() {
+        java.lang.Object ref = orderBy_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          orderBy_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The order in which documents are returned.
+       *
+       * Allowed values are:
+       *
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+       * descending.
+       *
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+       * descending.
+       *   Only applies to textual facets.
+       *
+       * If not set, textual values are sorted in [natural
+       * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+       * intervals are sorted in the order given by
+       * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+       * </pre>
+       *
+       * <code>string order_by = 7;</code>
+       *
+       * @return The bytes for orderBy.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getOrderByBytes() {
+        java.lang.Object ref = orderBy_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          orderBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+        }
+        for (int i = 0; i < intervals_.size(); i++) {
+          output.writeMessage(2, intervals_.get(i));
+        }
+        for (int i = 0; i < restrictedValues_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 3, restrictedValues_.getRaw(i));
+        }
+        for (int i = 0; i < prefixes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prefixes_.getRaw(i));
+        }
+        for (int i = 0; i < contains_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contains_.getRaw(i));
+        }
+        if (caseInsensitive_ != false) {
+          output.writeBool(6, caseInsensitive_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 7, orderBy_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+        }
+        for (int i = 0; i < intervals_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, intervals_.get(i));
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < restrictedValues_.size(); i++) {
+            dataSize += computeStringSizeNoTag(restrictedValues_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getRestrictedValuesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < prefixes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(prefixes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getPrefixesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < contains_.size(); i++) {
+            dataSize += computeStringSizeNoTag(contains_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getContainsList().size();
+        }
+        if (caseInsensitive_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, caseInsensitive_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, orderBy_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey other =
+            (com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey) obj;
+
+        if (!getKey().equals(other.getKey())) return false;
+        if (!getIntervalsList().equals(other.getIntervalsList())) return false;
+        if (!getRestrictedValuesList().equals(other.getRestrictedValuesList())) return false;
+        if (!getPrefixesList().equals(other.getPrefixesList())) return false;
+        if (!getContainsList().equals(other.getContainsList())) return false;
+        if (getCaseInsensitive() != other.getCaseInsensitive()) return false;
+        if (!getOrderBy().equals(other.getOrderBy())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getKey().hashCode();
+        if (getIntervalsCount() > 0) {
+          hash = (37 * hash) + INTERVALS_FIELD_NUMBER;
+          hash = (53 * hash) + getIntervalsList().hashCode();
+        }
+        if (getRestrictedValuesCount() > 0) {
+          hash = (37 * hash) + RESTRICTED_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getRestrictedValuesList().hashCode();
+        }
+        if (getPrefixesCount() > 0) {
+          hash = (37 * hash) + PREFIXES_FIELD_NUMBER;
+          hash = (53 * hash) + getPrefixesList().hashCode();
+        }
+        if (getContainsCount() > 0) {
+          hash = (37 * hash) + CONTAINS_FIELD_NUMBER;
+          hash = (53 * hash) + getContainsList().hashCode();
+        }
+        hash = (37 * hash) + CASE_INSENSITIVE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCaseInsensitive());
+        hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+        hash = (53 * hash) + getOrderBy().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how a facet is computed.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_FacetKey_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_FacetKey_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.class,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          key_ = "";
+          if (intervalsBuilder_ == null) {
+            intervals_ = java.util.Collections.emptyList();
+          } else {
+            intervals_ = null;
+            intervalsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          caseInsensitive_ = false;
+          orderBy_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_FacetKey_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey build() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey result =
+              new com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey result) {
+          if (intervalsBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              intervals_ = java.util.Collections.unmodifiableList(intervals_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.intervals_ = intervals_;
+          } else {
+            result.intervals_ = intervalsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.key_ = key_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            restrictedValues_.makeImmutable();
+            result.restrictedValues_ = restrictedValues_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            prefixes_.makeImmutable();
+            result.prefixes_ = prefixes_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            contains_.makeImmutable();
+            result.contains_ = contains_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.caseInsensitive_ = caseInsensitive_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.orderBy_ = orderBy_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+                  .getDefaultInstance()) return this;
+          if (!other.getKey().isEmpty()) {
+            key_ = other.key_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (intervalsBuilder_ == null) {
+            if (!other.intervals_.isEmpty()) {
+              if (intervals_.isEmpty()) {
+                intervals_ = other.intervals_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureIntervalsIsMutable();
+                intervals_.addAll(other.intervals_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.intervals_.isEmpty()) {
+              if (intervalsBuilder_.isEmpty()) {
+                intervalsBuilder_.dispose();
+                intervalsBuilder_ = null;
+                intervals_ = other.intervals_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                intervalsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getIntervalsFieldBuilder()
+                        : null;
+              } else {
+                intervalsBuilder_.addAllMessages(other.intervals_);
+              }
+            }
+          }
+          if (!other.restrictedValues_.isEmpty()) {
+            if (restrictedValues_.isEmpty()) {
+              restrictedValues_ = other.restrictedValues_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureRestrictedValuesIsMutable();
+              restrictedValues_.addAll(other.restrictedValues_);
+            }
+            onChanged();
+          }
+          if (!other.prefixes_.isEmpty()) {
+            if (prefixes_.isEmpty()) {
+              prefixes_ = other.prefixes_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensurePrefixesIsMutable();
+              prefixes_.addAll(other.prefixes_);
+            }
+            onChanged();
+          }
+          if (!other.contains_.isEmpty()) {
+            if (contains_.isEmpty()) {
+              contains_ = other.contains_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureContainsIsMutable();
+              contains_.addAll(other.contains_);
+            }
+            onChanged();
+          }
+          if (other.getCaseInsensitive() != false) {
+            setCaseInsensitive(other.getCaseInsensitive());
+          }
+          if (!other.getOrderBy().isEmpty()) {
+            orderBy_ = other.orderBy_;
+            bitField0_ |= 0x00000040;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    key_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.discoveryengine.v1.Interval m =
+                        input.readMessage(
+                            com.google.cloud.discoveryengine.v1.Interval.parser(),
+                            extensionRegistry);
+                    if (intervalsBuilder_ == null) {
+                      ensureIntervalsIsMutable();
+                      intervals_.add(m);
+                    } else {
+                      intervalsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureRestrictedValuesIsMutable();
+                    restrictedValues_.add(s);
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensurePrefixesIsMutable();
+                    prefixes_.add(s);
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureContainsIsMutable();
+                    contains_.add(s);
+                    break;
+                  } // case 42
+                case 48:
+                  {
+                    caseInsensitive_ = input.readBool();
+                    bitField0_ |= 0x00000020;
+                    break;
+                  } // case 48
+                case 58:
+                  {
+                    orderBy_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 58
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object key_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Supported textual and numerical facet keys in
+         * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+         * the facet values are computed. Facet key is case-sensitive.
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The key.
+         */
+        public java.lang.String getKey() {
+          java.lang.Object ref = key_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            key_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Supported textual and numerical facet keys in
+         * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+         * the facet values are computed. Facet key is case-sensitive.
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for key.
+         */
+        public com.google.protobuf.ByteString getKeyBytes() {
+          java.lang.Object ref = key_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            key_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Supported textual and numerical facet keys in
+         * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+         * the facet values are computed. Facet key is case-sensitive.
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          key_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Supported textual and numerical facet keys in
+         * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+         * the facet values are computed. Facet key is case-sensitive.
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearKey() {
+          key_ = getDefaultInstance().getKey();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Supported textual and numerical facet keys in
+         * [Document][google.cloud.discoveryengine.v1.Document] object, over which
+         * the facet values are computed. Facet key is case-sensitive.
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          key_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<com.google.cloud.discoveryengine.v1.Interval> intervals_ =
+            java.util.Collections.emptyList();
+
+        private void ensureIntervalsIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            intervals_ =
+                new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Interval>(intervals_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Interval,
+                com.google.cloud.discoveryengine.v1.Interval.Builder,
+                com.google.cloud.discoveryengine.v1.IntervalOrBuilder>
+            intervalsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public java.util.List<com.google.cloud.discoveryengine.v1.Interval> getIntervalsList() {
+          if (intervalsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(intervals_);
+          } else {
+            return intervalsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public int getIntervalsCount() {
+          if (intervalsBuilder_ == null) {
+            return intervals_.size();
+          } else {
+            return intervalsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public com.google.cloud.discoveryengine.v1.Interval getIntervals(int index) {
+          if (intervalsBuilder_ == null) {
+            return intervals_.get(index);
+          } else {
+            return intervalsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder setIntervals(int index, com.google.cloud.discoveryengine.v1.Interval value) {
+          if (intervalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureIntervalsIsMutable();
+            intervals_.set(index, value);
+            onChanged();
+          } else {
+            intervalsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder setIntervals(
+            int index, com.google.cloud.discoveryengine.v1.Interval.Builder builderForValue) {
+          if (intervalsBuilder_ == null) {
+            ensureIntervalsIsMutable();
+            intervals_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            intervalsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder addIntervals(com.google.cloud.discoveryengine.v1.Interval value) {
+          if (intervalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureIntervalsIsMutable();
+            intervals_.add(value);
+            onChanged();
+          } else {
+            intervalsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder addIntervals(int index, com.google.cloud.discoveryengine.v1.Interval value) {
+          if (intervalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureIntervalsIsMutable();
+            intervals_.add(index, value);
+            onChanged();
+          } else {
+            intervalsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder addIntervals(
+            com.google.cloud.discoveryengine.v1.Interval.Builder builderForValue) {
+          if (intervalsBuilder_ == null) {
+            ensureIntervalsIsMutable();
+            intervals_.add(builderForValue.build());
+            onChanged();
+          } else {
+            intervalsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder addIntervals(
+            int index, com.google.cloud.discoveryengine.v1.Interval.Builder builderForValue) {
+          if (intervalsBuilder_ == null) {
+            ensureIntervalsIsMutable();
+            intervals_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            intervalsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder addAllIntervals(
+            java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.Interval> values) {
+          if (intervalsBuilder_ == null) {
+            ensureIntervalsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, intervals_);
+            onChanged();
+          } else {
+            intervalsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder clearIntervals() {
+          if (intervalsBuilder_ == null) {
+            intervals_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            intervalsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public Builder removeIntervals(int index) {
+          if (intervalsBuilder_ == null) {
+            ensureIntervalsIsMutable();
+            intervals_.remove(index);
+            onChanged();
+          } else {
+            intervalsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public com.google.cloud.discoveryengine.v1.Interval.Builder getIntervalsBuilder(int index) {
+          return getIntervalsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public com.google.cloud.discoveryengine.v1.IntervalOrBuilder getIntervalsOrBuilder(
+            int index) {
+          if (intervalsBuilder_ == null) {
+            return intervals_.get(index);
+          } else {
+            return intervalsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public java.util.List<? extends com.google.cloud.discoveryengine.v1.IntervalOrBuilder>
+            getIntervalsOrBuilderList() {
+          if (intervalsBuilder_ != null) {
+            return intervalsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(intervals_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public com.google.cloud.discoveryengine.v1.Interval.Builder addIntervalsBuilder() {
+          return getIntervalsFieldBuilder()
+              .addBuilder(com.google.cloud.discoveryengine.v1.Interval.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public com.google.cloud.discoveryengine.v1.Interval.Builder addIntervalsBuilder(int index) {
+          return getIntervalsFieldBuilder()
+              .addBuilder(index, com.google.cloud.discoveryengine.v1.Interval.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Set only if values should be bucketed into intervals. Must be set
+         * for facets with numerical values. Must not be set for facet with text
+         * values. Maximum number of intervals is 30.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1.Interval intervals = 2;</code>
+         */
+        public java.util.List<com.google.cloud.discoveryengine.v1.Interval.Builder>
+            getIntervalsBuilderList() {
+          return getIntervalsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Interval,
+                com.google.cloud.discoveryengine.v1.Interval.Builder,
+                com.google.cloud.discoveryengine.v1.IntervalOrBuilder>
+            getIntervalsFieldBuilder() {
+          if (intervalsBuilder_ == null) {
+            intervalsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1.Interval,
+                    com.google.cloud.discoveryengine.v1.Interval.Builder,
+                    com.google.cloud.discoveryengine.v1.IntervalOrBuilder>(
+                    intervals_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            intervals_ = null;
+          }
+          return intervalsBuilder_;
+        }
+
+        private com.google.protobuf.LazyStringArrayList restrictedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureRestrictedValuesIsMutable() {
+          if (!restrictedValues_.isModifiable()) {
+            restrictedValues_ = new com.google.protobuf.LazyStringArrayList(restrictedValues_);
+          }
+          bitField0_ |= 0x00000004;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @return A list containing the restrictedValues.
+         */
+        public com.google.protobuf.ProtocolStringList getRestrictedValuesList() {
+          restrictedValues_.makeImmutable();
+          return restrictedValues_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @return The count of restrictedValues.
+         */
+        public int getRestrictedValuesCount() {
+          return restrictedValues_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The restrictedValues at the given index.
+         */
+        public java.lang.String getRestrictedValues(int index) {
+          return restrictedValues_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the restrictedValues at the given index.
+         */
+        public com.google.protobuf.ByteString getRestrictedValuesBytes(int index) {
+          return restrictedValues_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The restrictedValues to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRestrictedValues(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRestrictedValuesIsMutable();
+          restrictedValues_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param value The restrictedValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addRestrictedValues(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRestrictedValuesIsMutable();
+          restrictedValues_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param values The restrictedValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllRestrictedValues(java.lang.Iterable<java.lang.String> values) {
+          ensureRestrictedValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedValues_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRestrictedValues() {
+          restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet for the given restricted values. Only supported on
+         * textual fields. For example, suppose "category" has three values
+         * "Action &gt; 2022", "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set
+         * "restricted_values" to "Action &gt; 2022", the "category" facet only
+         * contains "Action &gt; 2022". Only supported on textual fields. Maximum
+         * is 10.
+         * </pre>
+         *
+         * <code>repeated string restricted_values = 3;</code>
+         *
+         * @param value The bytes of the restrictedValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addRestrictedValuesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureRestrictedValuesIsMutable();
+          restrictedValues_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList prefixes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensurePrefixesIsMutable() {
+          if (!prefixes_.isModifiable()) {
+            prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @return A list containing the prefixes.
+         */
+        public com.google.protobuf.ProtocolStringList getPrefixesList() {
+          prefixes_.makeImmutable();
+          return prefixes_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @return The count of prefixes.
+         */
+        public int getPrefixesCount() {
+          return prefixes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The prefixes at the given index.
+         */
+        public java.lang.String getPrefixes(int index) {
+          return prefixes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the prefixes at the given index.
+         */
+        public com.google.protobuf.ByteString getPrefixesBytes(int index) {
+          return prefixes_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The prefixes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrefixes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePrefixesIsMutable();
+          prefixes_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param value The prefixes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPrefixes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePrefixesIsMutable();
+          prefixes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param values The prefixes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllPrefixes(java.lang.Iterable<java.lang.String> values) {
+          ensurePrefixesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prefixes_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPrefixes() {
+          prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that start with the given string prefix. For
+         * example, suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "prefixes" to "Action", the
+         * "category" facet only contains "Action &gt; 2022" and "Action &gt; 2021".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string prefixes = 4;</code>
+         *
+         * @param value The bytes of the prefixes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPrefixesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensurePrefixesIsMutable();
+          prefixes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList contains_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureContainsIsMutable() {
+          if (!contains_.isModifiable()) {
+            contains_ = new com.google.protobuf.LazyStringArrayList(contains_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @return A list containing the contains.
+         */
+        public com.google.protobuf.ProtocolStringList getContainsList() {
+          contains_.makeImmutable();
+          return contains_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @return The count of contains.
+         */
+        public int getContainsCount() {
+          return contains_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The contains at the given index.
+         */
+        public java.lang.String getContains(int index) {
+          return contains_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the contains at the given index.
+         */
+        public com.google.protobuf.ByteString getContainsBytes(int index) {
+          return contains_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The contains to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContains(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContainsIsMutable();
+          contains_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param value The contains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addContains(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContainsIsMutable();
+          contains_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param values The contains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllContains(java.lang.Iterable<java.lang.String> values) {
+          ensureContainsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contains_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContains() {
+          contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Only get facet values that contains the given strings. For example,
+         * suppose "category" has three values "Action &gt; 2022",
+         * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
+         * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
+         * Only supported on textual fields. Maximum is 10.
+         * </pre>
+         *
+         * <code>repeated string contains = 5;</code>
+         *
+         * @param value The bytes of the contains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addContainsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureContainsIsMutable();
+          contains_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        private boolean caseInsensitive_;
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 6;</code>
+         *
+         * @return The caseInsensitive.
+         */
+        @java.lang.Override
+        public boolean getCaseInsensitive() {
+          return caseInsensitive_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 6;</code>
+         *
+         * @param value The caseInsensitive to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCaseInsensitive(boolean value) {
+
+          caseInsensitive_ = value;
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCaseInsensitive() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          caseInsensitive_ = false;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object orderBy_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The order in which documents are returned.
+         *
+         * Allowed values are:
+         *
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+         * descending.
+         *
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+         * descending.
+         *   Only applies to textual facets.
+         *
+         * If not set, textual values are sorted in [natural
+         * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+         * intervals are sorted in the order given by
+         * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+         * </pre>
+         *
+         * <code>string order_by = 7;</code>
+         *
+         * @return The orderBy.
+         */
+        public java.lang.String getOrderBy() {
+          java.lang.Object ref = orderBy_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            orderBy_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The order in which documents are returned.
+         *
+         * Allowed values are:
+         *
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+         * descending.
+         *
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+         * descending.
+         *   Only applies to textual facets.
+         *
+         * If not set, textual values are sorted in [natural
+         * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+         * intervals are sorted in the order given by
+         * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+         * </pre>
+         *
+         * <code>string order_by = 7;</code>
+         *
+         * @return The bytes for orderBy.
+         */
+        public com.google.protobuf.ByteString getOrderByBytes() {
+          java.lang.Object ref = orderBy_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            orderBy_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The order in which documents are returned.
+         *
+         * Allowed values are:
+         *
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+         * descending.
+         *
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+         * descending.
+         *   Only applies to textual facets.
+         *
+         * If not set, textual values are sorted in [natural
+         * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+         * intervals are sorted in the order given by
+         * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+         * </pre>
+         *
+         * <code>string order_by = 7;</code>
+         *
+         * @param value The orderBy to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOrderBy(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          orderBy_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The order in which documents are returned.
+         *
+         * Allowed values are:
+         *
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+         * descending.
+         *
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+         * descending.
+         *   Only applies to textual facets.
+         *
+         * If not set, textual values are sorted in [natural
+         * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+         * intervals are sorted in the order given by
+         * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+         * </pre>
+         *
+         * <code>string order_by = 7;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOrderBy() {
+          orderBy_ = getDefaultInstance().getOrderBy();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The order in which documents are returned.
+         *
+         * Allowed values are:
+         *
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.count]
+         * descending.
+         *
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1.SearchResponse.Facet.FacetValue.value]
+         * descending.
+         *   Only applies to textual facets.
+         *
+         * If not set, textual values are sorted in [natural
+         * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
+         * intervals are sorted in the order given by
+         * [FacetSpec.FacetKey.intervals][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.intervals].
+         * </pre>
+         *
+         * <code>string order_by = 7;</code>
+         *
+         * @param value The bytes for orderBy to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          orderBy_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey)
+      private static final com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FacetKey> PARSER =
+          new com.google.protobuf.AbstractParser<FacetKey>() {
+            @java.lang.Override
+            public FacetKey parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FacetKey> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FacetKey> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int FACET_KEY_FIELD_NUMBER = 1;
+    private com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facetKey_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the facetKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasFacetKey() {
+      return facetKey_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The facetKey.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey getFacetKey() {
+      return facetKey_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+              .getDefaultInstance()
+          : facetKey_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The facet key specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder
+        getFacetKeyOrBuilder() {
+      return facetKey_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+              .getDefaultInstance()
+          : facetKey_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
+    private int limit_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum of facet values that should be returned for this facet. If
+     * unspecified, defaults to 20. The maximum allowed value is 300. Values
+     * above 300 are coerced to 300.
+     *
+     * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>int32 limit = 2;</code>
+     *
+     * @return The limit.
+     */
+    @java.lang.Override
+    public int getLimit() {
+      return limit_;
+    }
+
+    public static final int EXCLUDED_FILTER_KEYS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList excludedFilterKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @return A list containing the excludedFilterKeys.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedFilterKeysList() {
+      return excludedFilterKeys_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @return The count of excludedFilterKeys.
+     */
+    public int getExcludedFilterKeysCount() {
+      return excludedFilterKeys_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedFilterKeys at the given index.
+     */
+    public java.lang.String getExcludedFilterKeys(int index) {
+      return excludedFilterKeys_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of keys to exclude when faceting.
+     *
+     *
+     * By default,
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * is not excluded from the filter unless it is listed in this field.
+     *
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     *
+     * For example, suppose there are 100 documents with the color facet "Red"
+     * and 200 documents with the color facet "Blue". A query containing the
+     * filter "color:ANY("Red")" and having "color" as
+     * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+     * would by default return only "Red" documents in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue documents available, "Blue" would not be shown as an
+     * available facet value.
+     *
+     * If "color" is listed in "excludedFilterKeys", then the query returns the
+     * facet values "Red" with count 100 and "Blue" with count 200, because the
+     * "color" key is now excluded from the filter. Because this field doesn't
+     * affect search results, the search results are still correctly filtered to
+     * return only "Red" documents.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated string excluded_filter_keys = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedFilterKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedFilterKeysBytes(int index) {
+      return excludedFilterKeys_.getByteString(index);
+    }
+
+    public static final int ENABLE_DYNAMIC_POSITION_FIELD_NUMBER = 4;
+    private boolean enableDynamicPosition_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Enables dynamic position for this facet. If set to true, the position of
+     * this facet among all facets in the response is determined automatically.
+     * If dynamic facets are enabled, it is ordered together.
+     * If set to false, the position of this facet in the
+     * response is the same as in the request, and it is ranked before
+     * the facets with dynamic position enable and all dynamic facets.
+     *
+     * For example, you may always want to have rating facet returned in
+     * the response, but it's not necessarily to always display the rating facet
+     * at the top. In that case, you can set enable_dynamic_position to true so
+     * that the position of rating facet in response is determined
+     * automatically.
+     *
+     * Another example, assuming you have the following facets in the request:
+     *
+     * * "rating", enable_dynamic_position = true
+     *
+     * * "price", enable_dynamic_position = false
+     *
+     * * "brands", enable_dynamic_position = false
+     *
+     * And also you have a dynamic facets enabled, which generates a facet
+     * `gender`. Then the final order of the facets in the response can be
+     * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
+     * "rating") depends on how API orders "gender" and "rating" facets.
+     * However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * is false.
+     * </pre>
+     *
+     * <code>bool enable_dynamic_position = 4;</code>
+     *
+     * @return The enableDynamicPosition.
+     */
+    @java.lang.Override
+    public boolean getEnableDynamicPosition() {
+      return enableDynamicPosition_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (facetKey_ != null) {
+        output.writeMessage(1, getFacetKey());
+      }
+      if (limit_ != 0) {
+        output.writeInt32(2, limit_);
+      }
+      for (int i = 0; i < excludedFilterKeys_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 3, excludedFilterKeys_.getRaw(i));
+      }
+      if (enableDynamicPosition_ != false) {
+        output.writeBool(4, enableDynamicPosition_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (facetKey_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getFacetKey());
+      }
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, limit_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedFilterKeys_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedFilterKeys_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedFilterKeysList().size();
+      }
+      if (enableDynamicPosition_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableDynamicPosition_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec) obj;
+
+      if (hasFacetKey() != other.hasFacetKey()) return false;
+      if (hasFacetKey()) {
+        if (!getFacetKey().equals(other.getFacetKey())) return false;
+      }
+      if (getLimit() != other.getLimit()) return false;
+      if (!getExcludedFilterKeysList().equals(other.getExcludedFilterKeysList())) return false;
+      if (getEnableDynamicPosition() != other.getEnableDynamicPosition()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasFacetKey()) {
+        hash = (37 * hash) + FACET_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getFacetKey().hashCode();
+      }
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      if (getExcludedFilterKeysCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_FILTER_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedFilterKeysList().hashCode();
+      }
+      hash = (37 * hash) + ENABLE_DYNAMIC_POSITION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDynamicPosition());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A facet specification to perform faceted search.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.FacetSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        facetKey_ = null;
+        if (facetKeyBuilder_ != null) {
+          facetKeyBuilder_.dispose();
+          facetKeyBuilder_ = null;
+        }
+        limit_ = 0;
+        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        enableDynamicPosition_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_FacetSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.facetKey_ = facetKeyBuilder_ == null ? facetKey_ : facetKeyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.limit_ = limit_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          excludedFilterKeys_.makeImmutable();
+          result.excludedFilterKeys_ = excludedFilterKeys_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableDynamicPosition_ = enableDynamicPosition_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.getDefaultInstance())
+          return this;
+        if (other.hasFacetKey()) {
+          mergeFacetKey(other.getFacetKey());
+        }
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        if (!other.excludedFilterKeys_.isEmpty()) {
+          if (excludedFilterKeys_.isEmpty()) {
+            excludedFilterKeys_ = other.excludedFilterKeys_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureExcludedFilterKeysIsMutable();
+            excludedFilterKeys_.addAll(other.excludedFilterKeys_);
+          }
+          onChanged();
+        }
+        if (other.getEnableDynamicPosition() != false) {
+          setEnableDynamicPosition(other.getEnableDynamicPosition());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getFacetKeyFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  limit_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedFilterKeysIsMutable();
+                  excludedFilterKeys_.add(s);
+                  break;
+                } // case 26
+              case 32:
+                {
+                  enableDynamicPosition_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facetKey_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder>
+          facetKeyBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the facetKey field is set.
+       */
+      public boolean hasFacetKey() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The facetKey.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey getFacetKey() {
+        if (facetKeyBuilder_ == null) {
+          return facetKey_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+                  .getDefaultInstance()
+              : facetKey_;
+        } else {
+          return facetKeyBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFacetKey(
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey value) {
+        if (facetKeyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          facetKey_ = value;
+        } else {
+          facetKeyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFacetKey(
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder
+              builderForValue) {
+        if (facetKeyBuilder_ == null) {
+          facetKey_ = builderForValue.build();
+        } else {
+          facetKeyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeFacetKey(
+          com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey value) {
+        if (facetKeyBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && facetKey_ != null
+              && facetKey_
+                  != com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+                      .getDefaultInstance()) {
+            getFacetKeyBuilder().mergeFrom(value);
+          } else {
+            facetKey_ = value;
+          }
+        } else {
+          facetKeyBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearFacetKey() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        facetKey_ = null;
+        if (facetKeyBuilder_ != null) {
+          facetKeyBuilder_.dispose();
+          facetKeyBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder
+          getFacetKeyBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getFacetKeyFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder
+          getFacetKeyOrBuilder() {
+        if (facetKeyBuilder_ != null) {
+          return facetKeyBuilder_.getMessageOrBuilder();
+        } else {
+          return facetKey_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey
+                  .getDefaultInstance()
+              : facetKey_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The facet key specification.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey facet_key = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder>
+          getFacetKeyFieldBuilder() {
+        if (facetKeyBuilder_ == null) {
+          facetKeyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKeyOrBuilder>(
+                  getFacetKey(), getParentForChildren(), isClean());
+          facetKey_ = null;
+        }
+        return facetKeyBuilder_;
+      }
+
+      private int limit_;
+      /**
+       *
+       *
+       * <pre>
+       * Maximum of facet values that should be returned for this facet. If
+       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * above 300 are coerced to 300.
+       *
+       * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+       * </pre>
+       *
+       * <code>int32 limit = 2;</code>
+       *
+       * @return The limit.
+       */
+      @java.lang.Override
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Maximum of facet values that should be returned for this facet. If
+       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * above 300 are coerced to 300.
+       *
+       * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+       * </pre>
+       *
+       * <code>int32 limit = 2;</code>
+       *
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(int value) {
+
+        limit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Maximum of facet values that should be returned for this facet. If
+       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * above 300 are coerced to 300.
+       *
+       * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+       * </pre>
+       *
+       * <code>int32 limit = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList excludedFilterKeys_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureExcludedFilterKeysIsMutable() {
+        if (!excludedFilterKeys_.isModifiable()) {
+          excludedFilterKeys_ = new com.google.protobuf.LazyStringArrayList(excludedFilterKeys_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @return A list containing the excludedFilterKeys.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedFilterKeysList() {
+        excludedFilterKeys_.makeImmutable();
+        return excludedFilterKeys_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @return The count of excludedFilterKeys.
+       */
+      public int getExcludedFilterKeysCount() {
+        return excludedFilterKeys_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedFilterKeys at the given index.
+       */
+      public java.lang.String getExcludedFilterKeys(int index) {
+        return excludedFilterKeys_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedFilterKeys at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedFilterKeysBytes(int index) {
+        return excludedFilterKeys_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedFilterKeys to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedFilterKeys(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFilterKeysIsMutable();
+        excludedFilterKeys_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param value The excludedFilterKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedFilterKeys(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFilterKeysIsMutable();
+        excludedFilterKeys_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param values The excludedFilterKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedFilterKeys(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedFilterKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedFilterKeys_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedFilterKeys() {
+        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of keys to exclude when faceting.
+       *
+       *
+       * By default,
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * is not excluded from the filter unless it is listed in this field.
+       *
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       *
+       * For example, suppose there are 100 documents with the color facet "Red"
+       * and 200 documents with the color facet "Blue". A query containing the
+       * filter "color:ANY("Red")" and having "color" as
+       * [FacetKey.key][google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.FacetKey.key]
+       * would by default return only "Red" documents in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue documents available, "Blue" would not be shown as an
+       * available facet value.
+       *
+       * If "color" is listed in "excludedFilterKeys", then the query returns the
+       * facet values "Red" with count 100 and "Blue" with count 200, because the
+       * "color" key is now excluded from the filter. Because this field doesn't
+       * affect search results, the search results are still correctly filtered to
+       * return only "Red" documents.
+       *
+       * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+       * error is returned.
+       * </pre>
+       *
+       * <code>repeated string excluded_filter_keys = 3;</code>
+       *
+       * @param value The bytes of the excludedFilterKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedFilterKeysBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedFilterKeysIsMutable();
+        excludedFilterKeys_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableDynamicPosition_;
+      /**
+       *
+       *
+       * <pre>
+       * Enables dynamic position for this facet. If set to true, the position of
+       * this facet among all facets in the response is determined automatically.
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
+       * the facets with dynamic position enable and all dynamic facets.
+       *
+       * For example, you may always want to have rating facet returned in
+       * the response, but it's not necessarily to always display the rating facet
+       * at the top. In that case, you can set enable_dynamic_position to true so
+       * that the position of rating facet in response is determined
+       * automatically.
+       *
+       * Another example, assuming you have the following facets in the request:
+       *
+       * * "rating", enable_dynamic_position = true
+       *
+       * * "price", enable_dynamic_position = false
+       *
+       * * "brands", enable_dynamic_position = false
+       *
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
+       * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
+       * "rating") depends on how API orders "gender" and "rating" facets.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
+       * </pre>
+       *
+       * <code>bool enable_dynamic_position = 4;</code>
+       *
+       * @return The enableDynamicPosition.
+       */
+      @java.lang.Override
+      public boolean getEnableDynamicPosition() {
+        return enableDynamicPosition_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enables dynamic position for this facet. If set to true, the position of
+       * this facet among all facets in the response is determined automatically.
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
+       * the facets with dynamic position enable and all dynamic facets.
+       *
+       * For example, you may always want to have rating facet returned in
+       * the response, but it's not necessarily to always display the rating facet
+       * at the top. In that case, you can set enable_dynamic_position to true so
+       * that the position of rating facet in response is determined
+       * automatically.
+       *
+       * Another example, assuming you have the following facets in the request:
+       *
+       * * "rating", enable_dynamic_position = true
+       *
+       * * "price", enable_dynamic_position = false
+       *
+       * * "brands", enable_dynamic_position = false
+       *
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
+       * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
+       * "rating") depends on how API orders "gender" and "rating" facets.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
+       * </pre>
+       *
+       * <code>bool enable_dynamic_position = 4;</code>
+       *
+       * @param value The enableDynamicPosition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableDynamicPosition(boolean value) {
+
+        enableDynamicPosition_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enables dynamic position for this facet. If set to true, the position of
+       * this facet among all facets in the response is determined automatically.
+       * If dynamic facets are enabled, it is ordered together.
+       * If set to false, the position of this facet in the
+       * response is the same as in the request, and it is ranked before
+       * the facets with dynamic position enable and all dynamic facets.
+       *
+       * For example, you may always want to have rating facet returned in
+       * the response, but it's not necessarily to always display the rating facet
+       * at the top. In that case, you can set enable_dynamic_position to true so
+       * that the position of rating facet in response is determined
+       * automatically.
+       *
+       * Another example, assuming you have the following facets in the request:
+       *
+       * * "rating", enable_dynamic_position = true
+       *
+       * * "price", enable_dynamic_position = false
+       *
+       * * "brands", enable_dynamic_position = false
+       *
+       * And also you have a dynamic facets enabled, which generates a facet
+       * `gender`. Then the final order of the facets in the response can be
+       * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
+       * "rating") depends on how API orders "gender" and "rating" facets.
+       * However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * is false.
+       * </pre>
+       *
+       * <code>bool enable_dynamic_position = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableDynamicPosition() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableDynamicPosition_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.FacetSpec)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FacetSpec> PARSER =
+        new com.google.protobuf.AbstractParser<FacetSpec>() {
+          @java.lang.Override
+          public FacetSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FacetSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FacetSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BoostSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>
+        getConditionBoostSpecsList();
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+        getConditionBoostSpecs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    int getConditionBoostSpecsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                    .ConditionBoostSpecOrBuilder>
+        getConditionBoostSpecsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+        getConditionBoostSpecsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.BoostSpec}
+   */
+  public static final class BoostSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)
+      BoostSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BoostSpec.newBuilder() to construct.
+    private BoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BoostSpec() {
+      conditionBoostSpecs_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BoostSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder.class);
+    }
+
+    public interface ConditionBoostSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An expression which specifies a boost condition. The syntax and
+       * supported fields are the same as a filter expression. See
+       * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+       * for detail syntax and limitations.
+       *
+       * Examples:
+       *
+       * * To boost documents with document ID "doc_1" or "doc_2", and
+       * color
+       *   "Red" or "Blue":
+       *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+       * </pre>
+       *
+       * <code>string condition = 1;</code>
+       *
+       * @return The condition.
+       */
+      java.lang.String getCondition();
+      /**
+       *
+       *
+       * <pre>
+       * An expression which specifies a boost condition. The syntax and
+       * supported fields are the same as a filter expression. See
+       * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+       * for detail syntax and limitations.
+       *
+       * Examples:
+       *
+       * * To boost documents with document ID "doc_1" or "doc_2", and
+       * color
+       *   "Red" or "Blue":
+       *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+       * </pre>
+       *
+       * <code>string condition = 1;</code>
+       *
+       * @return The bytes for condition.
+       */
+      com.google.protobuf.ByteString getConditionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Strength of the condition boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0.
+       *
+       * Setting to 1.0 gives the document a big promotion. However, it does not
+       * necessarily mean that the boosted document will be the top result at
+       * all times, nor that other documents will be excluded. Results could
+       * still be shown even when none of them matches the condition. And
+       * results that are significantly more relevant to the search query can
+       * still trump your heavily favored but irrelevant documents.
+       *
+       * Setting to -1.0 gives the document a big demotion. However, results
+       * that are deeply relevant might still be shown. The document will have
+       * an upstream battle to get a fairly high ranking, but it is not blocked
+       * out completely.
+       *
+       * Setting to 0.0 means no boost applied. The boosting condition is
+       * ignored.
+       * </pre>
+       *
+       * <code>float boost = 2;</code>
+       *
+       * @return The boost.
+       */
+      float getBoost();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost applies to documents which match a condition.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec}
+     */
+    public static final class ConditionBoostSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+        ConditionBoostSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ConditionBoostSpec.newBuilder() to construct.
+      private ConditionBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ConditionBoostSpec() {
+        condition_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConditionBoostSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_ConditionBoostSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_ConditionBoostSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                    .class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                    .Builder.class);
+      }
+
+      public static final int CONDITION_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object condition_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An expression which specifies a boost condition. The syntax and
+       * supported fields are the same as a filter expression. See
+       * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+       * for detail syntax and limitations.
+       *
+       * Examples:
+       *
+       * * To boost documents with document ID "doc_1" or "doc_2", and
+       * color
+       *   "Red" or "Blue":
+       *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+       * </pre>
+       *
+       * <code>string condition = 1;</code>
+       *
+       * @return The condition.
+       */
+      @java.lang.Override
+      public java.lang.String getCondition() {
+        java.lang.Object ref = condition_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          condition_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An expression which specifies a boost condition. The syntax and
+       * supported fields are the same as a filter expression. See
+       * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+       * for detail syntax and limitations.
+       *
+       * Examples:
+       *
+       * * To boost documents with document ID "doc_1" or "doc_2", and
+       * color
+       *   "Red" or "Blue":
+       *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+       * </pre>
+       *
+       * <code>string condition = 1;</code>
+       *
+       * @return The bytes for condition.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getConditionBytes() {
+        java.lang.Object ref = condition_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          condition_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int BOOST_FIELD_NUMBER = 2;
+      private float boost_ = 0F;
+      /**
+       *
+       *
+       * <pre>
+       * Strength of the condition boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0.
+       *
+       * Setting to 1.0 gives the document a big promotion. However, it does not
+       * necessarily mean that the boosted document will be the top result at
+       * all times, nor that other documents will be excluded. Results could
+       * still be shown even when none of them matches the condition. And
+       * results that are significantly more relevant to the search query can
+       * still trump your heavily favored but irrelevant documents.
+       *
+       * Setting to -1.0 gives the document a big demotion. However, results
+       * that are deeply relevant might still be shown. The document will have
+       * an upstream battle to get a fairly high ranking, but it is not blocked
+       * out completely.
+       *
+       * Setting to 0.0 means no boost applied. The boosting condition is
+       * ignored.
+       * </pre>
+       *
+       * <code>float boost = 2;</code>
+       *
+       * @return The boost.
+       */
+      @java.lang.Override
+      public float getBoost() {
+        return boost_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, condition_);
+        }
+        if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
+          output.writeFloat(2, boost_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, condition_);
+        }
+        if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boost_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec other =
+            (com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec) obj;
+
+        if (!getCondition().equals(other.getCondition())) return false;
+        if (java.lang.Float.floatToIntBits(getBoost())
+            != java.lang.Float.floatToIntBits(other.getBoost())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+        hash = (53 * hash) + getCondition().hashCode();
+        hash = (37 * hash) + BOOST_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoost());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boost applies to documents which match a condition.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_ConditionBoostSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_ConditionBoostSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          condition_ = "";
+          boost_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_ConditionBoostSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+            build() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec result =
+              new com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.condition_ = condition_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.boost_ = boost_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .getDefaultInstance()) return this;
+          if (!other.getCondition().isEmpty()) {
+            condition_ = other.condition_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.getBoost() != 0F) {
+            setBoost(other.getBoost());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    condition_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    boost_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object condition_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An expression which specifies a boost condition. The syntax and
+         * supported fields are the same as a filter expression. See
+         * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+         * for detail syntax and limitations.
+         *
+         * Examples:
+         *
+         * * To boost documents with document ID "doc_1" or "doc_2", and
+         * color
+         *   "Red" or "Blue":
+         *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+         * </pre>
+         *
+         * <code>string condition = 1;</code>
+         *
+         * @return The condition.
+         */
+        public java.lang.String getCondition() {
+          java.lang.Object ref = condition_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            condition_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An expression which specifies a boost condition. The syntax and
+         * supported fields are the same as a filter expression. See
+         * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+         * for detail syntax and limitations.
+         *
+         * Examples:
+         *
+         * * To boost documents with document ID "doc_1" or "doc_2", and
+         * color
+         *   "Red" or "Blue":
+         *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+         * </pre>
+         *
+         * <code>string condition = 1;</code>
+         *
+         * @return The bytes for condition.
+         */
+        public com.google.protobuf.ByteString getConditionBytes() {
+          java.lang.Object ref = condition_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            condition_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An expression which specifies a boost condition. The syntax and
+         * supported fields are the same as a filter expression. See
+         * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+         * for detail syntax and limitations.
+         *
+         * Examples:
+         *
+         * * To boost documents with document ID "doc_1" or "doc_2", and
+         * color
+         *   "Red" or "Blue":
+         *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+         * </pre>
+         *
+         * <code>string condition = 1;</code>
+         *
+         * @param value The condition to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCondition(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An expression which specifies a boost condition. The syntax and
+         * supported fields are the same as a filter expression. See
+         * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+         * for detail syntax and limitations.
+         *
+         * Examples:
+         *
+         * * To boost documents with document ID "doc_1" or "doc_2", and
+         * color
+         *   "Red" or "Blue":
+         *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+         * </pre>
+         *
+         * <code>string condition = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCondition() {
+          condition_ = getDefaultInstance().getCondition();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An expression which specifies a boost condition. The syntax and
+         * supported fields are the same as a filter expression. See
+         * [SearchRequest.filter][google.cloud.discoveryengine.v1.SearchRequest.filter]
+         * for detail syntax and limitations.
+         *
+         * Examples:
+         *
+         * * To boost documents with document ID "doc_1" or "doc_2", and
+         * color
+         *   "Red" or "Blue":
+         *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+         * </pre>
+         *
+         * <code>string condition = 1;</code>
+         *
+         * @param value The bytes for condition to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConditionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          condition_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private float boost_;
+        /**
+         *
+         *
+         * <pre>
+         * Strength of the condition boost, which should be in [-1, 1]. Negative
+         * boost means demotion. Default is 0.0.
+         *
+         * Setting to 1.0 gives the document a big promotion. However, it does not
+         * necessarily mean that the boosted document will be the top result at
+         * all times, nor that other documents will be excluded. Results could
+         * still be shown even when none of them matches the condition. And
+         * results that are significantly more relevant to the search query can
+         * still trump your heavily favored but irrelevant documents.
+         *
+         * Setting to -1.0 gives the document a big demotion. However, results
+         * that are deeply relevant might still be shown. The document will have
+         * an upstream battle to get a fairly high ranking, but it is not blocked
+         * out completely.
+         *
+         * Setting to 0.0 means no boost applied. The boosting condition is
+         * ignored.
+         * </pre>
+         *
+         * <code>float boost = 2;</code>
+         *
+         * @return The boost.
+         */
+        @java.lang.Override
+        public float getBoost() {
+          return boost_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Strength of the condition boost, which should be in [-1, 1]. Negative
+         * boost means demotion. Default is 0.0.
+         *
+         * Setting to 1.0 gives the document a big promotion. However, it does not
+         * necessarily mean that the boosted document will be the top result at
+         * all times, nor that other documents will be excluded. Results could
+         * still be shown even when none of them matches the condition. And
+         * results that are significantly more relevant to the search query can
+         * still trump your heavily favored but irrelevant documents.
+         *
+         * Setting to -1.0 gives the document a big demotion. However, results
+         * that are deeply relevant might still be shown. The document will have
+         * an upstream battle to get a fairly high ranking, but it is not blocked
+         * out completely.
+         *
+         * Setting to 0.0 means no boost applied. The boosting condition is
+         * ignored.
+         * </pre>
+         *
+         * <code>float boost = 2;</code>
+         *
+         * @param value The boost to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBoost(float value) {
+
+          boost_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Strength of the condition boost, which should be in [-1, 1]. Negative
+         * boost means demotion. Default is 0.0.
+         *
+         * Setting to 1.0 gives the document a big promotion. However, it does not
+         * necessarily mean that the boosted document will be the top result at
+         * all times, nor that other documents will be excluded. Results could
+         * still be shown even when none of them matches the condition. And
+         * results that are significantly more relevant to the search query can
+         * still trump your heavily favored but irrelevant documents.
+         *
+         * Setting to -1.0 gives the document a big demotion. However, results
+         * that are deeply relevant might still be shown. The document will have
+         * an upstream battle to get a fairly high ranking, but it is not blocked
+         * out completely.
+         *
+         * Setting to 0.0 means no boost applied. The boosting condition is
+         * ignored.
+         * </pre>
+         *
+         * <code>float boost = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBoost() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          boost_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec)
+      private static final com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+              .ConditionBoostSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ConditionBoostSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ConditionBoostSpec>() {
+            @java.lang.Override
+            public ConditionBoostSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ConditionBoostSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ConditionBoostSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int CONDITION_BOOST_SPECS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>
+        conditionBoostSpecs_;
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>
+        getConditionBoostSpecsList() {
+      return conditionBoostSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                    .ConditionBoostSpecOrBuilder>
+        getConditionBoostSpecsOrBuilderList() {
+      return conditionBoostSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getConditionBoostSpecsCount() {
+      return conditionBoostSpecs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+        getConditionBoostSpecs(int index) {
+      return conditionBoostSpecs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condition boost specifications. If a document matches multiple conditions
+     * in the specifictions, boost scores from these specifications are all
+     * applied and combined in a non-linear way. Maximum number of
+     * specifications is 20.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+        getConditionBoostSpecsOrBuilder(int index) {
+      return conditionBoostSpecs_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < conditionBoostSpecs_.size(); i++) {
+        output.writeMessage(1, conditionBoostSpecs_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < conditionBoostSpecs_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, conditionBoostSpecs_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec) obj;
+
+      if (!getConditionBoostSpecsList().equals(other.getConditionBoostSpecsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getConditionBoostSpecsCount() > 0) {
+        hash = (37 * hash) + CONDITION_BOOST_SPECS_FIELD_NUMBER;
+        hash = (53 * hash) + getConditionBoostSpecsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.BoostSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (conditionBoostSpecsBuilder_ == null) {
+          conditionBoostSpecs_ = java.util.Collections.emptyList();
+        } else {
+          conditionBoostSpecs_ = null;
+          conditionBoostSpecsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_BoostSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec result) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            conditionBoostSpecs_ = java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.conditionBoostSpecs_ = conditionBoostSpecs_;
+        } else {
+          result.conditionBoostSpecs_ = conditionBoostSpecsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance())
+          return this;
+        if (conditionBoostSpecsBuilder_ == null) {
+          if (!other.conditionBoostSpecs_.isEmpty()) {
+            if (conditionBoostSpecs_.isEmpty()) {
+              conditionBoostSpecs_ = other.conditionBoostSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.addAll(other.conditionBoostSpecs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.conditionBoostSpecs_.isEmpty()) {
+            if (conditionBoostSpecsBuilder_.isEmpty()) {
+              conditionBoostSpecsBuilder_.dispose();
+              conditionBoostSpecsBuilder_ = null;
+              conditionBoostSpecs_ = other.conditionBoostSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              conditionBoostSpecsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getConditionBoostSpecsFieldBuilder()
+                      : null;
+            } else {
+              conditionBoostSpecsBuilder_.addAllMessages(other.conditionBoostSpecs_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec m =
+                      input.readMessage(
+                          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                              .ConditionBoostSpec.parser(),
+                          extensionRegistry);
+                  if (conditionBoostSpecsBuilder_ == null) {
+                    ensureConditionBoostSpecsIsMutable();
+                    conditionBoostSpecs_.add(m);
+                  } else {
+                    conditionBoostSpecsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>
+          conditionBoostSpecs_ = java.util.Collections.emptyList();
+
+      private void ensureConditionBoostSpecsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          conditionBoostSpecs_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>(
+                  conditionBoostSpecs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                  .ConditionBoostSpecOrBuilder>
+          conditionBoostSpecsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec>
+          getConditionBoostSpecsList() {
+        if (conditionBoostSpecsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+        } else {
+          return conditionBoostSpecsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public int getConditionBoostSpecsCount() {
+        if (conditionBoostSpecsBuilder_ == null) {
+          return conditionBoostSpecs_.size();
+        } else {
+          return conditionBoostSpecsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+          getConditionBoostSpecs(int index) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          return conditionBoostSpecs_.get(index);
+        } else {
+          return conditionBoostSpecsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder setConditionBoostSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.set(index, value);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder setConditionBoostSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+              builderForValue) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder addConditionBoostSpecs(
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.add(value);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder addConditionBoostSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.add(index, value);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder addConditionBoostSpecs(
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+              builderForValue) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder addConditionBoostSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+              builderForValue) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder addAllConditionBoostSpecs(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                          .ConditionBoostSpec>
+              values) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          ensureConditionBoostSpecsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditionBoostSpecs_);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder clearConditionBoostSpecs() {
+        if (conditionBoostSpecsBuilder_ == null) {
+          conditionBoostSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public Builder removeConditionBoostSpecs(int index) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          ensureConditionBoostSpecsIsMutable();
+          conditionBoostSpecs_.remove(index);
+          onChanged();
+        } else {
+          conditionBoostSpecsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+          getConditionBoostSpecsBuilder(int index) {
+        return getConditionBoostSpecsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+          getConditionBoostSpecsOrBuilder(int index) {
+        if (conditionBoostSpecsBuilder_ == null) {
+          return conditionBoostSpecs_.get(index);
+        } else {
+          return conditionBoostSpecsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                      .ConditionBoostSpecOrBuilder>
+          getConditionBoostSpecsOrBuilderList() {
+        if (conditionBoostSpecsBuilder_ != null) {
+          return conditionBoostSpecsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+          addConditionBoostSpecsBuilder() {
+        return getConditionBoostSpecsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+          addConditionBoostSpecsBuilder(int index) {
+        return getConditionBoostSpecsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Condition boost specifications. If a document matches multiple conditions
+       * in the specifictions, boost scores from these specifications are all
+       * applied and combined in a non-linear way. Maximum number of
+       * specifications is 20.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec condition_boost_specs = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .Builder>
+          getConditionBoostSpecsBuilderList() {
+        return getConditionBoostSpecsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                  .ConditionBoostSpecOrBuilder>
+          getConditionBoostSpecsFieldBuilder() {
+        if (conditionBoostSpecsBuilder_ == null) {
+          conditionBoostSpecsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.ConditionBoostSpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                      .ConditionBoostSpecOrBuilder>(
+                  conditionBoostSpecs_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          conditionBoostSpecs_ = null;
+        }
+        return conditionBoostSpecsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.BoostSpec)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BoostSpec> PARSER =
+        new com.google.protobuf.AbstractParser<BoostSpec>() {
+          @java.lang.Override
+          public BoostSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BoostSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BoostSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface QueryExpansionSpecOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec)
@@ -116,6 +7959,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The condition.
      */
     com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec.Condition getCondition();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to pin unexpanded results. If this field is set to true,
+     * unexpanded products are always at the top of the search results, followed
+     * by the expanded results.
+     * </pre>
+     *
+     * <code>bool pin_unexpanded_results = 2;</code>
+     *
+     * @return The pinUnexpandedResults.
+     */
+    boolean getPinUnexpandedResults();
   }
   /**
    *
@@ -376,6 +8234,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int PIN_UNEXPANDED_RESULTS_FIELD_NUMBER = 2;
+    private boolean pinUnexpandedResults_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to pin unexpanded results. If this field is set to true,
+     * unexpanded products are always at the top of the search results, followed
+     * by the expanded results.
+     * </pre>
+     *
+     * <code>bool pin_unexpanded_results = 2;</code>
+     *
+     * @return The pinUnexpandedResults.
+     */
+    @java.lang.Override
+    public boolean getPinUnexpandedResults() {
+      return pinUnexpandedResults_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -396,6 +8274,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, condition_);
       }
+      if (pinUnexpandedResults_ != false) {
+        output.writeBool(2, pinUnexpandedResults_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -410,6 +8291,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .CONDITION_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, condition_);
+      }
+      if (pinUnexpandedResults_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, pinUnexpandedResults_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -428,6 +8312,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec) obj;
 
       if (condition_ != other.condition_) return false;
+      if (getPinUnexpandedResults() != other.getPinUnexpandedResults()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -441,6 +8326,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + condition_;
+      hash = (37 * hash) + PIN_UNEXPANDED_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPinUnexpandedResults());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -587,6 +8474,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         condition_ = 0;
+        pinUnexpandedResults_ = false;
         return this;
       }
 
@@ -629,6 +8517,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.condition_ = condition_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pinUnexpandedResults_ = pinUnexpandedResults_;
         }
       }
 
@@ -686,6 +8577,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.condition_ != 0) {
           setConditionValue(other.getConditionValue());
         }
+        if (other.getPinUnexpandedResults() != false) {
+          setPinUnexpandedResults(other.getPinUnexpandedResults());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -718,6 +8612,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 16:
+                {
+                  pinUnexpandedResults_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -844,6 +8744,65 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder clearCondition() {
         bitField0_ = (bitField0_ & ~0x00000001);
         condition_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean pinUnexpandedResults_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @return The pinUnexpandedResults.
+       */
+      @java.lang.Override
+      public boolean getPinUnexpandedResults() {
+        return pinUnexpandedResults_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @param value The pinUnexpandedResults to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinUnexpandedResults(boolean value) {
+
+        pinUnexpandedResults_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPinUnexpandedResults() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pinUnexpandedResults_ = false;
         onChanged();
         return this;
       }
@@ -1759,8 +9718,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -1774,8 +9733,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -1790,8 +9749,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -1800,13 +9759,58 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpecOrBuilder
         getSnippetSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     *
+     * @return Whether the summarySpec field is set.
+     */
+    boolean hasSummarySpec();
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     *
+     * @return The summarySpec.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+        getSummarySpec();
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpecOrBuilder
+        getSummarySpecOrBuilder();
   }
   /**
    *
    *
    * <pre>
-   * The specification that configs the desired behavior of the UCS content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec}
@@ -1853,37 +9857,59 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of snippets returned in each search result.
-       * If the matching snippets is less than the max_snippet_count, return all
-       * of the snippets; otherwise, return the max_snippet_count.
-       *
-       * At most 5 snippets will be returned for each SearchResult.
+       * [DEPRECATED] This field is deprecated. To control snippet return, use
+       * `return_snippet` field. For backwards compatibility, we will return
+       * snippet if max_snippet_count &gt; 0.
        * </pre>
        *
-       * <code>int32 max_snippet_count = 1;</code>
+       * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=304
        * @return The maxSnippetCount.
        */
+      @java.lang.Deprecated
       int getMaxSnippetCount();
 
       /**
        *
        *
        * <pre>
-       * if true, only snippet reference is returned.
+       * [DEPRECATED] This field is deprecated and will have no affect on the
+       * snippet.
        * </pre>
        *
-       * <code>bool reference_only = 2;</code>
+       * <code>bool reference_only = 2 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=308
        * @return The referenceOnly.
        */
+      @java.lang.Deprecated
       boolean getReferenceOnly();
+
+      /**
+       *
+       *
+       * <pre>
+       * If `true`, then return snippet. If no snippet can be generated, we
+       * return "No snippet is available for this page." A `snippet_status` with
+       * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+       * </pre>
+       *
+       * <code>bool return_snippet = 3;</code>
+       *
+       * @return The returnSnippet.
+       */
+      boolean getReturnSnippet();
     }
     /**
      *
      *
      * <pre>
-     * The specification that configs the snippet in the search results.
+     * A specification for configuring snippets in a search response.
      * </pre>
      *
      * Protobuf type {@code
@@ -1930,18 +9956,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of snippets returned in each search result.
-       * If the matching snippets is less than the max_snippet_count, return all
-       * of the snippets; otherwise, return the max_snippet_count.
-       *
-       * At most 5 snippets will be returned for each SearchResult.
+       * [DEPRECATED] This field is deprecated. To control snippet return, use
+       * `return_snippet` field. For backwards compatibility, we will return
+       * snippet if max_snippet_count &gt; 0.
        * </pre>
        *
-       * <code>int32 max_snippet_count = 1;</code>
+       * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=304
        * @return The maxSnippetCount.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public int getMaxSnippetCount() {
         return maxSnippetCount_;
       }
@@ -1952,16 +9980,41 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * if true, only snippet reference is returned.
+       * [DEPRECATED] This field is deprecated and will have no affect on the
+       * snippet.
        * </pre>
        *
-       * <code>bool reference_only = 2;</code>
+       * <code>bool reference_only = 2 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=308
        * @return The referenceOnly.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getReferenceOnly() {
         return referenceOnly_;
+      }
+
+      public static final int RETURN_SNIPPET_FIELD_NUMBER = 3;
+      private boolean returnSnippet_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * If `true`, then return snippet. If no snippet can be generated, we
+       * return "No snippet is available for this page." A `snippet_status` with
+       * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+       * </pre>
+       *
+       * <code>bool return_snippet = 3;</code>
+       *
+       * @return The returnSnippet.
+       */
+      @java.lang.Override
+      public boolean getReturnSnippet() {
+        return returnSnippet_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1984,6 +10037,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (referenceOnly_ != false) {
           output.writeBool(2, referenceOnly_);
         }
+        if (returnSnippet_ != false) {
+          output.writeBool(3, returnSnippet_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1998,6 +10054,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         if (referenceOnly_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, referenceOnly_);
+        }
+        if (returnSnippet_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnSnippet_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2019,6 +10078,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
         if (getMaxSnippetCount() != other.getMaxSnippetCount()) return false;
         if (getReferenceOnly() != other.getReferenceOnly()) return false;
+        if (getReturnSnippet() != other.getReturnSnippet()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -2034,6 +10094,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getMaxSnippetCount();
         hash = (37 * hash) + REFERENCE_ONLY_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReferenceOnly());
+        hash = (37 * hash) + RETURN_SNIPPET_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnSnippet());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2149,7 +10211,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The specification that configs the snippet in the search results.
+       * A specification for configuring snippets in a search response.
        * </pre>
        *
        * Protobuf type {@code
@@ -2191,6 +10253,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           maxSnippetCount_ = 0;
           referenceOnly_ = false;
+          returnSnippet_ = false;
           return this;
         }
 
@@ -2240,6 +10303,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.referenceOnly_ = referenceOnly_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.returnSnippet_ = returnSnippet_;
           }
         }
 
@@ -2303,6 +10369,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getReferenceOnly() != false) {
             setReferenceOnly(other.getReferenceOnly());
           }
+          if (other.getReturnSnippet() != false) {
+            setReturnSnippet(other.getReturnSnippet());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -2341,6 +10410,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 24:
+                  {
+                    returnSnippet_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2365,18 +10440,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=304
          * @return The maxSnippetCount.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public int getMaxSnippetCount() {
           return maxSnippetCount_;
         }
@@ -2384,18 +10461,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=304
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setMaxSnippetCount(int value) {
 
           maxSnippetCount_ = value;
@@ -2407,17 +10486,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Max number of snippets returned in each search result.
-         * If the matching snippets is less than the max_snippet_count, return all
-         * of the snippets; otherwise, return the max_snippet_count.
-         *
-         * At most 5 snippets will be returned for each SearchResult.
+         * [DEPRECATED] This field is deprecated. To control snippet return, use
+         * `return_snippet` field. For backwards compatibility, we will return
+         * snippet if max_snippet_count &gt; 0.
          * </pre>
          *
-         * <code>int32 max_snippet_count = 1;</code>
+         * <code>int32 max_snippet_count = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=304
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearMaxSnippetCount() {
           bitField0_ = (bitField0_ & ~0x00000001);
           maxSnippetCount_ = 0;
@@ -2430,14 +10511,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=308
          * @return The referenceOnly.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public boolean getReferenceOnly() {
           return referenceOnly_;
         }
@@ -2445,14 +10531,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=308
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setReferenceOnly(boolean value) {
 
           referenceOnly_ = value;
@@ -2464,16 +10555,80 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * if true, only snippet reference is returned.
+         * [DEPRECATED] This field is deprecated and will have no affect on the
+         * snippet.
          * </pre>
          *
-         * <code>bool reference_only = 2;</code>
+         * <code>bool reference_only = 2 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=308
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearReferenceOnly() {
           bitField0_ = (bitField0_ & ~0x00000002);
           referenceOnly_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean returnSnippet_;
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @return The returnSnippet.
+         */
+        @java.lang.Override
+        public boolean getReturnSnippet() {
+          return returnSnippet_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @param value The returnSnippet to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnSnippet(boolean value) {
+
+          returnSnippet_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If `true`, then return snippet. If no snippet can be generated, we
+         * return "No snippet is available for this page." A `snippet_status` with
+         * `SUCCESS` or `NO_SNIPPET_AVAILABLE` will also be returned.
+         * </pre>
+         *
+         * <code>bool return_snippet = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnSnippet() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          returnSnippet_ = false;
           onChanged();
           return this;
         }
@@ -2547,6 +10702,1320 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface SummarySpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of top results to generate the summary from. If the number
+       * of results returned is less than `summaryResultCount`, the summary is
+       * generated from all of the results.
+       *
+       * At most five results can be used to generate a summary.
+       * </pre>
+       *
+       * <code>int32 summary_result_count = 1;</code>
+       *
+       * @return The summaryResultCount.
+       */
+      int getSummaryResultCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to include citations in the summary. The default
+       * value is `false`.
+       *
+       * When this field is set to `true`, summaries include in-line citation
+       * numbers.
+       *
+       * Example summary including citations:
+       *
+       * BigQuery is Google Cloud's fully managed and completely serverless
+       * enterprise data warehouse [1]. BigQuery supports all data types, works
+       * across clouds, and has built-in machine learning and business
+       * intelligence, all within a unified platform [2, 3].
+       *
+       * The citation numbers refer to the returned search results and are
+       * 1-indexed. For example, [1] means that the sentence is attributed to
+       * the first search result. [2, 3] means that the sentence is attributed
+       * to both the second and third search results.
+       * </pre>
+       *
+       * <code>bool include_citations = 2;</code>
+       *
+       * @return The includeCitations.
+       */
+      boolean getIncludeCitations();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out adversarial queries. The default value
+       * is `false`.
+       *
+       * Google employs search-query classification to detect adversarial
+       * queries. No summary is returned if the search query is classified as an
+       * adversarial query. For example, a user might ask a question regarding
+       * negative comments about the company or submit a query designed to
+       * generate unsafe, policy-violating output. If this field is set to
+       * `true`, we skip generating summaries for adversarial queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_adversarial_query = 3;</code>
+       *
+       * @return The ignoreAdversarialQuery.
+       */
+      boolean getIgnoreAdversarialQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that are not summary-seeking.
+       * The default value is `false`.
+       *
+       * Google employs search-query classification to detect summary-seeking
+       * queries. No summary is returned if the search query is classified as a
+       * non-summary seeking query. For example, `why is the sky blue` and `Who
+       * is the best soccer player in the world?` are summary-seeking queries,
+       * but `SFO airport` and `world cup 2026` are not. They are most likely
+       * navigational queries. If this field is set to `true`, we skip
+       * generating summaries for non-summary seeking queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_non_summary_seeking_query = 4;</code>
+       *
+       * @return The ignoreNonSummarySeekingQuery.
+       */
+      boolean getIgnoreNonSummarySeekingQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The languageCode.
+       */
+      java.lang.String getLanguageCode();
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      com.google.protobuf.ByteString getLanguageCodeBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A specification for configuring a summary returned in a search
+     * response.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec}
+     */
+    public static final class SummarySpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+        SummarySpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SummarySpec.newBuilder() to construct.
+      private SummarySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SummarySpec() {
+        languageCode_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SummarySpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_SummarySpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_SummarySpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                    .class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                    .Builder.class);
+      }
+
+      public static final int SUMMARY_RESULT_COUNT_FIELD_NUMBER = 1;
+      private int summaryResultCount_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The number of top results to generate the summary from. If the number
+       * of results returned is less than `summaryResultCount`, the summary is
+       * generated from all of the results.
+       *
+       * At most five results can be used to generate a summary.
+       * </pre>
+       *
+       * <code>int32 summary_result_count = 1;</code>
+       *
+       * @return The summaryResultCount.
+       */
+      @java.lang.Override
+      public int getSummaryResultCount() {
+        return summaryResultCount_;
+      }
+
+      public static final int INCLUDE_CITATIONS_FIELD_NUMBER = 2;
+      private boolean includeCitations_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to include citations in the summary. The default
+       * value is `false`.
+       *
+       * When this field is set to `true`, summaries include in-line citation
+       * numbers.
+       *
+       * Example summary including citations:
+       *
+       * BigQuery is Google Cloud's fully managed and completely serverless
+       * enterprise data warehouse [1]. BigQuery supports all data types, works
+       * across clouds, and has built-in machine learning and business
+       * intelligence, all within a unified platform [2, 3].
+       *
+       * The citation numbers refer to the returned search results and are
+       * 1-indexed. For example, [1] means that the sentence is attributed to
+       * the first search result. [2, 3] means that the sentence is attributed
+       * to both the second and third search results.
+       * </pre>
+       *
+       * <code>bool include_citations = 2;</code>
+       *
+       * @return The includeCitations.
+       */
+      @java.lang.Override
+      public boolean getIncludeCitations() {
+        return includeCitations_;
+      }
+
+      public static final int IGNORE_ADVERSARIAL_QUERY_FIELD_NUMBER = 3;
+      private boolean ignoreAdversarialQuery_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out adversarial queries. The default value
+       * is `false`.
+       *
+       * Google employs search-query classification to detect adversarial
+       * queries. No summary is returned if the search query is classified as an
+       * adversarial query. For example, a user might ask a question regarding
+       * negative comments about the company or submit a query designed to
+       * generate unsafe, policy-violating output. If this field is set to
+       * `true`, we skip generating summaries for adversarial queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_adversarial_query = 3;</code>
+       *
+       * @return The ignoreAdversarialQuery.
+       */
+      @java.lang.Override
+      public boolean getIgnoreAdversarialQuery() {
+        return ignoreAdversarialQuery_;
+      }
+
+      public static final int IGNORE_NON_SUMMARY_SEEKING_QUERY_FIELD_NUMBER = 4;
+      private boolean ignoreNonSummarySeekingQuery_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that are not summary-seeking.
+       * The default value is `false`.
+       *
+       * Google employs search-query classification to detect summary-seeking
+       * queries. No summary is returned if the search query is classified as a
+       * non-summary seeking query. For example, `why is the sky blue` and `Who
+       * is the best soccer player in the world?` are summary-seeking queries,
+       * but `SFO airport` and `world cup 2026` are not. They are most likely
+       * navigational queries. If this field is set to `true`, we skip
+       * generating summaries for non-summary seeking queries and return
+       * fallback messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_non_summary_seeking_query = 4;</code>
+       *
+       * @return The ignoreNonSummarySeekingQuery.
+       */
+      @java.lang.Override
+      public boolean getIgnoreNonSummarySeekingQuery() {
+        return ignoreNonSummarySeekingQuery_;
+      }
+
+      public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object languageCode_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The languageCode.
+       */
+      @java.lang.Override
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (summaryResultCount_ != 0) {
+          output.writeInt32(1, summaryResultCount_);
+        }
+        if (includeCitations_ != false) {
+          output.writeBool(2, includeCitations_);
+        }
+        if (ignoreAdversarialQuery_ != false) {
+          output.writeBool(3, ignoreAdversarialQuery_);
+        }
+        if (ignoreNonSummarySeekingQuery_ != false) {
+          output.writeBool(4, ignoreNonSummarySeekingQuery_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (summaryResultCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, summaryResultCount_);
+        }
+        if (includeCitations_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeCitations_);
+        }
+        if (ignoreAdversarialQuery_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, ignoreAdversarialQuery_);
+        }
+        if (ignoreNonSummarySeekingQuery_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  4, ignoreNonSummarySeekingQuery_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec other =
+            (com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec) obj;
+
+        if (getSummaryResultCount() != other.getSummaryResultCount()) return false;
+        if (getIncludeCitations() != other.getIncludeCitations()) return false;
+        if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
+        if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
+          return false;
+        if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SUMMARY_RESULT_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getSummaryResultCount();
+        hash = (37 * hash) + INCLUDE_CITATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeCitations());
+        hash = (37 * hash) + IGNORE_ADVERSARIAL_QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreAdversarialQuery());
+        hash = (37 * hash) + IGNORE_NON_SUMMARY_SEEKING_QUERY_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
+        hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getLanguageCode().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A specification for configuring a summary returned in a search
+       * response.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_SummarySpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_SummarySpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          summaryResultCount_ = 0;
+          includeCitations_ = false;
+          ignoreAdversarialQuery_ = false;
+          ignoreNonSummarySeekingQuery_ = false;
+          languageCode_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_SummarySpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+            build() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec result =
+              new com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.summaryResultCount_ = summaryResultCount_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.includeCitations_ = includeCitations_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.ignoreAdversarialQuery_ = ignoreAdversarialQuery_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.languageCode_ = languageCode_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                  .getDefaultInstance()) return this;
+          if (other.getSummaryResultCount() != 0) {
+            setSummaryResultCount(other.getSummaryResultCount());
+          }
+          if (other.getIncludeCitations() != false) {
+            setIncludeCitations(other.getIncludeCitations());
+          }
+          if (other.getIgnoreAdversarialQuery() != false) {
+            setIgnoreAdversarialQuery(other.getIgnoreAdversarialQuery());
+          }
+          if (other.getIgnoreNonSummarySeekingQuery() != false) {
+            setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
+          }
+          if (!other.getLanguageCode().isEmpty()) {
+            languageCode_ = other.languageCode_;
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    summaryResultCount_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    includeCitations_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    ignoreAdversarialQuery_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 32:
+                  {
+                    ignoreNonSummarySeekingQuery_ = input.readBool();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
+                case 50:
+                  {
+                    languageCode_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 50
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int summaryResultCount_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
+         *
+         * At most five results can be used to generate a summary.
+         * </pre>
+         *
+         * <code>int32 summary_result_count = 1;</code>
+         *
+         * @return The summaryResultCount.
+         */
+        @java.lang.Override
+        public int getSummaryResultCount() {
+          return summaryResultCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
+         *
+         * At most five results can be used to generate a summary.
+         * </pre>
+         *
+         * <code>int32 summary_result_count = 1;</code>
+         *
+         * @param value The summaryResultCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSummaryResultCount(int value) {
+
+          summaryResultCount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of top results to generate the summary from. If the number
+         * of results returned is less than `summaryResultCount`, the summary is
+         * generated from all of the results.
+         *
+         * At most five results can be used to generate a summary.
+         * </pre>
+         *
+         * <code>int32 summary_result_count = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSummaryResultCount() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          summaryResultCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean includeCitations_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @return The includeCitations.
+         */
+        @java.lang.Override
+        public boolean getIncludeCitations() {
+          return includeCitations_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @param value The includeCitations to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeCitations(boolean value) {
+
+          includeCitations_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to include citations in the summary. The default
+         * value is `false`.
+         *
+         * When this field is set to `true`, summaries include in-line citation
+         * numbers.
+         *
+         * Example summary including citations:
+         *
+         * BigQuery is Google Cloud's fully managed and completely serverless
+         * enterprise data warehouse [1]. BigQuery supports all data types, works
+         * across clouds, and has built-in machine learning and business
+         * intelligence, all within a unified platform [2, 3].
+         *
+         * The citation numbers refer to the returned search results and are
+         * 1-indexed. For example, [1] means that the sentence is attributed to
+         * the first search result. [2, 3] means that the sentence is attributed
+         * to both the second and third search results.
+         * </pre>
+         *
+         * <code>bool include_citations = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeCitations() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          includeCitations_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean ignoreAdversarialQuery_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @return The ignoreAdversarialQuery.
+         */
+        @java.lang.Override
+        public boolean getIgnoreAdversarialQuery() {
+          return ignoreAdversarialQuery_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @param value The ignoreAdversarialQuery to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreAdversarialQuery(boolean value) {
+
+          ignoreAdversarialQuery_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out adversarial queries. The default value
+         * is `false`.
+         *
+         * Google employs search-query classification to detect adversarial
+         * queries. No summary is returned if the search query is classified as an
+         * adversarial query. For example, a user might ask a question regarding
+         * negative comments about the company or submit a query designed to
+         * generate unsafe, policy-violating output. If this field is set to
+         * `true`, we skip generating summaries for adversarial queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_adversarial_query = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreAdversarialQuery() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ignoreAdversarialQuery_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean ignoreNonSummarySeekingQuery_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @return The ignoreNonSummarySeekingQuery.
+         */
+        @java.lang.Override
+        public boolean getIgnoreNonSummarySeekingQuery() {
+          return ignoreNonSummarySeekingQuery_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @param value The ignoreNonSummarySeekingQuery to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreNonSummarySeekingQuery(boolean value) {
+
+          ignoreNonSummarySeekingQuery_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that are not summary-seeking.
+         * The default value is `false`.
+         *
+         * Google employs search-query classification to detect summary-seeking
+         * queries. No summary is returned if the search query is classified as a
+         * non-summary seeking query. For example, `why is the sky blue` and `Who
+         * is the best soccer player in the world?` are summary-seeking queries,
+         * but `SFO airport` and `world cup 2026` are not. They are most likely
+         * navigational queries. If this field is set to `true`, we skip
+         * generating summaries for non-summary seeking queries and return
+         * fallback messages instead.
+         * </pre>
+         *
+         * <code>bool ignore_non_summary_seeking_query = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreNonSummarySeekingQuery() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ignoreNonSummarySeekingQuery_ = false;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object languageCode_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return The languageCode.
+         */
+        public java.lang.String getLanguageCode() {
+          java.lang.Object ref = languageCode_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            languageCode_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return The bytes for languageCode.
+         */
+        public com.google.protobuf.ByteString getLanguageCodeBytes() {
+          java.lang.Object ref = languageCode_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            languageCode_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @param value The languageCode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLanguageCode(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          languageCode_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLanguageCode() {
+          languageCode_ = getDefaultInstance().getLanguageCode();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @param value The bytes for languageCode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          languageCode_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec)
+      private static final com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+              .SummarySpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SummarySpec> PARSER =
+          new com.google.protobuf.AbstractParser<SummarySpec>() {
+            @java.lang.Override
+            public SummarySpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SummarySpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SummarySpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public static final int SNIPPET_SPEC_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec
         snippetSpec_;
@@ -2554,8 +12023,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -2572,8 +12041,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -2594,8 +12063,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If there is no snippet spec provided, there will be no snippet in the
-     * search result.
+     * If `snippetSpec` is not specified, snippets are not included in the
+     * search response.
      * </pre>
      *
      * <code>
@@ -2609,6 +12078,70 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec
               .getDefaultInstance()
           : snippetSpec_;
+    }
+
+    public static final int SUMMARY_SPEC_FIELD_NUMBER = 2;
+    private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+        summarySpec_;
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     *
+     * @return Whether the summarySpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasSummarySpec() {
+      return summarySpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     *
+     * @return The summarySpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+        getSummarySpec() {
+      return summarySpec_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+              .getDefaultInstance()
+          : summarySpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `summarySpec` is not specified, summaries are not included in the
+     * search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpecOrBuilder
+        getSummarySpecOrBuilder() {
+      return summarySpec_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+              .getDefaultInstance()
+          : summarySpec_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2628,6 +12161,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (snippetSpec_ != null) {
         output.writeMessage(1, getSnippetSpec());
       }
+      if (summarySpec_ != null) {
+        output.writeMessage(2, getSummarySpec());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2639,6 +12175,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (snippetSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSnippetSpec());
+      }
+      if (summarySpec_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSummarySpec());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2660,6 +12199,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasSnippetSpec()) {
         if (!getSnippetSpec().equals(other.getSnippetSpec())) return false;
       }
+      if (hasSummarySpec() != other.hasSummarySpec()) return false;
+      if (hasSummarySpec()) {
+        if (!getSummarySpec().equals(other.getSummarySpec())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2674,6 +12217,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasSnippetSpec()) {
         hash = (37 * hash) + SNIPPET_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getSnippetSpec().hashCode();
+      }
+      if (hasSummarySpec()) {
+        hash = (37 * hash) + SUMMARY_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getSummarySpec().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2782,8 +12329,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specification that configs the desired behavior of the UCS content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec}
@@ -2824,6 +12370,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (snippetSpecBuilder_ != null) {
           snippetSpecBuilder_.dispose();
           snippetSpecBuilder_ = null;
+        }
+        summarySpec_ = null;
+        if (summarySpecBuilder_ != null) {
+          summarySpecBuilder_.dispose();
+          summarySpecBuilder_ = null;
         }
         return this;
       }
@@ -2867,6 +12418,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.snippetSpec_ =
               snippetSpecBuilder_ == null ? snippetSpec_ : snippetSpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.summarySpec_ =
+              summarySpecBuilder_ == null ? summarySpec_ : summarySpecBuilder_.build();
         }
       }
 
@@ -2924,6 +12479,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasSnippetSpec()) {
           mergeSnippetSpec(other.getSnippetSpec());
         }
+        if (other.hasSummarySpec()) {
+          mergeSummarySpec(other.getSummarySpec());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2956,6 +12514,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(getSummarySpecFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2988,8 +12552,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3005,8 +12569,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3030,8 +12594,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3056,8 +12620,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3080,8 +12644,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3111,8 +12675,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3133,8 +12697,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3151,8 +12715,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3175,8 +12739,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If there is no snippet spec provided, there will be no snippet in the
-       * search result.
+       * If `snippetSpec` is not specified, snippets are not included in the
+       * search response.
        * </pre>
        *
        * <code>
@@ -3201,6 +12765,234 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           snippetSpec_ = null;
         }
         return snippetSpecBuilder_;
+      }
+
+      private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          summarySpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                  .SummarySpecOrBuilder>
+          summarySpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       *
+       * @return Whether the summarySpec field is set.
+       */
+      public boolean hasSummarySpec() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       *
+       * @return The summarySpec.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+          getSummarySpec() {
+        if (summarySpecBuilder_ == null) {
+          return summarySpec_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                  .getDefaultInstance()
+              : summarySpec_;
+        } else {
+          return summarySpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public Builder setSummarySpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec value) {
+        if (summarySpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          summarySpec_ = value;
+        } else {
+          summarySpecBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public Builder setSummarySpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.Builder
+              builderForValue) {
+        if (summarySpecBuilder_ == null) {
+          summarySpec_ = builderForValue.build();
+        } else {
+          summarySpecBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public Builder mergeSummarySpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec value) {
+        if (summarySpecBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && summarySpec_ != null
+              && summarySpec_
+                  != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                      .getDefaultInstance()) {
+            getSummarySpecBuilder().mergeFrom(value);
+          } else {
+            summarySpec_ = value;
+          }
+        } else {
+          summarySpecBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public Builder clearSummarySpec() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        summarySpec_ = null;
+        if (summarySpecBuilder_ != null) {
+          summarySpecBuilder_.dispose();
+          summarySpecBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.Builder
+          getSummarySpecBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSummarySpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+              .SummarySpecOrBuilder
+          getSummarySpecOrBuilder() {
+        if (summarySpecBuilder_ != null) {
+          return summarySpecBuilder_.getMessageOrBuilder();
+        } else {
+          return summarySpec_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                  .getDefaultInstance()
+              : summarySpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If `summarySpec` is not specified, summaries are not included in the
+       * search response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec summary_spec = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                  .SummarySpecOrBuilder>
+          getSummarySpecFieldBuilder() {
+        if (summarySpecBuilder_ == null) {
+          summarySpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                      .SummarySpecOrBuilder>(getSummarySpec(), getParentForChildren(), isClean());
+          summarySpec_ = null;
+        }
+        return summarySpecBuilder_;
       }
 
       @java.lang.Override
@@ -3441,6 +13233,57 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IMAGE_QUERY_FIELD_NUMBER = 19;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery imageQuery_;
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return Whether the imageQuery field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageQuery() {
+    return imageQuery_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return The imageQuery.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery getImageQuery() {
+    return imageQuery_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance()
+        : imageQuery_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder
+      getImageQueryOrBuilder() {
+    return imageQuery_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance()
+        : imageQuery_;
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
   /**
@@ -3449,7 +13292,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Maximum number of [Document][google.cloud.discoveryengine.v1.Document]s to
    * return. If unspecified, defaults to a reasonable value. The maximum allowed
-   * value is 100. Values above 100 will be coerced to 100.
+   * value is 100. Values above 100 are coerced to 100.
    *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
@@ -3553,6 +13396,126 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return offset_;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * </pre>
+   *
+   * <code>string filter = 7;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * </pre>
+   *
+   * <code>string filter = 7;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The order in which documents are returned. Documents can be ordered by
+   * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+   * Leave it unset if ordered by relevance. `order_by` expression is
+   * case-sensitive.
+   *
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+   * </pre>
+   *
+   * <code>string order_by = 8;</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The order in which documents are returned. Documents can be ordered by
+   * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+   * Leave it unset if ordered by relevance. `order_by` expression is
+   * case-sensitive.
+   *
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+   * </pre>
+   *
+   * <code>string order_by = 8;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int USER_INFO_FIELD_NUMBER = 21;
   private com.google.cloud.discoveryengine.v1.UserInfo userInfo_;
   /**
@@ -3560,8 +13523,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -3577,8 +13541,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -3596,8 +13561,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -3607,6 +13573,146 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return userInfo_ == null
         ? com.google.cloud.discoveryengine.v1.UserInfo.getDefaultInstance()
         : userInfo_;
+  }
+
+  public static final int FACET_SPECS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec> facetSpecs_;
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>
+      getFacetSpecsList() {
+    return facetSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
+      getFacetSpecsOrBuilderList() {
+    return facetSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  @java.lang.Override
+  public int getFacetSpecsCount() {
+    return facetSpecs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getFacetSpecs(int index) {
+    return facetSpecs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder
+      getFacetSpecsOrBuilder(int index) {
+    return facetSpecs_.get(index);
+  }
+
+  public static final int BOOST_SPEC_FIELD_NUMBER = 10;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boostSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return Whether the boostSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoostSpec() {
+    return boostSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return The boostSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec() {
+    return boostSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+        : boostSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder
+      getBoostSpecOrBuilder() {
+    return boostSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+        : boostSpec_;
   }
 
   public static final int PARAMS_FIELD_NUMBER = 11;
@@ -3753,7 +13859,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -3771,7 +13877,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -3792,7 +13898,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -3815,7 +13921,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -3833,7 +13939,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -3854,7 +13960,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -3952,8 +14058,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -3970,8 +14075,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -3991,8 +14095,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -4014,7 +14117,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether to turn on safe search. This is only supported for
-   * [ContentConfig.PUBLIC_WEBSITE][].
+   * website search.
    * </pre>
    *
    * <code>bool safe_search = 20;</code>
@@ -4224,6 +14327,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (offset_ != 0) {
       output.writeInt32(6, offset_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, orderBy_);
+    }
+    for (int i = 0; i < facetSpecs_.size(); i++) {
+      output.writeMessage(9, facetSpecs_.get(i));
+    }
+    if (boostSpec_ != null) {
+      output.writeMessage(10, getBoostSpec());
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetParams(), ParamsDefaultEntryHolder.defaultEntry, 11);
     if (queryExpansionSpec_ != null) {
@@ -4234,6 +14349,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userPseudoId_);
+    }
+    if (imageQuery_ != null) {
+      output.writeMessage(19, getImageQuery());
     }
     if (safeSearch_ != false) {
       output.writeBool(20, safeSearch_);
@@ -4273,6 +14391,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (offset_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, offset_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, orderBy_);
+    }
+    for (int i = 0; i < facetSpecs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, facetSpecs_.get(i));
+    }
+    if (boostSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getBoostSpec());
+    }
     for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
         internalGetParams().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value> params__ =
@@ -4292,6 +14422,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userPseudoId_);
+    }
+    if (imageQuery_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getImageQuery());
     }
     if (safeSearch_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, safeSearch_);
@@ -4331,12 +14464,23 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getServingConfig().equals(other.getServingConfig())) return false;
     if (!getBranch().equals(other.getBranch())) return false;
     if (!getQuery().equals(other.getQuery())) return false;
+    if (hasImageQuery() != other.hasImageQuery()) return false;
+    if (hasImageQuery()) {
+      if (!getImageQuery().equals(other.getImageQuery())) return false;
+    }
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (getOffset() != other.getOffset()) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (hasUserInfo() != other.hasUserInfo()) return false;
     if (hasUserInfo()) {
       if (!getUserInfo().equals(other.getUserInfo())) return false;
+    }
+    if (!getFacetSpecsList().equals(other.getFacetSpecsList())) return false;
+    if (hasBoostSpec() != other.hasBoostSpec()) return false;
+    if (hasBoostSpec()) {
+      if (!getBoostSpec().equals(other.getBoostSpec())) return false;
     }
     if (!internalGetParams().equals(other.internalGetParams())) return false;
     if (hasQueryExpansionSpec() != other.hasQueryExpansionSpec()) return false;
@@ -4371,15 +14515,31 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getBranch().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
+    if (hasImageQuery()) {
+      hash = (37 * hash) + IMAGE_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getImageQuery().hashCode();
+    }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + OFFSET_FIELD_NUMBER;
     hash = (53 * hash) + getOffset();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     if (hasUserInfo()) {
       hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getUserInfo().hashCode();
+    }
+    if (getFacetSpecsCount() > 0) {
+      hash = (37 * hash) + FACET_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getFacetSpecsList().hashCode();
+    }
+    if (hasBoostSpec()) {
+      hash = (37 * hash) + BOOST_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getBoostSpec().hashCode();
     }
     if (!internalGetParams().getMap().isEmpty()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
@@ -4573,13 +14733,32 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       servingConfig_ = "";
       branch_ = "";
       query_ = "";
+      imageQuery_ = null;
+      if (imageQueryBuilder_ != null) {
+        imageQueryBuilder_.dispose();
+        imageQueryBuilder_ = null;
+      }
       pageSize_ = 0;
       pageToken_ = "";
       offset_ = 0;
+      filter_ = "";
+      orderBy_ = "";
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
         userInfoBuilder_ = null;
+      }
+      if (facetSpecsBuilder_ == null) {
+        facetSpecs_ = java.util.Collections.emptyList();
+      } else {
+        facetSpecs_ = null;
+        facetSpecsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
+      boostSpec_ = null;
+      if (boostSpecBuilder_ != null) {
+        boostSpecBuilder_.dispose();
+        boostSpecBuilder_ = null;
       }
       internalGetMutableParams().clear();
       queryExpansionSpec_ = null;
@@ -4627,11 +14806,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.SearchRequest buildPartial() {
       com.google.cloud.discoveryengine.v1.SearchRequest result =
           new com.google.cloud.discoveryengine.v1.SearchRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1.SearchRequest result) {
+      if (facetSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          facetSpecs_ = java.util.Collections.unmodifiableList(facetSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.facetSpecs_ = facetSpecs_;
+      } else {
+        result.facetSpecs_ = facetSpecsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.SearchRequest result) {
@@ -4646,46 +14839,58 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.query_ = query_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.imageQuery_ = imageQueryBuilder_ == null ? imageQuery_ : imageQueryBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pageToken_ = pageToken_;
+        result.pageSize_ = pageSize_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.offset_ = offset_;
+        result.pageToken_ = pageToken_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
+        result.offset_ = offset_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.params_ = internalGetParams();
         result.params_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.queryExpansionSpec_ =
             queryExpansionSpecBuilder_ == null
                 ? queryExpansionSpec_
                 : queryExpansionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.contentSearchSpec_ =
             contentSearchSpecBuilder_ == null
                 ? contentSearchSpec_
                 : contentSearchSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.safeSearch_ = safeSearch_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -4752,22 +14957,65 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasImageQuery()) {
+        mergeImageQuery(other.getImageQuery());
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getOffset() != 0) {
         setOffset(other.getOffset());
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (other.hasUserInfo()) {
         mergeUserInfo(other.getUserInfo());
       }
+      if (facetSpecsBuilder_ == null) {
+        if (!other.facetSpecs_.isEmpty()) {
+          if (facetSpecs_.isEmpty()) {
+            facetSpecs_ = other.facetSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureFacetSpecsIsMutable();
+            facetSpecs_.addAll(other.facetSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.facetSpecs_.isEmpty()) {
+          if (facetSpecsBuilder_.isEmpty()) {
+            facetSpecsBuilder_.dispose();
+            facetSpecsBuilder_ = null;
+            facetSpecs_ = other.facetSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            facetSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFacetSpecsFieldBuilder()
+                    : null;
+          } else {
+            facetSpecsBuilder_.addAllMessages(other.facetSpecs_);
+          }
+        }
+      }
+      if (other.hasBoostSpec()) {
+        mergeBoostSpec(other.getBoostSpec());
+      }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       if (other.hasQueryExpansionSpec()) {
         mergeQueryExpansionSpec(other.getQueryExpansionSpec());
       }
@@ -4776,7 +15024,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasContentSearchSpec()) {
@@ -4786,7 +15034,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         setSafeSearch(other.getSafeSearch());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4834,21 +15082,53 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 offset_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
+            case 58:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 58
+            case 66:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.parser(),
+                        extensionRegistry);
+                if (facetSpecsBuilder_ == null) {
+                  ensureFacetSpecsIsMutable();
+                  facetSpecs_.add(m);
+                } else {
+                  facetSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 82
             case 90:
               {
                 com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value> params__ =
@@ -4858,39 +15138,45 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(
                     getQueryExpansionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
+            case 154:
+              {
+                input.readMessage(getImageQueryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 154
             case 160:
               {
                 safeSearch_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 170
             case 178:
@@ -4902,14 +15188,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 178
             case 194:
               {
                 input.readMessage(
                     getContentSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 194
             default:
@@ -5294,6 +15580,196 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery imageQuery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery,
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder>
+        imageQueryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     *
+     * @return Whether the imageQuery field is set.
+     */
+    public boolean hasImageQuery() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     *
+     * @return The imageQuery.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery getImageQuery() {
+      if (imageQueryBuilder_ == null) {
+        return imageQuery_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance()
+            : imageQuery_;
+      } else {
+        return imageQueryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder setImageQuery(
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery value) {
+      if (imageQueryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageQuery_ = value;
+      } else {
+        imageQueryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder setImageQuery(
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder builderForValue) {
+      if (imageQueryBuilder_ == null) {
+        imageQuery_ = builderForValue.build();
+      } else {
+        imageQueryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder mergeImageQuery(
+        com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery value) {
+      if (imageQueryBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && imageQuery_ != null
+            && imageQuery_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery
+                    .getDefaultInstance()) {
+          getImageQueryBuilder().mergeFrom(value);
+        } else {
+          imageQuery_ = value;
+        }
+      } else {
+        imageQueryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public Builder clearImageQuery() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      imageQuery_ = null;
+      if (imageQueryBuilder_ != null) {
+        imageQueryBuilder_.dispose();
+        imageQueryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder
+        getImageQueryBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getImageQueryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder
+        getImageQueryOrBuilder() {
+      if (imageQueryBuilder_ != null) {
+        return imageQueryBuilder_.getMessageOrBuilder();
+      } else {
+        return imageQuery_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.getDefaultInstance()
+            : imageQuery_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Raw image query.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery,
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder>
+        getImageQueryFieldBuilder() {
+      if (imageQueryBuilder_ == null) {
+        imageQueryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery,
+                com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder>(
+                getImageQuery(), getParentForChildren(), isClean());
+        imageQuery_ = null;
+      }
+      return imageQueryBuilder_;
+    }
+
     private int pageSize_;
     /**
      *
@@ -5301,7 +15777,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1.Document]s to
      * return. If unspecified, defaults to a reasonable value. The maximum allowed
-     * value is 100. Values above 100 will be coerced to 100.
+     * value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -5320,7 +15796,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1.Document]s to
      * return. If unspecified, defaults to a reasonable value. The maximum allowed
-     * value is 100. Values above 100 will be coerced to 100.
+     * value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -5333,7 +15809,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5343,7 +15819,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1.Document]s to
      * return. If unspecified, defaults to a reasonable value. The maximum allowed
-     * value is 100. Values above 100 will be coerced to 100.
+     * value is 100. Values above 100 are coerced to 100.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -5353,7 +15829,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -5442,7 +15918,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5466,7 +15942,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -5495,7 +15971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5545,7 +16021,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setOffset(int value) {
 
       offset_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5568,8 +16044,265 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       offset_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the documents being filtered. Filter
+     * expression is case-sensitive.
+     *
+     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the documents being filtered. Filter
+     * expression is case-sensitive.
+     *
+     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the documents being filtered. Filter
+     * expression is case-sensitive.
+     *
+     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the documents being filtered. Filter
+     * expression is case-sensitive.
+     *
+     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the documents being filtered. Filter
+     * expression is case-sensitive.
+     *
+     * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The order in which documents are returned. Documents can be ordered by
+     * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+     * Leave it unset if ordered by relevance. `order_by` expression is
+     * case-sensitive.
+     *
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+     * </pre>
+     *
+     * <code>string order_by = 8;</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which documents are returned. Documents can be ordered by
+     * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+     * Leave it unset if ordered by relevance. `order_by` expression is
+     * case-sensitive.
+     *
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+     * </pre>
+     *
+     * <code>string order_by = 8;</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which documents are returned. Documents can be ordered by
+     * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+     * Leave it unset if ordered by relevance. `order_by` expression is
+     * case-sensitive.
+     *
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+     * </pre>
+     *
+     * <code>string order_by = 8;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which documents are returned. Documents can be ordered by
+     * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+     * Leave it unset if ordered by relevance. `order_by` expression is
+     * case-sensitive.
+     *
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+     * </pre>
+     *
+     * <code>string order_by = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which documents are returned. Documents can be ordered by
+     * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+     * Leave it unset if ordered by relevance. `order_by` expression is
+     * case-sensitive.
+     *
+     * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+     * </pre>
+     *
+     * <code>string order_by = 8;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5585,8 +16318,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5594,15 +16328,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5623,8 +16358,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5638,7 +16374,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5647,8 +16383,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5660,7 +16397,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5669,15 +16406,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
      */
     public Builder mergeUserInfo(com.google.cloud.discoveryengine.v1.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && userInfo_ != null
             && userInfo_ != com.google.cloud.discoveryengine.v1.UserInfo.getDefaultInstance()) {
           getUserInfoBuilder().mergeFrom(value);
@@ -5687,7 +16425,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5696,14 +16434,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
      */
     public Builder clearUserInfo() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
@@ -5717,14 +16456,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
      */
     public com.google.cloud.discoveryengine.v1.UserInfo.Builder getUserInfoBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
@@ -5733,8 +16473,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5753,8 +16494,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information about the end user.
-     * Highly recommended for analytics. The user_agent string in UserInfo will
-     * be used to deduce device_type for analytics.
+     * Highly recommended for analytics.
+     * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+     * is used to deduce `device_type` for analytics.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -5776,6 +16518,634 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return userInfoBuilder_;
     }
 
+    private java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>
+        facetSpecs_ = java.util.Collections.emptyList();
+
+    private void ensureFacetSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        facetSpecs_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>(
+                facetSpecs_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
+        facetSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>
+        getFacetSpecsList() {
+      if (facetSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(facetSpecs_);
+      } else {
+        return facetSpecsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public int getFacetSpecsCount() {
+      if (facetSpecsBuilder_ == null) {
+        return facetSpecs_.size();
+      } else {
+        return facetSpecsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getFacetSpecs(int index) {
+      if (facetSpecsBuilder_ == null) {
+        return facetSpecs_.get(index);
+      } else {
+        return facetSpecsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder setFacetSpecs(
+        int index, com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec value) {
+      if (facetSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.set(index, value);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder setFacetSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder builderForValue) {
+      if (facetSpecsBuilder_ == null) {
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        facetSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder addFacetSpecs(
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec value) {
+      if (facetSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.add(value);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder addFacetSpecs(
+        int index, com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec value) {
+      if (facetSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.add(index, value);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder addFacetSpecs(
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder builderForValue) {
+      if (facetSpecsBuilder_ == null) {
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        facetSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder addFacetSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder builderForValue) {
+      if (facetSpecsBuilder_ == null) {
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        facetSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder addAllFacetSpecs(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>
+            values) {
+      if (facetSpecsBuilder_ == null) {
+        ensureFacetSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, facetSpecs_);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder clearFacetSpecs() {
+      if (facetSpecsBuilder_ == null) {
+        facetSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public Builder removeFacetSpecs(int index) {
+      if (facetSpecsBuilder_ == null) {
+        ensureFacetSpecsIsMutable();
+        facetSpecs_.remove(index);
+        onChanged();
+      } else {
+        facetSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder getFacetSpecsBuilder(
+        int index) {
+      return getFacetSpecsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder
+        getFacetSpecsOrBuilder(int index) {
+      if (facetSpecsBuilder_ == null) {
+        return facetSpecs_.get(index);
+      } else {
+        return facetSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
+        getFacetSpecsOrBuilderList() {
+      if (facetSpecsBuilder_ != null) {
+        return facetSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(facetSpecs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder
+        addFacetSpecsBuilder() {
+      return getFacetSpecsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder addFacetSpecsBuilder(
+        int index) {
+      return getFacetSpecsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Facet specifications for faceted search. If empty, no facets are returned.
+     *
+     * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+     * error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder>
+        getFacetSpecsBuilderList() {
+      return getFacetSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
+        getFacetSpecsFieldBuilder() {
+      if (facetSpecsBuilder_ == null) {
+        facetSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>(
+                facetSpecs_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+        facetSpecs_ = null;
+      }
+      return facetSpecsBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boostSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>
+        boostSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     *
+     * @return Whether the boostSpec field is set.
+     */
+    public boolean hasBoostSpec() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     *
+     * @return The boostSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec() {
+      if (boostSpecBuilder_ == null) {
+        return boostSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+            : boostSpec_;
+      } else {
+        return boostSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder setBoostSpec(com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec value) {
+      if (boostSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        boostSpec_ = value;
+      } else {
+        boostSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder setBoostSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder builderForValue) {
+      if (boostSpecBuilder_ == null) {
+        boostSpec_ = builderForValue.build();
+      } else {
+        boostSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder mergeBoostSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec value) {
+      if (boostSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && boostSpec_ != null
+            && boostSpec_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                    .getDefaultInstance()) {
+          getBoostSpecBuilder().mergeFrom(value);
+        } else {
+          boostSpec_ = value;
+        }
+      } else {
+        boostSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder clearBoostSpec() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      boostSpec_ = null;
+      if (boostSpecBuilder_ != null) {
+        boostSpecBuilder_.dispose();
+        boostSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder
+        getBoostSpecBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getBoostSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder
+        getBoostSpecOrBuilder() {
+      if (boostSpecBuilder_ != null) {
+        return boostSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return boostSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+            : boostSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>
+        getBoostSpecFieldBuilder() {
+      if (boostSpecBuilder_ == null) {
+        boostSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>(
+                getBoostSpec(), getParentForChildren(), isClean());
+        boostSpec_ = null;
+      }
+      return boostSpecBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> params_;
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -5794,7 +17164,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return params_;
     }
@@ -5911,7 +17281,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -5942,7 +17312,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -5970,7 +17340,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableParams().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -5992,7 +17362,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllParams(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -6008,7 +17378,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6018,14 +17388,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionSpec field is set.
      */
     public boolean hasQueryExpansionSpec() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6050,7 +17420,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6067,7 +17437,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6076,7 +17446,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6091,7 +17461,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6100,7 +17470,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6110,7 +17480,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec value) {
       if (queryExpansionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && queryExpansionSpec_ != null
             && queryExpansionSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec
@@ -6122,7 +17492,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6131,7 +17501,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6139,7 +17509,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00002000);
       queryExpansionSpec_ = null;
       if (queryExpansionSpecBuilder_ != null) {
         queryExpansionSpecBuilder_.dispose();
@@ -6153,7 +17523,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6162,7 +17532,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec.Builder
         getQueryExpansionSpecBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
@@ -6171,7 +17541,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6194,7 +17564,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion occurs.
      * </pre>
      *
      * <code>
@@ -6230,7 +17600,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6240,14 +17610,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6272,7 +17642,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6289,7 +17659,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6298,7 +17668,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6313,7 +17683,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6322,7 +17692,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6332,7 +17702,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec
@@ -6344,7 +17714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6353,7 +17723,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6361,7 +17731,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00004000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -6375,7 +17745,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6384,7 +17754,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -6393,7 +17763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6416,7 +17786,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The spell correction specification that specifies the mode under
-     * which spell correction will take effect.
+     * which spell correction takes effect.
      * </pre>
      *
      * <code>
@@ -6541,7 +17911,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6571,7 +17941,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6606,7 +17976,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6621,8 +17991,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6632,14 +18001,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentSearchSpec field is set.
      */
     public boolean hasContentSearchSpec() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6663,8 +18031,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6681,7 +18048,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6689,8 +18056,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6705,7 +18071,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6713,8 +18079,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6724,7 +18089,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContentSearchSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec value) {
       if (contentSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && contentSearchSpec_ != null
             && contentSearchSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
@@ -6736,7 +18101,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6744,8 +18109,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6753,7 +18117,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContentSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00010000);
       contentSearchSpec_ = null;
       if (contentSearchSpecBuilder_ != null) {
         contentSearchSpecBuilder_.dispose();
@@ -6766,8 +18130,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6776,7 +18139,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.Builder
         getContentSearchSpecBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getContentSearchSpecFieldBuilder().getBuilder();
     }
@@ -6784,8 +18147,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6807,8 +18169,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The content search spec that configs the desired behavior of content
-     * search.
+     * A specification for configuring the behavior of content search.
      * </pre>
      *
      * <code>
@@ -6838,7 +18199,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -6854,7 +18215,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -6865,7 +18226,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSafeSearch(boolean value) {
 
       safeSearch_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6874,7 +18235,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to turn on safe search. This is only supported for
-     * [ContentConfig.PUBLIC_WEBSITE][].
+     * website search.
      * </pre>
      *
      * <code>bool safe_search = 20;</code>
@@ -6882,7 +18243,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSafeSearch() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       safeSearch_ = false;
       onChanged();
       return this;
@@ -6908,7 +18269,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return userLabels_;
     }
@@ -7057,7 +18418,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -7096,7 +18457,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -7132,7 +18493,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -7162,7 +18523,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 

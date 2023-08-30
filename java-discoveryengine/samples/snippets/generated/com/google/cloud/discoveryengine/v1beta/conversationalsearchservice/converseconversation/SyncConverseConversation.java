@@ -22,8 +22,10 @@ import com.google.cloud.discoveryengine.v1beta.ConversationName;
 import com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceClient;
 import com.google.cloud.discoveryengine.v1beta.ConverseConversationRequest;
 import com.google.cloud.discoveryengine.v1beta.ConverseConversationResponse;
+import com.google.cloud.discoveryengine.v1beta.SearchRequest;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigName;
 import com.google.cloud.discoveryengine.v1beta.TextInput;
+import java.util.HashMap;
 
 public class SyncConverseConversation {
 
@@ -52,6 +54,8 @@ public class SyncConverseConversation {
                       .toString())
               .setConversation(Conversation.newBuilder().build())
               .setSafeSearch(true)
+              .putAllUserLabels(new HashMap<String, String>())
+              .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
               .build();
       ConverseConversationResponse response =
           conversationalSearchServiceClient.converseConversation(request);

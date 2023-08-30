@@ -77,6 +77,7 @@ public class CompletionServiceClientHttpJsonTest {
     CompleteQueryResponse expectedResponse =
         CompleteQueryResponse.newBuilder()
             .addAllQuerySuggestions(new ArrayList<CompleteQueryResponse.QuerySuggestion>())
+            .setTailMatchTriggered(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -89,6 +90,7 @@ public class CompletionServiceClientHttpJsonTest {
             .setQuery("query107944136")
             .setQueryModel("queryModel-184930495")
             .setUserPseudoId("userPseudoId-1155274652")
+            .setIncludeTailSuggestions(true)
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -126,6 +128,7 @@ public class CompletionServiceClientHttpJsonTest {
               .setQuery("query107944136")
               .setQueryModel("queryModel-184930495")
               .setUserPseudoId("userPseudoId-1155274652")
+              .setIncludeTailSuggestions(true)
               .build();
       client.completeQuery(request);
       Assert.fail("No exception raised");

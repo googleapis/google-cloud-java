@@ -63,46 +63,50 @@ public final class ConversationProto {
       "\n6google/cloud/discoveryengine/v1beta/co"
           + "nversation.proto\022#google.cloud.discovery"
           + "engine.v1beta\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\201\005\n\014Conversat"
-          + "ion\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022F\n\005state\030\002 \001(\01627"
-          + ".google.cloud.discoveryengine.v1beta.Con"
-          + "versation.State\022\026\n\016user_pseudo_id\030\003 \001(\t\022"
-          + "J\n\010messages\030\004 \003(\01328.google.cloud.discove"
-          + "ryengine.v1beta.ConversationMessage\0224\n\ns"
-          + "tart_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\004\342A\001\003\0222\n\010end_time\030\006 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\004\342A\001\003\">\n\005State\022\025\n\021STATE_"
-          + "UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\r\n\tCOMPLE"
-          + "TED\020\002:\206\002\352A\202\002\n+discoveryengine.googleapis"
-          + ".com/Conversation\022\\projects/{project}/lo"
-          + "cations/{location}/dataStores/{data_stor"
-          + "e}/conversations/{conversation}\022uproject"
-          + "s/{project}/locations/{location}/collect"
-          + "ions/{collection}/dataStores/{data_store"
-          + "}/conversations/{conversation}\"\253\001\n\005Reply"
-          + "\022\r\n\005reply\030\001 \001(\t\022H\n\nreferences\030\002 \003(\01324.go"
-          + "ogle.cloud.discoveryengine.v1beta.Reply."
-          + "Reference\032I\n\tReference\022\013\n\003uri\030\001 \001(\t\022\023\n\013a"
-          + "nchor_text\030\002 \001(\t\022\r\n\005start\030\003 \001(\005\022\013\n\003end\030\004"
-          + " \001(\005\"I\n\023ConversationContext\022\031\n\021context_d"
-          + "ocuments\030\001 \003(\t\022\027\n\017active_document\030\002 \001(\t\""
-          + "e\n\tTextInput\022\r\n\005input\030\001 \001(\t\022I\n\007context\030\002"
-          + " \001(\01328.google.cloud.discoveryengine.v1be"
-          + "ta.ConversationContext\"\332\001\n\023ConversationM"
-          + "essage\022D\n\nuser_input\030\001 \001(\0132..google.clou"
-          + "d.discoveryengine.v1beta.TextInputH\000\022;\n\005"
-          + "reply\030\002 \001(\0132*.google.cloud.discoveryengi"
-          + "ne.v1beta.ReplyH\000\0225\n\013create_time\030\003 \001(\0132\032"
-          + ".google.protobuf.TimestampB\004\342A\001\003B\t\n\007mess"
-          + "ageB\230\002\n\'com.google.cloud.discoveryengine"
-          + ".v1betaB\021ConversationProtoP\001ZQcloud.goog"
-          + "le.com/go/discoveryengine/apiv1beta/disc"
-          + "overyenginepb;discoveryenginepb\242\002\017DISCOV"
-          + "ERYENGINE\252\002#Google.Cloud.DiscoveryEngine"
-          + ".V1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V"
-          + "1beta\352\002&Google::Cloud::DiscoveryEngine::"
-          + "V1betab\006proto3"
+          + ".proto\032\031google/api/resource.proto\0328googl"
+          + "e/cloud/discoveryengine/v1beta/search_se"
+          + "rvice.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\201\005\n\014Conversation\022\022\n\004name\030\001 \001(\tB\004\342A\001"
+          + "\005\022F\n\005state\030\002 \001(\01627.google.cloud.discover"
+          + "yengine.v1beta.Conversation.State\022\026\n\016use"
+          + "r_pseudo_id\030\003 \001(\t\022J\n\010messages\030\004 \003(\01328.go"
+          + "ogle.cloud.discoveryengine.v1beta.Conver"
+          + "sationMessage\0224\n\nstart_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\004\342A\001\003\0222\n\010end_time\030"
+          + "\006 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\""
+          + ">\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n\013IN_PR"
+          + "OGRESS\020\001\022\r\n\tCOMPLETED\020\002:\206\002\352A\202\002\n+discover"
+          + "yengine.googleapis.com/Conversation\022\\pro"
+          + "jects/{project}/locations/{location}/dat"
+          + "aStores/{data_store}/conversations/{conv"
+          + "ersation}\022uprojects/{project}/locations/"
+          + "{location}/collections/{collection}/data"
+          + "Stores/{data_store}/conversations/{conve"
+          + "rsation}\"\205\002\n\005Reply\022\021\n\005reply\030\001 \001(\tB\002\030\001\022L\n"
+          + "\nreferences\030\002 \003(\01324.google.cloud.discove"
+          + "ryengine.v1beta.Reply.ReferenceB\002\030\001\022L\n\007s"
+          + "ummary\030\003 \001(\0132;.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchResponse.Summary\032M\n\tRef"
+          + "erence\022\013\n\003uri\030\001 \001(\t\022\023\n\013anchor_text\030\002 \001(\t"
+          + "\022\r\n\005start\030\003 \001(\005\022\013\n\003end\030\004 \001(\005:\002\030\001\"I\n\023Conv"
+          + "ersationContext\022\031\n\021context_documents\030\001 \003"
+          + "(\t\022\027\n\017active_document\030\002 \001(\t\"e\n\tTextInput"
+          + "\022\r\n\005input\030\001 \001(\t\022I\n\007context\030\002 \001(\01328.googl"
+          + "e.cloud.discoveryengine.v1beta.Conversat"
+          + "ionContext\"\332\001\n\023ConversationMessage\022D\n\nus"
+          + "er_input\030\001 \001(\0132..google.cloud.discoverye"
+          + "ngine.v1beta.TextInputH\000\022;\n\005reply\030\002 \001(\0132"
+          + "*.google.cloud.discoveryengine.v1beta.Re"
+          + "plyH\000\0225\n\013create_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\004\342A\001\003B\t\n\007messageB\230\002\n\'com."
+          + "google.cloud.discoveryengine.v1betaB\021Con"
+          + "versationProtoP\001ZQcloud.google.com/go/di"
+          + "scoveryengine/apiv1beta/discoveryenginep"
+          + "b;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#"
+          + "Google.Cloud.DiscoveryEngine.V1Beta\312\002#Go"
+          + "ogle\\Cloud\\DiscoveryEngine\\V1beta\352\002&Goog"
+          + "le::Cloud::DiscoveryEngine::V1betab\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,6 +114,7 @@ public final class ConversationProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.SearchServiceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1beta_Conversation_descriptor =
@@ -126,7 +131,7 @@ public final class ConversationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Reply_descriptor,
             new java.lang.String[] {
-              "Reply", "References",
+              "Reply", "References", "Summary",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Reply_Reference_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Reply_descriptor
@@ -170,6 +175,7 @@ public final class ConversationProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.SearchServiceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
