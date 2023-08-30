@@ -22,76 +22,72 @@ package com.google.cloud.filestore.v1beta1;
  *
  *
  * <pre>
- * RevertInstanceRequest reverts the given instance's file share to the
- * specified snapshot.
+ * ManagedActiveDirectoryConfig contains all the parameters for connecting
+ * to Managed Active Directory.
  * </pre>
  *
- * Protobuf type {@code google.cloud.filestore.v1beta1.RevertInstanceRequest}
+ * Protobuf type {@code google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig}
  */
-public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ManagedActiveDirectoryConfig extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.RevertInstanceRequest)
-    RevertInstanceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig)
+    ManagedActiveDirectoryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RevertInstanceRequest.newBuilder() to construct.
-  private RevertInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ManagedActiveDirectoryConfig.newBuilder() to construct.
+  private ManagedActiveDirectoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RevertInstanceRequest() {
-    name_ = "";
-    targetSnapshotId_ = "";
+  private ManagedActiveDirectoryConfig() {
+    domain_ = "";
+    computer_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RevertInstanceRequest();
+    return new ManagedActiveDirectoryConfig();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
-        .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor;
+        .internal_static_google_cloud_filestore_v1beta1_ManagedActiveDirectoryConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
-        .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_fieldAccessorTable
+        .internal_static_google_cloud_filestore_v1beta1_ManagedActiveDirectoryConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.filestore.v1beta1.RevertInstanceRequest.class,
-            com.google.cloud.filestore.v1beta1.RevertInstanceRequest.Builder.class);
+            com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.class,
+            com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int DOMAIN_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
    * <pre>
-   * Required.
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-   * resource name of the instance, in the format
+   * Fully qualified domain name.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string domain = 1;</code>
    *
-   * @return The name.
+   * @return The domain.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getDomain() {
+    java.lang.Object ref = domain_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      domain_ = s;
       return s;
     }
   }
@@ -99,56 +95,53 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-   * resource name of the instance, in the format
+   * Fully qualified domain name.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string domain = 1;</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for domain.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getDomainBytes() {
+    java.lang.Object ref = domain_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      domain_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TARGET_SNAPSHOT_ID_FIELD_NUMBER = 2;
+  public static final int COMPUTER_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object targetSnapshotId_ = "";
+  private volatile java.lang.Object computer_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+   * The computer name is used as a prefix to the mount remote target.
+   * Example: if the computer_name is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string computer = 2;</code>
    *
-   * @return The targetSnapshotId.
+   * @return The computer.
    */
   @java.lang.Override
-  public java.lang.String getTargetSnapshotId() {
-    java.lang.Object ref = targetSnapshotId_;
+  public java.lang.String getComputer() {
+    java.lang.Object ref = computer_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      targetSnapshotId_ = s;
+      computer_ = s;
       return s;
     }
   }
@@ -156,22 +149,23 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+   * The computer name is used as a prefix to the mount remote target.
+   * Example: if the computer_name is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string computer = 2;</code>
    *
-   * @return The bytes for targetSnapshotId.
+   * @return The bytes for computer.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getTargetSnapshotIdBytes() {
-    java.lang.Object ref = targetSnapshotId_;
+  public com.google.protobuf.ByteString getComputerBytes() {
+    java.lang.Object ref = computer_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      targetSnapshotId_ = b;
+      computer_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -192,11 +186,11 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, domain_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetSnapshotId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetSnapshotId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computer_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, computer_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -207,11 +201,11 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, domain_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetSnapshotId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetSnapshotId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computer_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, computer_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -223,14 +217,14 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.filestore.v1beta1.RevertInstanceRequest)) {
+    if (!(obj instanceof com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.filestore.v1beta1.RevertInstanceRequest other =
-        (com.google.cloud.filestore.v1beta1.RevertInstanceRequest) obj;
+    com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig other =
+        (com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!getTargetSnapshotId().equals(other.getTargetSnapshotId())) return false;
+    if (!getDomain().equals(other.getDomain())) return false;
+    if (!getComputer().equals(other.getComputer())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -242,80 +236,80 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TARGET_SNAPSHOT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTargetSnapshotId().hashCode();
+    hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getDomain().hashCode();
+    hash = (37 * hash) + COMPUTER_FIELD_NUMBER;
+    hash = (53 * hash) + getComputer().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -333,7 +327,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static Builder newBuilder(
-      com.google.cloud.filestore.v1beta1.RevertInstanceRequest prototype) {
+      com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -351,32 +345,32 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * RevertInstanceRequest reverts the given instance's file share to the
-   * specified snapshot.
+   * ManagedActiveDirectoryConfig contains all the parameters for connecting
+   * to Managed Active Directory.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.filestore.v1beta1.RevertInstanceRequest}
+   * Protobuf type {@code google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.RevertInstanceRequest)
-      com.google.cloud.filestore.v1beta1.RevertInstanceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig)
+      com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor;
+          .internal_static_google_cloud_filestore_v1beta1_ManagedActiveDirectoryConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_fieldAccessorTable
+          .internal_static_google_cloud_filestore_v1beta1_ManagedActiveDirectoryConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.filestore.v1beta1.RevertInstanceRequest.class,
-              com.google.cloud.filestore.v1beta1.RevertInstanceRequest.Builder.class);
+              com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.class,
+              com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.Builder.class);
     }
 
-    // Construct using com.google.cloud.filestore.v1beta1.RevertInstanceRequest.newBuilder()
+    // Construct using com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -387,25 +381,26 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      name_ = "";
-      targetSnapshotId_ = "";
+      domain_ = "";
+      computer_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor;
+          .internal_static_google_cloud_filestore_v1beta1_ManagedActiveDirectoryConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1beta1.RevertInstanceRequest getDefaultInstanceForType() {
-      return com.google.cloud.filestore.v1beta1.RevertInstanceRequest.getDefaultInstance();
+    public com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig
+        getDefaultInstanceForType() {
+      return com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1beta1.RevertInstanceRequest build() {
-      com.google.cloud.filestore.v1beta1.RevertInstanceRequest result = buildPartial();
+    public com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig build() {
+      com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -413,9 +408,9 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1beta1.RevertInstanceRequest buildPartial() {
-      com.google.cloud.filestore.v1beta1.RevertInstanceRequest result =
-          new com.google.cloud.filestore.v1beta1.RevertInstanceRequest(this);
+    public com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig buildPartial() {
+      com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig result =
+          new com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -423,13 +418,14 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.filestore.v1beta1.RevertInstanceRequest result) {
+    private void buildPartial0(
+        com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
+        result.domain_ = domain_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.targetSnapshotId_ = targetSnapshotId_;
+        result.computer_ = computer_;
       }
     }
 
@@ -468,24 +464,26 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.filestore.v1beta1.RevertInstanceRequest) {
-        return mergeFrom((com.google.cloud.filestore.v1beta1.RevertInstanceRequest) other);
+      if (other instanceof com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig) {
+        return mergeFrom((com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.filestore.v1beta1.RevertInstanceRequest other) {
-      if (other == com.google.cloud.filestore.v1beta1.RevertInstanceRequest.getDefaultInstance())
+    public Builder mergeFrom(
+        com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig other) {
+      if (other
+          == com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getDomain().isEmpty()) {
+        domain_ = other.domain_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getTargetSnapshotId().isEmpty()) {
-        targetSnapshotId_ = other.targetSnapshotId_;
+      if (!other.getComputer().isEmpty()) {
+        computer_ = other.computer_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
@@ -517,13 +515,13 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
               break;
             case 10:
               {
-                name_ = input.readStringRequireUtf8();
+                domain_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
-                targetSnapshotId_ = input.readStringRequireUtf8();
+                computer_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
@@ -546,28 +544,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object domain_ = "";
     /**
      *
      *
      * <pre>
-     * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * Fully qualified domain name.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string domain = 1;</code>
      *
-     * @return The name.
+     * @return The domain.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        domain_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -577,23 +571,19 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * Fully qualified domain name.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string domain = 1;</code>
      *
-     * @return The bytes for name.
+     * @return The bytes for domain.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getDomainBytes() {
+      java.lang.Object ref = domain_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        domain_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -603,23 +593,19 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * Fully qualified domain name.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string domain = 1;</code>
      *
-     * @param value The name to set.
+     * @param value The domain to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setDomain(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      name_ = value;
+      domain_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -628,19 +614,15 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * Fully qualified domain name.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string domain = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
+    public Builder clearDomain() {
+      domain_ = getDefaultInstance().getDomain();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -649,49 +631,46 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * Fully qualified domain name.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string domain = 1;</code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for domain to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setDomainBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      name_ = value;
+      domain_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private java.lang.Object targetSnapshotId_ = "";
+    private java.lang.Object computer_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * The computer name is used as a prefix to the mount remote target.
+     * Example: if the computer_name is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string computer = 2;</code>
      *
-     * @return The targetSnapshotId.
+     * @return The computer.
      */
-    public java.lang.String getTargetSnapshotId() {
-      java.lang.Object ref = targetSnapshotId_;
+    public java.lang.String getComputer() {
+      java.lang.Object ref = computer_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        targetSnapshotId_ = s;
+        computer_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -701,21 +680,22 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * The computer name is used as a prefix to the mount remote target.
+     * Example: if the computer_name is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string computer = 2;</code>
      *
-     * @return The bytes for targetSnapshotId.
+     * @return The bytes for computer.
      */
-    public com.google.protobuf.ByteString getTargetSnapshotIdBytes() {
-      java.lang.Object ref = targetSnapshotId_;
+    public com.google.protobuf.ByteString getComputerBytes() {
+      java.lang.Object ref = computer_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        targetSnapshotId_ = b;
+        computer_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -725,21 +705,22 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * The computer name is used as a prefix to the mount remote target.
+     * Example: if the computer_name is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string computer = 2;</code>
      *
-     * @param value The targetSnapshotId to set.
+     * @param value The computer to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetSnapshotId(java.lang.String value) {
+    public Builder setComputer(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      targetSnapshotId_ = value;
+      computer_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -748,17 +729,18 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * The computer name is used as a prefix to the mount remote target.
+     * Example: if the computer_name is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string computer = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearTargetSnapshotId() {
-      targetSnapshotId_ = getDefaultInstance().getTargetSnapshotId();
+    public Builder clearComputer() {
+      computer_ = getDefaultInstance().getComputer();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -767,22 +749,23 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * The computer name is used as a prefix to the mount remote target.
+     * Example: if the computer_name is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string computer = 2;</code>
      *
-     * @param value The bytes for targetSnapshotId to set.
+     * @param value The bytes for computer to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetSnapshotIdBytes(com.google.protobuf.ByteString value) {
+    public Builder setComputerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      targetSnapshotId_ = value;
+      computer_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -799,24 +782,26 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.RevertInstanceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.RevertInstanceRequest)
-  private static final com.google.cloud.filestore.v1beta1.RevertInstanceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig)
+  private static final com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.RevertInstanceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig();
   }
 
-  public static com.google.cloud.filestore.v1beta1.RevertInstanceRequest getDefaultInstance() {
+  public static com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RevertInstanceRequest> PARSER =
-      new com.google.protobuf.AbstractParser<RevertInstanceRequest>() {
+  private static final com.google.protobuf.Parser<ManagedActiveDirectoryConfig> PARSER =
+      new com.google.protobuf.AbstractParser<ManagedActiveDirectoryConfig>() {
         @java.lang.Override
-        public RevertInstanceRequest parsePartialFrom(
+        public ManagedActiveDirectoryConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -835,17 +820,18 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
         }
       };
 
-  public static com.google.protobuf.Parser<RevertInstanceRequest> parser() {
+  public static com.google.protobuf.Parser<ManagedActiveDirectoryConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RevertInstanceRequest> getParserForType() {
+  public com.google.protobuf.Parser<ManagedActiveDirectoryConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.filestore.v1beta1.RevertInstanceRequest getDefaultInstanceForType() {
+  public com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

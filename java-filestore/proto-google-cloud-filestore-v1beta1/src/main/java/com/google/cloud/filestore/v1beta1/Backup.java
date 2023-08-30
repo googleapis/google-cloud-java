@@ -140,6 +140,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     DELETING(4),
+    /**
+     *
+     *
+     * <pre>
+     * Backup is not valid and cannot be used for creating new instances or
+     * restoring existing instances.
+     * </pre>
+     *
+     * <code>INVALID = 5;</code>
+     */
+    INVALID(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -194,6 +205,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Backup is not valid and cannot be used for creating new instances or
+     * restoring existing instances.
+     * </pre>
+     *
+     * <code>INVALID = 5;</code>
+     */
+    public static final int INVALID_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -229,6 +251,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           return READY;
         case 4:
           return DELETING;
+        case 5:
+          return INVALID;
         default:
           return null;
       }
@@ -602,8 +626,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The size of the storage used by the backup. As backups share storage,
-   * this number is expected to change with backup creation/deletion.
+   * Output only. The size of the storage used by the backup. As backups share
+   * storage, this number is expected to change with backup creation/deletion.
    * </pre>
    *
    * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -729,8 +753,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -747,8 +771,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -770,7 +794,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Amount of bytes that will be downloaded if the backup is restored
+   * Output only. Amount of bytes that will be downloaded if the backup is
+   * restored
    * </pre>
    *
    * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2301,8 +2326,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2317,8 +2342,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2337,8 +2362,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2584,8 +2609,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2602,8 +2627,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2623,8 +2648,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2645,8 +2670,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2669,8 +2694,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2691,7 +2716,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2706,7 +2732,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2725,7 +2752,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
