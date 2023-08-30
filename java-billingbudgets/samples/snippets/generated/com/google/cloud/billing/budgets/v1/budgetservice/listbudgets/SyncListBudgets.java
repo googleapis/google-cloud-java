@@ -38,6 +38,7 @@ public class SyncListBudgets {
       ListBudgetsRequest request =
           ListBudgetsRequest.newBuilder()
               .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setScope("scope109264468")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();
