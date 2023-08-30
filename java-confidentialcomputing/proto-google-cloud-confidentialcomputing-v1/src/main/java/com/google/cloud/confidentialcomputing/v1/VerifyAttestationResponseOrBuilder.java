@@ -47,4 +47,70 @@ public interface VerifyAttestationResponseOrBuilder
    * @return The bytes for oidcClaimsToken.
    */
   com.google.protobuf.ByteString getOidcClaimsTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of messages that carry the partial error details
+   * related to VerifyAttestation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.rpc.Status> getPartialErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of messages that carry the partial error details
+   * related to VerifyAttestation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.Status getPartialErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of messages that carry the partial error details
+   * related to VerifyAttestation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPartialErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of messages that carry the partial error details
+   * related to VerifyAttestation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of messages that carry the partial error details
+   * related to VerifyAttestation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index);
 }

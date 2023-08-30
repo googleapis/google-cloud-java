@@ -33,8 +33,10 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -183,6 +185,7 @@ public class ConfidentialComputingClientTest {
     VerifyAttestationResponse expectedResponse =
         VerifyAttestationResponse.newBuilder()
             .setOidcClaimsToken("oidcClaimsToken-566980887")
+            .addAllPartialErrors(new ArrayList<Status>())
             .build();
     mockConfidentialComputing.addResponse(expectedResponse);
 
