@@ -82,6 +82,8 @@ import com.google.cloud.aiplatform.v1.ListTensorboardsRequest;
 import com.google.cloud.aiplatform.v1.ListTensorboardsResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest;
@@ -184,6 +186,8 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
       deleteTensorboardOperationSettings;
   private final UnaryCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
       readTensorboardUsageSettings;
+  private final UnaryCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeSettings;
   private final UnaryCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
       createTensorboardExperimentSettings;
   private final UnaryCallSettings<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -725,6 +729,12 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     return readTensorboardUsageSettings;
   }
 
+  /** Returns the object with the settings used for calls to readTensorboardSize. */
+  public UnaryCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeSettings() {
+    return readTensorboardSizeSettings;
+  }
+
   /** Returns the object with the settings used for calls to createTensorboardExperiment. */
   public UnaryCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
       createTensorboardExperimentSettings() {
@@ -1008,6 +1018,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     deleteTensorboardOperationSettings =
         settingsBuilder.deleteTensorboardOperationSettings().build();
     readTensorboardUsageSettings = settingsBuilder.readTensorboardUsageSettings().build();
+    readTensorboardSizeSettings = settingsBuilder.readTensorboardSizeSettings().build();
     createTensorboardExperimentSettings =
         settingsBuilder.createTensorboardExperimentSettings().build();
     getTensorboardExperimentSettings = settingsBuilder.getTensorboardExperimentSettings().build();
@@ -1084,6 +1095,8 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     private final UnaryCallSettings.Builder<
             ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
         readTensorboardUsageSettings;
+    private final UnaryCallSettings.Builder<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+        readTensorboardSizeSettings;
     private final UnaryCallSettings.Builder<
             CreateTensorboardExperimentRequest, TensorboardExperiment>
         createTensorboardExperimentSettings;
@@ -1206,6 +1219,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
       deleteTensorboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTensorboardOperationSettings = OperationCallSettings.newBuilder();
       readTensorboardUsageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readTensorboardSizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTensorboardExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTensorboardExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTensorboardExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1250,6 +1264,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
               listTensorboardsSettings,
               deleteTensorboardSettings,
               readTensorboardUsageSettings,
+              readTensorboardSizeSettings,
               createTensorboardExperimentSettings,
               getTensorboardExperimentSettings,
               updateTensorboardExperimentSettings,
@@ -1292,6 +1307,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
       deleteTensorboardSettings = settings.deleteTensorboardSettings.toBuilder();
       deleteTensorboardOperationSettings = settings.deleteTensorboardOperationSettings.toBuilder();
       readTensorboardUsageSettings = settings.readTensorboardUsageSettings.toBuilder();
+      readTensorboardSizeSettings = settings.readTensorboardSizeSettings.toBuilder();
       createTensorboardExperimentSettings =
           settings.createTensorboardExperimentSettings.toBuilder();
       getTensorboardExperimentSettings = settings.getTensorboardExperimentSettings.toBuilder();
@@ -1346,6 +1362,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
               listTensorboardsSettings,
               deleteTensorboardSettings,
               readTensorboardUsageSettings,
+              readTensorboardSizeSettings,
               createTensorboardExperimentSettings,
               getTensorboardExperimentSettings,
               updateTensorboardExperimentSettings,
@@ -1416,6 +1433,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
       builder
           .readTensorboardUsageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .readTensorboardSizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1785,6 +1807,12 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     public UnaryCallSettings.Builder<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
         readTensorboardUsageSettings() {
       return readTensorboardUsageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to readTensorboardSize. */
+    public UnaryCallSettings.Builder<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+        readTensorboardSizeSettings() {
+      return readTensorboardSizeSettings;
     }
 
     /** Returns the builder for the settings used for calls to createTensorboardExperiment. */

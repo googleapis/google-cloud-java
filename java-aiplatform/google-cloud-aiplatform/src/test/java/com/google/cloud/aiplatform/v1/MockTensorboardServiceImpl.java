@@ -187,6 +187,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
   }
 
   @Override
+  public void readTensorboardSize(
+      ReadTensorboardSizeRequest request,
+      StreamObserver<ReadTensorboardSizeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReadTensorboardSizeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReadTensorboardSizeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadTensorboardSize, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReadTensorboardSizeResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createTensorboardExperiment(
       CreateTensorboardExperimentRequest request,
       StreamObserver<TensorboardExperiment> responseObserver) {

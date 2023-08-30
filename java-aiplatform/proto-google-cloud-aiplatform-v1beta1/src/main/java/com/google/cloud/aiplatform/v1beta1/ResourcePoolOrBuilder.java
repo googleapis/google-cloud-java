@@ -27,12 +27,12 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique ID in a PersistentResource to refer the this resource
+   * Immutable. The unique ID in a PersistentResource to refer the this resource
    * pool. User can specify it if need to use it, otherwise we will generate it
    * automatically.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The id.
    */
@@ -41,12 +41,12 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique ID in a PersistentResource to refer the this resource
+   * Immutable. The unique ID in a PersistentResource to refer the this resource
    * pool. User can specify it if need to use it, otherwise we will generate it
    * automatically.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for id.
    */
@@ -158,25 +158,6 @@ public interface ResourcePoolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The number of machines currently not in use by training jobs
-   * for this resource pool. Deprecated. Use `used_replica_count` instead.
-   * </pre>
-   *
-   * <code>
-   * int64 idle_replica_count = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.ResourcePool.idle_replica_count is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=187
-   * @return The idleReplicaCount.
-   */
-  @java.lang.Deprecated
-  long getIdleReplicaCount();
 
   /**
    *

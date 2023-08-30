@@ -64,6 +64,8 @@ import com.google.cloud.aiplatform.v1.ListTensorboardsRequest;
 import com.google.cloud.aiplatform.v1.ListTensorboardsResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest;
@@ -168,6 +170,18 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardUsageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardUsageResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeMethodDescriptor =
+          MethodDescriptor.<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.TensorboardService/ReadTensorboardSize")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardSizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardSizeResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateTensorboardExperimentRequest, TensorboardExperiment>
@@ -536,6 +550,8 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
       deleteTensorboardOperationCallable;
   private final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
       readTensorboardUsageCallable;
+  private final UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable;
   private final UnaryCallable<CreateTensorboardExperimentRequest, TensorboardExperiment>
       createTensorboardExperimentCallable;
   private final UnaryCallable<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -714,6 +730,17 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
         readTensorboardUsageTransportSettings =
             GrpcCallSettings.<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>newBuilder()
                 .setMethodDescriptor(readTensorboardUsageMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("tensorboard", String.valueOf(request.getTensorboard()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+        readTensorboardSizeTransportSettings =
+            GrpcCallSettings.<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>newBuilder()
+                .setMethodDescriptor(readTensorboardSizeMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1102,6 +1129,11 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             readTensorboardUsageTransportSettings,
             settings.readTensorboardUsageSettings(),
             clientContext);
+    this.readTensorboardSizeCallable =
+        callableFactory.createUnaryCallable(
+            readTensorboardSizeTransportSettings,
+            settings.readTensorboardSizeSettings(),
+            clientContext);
     this.createTensorboardExperimentCallable =
         callableFactory.createUnaryCallable(
             createTensorboardExperimentTransportSettings,
@@ -1340,6 +1372,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
       readTensorboardUsageCallable() {
     return readTensorboardUsageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable() {
+    return readTensorboardSizeCallable;
   }
 
   @Override

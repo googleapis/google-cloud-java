@@ -126,6 +126,26 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return restartJobOnWorkerRestart_;
   }
 
+  public static final int DISABLE_RETRIES_FIELD_NUMBER = 5;
+  private boolean disableRetries_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the job should retry for internal errors after the
+   * job starts running. If true, overrides
+   * `Scheduling.restart_job_on_worker_restart` to false.
+   * </pre>
+   *
+   * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableRetries.
+   */
+  @java.lang.Override
+  public boolean getDisableRetries() {
+    return disableRetries_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -146,6 +166,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (restartJobOnWorkerRestart_ != false) {
       output.writeBool(3, restartJobOnWorkerRestart_);
     }
+    if (disableRetries_ != false) {
+      output.writeBool(5, disableRetries_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -160,6 +183,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     if (restartJobOnWorkerRestart_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, restartJobOnWorkerRestart_);
+    }
+    if (disableRetries_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, disableRetries_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,6 +208,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (getRestartJobOnWorkerRestart() != other.getRestartJobOnWorkerRestart()) return false;
+    if (getDisableRetries() != other.getDisableRetries()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -199,6 +226,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + RESTART_JOB_ON_WORKER_RESTART_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRestartJobOnWorkerRestart());
+    hash = (37 * hash) + DISABLE_RETRIES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableRetries());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -344,6 +373,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         timeoutBuilder_ = null;
       }
       restartJobOnWorkerRestart_ = false;
+      disableRetries_ = false;
       return this;
     }
 
@@ -385,6 +415,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.restartJobOnWorkerRestart_ = restartJobOnWorkerRestart_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.disableRetries_ = disableRetries_;
       }
     }
 
@@ -439,6 +472,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.getRestartJobOnWorkerRestart() != false) {
         setRestartJobOnWorkerRestart(other.getRestartJobOnWorkerRestart());
       }
+      if (other.getDisableRetries() != false) {
+        setDisableRetries(other.getDisableRetries());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -477,6 +513,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 40:
+              {
+                disableRetries_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -730,6 +772,65 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRestartJobOnWorkerRestart() {
       bitField0_ = (bitField0_ & ~0x00000002);
       restartJobOnWorkerRestart_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableRetries_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the job should retry for internal errors after the
+     * job starts running. If true, overrides
+     * `Scheduling.restart_job_on_worker_restart` to false.
+     * </pre>
+     *
+     * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableRetries.
+     */
+    @java.lang.Override
+    public boolean getDisableRetries() {
+      return disableRetries_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the job should retry for internal errors after the
+     * job starts running. If true, overrides
+     * `Scheduling.restart_job_on_worker_restart` to false.
+     * </pre>
+     *
+     * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disableRetries to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableRetries(boolean value) {
+
+      disableRetries_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the job should retry for internal errors after the
+     * job starts running. If true, overrides
+     * `Scheduling.restart_job_on_worker_restart` to false.
+     * </pre>
+     *
+     * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableRetries() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      disableRetries_ = false;
       onChanged();
       return this;
     }

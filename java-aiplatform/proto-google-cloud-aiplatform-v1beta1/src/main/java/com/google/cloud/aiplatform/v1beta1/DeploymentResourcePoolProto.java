@@ -47,7 +47,7 @@ public final class DeploymentResourcePoolProto {
           + "oogle/cloud/aiplatform/v1beta1/machine_r"
           + "esources.proto\032\037google/protobuf/timestam"
           + "p.proto\"\320\002\n\026DeploymentResourcePool\022\022\n\004na"
-          + "me\030\001 \001(\tB\004\342A\001\003\022V\n\023dedicated_resources\030\002 "
+          + "me\030\001 \001(\tB\004\342A\001\005\022V\n\023dedicated_resources\030\002 "
           + "\001(\01323.google.cloud.aiplatform.v1beta1.De"
           + "dicatedResourcesB\004\342A\001\002\0225\n\013create_time\030\004 "
           + "\001(\0132\032.google.protobuf.TimestampB\004\342A\001\003:\222\001"

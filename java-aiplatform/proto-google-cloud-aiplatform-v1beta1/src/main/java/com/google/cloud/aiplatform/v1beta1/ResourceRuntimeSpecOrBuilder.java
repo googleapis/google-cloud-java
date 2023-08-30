@@ -68,7 +68,7 @@ public interface ResourceRuntimeSpecOrBuilder
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -83,7 +83,7 @@ public interface ResourceRuntimeSpecOrBuilder
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface ResourceRuntimeSpecOrBuilder
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *

@@ -246,6 +246,58 @@ public final class PersistentResourceServiceGrpc {
     return getDeletePersistentResourceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
+          com.google.longrunning.Operation>
+      getUpdatePersistentResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePersistentResource",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
+          com.google.longrunning.Operation>
+      getUpdatePersistentResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
+            com.google.longrunning.Operation>
+        getUpdatePersistentResourceMethod;
+    if ((getUpdatePersistentResourceMethod =
+            PersistentResourceServiceGrpc.getUpdatePersistentResourceMethod)
+        == null) {
+      synchronized (PersistentResourceServiceGrpc.class) {
+        if ((getUpdatePersistentResourceMethod =
+                PersistentResourceServiceGrpc.getUpdatePersistentResourceMethod)
+            == null) {
+          PersistentResourceServiceGrpc.getUpdatePersistentResourceMethod =
+              getUpdatePersistentResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdatePersistentResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PersistentResourceServiceMethodDescriptorSupplier(
+                              "UpdatePersistentResource"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePersistentResourceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PersistentResourceServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PersistentResourceServiceStub> factory =
@@ -300,7 +352,7 @@ public final class PersistentResourceServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     default void createPersistentResource(
@@ -354,6 +406,20 @@ public final class PersistentResourceServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeletePersistentResourceMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a PersistentResource.
+     * </pre>
+     */
+    default void updatePersistentResource(
+        com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePersistentResourceMethod(), responseObserver);
+    }
   }
 
   /**
@@ -396,7 +462,7 @@ public final class PersistentResourceServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public void createPersistentResource(
@@ -458,6 +524,22 @@ public final class PersistentResourceServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a PersistentResource.
+     * </pre>
+     */
+    public void updatePersistentResource(
+        com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePersistentResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -484,7 +566,7 @@ public final class PersistentResourceServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public com.google.longrunning.Operation createPersistentResource(
@@ -532,6 +614,19 @@ public final class PersistentResourceServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePersistentResourceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePersistentResource(
+        com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePersistentResourceMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -559,7 +654,7 @@ public final class PersistentResourceServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into Vertex AI.
+     * Creates a PersistentResource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -612,12 +707,27 @@ public final class PersistentResourceServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePersistentResourceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a PersistentResource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePersistentResource(
+            com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePersistentResourceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PERSISTENT_RESOURCE = 0;
   private static final int METHODID_GET_PERSISTENT_RESOURCE = 1;
   private static final int METHODID_LIST_PERSISTENT_RESOURCES = 2;
   private static final int METHODID_DELETE_PERSISTENT_RESOURCE = 3;
+  private static final int METHODID_UPDATE_PERSISTENT_RESOURCE = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -657,6 +767,11 @@ public final class PersistentResourceServiceGrpc {
         case METHODID_DELETE_PERSISTENT_RESOURCE:
           serviceImpl.deletePersistentResource(
               (com.google.cloud.aiplatform.v1beta1.DeletePersistentResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_PERSISTENT_RESOURCE:
+          serviceImpl.updatePersistentResource(
+              (com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -705,6 +820,13 @@ public final class PersistentResourceServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.DeletePersistentResourceRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_PERSISTENT_RESOURCE)))
+        .addMethod(
+            getUpdatePersistentResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_PERSISTENT_RESOURCE)))
         .build();
   }
 
@@ -760,6 +882,7 @@ public final class PersistentResourceServiceGrpc {
                       .addMethod(getGetPersistentResourceMethod())
                       .addMethod(getListPersistentResourcesMethod())
                       .addMethod(getDeletePersistentResourceMethod())
+                      .addMethod(getUpdatePersistentResourceMethod())
                       .build();
         }
       }
