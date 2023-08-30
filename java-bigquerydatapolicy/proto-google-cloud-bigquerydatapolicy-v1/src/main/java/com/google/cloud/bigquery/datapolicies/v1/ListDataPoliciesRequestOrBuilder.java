@@ -104,9 +104,10 @@ public interface ListDataPoliciesRequestOrBuilder
    * are associated with. Currently filter only supports
    * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
    * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-   * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+   * projects/1/locations/us/taxonomies/2/policyTags/3".
+   * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+   * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+   * cannot be used with wildcard filters.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -122,9 +123,10 @@ public interface ListDataPoliciesRequestOrBuilder
    * are associated with. Currently filter only supports
    * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
    * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-   * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+   * projects/1/locations/us/taxonomies/2/policyTags/3".
+   * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+   * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+   * cannot be used with wildcard filters.
    * </pre>
    *
    * <code>string filter = 4;</code>
