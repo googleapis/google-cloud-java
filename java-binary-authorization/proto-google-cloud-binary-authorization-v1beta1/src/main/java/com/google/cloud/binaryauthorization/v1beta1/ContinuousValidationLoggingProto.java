@@ -40,9 +40,17 @@ public final class ContinuousValidationLoggingProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_fieldAccessorTable;
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -55,43 +63,63 @@ public final class ContinuousValidationLoggingProto {
       "\nLgoogle/cloud/binaryauthorization/v1bet"
           + "a1/continuous_validation_logging.proto\022("
           + "google.cloud.binaryauthorization.v1beta1"
-          + "\032\037google/protobuf/timestamp.proto\"\337\010\n\031Co"
+          + "\032\037google/protobuf/timestamp.proto\"\352\016\n\031Co"
           + "ntinuousValidationEvent\022u\n\tpod_event\030\001 \001"
           + "(\0132`.google.cloud.binaryauthorization.v1"
           + "beta1.ContinuousValidationEvent.Continuo"
-          + "usValidationPodEventH\000\022~\n\030unsupported_po"
-          + "licy_event\030\002 \001(\0132Z.google.cloud.binaryau"
-          + "thorization.v1beta1.ContinuousValidation"
-          + "Event.UnsupportedPolicyEventH\000\032\215\006\n\034Conti"
-          + "nuousValidationPodEvent\022\025\n\rpod_namespace"
-          + "\030\007 \001(\t\022\013\n\003pod\030\001 \001(\t\022/\n\013deploy_time\030\002 \001(\013"
-          + "2\032.google.protobuf.Timestamp\022,\n\010end_time"
-          + "\030\003 \001(\0132\032.google.protobuf.Timestamp\022\212\001\n\007v"
-          + "erdict\030\004 \001(\0162y.google.cloud.binaryauthor"
-          + "ization.v1beta1.ContinuousValidationEven"
-          + "t.ContinuousValidationPodEvent.PolicyCon"
-          + "formanceVerdict\022}\n\006images\030\005 \003(\0132m.google"
-          + ".cloud.binaryauthorization.v1beta1.Conti"
-          + "nuousValidationEvent.ContinuousValidatio"
-          + "nPodEvent.ImageDetails\032\200\002\n\014ImageDetails\022"
-          + "\r\n\005image\030\001 \001(\t\022\211\001\n\006result\030\002 \001(\0162y.google"
-          + ".cloud.binaryauthorization.v1beta1.Conti"
-          + "nuousValidationEvent.ContinuousValidatio"
-          + "nPodEvent.ImageDetails.AuditResult\022\023\n\013de"
-          + "scription\030\003 \001(\t\"@\n\013AuditResult\022\034\n\030AUDIT_"
-          + "RESULT_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020"
-          + "\002\"[\n\030PolicyConformanceVerdict\022*\n&POLICY_"
-          + "CONFORMANCE_VERDICT_UNSPECIFIED\020\000\022\023\n\017VIO"
-          + "LATES_POLICY\020\001\032-\n\026UnsupportedPolicyEvent"
-          + "\022\023\n\013description\030\001 \001(\tB\014\n\nevent_typeB\271\002\n,"
-          + "com.google.cloud.binaryauthorization.v1b"
-          + "eta1B ContinuousValidationLoggingProtoP\001"
-          + "Z^cloud.google.com/go/binaryauthorizatio"
-          + "n/apiv1beta1/binaryauthorizationpb;binar"
-          + "yauthorizationpb\370\001\001\252\002(Google.Cloud.Binar"
-          + "yAuthorization.V1Beta1\312\002(Google\\Cloud\\Bi"
-          + "naryAuthorization\\V1beta1\352\002+Google::Clou"
-          + "d::BinaryAuthorization::V1beta1b\006proto3"
+          + "usValidationPodEventH\000\022r\n\022config_error_e"
+          + "vent\030\004 \001(\0132T.google.cloud.binaryauthoriz"
+          + "ation.v1beta1.ContinuousValidationEvent."
+          + "ConfigErrorEventH\000\032\252\014\n\034ContinuousValidat"
+          + "ionPodEvent\022\025\n\rpod_namespace\030\007 \001(\t\022\013\n\003po"
+          + "d\030\001 \001(\t\022\023\n\013policy_name\030\010 \001(\t\022/\n\013deploy_t"
+          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022,\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022\212\001\n\007verdict\030\004 \001(\0162y.google.cloud.bin"
+          + "aryauthorization.v1beta1.ContinuousValid"
+          + "ationEvent.ContinuousValidationPodEvent."
+          + "PolicyConformanceVerdict\022}\n\006images\030\005 \003(\013"
+          + "2m.google.cloud.binaryauthorization.v1be"
+          + "ta1.ContinuousValidationEvent.Continuous"
+          + "ValidationPodEvent.ImageDetails\032\210\010\n\014Imag"
+          + "eDetails\022\r\n\005image\030\001 \001(\t\022\211\001\n\006result\030\002 \001(\016"
+          + "2y.google.cloud.binaryauthorization.v1be"
+          + "ta1.ContinuousValidationEvent.Continuous"
+          + "ValidationPodEvent.ImageDetails.AuditRes"
+          + "ult\022\023\n\013description\030\003 \001(\t\022\220\001\n\rcheck_resul"
+          + "ts\030\004 \003(\0132y.google.cloud.binaryauthorizat"
+          + "ion.v1beta1.ContinuousValidationEvent.Co"
+          + "ntinuousValidationPodEvent.ImageDetails."
+          + "CheckResult\032\362\004\n\013CheckResult\022\027\n\017check_set"
+          + "_index\030\001 \001(\t\022\026\n\016check_set_name\030\002 \001(\t\022\241\001\n"
+          + "\017check_set_scope\030\003 \001(\0132\207\001.google.cloud.b"
+          + "inaryauthorization.v1beta1.ContinuousVal"
+          + "idationEvent.ContinuousValidationPodEven"
+          + "t.ImageDetails.CheckResult.CheckSetScope"
+          + "\022\023\n\013check_index\030\004 \001(\t\022\022\n\ncheck_name\030\005 \001("
+          + "\t\022\022\n\ncheck_type\030\006 \001(\t\022\230\001\n\007verdict\030\007 \001(\0162"
+          + "\206\001.google.cloud.binaryauthorization.v1be"
+          + "ta1.ContinuousValidationEvent.Continuous"
+          + "ValidationPodEvent.ImageDetails.CheckRes"
+          + "ult.CheckVerdict\022\023\n\013explanation\030\010 \001(\t\032^\n"
+          + "\rCheckSetScope\022$\n\032kubernetes_service_acc"
+          + "ount\030\001 \001(\tH\000\022\036\n\024kubernetes_namespace\030\002 \001"
+          + "(\tH\000B\007\n\005scope\"A\n\014CheckVerdict\022\035\n\031CHECK_V"
+          + "ERDICT_UNSPECIFIED\020\000\022\022\n\016NON_CONFORMANT\020\001"
+          + "\"@\n\013AuditResult\022\034\n\030AUDIT_RESULT_UNSPECIF"
+          + "IED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002\"[\n\030PolicyConf"
+          + "ormanceVerdict\022*\n&POLICY_CONFORMANCE_VER"
+          + "DICT_UNSPECIFIED\020\000\022\023\n\017VIOLATES_POLICY\020\001\032"
+          + "\'\n\020ConfigErrorEvent\022\023\n\013description\030\001 \001(\t"
+          + "B\014\n\nevent_typeB\271\002\n,com.google.cloud.bina"
+          + "ryauthorization.v1beta1B ContinuousValid"
+          + "ationLoggingProtoP\001Z^cloud.google.com/go"
+          + "/binaryauthorization/apiv1beta1/binaryau"
+          + "thorizationpb;binaryauthorizationpb\370\001\001\252\002"
+          + "(Google.Cloud.BinaryAuthorization.V1Beta"
+          + "1\312\002(Google\\Cloud\\BinaryAuthorization\\V1b"
+          + "eta1\352\002+Google::Cloud::BinaryAuthorizatio"
+          + "n::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,7 +133,7 @@ public final class ContinuousValidationLoggingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_descriptor,
             new java.lang.String[] {
-              "PodEvent", "UnsupportedPolicyEvent", "EventType",
+              "PodEvent", "ConfigErrorEvent", "EventType",
             });
     internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_descriptor =
         internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_descriptor
@@ -115,7 +143,7 @@ public final class ContinuousValidationLoggingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_descriptor,
             new java.lang.String[] {
-              "PodNamespace", "Pod", "DeployTime", "EndTime", "Verdict", "Images",
+              "PodNamespace", "Pod", "PolicyName", "DeployTime", "EndTime", "Verdict", "Images",
             });
     internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_descriptor =
         internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_descriptor
@@ -125,15 +153,42 @@ public final class ContinuousValidationLoggingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_descriptor,
             new java.lang.String[] {
-              "Image", "Result", "Description",
+              "Image", "Result", "Description", "CheckResults",
             });
-    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor =
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor =
+        internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor,
+            new java.lang.String[] {
+              "CheckSetIndex",
+              "CheckSetName",
+              "CheckSetScope",
+              "CheckIndex",
+              "CheckName",
+              "CheckType",
+              "Verdict",
+              "Explanation",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor =
+        internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor,
+            new java.lang.String[] {
+              "KubernetesServiceAccount", "KubernetesNamespace", "Scope",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor =
         internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_descriptor
             .getNestedTypes()
             .get(1);
-    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_fieldAccessorTable =
+    internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor,
+            internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor,
             new java.lang.String[] {
               "Description",
             });
