@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -93,6 +94,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
@@ -115,6 +117,7 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
@@ -149,6 +152,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
@@ -194,6 +198,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
@@ -204,6 +210,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
@@ -214,6 +221,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
+import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -226,6 +234,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
@@ -386,6 +395,22 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<
           AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
       acknowledgeUserDataCollectionSettings;
+  private final UnaryCallSettings<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaSettings;
+  private final UnaryCallSettings<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaSettings;
+  private final UnaryCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaSettings;
+  private final UnaryCallSettings<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaSettings;
+  private final PagedCallSettings<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasSettings;
   private final PagedCallSettings<
           SearchChangeHistoryEventsRequest,
           SearchChangeHistoryEventsResponse,
@@ -397,6 +422,8 @@ public class AnalyticsAdminServiceStubSettings
       updateGoogleSignalsSettingsSettings;
   private final UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings;
+  private final UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings;
   private final UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings;
   private final UnaryCallSettings<DeleteConversionEventRequest, Empty>
@@ -900,6 +927,55 @@ public class AnalyticsAdminServiceStubSettings
               return payload.getMeasurementProtocolSecretsList() == null
                   ? ImmutableList.<MeasurementProtocolSecret>of()
                   : payload.getMeasurementProtocolSecretsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          SKAdNetworkConversionValueSchema>
+      LIST_S_K_AD_NETWORK_CONVERSION_VALUE_SCHEMAS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSKAdNetworkConversionValueSchemasRequest,
+              ListSKAdNetworkConversionValueSchemasResponse,
+              SKAdNetworkConversionValueSchema>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSKAdNetworkConversionValueSchemasRequest injectToken(
+                ListSKAdNetworkConversionValueSchemasRequest payload, String token) {
+              return ListSKAdNetworkConversionValueSchemasRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSKAdNetworkConversionValueSchemasRequest injectPageSize(
+                ListSKAdNetworkConversionValueSchemasRequest payload, int pageSize) {
+              return ListSKAdNetworkConversionValueSchemasRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSKAdNetworkConversionValueSchemasRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSKAdNetworkConversionValueSchemasResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SKAdNetworkConversionValueSchema> extractResources(
+                ListSKAdNetworkConversionValueSchemasResponse payload) {
+              return payload.getSkadnetworkConversionValueSchemasList() == null
+                  ? ImmutableList.<SKAdNetworkConversionValueSchema>of()
+                  : payload.getSkadnetworkConversionValueSchemasList();
             }
           };
 
@@ -1699,6 +1775,40 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      LIST_S_K_AD_NETWORK_CONVERSION_VALUE_SCHEMAS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSKAdNetworkConversionValueSchemasRequest,
+              ListSKAdNetworkConversionValueSchemasResponse,
+              ListSKAdNetworkConversionValueSchemasPagedResponse>() {
+            @Override
+            public ApiFuture<ListSKAdNetworkConversionValueSchemasPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListSKAdNetworkConversionValueSchemasRequest,
+                            ListSKAdNetworkConversionValueSchemasResponse>
+                        callable,
+                    ListSKAdNetworkConversionValueSchemasRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListSKAdNetworkConversionValueSchemasResponse> futureResponse) {
+              PageContext<
+                      ListSKAdNetworkConversionValueSchemasRequest,
+                      ListSKAdNetworkConversionValueSchemasResponse,
+                      SKAdNetworkConversionValueSchema>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_S_K_AD_NETWORK_CONVERSION_VALUE_SCHEMAS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListSKAdNetworkConversionValueSchemasPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           SearchChangeHistoryEventsRequest,
           SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
@@ -2262,6 +2372,50 @@ public class AnalyticsAdminServiceStubSettings
     return acknowledgeUserDataCollectionSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSKAdNetworkConversionValueSchema. */
+  public UnaryCallSettings<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaSettings() {
+    return getSKAdNetworkConversionValueSchemaSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to createSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaSettings() {
+    return createSKAdNetworkConversionValueSchemaSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaSettings() {
+    return deleteSKAdNetworkConversionValueSchemaSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateSKAdNetworkConversionValueSchema.
+   */
+  public UnaryCallSettings<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaSettings() {
+    return updateSKAdNetworkConversionValueSchemaSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listSKAdNetworkConversionValueSchemas.
+   */
+  public PagedCallSettings<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasSettings() {
+    return listSKAdNetworkConversionValueSchemasSettings;
+  }
+
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
           SearchChangeHistoryEventsRequest,
@@ -2287,6 +2441,12 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return createConversionEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings() {
+    return updateConversionEventSettings;
   }
 
   /** Returns the object with the settings used for calls to getConversionEvent. */
@@ -2957,11 +3117,22 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.updateMeasurementProtocolSecretSettings().build();
     acknowledgeUserDataCollectionSettings =
         settingsBuilder.acknowledgeUserDataCollectionSettings().build();
+    getSKAdNetworkConversionValueSchemaSettings =
+        settingsBuilder.getSKAdNetworkConversionValueSchemaSettings().build();
+    createSKAdNetworkConversionValueSchemaSettings =
+        settingsBuilder.createSKAdNetworkConversionValueSchemaSettings().build();
+    deleteSKAdNetworkConversionValueSchemaSettings =
+        settingsBuilder.deleteSKAdNetworkConversionValueSchemaSettings().build();
+    updateSKAdNetworkConversionValueSchemaSettings =
+        settingsBuilder.updateSKAdNetworkConversionValueSchemaSettings().build();
+    listSKAdNetworkConversionValueSchemasSettings =
+        settingsBuilder.listSKAdNetworkConversionValueSchemasSettings().build();
     searchChangeHistoryEventsSettings = settingsBuilder.searchChangeHistoryEventsSettings().build();
     getGoogleSignalsSettingsSettings = settingsBuilder.getGoogleSignalsSettingsSettings().build();
     updateGoogleSignalsSettingsSettings =
         settingsBuilder.updateGoogleSignalsSettingsSettings().build();
     createConversionEventSettings = settingsBuilder.createConversionEventSettings().build();
+    updateConversionEventSettings = settingsBuilder.updateConversionEventSettings().build();
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
@@ -3146,6 +3317,22 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
         acknowledgeUserDataCollectionSettings;
+    private final UnaryCallSettings.Builder<
+            GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaSettings;
+    private final UnaryCallSettings.Builder<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaSettings;
+    private final UnaryCallSettings.Builder<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaSettings;
+    private final PagedCallSettings.Builder<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse,
+            ListSKAdNetworkConversionValueSchemasPagedResponse>
+        listSKAdNetworkConversionValueSchemasSettings;
     private final PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
             SearchChangeHistoryEventsResponse,
@@ -3158,6 +3345,8 @@ public class AnalyticsAdminServiceStubSettings
         updateGoogleSignalsSettingsSettings;
     private final UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings;
+    private final UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings;
     private final UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings;
     private final UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
@@ -3457,11 +3646,21 @@ public class AnalyticsAdminServiceStubSettings
       deleteMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       acknowledgeUserDataCollectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSKAdNetworkConversionValueSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSKAdNetworkConversionValueSchemaSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSKAdNetworkConversionValueSchemaSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSKAdNetworkConversionValueSchemaSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSKAdNetworkConversionValueSchemasSettings =
+          PagedCallSettings.newBuilder(LIST_S_K_AD_NETWORK_CONVERSION_VALUE_SCHEMAS_PAGE_STR_FACT);
       searchChangeHistoryEventsSettings =
           PagedCallSettings.newBuilder(SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT);
       getGoogleSignalsSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateGoogleSignalsSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
@@ -3597,10 +3796,16 @@ public class AnalyticsAdminServiceStubSettings
               deleteMeasurementProtocolSecretSettings,
               updateMeasurementProtocolSecretSettings,
               acknowledgeUserDataCollectionSettings,
+              getSKAdNetworkConversionValueSchemaSettings,
+              createSKAdNetworkConversionValueSchemaSettings,
+              deleteSKAdNetworkConversionValueSchemaSettings,
+              updateSKAdNetworkConversionValueSchemaSettings,
+              listSKAdNetworkConversionValueSchemasSettings,
               searchChangeHistoryEventsSettings,
               getGoogleSignalsSettingsSettings,
               updateGoogleSignalsSettingsSettings,
               createConversionEventSettings,
+              updateConversionEventSettings,
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
@@ -3731,11 +3936,22 @@ public class AnalyticsAdminServiceStubSettings
           settings.updateMeasurementProtocolSecretSettings.toBuilder();
       acknowledgeUserDataCollectionSettings =
           settings.acknowledgeUserDataCollectionSettings.toBuilder();
+      getSKAdNetworkConversionValueSchemaSettings =
+          settings.getSKAdNetworkConversionValueSchemaSettings.toBuilder();
+      createSKAdNetworkConversionValueSchemaSettings =
+          settings.createSKAdNetworkConversionValueSchemaSettings.toBuilder();
+      deleteSKAdNetworkConversionValueSchemaSettings =
+          settings.deleteSKAdNetworkConversionValueSchemaSettings.toBuilder();
+      updateSKAdNetworkConversionValueSchemaSettings =
+          settings.updateSKAdNetworkConversionValueSchemaSettings.toBuilder();
+      listSKAdNetworkConversionValueSchemasSettings =
+          settings.listSKAdNetworkConversionValueSchemasSettings.toBuilder();
       searchChangeHistoryEventsSettings = settings.searchChangeHistoryEventsSettings.toBuilder();
       getGoogleSignalsSettingsSettings = settings.getGoogleSignalsSettingsSettings.toBuilder();
       updateGoogleSignalsSettingsSettings =
           settings.updateGoogleSignalsSettingsSettings.toBuilder();
       createConversionEventSettings = settings.createConversionEventSettings.toBuilder();
+      updateConversionEventSettings = settings.updateConversionEventSettings.toBuilder();
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
@@ -3873,10 +4089,16 @@ public class AnalyticsAdminServiceStubSettings
               deleteMeasurementProtocolSecretSettings,
               updateMeasurementProtocolSecretSettings,
               acknowledgeUserDataCollectionSettings,
+              getSKAdNetworkConversionValueSchemaSettings,
+              createSKAdNetworkConversionValueSchemaSettings,
+              deleteSKAdNetworkConversionValueSchemaSettings,
+              updateSKAdNetworkConversionValueSchemaSettings,
+              listSKAdNetworkConversionValueSchemasSettings,
               searchChangeHistoryEventsSettings,
               getGoogleSignalsSettingsSettings,
               updateGoogleSignalsSettingsSettings,
               createConversionEventSettings,
+              updateConversionEventSettings,
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
@@ -4169,6 +4391,31 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getSKAdNetworkConversionValueSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSKAdNetworkConversionValueSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSKAdNetworkConversionValueSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSKAdNetworkConversionValueSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSKAdNetworkConversionValueSchemasSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .searchChangeHistoryEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -4185,6 +4432,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .createConversionEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateConversionEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4836,6 +5088,55 @@ public class AnalyticsAdminServiceStubSettings
       return acknowledgeUserDataCollectionSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to getSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaSettings() {
+      return getSKAdNetworkConversionValueSchemaSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaSettings() {
+      return createSKAdNetworkConversionValueSchemaSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaSettings() {
+      return deleteSKAdNetworkConversionValueSchemaSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateSKAdNetworkConversionValueSchema.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaSettings() {
+      return updateSKAdNetworkConversionValueSchemaSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listSKAdNetworkConversionValueSchemas.
+     */
+    public PagedCallSettings.Builder<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse,
+            ListSKAdNetworkConversionValueSchemasPagedResponse>
+        listSKAdNetworkConversionValueSchemasSettings() {
+      return listSKAdNetworkConversionValueSchemasSettings;
+    }
+
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
@@ -4861,6 +5162,12 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return createConversionEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings() {
+      return updateConversionEventSettings;
     }
 
     /** Returns the builder for the settings used for calls to getConversionEvent. */

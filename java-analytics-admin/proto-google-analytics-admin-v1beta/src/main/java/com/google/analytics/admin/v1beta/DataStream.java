@@ -252,8 +252,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Analytics "Measurement ID", without the "G-" prefix.
-     * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+     * Output only. Analytics Measurement ID.
+     *
+     * Example: "G-1A2BCD345E"
      * </pre>
      *
      * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -265,8 +266,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Analytics "Measurement ID", without the "G-" prefix.
-     * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+     * Output only. Analytics Measurement ID.
+     *
+     * Example: "G-1A2BCD345E"
      * </pre>
      *
      * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -306,11 +308,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Domain name of the web app being measured, or empty.
+     * Domain name of the web app being measured, or empty.
      * Example: "http://www.google.com", "https://www.google.com"
      * </pre>
      *
-     * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string default_uri = 3;</code>
      *
      * @return The defaultUri.
      */
@@ -319,11 +321,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Domain name of the web app being measured, or empty.
+     * Domain name of the web app being measured, or empty.
      * Example: "http://www.google.com", "https://www.google.com"
      * </pre>
      *
-     * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string default_uri = 3;</code>
      *
      * @return The bytes for defaultUri.
      */
@@ -383,8 +385,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Analytics "Measurement ID", without the "G-" prefix.
-     * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+     * Output only. Analytics Measurement ID.
+     *
+     * Example: "G-1A2BCD345E"
      * </pre>
      *
      * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -407,8 +410,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Analytics "Measurement ID", without the "G-" prefix.
-     * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+     * Output only. Analytics Measurement ID.
+     *
+     * Example: "G-1A2BCD345E"
      * </pre>
      *
      * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -489,11 +493,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Domain name of the web app being measured, or empty.
+     * Domain name of the web app being measured, or empty.
      * Example: "http://www.google.com", "https://www.google.com"
      * </pre>
      *
-     * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string default_uri = 3;</code>
      *
      * @return The defaultUri.
      */
@@ -513,11 +517,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Domain name of the web app being measured, or empty.
+     * Domain name of the web app being measured, or empty.
      * Example: "http://www.google.com", "https://www.google.com"
      * </pre>
      *
-     * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string default_uri = 3;</code>
      *
      * @return The bytes for defaultUri.
      */
@@ -937,8 +941,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Analytics "Measurement ID", without the "G-" prefix.
-       * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+       * Output only. Analytics Measurement ID.
+       *
+       * Example: "G-1A2BCD345E"
        * </pre>
        *
        * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -960,8 +965,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Analytics "Measurement ID", without the "G-" prefix.
-       * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+       * Output only. Analytics Measurement ID.
+       *
+       * Example: "G-1A2BCD345E"
        * </pre>
        *
        * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -983,8 +989,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Analytics "Measurement ID", without the "G-" prefix.
-       * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+       * Output only. Analytics Measurement ID.
+       *
+       * Example: "G-1A2BCD345E"
        * </pre>
        *
        * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1005,8 +1012,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Analytics "Measurement ID", without the "G-" prefix.
-       * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+       * Output only. Analytics Measurement ID.
+       *
+       * Example: "G-1A2BCD345E"
        * </pre>
        *
        * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1023,8 +1031,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Analytics "Measurement ID", without the "G-" prefix.
-       * Example: "G-1A2BCD345E" would just be "1A2BCD345E"
+       * Output only. Analytics Measurement ID.
+       *
+       * Example: "G-1A2BCD345E"
        * </pre>
        *
        * <code>string measurement_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1159,11 +1168,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Domain name of the web app being measured, or empty.
+       * Domain name of the web app being measured, or empty.
        * Example: "http://www.google.com", "https://www.google.com"
        * </pre>
        *
-       * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string default_uri = 3;</code>
        *
        * @return The defaultUri.
        */
@@ -1182,11 +1191,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Domain name of the web app being measured, or empty.
+       * Domain name of the web app being measured, or empty.
        * Example: "http://www.google.com", "https://www.google.com"
        * </pre>
        *
-       * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string default_uri = 3;</code>
        *
        * @return The bytes for defaultUri.
        */
@@ -1205,11 +1214,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Domain name of the web app being measured, or empty.
+       * Domain name of the web app being measured, or empty.
        * Example: "http://www.google.com", "https://www.google.com"
        * </pre>
        *
-       * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string default_uri = 3;</code>
        *
        * @param value The defaultUri to set.
        * @return This builder for chaining.
@@ -1227,11 +1236,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Domain name of the web app being measured, or empty.
+       * Domain name of the web app being measured, or empty.
        * Example: "http://www.google.com", "https://www.google.com"
        * </pre>
        *
-       * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string default_uri = 3;</code>
        *
        * @return This builder for chaining.
        */
@@ -1245,11 +1254,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Domain name of the web app being measured, or empty.
+       * Domain name of the web app being measured, or empty.
        * Example: "http://www.google.com", "https://www.google.com"
        * </pre>
        *
-       * <code>string default_uri = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string default_uri = 3;</code>
        *
        * @param value The bytes for defaultUri to set.
        * @return This builder for chaining.

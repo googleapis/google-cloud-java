@@ -94,6 +94,7 @@ import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
+import com.google.analytics.admin.v1beta.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
@@ -280,6 +281,11 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: createConversionEventCallable()");
+  }
+
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateConversionEventCallable()");
   }
 
   public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {

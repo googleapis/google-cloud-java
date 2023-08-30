@@ -261,6 +261,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateConversionEventSettings();
+  }
+
   /** Returns the object with the settings used for calls to getConversionEvent. */
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
@@ -672,6 +678,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return getStubSettingsBuilder().createConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings() {
+      return getStubSettingsBuilder().updateConversionEventSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConversionEvent. */
