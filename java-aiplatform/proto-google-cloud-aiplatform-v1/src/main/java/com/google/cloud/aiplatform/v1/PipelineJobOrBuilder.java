@@ -792,4 +792,31 @@ public interface PipelineJobOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder getTemplateMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The scheduleName.
+   */
+  java.lang.String getScheduleName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for scheduleName.
+   */
+  com.google.protobuf.ByteString getScheduleNameBytes();
 }

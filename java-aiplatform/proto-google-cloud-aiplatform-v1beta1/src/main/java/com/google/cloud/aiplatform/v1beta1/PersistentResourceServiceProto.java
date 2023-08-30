@@ -36,6 +36,10 @@ public final class PersistentResourceServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CreatePersistentResourceOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_fieldAccessorTable;
@@ -51,6 +55,10 @@ public final class PersistentResourceServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_DeletePersistentResourceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeletePersistentResourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,64 +77,81 @@ public final class PersistentResourceServiceProto {
           + "/v1beta1/operation.proto\0329google/cloud/a"
           + "iplatform/v1beta1/persistent_resource.pr"
           + "oto\032#google/longrunning/operations.proto"
-          + "\032\033google/protobuf/empty.proto\"\333\001\n\037Create"
-          + "PersistentResourceRequest\022:\n\006parent\030\001 \001("
-          + "\tB*\342A\001\002\372A#\n!locations.googleapis.com/Loc"
-          + "ation\022V\n\023persistent_resource\030\002 \001(\01323.goo"
-          + "gle.cloud.aiplatform.v1beta1.PersistentR"
-          + "esourceB\004\342A\001\002\022$\n\026persistent_resource_id\030"
-          + "\003 \001(\tB\004\342A\001\002\"\200\001\n)CreatePersistentResource"
-          + "OperationMetadata\022S\n\020generic_metadata\030\001 "
-          + "\001(\01329.google.cloud.aiplatform.v1beta1.Ge"
-          + "nericOperationMetadata\"c\n\034GetPersistentR"
-          + "esourceRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,a"
-          + "iplatform.googleapis.com/PersistentResou"
-          + "rce\"\217\001\n\036ListPersistentResourcesRequest\022:"
-          + "\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.googl"
-          + "eapis.com/Location\022\027\n\tpage_size\030\003 \001(\005B\004\342"
-          + "A\001\001\022\030\n\npage_token\030\004 \001(\tB\004\342A\001\001\"\215\001\n\037ListPe"
-          + "rsistentResourcesResponse\022Q\n\024persistent_"
-          + "resources\030\001 \003(\01323.google.cloud.aiplatfor"
-          + "m.v1beta1.PersistentResource\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"f\n\037DeletePersistentResourc"
-          + "eRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,aiplatf"
-          + "orm.googleapis.com/PersistentResource2\201\t"
-          + "\n\031PersistentResourceService\022\315\002\n\030CreatePe"
-          + "rsistentResource\022@.google.cloud.aiplatfo"
-          + "rm.v1beta1.CreatePersistentResourceReque"
-          + "st\032\035.google.longrunning.Operation\"\317\001\312A?\n"
-          + "\022PersistentResource\022)CreatePersistentRes"
-          + "ourceOperationMetadata\332A1parent,persiste"
-          + "nt_resource,persistent_resource_id\202\323\344\223\002S"
-          + "\"</v1beta1/{parent=projects/*/locations/"
-          + "*}/persistentResources:\023persistent_resou"
-          + "rce\022\330\001\n\025GetPersistentResource\022=.google.c"
-          + "loud.aiplatform.v1beta1.GetPersistentRes"
-          + "ourceRequest\0323.google.cloud.aiplatform.v"
-          + "1beta1.PersistentResource\"K\332A\004name\202\323\344\223\002>"
-          + "\022</v1beta1/{name=projects/*/locations/*/"
-          + "persistentResources/*}\022\353\001\n\027ListPersisten"
-          + "tResources\022?.google.cloud.aiplatform.v1b"
-          + "eta1.ListPersistentResourcesRequest\032@.go"
-          + "ogle.cloud.aiplatform.v1beta1.ListPersis"
-          + "tentResourcesResponse\"M\332A\006parent\202\323\344\223\002>\022<"
-          + "/v1beta1/{parent=projects/*/locations/*}"
-          + "/persistentResources\022\373\001\n\030DeletePersisten"
-          + "tResource\022@.google.cloud.aiplatform.v1be"
-          + "ta1.DeletePersistentResourceRequest\032\035.go"
-          + "ogle.longrunning.Operation\"~\312A0\n\025google."
-          + "protobuf.Empty\022\027DeleteOperationMetadata\332"
-          + "A\004name\202\323\344\223\002>*</v1beta1/{name=projects/*/"
-          + "locations/*/persistentResources/*}\032M\312A\031a"
-          + "iplatform.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\365\001\n#co"
-          + "m.google.cloud.aiplatform.v1beta1B\036Persi"
-          + "stentResourceServiceProtoP\001ZCcloud.googl"
-          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
-          + "1b\006proto3"
+          + "\032\033google/protobuf/empty.proto\032 google/pr"
+          + "otobuf/field_mask.proto\"\333\001\n\037CreatePersis"
+          + "tentResourceRequest\022:\n\006parent\030\001 \001(\tB*\342A\001"
+          + "\002\372A#\n!locations.googleapis.com/Location\022"
+          + "V\n\023persistent_resource\030\002 \001(\01323.google.cl"
+          + "oud.aiplatform.v1beta1.PersistentResourc"
+          + "eB\004\342A\001\002\022$\n\026persistent_resource_id\030\003 \001(\tB"
+          + "\004\342A\001\002\"\200\001\n)CreatePersistentResourceOperat"
+          + "ionMetadata\022S\n\020generic_metadata\030\001 \001(\01329."
+          + "google.cloud.aiplatform.v1beta1.GenericO"
+          + "perationMetadata\"\200\001\n)UpdatePersistentRes"
+          + "ourceOperationMetadata\022S\n\020generic_metada"
+          + "ta\030\001 \001(\01329.google.cloud.aiplatform.v1bet"
+          + "a1.GenericOperationMetadata\"c\n\034GetPersis"
+          + "tentResourceRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372"
+          + "A.\n,aiplatform.googleapis.com/Persistent"
+          + "Resource\"\217\001\n\036ListPersistentResourcesRequ"
+          + "est\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations."
+          + "googleapis.com/Location\022\027\n\tpage_size\030\003 \001"
+          + "(\005B\004\342A\001\001\022\030\n\npage_token\030\004 \001(\tB\004\342A\001\001\"\215\001\n\037L"
+          + "istPersistentResourcesResponse\022Q\n\024persis"
+          + "tent_resources\030\001 \003(\01323.google.cloud.aipl"
+          + "atform.v1beta1.PersistentResource\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"f\n\037DeletePersistentRe"
+          + "sourceRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,ai"
+          + "platform.googleapis.com/PersistentResour"
+          + "ce\"\260\001\n\037UpdatePersistentResourceRequest\022V"
+          + "\n\023persistent_resource\030\001 \001(\01323.google.clo"
+          + "ud.aiplatform.v1beta1.PersistentResource"
+          + "B\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\004\342A\001\0022\323\013\n\031PersistentReso"
+          + "urceService\022\315\002\n\030CreatePersistentResource"
+          + "\022@.google.cloud.aiplatform.v1beta1.Creat"
+          + "ePersistentResourceRequest\032\035.google.long"
+          + "running.Operation\"\317\001\312A?\n\022PersistentResou"
+          + "rce\022)CreatePersistentResourceOperationMe"
+          + "tadata\332A1parent,persistent_resource,pers"
+          + "istent_resource_id\202\323\344\223\002S\"</v1beta1/{pare"
+          + "nt=projects/*/locations/*}/persistentRes"
+          + "ources:\023persistent_resource\022\330\001\n\025GetPersi"
+          + "stentResource\022=.google.cloud.aiplatform."
+          + "v1beta1.GetPersistentResourceRequest\0323.g"
+          + "oogle.cloud.aiplatform.v1beta1.Persisten"
+          + "tResource\"K\332A\004name\202\323\344\223\002>\022</v1beta1/{name"
+          + "=projects/*/locations/*/persistentResour"
+          + "ces/*}\022\353\001\n\027ListPersistentResources\022?.goo"
+          + "gle.cloud.aiplatform.v1beta1.ListPersist"
+          + "entResourcesRequest\032@.google.cloud.aipla"
+          + "tform.v1beta1.ListPersistentResourcesRes"
+          + "ponse\"M\332A\006parent\202\323\344\223\002>\022</v1beta1/{parent"
+          + "=projects/*/locations/*}/persistentResou"
+          + "rces\022\373\001\n\030DeletePersistentResource\022@.goog"
+          + "le.cloud.aiplatform.v1beta1.DeletePersis"
+          + "tentResourceRequest\032\035.google.longrunning"
+          + ".Operation\"~\312A0\n\025google.protobuf.Empty\022\027"
+          + "DeleteOperationMetadata\332A\004name\202\323\344\223\002>*</v"
+          + "1beta1/{name=projects/*/locations/*/pers"
+          + "istentResources/*}\022\317\002\n\030UpdatePersistentR"
+          + "esource\022@.google.cloud.aiplatform.v1beta"
+          + "1.UpdatePersistentResourceRequest\032\035.goog"
+          + "le.longrunning.Operation\"\321\001\312A?\n\022Persiste"
+          + "ntResource\022)UpdatePersistentResourceOper"
+          + "ationMetadata\332A\037persistent_resource,upda"
+          + "te_mask\202\323\344\223\002g2P/v1beta1/{persistent_reso"
+          + "urce.name=projects/*/locations/*/persist"
+          + "entResources/*}:\023persistent_resource\032M\312A"
+          + "\031aiplatform.googleapis.com\322A.https://www"
+          + ".googleapis.com/auth/cloud-platformB\365\001\n#"
+          + "com.google.cloud.aiplatform.v1beta1B\036Per"
+          + "sistentResourceServiceProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -140,6 +165,7 @@ public final class PersistentResourceServiceProto {
               com.google.cloud.aiplatform.v1beta1.PersistentResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreatePersistentResourceRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -157,8 +183,16 @@ public final class PersistentResourceServiceProto {
             new java.lang.String[] {
               "GenericMetadata",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetPersistentResourceRequest_descriptor,
@@ -166,7 +200,7 @@ public final class PersistentResourceServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesRequest_descriptor,
@@ -174,7 +208,7 @@ public final class PersistentResourceServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListPersistentResourcesResponse_descriptor,
@@ -182,12 +216,20 @@ public final class PersistentResourceServiceProto {
               "PersistentResources", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeletePersistentResourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1beta1_DeletePersistentResourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeletePersistentResourceRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdatePersistentResourceRequest_descriptor,
+            new java.lang.String[] {
+              "PersistentResource", "UpdateMask",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -208,6 +250,7 @@ public final class PersistentResourceServiceProto {
     com.google.cloud.aiplatform.v1beta1.PersistentResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

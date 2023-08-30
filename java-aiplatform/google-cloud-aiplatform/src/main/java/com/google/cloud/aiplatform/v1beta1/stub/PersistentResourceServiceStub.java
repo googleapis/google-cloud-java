@@ -31,6 +31,8 @@ import com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesResponse;
 import com.google.cloud.aiplatform.v1beta1.PersistentResource;
+import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -98,6 +100,20 @@ public abstract class PersistentResourceServiceStub implements BackgroundResourc
   public UnaryCallable<DeletePersistentResourceRequest, Operation>
       deletePersistentResourceCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePersistentResourceCallable()");
+  }
+
+  public OperationCallable<
+          UpdatePersistentResourceRequest,
+          PersistentResource,
+          UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updatePersistentResourceOperationCallable()");
+  }
+
+  public UnaryCallable<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePersistentResourceCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

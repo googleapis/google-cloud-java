@@ -23,6 +23,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
@@ -66,6 +68,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
+  }
+
+  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    throw new UnsupportedOperationException("Not implemented: countTokensCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

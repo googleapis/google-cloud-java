@@ -813,6 +813,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdatePersistentResource": {
+              "methods": ["updatePersistentResourceAsync", "updatePersistentResourceAsync", "updatePersistentResourceOperationCallable", "updatePersistentResourceCallable"]
             }
           }
         }
@@ -877,6 +880,9 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "CountTokens": {
+              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },

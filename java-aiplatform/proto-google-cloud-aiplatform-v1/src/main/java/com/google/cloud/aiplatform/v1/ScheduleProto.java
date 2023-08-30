@@ -52,7 +52,7 @@ public final class ScheduleProto {
           + "timestamp.proto\"\225\t\n\010Schedule\022\016\n\004cron\030\n \001"
           + "(\tH\000\022[\n\033create_pipeline_job_request\030\016 \001("
           + "\01324.google.cloud.aiplatform.v1.CreatePip"
-          + "elineJobRequestH\001\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\032\n"
+          + "elineJobRequestH\001\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\0224\n\nstart_time\030"
           + "\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\022"
           + "2\n\010end_time\030\004 \001(\0132\032.google.protobuf.Time"

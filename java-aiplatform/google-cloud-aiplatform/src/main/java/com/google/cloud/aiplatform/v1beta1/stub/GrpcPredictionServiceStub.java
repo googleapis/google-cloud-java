@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
@@ -96,6 +98,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
+      countTokensMethodDescriptor =
+          MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
+              .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -147,6 +159,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
+  private final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -241,6 +254,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
+        GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
+            .setMethodDescriptor(countTokensMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -307,6 +330,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
+    this.countTokensCallable =
+        callableFactory.createUnaryCallable(
+            countTokensTransportSettings, settings.countTokensSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -355,6 +381,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
+  }
+
+  @Override
+  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    return countTokensCallable;
   }
 
   @Override

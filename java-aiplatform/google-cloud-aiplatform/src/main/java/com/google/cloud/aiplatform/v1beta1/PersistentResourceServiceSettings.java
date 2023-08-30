@@ -138,6 +138,23 @@ public class PersistentResourceServiceSettings
         .deletePersistentResourceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updatePersistentResource. */
+  public UnaryCallSettings<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceSettings() {
+    return ((PersistentResourceServiceStubSettings) getStubSettings())
+        .updatePersistentResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePersistentResource. */
+  public OperationCallSettings<
+          UpdatePersistentResourceRequest,
+          PersistentResource,
+          UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceOperationSettings() {
+    return ((PersistentResourceServiceStubSettings) getStubSettings())
+        .updatePersistentResourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -304,6 +321,21 @@ public class PersistentResourceServiceSettings
             DeletePersistentResourceRequest, Empty, DeleteOperationMetadata>
         deletePersistentResourceOperationSettings() {
       return getStubSettingsBuilder().deletePersistentResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePersistentResource. */
+    public UnaryCallSettings.Builder<UpdatePersistentResourceRequest, Operation>
+        updatePersistentResourceSettings() {
+      return getStubSettingsBuilder().updatePersistentResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePersistentResource. */
+    public OperationCallSettings.Builder<
+            UpdatePersistentResourceRequest,
+            PersistentResource,
+            UpdatePersistentResourceOperationMetadata>
+        updatePersistentResourceOperationSettings() {
+      return getStubSettingsBuilder().updatePersistentResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

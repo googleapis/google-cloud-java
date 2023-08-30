@@ -149,6 +149,12 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
     return ((TensorboardServiceStubSettings) getStubSettings()).readTensorboardUsageSettings();
   }
 
+  /** Returns the object with the settings used for calls to readTensorboardSize. */
+  public UnaryCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings()).readTensorboardSizeSettings();
+  }
+
   /** Returns the object with the settings used for calls to createTensorboardExperiment. */
   public UnaryCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
       createTensorboardExperimentSettings() {
@@ -512,6 +518,12 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
     public UnaryCallSettings.Builder<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
         readTensorboardUsageSettings() {
       return getStubSettingsBuilder().readTensorboardUsageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to readTensorboardSize. */
+    public UnaryCallSettings.Builder<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+        readTensorboardSizeSettings() {
+      return getStubSettingsBuilder().readTensorboardSizeSettings();
     }
 
     /** Returns the builder for the settings used for calls to createTensorboardExperiment. */

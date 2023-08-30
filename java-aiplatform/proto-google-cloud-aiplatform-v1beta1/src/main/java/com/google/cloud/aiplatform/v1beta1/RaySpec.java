@@ -42,6 +42,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   private RaySpec() {
     imageUri_ = "";
+    headNodeResourcePoolId_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,17 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.PersistentResourceProto
         .internal_static_google_cloud_aiplatform_v1beta1_RaySpec_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 6:
+        return internalGetResourcePoolImages();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -126,6 +138,209 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESOURCE_POOL_IMAGES_FIELD_NUMBER = 6;
+
+  private static final class ResourcePoolImagesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.PersistentResourceProto
+                .internal_static_google_cloud_aiplatform_v1beta1_RaySpec_ResourcePoolImagesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourcePoolImages_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourcePoolImages() {
+    if (resourcePoolImages_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourcePoolImagesDefaultEntryHolder.defaultEntry);
+    }
+    return resourcePoolImages_;
+  }
+
+  public int getResourcePoolImagesCount() {
+    return internalGetResourcePoolImages().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Required if image_uri is not set. A map of resource_pool_id to
+   * prebuild Ray image if user need to use different images for different
+   * head/worker pools. This map needs to cover all the resource pool ids.
+   * Example:
+   * {
+   *   "ray_head_node_pool": "head image"
+   *   "ray_worker_node_pool1": "worker image"
+   *   "ray_worker_node_pool2": "another worker image"
+   * }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsResourcePoolImages(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetResourcePoolImages().getMap().containsKey(key);
+  }
+  /** Use {@link #getResourcePoolImagesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImages() {
+    return getResourcePoolImagesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Required if image_uri is not set. A map of resource_pool_id to
+   * prebuild Ray image if user need to use different images for different
+   * head/worker pools. This map needs to cover all the resource pool ids.
+   * Example:
+   * {
+   *   "ray_head_node_pool": "head image"
+   *   "ray_worker_node_pool1": "worker image"
+   *   "ray_worker_node_pool2": "another worker image"
+   * }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImagesMap() {
+    return internalGetResourcePoolImages().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Required if image_uri is not set. A map of resource_pool_id to
+   * prebuild Ray image if user need to use different images for different
+   * head/worker pools. This map needs to cover all the resource pool ids.
+   * Example:
+   * {
+   *   "ray_head_node_pool": "head image"
+   *   "ray_worker_node_pool1": "worker image"
+   *   "ray_worker_node_pool2": "another worker image"
+   * }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getResourcePoolImagesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourcePoolImages().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Required if image_uri is not set. A map of resource_pool_id to
+   * prebuild Ray image if user need to use different images for different
+   * head/worker pools. This map needs to cover all the resource pool ids.
+   * Example:
+   * {
+   *   "ray_head_node_pool": "head image"
+   *   "ray_worker_node_pool1": "worker image"
+   *   "ray_worker_node_pool2": "another worker image"
+   * }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourcePoolImagesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourcePoolImages().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int HEAD_NODE_RESOURCE_POOL_ID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headNodeResourcePoolId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This will be used to indicate which resource pool will serve as
+   * the Ray head node(the first node within that pool). Will use the machine
+   * from the first workerpool as the head node by default if this field is not
+   * set.
+   * </pre>
+   *
+   * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The headNodeResourcePoolId.
+   */
+  @java.lang.Override
+  public java.lang.String getHeadNodeResourcePoolId() {
+    java.lang.Object ref = headNodeResourcePoolId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      headNodeResourcePoolId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This will be used to indicate which resource pool will serve as
+   * the Ray head node(the first node within that pool). Will use the machine
+   * from the first workerpool as the head node by default if this field is not
+   * set.
+   * </pre>
+   *
+   * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for headNodeResourcePoolId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHeadNodeResourcePoolIdBytes() {
+    java.lang.Object ref = headNodeResourcePoolId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      headNodeResourcePoolId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -143,6 +358,14 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imageUri_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetResourcePoolImages(),
+        ResourcePoolImagesDefaultEntryHolder.defaultEntry,
+        6);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(headNodeResourcePoolId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, headNodeResourcePoolId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -154,6 +377,19 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imageUri_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourcePoolImages().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourcePoolImages__ =
+          ResourcePoolImagesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, resourcePoolImages__);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(headNodeResourcePoolId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, headNodeResourcePoolId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -172,6 +408,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1beta1.RaySpec) obj;
 
     if (!getImageUri().equals(other.getImageUri())) return false;
+    if (!internalGetResourcePoolImages().equals(other.internalGetResourcePoolImages()))
+      return false;
+    if (!getHeadNodeResourcePoolId().equals(other.getHeadNodeResourcePoolId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -185,6 +424,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + IMAGE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getImageUri().hashCode();
+    if (!internalGetResourcePoolImages().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_POOL_IMAGES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourcePoolImages().hashCode();
+    }
+    hash = (37 * hash) + HEAD_NODE_RESOURCE_POOL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getHeadNodeResourcePoolId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -306,6 +551,26 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_aiplatform_v1beta1_RaySpec_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetResourcePoolImages();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableResourcePoolImages();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -328,6 +593,8 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       imageUri_ = "";
+      internalGetMutableResourcePoolImages().clear();
+      headNodeResourcePoolId_ = "";
       return this;
     }
 
@@ -366,6 +633,13 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourcePoolImages_ = internalGetResourcePoolImages();
+        result.resourcePoolImages_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.headNodeResourcePoolId_ = headNodeResourcePoolId_;
       }
     }
 
@@ -419,6 +693,13 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableResourcePoolImages().mergeFrom(other.internalGetResourcePoolImages());
+      bitField0_ |= 0x00000002;
+      if (!other.getHeadNodeResourcePoolId().isEmpty()) {
+        headNodeResourcePoolId_ = other.headNodeResourcePoolId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +732,25 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    resourcePoolImages__ =
+                        input.readMessage(
+                            ResourcePoolImagesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableResourcePoolImages()
+                    .getMutableMap()
+                    .put(resourcePoolImages__.getKey(), resourcePoolImages__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 50
+            case 58:
+              {
+                headNodeResourcePoolId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -597,6 +897,367 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       imageUri_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourcePoolImages_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourcePoolImages() {
+      if (resourcePoolImages_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourcePoolImagesDefaultEntryHolder.defaultEntry);
+      }
+      return resourcePoolImages_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourcePoolImages() {
+      if (resourcePoolImages_ == null) {
+        resourcePoolImages_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourcePoolImagesDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourcePoolImages_.isMutable()) {
+        resourcePoolImages_ = resourcePoolImages_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return resourcePoolImages_;
+    }
+
+    public int getResourcePoolImagesCount() {
+      return internalGetResourcePoolImages().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsResourcePoolImages(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourcePoolImages().getMap().containsKey(key);
+    }
+    /** Use {@link #getResourcePoolImagesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImages() {
+      return getResourcePoolImagesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImagesMap() {
+      return internalGetResourcePoolImages().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getResourcePoolImagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourcePoolImages().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourcePoolImagesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourcePoolImages().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourcePoolImages() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableResourcePoolImages().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeResourcePoolImages(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableResourcePoolImages().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourcePoolImages() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableResourcePoolImages().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putResourcePoolImages(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableResourcePoolImages().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required if image_uri is not set. A map of resource_pool_id to
+     * prebuild Ray image if user need to use different images for different
+     * head/worker pools. This map needs to cover all the resource pool ids.
+     * Example:
+     * {
+     *   "ray_head_node_pool": "head image"
+     *   "ray_worker_node_pool1": "worker image"
+     *   "ray_worker_node_pool2": "another worker image"
+     * }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_pool_images = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllResourcePoolImages(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourcePoolImages().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private java.lang.Object headNodeResourcePoolId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This will be used to indicate which resource pool will serve as
+     * the Ray head node(the first node within that pool). Will use the machine
+     * from the first workerpool as the head node by default if this field is not
+     * set.
+     * </pre>
+     *
+     * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The headNodeResourcePoolId.
+     */
+    public java.lang.String getHeadNodeResourcePoolId() {
+      java.lang.Object ref = headNodeResourcePoolId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        headNodeResourcePoolId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This will be used to indicate which resource pool will serve as
+     * the Ray head node(the first node within that pool). Will use the machine
+     * from the first workerpool as the head node by default if this field is not
+     * set.
+     * </pre>
+     *
+     * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for headNodeResourcePoolId.
+     */
+    public com.google.protobuf.ByteString getHeadNodeResourcePoolIdBytes() {
+      java.lang.Object ref = headNodeResourcePoolId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        headNodeResourcePoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This will be used to indicate which resource pool will serve as
+     * the Ray head node(the first node within that pool). Will use the machine
+     * from the first workerpool as the head node by default if this field is not
+     * set.
+     * </pre>
+     *
+     * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The headNodeResourcePoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHeadNodeResourcePoolId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      headNodeResourcePoolId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This will be used to indicate which resource pool will serve as
+     * the Ray head node(the first node within that pool). Will use the machine
+     * from the first workerpool as the head node by default if this field is not
+     * set.
+     * </pre>
+     *
+     * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHeadNodeResourcePoolId() {
+      headNodeResourcePoolId_ = getDefaultInstance().getHeadNodeResourcePoolId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This will be used to indicate which resource pool will serve as
+     * the Ray head node(the first node within that pool). Will use the machine
+     * from the first workerpool as the head node by default if this field is not
+     * set.
+     * </pre>
+     *
+     * <code>string head_node_resource_pool_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for headNodeResourcePoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHeadNodeResourcePoolIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      headNodeResourcePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -42,6 +42,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -193,7 +194,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -238,7 +239,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -283,7 +284,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -316,7 +317,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -353,7 +354,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a Model artifact into Vertex AI.
+   * Creates a PersistentResource.
    *
    * <p>Sample code:
    *
@@ -846,6 +847,146 @@ public class PersistentResourceServiceClient implements BackgroundResource {
   public final UnaryCallable<DeletePersistentResourceRequest, Operation>
       deletePersistentResourceCallable() {
     return stub.deletePersistentResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   PersistentResource persistentResource = PersistentResource.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PersistentResource response =
+   *       persistentResourceServiceClient
+   *           .updatePersistentResourceAsync(persistentResource, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param persistentResource Required. The PersistentResource to update.
+   *     <p>The PersistentResource's `name` field is used to identify the PersistentResource to
+   *     update. Format:
+   *     `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+   * @param updateMask Required. Specify the fields to be overwritten in the PersistentResource by
+   *     the update method.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PersistentResource, UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceAsync(PersistentResource persistentResource, FieldMask updateMask) {
+    UpdatePersistentResourceRequest request =
+        UpdatePersistentResourceRequest.newBuilder()
+            .setPersistentResource(persistentResource)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePersistentResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   UpdatePersistentResourceRequest request =
+   *       UpdatePersistentResourceRequest.newBuilder()
+   *           .setPersistentResource(PersistentResource.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   PersistentResource response =
+   *       persistentResourceServiceClient.updatePersistentResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PersistentResource, UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceAsync(UpdatePersistentResourceRequest request) {
+    return updatePersistentResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   UpdatePersistentResourceRequest request =
+   *       UpdatePersistentResourceRequest.newBuilder()
+   *           .setPersistentResource(PersistentResource.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PersistentResource, UpdatePersistentResourceOperationMetadata> future =
+   *       persistentResourceServiceClient
+   *           .updatePersistentResourceOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PersistentResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdatePersistentResourceRequest,
+          PersistentResource,
+          UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceOperationCallable() {
+    return stub.updatePersistentResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   UpdatePersistentResourceRequest request =
+   *       UpdatePersistentResourceRequest.newBuilder()
+   *           .setPersistentResource(PersistentResource.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       persistentResourceServiceClient.updatePersistentResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceCallable() {
+    return stub.updatePersistentResourceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
