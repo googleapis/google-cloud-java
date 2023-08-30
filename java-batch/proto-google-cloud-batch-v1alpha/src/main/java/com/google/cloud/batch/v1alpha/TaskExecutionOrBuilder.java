@@ -36,4 +36,31 @@ public interface TaskExecutionOrBuilder
    * @return The exitCode.
    */
   int getExitCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The tail end of any content written to standard error by the task
+   * execution. This field will be populated only when the execution failed.
+   * </pre>
+   *
+   * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The stderrSnippet.
+   */
+  java.lang.String getStderrSnippet();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The tail end of any content written to standard error by the task
+   * execution. This field will be populated only when the execution failed.
+   * </pre>
+   *
+   * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for stderrSnippet.
+   */
+  com.google.protobuf.ByteString getStderrSnippetBytes();
 }

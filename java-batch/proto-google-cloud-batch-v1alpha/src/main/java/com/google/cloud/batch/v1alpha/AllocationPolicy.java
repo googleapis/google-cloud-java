@@ -1615,17 +1615,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -1644,17 +1641,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -1673,17 +1667,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -1776,14 +1767,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Disk size in GB.
      *
-     * For persistent disk, this field is ignored if `data_source` is `image` or
-     * `snapshot`.
-     * For local SSD, size_gb should be a multiple of 375GB,
-     * otherwise, the final size will be the next greater multiple of 375 GB.
-     * For boot disk, Batch will calculate the boot disk size based on source
+     * **Non-Boot Disk**:
+     * If the `type` specifies a persistent disk, this field
+     * is ignored if `data_source` is set as `image` or `snapshot`.
+     * If the `type` specifies a local SSD, this field should be a multiple of
+     * 375 GB, otherwise, the final size will be the next greater multiple of
+     * 375 GB.
+     *
+     * **Boot Disk**:
+     * Batch will calculate the boot disk size based on source
      * image and task requirements if you do not speicify the size.
-     * If both this field and the boot_disk_mib field in task spec's
-     * compute_resource are defined, Batch will only honor this field.
+     * If both this field and the `boot_disk_mib` field in task spec's
+     * `compute_resource` are defined, Batch will only honor this field.
+     * Also, this field should be no smaller than the source disk's
+     * size when the `data_source` is set as `snapshot` or `image`.
+     * For example, if you set an image as the `data_source` field and the
+     * image's default disk size 30 GB, you can only use this field to make the
+     * disk larger or equal to 30 GB.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -1925,17 +1925,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -1956,17 +1953,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -2000,17 +1994,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of an image used as the data source.
+     * URL for a VM image to use as the data source for this disk.
      * For example, the following are all valid URLs:
      *
      * * Specify the image by its family name:
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-     * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
-     * &lt;pre&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-     * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
      *
@@ -2179,14 +2170,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Disk size in GB.
      *
-     * For persistent disk, this field is ignored if `data_source` is `image` or
-     * `snapshot`.
-     * For local SSD, size_gb should be a multiple of 375GB,
-     * otherwise, the final size will be the next greater multiple of 375 GB.
-     * For boot disk, Batch will calculate the boot disk size based on source
+     * **Non-Boot Disk**:
+     * If the `type` specifies a persistent disk, this field
+     * is ignored if `data_source` is set as `image` or `snapshot`.
+     * If the `type` specifies a local SSD, this field should be a multiple of
+     * 375 GB, otherwise, the final size will be the next greater multiple of
+     * 375 GB.
+     *
+     * **Boot Disk**:
+     * Batch will calculate the boot disk size based on source
      * image and task requirements if you do not speicify the size.
-     * If both this field and the boot_disk_mib field in task spec's
-     * compute_resource are defined, Batch will only honor this field.
+     * If both this field and the `boot_disk_mib` field in task spec's
+     * `compute_resource` are defined, Batch will only honor this field.
+     * Also, this field should be no smaller than the source disk's
+     * size when the `data_source` is set as `snapshot` or `image`.
+     * For example, if you set an image as the `data_source` field and the
+     * image's default disk size 30 GB, you can only use this field to make the
+     * disk larger or equal to 30 GB.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -2744,17 +2744,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -2776,17 +2773,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -2821,17 +2815,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -2866,17 +2857,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -2904,17 +2892,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -2940,17 +2925,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Name of an image used as the data source.
+       * URL for a VM image to use as the data source for this disk.
        * For example, the following are all valid URLs:
        *
        * * Specify the image by its family name:
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/family/&lt;var
-       * class="apiparam"&gt;image_family&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
-       * &lt;pre&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/images/&lt;var
-       * class="apiparam"&gt;image_version&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
        *
@@ -3244,14 +3226,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        *
-       * For persistent disk, this field is ignored if `data_source` is `image` or
-       * `snapshot`.
-       * For local SSD, size_gb should be a multiple of 375GB,
-       * otherwise, the final size will be the next greater multiple of 375 GB.
-       * For boot disk, Batch will calculate the boot disk size based on source
+       * **Non-Boot Disk**:
+       * If the `type` specifies a persistent disk, this field
+       * is ignored if `data_source` is set as `image` or `snapshot`.
+       * If the `type` specifies a local SSD, this field should be a multiple of
+       * 375 GB, otherwise, the final size will be the next greater multiple of
+       * 375 GB.
+       *
+       * **Boot Disk**:
+       * Batch will calculate the boot disk size based on source
        * image and task requirements if you do not speicify the size.
-       * If both this field and the boot_disk_mib field in task spec's
-       * compute_resource are defined, Batch will only honor this field.
+       * If both this field and the `boot_disk_mib` field in task spec's
+       * `compute_resource` are defined, Batch will only honor this field.
+       * Also, this field should be no smaller than the source disk's
+       * size when the `data_source` is set as `snapshot` or `image`.
+       * For example, if you set an image as the `data_source` field and the
+       * image's default disk size 30 GB, you can only use this field to make the
+       * disk larger or equal to 30 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -3268,14 +3259,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        *
-       * For persistent disk, this field is ignored if `data_source` is `image` or
-       * `snapshot`.
-       * For local SSD, size_gb should be a multiple of 375GB,
-       * otherwise, the final size will be the next greater multiple of 375 GB.
-       * For boot disk, Batch will calculate the boot disk size based on source
+       * **Non-Boot Disk**:
+       * If the `type` specifies a persistent disk, this field
+       * is ignored if `data_source` is set as `image` or `snapshot`.
+       * If the `type` specifies a local SSD, this field should be a multiple of
+       * 375 GB, otherwise, the final size will be the next greater multiple of
+       * 375 GB.
+       *
+       * **Boot Disk**:
+       * Batch will calculate the boot disk size based on source
        * image and task requirements if you do not speicify the size.
-       * If both this field and the boot_disk_mib field in task spec's
-       * compute_resource are defined, Batch will only honor this field.
+       * If both this field and the `boot_disk_mib` field in task spec's
+       * `compute_resource` are defined, Batch will only honor this field.
+       * Also, this field should be no smaller than the source disk's
+       * size when the `data_source` is set as `snapshot` or `image`.
+       * For example, if you set an image as the `data_source` field and the
+       * image's default disk size 30 GB, you can only use this field to make the
+       * disk larger or equal to 30 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -3296,14 +3296,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        *
-       * For persistent disk, this field is ignored if `data_source` is `image` or
-       * `snapshot`.
-       * For local SSD, size_gb should be a multiple of 375GB,
-       * otherwise, the final size will be the next greater multiple of 375 GB.
-       * For boot disk, Batch will calculate the boot disk size based on source
+       * **Non-Boot Disk**:
+       * If the `type` specifies a persistent disk, this field
+       * is ignored if `data_source` is set as `image` or `snapshot`.
+       * If the `type` specifies a local SSD, this field should be a multiple of
+       * 375 GB, otherwise, the final size will be the next greater multiple of
+       * 375 GB.
+       *
+       * **Boot Disk**:
+       * Batch will calculate the boot disk size based on source
        * image and task requirements if you do not speicify the size.
-       * If both this field and the boot_disk_mib field in task spec's
-       * compute_resource are defined, Batch will only honor this field.
+       * If both this field and the `boot_disk_mib` field in task spec's
+       * `compute_resource` are defined, Batch will only honor this field.
+       * Also, this field should be no smaller than the source disk's
+       * size when the `data_source` is set as `snapshot` or `image`.
+       * For example, if you set an image as the `data_source` field and the
+       * image's default disk size 30 GB, you can only use this field to make the
+       * disk larger or equal to 30 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -4806,7 +4815,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=391
+     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=401
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4977,7 +4986,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=391
+     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=401
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -5642,7 +5651,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=391
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=401
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5660,7 +5669,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=391
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=401
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5682,7 +5691,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=391
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=401
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -5909,7 +5918,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @return A list containing the allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5924,7 +5933,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @return The count of allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5939,7 +5948,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @param index The index of the element to return.
      * @return The allowedMachineTypes at the given index.
      */
@@ -5955,7 +5964,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @param index The index of the value to return.
      * @return The bytes of the allowedMachineTypes at the given index.
      */
@@ -6149,6 +6158,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6160,6 +6172,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6171,6 +6186,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6182,6 +6200,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6194,6 +6215,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6294,7 +6318,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @return A list containing the allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -6311,7 +6335,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @return The count of allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -6328,7 +6352,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @param index The index of the element to return.
      * @return The allowedMachineTypes at the given index.
      */
@@ -6346,7 +6370,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
      * @param index The index of the value to return.
      * @return The bytes of the allowedMachineTypes at the given index.
      */
@@ -6648,6 +6672,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6663,6 +6690,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6679,6 +6709,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6693,6 +6726,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6707,6 +6743,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -7429,7 +7468,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @return A list containing the allowedMachineTypes.
        */
       @java.lang.Deprecated
@@ -7448,7 +7487,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @return The count of allowedMachineTypes.
        */
       @java.lang.Deprecated
@@ -7466,7 +7505,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param index The index of the element to return.
        * @return The allowedMachineTypes at the given index.
        */
@@ -7485,7 +7524,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param index The index of the value to return.
        * @return The bytes of the allowedMachineTypes at the given index.
        */
@@ -7504,7 +7543,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param index The index to set the value at.
        * @param value The allowedMachineTypes to set.
        * @return This builder for chaining.
@@ -7531,7 +7570,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param value The allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -7557,7 +7596,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param values The allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -7580,7 +7619,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -7602,7 +7641,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=407
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=417
        * @param value The bytes of the allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -8562,6 +8601,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8580,6 +8622,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8597,6 +8642,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8614,6 +8662,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8638,6 +8689,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8660,6 +8714,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8683,6 +8740,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8707,6 +8767,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8728,6 +8791,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8750,6 +8816,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8772,6 +8841,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8792,6 +8864,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8812,6 +8887,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8826,6 +8904,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8844,6 +8925,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8863,6 +8947,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8879,6 +8966,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -8896,6 +8986,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
        * New disks will be deleted when the VM is deleted.
+       * A non-boot disk is a disk that can be of a device with a
+       * file system or a raw storage drive that is not ready for data
+       * storage and accessing.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -9212,7 +9305,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Either an InstancePolicy or an instance template.
+   * InstancePolicyOrTemplate lets you define the type of resources to use for
+   * this job either with an InstancePolicy or an instance template.
+   * If undefined, Batch picks the type of VM to use and doesn't include
+   * optional VM resources such as GPUs and extra disks.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate}
@@ -9666,7 +9762,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Either an InstancePolicy or an instance template.
+     * InstancePolicyOrTemplate lets you define the type of resources to use for
+     * this job either with an InstancePolicy or an instance template.
+     * If undefined, Batch picks the type of VM to use and doesn't include
+     * optional VM resources such as GPUs and extra disks.
      * </pre>
      *
      * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate}
@@ -10444,14 +10543,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the network as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+     * * projects/{project}/global/networks/{network}
+     * * global/networks/{network}
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -10467,14 +10562,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the network as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+     * * projects/{project}/global/networks/{network}
+     * * global/networks/{network}
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -10491,16 +10582,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the subnetwork as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * regions/{region}/subnetworks/{subnetwork}
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -10516,16 +10601,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the subnetwork as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * regions/{region}/subnetworks/{subnetwork}
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -10610,14 +10689,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the network as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+     * * projects/{project}/global/networks/{network}
+     * * global/networks/{network}
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -10644,14 +10719,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the network as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-     * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+     * * projects/{project}/global/networks/{network}
+     * * global/networks/{network}
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -10683,16 +10754,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the subnetwork as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * regions/{region}/subnetworks/{subnetwork}
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -10719,16 +10784,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * You can specify the subnetwork as a full or partial URL.
      *
      * For example, the following are all valid URLs:
-     * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-     * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-     * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-     * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-     * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+     *
+     * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * * regions/{region}/subnetworks/{subnetwork}
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -11182,14 +11241,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the network as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+       * * projects/{project}/global/networks/{network}
+       * * global/networks/{network}
        * </pre>
        *
        * <code>string network = 1;</code>
@@ -11215,14 +11270,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the network as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+       * * projects/{project}/global/networks/{network}
+       * * global/networks/{network}
        * </pre>
        *
        * <code>string network = 1;</code>
@@ -11248,14 +11299,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the network as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+       * * projects/{project}/global/networks/{network}
+       * * global/networks/{network}
        * </pre>
        *
        * <code>string network = 1;</code>
@@ -11280,14 +11327,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the network as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+       * * projects/{project}/global/networks/{network}
+       * * global/networks/{network}
        * </pre>
        *
        * <code>string network = 1;</code>
@@ -11308,14 +11351,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the network as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;global/networks/&lt;var
-       * class="apiparam"&gt;network&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+       * * projects/{project}/global/networks/{network}
+       * * global/networks/{network}
        * </pre>
        *
        * <code>string network = 1;</code>
@@ -11343,16 +11382,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the subnetwork as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * regions/{region}/subnetworks/{subnetwork}
        * </pre>
        *
        * <code>string subnetwork = 2;</code>
@@ -11378,16 +11411,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the subnetwork as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * regions/{region}/subnetworks/{subnetwork}
        * </pre>
        *
        * <code>string subnetwork = 2;</code>
@@ -11413,16 +11440,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the subnetwork as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * regions/{region}/subnetworks/{subnetwork}
        * </pre>
        *
        * <code>string subnetwork = 2;</code>
@@ -11447,16 +11468,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the subnetwork as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * regions/{region}/subnetworks/{subnetwork}
        * </pre>
        *
        * <code>string subnetwork = 2;</code>
@@ -11477,16 +11492,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * You can specify the subnetwork as a full or partial URL.
        *
        * For example, the following are all valid URLs:
-       * &lt;pre&gt;&lt;code&gt;https://www.googleapis.com/compute/v1/projects/&lt;var
-       * class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;projects/&lt;var class="apiparam"&gt;project&lt;/var&gt;/regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
-       * &lt;pre&gt;&lt;code&gt;regions/&lt;var
-       * class="apiparam"&gt;region&lt;/var&gt;/subnetworks/&lt;var
-       * class="apiparam"&gt;subnetwork&lt;/var&gt;&lt;/code&gt;&lt;/pre&gt;
+       *
+       * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
+       * * regions/{region}/subnetworks/{subnetwork}
        * </pre>
        *
        * <code>string subnetwork = 2;</code>
@@ -13598,7 +13607,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=551
+   *     google/cloud/batch/v1alpha/job.proto;l=557
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -13618,7 +13627,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=551
+   *     google/cloud/batch/v1alpha/job.proto;l=557
    * @return The instance.
    */
   @java.lang.Override
@@ -13755,7 +13764,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=558
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13772,7 +13781,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=558
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13789,7 +13798,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=558
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -13807,7 +13816,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=558
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -13848,7 +13857,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=561
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -13871,7 +13880,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=561
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -13891,7 +13900,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=561
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -13913,7 +13922,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=561
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -13933,7 +13942,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=561
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -13959,7 +13968,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=564
+   *     See google/cloud/batch/v1alpha/job.proto;l=570
    * @return The serviceAccountEmail.
    */
   @java.lang.Override
@@ -13985,7 +13994,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=564
+   *     See google/cloud/batch/v1alpha/job.proto;l=570
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Override
@@ -15217,7 +15226,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=551
+     *     google/cloud/batch/v1alpha/job.proto;l=557
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -15236,7 +15245,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=551
+     *     google/cloud/batch/v1alpha/job.proto;l=557
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -15869,7 +15878,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -15887,7 +15896,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -15904,7 +15913,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -15922,7 +15931,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -15940,7 +15949,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -15966,7 +15975,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -15991,7 +16000,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -16013,7 +16022,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16034,7 +16043,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=558
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -16072,7 +16081,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -16094,7 +16103,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -16113,7 +16122,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -16134,7 +16143,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -16162,7 +16171,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16189,7 +16198,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16217,7 +16226,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16239,7 +16248,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -16258,7 +16267,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -16278,7 +16287,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -16302,7 +16311,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16325,7 +16334,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=561
+     *     See google/cloud/batch/v1alpha/job.proto;l=567
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16350,7 +16359,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=564
+     *     See google/cloud/batch/v1alpha/job.proto;l=570
      * @return The serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -16375,7 +16384,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=564
+     *     See google/cloud/batch/v1alpha/job.proto;l=570
      * @return The bytes for serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -16400,7 +16409,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=564
+     *     See google/cloud/batch/v1alpha/job.proto;l=570
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -16424,7 +16433,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=564
+     *     See google/cloud/batch/v1alpha/job.proto;l=570
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16444,7 +16453,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=564
+     *     See google/cloud/batch/v1alpha/job.proto;l=570
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
      */
