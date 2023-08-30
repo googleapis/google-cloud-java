@@ -337,5 +337,34 @@ public interface QueuedResourceStateOrBuilder
   com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedDataOrBuilder
       getSuspendedDataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for stateInitiator.
+   */
+  int getStateInitiatorValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateInitiator.
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator getStateInitiator();
+
   com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateDataCase getStateDataCase();
 }

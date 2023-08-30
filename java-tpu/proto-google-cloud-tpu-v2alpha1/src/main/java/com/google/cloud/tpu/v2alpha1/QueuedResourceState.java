@@ -39,6 +39,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
 
   private QueuedResourceState() {
     state_ = 0;
+    stateInitiator_ = 0;
   }
 
   @java.lang.Override
@@ -373,6 +374,165 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.tpu.v2alpha1.QueuedResourceState.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The initiator of the QueuedResource's SUSPENDING/SUSPENDED state.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator}
+   */
+  public enum StateInitiator implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The state initiator is unspecified.
+     * </pre>
+     *
+     * <code>STATE_INITIATOR_UNSPECIFIED = 0;</code>
+     */
+    STATE_INITIATOR_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The current QueuedResource state was initiated by the user.
+     * </pre>
+     *
+     * <code>USER = 1;</code>
+     */
+    USER(1),
+    /**
+     *
+     *
+     * <pre>
+     * The current QueuedResource state was initiated by the service.
+     * </pre>
+     *
+     * <code>SERVICE = 2;</code>
+     */
+    SERVICE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The state initiator is unspecified.
+     * </pre>
+     *
+     * <code>STATE_INITIATOR_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_INITIATOR_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The current QueuedResource state was initiated by the user.
+     * </pre>
+     *
+     * <code>USER = 1;</code>
+     */
+    public static final int USER_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The current QueuedResource state was initiated by the service.
+     * </pre>
+     *
+     * <code>SERVICE = 2;</code>
+     */
+    public static final int SERVICE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StateInitiator valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StateInitiator forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_INITIATOR_UNSPECIFIED;
+        case 1:
+          return USER;
+        case 2:
+          return SERVICE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StateInitiator> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StateInitiator> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StateInitiator>() {
+          public StateInitiator findValueByNumber(int number) {
+            return StateInitiator.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.tpu.v2alpha1.QueuedResourceState.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final StateInitiator[] VALUES = values();
+
+    public static StateInitiator valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StateInitiator(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator)
   }
 
   public interface CreatingDataOrBuilder
@@ -4636,6 +4796,47 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData.getDefaultInstance();
   }
 
+  public static final int STATE_INITIATOR_FIELD_NUMBER = 10;
+  private int stateInitiator_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for stateInitiator.
+   */
+  @java.lang.Override
+  public int getStateInitiatorValue() {
+    return stateInitiator_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateInitiator.
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator getStateInitiator() {
+    com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator result =
+        com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator.forNumber(stateInitiator_);
+    return result == null
+        ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4685,6 +4886,12 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     if (stateDataCase_ == 9) {
       output.writeMessage(
           9, (com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData) stateData_);
+    }
+    if (stateInitiator_
+        != com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator
+            .STATE_INITIATOR_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, stateInitiator_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4739,6 +4946,12 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData) stateData_);
     }
+    if (stateInitiator_
+        != com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator
+            .STATE_INITIATOR_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, stateInitiator_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4756,6 +4969,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         (com.google.cloud.tpu.v2alpha1.QueuedResourceState) obj;
 
     if (state_ != other.state_) return false;
+    if (stateInitiator_ != other.stateInitiator_) return false;
     if (!getStateDataCase().equals(other.getStateDataCase())) return false;
     switch (stateDataCase_) {
       case 2:
@@ -4798,6 +5012,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + STATE_INITIATOR_FIELD_NUMBER;
+    hash = (53 * hash) + stateInitiator_;
     switch (stateDataCase_) {
       case 2:
         hash = (37 * hash) + CREATING_DATA_FIELD_NUMBER;
@@ -4998,6 +5214,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       if (suspendedDataBuilder_ != null) {
         suspendedDataBuilder_.clear();
       }
+      stateInitiator_ = 0;
       stateDataCase_ = 0;
       stateData_ = null;
       return this;
@@ -5039,6 +5256,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stateInitiator_ = stateInitiator_;
       }
     }
 
@@ -5119,6 +5339,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return this;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.stateInitiator_ != 0) {
+        setStateInitiatorValue(other.getStateInitiatorValue());
       }
       switch (other.getStateDataCase()) {
         case CREATING_DATA:
@@ -5247,6 +5470,12 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
                 stateDataCase_ = 9;
                 break;
               } // case 74
+            case 80:
+              {
+                stateInitiator_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7126,6 +7355,110 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 9;
       onChanged();
       return suspendedDataBuilder_;
+    }
+
+    private int stateInitiator_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The initiator of the QueuedResources's current state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for stateInitiator.
+     */
+    @java.lang.Override
+    public int getStateInitiatorValue() {
+      return stateInitiator_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The initiator of the QueuedResources's current state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for stateInitiator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateInitiatorValue(int value) {
+      stateInitiator_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The initiator of the QueuedResources's current state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The stateInitiator.
+     */
+    @java.lang.Override
+    public com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator getStateInitiator() {
+      com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator result =
+          com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator.forNumber(
+              stateInitiator_);
+      return result == null
+          ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The initiator of the QueuedResources's current state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The stateInitiator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateInitiator(
+        com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      stateInitiator_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The initiator of the QueuedResources's current state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStateInitiator() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      stateInitiator_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

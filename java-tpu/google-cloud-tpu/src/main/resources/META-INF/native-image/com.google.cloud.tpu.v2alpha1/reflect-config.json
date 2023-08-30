@@ -1179,6 +1179,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.tpu.v2alpha1.QueuedResource$Tpu$NodeSpec$MultiNodeParams",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.tpu.v2alpha1.QueuedResource$Tpu$NodeSpec$MultiNodeParams$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.tpu.v2alpha1.QueuedResourceState",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1314,6 +1332,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.tpu.v2alpha1.QueuedResourceState$StateInitiator",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.tpu.v2alpha1.QueuedResourceState$SuspendedData",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1342,6 +1369,24 @@
   },
   {
     "name": "com.google.cloud.tpu.v2alpha1.QueuedResourceState$SuspendingData$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

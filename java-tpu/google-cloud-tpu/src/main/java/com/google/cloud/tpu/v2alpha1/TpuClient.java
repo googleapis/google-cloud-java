@@ -1641,6 +1641,154 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   QueuedResourceName name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the queued resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      QueuedResourceName name) {
+    ResetQueuedResourceRequest request =
+        ResetQueuedResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return resetQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString();
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the queued resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      String name) {
+    ResetQueuedResourceRequest request =
+        ResetQueuedResourceRequest.newBuilder().setName(name).build();
+    return resetQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      ResetQueuedResourceRequest request) {
+    return resetQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   OperationFuture<QueuedResource, OperationMetadata> future =
+   *       tpuClient.resetQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable() {
+    return stub.resetQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.resetQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable() {
+    return stub.resetQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates the Cloud TPU service identity for the project.
    *
    * <p>Sample code:

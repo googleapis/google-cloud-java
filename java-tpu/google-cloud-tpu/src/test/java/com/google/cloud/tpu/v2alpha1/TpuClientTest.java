@@ -1135,6 +1135,107 @@ public class TpuClientTest {
   }
 
   @Test
+  public void resetQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResetQueuedResourceRequest actualRequest = ((ResetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.resetQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void resetQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResetQueuedResourceRequest actualRequest = ((ResetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.resetQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void generateServiceIdentityTest() throws Exception {
     GenerateServiceIdentityResponse expectedResponse =
         GenerateServiceIdentityResponse.newBuilder()

@@ -59,6 +59,7 @@ import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
+import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
 import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
@@ -177,6 +178,16 @@ public class GrpcTpuStub extends TpuStub {
               .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/DeleteQueuedResource")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQueuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ResetQueuedResourceRequest, Operation>
+      resetQueuedResourceMethodDescriptor =
+          MethodDescriptor.<ResetQueuedResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/ResetQueuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ResetQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -304,6 +315,9 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable;
   private final OperationCallable<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
       deleteQueuedResourceOperationCallable;
+  private final UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable;
+  private final OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable;
   private final UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityCallable;
   private final UnaryCallable<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -469,6 +483,16 @@ public class GrpcTpuStub extends TpuStub {
     GrpcCallSettings<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceTransportSettings =
         GrpcCallSettings.<DeleteQueuedResourceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteQueuedResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceTransportSettings =
+        GrpcCallSettings.<ResetQueuedResourceRequest, Operation>newBuilder()
+            .setMethodDescriptor(resetQueuedResourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -665,6 +689,17 @@ public class GrpcTpuStub extends TpuStub {
             settings.deleteQueuedResourceOperationSettings(),
             clientContext,
             operationsStub);
+    this.resetQueuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            resetQueuedResourceTransportSettings,
+            settings.resetQueuedResourceSettings(),
+            clientContext);
+    this.resetQueuedResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            resetQueuedResourceTransportSettings,
+            settings.resetQueuedResourceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.generateServiceIdentityCallable =
         callableFactory.createUnaryCallable(
             generateServiceIdentityTransportSettings,
@@ -839,6 +874,17 @@ public class GrpcTpuStub extends TpuStub {
   public OperationCallable<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
       deleteQueuedResourceOperationCallable() {
     return deleteQueuedResourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable() {
+    return resetQueuedResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable() {
+    return resetQueuedResourceOperationCallable;
   }
 
   @Override
