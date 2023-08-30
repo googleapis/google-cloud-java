@@ -16,18 +16,18 @@
 
 package com.google.cloud.video.stitcher.v1.samples;
 
-// [START videostitcher_v1_generated_VideoStitcherService_CreateLiveSession_LivesessionnameLivesession_sync]
+// [START videostitcher_v1_generated_VideoStitcherService_CreateLiveSession_LocationnameLivesession_sync]
 import com.google.cloud.video.stitcher.v1.LiveSession;
-import com.google.cloud.video.stitcher.v1.LiveSessionName;
+import com.google.cloud.video.stitcher.v1.LocationName;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
 
-public class SyncCreateLiveSessionLivesessionnameLivesession {
+public class SyncCreateLiveSessionLocationnameLivesession {
 
   public static void main(String[] args) throws Exception {
-    syncCreateLiveSessionLivesessionnameLivesession();
+    syncCreateLiveSessionLocationnameLivesession();
   }
 
-  public static void syncCreateLiveSessionLivesessionnameLivesession() throws Exception {
+  public static void syncCreateLiveSessionLocationnameLivesession() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -35,10 +35,10 @@ public class SyncCreateLiveSessionLivesessionnameLivesession {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (VideoStitcherServiceClient videoStitcherServiceClient =
         VideoStitcherServiceClient.create()) {
-      LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       LiveSession liveSession = LiveSession.newBuilder().build();
       LiveSession response = videoStitcherServiceClient.createLiveSession(parent, liveSession);
     }
   }
 }
-// [END videostitcher_v1_generated_VideoStitcherService_CreateLiveSession_LivesessionnameLivesession_sync]
+// [END videostitcher_v1_generated_VideoStitcherService_CreateLiveSession_LocationnameLivesession_sync]
