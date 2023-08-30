@@ -908,4 +908,82 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 34;</code>
    */
   com.google.container.v1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  java.lang.String getMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskType.
+   */
+  java.lang.String getDiskType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for diskType.
+   */
+  com.google.protobuf.ByteString getDiskTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk size for nodes in the node pool specified in GB.
+   * The smallest allowed disk size is 10GB.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk size.
+   * </pre>
+   *
+   * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskSizeGb.
+   */
+  long getDiskSizeGb();
 }
