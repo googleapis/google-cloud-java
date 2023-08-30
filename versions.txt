@@ -667,3 +667,5 @@ google-cloud-java-alloydb-connectors:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-java-alloydb-connectors-v1alpha:0.1.0:0.2.0-SNAPSHOT
 google-cloud-alloydb-connectors:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-alloydb-connectors-v1alpha:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-language-v2:2.24.0:2.25.0-SNAPSHOT
+grpc-google-cloud-language-v2:2.24.0:2.25.0-SNAPSHOT
