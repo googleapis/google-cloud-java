@@ -207,4 +207,25 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void searchKnowledge(
+      SearchKnowledgeRequest request, StreamObserver<SearchKnowledgeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchKnowledgeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchKnowledgeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchKnowledge, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchKnowledgeResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -344,7 +344,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=562
+   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
    * @return The singleUtterance.
    */
   @java.lang.Override
@@ -1799,7 +1799,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=562
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
      * @return The singleUtterance.
      */
     @java.lang.Override
@@ -1825,7 +1825,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=562
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
@@ -1855,7 +1855,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=562
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

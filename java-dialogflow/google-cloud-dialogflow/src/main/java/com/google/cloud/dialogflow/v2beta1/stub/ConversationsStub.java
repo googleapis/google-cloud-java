@@ -35,6 +35,8 @@ import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesResponse;
+import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest;
+import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -97,6 +99,10 @@ public abstract class ConversationsStub implements BackgroundResource {
   public UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable() {
     throw new UnsupportedOperationException("Not implemented: generateStatelessSummaryCallable()");
+  }
+
+  public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -41,6 +41,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     timeZone_ = "";
     contexts_ = java.util.Collections.emptyList();
     sessionEntityTypes_ = java.util.Collections.emptyList();
+    platform_ = "";
   }
 
   @java.lang.Override
@@ -612,6 +613,65 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return map.get(key);
   }
 
+  public static final int PLATFORM_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object platform_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The platform.
+   */
+  @java.lang.Override
+  public java.lang.String getPlatform() {
+    java.lang.Object ref = platform_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      platform_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The bytes for platform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPlatformBytes() {
+    java.lang.Object ref = platform_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      platform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -649,6 +709,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 14);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, platform_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -692,6 +755,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, webhookHeaders__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, platform_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -727,6 +793,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return false;
     }
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
+    if (!getPlatform().equals(other.getPlatform())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -766,6 +833,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + WEBHOOK_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetWebhookHeaders().hashCode();
     }
+    hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getPlatform().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -957,6 +1026,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sentimentAnalysisRequestConfigBuilder_ = null;
       }
       internalGetMutableWebhookHeaders().clear();
+      platform_ = "";
       return this;
     }
 
@@ -1037,6 +1107,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.webhookHeaders_ = internalGetWebhookHeaders();
         result.webhookHeaders_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.platform_ = platform_;
       }
     }
 
@@ -1158,6 +1231,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
       bitField0_ |= 0x00000080;
+      if (!other.getPlatform().isEmpty()) {
+        platform_ = other.platform_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1255,6 +1333,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000080;
                 break;
               } // case 114
+            case 146:
+              {
+                platform_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3042,6 +3126,132 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder putAllWebhookHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableWebhookHeaders().getMutableMap().putAll(values);
       bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    private java.lang.Object platform_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The platform of the virtual agent response messages.
+     *
+     * If not empty, only emits messages from this platform in the response.
+     * Valid values are the enum names of
+     * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+     * </pre>
+     *
+     * <code>string platform = 18;</code>
+     *
+     * @return The platform.
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        platform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The platform of the virtual agent response messages.
+     *
+     * If not empty, only emits messages from this platform in the response.
+     * Valid values are the enum names of
+     * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+     * </pre>
+     *
+     * <code>string platform = 18;</code>
+     *
+     * @return The bytes for platform.
+     */
+    public com.google.protobuf.ByteString getPlatformBytes() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        platform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The platform of the virtual agent response messages.
+     *
+     * If not empty, only emits messages from this platform in the response.
+     * Valid values are the enum names of
+     * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+     * </pre>
+     *
+     * <code>string platform = 18;</code>
+     *
+     * @param value The platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatform(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      platform_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The platform of the virtual agent response messages.
+     *
+     * If not empty, only emits messages from this platform in the response.
+     * Valid values are the enum names of
+     * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+     * </pre>
+     *
+     * <code>string platform = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlatform() {
+      platform_ = getDefaultInstance().getPlatform();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The platform of the virtual agent response messages.
+     *
+     * If not empty, only emits messages from this platform in the response.
+     * Valid values are the enum names of
+     * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+     * </pre>
+     *
+     * <code>string platform = 18;</code>
+     *
+     * @param value The bytes for platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatformBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      platform_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
 
