@@ -43,6 +43,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     parent_ = "";
     pageToken_ = "";
     view_ = 0;
+    filter_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -130,7 +132,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Maximum number of executions to return per call.
-   * Max supported value depends on the selected Execution view: it's 10000 for
+   * Max supported value depends on the selected Execution view: it's 1000 for
    * BASIC and 100 for FULL. The default value used if the field is not
    * specified is 100, regardless of the selected view. Values greater than
    * the max value will be coerced down to it.
@@ -158,6 +160,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *
    * When paginating, all other parameters provided to `ListExecutions` must
    * match the call that provided the page token.
+   *
+   * Note that pagination is applied to dynamic data. The list of executions
+   * returned can change between page requests.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -185,6 +190,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *
    * When paginating, all other parameters provided to `ListExecutions` must
    * match the call that provided the page token.
+   *
+   * Note that pagination is applied to dynamic data. The list of executions
+   * returned can change between page requests.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -210,8 +218,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned executions.
-   * The API will default to the BASIC view.
+   * Optional. A view defining which fields should be filled in the returned
+   * executions. The API will default to the BASIC view.
    * </pre>
    *
    * <code>
@@ -228,8 +236,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned executions.
-   * The API will default to the BASIC view.
+   * Optional. A view defining which fields should be filled in the returned
+   * executions. The API will default to the BASIC view.
    * </pre>
    *
    * <code>
@@ -245,6 +253,120 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     return result == null
         ? com.google.cloud.workflows.executions.v1.ExecutionView.UNRECOGNIZED
         : result;
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [Executions.ListExecutions] results.
+   * The following fields are supported for filtering:
+   * executionID, state, startTime, endTime, duration, workflowRevisionID,
+   * stepName, and label.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [Executions.ListExecutions] results.
+   * The following fields are supported for filtering:
+   * executionID, state, startTime, endTime, duration, workflowRevisionID,
+   * stepName, and label.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ordering applied to the [Executions.ListExecutions] results.
+   * By default the ordering is based on descending start time.
+   * The following fields are supported for order by:
+   * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+   * </pre>
+   *
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ordering applied to the [Executions.ListExecutions] results.
+   * By default the ordering is based on descending start time.
+   * The following fields are supported for order by:
+   * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+   * </pre>
+   *
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,6 +397,12 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       output.writeEnum(4, view_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -298,6 +426,12 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, view_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -318,6 +452,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (view_ != other.view_) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +473,10 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +623,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       pageSize_ = 0;
       pageToken_ = "";
       view_ = 0;
+      filter_ = "";
+      orderBy_ = "";
       return this;
     }
 
@@ -532,6 +674,12 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.view_ = view_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.orderBy_ = orderBy_;
       }
     }
 
@@ -598,6 +746,16 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -648,6 +806,18 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -794,7 +964,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Maximum number of executions to return per call.
-     * Max supported value depends on the selected Execution view: it's 10000 for
+     * Max supported value depends on the selected Execution view: it's 1000 for
      * BASIC and 100 for FULL. The default value used if the field is not
      * specified is 100, regardless of the selected view. Values greater than
      * the max value will be coerced down to it.
@@ -813,7 +983,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Maximum number of executions to return per call.
-     * Max supported value depends on the selected Execution view: it's 10000 for
+     * Max supported value depends on the selected Execution view: it's 1000 for
      * BASIC and 100 for FULL. The default value used if the field is not
      * specified is 100, regardless of the selected view. Values greater than
      * the max value will be coerced down to it.
@@ -836,7 +1006,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Maximum number of executions to return per call.
-     * Max supported value depends on the selected Execution view: it's 10000 for
+     * Max supported value depends on the selected Execution view: it's 1000 for
      * BASIC and 100 for FULL. The default value used if the field is not
      * specified is 100, regardless of the selected view. Values greater than
      * the max value will be coerced down to it.
@@ -863,6 +1033,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * When paginating, all other parameters provided to `ListExecutions` must
      * match the call that provided the page token.
+     *
+     * Note that pagination is applied to dynamic data. The list of executions
+     * returned can change between page requests.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -889,6 +1062,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * When paginating, all other parameters provided to `ListExecutions` must
      * match the call that provided the page token.
+     *
+     * Note that pagination is applied to dynamic data. The list of executions
+     * returned can change between page requests.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -915,6 +1091,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * When paginating, all other parameters provided to `ListExecutions` must
      * match the call that provided the page token.
+     *
+     * Note that pagination is applied to dynamic data. The list of executions
+     * returned can change between page requests.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -940,6 +1119,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * When paginating, all other parameters provided to `ListExecutions` must
      * match the call that provided the page token.
+     *
+     * Note that pagination is applied to dynamic data. The list of executions
+     * returned can change between page requests.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -961,6 +1143,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      * When paginating, all other parameters provided to `ListExecutions` must
      * match the call that provided the page token.
+     *
+     * Note that pagination is applied to dynamic data. The list of executions
+     * returned can change between page requests.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -984,8 +1169,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A view defining which fields should be filled in the returned executions.
-     * The API will default to the BASIC view.
+     * Optional. A view defining which fields should be filled in the returned
+     * executions. The API will default to the BASIC view.
      * </pre>
      *
      * <code>
@@ -1002,8 +1187,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A view defining which fields should be filled in the returned executions.
-     * The API will default to the BASIC view.
+     * Optional. A view defining which fields should be filled in the returned
+     * executions. The API will default to the BASIC view.
      * </pre>
      *
      * <code>
@@ -1023,8 +1208,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A view defining which fields should be filled in the returned executions.
-     * The API will default to the BASIC view.
+     * Optional. A view defining which fields should be filled in the returned
+     * executions. The API will default to the BASIC view.
      * </pre>
      *
      * <code>
@@ -1045,8 +1230,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A view defining which fields should be filled in the returned executions.
-     * The API will default to the BASIC view.
+     * Optional. A view defining which fields should be filled in the returned
+     * executions. The API will default to the BASIC view.
      * </pre>
      *
      * <code>
@@ -1069,8 +1254,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A view defining which fields should be filled in the returned executions.
-     * The API will default to the BASIC view.
+     * Optional. A view defining which fields should be filled in the returned
+     * executions. The API will default to the BASIC view.
      * </pre>
      *
      * <code>
@@ -1082,6 +1267,248 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     public Builder clearView() {
       bitField0_ = (bitField0_ & ~0x00000008);
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [Executions.ListExecutions] results.
+     * The following fields are supported for filtering:
+     * executionID, state, startTime, endTime, duration, workflowRevisionID,
+     * stepName, and label.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [Executions.ListExecutions] results.
+     * The following fields are supported for filtering:
+     * executionID, state, startTime, endTime, duration, workflowRevisionID,
+     * stepName, and label.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [Executions.ListExecutions] results.
+     * The following fields are supported for filtering:
+     * executionID, state, startTime, endTime, duration, workflowRevisionID,
+     * stepName, and label.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [Executions.ListExecutions] results.
+     * The following fields are supported for filtering:
+     * executionID, state, startTime, endTime, duration, workflowRevisionID,
+     * stepName, and label.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [Executions.ListExecutions] results.
+     * The following fields are supported for filtering:
+     * executionID, state, startTime, endTime, duration, workflowRevisionID,
+     * stepName, and label.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ordering applied to the [Executions.ListExecutions] results.
+     * By default the ordering is based on descending start time.
+     * The following fields are supported for order by:
+     * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+     * </pre>
+     *
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ordering applied to the [Executions.ListExecutions] results.
+     * By default the ordering is based on descending start time.
+     * The following fields are supported for order by:
+     * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+     * </pre>
+     *
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ordering applied to the [Executions.ListExecutions] results.
+     * By default the ordering is based on descending start time.
+     * The following fields are supported for order by:
+     * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+     * </pre>
+     *
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ordering applied to the [Executions.ListExecutions] results.
+     * By default the ordering is based on descending start time.
+     * The following fields are supported for order by:
+     * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+     * </pre>
+     *
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ordering applied to the [Executions.ListExecutions] results.
+     * By default the ordering is based on descending start time.
+     * The following fields are supported for order by:
+     * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+     * </pre>
+     *
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

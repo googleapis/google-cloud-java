@@ -132,6 +132,44 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
+   * Output only. Measures the duration of the execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the duration field is set.
+   */
+  boolean hasDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Measures the duration of the execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The duration.
+   */
+  com.google.protobuf.Duration getDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Measures the duration of the execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Current state of the execution.
    * </pre>
    *
@@ -315,4 +353,183 @@ public interface ExecutionOrBuilder
    * @return The callLogLevel.
    */
   com.google.cloud.workflows.executions.v1.Execution.CallLogLevel getCallLogLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status tracks the current steps and progress data of this
+   * execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status tracks the current steps and progress data of this
+   * execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.workflows.executions.v1.Execution.Status getStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status tracks the current steps and progress data of this
+   * execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.workflows.executions.v1.Execution.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this execution.
+   * Labels can contain at most 64 entries. Keys and values can be no longer
+   * than 63 characters and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. Label keys must start with a letter.
+   * International characters are allowed.
+   * By default, labels are inherited from the workflow but are overridden by
+   * any labels associated with the execution.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 11;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this execution.
+   * Labels can contain at most 64 entries. Keys and values can be no longer
+   * than 63 characters and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. Label keys must start with a letter.
+   * International characters are allowed.
+   * By default, labels are inherited from the workflow but are overridden by
+   * any labels associated with the execution.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 11;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this execution.
+   * Labels can contain at most 64 entries. Keys and values can be no longer
+   * than 63 characters and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. Label keys must start with a letter.
+   * International characters are allowed.
+   * By default, labels are inherited from the workflow but are overridden by
+   * any labels associated with the execution.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 11;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this execution.
+   * Labels can contain at most 64 entries. Keys and values can be no longer
+   * than 63 characters and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. Label keys must start with a letter.
+   * International characters are allowed.
+   * By default, labels are inherited from the workflow but are overridden by
+   * any labels associated with the execution.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 11;</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this execution.
+   * Labels can contain at most 64 entries. Keys and values can be no longer
+   * than 63 characters and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. Label keys must start with a letter.
+   * International characters are allowed.
+   * By default, labels are inherited from the workflow but are overridden by
+   * any labels associated with the execution.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 11;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the Execution resource. For
+   * example, this field will have error details if the execution data is
+   * unavailable due to revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.StateError state_error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stateError field is set.
+   */
+  boolean hasStateError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the Execution resource. For
+   * example, this field will have error details if the execution data is
+   * unavailable due to revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.StateError state_error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateError.
+   */
+  com.google.cloud.workflows.executions.v1.Execution.StateError getStateError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the Execution resource. For
+   * example, this field will have error details if the execution data is
+   * unavailable due to revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.executions.v1.Execution.StateError state_error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.workflows.executions.v1.Execution.StateErrorOrBuilder getStateErrorOrBuilder();
 }

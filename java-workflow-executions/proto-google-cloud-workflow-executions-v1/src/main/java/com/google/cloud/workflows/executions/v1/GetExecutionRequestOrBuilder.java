@@ -60,8 +60,8 @@ public interface GetExecutionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned execution.
-   * The API will default to the FULL view.
+   * Optional. A view defining which fields should be filled in the returned
+   * execution. The API will default to the FULL view.
    * </pre>
    *
    * <code>
@@ -75,8 +75,8 @@ public interface GetExecutionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned execution.
-   * The API will default to the FULL view.
+   * Optional. A view defining which fields should be filled in the returned
+   * execution. The API will default to the FULL view.
    * </pre>
    *
    * <code>
