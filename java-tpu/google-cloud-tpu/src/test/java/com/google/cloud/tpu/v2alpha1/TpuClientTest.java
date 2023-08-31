@@ -210,6 +210,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -268,6 +269,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -326,6 +328,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -398,6 +401,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -554,6 +558,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -626,6 +631,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -698,6 +704,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1698,6 +1705,7 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
