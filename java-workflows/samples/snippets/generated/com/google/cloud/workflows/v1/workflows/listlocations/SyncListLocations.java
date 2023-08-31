@@ -16,32 +16,35 @@
 
 package com.google.cloud.workflows.v1.samples;
 
-// [START workflows_v1_generated_Workflows_GetWorkflow_sync]
-import com.google.cloud.workflows.v1.GetWorkflowRequest;
-import com.google.cloud.workflows.v1.Workflow;
-import com.google.cloud.workflows.v1.WorkflowName;
+// [START workflows_v1_generated_Workflows_ListLocations_sync]
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.WorkflowsClient;
 
-public class SyncGetWorkflow {
+public class SyncListLocations {
 
   public static void main(String[] args) throws Exception {
-    syncGetWorkflow();
+    syncListLocations();
   }
 
-  public static void syncGetWorkflow() throws Exception {
+  public static void syncListLocations() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
-      GetWorkflowRequest request =
-          GetWorkflowRequest.newBuilder()
-              .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
-              .setRevisionId("revisionId-1507445162")
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .build();
-      Workflow response = workflowsClient.getWorkflow(request);
+      for (Location element : workflowsClient.listLocations(request).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END workflows_v1_generated_Workflows_GetWorkflow_sync]
+// [END workflows_v1_generated_Workflows_ListLocations_sync]
