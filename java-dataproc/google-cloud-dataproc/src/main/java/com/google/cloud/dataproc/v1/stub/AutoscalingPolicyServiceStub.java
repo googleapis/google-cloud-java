@@ -27,6 +27,11 @@ import com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
 import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
 import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
 import com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -67,6 +72,19 @@ public abstract class AutoscalingPolicyServiceStub implements BackgroundResource
 
   public UnaryCallable<DeleteAutoscalingPolicyRequest, Empty> deleteAutoscalingPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAutoscalingPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

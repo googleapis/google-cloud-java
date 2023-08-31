@@ -30,6 +30,11 @@ import com.google.cloud.dataproc.v1.ListJobsRequest;
 import com.google.cloud.dataproc.v1.ListJobsResponse;
 import com.google.cloud.dataproc.v1.SubmitJobRequest;
 import com.google.cloud.dataproc.v1.UpdateJobRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -88,6 +93,19 @@ public abstract class JobControllerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

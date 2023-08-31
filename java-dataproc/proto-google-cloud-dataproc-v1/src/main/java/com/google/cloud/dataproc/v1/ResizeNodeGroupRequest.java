@@ -217,7 +217,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -245,7 +245,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -275,7 +275,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -1072,7 +1072,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1099,7 +1099,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1132,7 +1132,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1167,7 +1167,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1200,7 +1200,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1238,7 +1238,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1270,7 +1270,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1297,7 +1297,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group
@@ -1328,7 +1328,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Timeout for graceful YARN decomissioning. [Graceful
+     * Optional. Timeout for graceful YARN decommissioning. [Graceful
      * decommissioning]
      * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
      * allows the removal of nodes from the Compute Engine node group

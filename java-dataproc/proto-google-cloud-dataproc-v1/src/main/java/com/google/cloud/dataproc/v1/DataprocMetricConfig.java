@@ -66,9 +66,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A source for the collection of Dataproc OSS metrics (see [available OSS
+   * A source for the collection of Dataproc custom metrics (see [Custom
    * metrics]
-   * (https://cloud.google.com//dataproc/docs/guides/monitoring#available_oss_metrics)).
+   * (https://cloud.google.com//dataproc/docs/guides/dataproc-metrics#custom_metrics)).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource}
@@ -88,9 +88,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Default monitoring agent metrics. If this source is enabled,
+     * Monitoring agent metrics. If this source is enabled,
      * Dataproc enables the monitoring agent in Compute Engine,
-     * and collects default monitoring agent metrics, which are published
+     * and collects monitoring agent metrics, which are published
      * with an `agent.googleapis.com` prefix.
      * </pre>
      *
@@ -174,9 +174,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Default monitoring agent metrics. If this source is enabled,
+     * Monitoring agent metrics. If this source is enabled,
      * Dataproc enables the monitoring agent in Compute Engine,
-     * and collects default monitoring agent metrics, which are published
+     * and collects monitoring agent metrics, which are published
      * with an `agent.googleapis.com` prefix.
      * </pre>
      *
@@ -348,9 +348,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Default metrics are collected unless `metricOverrides` are
-     * specified for the metric source (see [Available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+     * Required. A standard set of metrics is collected unless `metricOverrides`
+     * are specified for the metric source (see [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
      * for more information).
      * </pre>
      *
@@ -365,9 +365,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Default metrics are collected unless `metricOverrides` are
-     * specified for the metric source (see [Available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+     * Required. A standard set of metrics is collected unless `metricOverrides`
+     * are specified for the metric source (see [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
      * for more information).
      * </pre>
      *
@@ -383,9 +383,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -405,13 +405,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -423,9 +423,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -445,13 +445,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -463,9 +463,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -485,13 +485,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -504,9 +504,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -526,13 +526,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -546,7 +546,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A Dataproc OSS metric.
+   * A Dataproc custom metric.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.DataprocMetricConfig.Metric}
@@ -593,9 +593,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Default metrics are collected unless `metricOverrides` are
-     * specified for the metric source (see [Available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+     * Required. A standard set of metrics is collected unless `metricOverrides`
+     * are specified for the metric source (see [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
      * for more information).
      * </pre>
      *
@@ -613,9 +613,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Default metrics are collected unless `metricOverrides` are
-     * specified for the metric source (see [Available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+     * Required. A standard set of metrics is collected unless `metricOverrides`
+     * are specified for the metric source (see [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
      * for more information).
      * </pre>
      *
@@ -643,9 +643,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -665,13 +665,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -685,9 +685,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -707,13 +707,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -727,9 +727,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -749,13 +749,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -770,9 +770,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specify one or more [available OSS metrics]
-     * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-     * to collect for the metric course (for the `SPARK` metric source, any
+     * Optional. Specify one or more [Custom metrics]
+     * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+     * to collect for the metric course (for the `SPARK` metric source (any
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
@@ -792,13 +792,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      * Notes:
      *
-     * * Only the specified overridden metrics will be collected for the
+     * * Only the specified overridden metrics are collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
-     *   are listed as metric overrides, other `SPARK` metrics will not be
-     *   collected. The collection of the default metrics for other OSS metric
-     *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-     *   sources are enabled, and overrides are provided for Spark metrics only,
-     *   all default YARN metrics will be collected.
+     *   are listed as metric overrides, other `SPARK` metrics are not
+     *   collected. The collection of the metrics for other enabled custom
+     *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+     *   metric sources are enabled, and overrides are provided for Spark
+     *   metrics only, all YARN metrics are collected.
      * </pre>
      *
      * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -997,7 +997,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A Dataproc OSS metric.
+     * A Dataproc custom metric.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataproc.v1.DataprocMetricConfig.Metric}
@@ -1204,9 +1204,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. Default metrics are collected unless `metricOverrides` are
-       * specified for the metric source (see [Available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+       * Required. A standard set of metrics is collected unless `metricOverrides`
+       * are specified for the metric source (see [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
        * for more information).
        * </pre>
        *
@@ -1224,9 +1224,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. Default metrics are collected unless `metricOverrides` are
-       * specified for the metric source (see [Available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+       * Required. A standard set of metrics is collected unless `metricOverrides`
+       * are specified for the metric source (see [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
        * for more information).
        * </pre>
        *
@@ -1247,9 +1247,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. Default metrics are collected unless `metricOverrides` are
-       * specified for the metric source (see [Available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+       * Required. A standard set of metrics is collected unless `metricOverrides`
+       * are specified for the metric source (see [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
        * for more information).
        * </pre>
        *
@@ -1271,9 +1271,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. Default metrics are collected unless `metricOverrides` are
-       * specified for the metric source (see [Available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+       * Required. A standard set of metrics is collected unless `metricOverrides`
+       * are specified for the metric source (see [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
        * for more information).
        * </pre>
        *
@@ -1298,9 +1298,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. Default metrics are collected unless `metricOverrides` are
-       * specified for the metric source (see [Available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
+       * Required. A standard set of metrics is collected unless `metricOverrides`
+       * are specified for the metric source (see [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
        * for more information).
        * </pre>
        *
@@ -1330,9 +1330,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1352,13 +1352,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1374,9 +1374,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1396,13 +1396,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1417,9 +1417,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1439,13 +1439,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1461,9 +1461,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1483,13 +1483,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1505,9 +1505,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1527,13 +1527,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1557,9 +1557,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1579,13 +1579,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1608,9 +1608,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1630,13 +1630,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1656,9 +1656,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1678,13 +1678,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1703,9 +1703,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. Specify one or more [available OSS metrics]
-       * (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics)
-       * to collect for the metric course (for the `SPARK` metric source, any
+       * Optional. Specify one or more [Custom metrics]
+       * (https://cloud.google.com/dataproc/docs/guides/dataproc-metrics#custom_metrics)
+       * to collect for the metric course (for the `SPARK` metric source (any
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
@@ -1725,13 +1725,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        *
        * Notes:
        *
-       * * Only the specified overridden metrics will be collected for the
+       * * Only the specified overridden metrics are collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
-       *   are listed as metric overrides, other `SPARK` metrics will not be
-       *   collected. The collection of the default metrics for other OSS metric
-       *   sources is unaffected. For example, if both `SPARK` andd `YARN` metric
-       *   sources are enabled, and overrides are provided for Spark metrics only,
-       *   all default YARN metrics will be collected.
+       *   are listed as metric overrides, other `SPARK` metrics are not
+       *   collected. The collection of the metrics for other enabled custom
+       *   metric sources is unaffected. For example, if both `SPARK` andd `YARN`
+       *   metric sources are enabled, and overrides are provided for Spark
+       *   metrics only, all YARN metrics are collected.
        * </pre>
        *
        * <code>repeated string metric_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];

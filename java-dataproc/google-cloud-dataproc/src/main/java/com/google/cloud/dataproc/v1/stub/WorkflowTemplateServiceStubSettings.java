@@ -61,6 +61,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -135,6 +140,10 @@ public class WorkflowTemplateServiceStubSettings
       listWorkflowTemplatesSettings;
   private final UnaryCallSettings<DeleteWorkflowTemplateRequest, Empty>
       deleteWorkflowTemplateSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
@@ -257,6 +266,22 @@ public class WorkflowTemplateServiceStubSettings
     return deleteWorkflowTemplateSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public WorkflowTemplateServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -376,6 +401,9 @@ public class WorkflowTemplateServiceStubSettings
     updateWorkflowTemplateSettings = settingsBuilder.updateWorkflowTemplateSettings().build();
     listWorkflowTemplatesSettings = settingsBuilder.listWorkflowTemplatesSettings().build();
     deleteWorkflowTemplateSettings = settingsBuilder.deleteWorkflowTemplateSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for WorkflowTemplateServiceStubSettings. */
@@ -405,6 +433,10 @@ public class WorkflowTemplateServiceStubSettings
         listWorkflowTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteWorkflowTemplateRequest, Empty>
         deleteWorkflowTemplateSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -421,6 +453,7 @@ public class WorkflowTemplateServiceStubSettings
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -451,6 +484,8 @@ public class WorkflowTemplateServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_4_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -471,6 +506,9 @@ public class WorkflowTemplateServiceStubSettings
       listWorkflowTemplatesSettings =
           PagedCallSettings.newBuilder(LIST_WORKFLOW_TEMPLATES_PAGE_STR_FACT);
       deleteWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -480,7 +518,10 @@ public class WorkflowTemplateServiceStubSettings
               instantiateInlineWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
-              deleteWorkflowTemplateSettings);
+              deleteWorkflowTemplateSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -500,6 +541,9 @@ public class WorkflowTemplateServiceStubSettings
       updateWorkflowTemplateSettings = settings.updateWorkflowTemplateSettings.toBuilder();
       listWorkflowTemplatesSettings = settings.listWorkflowTemplatesSettings.toBuilder();
       deleteWorkflowTemplateSettings = settings.deleteWorkflowTemplateSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -509,7 +553,10 @@ public class WorkflowTemplateServiceStubSettings
               instantiateInlineWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
-              deleteWorkflowTemplateSettings);
+              deleteWorkflowTemplateSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -573,6 +620,21 @@ public class WorkflowTemplateServiceStubSettings
           .deleteWorkflowTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .instantiateWorkflowTemplateOperationSettings()
@@ -703,6 +765,22 @@ public class WorkflowTemplateServiceStubSettings
     public UnaryCallSettings.Builder<DeleteWorkflowTemplateRequest, Empty>
         deleteWorkflowTemplateSettings() {
       return deleteWorkflowTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override
