@@ -22,44 +22,46 @@ package com.google.cloud.recommender.v1;
  *
  *
  * <pre>
- * Request for the GetRecommenderConfig` method.
+ * Request for the `MarkRecommendationDismissed` Method.
  * </pre>
  *
- * Protobuf type {@code google.cloud.recommender.v1.GetRecommenderConfigRequest}
+ * Protobuf type {@code google.cloud.recommender.v1.MarkRecommendationDismissedRequest}
  */
-public final class GetRecommenderConfigRequest extends com.google.protobuf.GeneratedMessageV3
+public final class MarkRecommendationDismissedRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.GetRecommenderConfigRequest)
-    GetRecommenderConfigRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.MarkRecommendationDismissedRequest)
+    MarkRecommendationDismissedRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetRecommenderConfigRequest.newBuilder() to construct.
-  private GetRecommenderConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MarkRecommendationDismissedRequest.newBuilder() to construct.
+  private MarkRecommendationDismissedRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetRecommenderConfigRequest() {
+  private MarkRecommendationDismissedRequest() {
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetRecommenderConfigRequest();
+    return new MarkRecommendationDismissedRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommenderProto
-        .internal_static_google_cloud_recommender_v1_GetRecommenderConfigRequest_descriptor;
+        .internal_static_google_cloud_recommender_v1_MarkRecommendationDismissedRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.recommender.v1.RecommenderProto
-        .internal_static_google_cloud_recommender_v1_GetRecommenderConfigRequest_fieldAccessorTable
+        .internal_static_google_cloud_recommender_v1_MarkRecommendationDismissedRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.recommender.v1.GetRecommenderConfigRequest.class,
-            com.google.cloud.recommender.v1.GetRecommenderConfigRequest.Builder.class);
+            com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.class,
+            com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -70,17 +72,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Name of the Recommendation Config to get.
-   *
-   * Acceptable formats:
-   *
-   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   * Name of the recommendation.
    * </pre>
    *
    * <code>
@@ -105,17 +97,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Name of the Recommendation Config to get.
-   *
-   * Acceptable formats:
-   *
-   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-   *
-   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   * Name of the recommendation.
    * </pre>
    *
    * <code>
@@ -131,6 +113,57 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of the Recommendation. Provides optimistic locking.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of the Recommendation. Provides optimistic locking.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -154,6 +187,9 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -166,6 +202,9 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, etag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -176,13 +215,14 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.recommender.v1.GetRecommenderConfigRequest)) {
+    if (!(obj instanceof com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.recommender.v1.GetRecommenderConfigRequest other =
-        (com.google.cloud.recommender.v1.GetRecommenderConfigRequest) obj;
+    com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest other =
+        (com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,76 +236,79 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest parseFrom(
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -283,7 +326,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
   }
 
   public static Builder newBuilder(
-      com.google.cloud.recommender.v1.GetRecommenderConfigRequest prototype) {
+      com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -301,31 +344,32 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request for the GetRecommenderConfig` method.
+   * Request for the `MarkRecommendationDismissed` Method.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.recommender.v1.GetRecommenderConfigRequest}
+   * Protobuf type {@code google.cloud.recommender.v1.MarkRecommendationDismissedRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.recommender.v1.GetRecommenderConfigRequest)
-      com.google.cloud.recommender.v1.GetRecommenderConfigRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.recommender.v1.MarkRecommendationDismissedRequest)
+      com.google.cloud.recommender.v1.MarkRecommendationDismissedRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.recommender.v1.RecommenderProto
-          .internal_static_google_cloud_recommender_v1_GetRecommenderConfigRequest_descriptor;
+          .internal_static_google_cloud_recommender_v1_MarkRecommendationDismissedRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.recommender.v1.RecommenderProto
-          .internal_static_google_cloud_recommender_v1_GetRecommenderConfigRequest_fieldAccessorTable
+          .internal_static_google_cloud_recommender_v1_MarkRecommendationDismissedRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.recommender.v1.GetRecommenderConfigRequest.class,
-              com.google.cloud.recommender.v1.GetRecommenderConfigRequest.Builder.class);
+              com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.class,
+              com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.recommender.v1.GetRecommenderConfigRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -337,23 +381,26 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      etag_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.recommender.v1.RecommenderProto
-          .internal_static_google_cloud_recommender_v1_GetRecommenderConfigRequest_descriptor;
+          .internal_static_google_cloud_recommender_v1_MarkRecommendationDismissedRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.recommender.v1.GetRecommenderConfigRequest getDefaultInstanceForType() {
-      return com.google.cloud.recommender.v1.GetRecommenderConfigRequest.getDefaultInstance();
+    public com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.recommender.v1.GetRecommenderConfigRequest build() {
-      com.google.cloud.recommender.v1.GetRecommenderConfigRequest result = buildPartial();
+    public com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest build() {
+      com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -361,9 +408,9 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
     }
 
     @java.lang.Override
-    public com.google.cloud.recommender.v1.GetRecommenderConfigRequest buildPartial() {
-      com.google.cloud.recommender.v1.GetRecommenderConfigRequest result =
-          new com.google.cloud.recommender.v1.GetRecommenderConfigRequest(this);
+    public com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest buildPartial() {
+      com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest result =
+          new com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -371,10 +418,14 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.recommender.v1.GetRecommenderConfigRequest result) {
+    private void buildPartial0(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
       }
     }
 
@@ -413,20 +464,28 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.recommender.v1.GetRecommenderConfigRequest) {
-        return mergeFrom((com.google.cloud.recommender.v1.GetRecommenderConfigRequest) other);
+      if (other instanceof com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest) {
+        return mergeFrom(
+            (com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.recommender.v1.GetRecommenderConfigRequest other) {
-      if (other == com.google.cloud.recommender.v1.GetRecommenderConfigRequest.getDefaultInstance())
-        return this;
+    public Builder mergeFrom(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest other) {
+      if (other
+          == com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+              .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -461,6 +520,12 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -485,17 +550,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the Recommendation Config to get.
-     *
-     * Acceptable formats:
-     *
-     * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     * Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -519,17 +574,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the Recommendation Config to get.
-     *
-     * Acceptable formats:
-     *
-     * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     * Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -553,17 +598,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the Recommendation Config to get.
-     *
-     * Acceptable formats:
-     *
-     * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     * Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -586,17 +621,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the Recommendation Config to get.
-     *
-     * Acceptable formats:
-     *
-     * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     * Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -615,17 +640,7 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the Recommendation Config to get.
-     *
-     * Acceptable formats:
-     *
-     * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
-     *
-     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     * Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -646,6 +661,112 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -657,24 +778,26 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.recommender.v1.GetRecommenderConfigRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.recommender.v1.MarkRecommendationDismissedRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.recommender.v1.GetRecommenderConfigRequest)
-  private static final com.google.cloud.recommender.v1.GetRecommenderConfigRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.recommender.v1.MarkRecommendationDismissedRequest)
+  private static final com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.recommender.v1.GetRecommenderConfigRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest();
   }
 
-  public static com.google.cloud.recommender.v1.GetRecommenderConfigRequest getDefaultInstance() {
+  public static com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetRecommenderConfigRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetRecommenderConfigRequest>() {
+  private static final com.google.protobuf.Parser<MarkRecommendationDismissedRequest> PARSER =
+      new com.google.protobuf.AbstractParser<MarkRecommendationDismissedRequest>() {
         @java.lang.Override
-        public GetRecommenderConfigRequest parsePartialFrom(
+        public MarkRecommendationDismissedRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -693,17 +816,18 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
         }
       };
 
-  public static com.google.protobuf.Parser<GetRecommenderConfigRequest> parser() {
+  public static com.google.protobuf.Parser<MarkRecommendationDismissedRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetRecommenderConfigRequest> getParserForType() {
+  public com.google.protobuf.Parser<MarkRecommendationDismissedRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.recommender.v1.GetRecommenderConfigRequest getDefaultInstanceForType() {
+  public com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
