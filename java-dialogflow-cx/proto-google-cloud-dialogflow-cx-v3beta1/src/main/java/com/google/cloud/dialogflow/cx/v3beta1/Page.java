@@ -308,8 +308,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
    *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -319,7 +321,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *     intent, then the first group in the ordered list takes precedence.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -336,8 +341,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
    *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -347,7 +354,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *     intent, then the first group in the ordered list takes precedence.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -364,8 +374,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
    *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -375,7 +387,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *     intent, then the first group in the ordered list takes precedence.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -393,8 +408,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
    *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -404,7 +421,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *     intent, then the first group in the ordered list takes precedence.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -678,6 +698,65 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     return eventHandlers_.get(index);
   }
 
+  public static final int KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER = 18;
+  private com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
+      knowledgeConnectorSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeConnectorSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeConnectorSettings() {
+    return knowledgeConnectorSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeConnectorSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
+      getKnowledgeConnectorSettings() {
+    return knowledgeConnectorSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.getDefaultInstance()
+        : knowledgeConnectorSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder
+      getKnowledgeConnectorSettingsOrBuilder() {
+    return knowledgeConnectorSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.getDefaultInstance()
+        : knowledgeConnectorSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -714,6 +793,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 11, transitionRouteGroups_.getRaw(i));
     }
+    if (knowledgeConnectorSettings_ != null) {
+      output.writeMessage(18, getKnowledgeConnectorSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -749,6 +831,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTransitionRouteGroupsList().size();
     }
+    if (knowledgeConnectorSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getKnowledgeConnectorSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -778,6 +865,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     if (!getTransitionRouteGroupsList().equals(other.getTransitionRouteGroupsList())) return false;
     if (!getTransitionRoutesList().equals(other.getTransitionRoutesList())) return false;
     if (!getEventHandlersList().equals(other.getEventHandlersList())) return false;
+    if (hasKnowledgeConnectorSettings() != other.hasKnowledgeConnectorSettings()) return false;
+    if (hasKnowledgeConnectorSettings()) {
+      if (!getKnowledgeConnectorSettings().equals(other.getKnowledgeConnectorSettings()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -812,6 +904,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     if (getEventHandlersCount() > 0) {
       hash = (37 * hash) + EVENT_HANDLERS_FIELD_NUMBER;
       hash = (53 * hash) + getEventHandlersList().hashCode();
+    }
+    if (hasKnowledgeConnectorSettings()) {
+      hash = (37 * hash) + KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeConnectorSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -994,6 +1090,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         eventHandlersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      knowledgeConnectorSettings_ = null;
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        knowledgeConnectorSettingsBuilder_.dispose();
+        knowledgeConnectorSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1068,6 +1169,12 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         transitionRouteGroups_.makeImmutable();
         result.transitionRouteGroups_ = transitionRouteGroups_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.knowledgeConnectorSettings_ =
+            knowledgeConnectorSettingsBuilder_ == null
+                ? knowledgeConnectorSettings_
+                : knowledgeConnectorSettingsBuilder_.build();
       }
     }
 
@@ -1196,6 +1303,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasKnowledgeConnectorSettings()) {
+        mergeKnowledgeConnectorSettings(other.getKnowledgeConnectorSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1282,6 +1392,13 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
                 transitionRouteGroups_.add(s);
                 break;
               } // case 90
+            case 146:
+              {
+                input.readMessage(
+                    getKnowledgeConnectorSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1942,8 +2059,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -1953,7 +2072,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -1972,8 +2094,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -1983,7 +2107,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2001,8 +2128,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2012,7 +2141,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2031,8 +2163,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2042,7 +2176,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2061,8 +2198,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2072,7 +2211,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2099,8 +2241,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2110,7 +2254,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2136,8 +2283,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2147,7 +2296,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2170,8 +2322,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2181,7 +2335,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2203,8 +2360,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Ordered list of
      * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * associated with the page. Transition route groups must be unique within a
-     * page.
+     * added to the page. Transition route groups must be unique within a page. If
+     * the page links both flow-level transition route groups and agent-level
+     * transition route groups, the flow-level ones will have higher priority and
+     * will be put before the agent-level ones.
      *
      * *   If multiple transition routes within a page scope refer to the same
      *     intent, then the precedence order is: page's transition route -&gt; page's
@@ -2214,7 +2373,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *     intent, then the first group in the ordered list takes precedence.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -3375,6 +3537,216 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         eventHandlers_ = null;
       }
       return eventHandlersBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
+        knowledgeConnectorSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder>
+        knowledgeConnectorSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the knowledgeConnectorSettings field is set.
+     */
+    public boolean hasKnowledgeConnectorSettings() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The knowledgeConnectorSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
+        getKnowledgeConnectorSettings() {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        return knowledgeConnectorSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.getDefaultInstance()
+            : knowledgeConnectorSettings_;
+      } else {
+        return knowledgeConnectorSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings value) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeConnectorSettings_ = value;
+      } else {
+        knowledgeConnectorSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder builderForValue) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        knowledgeConnectorSettings_ = builderForValue.build();
+      } else {
+        knowledgeConnectorSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings value) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && knowledgeConnectorSettings_ != null
+            && knowledgeConnectorSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
+                    .getDefaultInstance()) {
+          getKnowledgeConnectorSettingsBuilder().mergeFrom(value);
+        } else {
+          knowledgeConnectorSettings_ = value;
+        }
+      } else {
+        knowledgeConnectorSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKnowledgeConnectorSettings() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      knowledgeConnectorSettings_ = null;
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        knowledgeConnectorSettingsBuilder_.dispose();
+        knowledgeConnectorSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder
+        getKnowledgeConnectorSettingsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getKnowledgeConnectorSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder
+        getKnowledgeConnectorSettingsOrBuilder() {
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        return knowledgeConnectorSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeConnectorSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.getDefaultInstance()
+            : knowledgeConnectorSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder>
+        getKnowledgeConnectorSettingsFieldBuilder() {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        knowledgeConnectorSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder>(
+                getKnowledgeConnectorSettings(), getParentForChildren(), isClean());
+        knowledgeConnectorSettings_ = null;
+      }
+      return knowledgeConnectorSettingsBuilder_;
     }
 
     @java.lang.Override

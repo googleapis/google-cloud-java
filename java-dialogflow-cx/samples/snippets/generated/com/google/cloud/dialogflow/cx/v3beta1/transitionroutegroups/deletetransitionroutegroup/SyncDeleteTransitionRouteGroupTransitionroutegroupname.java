@@ -36,7 +36,7 @@ public class SyncDeleteTransitionRouteGroupTransitionroutegroupname {
     try (TransitionRouteGroupsClient transitionRouteGroupsClient =
         TransitionRouteGroupsClient.create()) {
       TransitionRouteGroupName name =
-          TransitionRouteGroupName.of(
+          TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
               "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
       transitionRouteGroupsClient.deleteTransitionRouteGroup(name);
     }

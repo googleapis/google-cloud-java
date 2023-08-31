@@ -1240,6 +1240,7 @@ public class FlowsClient implements BackgroundResource {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
    *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
    *           .build();
    *   ImportFlowResponse response = flowsClient.importFlowAsync(request).get();
    * }
@@ -1280,6 +1281,7 @@ public class FlowsClient implements BackgroundResource {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
    *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
    *           .build();
    *   OperationFuture<ImportFlowResponse, Struct> future =
    *       flowsClient.importFlowOperationCallable().futureCall(request);
@@ -1320,6 +1322,7 @@ public class FlowsClient implements BackgroundResource {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
    *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = flowsClient.importFlowCallable().futureCall(request);
    *   // Do something.

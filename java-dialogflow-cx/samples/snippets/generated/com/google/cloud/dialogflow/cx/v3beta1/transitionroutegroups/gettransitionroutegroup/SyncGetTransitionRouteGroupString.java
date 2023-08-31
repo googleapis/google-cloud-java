@@ -36,7 +36,7 @@ public class SyncGetTransitionRouteGroupString {
     try (TransitionRouteGroupsClient transitionRouteGroupsClient =
         TransitionRouteGroupsClient.create()) {
       String name =
-          TransitionRouteGroupName.of(
+          TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                   "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
               .toString();
       TransitionRouteGroup response = transitionRouteGroupsClient.getTransitionRouteGroup(name);

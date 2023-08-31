@@ -105,6 +105,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -152,6 +153,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -355,6 +357,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -399,6 +402,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -443,6 +447,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -719,6 +724,7 @@ public class FlowsClientTest {
     ImportFlowRequest request =
         ImportFlowRequest.newBuilder()
             .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
             .build();
 
     ImportFlowResponse actualResponse = client.importFlowAsync(request).get();
@@ -732,6 +738,7 @@ public class FlowsClientTest {
     Assert.assertEquals(request.getFlowUri(), actualRequest.getFlowUri());
     Assert.assertEquals(request.getFlowContent(), actualRequest.getFlowContent());
     Assert.assertEquals(request.getImportOption(), actualRequest.getImportOption());
+    Assert.assertEquals(request.getFlowImportStrategy(), actualRequest.getFlowImportStrategy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -747,6 +754,7 @@ public class FlowsClientTest {
       ImportFlowRequest request =
           ImportFlowRequest.newBuilder()
               .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
               .build();
       client.importFlowAsync(request).get();
       Assert.fail("No exception raised");

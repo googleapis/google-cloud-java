@@ -40,7 +40,7 @@ public class AsyncDeleteTransitionRouteGroup {
       DeleteTransitionRouteGroupRequest request =
           DeleteTransitionRouteGroupRequest.newBuilder()
               .setName(
-                  TransitionRouteGroupName.of(
+                  TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                           "[PROJECT]",
                           "[LOCATION]",
                           "[AGENT]",

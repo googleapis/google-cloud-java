@@ -537,7 +537,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -561,7 +564,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -585,7 +591,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -610,7 +619,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -673,6 +685,64 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         : nluSettings_;
   }
 
+  public static final int KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER = 18;
+  private com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledgeConnectorSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeConnectorSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeConnectorSettings() {
+    return knowledgeConnectorSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeConnectorSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
+      getKnowledgeConnectorSettings() {
+    return knowledgeConnectorSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.getDefaultInstance()
+        : knowledgeConnectorSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder
+      getKnowledgeConnectorSettingsOrBuilder() {
+    return knowledgeConnectorSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.getDefaultInstance()
+        : knowledgeConnectorSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -709,6 +779,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 15, transitionRouteGroups_.getRaw(i));
     }
+    if (knowledgeConnectorSettings_ != null) {
+      output.writeMessage(18, getKnowledgeConnectorSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -744,6 +817,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTransitionRouteGroupsList().size();
     }
+    if (knowledgeConnectorSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getKnowledgeConnectorSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -768,6 +846,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasNluSettings() != other.hasNluSettings()) return false;
     if (hasNluSettings()) {
       if (!getNluSettings().equals(other.getNluSettings())) return false;
+    }
+    if (hasKnowledgeConnectorSettings() != other.hasKnowledgeConnectorSettings()) return false;
+    if (hasKnowledgeConnectorSettings()) {
+      if (!getKnowledgeConnectorSettings().equals(other.getKnowledgeConnectorSettings()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -801,6 +884,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasNluSettings()) {
       hash = (37 * hash) + NLU_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getNluSettings().hashCode();
+    }
+    if (hasKnowledgeConnectorSettings()) {
+      hash = (37 * hash) + KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeConnectorSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -977,6 +1064,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         nluSettingsBuilder_.dispose();
         nluSettingsBuilder_ = null;
       }
+      knowledgeConnectorSettings_ = null;
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        knowledgeConnectorSettingsBuilder_.dispose();
+        knowledgeConnectorSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1051,6 +1143,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.nluSettings_ =
             nluSettingsBuilder_ == null ? nluSettings_ : nluSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.knowledgeConnectorSettings_ =
+            knowledgeConnectorSettingsBuilder_ == null
+                ? knowledgeConnectorSettings_
+                : knowledgeConnectorSettingsBuilder_.build();
       }
     }
 
@@ -1181,6 +1279,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (other.hasNluSettings()) {
         mergeNluSettings(other.getNluSettings());
       }
+      if (other.hasKnowledgeConnectorSettings()) {
+        mergeKnowledgeConnectorSettings(other.getKnowledgeConnectorSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1265,6 +1366,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 transitionRouteGroups_.add(s);
                 break;
               } // case 122
+            case 146:
+              {
+                input.readMessage(
+                    getKnowledgeConnectorSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2847,7 +2955,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2873,7 +2984,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2898,7 +3012,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2924,7 +3041,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2950,7 +3070,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -2984,7 +3107,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -3017,7 +3143,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -3047,7 +3176,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -3076,7 +3208,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * defined in the page have higher priority than those defined in the flow.
      *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+     * groups.
      * </pre>
      *
      * <code>
@@ -3280,6 +3415,216 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         nluSettings_ = null;
       }
       return nluSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
+        knowledgeConnectorSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings,
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder>
+        knowledgeConnectorSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the knowledgeConnectorSettings field is set.
+     */
+    public boolean hasKnowledgeConnectorSettings() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The knowledgeConnectorSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
+        getKnowledgeConnectorSettings() {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        return knowledgeConnectorSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.getDefaultInstance()
+            : knowledgeConnectorSettings_;
+      } else {
+        return knowledgeConnectorSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings value) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeConnectorSettings_ = value;
+      } else {
+        knowledgeConnectorSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder builderForValue) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        knowledgeConnectorSettings_ = builderForValue.build();
+      } else {
+        knowledgeConnectorSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKnowledgeConnectorSettings(
+        com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings value) {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && knowledgeConnectorSettings_ != null
+            && knowledgeConnectorSettings_
+                != com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
+                    .getDefaultInstance()) {
+          getKnowledgeConnectorSettingsBuilder().mergeFrom(value);
+        } else {
+          knowledgeConnectorSettings_ = value;
+        }
+      } else {
+        knowledgeConnectorSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKnowledgeConnectorSettings() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      knowledgeConnectorSettings_ = null;
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        knowledgeConnectorSettingsBuilder_.dispose();
+        knowledgeConnectorSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder
+        getKnowledgeConnectorSettingsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getKnowledgeConnectorSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder
+        getKnowledgeConnectorSettingsOrBuilder() {
+      if (knowledgeConnectorSettingsBuilder_ != null) {
+        return knowledgeConnectorSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeConnectorSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.getDefaultInstance()
+            : knowledgeConnectorSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Knowledge connector configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings,
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder>
+        getKnowledgeConnectorSettingsFieldBuilder() {
+      if (knowledgeConnectorSettingsBuilder_ == null) {
+        knowledgeConnectorSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings,
+                com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder>(
+                getKnowledgeConnectorSettings(), getParentForChildren(), isClean());
+        knowledgeConnectorSettings_ = null;
+      }
+      return knowledgeConnectorSettingsBuilder_;
     }
 
     @java.lang.Override

@@ -84,6 +84,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3beta1/{parent=projects/*/locations/*/agents/*}/transitionRouteGroups")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -123,6 +125,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -160,6 +164,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3beta1/{parent=projects/*/locations/*/agents/*}/transitionRouteGroups")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -206,6 +212,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                 request.getTransitionRouteGroup().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3beta1/{transitionRouteGroup.name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -250,6 +258,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

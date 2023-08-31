@@ -582,7 +582,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=725
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=728
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -602,7 +602,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=725
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=728
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -642,7 +642,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=736
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=739
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated

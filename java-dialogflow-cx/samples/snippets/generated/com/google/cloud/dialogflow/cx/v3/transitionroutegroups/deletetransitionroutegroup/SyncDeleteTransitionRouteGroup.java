@@ -39,7 +39,7 @@ public class SyncDeleteTransitionRouteGroup {
       DeleteTransitionRouteGroupRequest request =
           DeleteTransitionRouteGroupRequest.newBuilder()
               .setName(
-                  TransitionRouteGroupName.of(
+                  TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                           "[PROJECT]",
                           "[LOCATION]",
                           "[AGENT]",

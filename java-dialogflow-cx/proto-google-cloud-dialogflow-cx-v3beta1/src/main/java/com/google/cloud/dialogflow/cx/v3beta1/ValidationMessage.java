@@ -216,6 +216,16 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>TRANSITION_ROUTE_GROUP = 7;</code>
      */
     TRANSITION_ROUTE_GROUP(7),
+    /**
+     *
+     *
+     * <pre>
+     * Agent transition route group.
+     * </pre>
+     *
+     * <code>AGENT_TRANSITION_ROUTE_GROUP = 14;</code>
+     */
+    AGENT_TRANSITION_ROUTE_GROUP(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -359,6 +369,16 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>TRANSITION_ROUTE_GROUP = 7;</code>
      */
     public static final int TRANSITION_ROUTE_GROUP_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Agent transition route group.
+     * </pre>
+     *
+     * <code>AGENT_TRANSITION_ROUTE_GROUP = 14;</code>
+     */
+    public static final int AGENT_TRANSITION_ROUTE_GROUP_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -412,6 +432,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
           return PAGES;
         case 7:
           return TRANSITION_ROUTE_GROUP;
+        case 14:
+          return AGENT_TRANSITION_ROUTE_GROUP;
         default:
           return null;
       }
@@ -703,7 +725,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
    * @return A list containing the resources.
    */
   @java.lang.Deprecated
@@ -720,7 +742,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
    * @return The count of resources.
    */
   @java.lang.Deprecated
@@ -737,7 +759,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
    * @param index The index of the element to return.
    * @return The resources at the given index.
    */
@@ -755,7 +777,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
    * @param index The index of the value to return.
    * @return The bytes of the resources at the given index.
    */
@@ -1551,7 +1573,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @return A list containing the resources.
      */
     @java.lang.Deprecated
@@ -1569,7 +1591,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @return The count of resources.
      */
     @java.lang.Deprecated
@@ -1586,7 +1608,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param index The index of the element to return.
      * @return The resources at the given index.
      */
@@ -1604,7 +1626,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param index The index of the value to return.
      * @return The bytes of the resources at the given index.
      */
@@ -1622,7 +1644,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param index The index to set the value at.
      * @param value The resources to set.
      * @return This builder for chaining.
@@ -1648,7 +1670,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param value The resources to add.
      * @return This builder for chaining.
      */
@@ -1673,7 +1695,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param values The resources to add.
      * @return This builder for chaining.
      */
@@ -1695,7 +1717,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1716,7 +1738,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=96
      * @param value The bytes of the resources to add.
      * @return This builder for chaining.
      */
