@@ -50,6 +50,10 @@
       <artifactId>guava</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
     </dependency>
