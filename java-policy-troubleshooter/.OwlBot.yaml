@@ -18,6 +18,10 @@ deep-remove-regex:
 - "/java-policy-troubleshooter/grpc-google-.*/src"
 - "/java-policy-troubleshooter/proto-google-.*/src"
 - "/java-policy-troubleshooter/google-.*/src"
+- "/java-policy-troubleshooter/iam/samples/snippets/generated"
+- "/java-policy-troubleshooter/iam/grpc-google-.*/src"
+- "/java-policy-troubleshooter/iam/proto-google-.*/src"
+- "/java-policy-troubleshooter/iam/google-.*/src"
 
 deep-preserve-regex:
 - "/java-policy-troubleshooter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -31,5 +35,13 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-policy-troubleshooter/$1/google-cloud-policy-troubleshooter/src"
 - source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated"
+- source: "/google/cloud/policytroubleshooter/iam/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/iam/$1/proto-google-cloud-policy-troubleshooter-$1/src"
+- source: "/google/cloud/policytroubleshooter/iam/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/iam/$1/grpc-google-cloud-policy-troubleshooter-$1/src"
+- source: "/google/cloud/policytroubleshooter/iam/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/iam/$1/google-cloud-policy-troubleshooter/src"
+- source: "/google/cloud/policytroubleshooter/iam/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/iam/$1/samples/snippets/generated"
 
 api-name: policytroubleshooter
