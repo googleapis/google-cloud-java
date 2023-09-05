@@ -11,3 +11,5 @@ __pycache__
 .org-list.txt
 SimpleBenchmarkApp/src/main/java/com/google/cloud/App.java
 .flattened-pom.xml
+# Local Test files
+*ITLocalTest.java
