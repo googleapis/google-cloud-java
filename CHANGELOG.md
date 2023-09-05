@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.31.2](https://github.com/googleapis/java-bigquery/compare/v2.31.1...v2.31.2) (2023-09-05)
+
+
+### Bug Fixes
+
+* Hide TableReference data struct ([#2855](https://github.com/googleapis/java-bigquery/issues/2855)) ([2cbded6](https://github.com/googleapis/java-bigquery/commit/2cbded6600af1de8ec15b04a2496733ad2b50c47))
+* SearchStats IndexUnusedReasons null bug ([#2825](https://github.com/googleapis/java-bigquery/issues/2825)) ([309ea60](https://github.com/googleapis/java-bigquery/commit/309ea607a9ff50e59dc4e1069c689c1da9605ed5))
+
 ## [2.31.1](https://github.com/googleapis/java-bigquery/compare/v2.31.0...v2.31.1) (2023-08-09)
 
 
