@@ -50,4 +50,5 @@
     <module>proto-google-cloud-infra-manager-v1</module>
     <module>google-cloud-infra-manager-bom</module>
   </modules>
-</project>
+
+  </project>
