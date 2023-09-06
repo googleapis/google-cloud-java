@@ -100,6 +100,7 @@
     <module>java-iamcredentials</module>
     <module>java-iam</module>
     <module>java-ids</module>
+    <module>java-infra-manager</module>
     <module>java-iot</module>
     <module>java-kmsinventory</module>
     <module>java-kms</module>
