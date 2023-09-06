@@ -27,10 +27,16 @@ import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.Duration;
 import java.time.Instant;
+import java.time.Period;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.threeten.extra.PeriodDuration;
 
 /**
  * Google BigQuery Table Field Value class. Objects of this class represent values of a BigQuery
@@ -238,6 +244,28 @@ public class FieldValue implements Serializable {
   }
 
   /**
+   * Returns this field's value as a {@link org.threeten.extra.PeriodDuration}. This method should
+   * be used if the corresponding field has {@link StandardSQLTypeName#INTERVAL} type, or if it is a
+   * legal canonical format "[sign]Y-M [sign]D [sign]H:M:S[.F]", e.g. "123-7 -19 0:24:12.000006" or
+   * ISO 8601.
+   *
+   * @throws ClassCastException if the field is not a primitive type
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
+   * @throws IllegalArgumentException if the field cannot be converted to a legal interval
+   */
+  @SuppressWarnings("unchecked")
+  public PeriodDuration getPeriodDuration() {
+    checkNotNull(value);
+    try {
+      // Try parsing from ISO 8601
+      return PeriodDuration.parse(getStringValue());
+    } catch (DateTimeParseException dateTimeParseException) {
+      // Try parsing from canonical interval format
+      return parseCanonicalInterval(getStringValue());
+    }
+  }
+
+  /**
    * Returns this field's value as a {@link FieldValueList} instance. This method should only be
    * used if the corresponding field has {@link LegacySQLTypeName#RECORD} type (i.e. {@link
    * #getAttribute()} is {@link Attribute#RECORD}).
@@ -324,5 +352,64 @@ public class FieldValue implements Serializable {
       }
     }
     throw new IllegalArgumentException("Unexpected table cell format");
+  }
+
+  /**
+   * Parse interval in canonical format and create instance of {@code PeriodDuration}.
+   *
+   * <p>The parameter {@code interval} should be an interval in the canonical format: "[sign]Y-M
+   * [sign]D [sign]H:M:S[.F]". More details <a href=
+   * "https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
+   * here</a>
+   *
+   * @throws IllegalArgumentException if the {@code interval} is not a valid interval
+   */
+  static PeriodDuration parseCanonicalInterval(String interval) throws IllegalArgumentException {
+    // Pattern is [sign]Y-M [sign]D [sign]H:M:S[.F]
+    Pattern pattern =
+        Pattern.compile(
+            "(?<sign1>[+-])?(?<year>\\d+)-(?<month>\\d+) (?<sign2>[-|+])?(?<day>\\d+) (?<sign3>[-|+])?(?<hours>\\d+):(?<minutes>\\d+):(?<seconds>\\d+)(\\.(?<fraction>\\d+))?");
+    Matcher matcher = pattern.matcher(interval);
+    if (!matcher.find()) {
+      throw new IllegalArgumentException();
+    }
+    String sign1 = matcher.group("sign1");
+    String year = matcher.group("year");
+    String month = matcher.group("month");
+    String sign2 = matcher.group("sign2");
+    String day = matcher.group("day");
+    String sign3 = matcher.group("sign3");
+    String hours = matcher.group("hours");
+    String minutes = matcher.group("minutes");
+    String seconds = matcher.group("seconds");
+    String fraction = matcher.group("fraction");
+
+    int yearInt = Integer.parseInt(year);
+    int monthInt = Integer.parseInt(month);
+    if (Objects.equals(sign1, "-")) {
+      yearInt *= -1;
+      monthInt *= -1;
+    }
+
+    int dayInt = Integer.parseInt(day);
+    if (Objects.equals(sign2, "-")) {
+      dayInt *= -1;
+    }
+    if (sign3 == null) {
+      sign3 = "";
+    }
+
+    String durationString =
+        sign3
+            + "PT"
+            + hours
+            + "H"
+            + minutes
+            + "M"
+            + seconds
+            + (fraction == null ? "" : "." + fraction)
+            + "S";
+
+    return PeriodDuration.of(Period.of(yearInt, monthInt, dayInt), Duration.parse(durationString));
   }
 }
