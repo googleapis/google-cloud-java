@@ -88,4 +88,18 @@ public interface DeleteConversionWorkspaceRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Force delete the conversion workspace, even if there's a running migration
+   * that is using the workspace.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

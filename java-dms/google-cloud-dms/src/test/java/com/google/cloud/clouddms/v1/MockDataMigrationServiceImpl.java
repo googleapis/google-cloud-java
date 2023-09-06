@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.clouddms.v1.DataMigrationServiceGrpc.DataMigrationServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -308,6 +309,27 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
                   "Unrecognized response type %s for method GenerateSshScript, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SshScript.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateTcpProxyScript(
+      GenerateTcpProxyScriptRequest request, StreamObserver<TcpProxyScript> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TcpProxyScript) {
+      requests.add(request);
+      responseObserver.onNext(((TcpProxyScript) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateTcpProxyScript, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TcpProxyScript.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -605,6 +627,90 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
                   "Unrecognized response type %s for method DeleteConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMappingRule(
+      CreateMappingRuleRequest request, StreamObserver<MappingRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MappingRule) {
+      requests.add(request);
+      responseObserver.onNext(((MappingRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMappingRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MappingRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMappingRule(
+      DeleteMappingRuleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMappingRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMappingRules(
+      ListMappingRulesRequest request, StreamObserver<ListMappingRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMappingRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMappingRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMappingRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMappingRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMappingRule(
+      GetMappingRuleRequest request, StreamObserver<MappingRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MappingRule) {
+      requests.add(request);
+      responseObserver.onNext(((MappingRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMappingRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MappingRule.class.getName(),
                   Exception.class.getName())));
     }
   }

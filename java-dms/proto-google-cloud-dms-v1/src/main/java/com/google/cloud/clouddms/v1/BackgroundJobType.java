@@ -202,7 +202,7 @@ public enum BackgroundJobType implements com.google.protobuf.ProtocolMessageEnum
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(3);
   }
 
   private static final BackgroundJobType[] VALUES = values();

@@ -372,6 +372,61 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
   }
 
+  public static final int SSL_FIELD_NUMBER = 7;
+  private com.google.cloud.clouddms.v1.SslConfig ssl_;
+  /**
+   *
+   *
+   * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   *
+   * @return Whether the ssl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSsl() {
+    return ssl_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   *
+   * @return The ssl.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.SslConfig getSsl() {
+    return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.SslConfigOrBuilder getSslOrBuilder() {
+    return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
+  }
+
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 100;
   /**
    *
@@ -569,6 +624,9 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseService_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, databaseService_);
     }
+    if (ssl_ != null) {
+      output.writeMessage(7, getSsl());
+    }
     if (connectivityCase_ == 100) {
       output.writeMessage(
           100, (com.google.cloud.clouddms.v1.StaticServiceIpConnectivity) connectivity_);
@@ -607,6 +665,9 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseService_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, databaseService_);
     }
+    if (ssl_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSsl());
+    }
     if (connectivityCase_ == 100) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -644,6 +705,10 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     if (!getPassword().equals(other.getPassword())) return false;
     if (getPasswordSet() != other.getPasswordSet()) return false;
     if (!getDatabaseService().equals(other.getDatabaseService())) return false;
+    if (hasSsl() != other.hasSsl()) return false;
+    if (hasSsl()) {
+      if (!getSsl().equals(other.getSsl())) return false;
+    }
     if (!getConnectivityCase().equals(other.getConnectivityCase())) return false;
     switch (connectivityCase_) {
       case 100:
@@ -682,6 +747,10 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPasswordSet());
     hash = (37 * hash) + DATABASE_SERVICE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabaseService().hashCode();
+    if (hasSsl()) {
+      hash = (37 * hash) + SSL_FIELD_NUMBER;
+      hash = (53 * hash) + getSsl().hashCode();
+    }
     switch (connectivityCase_) {
       case 100:
         hash = (37 * hash) + STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER;
@@ -844,6 +913,11 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       password_ = "";
       passwordSet_ = false;
       databaseService_ = "";
+      ssl_ = null;
+      if (sslBuilder_ != null) {
+        sslBuilder_.dispose();
+        sslBuilder_ = null;
+      }
       if (staticServiceIpConnectivityBuilder_ != null) {
         staticServiceIpConnectivityBuilder_.clear();
       }
@@ -909,6 +983,9 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.databaseService_ = databaseService_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.ssl_ = sslBuilder_ == null ? ssl_ : sslBuilder_.build();
       }
     }
 
@@ -998,6 +1075,9 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasSsl()) {
+        mergeSsl(other.getSsl());
+      }
       switch (other.getConnectivityCase()) {
         case STATIC_SERVICE_IP_CONNECTIVITY:
           {
@@ -1081,6 +1161,12 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getSslFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             case 802:
               {
                 input.readMessage(
@@ -1698,6 +1784,212 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.clouddms.v1.SslConfig ssl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.SslConfig,
+            com.google.cloud.clouddms.v1.SslConfig.Builder,
+            com.google.cloud.clouddms.v1.SslConfigOrBuilder>
+        sslBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     *
+     * @return Whether the ssl field is set.
+     */
+    public boolean hasSsl() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     *
+     * @return The ssl.
+     */
+    public com.google.cloud.clouddms.v1.SslConfig getSsl() {
+      if (sslBuilder_ == null) {
+        return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
+      } else {
+        return sslBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public Builder setSsl(com.google.cloud.clouddms.v1.SslConfig value) {
+      if (sslBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ssl_ = value;
+      } else {
+        sslBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public Builder setSsl(com.google.cloud.clouddms.v1.SslConfig.Builder builderForValue) {
+      if (sslBuilder_ == null) {
+        ssl_ = builderForValue.build();
+      } else {
+        sslBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public Builder mergeSsl(com.google.cloud.clouddms.v1.SslConfig value) {
+      if (sslBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && ssl_ != null
+            && ssl_ != com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance()) {
+          getSslBuilder().mergeFrom(value);
+        } else {
+          ssl_ = value;
+        }
+      } else {
+        sslBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public Builder clearSsl() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ssl_ = null;
+      if (sslBuilder_ != null) {
+        sslBuilder_.dispose();
+        sslBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.SslConfig.Builder getSslBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getSslFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.SslConfigOrBuilder getSslOrBuilder() {
+      if (sslBuilder_ != null) {
+        return sslBuilder_.getMessageOrBuilder();
+      } else {
+        return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SSL configuration for the connection to the source Oracle database.
+     *
+     *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+     *  * SSL is supported for Oracle versions 12 and above.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.SslConfig,
+            com.google.cloud.clouddms.v1.SslConfig.Builder,
+            com.google.cloud.clouddms.v1.SslConfigOrBuilder>
+        getSslFieldBuilder() {
+      if (sslBuilder_ == null) {
+        sslBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.SslConfig,
+                com.google.cloud.clouddms.v1.SslConfig.Builder,
+                com.google.cloud.clouddms.v1.SslConfigOrBuilder>(
+                getSsl(), getParentForChildren(), isClean());
+        ssl_ = null;
+      }
+      return sslBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -954,6 +954,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   StartMigrationJobRequest request =
    *       StartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   MigrationJob response = dataMigrationServiceClient.startMigrationJobAsync(request).get();
    * }
@@ -984,6 +985,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   StartMigrationJobRequest request =
    *       StartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   OperationFuture<MigrationJob, OperationMetadata> future =
    *       dataMigrationServiceClient.startMigrationJobOperationCallable().futureCall(request);
@@ -1014,6 +1016,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   StartMigrationJobRequest request =
    *       StartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.startMigrationJobCallable().futureCall(request);
@@ -1317,6 +1320,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   VerifyMigrationJobRequest request =
    *       VerifyMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .build();
    *   MigrationJob response = dataMigrationServiceClient.verifyMigrationJobAsync(request).get();
    * }
@@ -1348,6 +1353,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   VerifyMigrationJobRequest request =
    *       VerifyMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .build();
    *   OperationFuture<MigrationJob, OperationMetadata> future =
    *       dataMigrationServiceClient.verifyMigrationJobOperationCallable().futureCall(request);
@@ -1379,6 +1386,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   VerifyMigrationJobRequest request =
    *       VerifyMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.verifyMigrationJobCallable().futureCall(request);
@@ -1409,6 +1418,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   RestartMigrationJobRequest request =
    *       RestartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   MigrationJob response = dataMigrationServiceClient.restartMigrationJobAsync(request).get();
    * }
@@ -1440,6 +1450,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   RestartMigrationJobRequest request =
    *       RestartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   OperationFuture<MigrationJob, OperationMetadata> future =
    *       dataMigrationServiceClient.restartMigrationJobOperationCallable().futureCall(request);
@@ -1471,6 +1482,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   RestartMigrationJobRequest request =
    *       RestartMigrationJobRequest.newBuilder()
    *           .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setSkipValidation(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.restartMigrationJobCallable().futureCall(request);
@@ -1545,6 +1557,75 @@ public class DataMigrationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GenerateSshScriptRequest, SshScript> generateSshScriptCallable() {
     return stub.generateSshScriptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate a TCP Proxy configuration script to configure a cloud-hosted VM running a TCP Proxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   GenerateTcpProxyScriptRequest request =
+   *       GenerateTcpProxyScriptRequest.newBuilder()
+   *           .setMigrationJob(
+   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setVmName("vmName-813643294")
+   *           .setVmMachineType("vmMachineType-1921917718")
+   *           .setVmZone("vmZone-813272317")
+   *           .setVmSubnet("vmSubnet-65857292")
+   *           .build();
+   *   TcpProxyScript response = dataMigrationServiceClient.generateTcpProxyScript(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TcpProxyScript generateTcpProxyScript(GenerateTcpProxyScriptRequest request) {
+    return generateTcpProxyScriptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate a TCP Proxy configuration script to configure a cloud-hosted VM running a TCP Proxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   GenerateTcpProxyScriptRequest request =
+   *       GenerateTcpProxyScriptRequest.newBuilder()
+   *           .setMigrationJob(
+   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setVmName("vmName-813643294")
+   *           .setVmMachineType("vmMachineType-1921917718")
+   *           .setVmZone("vmZone-813272317")
+   *           .setVmSubnet("vmSubnet-65857292")
+   *           .build();
+   *   ApiFuture<TcpProxyScript> future =
+   *       dataMigrationServiceClient.generateTcpProxyScriptCallable().futureCall(request);
+   *   // Do something.
+   *   TcpProxyScript response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptCallable() {
+    return stub.generateTcpProxyScriptCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1864,8 +1945,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
-   *   ConnectionProfileName parent =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
    *   String connectionProfileId = "connectionProfileId597575526";
    *   ConnectionProfile response =
@@ -1882,9 +1962,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ConnectionProfile, OperationMetadata> createConnectionProfileAsync(
-      ConnectionProfileName parent,
-      ConnectionProfile connectionProfile,
-      String connectionProfileId) {
+      LocationName parent, ConnectionProfile connectionProfile, String connectionProfileId) {
     CreateConnectionProfileRequest request =
         CreateConnectionProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1908,8 +1986,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
-   *   String parent =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
    *   String connectionProfileId = "connectionProfileId597575526";
    *   ConnectionProfile response =
@@ -1952,9 +2029,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1990,9 +2065,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -2028,9 +2101,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -3716,6 +3787,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   dataMigrationServiceClient.deleteConversionWorkspaceAsync(request).get();
    * }
@@ -3749,6 +3821,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       dataMigrationServiceClient
@@ -3784,6 +3857,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.deleteConversionWorkspaceCallable().futureCall(request);
@@ -3795,6 +3869,595 @@ public class DataMigrationServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteConversionWorkspaceRequest, Operation>
       deleteConversionWorkspaceCallable() {
     return stub.deleteConversionWorkspaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new mapping rule for a given conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ConversionWorkspaceName parent =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+   *   MappingRule mappingRule = MappingRule.newBuilder().build();
+   *   String mappingRuleId = "mappingRuleId-900824155";
+   *   MappingRule response =
+   *       dataMigrationServiceClient.createMappingRule(parent, mappingRule, mappingRuleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent which owns this collection of mapping rules.
+   * @param mappingRule Required. Represents a [mapping rule]
+   *     (https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.mappingRules)
+   *     object.
+   * @param mappingRuleId Required. The ID of the rule to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule createMappingRule(
+      ConversionWorkspaceName parent, MappingRule mappingRule, String mappingRuleId) {
+    CreateMappingRuleRequest request =
+        CreateMappingRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMappingRule(mappingRule)
+            .setMappingRuleId(mappingRuleId)
+            .build();
+    return createMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new mapping rule for a given conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   String parent =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *           .toString();
+   *   MappingRule mappingRule = MappingRule.newBuilder().build();
+   *   String mappingRuleId = "mappingRuleId-900824155";
+   *   MappingRule response =
+   *       dataMigrationServiceClient.createMappingRule(parent, mappingRule, mappingRuleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent which owns this collection of mapping rules.
+   * @param mappingRule Required. Represents a [mapping rule]
+   *     (https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.mappingRules)
+   *     object.
+   * @param mappingRuleId Required. The ID of the rule to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule createMappingRule(
+      String parent, MappingRule mappingRule, String mappingRuleId) {
+    CreateMappingRuleRequest request =
+        CreateMappingRuleRequest.newBuilder()
+            .setParent(parent)
+            .setMappingRule(mappingRule)
+            .setMappingRuleId(mappingRuleId)
+            .build();
+    return createMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new mapping rule for a given conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   CreateMappingRuleRequest request =
+   *       CreateMappingRuleRequest.newBuilder()
+   *           .setParent(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setMappingRuleId("mappingRuleId-900824155")
+   *           .setMappingRule(MappingRule.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   MappingRule response = dataMigrationServiceClient.createMappingRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule createMappingRule(CreateMappingRuleRequest request) {
+    return createMappingRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new mapping rule for a given conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   CreateMappingRuleRequest request =
+   *       CreateMappingRuleRequest.newBuilder()
+   *           .setParent(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setMappingRuleId("mappingRuleId-900824155")
+   *           .setMappingRule(MappingRule.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<MappingRule> future =
+   *       dataMigrationServiceClient.createMappingRuleCallable().futureCall(request);
+   *   // Do something.
+   *   MappingRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMappingRuleRequest, MappingRule> createMappingRuleCallable() {
+    return stub.createMappingRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ConversionWorkspaceName name =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+   *   dataMigrationServiceClient.deleteMappingRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mapping rule resource to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMappingRule(ConversionWorkspaceName name) {
+    DeleteMappingRuleRequest request =
+        DeleteMappingRuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   String name =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *           .toString();
+   *   dataMigrationServiceClient.deleteMappingRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mapping rule resource to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMappingRule(String name) {
+    DeleteMappingRuleRequest request = DeleteMappingRuleRequest.newBuilder().setName(name).build();
+    deleteMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   DeleteMappingRuleRequest request =
+   *       DeleteMappingRuleRequest.newBuilder()
+   *           .setName(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   dataMigrationServiceClient.deleteMappingRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMappingRule(DeleteMappingRuleRequest request) {
+    deleteMappingRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   DeleteMappingRuleRequest request =
+   *       DeleteMappingRuleRequest.newBuilder()
+   *           .setName(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataMigrationServiceClient.deleteMappingRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMappingRuleRequest, Empty> deleteMappingRuleCallable() {
+    return stub.deleteMappingRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the mapping rules for a specific conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ConversionWorkspaceName parent =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+   *   for (MappingRule element : dataMigrationServiceClient.listMappingRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the conversion workspace resource whose mapping rules are
+   *     listed in the form of:
+   *     projects/{project}/locations/{location}/conversionWorkspaces/{conversion_workspace}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMappingRulesPagedResponse listMappingRules(ConversionWorkspaceName parent) {
+    ListMappingRulesRequest request =
+        ListMappingRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMappingRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the mapping rules for a specific conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   String parent =
+   *       ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *           .toString();
+   *   for (MappingRule element : dataMigrationServiceClient.listMappingRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the conversion workspace resource whose mapping rules are
+   *     listed in the form of:
+   *     projects/{project}/locations/{location}/conversionWorkspaces/{conversion_workspace}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMappingRulesPagedResponse listMappingRules(String parent) {
+    ListMappingRulesRequest request =
+        ListMappingRulesRequest.newBuilder().setParent(parent).build();
+    return listMappingRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the mapping rules for a specific conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ListMappingRulesRequest request =
+   *       ListMappingRulesRequest.newBuilder()
+   *           .setParent(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MappingRule element :
+   *       dataMigrationServiceClient.listMappingRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMappingRulesPagedResponse listMappingRules(ListMappingRulesRequest request) {
+    return listMappingRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the mapping rules for a specific conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ListMappingRulesRequest request =
+   *       ListMappingRulesRequest.newBuilder()
+   *           .setParent(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MappingRule> future =
+   *       dataMigrationServiceClient.listMappingRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MappingRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMappingRulesRequest, ListMappingRulesPagedResponse>
+      listMappingRulesPagedCallable() {
+    return stub.listMappingRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the mapping rules for a specific conversion workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   ListMappingRulesRequest request =
+   *       ListMappingRulesRequest.newBuilder()
+   *           .setParent(
+   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMappingRulesResponse response =
+   *         dataMigrationServiceClient.listMappingRulesCallable().call(request);
+   *     for (MappingRule element : response.getMappingRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse>
+      listMappingRulesCallable() {
+    return stub.listMappingRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   MappingRuleName name =
+   *       MappingRuleName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]");
+   *   MappingRule response = dataMigrationServiceClient.getMappingRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mapping rule resource to get. Example:
+   *     conversionWorkspaces/123/mappingRules/rule123
+   *     <p>In order to retrieve a previous revision of the mapping rule, also provide the revision
+   *     ID. Example:
+   *     conversionWorkspace/123/mappingRules/rule123{@literal @}c7cfa2a8c7cfa2a8c7cfa2a8c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule getMappingRule(MappingRuleName name) {
+    GetMappingRuleRequest request =
+        GetMappingRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   String name =
+   *       MappingRuleName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+   *           .toString();
+   *   MappingRule response = dataMigrationServiceClient.getMappingRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mapping rule resource to get. Example:
+   *     conversionWorkspaces/123/mappingRules/rule123
+   *     <p>In order to retrieve a previous revision of the mapping rule, also provide the revision
+   *     ID. Example:
+   *     conversionWorkspace/123/mappingRules/rule123{@literal @}c7cfa2a8c7cfa2a8c7cfa2a8c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule getMappingRule(String name) {
+    GetMappingRuleRequest request = GetMappingRuleRequest.newBuilder().setName(name).build();
+    return getMappingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   GetMappingRuleRequest request =
+   *       GetMappingRuleRequest.newBuilder()
+   *           .setName(
+   *               MappingRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+   *                   .toString())
+   *           .build();
+   *   MappingRule response = dataMigrationServiceClient.getMappingRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MappingRule getMappingRule(GetMappingRuleRequest request) {
+    return getMappingRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a mapping rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataMigrationServiceClient dataMigrationServiceClient =
+   *     DataMigrationServiceClient.create()) {
+   *   GetMappingRuleRequest request =
+   *       GetMappingRuleRequest.newBuilder()
+   *           .setName(
+   *               MappingRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MappingRule> future =
+   *       dataMigrationServiceClient.getMappingRuleCallable().futureCall(request);
+   *   // Do something.
+   *   MappingRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMappingRuleRequest, MappingRule> getMappingRuleCallable() {
+    return stub.getMappingRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4027,6 +4690,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoCommit(true)
    *           .setFilter("filter-1274492040")
+   *           .setConvertFullPath(true)
    *           .build();
    *   ConversionWorkspace response =
    *       dataMigrationServiceClient.convertConversionWorkspaceAsync(request).get();
@@ -4062,6 +4726,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoCommit(true)
    *           .setFilter("filter-1274492040")
+   *           .setConvertFullPath(true)
    *           .build();
    *   OperationFuture<ConversionWorkspace, OperationMetadata> future =
    *       dataMigrationServiceClient
@@ -4099,6 +4764,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoCommit(true)
    *           .setFilter("filter-1274492040")
+   *           .setConvertFullPath(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.convertConversionWorkspaceCallable().futureCall(request);
@@ -4335,6 +5001,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .setAutoCommit(true)
    *           .build();
    *   ConversionWorkspace response =
    *       dataMigrationServiceClient.applyConversionWorkspaceAsync(request).get();
@@ -4369,6 +5037,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .setAutoCommit(true)
    *           .build();
    *   OperationFuture<ConversionWorkspace, OperationMetadata> future =
    *       dataMigrationServiceClient
@@ -4405,6 +5075,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .setAutoCommit(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataMigrationServiceClient.applyConversionWorkspaceCallable().futureCall(request);
@@ -4447,6 +5119,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *           .setUncommitted(true)
    *           .setCommitId("commitId-602292046")
    *           .setFilter("filter-1274492040")
+   *           .setView(DatabaseEntityView.forNumber(0))
    *           .build();
    *   for (DatabaseEntity element :
    *       dataMigrationServiceClient.describeDatabaseEntities(request).iterateAll()) {
@@ -4492,6 +5165,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *           .setUncommitted(true)
    *           .setCommitId("commitId-602292046")
    *           .setFilter("filter-1274492040")
+   *           .setView(DatabaseEntityView.forNumber(0))
    *           .build();
    *   ApiFuture<DatabaseEntity> future =
    *       dataMigrationServiceClient.describeDatabaseEntitiesPagedCallable().futureCall(request);
@@ -4536,6 +5210,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *           .setUncommitted(true)
    *           .setCommitId("commitId-602292046")
    *           .setFilter("filter-1274492040")
+   *           .setView(DatabaseEntityView.forNumber(0))
    *           .build();
    *   while (true) {
    *     DescribeDatabaseEntitiesResponse response =
@@ -5260,6 +5935,83 @@ public class DataMigrationServiceClient implements BackgroundResource {
     protected ListConversionWorkspacesFixedSizeCollection createCollection(
         List<ListConversionWorkspacesPage> pages, int collectionSize) {
       return new ListConversionWorkspacesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMappingRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListMappingRulesRequest,
+          ListMappingRulesResponse,
+          MappingRule,
+          ListMappingRulesPage,
+          ListMappingRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListMappingRulesPagedResponse> createAsync(
+        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
+        ApiFuture<ListMappingRulesResponse> futureResponse) {
+      ApiFuture<ListMappingRulesPage> futurePage =
+          ListMappingRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMappingRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMappingRulesPagedResponse(ListMappingRulesPage page) {
+      super(page, ListMappingRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMappingRulesPage
+      extends AbstractPage<
+          ListMappingRulesRequest, ListMappingRulesResponse, MappingRule, ListMappingRulesPage> {
+
+    private ListMappingRulesPage(
+        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
+        ListMappingRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListMappingRulesPage createEmptyPage() {
+      return new ListMappingRulesPage(null, null);
+    }
+
+    @Override
+    protected ListMappingRulesPage createPage(
+        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
+        ListMappingRulesResponse response) {
+      return new ListMappingRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMappingRulesPage> createPageAsync(
+        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
+        ApiFuture<ListMappingRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMappingRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMappingRulesRequest,
+          ListMappingRulesResponse,
+          MappingRule,
+          ListMappingRulesPage,
+          ListMappingRulesFixedSizeCollection> {
+
+    private ListMappingRulesFixedSizeCollection(
+        List<ListMappingRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMappingRulesFixedSizeCollection createEmptyCollection() {
+      return new ListMappingRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMappingRulesFixedSizeCollection createCollection(
+        List<ListMappingRulesPage> pages, int collectionSize) {
+      return new ListMappingRulesFixedSizeCollection(pages, collectionSize);
     }
   }
 

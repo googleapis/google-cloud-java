@@ -73,12 +73,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The filename of the rules that needs to be converted. The filename is
-     * used mainly so that future logs of the import rules job contain it, and
-     * can therefore be searched by it.
+     * Required. The filename of the rules that needs to be converted. The
+     * filename is used mainly so that future logs of the import rules job
+     * contain it, and can therefore be searched by it.
      * </pre>
      *
-     * <code>string rules_source_filename = 1;</code>
+     * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The rulesSourceFilename.
      */
@@ -87,12 +87,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The filename of the rules that needs to be converted. The filename is
-     * used mainly so that future logs of the import rules job contain it, and
-     * can therefore be searched by it.
+     * Required. The filename of the rules that needs to be converted. The
+     * filename is used mainly so that future logs of the import rules job
+     * contain it, and can therefore be searched by it.
      * </pre>
      *
-     * <code>string rules_source_filename = 1;</code>
+     * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for rulesSourceFilename.
      */
@@ -102,10 +102,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The text content of the rules that needs to be converted.
+     * Required. The text content of the rules that needs to be converted.
      * </pre>
      *
-     * <code>string rules_content = 2;</code>
+     * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The rulesContent.
      */
@@ -114,10 +114,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The text content of the rules that needs to be converted.
+     * Required. The text content of the rules that needs to be converted.
      * </pre>
      *
-     * <code>string rules_content = 2;</code>
+     * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for rulesContent.
      */
@@ -176,12 +176,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The filename of the rules that needs to be converted. The filename is
-     * used mainly so that future logs of the import rules job contain it, and
-     * can therefore be searched by it.
+     * Required. The filename of the rules that needs to be converted. The
+     * filename is used mainly so that future logs of the import rules job
+     * contain it, and can therefore be searched by it.
      * </pre>
      *
-     * <code>string rules_source_filename = 1;</code>
+     * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The rulesSourceFilename.
      */
@@ -201,12 +201,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The filename of the rules that needs to be converted. The filename is
-     * used mainly so that future logs of the import rules job contain it, and
-     * can therefore be searched by it.
+     * Required. The filename of the rules that needs to be converted. The
+     * filename is used mainly so that future logs of the import rules job
+     * contain it, and can therefore be searched by it.
      * </pre>
      *
-     * <code>string rules_source_filename = 1;</code>
+     * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for rulesSourceFilename.
      */
@@ -231,10 +231,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The text content of the rules that needs to be converted.
+     * Required. The text content of the rules that needs to be converted.
      * </pre>
      *
-     * <code>string rules_content = 2;</code>
+     * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The rulesContent.
      */
@@ -254,10 +254,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The text content of the rules that needs to be converted.
+     * Required. The text content of the rules that needs to be converted.
      * </pre>
      *
-     * <code>string rules_content = 2;</code>
+     * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for rulesContent.
      */
@@ -658,12 +658,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The filename of the rules that needs to be converted. The filename is
-       * used mainly so that future logs of the import rules job contain it, and
-       * can therefore be searched by it.
+       * Required. The filename of the rules that needs to be converted. The
+       * filename is used mainly so that future logs of the import rules job
+       * contain it, and can therefore be searched by it.
        * </pre>
        *
-       * <code>string rules_source_filename = 1;</code>
+       * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The rulesSourceFilename.
        */
@@ -682,12 +682,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The filename of the rules that needs to be converted. The filename is
-       * used mainly so that future logs of the import rules job contain it, and
-       * can therefore be searched by it.
+       * Required. The filename of the rules that needs to be converted. The
+       * filename is used mainly so that future logs of the import rules job
+       * contain it, and can therefore be searched by it.
        * </pre>
        *
-       * <code>string rules_source_filename = 1;</code>
+       * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for rulesSourceFilename.
        */
@@ -706,12 +706,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The filename of the rules that needs to be converted. The filename is
-       * used mainly so that future logs of the import rules job contain it, and
-       * can therefore be searched by it.
+       * Required. The filename of the rules that needs to be converted. The
+       * filename is used mainly so that future logs of the import rules job
+       * contain it, and can therefore be searched by it.
        * </pre>
        *
-       * <code>string rules_source_filename = 1;</code>
+       * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The rulesSourceFilename to set.
        * @return This builder for chaining.
@@ -729,12 +729,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The filename of the rules that needs to be converted. The filename is
-       * used mainly so that future logs of the import rules job contain it, and
-       * can therefore be searched by it.
+       * Required. The filename of the rules that needs to be converted. The
+       * filename is used mainly so that future logs of the import rules job
+       * contain it, and can therefore be searched by it.
        * </pre>
        *
-       * <code>string rules_source_filename = 1;</code>
+       * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -748,12 +748,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The filename of the rules that needs to be converted. The filename is
-       * used mainly so that future logs of the import rules job contain it, and
-       * can therefore be searched by it.
+       * Required. The filename of the rules that needs to be converted. The
+       * filename is used mainly so that future logs of the import rules job
+       * contain it, and can therefore be searched by it.
        * </pre>
        *
-       * <code>string rules_source_filename = 1;</code>
+       * <code>string rules_source_filename = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for rulesSourceFilename to set.
        * @return This builder for chaining.
@@ -774,10 +774,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The text content of the rules that needs to be converted.
+       * Required. The text content of the rules that needs to be converted.
        * </pre>
        *
-       * <code>string rules_content = 2;</code>
+       * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The rulesContent.
        */
@@ -796,10 +796,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The text content of the rules that needs to be converted.
+       * Required. The text content of the rules that needs to be converted.
        * </pre>
        *
-       * <code>string rules_content = 2;</code>
+       * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for rulesContent.
        */
@@ -818,10 +818,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The text content of the rules that needs to be converted.
+       * Required. The text content of the rules that needs to be converted.
        * </pre>
        *
-       * <code>string rules_content = 2;</code>
+       * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The rulesContent to set.
        * @return This builder for chaining.
@@ -839,10 +839,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The text content of the rules that needs to be converted.
+       * Required. The text content of the rules that needs to be converted.
        * </pre>
        *
-       * <code>string rules_content = 2;</code>
+       * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -856,10 +856,10 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The text content of the rules that needs to be converted.
+       * Required. The text content of the rules that needs to be converted.
        * </pre>
        *
-       * <code>string rules_content = 2;</code>
+       * <code>string rules_content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for rulesContent to set.
        * @return This builder for chaining.
@@ -1007,10 +1007,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The format of the rules content file.
+   * Required. The format of the rules content file.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for rulesFormat.
    */
@@ -1022,10 +1024,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The format of the rules content file.
+   * Required. The format of the rules content file.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The rulesFormat.
    */
@@ -1047,10 +1051,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1062,10 +1067,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1078,10 +1084,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1092,10 +1099,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1106,10 +1114,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1124,11 +1133,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Should the conversion workspace be committed automatically after the
-   * import operation.
+   * Required. Should the conversion workspace be committed automatically after
+   * the import operation.
    * </pre>
    *
-   * <code>bool auto_commit = 6;</code>
+   * <code>bool auto_commit = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoCommit.
    */
@@ -1732,10 +1741,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The format of the rules content file.
+     * Required. The format of the rules content file.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for rulesFormat.
      */
@@ -1747,10 +1758,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The format of the rules content file.
+     * Required. The format of the rules content file.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for rulesFormat to set.
      * @return This builder for chaining.
@@ -1765,10 +1778,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The format of the rules content file.
+     * Required. The format of the rules content file.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The rulesFormat.
      */
@@ -1784,10 +1799,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The format of the rules content file.
+     * Required. The format of the rules content file.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The rulesFormat to set.
      * @return This builder for chaining.
@@ -1805,10 +1822,12 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The format of the rules content file.
+     * Required. The format of the rules content file.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1841,10 +1860,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile>
@@ -1859,10 +1879,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getRulesFilesCount() {
@@ -1876,10 +1897,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile getRulesFiles(
@@ -1894,10 +1916,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRulesFiles(
@@ -1918,10 +1941,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRulesFiles(
@@ -1940,10 +1964,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addRulesFiles(
@@ -1964,10 +1989,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addRulesFiles(
@@ -1988,10 +2014,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addRulesFiles(
@@ -2009,10 +2036,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addRulesFiles(
@@ -2031,10 +2059,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllRulesFiles(
@@ -2054,10 +2083,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRulesFiles() {
@@ -2074,10 +2104,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder removeRulesFiles(int index) {
@@ -2094,10 +2125,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile.Builder
@@ -2108,10 +2140,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFileOrBuilder
@@ -2126,10 +2159,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<
@@ -2145,10 +2179,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile.Builder
@@ -2162,10 +2197,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile.Builder
@@ -2180,10 +2216,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more rules files.
+     * Required. One or more rules files.
      * </pre>
      *
-     * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+     * <code>
+     * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile.Builder>
@@ -2213,11 +2250,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Should the conversion workspace be committed automatically after the
-     * import operation.
+     * Required. Should the conversion workspace be committed automatically after
+     * the import operation.
      * </pre>
      *
-     * <code>bool auto_commit = 6;</code>
+     * <code>bool auto_commit = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The autoCommit.
      */
@@ -2229,11 +2266,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Should the conversion workspace be committed automatically after the
-     * import operation.
+     * Required. Should the conversion workspace be committed automatically after
+     * the import operation.
      * </pre>
      *
-     * <code>bool auto_commit = 6;</code>
+     * <code>bool auto_commit = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The autoCommit to set.
      * @return This builder for chaining.
@@ -2249,11 +2286,11 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Should the conversion workspace be committed automatically after the
-     * import operation.
+     * Required. Should the conversion workspace be committed automatically after
+     * the import operation.
      * </pre>
      *
-     * <code>bool auto_commit = 6;</code>
+     * <code>bool auto_commit = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

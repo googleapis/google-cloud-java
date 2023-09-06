@@ -41,6 +41,7 @@ public class AsyncRestartMigrationJobLRO {
       RestartMigrationJobRequest request =
           RestartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       OperationFuture<MigrationJob, OperationMetadata> future =
           dataMigrationServiceClient.restartMigrationJobOperationCallable().futureCall(request);

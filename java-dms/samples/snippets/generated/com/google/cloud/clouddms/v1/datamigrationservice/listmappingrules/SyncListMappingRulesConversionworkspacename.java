@@ -16,19 +16,18 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_ConnectionprofilenameConnectionprofileString_sync]
-import com.google.cloud.clouddms.v1.ConnectionProfile;
-import com.google.cloud.clouddms.v1.ConnectionProfileName;
+// [START datamigration_v1_generated_DataMigrationService_ListMappingRules_Conversionworkspacename_sync]
+import com.google.cloud.clouddms.v1.ConversionWorkspaceName;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.MappingRule;
 
-public class SyncCreateConnectionProfileConnectionprofilenameConnectionprofileString {
+public class SyncListMappingRulesConversionworkspacename {
 
   public static void main(String[] args) throws Exception {
-    syncCreateConnectionProfileConnectionprofilenameConnectionprofileString();
+    syncListMappingRulesConversionworkspacename();
   }
 
-  public static void syncCreateConnectionProfileConnectionprofilenameConnectionprofileString()
-      throws Exception {
+  public static void syncListMappingRulesConversionworkspacename() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -36,15 +35,12 @@ public class SyncCreateConnectionProfileConnectionprofilenameConnectionprofileSt
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataMigrationServiceClient dataMigrationServiceClient =
         DataMigrationServiceClient.create()) {
-      ConnectionProfileName parent =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
-      ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
-      String connectionProfileId = "connectionProfileId597575526";
-      ConnectionProfile response =
-          dataMigrationServiceClient
-              .createConnectionProfileAsync(parent, connectionProfile, connectionProfileId)
-              .get();
+      ConversionWorkspaceName parent =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      for (MappingRule element : dataMigrationServiceClient.listMappingRules(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_ConnectionprofilenameConnectionprofileString_sync]
+// [END datamigration_v1_generated_DataMigrationService_ListMappingRules_Conversionworkspacename_sync]

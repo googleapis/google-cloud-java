@@ -191,10 +191,10 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the sourceConnectionProfile field is set.
    */
@@ -205,10 +205,10 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sourceConnectionProfile.
    */
@@ -232,10 +232,10 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for sourceConnectionProfile.
    */
@@ -261,10 +261,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the destinationConnectionProfile field is set.
    */
@@ -275,10 +277,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The destinationConnectionProfile.
    */
@@ -302,10 +306,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for destinationConnectionProfile.
    */
@@ -960,10 +966,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sourceConnectionProfile field is set.
      */
@@ -975,10 +982,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sourceConnectionProfile.
      */
@@ -1003,10 +1011,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for sourceConnectionProfile.
      */
@@ -1031,10 +1040,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The sourceConnectionProfile to set.
      * @return This builder for chaining.
@@ -1052,10 +1062,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1071,10 +1082,11 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the source connection profile.
+     * Optional. Fully qualified (Uri) name of the source connection profile.
      * </pre>
      *
-     * <code>string source_connection_profile = 100;</code>
+     * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for sourceConnectionProfile to set.
      * @return This builder for chaining.
@@ -1094,10 +1106,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the destinationConnectionProfile field is set.
      */
@@ -1109,10 +1123,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The destinationConnectionProfile.
      */
@@ -1137,10 +1153,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for destinationConnectionProfile.
      */
@@ -1165,10 +1183,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The destinationConnectionProfile to set.
      * @return This builder for chaining.
@@ -1186,10 +1206,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1205,10 +1227,12 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string destination_connection_profile = 101;</code>
+     * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for destinationConnectionProfile to set.
      * @return This builder for chaining.

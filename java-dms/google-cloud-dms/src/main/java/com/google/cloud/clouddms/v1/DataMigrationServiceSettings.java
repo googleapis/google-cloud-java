@@ -20,6 +20,7 @@ import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDa
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
@@ -208,6 +209,12 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
     return ((DataMigrationServiceStubSettings) getStubSettings()).generateSshScriptSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateTcpProxyScript. */
+  public UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).generateTcpProxyScriptSettings();
+  }
+
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
           ListConnectionProfilesRequest,
@@ -361,6 +368,28 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
       deleteConversionWorkspaceOperationSettings() {
     return ((DataMigrationServiceStubSettings) getStubSettings())
         .deleteConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMappingRule. */
+  public UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).createMappingRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMappingRule. */
+  public UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).deleteMappingRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMappingRules. */
+  public PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).listMappingRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMappingRule. */
+  public UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).getMappingRuleSettings();
   }
 
   /** Returns the object with the settings used for calls to seedConversionWorkspace. */
@@ -709,6 +738,12 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
       return getStubSettingsBuilder().generateSshScriptSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateTcpProxyScript. */
+    public UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings() {
+      return getStubSettingsBuilder().generateTcpProxyScriptSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
@@ -853,6 +888,29 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
     public OperationCallSettings.Builder<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
         deleteConversionWorkspaceOperationSettings() {
       return getStubSettingsBuilder().deleteConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMappingRule. */
+    public UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings() {
+      return getStubSettingsBuilder().createMappingRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMappingRule. */
+    public UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+      return getStubSettingsBuilder().deleteMappingRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMappingRules. */
+    public PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings() {
+      return getStubSettingsBuilder().listMappingRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMappingRule. */
+    public UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+      return getStubSettingsBuilder().getMappingRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to seedConversionWorkspace. */

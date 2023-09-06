@@ -18,9 +18,9 @@ package com.google.cloud.clouddms.v1.samples;
 
 // [START datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfile;
-import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.LocationName;
 
 public class SyncCreateConnectionProfile {
 
@@ -38,9 +38,7 @@ public class SyncCreateConnectionProfile {
         DataMigrationServiceClient.create()) {
       CreateConnectionProfileRequest request =
           CreateConnectionProfileRequest.newBuilder()
-              .setParent(
-                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")

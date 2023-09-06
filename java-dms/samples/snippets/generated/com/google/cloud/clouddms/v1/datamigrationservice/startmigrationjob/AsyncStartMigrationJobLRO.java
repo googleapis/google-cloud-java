@@ -41,6 +41,7 @@ public class AsyncStartMigrationJobLRO {
       StartMigrationJobRequest request =
           StartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       OperationFuture<MigrationJob, OperationMetadata> future =
           dataMigrationServiceClient.startMigrationJobOperationCallable().futureCall(request);

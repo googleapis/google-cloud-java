@@ -20,6 +20,7 @@ import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDa
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
@@ -56,11 +57,13 @@ import com.google.cloud.clouddms.v1.ConversionWorkspace;
 import com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CreateMappingRuleRequest;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DatabaseEntity;
 import com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.DeleteMappingRuleRequest;
 import com.google.cloud.clouddms.v1.DeleteMigrationJobRequest;
 import com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest;
@@ -70,8 +73,10 @@ import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse;
 import com.google.cloud.clouddms.v1.FetchStaticIpsRequest;
 import com.google.cloud.clouddms.v1.FetchStaticIpsResponse;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
+import com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest;
 import com.google.cloud.clouddms.v1.GetConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.GetMappingRuleRequest;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
 import com.google.cloud.clouddms.v1.GetPrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.ImportMappingRulesRequest;
@@ -79,10 +84,13 @@ import com.google.cloud.clouddms.v1.ListConnectionProfilesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesResponse;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse;
+import com.google.cloud.clouddms.v1.ListMappingRulesRequest;
+import com.google.cloud.clouddms.v1.ListMappingRulesResponse;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse;
+import com.google.cloud.clouddms.v1.MappingRule;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.OperationMetadata;
 import com.google.cloud.clouddms.v1.PrivateConnection;
@@ -96,6 +104,7 @@ import com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.SshScript;
 import com.google.cloud.clouddms.v1.StartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.StopMigrationJobRequest;
+import com.google.cloud.clouddms.v1.TcpProxyScript;
 import com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.UpdateMigrationJobRequest;
@@ -190,6 +199,8 @@ public class DataMigrationServiceStubSettings
   private final OperationCallSettings<RestartMigrationJobRequest, MigrationJob, OperationMetadata>
       restartMigrationJobOperationSettings;
   private final UnaryCallSettings<GenerateSshScriptRequest, SshScript> generateSshScriptSettings;
+  private final UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings;
   private final PagedCallSettings<
           ListConnectionProfilesRequest,
           ListConnectionProfilesResponse,
@@ -248,6 +259,12 @@ public class DataMigrationServiceStubSettings
       deleteConversionWorkspaceSettings;
   private final OperationCallSettings<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
       deleteConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings;
+  private final UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings;
+  private final PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings;
+  private final UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings;
   private final UnaryCallSettings<SeedConversionWorkspaceRequest, Operation>
       seedConversionWorkspaceSettings;
   private final OperationCallSettings<
@@ -465,6 +482,46 @@ public class DataMigrationServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+      LIST_MAPPING_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMappingRulesRequest injectToken(
+                ListMappingRulesRequest payload, String token) {
+              return ListMappingRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMappingRulesRequest injectPageSize(
+                ListMappingRulesRequest payload, int pageSize) {
+              return ListMappingRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMappingRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMappingRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MappingRule> extractResources(ListMappingRulesResponse payload) {
+              return payload.getMappingRulesList() == null
+                  ? ImmutableList.<MappingRule>of()
+                  : payload.getMappingRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>
       DESCRIBE_DATABASE_ENTITIES_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -649,6 +706,25 @@ public class DataMigrationServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      LIST_MAPPING_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListMappingRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse> callable,
+                ListMappingRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMappingRulesResponse> futureResponse) {
+              PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MAPPING_RULES_PAGE_STR_DESC, request, context);
+              return ListMappingRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           DescribeDatabaseEntitiesRequest,
           DescribeDatabaseEntitiesResponse,
           DescribeDatabaseEntitiesPagedResponse>
@@ -808,6 +884,12 @@ public class DataMigrationServiceStubSettings
     return generateSshScriptSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateTcpProxyScript. */
+  public UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings() {
+    return generateTcpProxyScriptSettings;
+  }
+
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
           ListConnectionProfilesRequest,
@@ -949,6 +1031,28 @@ public class DataMigrationServiceStubSettings
   public OperationCallSettings<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
       deleteConversionWorkspaceOperationSettings() {
     return deleteConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMappingRule. */
+  public UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings() {
+    return createMappingRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMappingRule. */
+  public UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+    return deleteMappingRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMappingRules. */
+  public PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings() {
+    return listMappingRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMappingRule. */
+  public UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+    return getMappingRuleSettings;
   }
 
   /** Returns the object with the settings used for calls to seedConversionWorkspace. */
@@ -1162,6 +1266,7 @@ public class DataMigrationServiceStubSettings
     restartMigrationJobOperationSettings =
         settingsBuilder.restartMigrationJobOperationSettings().build();
     generateSshScriptSettings = settingsBuilder.generateSshScriptSettings().build();
+    generateTcpProxyScriptSettings = settingsBuilder.generateTcpProxyScriptSettings().build();
     listConnectionProfilesSettings = settingsBuilder.listConnectionProfilesSettings().build();
     getConnectionProfileSettings = settingsBuilder.getConnectionProfileSettings().build();
     createConnectionProfileSettings = settingsBuilder.createConnectionProfileSettings().build();
@@ -1192,6 +1297,10 @@ public class DataMigrationServiceStubSettings
     deleteConversionWorkspaceSettings = settingsBuilder.deleteConversionWorkspaceSettings().build();
     deleteConversionWorkspaceOperationSettings =
         settingsBuilder.deleteConversionWorkspaceOperationSettings().build();
+    createMappingRuleSettings = settingsBuilder.createMappingRuleSettings().build();
+    deleteMappingRuleSettings = settingsBuilder.deleteMappingRuleSettings().build();
+    listMappingRulesSettings = settingsBuilder.listMappingRulesSettings().build();
+    getMappingRuleSettings = settingsBuilder.getMappingRuleSettings().build();
     seedConversionWorkspaceSettings = settingsBuilder.seedConversionWorkspaceSettings().build();
     seedConversionWorkspaceOperationSettings =
         settingsBuilder.seedConversionWorkspaceOperationSettings().build();
@@ -1274,6 +1383,8 @@ public class DataMigrationServiceStubSettings
         restartMigrationJobOperationSettings;
     private final UnaryCallSettings.Builder<GenerateSshScriptRequest, SshScript>
         generateSshScriptSettings;
+    private final UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings;
     private final PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
             ListConnectionProfilesResponse,
@@ -1335,6 +1446,15 @@ public class DataMigrationServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
         deleteConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings;
+    private final UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty>
+        deleteMappingRuleSettings;
+    private final PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings;
+    private final UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule>
+        getMappingRuleSettings;
     private final UnaryCallSettings.Builder<SeedConversionWorkspaceRequest, Operation>
         seedConversionWorkspaceSettings;
     private final OperationCallSettings.Builder<
@@ -1388,6 +1508,9 @@ public class DataMigrationServiceStubSettings
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1404,6 +1527,17 @@ public class DataMigrationServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1435,6 +1569,7 @@ public class DataMigrationServiceStubSettings
       restartMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restartMigrationJobOperationSettings = OperationCallSettings.newBuilder();
       generateSshScriptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateTcpProxyScriptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConnectionProfilesSettings =
           PagedCallSettings.newBuilder(LIST_CONNECTION_PROFILES_PAGE_STR_FACT);
       getConnectionProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1460,6 +1595,10 @@ public class DataMigrationServiceStubSettings
       updateConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
       deleteConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      createMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMappingRulesSettings = PagedCallSettings.newBuilder(LIST_MAPPING_RULES_PAGE_STR_FACT);
+      getMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       seedConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       seedConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
       importMappingRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1493,6 +1632,7 @@ public class DataMigrationServiceStubSettings
               verifyMigrationJobSettings,
               restartMigrationJobSettings,
               generateSshScriptSettings,
+              generateTcpProxyScriptSettings,
               listConnectionProfilesSettings,
               getConnectionProfileSettings,
               createConnectionProfileSettings,
@@ -1507,6 +1647,10 @@ public class DataMigrationServiceStubSettings
               createConversionWorkspaceSettings,
               updateConversionWorkspaceSettings,
               deleteConversionWorkspaceSettings,
+              createMappingRuleSettings,
+              deleteMappingRuleSettings,
+              listMappingRulesSettings,
+              getMappingRuleSettings,
               seedConversionWorkspaceSettings,
               importMappingRulesSettings,
               convertConversionWorkspaceSettings,
@@ -1551,6 +1695,7 @@ public class DataMigrationServiceStubSettings
       restartMigrationJobOperationSettings =
           settings.restartMigrationJobOperationSettings.toBuilder();
       generateSshScriptSettings = settings.generateSshScriptSettings.toBuilder();
+      generateTcpProxyScriptSettings = settings.generateTcpProxyScriptSettings.toBuilder();
       listConnectionProfilesSettings = settings.listConnectionProfilesSettings.toBuilder();
       getConnectionProfileSettings = settings.getConnectionProfileSettings.toBuilder();
       createConnectionProfileSettings = settings.createConnectionProfileSettings.toBuilder();
@@ -1581,6 +1726,10 @@ public class DataMigrationServiceStubSettings
       deleteConversionWorkspaceSettings = settings.deleteConversionWorkspaceSettings.toBuilder();
       deleteConversionWorkspaceOperationSettings =
           settings.deleteConversionWorkspaceOperationSettings.toBuilder();
+      createMappingRuleSettings = settings.createMappingRuleSettings.toBuilder();
+      deleteMappingRuleSettings = settings.deleteMappingRuleSettings.toBuilder();
+      listMappingRulesSettings = settings.listMappingRulesSettings.toBuilder();
+      getMappingRuleSettings = settings.getMappingRuleSettings.toBuilder();
       seedConversionWorkspaceSettings = settings.seedConversionWorkspaceSettings.toBuilder();
       seedConversionWorkspaceOperationSettings =
           settings.seedConversionWorkspaceOperationSettings.toBuilder();
@@ -1620,6 +1769,7 @@ public class DataMigrationServiceStubSettings
               verifyMigrationJobSettings,
               restartMigrationJobSettings,
               generateSshScriptSettings,
+              generateTcpProxyScriptSettings,
               listConnectionProfilesSettings,
               getConnectionProfileSettings,
               createConnectionProfileSettings,
@@ -1634,6 +1784,10 @@ public class DataMigrationServiceStubSettings
               createConversionWorkspaceSettings,
               updateConversionWorkspaceSettings,
               deleteConversionWorkspaceSettings,
+              createMappingRuleSettings,
+              deleteMappingRuleSettings,
+              listMappingRulesSettings,
+              getMappingRuleSettings,
               seedConversionWorkspaceSettings,
               importMappingRulesSettings,
               convertConversionWorkspaceSettings,
@@ -1721,6 +1875,11 @@ public class DataMigrationServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .generateTcpProxyScriptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listConnectionProfilesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1789,6 +1948,26 @@ public class DataMigrationServiceStubSettings
           .deleteConversionWorkspaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMappingRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .seedConversionWorkspaceSettings()
@@ -2563,6 +2742,12 @@ public class DataMigrationServiceStubSettings
       return generateSshScriptSettings;
     }
 
+    /** Returns the builder for the settings used for calls to generateTcpProxyScript. */
+    public UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings() {
+      return generateTcpProxyScriptSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
@@ -2723,6 +2908,29 @@ public class DataMigrationServiceStubSettings
     public OperationCallSettings.Builder<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
         deleteConversionWorkspaceOperationSettings() {
       return deleteConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMappingRule. */
+    public UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings() {
+      return createMappingRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMappingRule. */
+    public UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+      return deleteMappingRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMappingRules. */
+    public PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings() {
+      return listMappingRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMappingRule. */
+    public UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+      return getMappingRuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
