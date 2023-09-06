@@ -1,0 +1,1959 @@
+[
+{
+  "name":"[B"
+},
+{
+  "name":"[Ljava.lang.String;"
+},
+{
+  "name":"[Lsun.security.pkcs.SignerInfo;"
+},
+{
+  "name":"android.app.Application"
+},
+{
+  "name":"com.google.api.FieldBehavior",
+  "methods":[
+    {"name":"getValueDescriptor","parameterTypes":[] }, 
+    {"name":"valueOf","parameterTypes":["com.google.protobuf.Descriptors$EnumValueDescriptor"] }
+  ]
+},
+{
+  "name":"com.google.api.client.http.GenericUrl",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.google.api.client.http.HttpHeaders",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"setAccept","parameterTypes":["java.lang.String"] }, 
+    {"name":"setAcceptEncoding","parameterTypes":["java.lang.String"] }, 
+    {"name":"setAge","parameterTypes":["java.lang.Long"] }, 
+    {"name":"setAuthenticate","parameterTypes":["java.lang.String"] }, 
+    {"name":"setAuthorization","parameterTypes":["java.lang.String"] }, 
+    {"name":"setCacheControl","parameterTypes":["java.lang.String"] }, 
+    {"name":"setContentEncoding","parameterTypes":["java.lang.String"] }, 
+    {"name":"setContentLength","parameterTypes":["java.lang.Long"] }, 
+    {"name":"setContentMD5","parameterTypes":["java.lang.String"] }, 
+    {"name":"setContentRange","parameterTypes":["java.lang.String"] }, 
+    {"name":"setContentType","parameterTypes":["java.lang.String"] }, 
+    {"name":"setCookie","parameterTypes":["java.lang.String"] }, 
+    {"name":"setDate","parameterTypes":["java.lang.String"] }, 
+    {"name":"setETag","parameterTypes":["java.lang.String"] }, 
+    {"name":"setExpires","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIfMatch","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIfModifiedSince","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIfNoneMatch","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIfRange","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIfUnmodifiedSince","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLastModified","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLocation","parameterTypes":["java.lang.String"] }, 
+    {"name":"setMimeVersion","parameterTypes":["java.lang.String"] }, 
+    {"name":"setRange","parameterTypes":["java.lang.String"] }, 
+    {"name":"setRetryAfter","parameterTypes":["java.lang.String"] }, 
+    {"name":"setUserAgent","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"com.google.api.client.json.GenericJson",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.google.api.client.util.GenericData",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.google.auth.appengine.AppEngineCredentials"
+},
+{
+  "name":"com.google.auth.oauth2.GoogleCredentials",
+  "methods":[{"name":"getQuotaProjectId","parameterTypes":[] }]
+},
+{
+  "name":"com.google.auth.oauth2.ServiceAccountCredentials",
+  "methods":[
+    {"name":"getClientEmail","parameterTypes":[] }, 
+    {"name":"getClientId","parameterTypes":[] }, 
+    {"name":"getPrivateKey","parameterTypes":[] }, 
+    {"name":"getPrivateKeyId","parameterTypes":[] }, 
+    {"name":"getScopes","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.auth.oauth2.ServiceAccountJwtAccessCredentials",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.auth.oauth2.ServiceAccountJwtAccessCredentials$Builder",
+  "methods":[
+    {"name":"build","parameterTypes":[] }, 
+    {"name":"setClientEmail","parameterTypes":["java.lang.String"] }, 
+    {"name":"setClientId","parameterTypes":["java.lang.String"] }, 
+    {"name":"setPrivateKey","parameterTypes":["java.security.PrivateKey"] }, 
+    {"name":"setPrivateKeyId","parameterTypes":["java.lang.String"] }, 
+    {"name":"setQuotaProjectId","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.it.ITSystemTest",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"detectCropHintsGcsTest","parameterTypes":[] }, 
+    {"name":"detectCropHintsTest","parameterTypes":[] }, 
+    {"name":"detectDocumentTextGcs","parameterTypes":[] }, 
+    {"name":"detectDocumentTextTest","parameterTypes":[] }, 
+    {"name":"detectFacesGcsTest","parameterTypes":[] }, 
+    {"name":"detectFacesTest","parameterTypes":[] }, 
+    {"name":"detectLabelsGcsTest","parameterTypes":[] }, 
+    {"name":"detectLabelsTest","parameterTypes":[] }, 
+    {"name":"detectLandmarksGcsTest","parameterTypes":[] }, 
+    {"name":"detectLandmarksTest","parameterTypes":[] }, 
+    {"name":"detectLandmarksUrlTest","parameterTypes":[] }, 
+    {"name":"detectLocalizedObjectsGcsTest","parameterTypes":[] }, 
+    {"name":"detectLocalizedObjectsTest","parameterTypes":[] }, 
+    {"name":"detectLogosGcsTest","parameterTypes":[] }, 
+    {"name":"detectLogosTest","parameterTypes":[] }, 
+    {"name":"detectPropertiesGcsTest","parameterTypes":[] }, 
+    {"name":"detectPropertiesTest","parameterTypes":[] }, 
+    {"name":"detectSafeSearchGcsTest","parameterTypes":[] }, 
+    {"name":"detectSafeSearchTest","parameterTypes":[] }, 
+    {"name":"detectTextGcsTest","parameterTypes":[] }, 
+    {"name":"detectTextTest","parameterTypes":[] }, 
+    {"name":"detectWebEntitiesGcsTest","parameterTypes":[] }, 
+    {"name":"detectWebEntitiesIncludeGeoResultsGcsTest","parameterTypes":[] }, 
+    {"name":"detectWebEntitiesIncludeGeoResultsTest","parameterTypes":[] }, 
+    {"name":"detectWebEntitiesTest","parameterTypes":[] }, 
+    {"name":"getProductSetTest","parameterTypes":[] }, 
+    {"name":"getProductTest","parameterTypes":[] }, 
+    {"name":"getReferenceImageTest","parameterTypes":[] }, 
+    {"name":"listProductSetsTest","parameterTypes":[] }, 
+    {"name":"listProductsInProductSetTest","parameterTypes":[] }, 
+    {"name":"listProductsTest","parameterTypes":[] }, 
+    {"name":"listReferenceImagesTest","parameterTypes":[] }, 
+    {"name":"setUp","parameterTypes":[] }, 
+    {"name":"tearDown","parameterTypes":[] }, 
+    {"name":"updateProductTest","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.AnnotateImageResponse",
+  "methods":[
+    {"name":"getContext","parameterTypes":[] }, 
+    {"name":"getCropHintsAnnotation","parameterTypes":[] }, 
+    {"name":"getError","parameterTypes":[] }, 
+    {"name":"getFaceAnnotations","parameterTypes":["int"] }, 
+    {"name":"getFaceAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getFaceAnnotationsList","parameterTypes":[] }, 
+    {"name":"getFullTextAnnotation","parameterTypes":[] }, 
+    {"name":"getImagePropertiesAnnotation","parameterTypes":[] }, 
+    {"name":"getLabelAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLabelAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLabelAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLandmarkAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLandmarkAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLandmarkAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLocalizedObjectAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLocalizedObjectAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLocalizedObjectAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLogoAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLogoAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLogoAnnotationsList","parameterTypes":[] }, 
+    {"name":"getProductSearchResults","parameterTypes":[] }, 
+    {"name":"getSafeSearchAnnotation","parameterTypes":[] }, 
+    {"name":"getTextAnnotations","parameterTypes":["int"] }, 
+    {"name":"getTextAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getTextAnnotationsList","parameterTypes":[] }, 
+    {"name":"getWebDetection","parameterTypes":[] }, 
+    {"name":"hasContext","parameterTypes":[] }, 
+    {"name":"hasCropHintsAnnotation","parameterTypes":[] }, 
+    {"name":"hasError","parameterTypes":[] }, 
+    {"name":"hasFullTextAnnotation","parameterTypes":[] }, 
+    {"name":"hasImagePropertiesAnnotation","parameterTypes":[] }, 
+    {"name":"hasProductSearchResults","parameterTypes":[] }, 
+    {"name":"hasSafeSearchAnnotation","parameterTypes":[] }, 
+    {"name":"hasWebDetection","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.AnnotateImageResponse$Builder",
+  "methods":[
+    {"name":"addFaceAnnotations","parameterTypes":["com.google.cloud.vision.v1.FaceAnnotation"] }, 
+    {"name":"addLabelAnnotations","parameterTypes":["com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"addLandmarkAnnotations","parameterTypes":["com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"addLocalizedObjectAnnotations","parameterTypes":["com.google.cloud.vision.v1.LocalizedObjectAnnotation"] }, 
+    {"name":"addLogoAnnotations","parameterTypes":["com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"addTextAnnotations","parameterTypes":["com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"clearContext","parameterTypes":[] }, 
+    {"name":"clearCropHintsAnnotation","parameterTypes":[] }, 
+    {"name":"clearError","parameterTypes":[] }, 
+    {"name":"clearFaceAnnotations","parameterTypes":[] }, 
+    {"name":"clearFullTextAnnotation","parameterTypes":[] }, 
+    {"name":"clearImagePropertiesAnnotation","parameterTypes":[] }, 
+    {"name":"clearLabelAnnotations","parameterTypes":[] }, 
+    {"name":"clearLandmarkAnnotations","parameterTypes":[] }, 
+    {"name":"clearLocalizedObjectAnnotations","parameterTypes":[] }, 
+    {"name":"clearLogoAnnotations","parameterTypes":[] }, 
+    {"name":"clearProductSearchResults","parameterTypes":[] }, 
+    {"name":"clearSafeSearchAnnotation","parameterTypes":[] }, 
+    {"name":"clearTextAnnotations","parameterTypes":[] }, 
+    {"name":"clearWebDetection","parameterTypes":[] }, 
+    {"name":"getContext","parameterTypes":[] }, 
+    {"name":"getContextBuilder","parameterTypes":[] }, 
+    {"name":"getCropHintsAnnotation","parameterTypes":[] }, 
+    {"name":"getCropHintsAnnotationBuilder","parameterTypes":[] }, 
+    {"name":"getError","parameterTypes":[] }, 
+    {"name":"getErrorBuilder","parameterTypes":[] }, 
+    {"name":"getFaceAnnotations","parameterTypes":["int"] }, 
+    {"name":"getFaceAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getFaceAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getFaceAnnotationsList","parameterTypes":[] }, 
+    {"name":"getFullTextAnnotation","parameterTypes":[] }, 
+    {"name":"getFullTextAnnotationBuilder","parameterTypes":[] }, 
+    {"name":"getImagePropertiesAnnotation","parameterTypes":[] }, 
+    {"name":"getImagePropertiesAnnotationBuilder","parameterTypes":[] }, 
+    {"name":"getLabelAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLabelAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getLabelAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLabelAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLandmarkAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLandmarkAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getLandmarkAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLandmarkAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLocalizedObjectAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLocalizedObjectAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getLocalizedObjectAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLocalizedObjectAnnotationsList","parameterTypes":[] }, 
+    {"name":"getLogoAnnotations","parameterTypes":["int"] }, 
+    {"name":"getLogoAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getLogoAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getLogoAnnotationsList","parameterTypes":[] }, 
+    {"name":"getProductSearchResults","parameterTypes":[] }, 
+    {"name":"getProductSearchResultsBuilder","parameterTypes":[] }, 
+    {"name":"getSafeSearchAnnotation","parameterTypes":[] }, 
+    {"name":"getSafeSearchAnnotationBuilder","parameterTypes":[] }, 
+    {"name":"getTextAnnotations","parameterTypes":["int"] }, 
+    {"name":"getTextAnnotationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getTextAnnotationsCount","parameterTypes":[] }, 
+    {"name":"getTextAnnotationsList","parameterTypes":[] }, 
+    {"name":"getWebDetection","parameterTypes":[] }, 
+    {"name":"getWebDetectionBuilder","parameterTypes":[] }, 
+    {"name":"hasContext","parameterTypes":[] }, 
+    {"name":"hasCropHintsAnnotation","parameterTypes":[] }, 
+    {"name":"hasError","parameterTypes":[] }, 
+    {"name":"hasFullTextAnnotation","parameterTypes":[] }, 
+    {"name":"hasImagePropertiesAnnotation","parameterTypes":[] }, 
+    {"name":"hasProductSearchResults","parameterTypes":[] }, 
+    {"name":"hasSafeSearchAnnotation","parameterTypes":[] }, 
+    {"name":"hasWebDetection","parameterTypes":[] }, 
+    {"name":"setContext","parameterTypes":["com.google.cloud.vision.v1.ImageAnnotationContext"] }, 
+    {"name":"setCropHintsAnnotation","parameterTypes":["com.google.cloud.vision.v1.CropHintsAnnotation"] }, 
+    {"name":"setError","parameterTypes":["com.google.rpc.Status"] }, 
+    {"name":"setFaceAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.FaceAnnotation"] }, 
+    {"name":"setFullTextAnnotation","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation"] }, 
+    {"name":"setImagePropertiesAnnotation","parameterTypes":["com.google.cloud.vision.v1.ImageProperties"] }, 
+    {"name":"setLabelAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"setLandmarkAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"setLocalizedObjectAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.LocalizedObjectAnnotation"] }, 
+    {"name":"setLogoAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"setProductSearchResults","parameterTypes":["com.google.cloud.vision.v1.ProductSearchResults"] }, 
+    {"name":"setSafeSearchAnnotation","parameterTypes":["com.google.cloud.vision.v1.SafeSearchAnnotation"] }, 
+    {"name":"setTextAnnotations","parameterTypes":["int","com.google.cloud.vision.v1.EntityAnnotation"] }, 
+    {"name":"setWebDetection","parameterTypes":["com.google.cloud.vision.v1.WebDetection"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Block",
+  "methods":[
+    {"name":"getBlockType","parameterTypes":[] }, 
+    {"name":"getBlockTypeValue","parameterTypes":[] }, 
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getParagraphs","parameterTypes":["int"] }, 
+    {"name":"getParagraphsCount","parameterTypes":[] }, 
+    {"name":"getParagraphsList","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Block$BlockType",
+  "methods":[
+    {"name":"getValueDescriptor","parameterTypes":[] }, 
+    {"name":"valueOf","parameterTypes":["com.google.protobuf.Descriptors$EnumValueDescriptor"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Block$Builder",
+  "methods":[
+    {"name":"addParagraphs","parameterTypes":["com.google.cloud.vision.v1.Paragraph"] }, 
+    {"name":"clearBlockType","parameterTypes":[] }, 
+    {"name":"clearBoundingBox","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearParagraphs","parameterTypes":[] }, 
+    {"name":"clearProperty","parameterTypes":[] }, 
+    {"name":"getBlockType","parameterTypes":[] }, 
+    {"name":"getBlockTypeValue","parameterTypes":[] }, 
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getBoundingBoxBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getParagraphs","parameterTypes":["int"] }, 
+    {"name":"getParagraphsBuilder","parameterTypes":["int"] }, 
+    {"name":"getParagraphsCount","parameterTypes":[] }, 
+    {"name":"getParagraphsList","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getPropertyBuilder","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"setBlockType","parameterTypes":["com.google.cloud.vision.v1.Block$BlockType"] }, 
+    {"name":"setBlockTypeValue","parameterTypes":["int"] }, 
+    {"name":"setBoundingBox","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setParagraphs","parameterTypes":["int","com.google.cloud.vision.v1.Paragraph"] }, 
+    {"name":"setProperty","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$TextProperty"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.BoundingPoly",
+  "methods":[
+    {"name":"getNormalizedVertices","parameterTypes":["int"] }, 
+    {"name":"getNormalizedVerticesCount","parameterTypes":[] }, 
+    {"name":"getNormalizedVerticesList","parameterTypes":[] }, 
+    {"name":"getVertices","parameterTypes":["int"] }, 
+    {"name":"getVerticesCount","parameterTypes":[] }, 
+    {"name":"getVerticesList","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.BoundingPoly$Builder",
+  "methods":[
+    {"name":"addNormalizedVertices","parameterTypes":["com.google.cloud.vision.v1.NormalizedVertex"] }, 
+    {"name":"addVertices","parameterTypes":["com.google.cloud.vision.v1.Vertex"] }, 
+    {"name":"clearNormalizedVertices","parameterTypes":[] }, 
+    {"name":"clearVertices","parameterTypes":[] }, 
+    {"name":"getNormalizedVertices","parameterTypes":["int"] }, 
+    {"name":"getNormalizedVerticesBuilder","parameterTypes":["int"] }, 
+    {"name":"getNormalizedVerticesCount","parameterTypes":[] }, 
+    {"name":"getNormalizedVerticesList","parameterTypes":[] }, 
+    {"name":"getVertices","parameterTypes":["int"] }, 
+    {"name":"getVerticesBuilder","parameterTypes":["int"] }, 
+    {"name":"getVerticesCount","parameterTypes":[] }, 
+    {"name":"getVerticesList","parameterTypes":[] }, 
+    {"name":"setNormalizedVertices","parameterTypes":["int","com.google.cloud.vision.v1.NormalizedVertex"] }, 
+    {"name":"setVertices","parameterTypes":["int","com.google.cloud.vision.v1.Vertex"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.ColorInfo",
+  "methods":[
+    {"name":"getColor","parameterTypes":[] }, 
+    {"name":"getPixelFraction","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"hasColor","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.ColorInfo$Builder",
+  "methods":[
+    {"name":"clearColor","parameterTypes":[] }, 
+    {"name":"clearPixelFraction","parameterTypes":[] }, 
+    {"name":"clearScore","parameterTypes":[] }, 
+    {"name":"getColor","parameterTypes":[] }, 
+    {"name":"getColorBuilder","parameterTypes":[] }, 
+    {"name":"getPixelFraction","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"hasColor","parameterTypes":[] }, 
+    {"name":"setColor","parameterTypes":["com.google.type.Color"] }, 
+    {"name":"setPixelFraction","parameterTypes":["float"] }, 
+    {"name":"setScore","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.CropHint",
+  "methods":[
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getImportanceFraction","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.CropHint$Builder",
+  "methods":[
+    {"name":"clearBoundingPoly","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearImportanceFraction","parameterTypes":[] }, 
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getBoundingPolyBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getImportanceFraction","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"setBoundingPoly","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setImportanceFraction","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.CropHintsAnnotation",
+  "methods":[
+    {"name":"getCropHints","parameterTypes":["int"] }, 
+    {"name":"getCropHintsCount","parameterTypes":[] }, 
+    {"name":"getCropHintsList","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.CropHintsAnnotation$Builder",
+  "methods":[
+    {"name":"addCropHints","parameterTypes":["com.google.cloud.vision.v1.CropHint"] }, 
+    {"name":"clearCropHints","parameterTypes":[] }, 
+    {"name":"getCropHints","parameterTypes":["int"] }, 
+    {"name":"getCropHintsBuilder","parameterTypes":["int"] }, 
+    {"name":"getCropHintsCount","parameterTypes":[] }, 
+    {"name":"getCropHintsList","parameterTypes":[] }, 
+    {"name":"setCropHints","parameterTypes":["int","com.google.cloud.vision.v1.CropHint"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.DominantColorsAnnotation",
+  "methods":[
+    {"name":"getColors","parameterTypes":["int"] }, 
+    {"name":"getColorsCount","parameterTypes":[] }, 
+    {"name":"getColorsList","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.DominantColorsAnnotation$Builder",
+  "methods":[
+    {"name":"addColors","parameterTypes":["com.google.cloud.vision.v1.ColorInfo"] }, 
+    {"name":"clearColors","parameterTypes":[] }, 
+    {"name":"getColors","parameterTypes":["int"] }, 
+    {"name":"getColorsBuilder","parameterTypes":["int"] }, 
+    {"name":"getColorsCount","parameterTypes":[] }, 
+    {"name":"getColorsList","parameterTypes":[] }, 
+    {"name":"setColors","parameterTypes":["int","com.google.cloud.vision.v1.ColorInfo"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.EntityAnnotation",
+  "methods":[
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getDescription","parameterTypes":[] }, 
+    {"name":"getDescriptionBytes","parameterTypes":[] }, 
+    {"name":"getLocale","parameterTypes":[] }, 
+    {"name":"getLocaleBytes","parameterTypes":[] }, 
+    {"name":"getLocations","parameterTypes":["int"] }, 
+    {"name":"getLocationsCount","parameterTypes":[] }, 
+    {"name":"getLocationsList","parameterTypes":[] }, 
+    {"name":"getMid","parameterTypes":[] }, 
+    {"name":"getMidBytes","parameterTypes":[] }, 
+    {"name":"getProperties","parameterTypes":["int"] }, 
+    {"name":"getPropertiesCount","parameterTypes":[] }, 
+    {"name":"getPropertiesList","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"getTopicality","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.EntityAnnotation$Builder",
+  "methods":[
+    {"name":"addLocations","parameterTypes":["com.google.cloud.vision.v1.LocationInfo"] }, 
+    {"name":"addProperties","parameterTypes":["com.google.cloud.vision.v1.Property"] }, 
+    {"name":"clearBoundingPoly","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearDescription","parameterTypes":[] }, 
+    {"name":"clearLocale","parameterTypes":[] }, 
+    {"name":"clearLocations","parameterTypes":[] }, 
+    {"name":"clearMid","parameterTypes":[] }, 
+    {"name":"clearProperties","parameterTypes":[] }, 
+    {"name":"clearScore","parameterTypes":[] }, 
+    {"name":"clearTopicality","parameterTypes":[] }, 
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getBoundingPolyBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getDescription","parameterTypes":[] }, 
+    {"name":"getLocale","parameterTypes":[] }, 
+    {"name":"getLocations","parameterTypes":["int"] }, 
+    {"name":"getLocationsBuilder","parameterTypes":["int"] }, 
+    {"name":"getLocationsCount","parameterTypes":[] }, 
+    {"name":"getLocationsList","parameterTypes":[] }, 
+    {"name":"getMid","parameterTypes":[] }, 
+    {"name":"getProperties","parameterTypes":["int"] }, 
+    {"name":"getPropertiesBuilder","parameterTypes":["int"] }, 
+    {"name":"getPropertiesCount","parameterTypes":[] }, 
+    {"name":"getPropertiesList","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"getTopicality","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"setBoundingPoly","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setDescription","parameterTypes":["java.lang.String"] }, 
+    {"name":"setDescriptionBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setLocale","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLocaleBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setLocations","parameterTypes":["int","com.google.cloud.vision.v1.LocationInfo"] }, 
+    {"name":"setMid","parameterTypes":["java.lang.String"] }, 
+    {"name":"setMidBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setProperties","parameterTypes":["int","com.google.cloud.vision.v1.Property"] }, 
+    {"name":"setScore","parameterTypes":["float"] }, 
+    {"name":"setTopicality","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.FaceAnnotation",
+  "methods":[
+    {"name":"getAngerLikelihood","parameterTypes":[] }, 
+    {"name":"getAngerLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getBlurredLikelihood","parameterTypes":[] }, 
+    {"name":"getBlurredLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getDetectionConfidence","parameterTypes":[] }, 
+    {"name":"getFdBoundingPoly","parameterTypes":[] }, 
+    {"name":"getHeadwearLikelihood","parameterTypes":[] }, 
+    {"name":"getHeadwearLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getJoyLikelihood","parameterTypes":[] }, 
+    {"name":"getJoyLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getLandmarkingConfidence","parameterTypes":[] }, 
+    {"name":"getLandmarks","parameterTypes":["int"] }, 
+    {"name":"getLandmarksCount","parameterTypes":[] }, 
+    {"name":"getLandmarksList","parameterTypes":[] }, 
+    {"name":"getPanAngle","parameterTypes":[] }, 
+    {"name":"getRollAngle","parameterTypes":[] }, 
+    {"name":"getSorrowLikelihood","parameterTypes":[] }, 
+    {"name":"getSorrowLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getSurpriseLikelihood","parameterTypes":[] }, 
+    {"name":"getSurpriseLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getTiltAngle","parameterTypes":[] }, 
+    {"name":"getUnderExposedLikelihood","parameterTypes":[] }, 
+    {"name":"getUnderExposedLikelihoodValue","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"hasFdBoundingPoly","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.FaceAnnotation$Builder",
+  "methods":[
+    {"name":"addLandmarks","parameterTypes":["com.google.cloud.vision.v1.FaceAnnotation$Landmark"] }, 
+    {"name":"clearAngerLikelihood","parameterTypes":[] }, 
+    {"name":"clearBlurredLikelihood","parameterTypes":[] }, 
+    {"name":"clearBoundingPoly","parameterTypes":[] }, 
+    {"name":"clearDetectionConfidence","parameterTypes":[] }, 
+    {"name":"clearFdBoundingPoly","parameterTypes":[] }, 
+    {"name":"clearHeadwearLikelihood","parameterTypes":[] }, 
+    {"name":"clearJoyLikelihood","parameterTypes":[] }, 
+    {"name":"clearLandmarkingConfidence","parameterTypes":[] }, 
+    {"name":"clearLandmarks","parameterTypes":[] }, 
+    {"name":"clearPanAngle","parameterTypes":[] }, 
+    {"name":"clearRollAngle","parameterTypes":[] }, 
+    {"name":"clearSorrowLikelihood","parameterTypes":[] }, 
+    {"name":"clearSurpriseLikelihood","parameterTypes":[] }, 
+    {"name":"clearTiltAngle","parameterTypes":[] }, 
+    {"name":"clearUnderExposedLikelihood","parameterTypes":[] }, 
+    {"name":"getAngerLikelihood","parameterTypes":[] }, 
+    {"name":"getAngerLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getBlurredLikelihood","parameterTypes":[] }, 
+    {"name":"getBlurredLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getBoundingPolyBuilder","parameterTypes":[] }, 
+    {"name":"getDetectionConfidence","parameterTypes":[] }, 
+    {"name":"getFdBoundingPoly","parameterTypes":[] }, 
+    {"name":"getFdBoundingPolyBuilder","parameterTypes":[] }, 
+    {"name":"getHeadwearLikelihood","parameterTypes":[] }, 
+    {"name":"getHeadwearLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getJoyLikelihood","parameterTypes":[] }, 
+    {"name":"getJoyLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getLandmarkingConfidence","parameterTypes":[] }, 
+    {"name":"getLandmarks","parameterTypes":["int"] }, 
+    {"name":"getLandmarksBuilder","parameterTypes":["int"] }, 
+    {"name":"getLandmarksCount","parameterTypes":[] }, 
+    {"name":"getLandmarksList","parameterTypes":[] }, 
+    {"name":"getPanAngle","parameterTypes":[] }, 
+    {"name":"getRollAngle","parameterTypes":[] }, 
+    {"name":"getSorrowLikelihood","parameterTypes":[] }, 
+    {"name":"getSorrowLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getSurpriseLikelihood","parameterTypes":[] }, 
+    {"name":"getSurpriseLikelihoodValue","parameterTypes":[] }, 
+    {"name":"getTiltAngle","parameterTypes":[] }, 
+    {"name":"getUnderExposedLikelihood","parameterTypes":[] }, 
+    {"name":"getUnderExposedLikelihoodValue","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"hasFdBoundingPoly","parameterTypes":[] }, 
+    {"name":"setAngerLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setAngerLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setBlurredLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setBlurredLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setBoundingPoly","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setDetectionConfidence","parameterTypes":["float"] }, 
+    {"name":"setFdBoundingPoly","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setHeadwearLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setHeadwearLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setJoyLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setJoyLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setLandmarkingConfidence","parameterTypes":["float"] }, 
+    {"name":"setLandmarks","parameterTypes":["int","com.google.cloud.vision.v1.FaceAnnotation$Landmark"] }, 
+    {"name":"setPanAngle","parameterTypes":["float"] }, 
+    {"name":"setRollAngle","parameterTypes":["float"] }, 
+    {"name":"setSorrowLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setSorrowLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setSurpriseLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setSurpriseLikelihoodValue","parameterTypes":["int"] }, 
+    {"name":"setTiltAngle","parameterTypes":["float"] }, 
+    {"name":"setUnderExposedLikelihood","parameterTypes":["com.google.cloud.vision.v1.Likelihood"] }, 
+    {"name":"setUnderExposedLikelihoodValue","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.FaceAnnotation$Landmark",
+  "methods":[
+    {"name":"getPosition","parameterTypes":[] }, 
+    {"name":"getType","parameterTypes":[] }, 
+    {"name":"getTypeValue","parameterTypes":[] }, 
+    {"name":"hasPosition","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.FaceAnnotation$Landmark$Builder",
+  "methods":[
+    {"name":"clearPosition","parameterTypes":[] }, 
+    {"name":"clearType","parameterTypes":[] }, 
+    {"name":"getPosition","parameterTypes":[] }, 
+    {"name":"getPositionBuilder","parameterTypes":[] }, 
+    {"name":"getType","parameterTypes":[] }, 
+    {"name":"getTypeValue","parameterTypes":[] }, 
+    {"name":"hasPosition","parameterTypes":[] }, 
+    {"name":"setPosition","parameterTypes":["com.google.cloud.vision.v1.Position"] }, 
+    {"name":"setType","parameterTypes":["com.google.cloud.vision.v1.FaceAnnotation$Landmark$Type"] }, 
+    {"name":"setTypeValue","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.FaceAnnotation$Landmark$Type",
+  "methods":[
+    {"name":"getValueDescriptor","parameterTypes":[] }, 
+    {"name":"valueOf","parameterTypes":["com.google.protobuf.Descriptors$EnumValueDescriptor"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.ImageAnnotationContext",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.cloud.vision.v1.ImageProperties",
+  "methods":[
+    {"name":"getDominantColors","parameterTypes":[] }, 
+    {"name":"hasDominantColors","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.ImageProperties$Builder",
+  "methods":[
+    {"name":"clearDominantColors","parameterTypes":[] }, 
+    {"name":"getDominantColors","parameterTypes":[] }, 
+    {"name":"getDominantColorsBuilder","parameterTypes":[] }, 
+    {"name":"hasDominantColors","parameterTypes":[] }, 
+    {"name":"setDominantColors","parameterTypes":["com.google.cloud.vision.v1.DominantColorsAnnotation"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Likelihood",
+  "methods":[
+    {"name":"getValueDescriptor","parameterTypes":[] }, 
+    {"name":"valueOf","parameterTypes":["com.google.protobuf.Descriptors$EnumValueDescriptor"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.LocalizedObjectAnnotation",
+  "methods":[
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"getLanguageCodeBytes","parameterTypes":[] }, 
+    {"name":"getMid","parameterTypes":[] }, 
+    {"name":"getMidBytes","parameterTypes":[] }, 
+    {"name":"getName","parameterTypes":[] }, 
+    {"name":"getNameBytes","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.LocalizedObjectAnnotation$Builder",
+  "methods":[
+    {"name":"clearBoundingPoly","parameterTypes":[] }, 
+    {"name":"clearLanguageCode","parameterTypes":[] }, 
+    {"name":"clearMid","parameterTypes":[] }, 
+    {"name":"clearName","parameterTypes":[] }, 
+    {"name":"clearScore","parameterTypes":[] }, 
+    {"name":"getBoundingPoly","parameterTypes":[] }, 
+    {"name":"getBoundingPolyBuilder","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"getMid","parameterTypes":[] }, 
+    {"name":"getName","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"hasBoundingPoly","parameterTypes":[] }, 
+    {"name":"setBoundingPoly","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setLanguageCode","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLanguageCodeBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setMid","parameterTypes":["java.lang.String"] }, 
+    {"name":"setMidBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setName","parameterTypes":["java.lang.String"] }, 
+    {"name":"setNameBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setScore","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.LocationInfo",
+  "methods":[
+    {"name":"getLatLng","parameterTypes":[] }, 
+    {"name":"hasLatLng","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.LocationInfo$Builder",
+  "methods":[
+    {"name":"clearLatLng","parameterTypes":[] }, 
+    {"name":"getLatLng","parameterTypes":[] }, 
+    {"name":"getLatLngBuilder","parameterTypes":[] }, 
+    {"name":"hasLatLng","parameterTypes":[] }, 
+    {"name":"setLatLng","parameterTypes":["com.google.type.LatLng"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.NormalizedVertex",
+  "methods":[
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.NormalizedVertex$Builder",
+  "methods":[
+    {"name":"clearX","parameterTypes":[] }, 
+    {"name":"clearY","parameterTypes":[] }, 
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"setX","parameterTypes":["float"] }, 
+    {"name":"setY","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Page",
+  "methods":[
+    {"name":"getBlocks","parameterTypes":["int"] }, 
+    {"name":"getBlocksCount","parameterTypes":[] }, 
+    {"name":"getBlocksList","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getHeight","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getWidth","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Page$Builder",
+  "methods":[
+    {"name":"addBlocks","parameterTypes":["com.google.cloud.vision.v1.Block"] }, 
+    {"name":"clearBlocks","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearHeight","parameterTypes":[] }, 
+    {"name":"clearProperty","parameterTypes":[] }, 
+    {"name":"clearWidth","parameterTypes":[] }, 
+    {"name":"getBlocks","parameterTypes":["int"] }, 
+    {"name":"getBlocksBuilder","parameterTypes":["int"] }, 
+    {"name":"getBlocksCount","parameterTypes":[] }, 
+    {"name":"getBlocksList","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getHeight","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getPropertyBuilder","parameterTypes":[] }, 
+    {"name":"getWidth","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"setBlocks","parameterTypes":["int","com.google.cloud.vision.v1.Block"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setHeight","parameterTypes":["int"] }, 
+    {"name":"setProperty","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$TextProperty"] }, 
+    {"name":"setWidth","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Paragraph",
+  "methods":[
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getWords","parameterTypes":["int"] }, 
+    {"name":"getWordsCount","parameterTypes":[] }, 
+    {"name":"getWordsList","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Paragraph$Builder",
+  "methods":[
+    {"name":"addWords","parameterTypes":["com.google.cloud.vision.v1.Word"] }, 
+    {"name":"clearBoundingBox","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearProperty","parameterTypes":[] }, 
+    {"name":"clearWords","parameterTypes":[] }, 
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getBoundingBoxBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getPropertyBuilder","parameterTypes":[] }, 
+    {"name":"getWords","parameterTypes":["int"] }, 
+    {"name":"getWordsBuilder","parameterTypes":["int"] }, 
+    {"name":"getWordsCount","parameterTypes":[] }, 
+    {"name":"getWordsList","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"setBoundingBox","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setProperty","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$TextProperty"] }, 
+    {"name":"setWords","parameterTypes":["int","com.google.cloud.vision.v1.Word"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Position",
+  "methods":[
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"getZ","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Position$Builder",
+  "methods":[
+    {"name":"clearX","parameterTypes":[] }, 
+    {"name":"clearY","parameterTypes":[] }, 
+    {"name":"clearZ","parameterTypes":[] }, 
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"getZ","parameterTypes":[] }, 
+    {"name":"setX","parameterTypes":["float"] }, 
+    {"name":"setY","parameterTypes":["float"] }, 
+    {"name":"setZ","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.ProductSearchResults",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.cloud.vision.v1.Property",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.cloud.vision.v1.SafeSearchAnnotation",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.cloud.vision.v1.Symbol",
+  "methods":[
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getText","parameterTypes":[] }, 
+    {"name":"getTextBytes","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Symbol$Builder",
+  "methods":[
+    {"name":"clearBoundingBox","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearProperty","parameterTypes":[] }, 
+    {"name":"clearText","parameterTypes":[] }, 
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getBoundingBoxBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getPropertyBuilder","parameterTypes":[] }, 
+    {"name":"getText","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"setBoundingBox","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setProperty","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$TextProperty"] }, 
+    {"name":"setText","parameterTypes":["java.lang.String"] }, 
+    {"name":"setTextBytes","parameterTypes":["com.google.protobuf.ByteString"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation",
+  "methods":[
+    {"name":"getPages","parameterTypes":["int"] }, 
+    {"name":"getPagesCount","parameterTypes":[] }, 
+    {"name":"getPagesList","parameterTypes":[] }, 
+    {"name":"getText","parameterTypes":[] }, 
+    {"name":"getTextBytes","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$Builder",
+  "methods":[
+    {"name":"addPages","parameterTypes":["com.google.cloud.vision.v1.Page"] }, 
+    {"name":"clearPages","parameterTypes":[] }, 
+    {"name":"clearText","parameterTypes":[] }, 
+    {"name":"getPages","parameterTypes":["int"] }, 
+    {"name":"getPagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getPagesCount","parameterTypes":[] }, 
+    {"name":"getPagesList","parameterTypes":[] }, 
+    {"name":"getText","parameterTypes":[] }, 
+    {"name":"setPages","parameterTypes":["int","com.google.cloud.vision.v1.Page"] }, 
+    {"name":"setText","parameterTypes":["java.lang.String"] }, 
+    {"name":"setTextBytes","parameterTypes":["com.google.protobuf.ByteString"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$DetectedBreak",
+  "methods":[
+    {"name":"getIsPrefix","parameterTypes":[] }, 
+    {"name":"getType","parameterTypes":[] }, 
+    {"name":"getTypeValue","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$DetectedBreak$BreakType",
+  "methods":[
+    {"name":"getValueDescriptor","parameterTypes":[] }, 
+    {"name":"valueOf","parameterTypes":["com.google.protobuf.Descriptors$EnumValueDescriptor"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$DetectedBreak$Builder",
+  "methods":[
+    {"name":"clearIsPrefix","parameterTypes":[] }, 
+    {"name":"clearType","parameterTypes":[] }, 
+    {"name":"getIsPrefix","parameterTypes":[] }, 
+    {"name":"getType","parameterTypes":[] }, 
+    {"name":"getTypeValue","parameterTypes":[] }, 
+    {"name":"setIsPrefix","parameterTypes":["boolean"] }, 
+    {"name":"setType","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$DetectedBreak$BreakType"] }, 
+    {"name":"setTypeValue","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$DetectedLanguage",
+  "methods":[
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"getLanguageCodeBytes","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$DetectedLanguage$Builder",
+  "methods":[
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearLanguageCode","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setLanguageCode","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLanguageCodeBytes","parameterTypes":["com.google.protobuf.ByteString"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$TextProperty",
+  "methods":[
+    {"name":"getDetectedBreak","parameterTypes":[] }, 
+    {"name":"getDetectedLanguages","parameterTypes":["int"] }, 
+    {"name":"getDetectedLanguagesCount","parameterTypes":[] }, 
+    {"name":"getDetectedLanguagesList","parameterTypes":[] }, 
+    {"name":"hasDetectedBreak","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.TextAnnotation$TextProperty$Builder",
+  "methods":[
+    {"name":"addDetectedLanguages","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$DetectedLanguage"] }, 
+    {"name":"clearDetectedBreak","parameterTypes":[] }, 
+    {"name":"clearDetectedLanguages","parameterTypes":[] }, 
+    {"name":"getDetectedBreak","parameterTypes":[] }, 
+    {"name":"getDetectedBreakBuilder","parameterTypes":[] }, 
+    {"name":"getDetectedLanguages","parameterTypes":["int"] }, 
+    {"name":"getDetectedLanguagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getDetectedLanguagesCount","parameterTypes":[] }, 
+    {"name":"getDetectedLanguagesList","parameterTypes":[] }, 
+    {"name":"hasDetectedBreak","parameterTypes":[] }, 
+    {"name":"setDetectedBreak","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$DetectedBreak"] }, 
+    {"name":"setDetectedLanguages","parameterTypes":["int","com.google.cloud.vision.v1.TextAnnotation$DetectedLanguage"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Vertex",
+  "methods":[
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Vertex$Builder",
+  "methods":[
+    {"name":"clearX","parameterTypes":[] }, 
+    {"name":"clearY","parameterTypes":[] }, 
+    {"name":"getX","parameterTypes":[] }, 
+    {"name":"getY","parameterTypes":[] }, 
+    {"name":"setX","parameterTypes":["int"] }, 
+    {"name":"setY","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection",
+  "methods":[
+    {"name":"getBestGuessLabels","parameterTypes":["int"] }, 
+    {"name":"getBestGuessLabelsCount","parameterTypes":[] }, 
+    {"name":"getBestGuessLabelsList","parameterTypes":[] }, 
+    {"name":"getFullMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getFullMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getFullMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getPagesWithMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getPagesWithMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getPagesWithMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getPartialMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getPartialMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getPartialMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getVisuallySimilarImages","parameterTypes":["int"] }, 
+    {"name":"getVisuallySimilarImagesCount","parameterTypes":[] }, 
+    {"name":"getVisuallySimilarImagesList","parameterTypes":[] }, 
+    {"name":"getWebEntities","parameterTypes":["int"] }, 
+    {"name":"getWebEntitiesCount","parameterTypes":[] }, 
+    {"name":"getWebEntitiesList","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$Builder",
+  "methods":[
+    {"name":"addBestGuessLabels","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebLabel"] }, 
+    {"name":"addFullMatchingImages","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"addPagesWithMatchingImages","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebPage"] }, 
+    {"name":"addPartialMatchingImages","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"addVisuallySimilarImages","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"addWebEntities","parameterTypes":["com.google.cloud.vision.v1.WebDetection$WebEntity"] }, 
+    {"name":"clearBestGuessLabels","parameterTypes":[] }, 
+    {"name":"clearFullMatchingImages","parameterTypes":[] }, 
+    {"name":"clearPagesWithMatchingImages","parameterTypes":[] }, 
+    {"name":"clearPartialMatchingImages","parameterTypes":[] }, 
+    {"name":"clearVisuallySimilarImages","parameterTypes":[] }, 
+    {"name":"clearWebEntities","parameterTypes":[] }, 
+    {"name":"getBestGuessLabels","parameterTypes":["int"] }, 
+    {"name":"getBestGuessLabelsBuilder","parameterTypes":["int"] }, 
+    {"name":"getBestGuessLabelsCount","parameterTypes":[] }, 
+    {"name":"getBestGuessLabelsList","parameterTypes":[] }, 
+    {"name":"getFullMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getFullMatchingImagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getFullMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getFullMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getPagesWithMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getPagesWithMatchingImagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getPagesWithMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getPagesWithMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getPartialMatchingImages","parameterTypes":["int"] }, 
+    {"name":"getPartialMatchingImagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getPartialMatchingImagesCount","parameterTypes":[] }, 
+    {"name":"getPartialMatchingImagesList","parameterTypes":[] }, 
+    {"name":"getVisuallySimilarImages","parameterTypes":["int"] }, 
+    {"name":"getVisuallySimilarImagesBuilder","parameterTypes":["int"] }, 
+    {"name":"getVisuallySimilarImagesCount","parameterTypes":[] }, 
+    {"name":"getVisuallySimilarImagesList","parameterTypes":[] }, 
+    {"name":"getWebEntities","parameterTypes":["int"] }, 
+    {"name":"getWebEntitiesBuilder","parameterTypes":["int"] }, 
+    {"name":"getWebEntitiesCount","parameterTypes":[] }, 
+    {"name":"getWebEntitiesList","parameterTypes":[] }, 
+    {"name":"setBestGuessLabels","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebLabel"] }, 
+    {"name":"setFullMatchingImages","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"setPagesWithMatchingImages","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebPage"] }, 
+    {"name":"setPartialMatchingImages","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"setVisuallySimilarImages","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebImage"] }, 
+    {"name":"setWebEntities","parameterTypes":["int","com.google.cloud.vision.v1.WebDetection$WebEntity"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebEntity",
+  "methods":[
+    {"name":"getDescription","parameterTypes":[] }, 
+    {"name":"getDescriptionBytes","parameterTypes":[] }, 
+    {"name":"getEntityId","parameterTypes":[] }, 
+    {"name":"getEntityIdBytes","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebEntity$Builder",
+  "methods":[
+    {"name":"clearDescription","parameterTypes":[] }, 
+    {"name":"clearEntityId","parameterTypes":[] }, 
+    {"name":"clearScore","parameterTypes":[] }, 
+    {"name":"getDescription","parameterTypes":[] }, 
+    {"name":"getEntityId","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"setDescription","parameterTypes":["java.lang.String"] }, 
+    {"name":"setDescriptionBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setEntityId","parameterTypes":["java.lang.String"] }, 
+    {"name":"setEntityIdBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setScore","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebImage",
+  "methods":[
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"getUrl","parameterTypes":[] }, 
+    {"name":"getUrlBytes","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebImage$Builder",
+  "methods":[
+    {"name":"clearScore","parameterTypes":[] }, 
+    {"name":"clearUrl","parameterTypes":[] }, 
+    {"name":"getScore","parameterTypes":[] }, 
+    {"name":"getUrl","parameterTypes":[] }, 
+    {"name":"setScore","parameterTypes":["float"] }, 
+    {"name":"setUrl","parameterTypes":["java.lang.String"] }, 
+    {"name":"setUrlBytes","parameterTypes":["com.google.protobuf.ByteString"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebLabel",
+  "methods":[
+    {"name":"getLabel","parameterTypes":[] }, 
+    {"name":"getLabelBytes","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"getLanguageCodeBytes","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebLabel$Builder",
+  "methods":[
+    {"name":"clearLabel","parameterTypes":[] }, 
+    {"name":"clearLanguageCode","parameterTypes":[] }, 
+    {"name":"getLabel","parameterTypes":[] }, 
+    {"name":"getLanguageCode","parameterTypes":[] }, 
+    {"name":"setLabel","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLabelBytes","parameterTypes":["com.google.protobuf.ByteString"] }, 
+    {"name":"setLanguageCode","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLanguageCodeBytes","parameterTypes":["com.google.protobuf.ByteString"] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.WebDetection$WebPage",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.cloud.vision.v1.Word",
+  "methods":[
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getSymbols","parameterTypes":["int"] }, 
+    {"name":"getSymbolsCount","parameterTypes":[] }, 
+    {"name":"getSymbolsList","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.cloud.vision.v1.Word$Builder",
+  "methods":[
+    {"name":"addSymbols","parameterTypes":["com.google.cloud.vision.v1.Symbol"] }, 
+    {"name":"clearBoundingBox","parameterTypes":[] }, 
+    {"name":"clearConfidence","parameterTypes":[] }, 
+    {"name":"clearProperty","parameterTypes":[] }, 
+    {"name":"clearSymbols","parameterTypes":[] }, 
+    {"name":"getBoundingBox","parameterTypes":[] }, 
+    {"name":"getBoundingBoxBuilder","parameterTypes":[] }, 
+    {"name":"getConfidence","parameterTypes":[] }, 
+    {"name":"getProperty","parameterTypes":[] }, 
+    {"name":"getPropertyBuilder","parameterTypes":[] }, 
+    {"name":"getSymbols","parameterTypes":["int"] }, 
+    {"name":"getSymbolsBuilder","parameterTypes":["int"] }, 
+    {"name":"getSymbolsCount","parameterTypes":[] }, 
+    {"name":"getSymbolsList","parameterTypes":[] }, 
+    {"name":"hasBoundingBox","parameterTypes":[] }, 
+    {"name":"hasProperty","parameterTypes":[] }, 
+    {"name":"setBoundingBox","parameterTypes":["com.google.cloud.vision.v1.BoundingPoly"] }, 
+    {"name":"setConfidence","parameterTypes":["float"] }, 
+    {"name":"setProperty","parameterTypes":["com.google.cloud.vision.v1.TextAnnotation$TextProperty"] }, 
+    {"name":"setSymbols","parameterTypes":["int","com.google.cloud.vision.v1.Symbol"] }
+  ]
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractFuture",
+  "fields":[
+    {"name":"listeners"}, 
+    {"name":"value"}, 
+    {"name":"waiters"}
+  ]
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractFuture$Waiter",
+  "fields":[
+    {"name":"next"}, 
+    {"name":"thread"}
+  ]
+},
+{
+  "name":"com.google.protobuf.ExtensionRegistry",
+  "methods":[{"name":"getEmptyRegistry","parameterTypes":[] }]
+},
+{
+  "name":"com.google.protobuf.FloatValue",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.rpc.Status",
+  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+},
+{
+  "name":"com.google.type.Color",
+  "methods":[
+    {"name":"getAlpha","parameterTypes":[] }, 
+    {"name":"getBlue","parameterTypes":[] }, 
+    {"name":"getGreen","parameterTypes":[] }, 
+    {"name":"getRed","parameterTypes":[] }, 
+    {"name":"hasAlpha","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.type.Color$Builder",
+  "methods":[
+    {"name":"clearAlpha","parameterTypes":[] }, 
+    {"name":"clearBlue","parameterTypes":[] }, 
+    {"name":"clearGreen","parameterTypes":[] }, 
+    {"name":"clearRed","parameterTypes":[] }, 
+    {"name":"getAlpha","parameterTypes":[] }, 
+    {"name":"getAlphaBuilder","parameterTypes":[] }, 
+    {"name":"getBlue","parameterTypes":[] }, 
+    {"name":"getGreen","parameterTypes":[] }, 
+    {"name":"getRed","parameterTypes":[] }, 
+    {"name":"hasAlpha","parameterTypes":[] }, 
+    {"name":"setAlpha","parameterTypes":["com.google.protobuf.FloatValue"] }, 
+    {"name":"setBlue","parameterTypes":["float"] }, 
+    {"name":"setGreen","parameterTypes":["float"] }, 
+    {"name":"setRed","parameterTypes":["float"] }
+  ]
+},
+{
+  "name":"com.google.type.LatLng",
+  "methods":[
+    {"name":"getLatitude","parameterTypes":[] }, 
+    {"name":"getLongitude","parameterTypes":[] }, 
+    {"name":"newBuilder","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.google.type.LatLng$Builder",
+  "methods":[
+    {"name":"clearLatitude","parameterTypes":[] }, 
+    {"name":"clearLongitude","parameterTypes":[] }, 
+    {"name":"getLatitude","parameterTypes":[] }, 
+    {"name":"getLongitude","parameterTypes":[] }, 
+    {"name":"setLatitude","parameterTypes":["double"] }, 
+    {"name":"setLongitude","parameterTypes":["double"] }
+  ]
+},
+{
+  "name":"com.sun.crypto.provider.AESCipher$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.ARCFOURCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.ChaCha20Cipher$ChaCha20Poly1305",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DESCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DESedeCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DHParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.GaloisCounterMode$AESGCM",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA384",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.TlsMasterSecretGenerator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.jndi.dns.DnsContextFactory"
+},
+{
+  "name":"com.sun.jndi.url.dns.dnsURLContextFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.grpc.census.InternalCensusStatsAccessor"
+},
+{
+  "name":"io.grpc.census.InternalCensusTracingAccessor"
+},
+{
+  "name":"io.grpc.internal.DnsNameResolverProvider"
+},
+{
+  "name":"io.grpc.internal.JndiResourceResolverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.grpc.internal.PickFirstLoadBalancerProvider"
+},
+{
+  "name":"io.grpc.netty.NettyChannelProvider"
+},
+{
+  "name":"io.grpc.netty.UdsNettyChannelProvider"
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.AbstractNettyHandler",
+  "methods":[
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler",
+  "methods":[
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.ProtocolNegotiators$ClientTlsHandler"
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.ProtocolNegotiators$GrpcNegotiationHandler",
+  "methods":[{"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.ProtocolNegotiators$ProtocolNegotiationHandler",
+  "methods":[{"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.ProtocolNegotiators$WaitUntilActiveHandler",
+  "methods":[{"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.WriteBufferingAndExceptionHandler",
+  "methods":[
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRead","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"connect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, 
+    {"name":"flush","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.buffer.AbstractByteBufAllocator",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.buffer.AbstractReferenceCountedByteBuf",
+  "fields":[{"name":"refCnt"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.ChannelDuplexHandler",
+  "methods":[
+    {"name":"bind","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"connect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"deregister","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"disconnect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"flush","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"read","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.ChannelInboundHandlerAdapter",
+  "methods":[
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRead","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"channelReadComplete","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRegistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelUnregistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelWritabilityChanged","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, 
+    {"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.DefaultChannelPipeline$HeadContext",
+  "methods":[
+    {"name":"bind","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRead","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"channelReadComplete","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRegistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelUnregistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelWritabilityChanged","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"connect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"deregister","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"disconnect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, 
+    {"name":"flush","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"read","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.DefaultChannelPipeline$TailContext",
+  "methods":[
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRead","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"channelReadComplete","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelRegistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelUnregistered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelWritabilityChanged","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, 
+    {"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.DefaultFileRegion"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.Epoll",
+  "methods":[{"name":"isAvailable","parameterTypes":[] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.EpollDomainSocketChannel"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventLoopGroup",
+  "methods":[{"name":"<init>","parameterTypes":["int","java.util.concurrent.ThreadFactory"] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.EpollServerSocketChannel",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.EpollSocketChannel",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.epoll.NativeDatagramPacketArray$NativeDatagramPacket"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.unix.DatagramSocketAddress"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.unix.DomainDatagramSocketAddress"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.channel.unix.PeerCredentials"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.handler.codec.ByteToMessageDecoder",
+  "methods":[
+    {"name":"channelRead","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, 
+    {"name":"userEventTriggered","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ConnectionHandler",
+  "methods":[
+    {"name":"bind","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"channelReadComplete","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelWritabilityChanged","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"connect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"deregister","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"disconnect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"flush","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"read","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.handler.ssl.SslHandler",
+  "methods":[
+    {"name":"bind","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"channelReadComplete","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"connect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"deregister","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"disconnect","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }, 
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, 
+    {"name":"flush","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"read","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] }, 
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateCallback"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateCallbackTask"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.SSLContext"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodDecryptTask"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodSignTask"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodTask"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.internal.tcnative.SSLTask"
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.AbstractReferenceCounted",
+  "fields":[{"name":"refCnt"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.ReferenceCountUtil",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryUtil",
+  "methods":[{"name":"loadLibrary","parameterTypes":["java.lang.String","boolean"] }]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.grpc.netty.shaded.io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.grpc.okhttp.OkHttpChannelProvider"
+},
+{
+  "name":"io.grpc.override.ContextStorageOverride"
+},
+{
+  "name":"io.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.opencensus.impl.trace.TraceComponentImpl"
+},
+{
+  "name":"io.opencensus.impllite.trace.TraceComponentImplLite"
+},
+{
+  "name":"io.opentelemetry.opencensusshim.OpenTelemetryContextManager"
+},
+{
+  "name":"io.opentelemetry.opencensusshim.OpenTelemetryTraceComponentImpl"
+},
+{
+  "name":"io.perfmark.impl.SecretPerfMarkImpl$PerfMarkImpl"
+},
+{
+  "name":"java.io.FileDescriptor"
+},
+{
+  "name":"java.io.IOException"
+},
+{
+  "name":"java.lang.Exception"
+},
+{
+  "name":"java.lang.IllegalArgumentException"
+},
+{
+  "name":"java.lang.NullPointerException"
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.OutOfMemoryError"
+},
+{
+  "name":"java.lang.ProcessHandle",
+  "methods":[
+    {"name":"current","parameterTypes":[] }, 
+    {"name":"pid","parameterTypes":[] }
+  ]
+},
+{
+  "name":"java.lang.RuntimeException"
+},
+{
+  "name":"java.lang.String"
+},
+{
+  "name":"java.lang.management.ManagementFactory",
+  "methods":[{"name":"getRuntimeMXBean","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.management.RuntimeMXBean",
+  "methods":[{"name":"getInputArguments","parameterTypes":[] }]
+},
+{
+  "name":"java.net.InetSocketAddress",
+  "methods":[{"name":"getHostString","parameterTypes":[] }]
+},
+{
+  "name":"java.net.PortUnreachableException"
+},
+{
+  "name":"java.nio.Bits",
+  "fields":[{"name":"UNALIGNED"}]
+},
+{
+  "name":"java.nio.Buffer",
+  "fields":[{"name":"address"}]
+},
+{
+  "name":"java.nio.ByteBuffer",
+  "methods":[{"name":"alignedSlice","parameterTypes":["int"] }]
+},
+{
+  "name":"java.nio.DirectByteBuffer",
+  "methods":[{"name":"<init>","parameterTypes":["long","int"] }]
+},
+{
+  "name":"java.nio.channels.ClosedChannelException"
+},
+{
+  "name":"java.nio.channels.FileChannel"
+},
+{
+  "name":"java.security.AlgorithmParametersSpi"
+},
+{
+  "name":"java.security.KeyStoreSpi"
+},
+{
+  "name":"java.security.SecureRandomParameters"
+},
+{
+  "name":"java.security.interfaces.ECPrivateKey"
+},
+{
+  "name":"java.security.interfaces.ECPublicKey"
+},
+{
+  "name":"java.security.interfaces.RSAPrivateKey"
+},
+{
+  "name":"java.security.interfaces.RSAPublicKey"
+},
+{
+  "name":"java.util.AbstractMap",
+  "allDeclaredFields":true
+},
+{
+  "name":"java.util.Date"
+},
+{
+  "name":"java.util.concurrent.atomic.LongAdder",
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"add","parameterTypes":["long"] }, 
+    {"name":"sum","parameterTypes":[] }
+  ]
+},
+{
+  "name":"javax.naming.directory.InitialDirContext"
+},
+{
+  "name":"javax.net.ssl.SSLContext",
+  "fields":[{"name":"contextSpi"}]
+},
+{
+  "name":"javax.security.auth.x500.X500Principal",
+  "fields":[{"name":"thisX500Name"}],
+  "methods":[{"name":"<init>","parameterTypes":["sun.security.x509.X500Name"] }]
+},
+{
+  "name":"jdk.internal.misc.Unsafe",
+  "methods":[{"name":"getUnsafe","parameterTypes":[] }]
+},
+{
+  "name":"junit.framework.Test"
+},
+{
+  "name":"libcore.io.Memory"
+},
+{
+  "name":"org.apache.maven.surefire.junitcore.JUnitCoreProvider",
+  "methods":[{"name":"<init>","parameterTypes":["org.apache.maven.surefire.api.provider.ProviderParameters"] }]
+},
+{
+  "name":"org.junit.experimental.categories.Categories"
+},
+{
+  "name":"org.junit.experimental.categories.Category"
+},
+{
+  "name":"org.junit.runner.RunWith"
+},
+{
+  "name":"org.robolectric.Robolectric"
+},
+{
+  "name":"sun.misc.Unsafe",
+  "allDeclaredFields":true,
+  "methods":[
+    {"name":"arrayBaseOffset","parameterTypes":["java.lang.Class"] }, 
+    {"name":"arrayIndexScale","parameterTypes":["java.lang.Class"] }, 
+    {"name":"copyMemory","parameterTypes":["long","long","long"] }, 
+    {"name":"copyMemory","parameterTypes":["java.lang.Object","long","java.lang.Object","long","long"] }, 
+    {"name":"getAndAddLong","parameterTypes":["java.lang.Object","long","long"] }, 
+    {"name":"getAndSetObject","parameterTypes":["java.lang.Object","long","java.lang.Object"] }, 
+    {"name":"getBoolean","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getByte","parameterTypes":["long"] }, 
+    {"name":"getByte","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getDouble","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getFloat","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getInt","parameterTypes":["long"] }, 
+    {"name":"getInt","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getLong","parameterTypes":["long"] }, 
+    {"name":"getLong","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"getObject","parameterTypes":["java.lang.Object","long"] }, 
+    {"name":"invokeCleaner","parameterTypes":["java.nio.ByteBuffer"] }, 
+    {"name":"objectFieldOffset","parameterTypes":["java.lang.reflect.Field"] }, 
+    {"name":"putBoolean","parameterTypes":["java.lang.Object","long","boolean"] }, 
+    {"name":"putByte","parameterTypes":["long","byte"] }, 
+    {"name":"putByte","parameterTypes":["java.lang.Object","long","byte"] }, 
+    {"name":"putDouble","parameterTypes":["java.lang.Object","long","double"] }, 
+    {"name":"putFloat","parameterTypes":["java.lang.Object","long","float"] }, 
+    {"name":"putInt","parameterTypes":["long","int"] }, 
+    {"name":"putInt","parameterTypes":["java.lang.Object","long","int"] }, 
+    {"name":"putLong","parameterTypes":["long","long"] }, 
+    {"name":"putLong","parameterTypes":["java.lang.Object","long","long"] }, 
+    {"name":"putObject","parameterTypes":["java.lang.Object","long","java.lang.Object"] }, 
+    {"name":"storeFence","parameterTypes":[] }
+  ]
+},
+{
+  "name":"sun.misc.VM"
+},
+{
+  "name":"sun.security.pkcs12.PKCS12KeyStore",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.pkcs12.PKCS12KeyStore$DualFormatPKCS12",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.DSA$SHA224withDSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.DSA$SHA256withDSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.JavaKeyStore$DualFormatJKS",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.JavaKeyStore$JKS",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA2$SHA224",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA5$SHA384",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA5$SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.X509Factory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.certpath.PKIXCertPathValidator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.PSSParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSAKeyFactory$Legacy",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSAPSSSignature",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA224withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA256withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.KeyManagerFactoryImpl$SunX509",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl",
+  "fields":[{"name":"trustManager"}]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl$DefaultSSLContext",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl$TLSContext",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.TrustManagerFactoryImpl$PKIXFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.util.ObjectIdentifier"
+},
+{
+  "name":"sun.security.x509.AuthorityInfoAccessExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.AuthorityKeyIdentifierExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.BasicConstraintsExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.CRLDistributionPointsExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.CertificateExtensions"
+},
+{
+  "name":"sun.security.x509.CertificatePoliciesExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.ExtendedKeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.IssuerAlternativeNameExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.KeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.NetscapeCertTypeExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.PrivateKeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.SubjectAlternativeNameExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.SubjectKeyIdentifierExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+}
+]
