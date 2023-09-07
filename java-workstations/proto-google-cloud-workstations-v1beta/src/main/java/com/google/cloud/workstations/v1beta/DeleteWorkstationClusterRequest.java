@@ -125,10 +125,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -145,11 +146,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
+   * Optional. If set, the request will be rejected if the latest version of the
    * workstation cluster on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -169,11 +170,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
+   * Optional. If set, the request will be rejected if the latest version of the
    * workstation cluster on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -196,12 +197,12 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, any workstation configurations and workstations in the
+   * Optional. If set, any workstation configurations and workstations in the
    * workstation cluster are also deleted. Otherwise, the request only
    * works if the workstation cluster has no configurations or workstations.
    * </pre>
    *
-   * <code>bool force = 4;</code>
+   * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -750,10 +751,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The validateOnly.
      */
@@ -765,10 +767,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The validateOnly to set.
      * @return This builder for chaining.
@@ -784,10 +787,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -803,11 +807,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
+     * Optional. If set, the request will be rejected if the latest version of the
      * workstation cluster on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -826,11 +830,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
+     * Optional. If set, the request will be rejected if the latest version of the
      * workstation cluster on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -849,11 +853,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
+     * Optional. If set, the request will be rejected if the latest version of the
      * workstation cluster on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -871,11 +875,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
+     * Optional. If set, the request will be rejected if the latest version of the
      * workstation cluster on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -889,11 +893,11 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
+     * Optional. If set, the request will be rejected if the latest version of the
      * workstation cluster on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -914,12 +918,12 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, any workstation configurations and workstations in the
+     * Optional. If set, any workstation configurations and workstations in the
      * workstation cluster are also deleted. Otherwise, the request only
      * works if the workstation cluster has no configurations or workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -931,12 +935,12 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, any workstation configurations and workstations in the
+     * Optional. If set, any workstation configurations and workstations in the
      * workstation cluster are also deleted. Otherwise, the request only
      * works if the workstation cluster has no configurations or workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -952,12 +956,12 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, any workstation configurations and workstations in the
+     * Optional. If set, any workstation configurations and workstations in the
      * workstation cluster are also deleted. Otherwise, the request only
      * works if the workstation cluster has no configurations or workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

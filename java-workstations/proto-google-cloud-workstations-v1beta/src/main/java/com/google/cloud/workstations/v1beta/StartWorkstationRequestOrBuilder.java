@@ -56,11 +56,11 @@ public interface StartWorkstationRequestOrBuilder
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -70,11 +70,11 @@ public interface StartWorkstationRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
+   * Optional. If set, the request will be rejected if the latest version of the
    * workstation on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -83,11 +83,11 @@ public interface StartWorkstationRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
+   * Optional. If set, the request will be rejected if the latest version of the
    * workstation on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

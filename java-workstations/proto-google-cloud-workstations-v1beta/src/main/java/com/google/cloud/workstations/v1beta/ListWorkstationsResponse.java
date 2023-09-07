@@ -144,11 +144,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
+   * Optional. Token to retrieve the next page of results, or empty if there are
+   * no more results in the list.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -168,11 +168,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
+   * Optional. Token to retrieve the next page of results, or empty if there are
+   * no more results in the list.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -198,10 +198,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the unreachable.
    */
@@ -212,10 +212,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of unreachable.
    */
@@ -226,10 +226,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The unreachable at the given index.
@@ -241,10 +241,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the unreachable at the given index.
@@ -1072,11 +1072,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token to retrieve the next page of results, or empty if there are no more
-     * results in the list.
+     * Optional. Token to retrieve the next page of results, or empty if there are
+     * no more results in the list.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The nextPageToken.
      */
@@ -1095,11 +1095,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token to retrieve the next page of results, or empty if there are no more
-     * results in the list.
+     * Optional. Token to retrieve the next page of results, or empty if there are
+     * no more results in the list.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -1118,11 +1118,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token to retrieve the next page of results, or empty if there are no more
-     * results in the list.
+     * Optional. Token to retrieve the next page of results, or empty if there are
+     * no more results in the list.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1140,11 +1140,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token to retrieve the next page of results, or empty if there are no more
-     * results in the list.
+     * Optional. Token to retrieve the next page of results, or empty if there are
+     * no more results in the list.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1158,11 +1158,11 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token to retrieve the next page of results, or empty if there are no more
-     * results in the list.
+     * Optional. Token to retrieve the next page of results, or empty if there are
+     * no more results in the list.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
@@ -1191,10 +1191,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the unreachable.
      */
@@ -1206,10 +1206,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of unreachable.
      */
@@ -1220,10 +1220,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The unreachable at the given index.
@@ -1235,10 +1235,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the unreachable at the given index.
@@ -1250,10 +1250,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The unreachable to set.
@@ -1273,10 +1273,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The unreachable to add.
      * @return This builder for chaining.
@@ -1295,10 +1295,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The unreachable to add.
      * @return This builder for chaining.
@@ -1314,10 +1314,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1332,10 +1332,10 @@ public final class ListWorkstationsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Unreachable resources.
+     * Optional. Unreachable resources.
      * </pre>
      *
-     * <code>repeated string unreachable = 3;</code>
+     * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the unreachable to add.
      * @return This builder for chaining.
