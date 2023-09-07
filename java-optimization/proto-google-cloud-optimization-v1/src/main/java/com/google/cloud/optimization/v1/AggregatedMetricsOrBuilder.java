@@ -456,7 +456,7 @@ public interface AggregatedMetricsOrBuilder
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
    * @return The totalCost.
    */
   @java.lang.Deprecated
