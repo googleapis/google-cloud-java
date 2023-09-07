@@ -129,6 +129,8 @@ import com.google.cloud.channel.v1.Product;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
 import com.google.cloud.channel.v1.PurchasableOffer;
 import com.google.cloud.channel.v1.PurchasableSku;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.Sku;
@@ -329,6 +331,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings;
+  private final UnaryCallSettings<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsSettings;
   private final UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberSettings;
   private final UnaryCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -1701,6 +1706,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return listPurchasableOffersSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryEligibleBillingAccounts. */
+  public UnaryCallSettings<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsSettings() {
+    return queryEligibleBillingAccountsSettings;
+  }
+
   /** Returns the object with the settings used for calls to registerSubscriber. */
   public UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberSettings() {
@@ -1910,6 +1922,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     listOffersSettings = settingsBuilder.listOffersSettings().build();
     listPurchasableSkusSettings = settingsBuilder.listPurchasableSkusSettings().build();
     listPurchasableOffersSettings = settingsBuilder.listPurchasableOffersSettings().build();
+    queryEligibleBillingAccountsSettings =
+        settingsBuilder.queryEligibleBillingAccountsSettings().build();
     registerSubscriberSettings = settingsBuilder.registerSubscriberSettings().build();
     unregisterSubscriberSettings = settingsBuilder.unregisterSubscriberSettings().build();
     listSubscribersSettings = settingsBuilder.listSubscribersSettings().build();
@@ -2069,6 +2083,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListPurchasableOffersResponse,
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings;
+    private final UnaryCallSettings.Builder<
+            QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsSettings;
     private final UnaryCallSettings.Builder<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberSettings;
     private final UnaryCallSettings.Builder<
@@ -2193,6 +2210,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           PagedCallSettings.newBuilder(LIST_PURCHASABLE_SKUS_PAGE_STR_FACT);
       listPurchasableOffersSettings =
           PagedCallSettings.newBuilder(LIST_PURCHASABLE_OFFERS_PAGE_STR_FACT);
+      queryEligibleBillingAccountsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       registerSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unregisterSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSubscribersSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIBERS_PAGE_STR_FACT);
@@ -2245,6 +2263,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listOffersSettings,
               listPurchasableSkusSettings,
               listPurchasableOffersSettings,
+              queryEligibleBillingAccountsSettings,
               registerSubscriberSettings,
               unregisterSubscriberSettings,
               listSubscribersSettings,
@@ -2327,6 +2346,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       listOffersSettings = settings.listOffersSettings.toBuilder();
       listPurchasableSkusSettings = settings.listPurchasableSkusSettings.toBuilder();
       listPurchasableOffersSettings = settings.listPurchasableOffersSettings.toBuilder();
+      queryEligibleBillingAccountsSettings =
+          settings.queryEligibleBillingAccountsSettings.toBuilder();
       registerSubscriberSettings = settings.registerSubscriberSettings.toBuilder();
       unregisterSubscriberSettings = settings.unregisterSubscriberSettings.toBuilder();
       listSubscribersSettings = settings.listSubscribersSettings.toBuilder();
@@ -2378,6 +2399,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listOffersSettings,
               listPurchasableSkusSettings,
               listPurchasableOffersSettings,
+              queryEligibleBillingAccountsSettings,
               registerSubscriberSettings,
               unregisterSubscriberSettings,
               listSubscribersSettings,
@@ -2628,6 +2650,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .listPurchasableOffersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .queryEligibleBillingAccountsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3319,6 +3346,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return listPurchasableOffersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryEligibleBillingAccounts. */
+    public UnaryCallSettings.Builder<
+            QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsSettings() {
+      return queryEligibleBillingAccountsSettings;
     }
 
     /** Returns the builder for the settings used for calls to registerSubscriber. */

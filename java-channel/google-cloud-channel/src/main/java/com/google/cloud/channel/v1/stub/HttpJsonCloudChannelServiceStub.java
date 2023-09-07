@@ -112,6 +112,8 @@ import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
@@ -1898,6 +1900,45 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/QueryEligibleBillingAccounts")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryEligibleBillingAccountsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customer=accounts/*/customers/*}:queryEligibleBillingAccounts",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryEligibleBillingAccountsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "customer", request.getCustomer());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryEligibleBillingAccountsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "skus", request.getSkusList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryEligibleBillingAccountsResponse>newBuilder()
+                      .setDefaultInstance(QueryEligibleBillingAccountsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberMethodDescriptor =
           ApiMethodDescriptor.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
@@ -2177,6 +2218,9 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
       listPurchasableOffersCallable;
   private final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable;
+  private final UnaryCallable<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable;
   private final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberCallable;
   private final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -2788,6 +2832,20 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryEligibleBillingAccountsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberTransportSettings =
             HttpJsonCallSettings.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
@@ -3151,6 +3209,11 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
             listPurchasableOffersTransportSettings,
             settings.listPurchasableOffersSettings(),
             clientContext);
+    this.queryEligibleBillingAccountsCallable =
+        callableFactory.createUnaryCallable(
+            queryEligibleBillingAccountsTransportSettings,
+            settings.queryEligibleBillingAccountsSettings(),
+            clientContext);
     this.registerSubscriberCallable =
         callableFactory.createUnaryCallable(
             registerSubscriberTransportSettings,
@@ -3229,6 +3292,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
     methodDescriptors.add(listOffersMethodDescriptor);
     methodDescriptors.add(listPurchasableSkusMethodDescriptor);
     methodDescriptors.add(listPurchasableOffersMethodDescriptor);
+    methodDescriptors.add(queryEligibleBillingAccountsMethodDescriptor);
     methodDescriptors.add(registerSubscriberMethodDescriptor);
     methodDescriptors.add(unregisterSubscriberMethodDescriptor);
     methodDescriptors.add(listSubscribersMethodDescriptor);
@@ -3633,6 +3697,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
     return listPurchasableOffersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    return queryEligibleBillingAccountsCallable;
   }
 
   @Override

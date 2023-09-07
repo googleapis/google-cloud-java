@@ -847,6 +847,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setPageToken("pageToken873572522")
             .setSku("sku113949")
             .setLanguageCode("languageCode-2092349083")
+            .setBillingAccount("billingAccount708726578")
             .build();
 
     ListTransferableOffersPagedResponse pagedListResponse = client.listTransferableOffers(request);
@@ -886,6 +887,7 @@ public class CloudChannelServiceClientHttpJsonTest {
               .setPageToken("pageToken873572522")
               .setSku("sku113949")
               .setLanguageCode("languageCode-2092349083")
+              .setBillingAccount("billingAccount708726578")
               .build();
       client.listTransferableOffers(request);
       Assert.fail("No exception raised");
@@ -1201,6 +1203,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .addAllParameters(new ArrayList<Parameter>())
             .setPurchaseOrderId("purchaseOrderId2029917384")
             .setRequestId("requestId693933066")
+            .setBillingAccount("billingAccount708726578")
             .build();
 
     Entitlement actualResponse = client.changeOfferAsync(request).get();
@@ -1237,6 +1240,7 @@ public class CloudChannelServiceClientHttpJsonTest {
               .addAllParameters(new ArrayList<Parameter>())
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
+              .setBillingAccount("billingAccount708726578")
               .build();
       client.changeOfferAsync(request).get();
       Assert.fail("No exception raised");
@@ -3324,6 +3328,59 @@ public class CloudChannelServiceClientHttpJsonTest {
               .setLanguageCode("languageCode-2092349083")
               .build();
       client.listPurchasableOffers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryEligibleBillingAccountsTest() throws Exception {
+    QueryEligibleBillingAccountsResponse expectedResponse =
+        QueryEligibleBillingAccountsResponse.newBuilder()
+            .addAllSkuPurchaseGroups(new ArrayList<SkuPurchaseGroup>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryEligibleBillingAccountsRequest request =
+        QueryEligibleBillingAccountsRequest.newBuilder()
+            .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+            .addAllSkus(new ArrayList<String>())
+            .build();
+
+    QueryEligibleBillingAccountsResponse actualResponse =
+        client.queryEligibleBillingAccounts(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryEligibleBillingAccountsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryEligibleBillingAccountsRequest request =
+          QueryEligibleBillingAccountsRequest.newBuilder()
+              .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+              .addAllSkus(new ArrayList<String>())
+              .build();
+      client.queryEligibleBillingAccounts(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

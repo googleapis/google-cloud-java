@@ -627,8 +627,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to create a customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; Domain
    *       field value doesn't match the primary email domain.
    * </ul>
@@ -668,8 +669,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to create a customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; Domain
    *       field value doesn't match the primary email domain.
    * </ul>
@@ -943,8 +945,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to import the customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
    *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
    *       invalid.
@@ -991,8 +994,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to import the customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
    *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
    *       invalid.
@@ -1038,7 +1042,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1091,7 +1097,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1144,7 +1152,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1496,7 +1506,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1519,6 +1530,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   for (TransferableOffer element :
    *       cloudChannelServiceClient.listTransferableOffers(request).iterateAll()) {
@@ -1549,7 +1561,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1572,6 +1585,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   ApiFuture<TransferableOffer> future =
    *       cloudChannelServiceClient.listTransferableOffersPagedCallable().futureCall(request);
@@ -1601,7 +1615,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1624,6 +1639,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   while (true) {
    *     ListTransferableOffersResponse response =
@@ -1729,7 +1745,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -1790,7 +1808,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -1851,7 +1871,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -2271,6 +2293,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   Entitlement response = cloudChannelServiceClient.changeOfferAsync(request).get();
    * }
@@ -2325,6 +2348,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   OperationFuture<Entitlement, OperationMetadata> future =
    *       cloudChannelServiceClient.changeOfferOperationCallable().futureCall(request);
@@ -2379,6 +2403,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   ApiFuture<Operation> future =
    *       cloudChannelServiceClient.changeOfferCallable().futureCall(request);
@@ -3039,7 +3064,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -3097,7 +3124,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -3155,7 +3184,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -4315,12 +4346,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4392,12 +4423,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4469,12 +4500,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4541,12 +4572,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -5494,10 +5525,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5573,10 +5606,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5651,10 +5686,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5722,10 +5759,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -7224,7 +7263,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -7271,7 +7312,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -7317,7 +7360,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -7356,6 +7401,90 @@ public class CloudChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     return stub.listPurchasableOffersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   * </ul>
+   *
+   * <p>Return value: Based on the provided list of SKUs, returns a list of SKU groups that must be
+   * purchased using the same billing account and the billing accounts eligible to purchase each SKU
+   * group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   QueryEligibleBillingAccountsRequest request =
+   *       QueryEligibleBillingAccountsRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .addAllSkus(new ArrayList<String>())
+   *           .build();
+   *   QueryEligibleBillingAccountsResponse response =
+   *       cloudChannelServiceClient.queryEligibleBillingAccounts(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryEligibleBillingAccountsResponse queryEligibleBillingAccounts(
+      QueryEligibleBillingAccountsRequest request) {
+    return queryEligibleBillingAccountsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   * </ul>
+   *
+   * <p>Return value: Based on the provided list of SKUs, returns a list of SKU groups that must be
+   * purchased using the same billing account and the billing accounts eligible to purchase each SKU
+   * group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   QueryEligibleBillingAccountsRequest request =
+   *       QueryEligibleBillingAccountsRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .addAllSkus(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<QueryEligibleBillingAccountsResponse> future =
+   *       cloudChannelServiceClient.queryEligibleBillingAccountsCallable().futureCall(request);
+   *   // Do something.
+   *   QueryEligibleBillingAccountsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    return stub.queryEligibleBillingAccountsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

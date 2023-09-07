@@ -142,6 +142,9 @@
             "ProvisionCloudIdentity": {
               "methods": ["provisionCloudIdentityAsync", "provisionCloudIdentityOperationCallable", "provisionCloudIdentityCallable"]
             },
+            "QueryEligibleBillingAccounts": {
+              "methods": ["queryEligibleBillingAccounts", "queryEligibleBillingAccountsCallable"]
+            },
             "RegisterSubscriber": {
               "methods": ["registerSubscriber", "registerSubscriberCallable"]
             },

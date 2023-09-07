@@ -95,6 +95,33 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
      * @return The bytes for sku.
      */
     com.google.protobuf.ByteString getSkuBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Billing account that the result should be restricted to.
+     * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+     * </pre>
+     *
+     * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    java.lang.String getBillingAccount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Billing account that the result should be restricted to.
+     * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+     * </pre>
+     *
+     * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    com.google.protobuf.ByteString getBillingAccountBytes();
   }
   /**
    *
@@ -118,6 +145,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
 
     private CreateEntitlementPurchase() {
       sku_ = "";
+      billingAccount_ = "";
     }
 
     @java.lang.Override
@@ -196,6 +224,59 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       }
     }
 
+    public static final int BILLING_ACCOUNT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object billingAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Billing account that the result should be restricted to.
+     * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+     * </pre>
+     *
+     * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getBillingAccount() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Billing account that the result should be restricted to.
+     * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+     * </pre>
+     *
+     * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBillingAccountBytes() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        billingAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -213,6 +294,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sku_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sku_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, billingAccount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -224,6 +308,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sku_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sku_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, billingAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -244,6 +331,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
           (com.google.cloud.channel.v1.ListPurchasableOffersRequest.CreateEntitlementPurchase) obj;
 
       if (!getSku().equals(other.getSku())) return false;
+      if (!getBillingAccount().equals(other.getBillingAccount())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -257,6 +345,8 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SKU_FIELD_NUMBER;
       hash = (53 * hash) + getSku().hashCode();
+      hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingAccount().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -412,6 +502,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         super.clear();
         bitField0_ = 0;
         sku_ = "";
+        billingAccount_ = "";
         return this;
       }
 
@@ -458,6 +549,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.sku_ = sku_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.billingAccount_ = billingAccount_;
         }
       }
 
@@ -521,6 +615,11 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getBillingAccount().isEmpty()) {
+          billingAccount_ = other.billingAccount_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -553,6 +652,12 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  billingAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -679,6 +784,117 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         checkByteStringIsUtf8(value);
         sku_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object billingAccount_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Billing account that the result should be restricted to.
+       * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+       * </pre>
+       *
+       * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The billingAccount.
+       */
+      public java.lang.String getBillingAccount() {
+        java.lang.Object ref = billingAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          billingAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Billing account that the result should be restricted to.
+       * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+       * </pre>
+       *
+       * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for billingAccount.
+       */
+      public com.google.protobuf.ByteString getBillingAccountBytes() {
+        java.lang.Object ref = billingAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          billingAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Billing account that the result should be restricted to.
+       * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+       * </pre>
+       *
+       * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The billingAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingAccount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Billing account that the result should be restricted to.
+       * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+       * </pre>
+       *
+       * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBillingAccount() {
+        billingAccount_ = getDefaultInstance().getBillingAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Billing account that the result should be restricted to.
+       * Format: accounts/{account_id}/billingAccounts/{billing_account_id}.
+       * </pre>
+       *
+       * <code>string billing_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for billingAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        billingAccount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -814,6 +1030,41 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
      * @return The bytes for newSku.
      */
     com.google.protobuf.ByteString getNewSkuBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the new target Billing Account. Provide this
+     * Billing Account when setting up billing for a trial subscription. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    java.lang.String getBillingAccount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the new target Billing Account. Provide this
+     * Billing Account when setting up billing for a trial subscription. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    com.google.protobuf.ByteString getBillingAccountBytes();
   }
   /**
    *
@@ -837,6 +1088,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
     private ChangeOfferPurchase() {
       entitlement_ = "";
       newSku_ = "";
+      billingAccount_ = "";
     }
 
     @java.lang.Override
@@ -971,6 +1223,67 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       }
     }
 
+    public static final int BILLING_ACCOUNT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object billingAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the new target Billing Account. Provide this
+     * Billing Account when setting up billing for a trial subscription. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getBillingAccount() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the new target Billing Account. Provide this
+     * Billing Account when setting up billing for a trial subscription. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBillingAccountBytes() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        billingAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -991,6 +1304,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newSku_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, newSku_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, billingAccount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1005,6 +1321,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newSku_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, newSku_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, billingAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1026,6 +1345,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
 
       if (!getEntitlement().equals(other.getEntitlement())) return false;
       if (!getNewSku().equals(other.getNewSku())) return false;
+      if (!getBillingAccount().equals(other.getBillingAccount())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1041,6 +1361,8 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
       hash = (53 * hash) + getEntitlement().hashCode();
       hash = (37 * hash) + NEW_SKU_FIELD_NUMBER;
       hash = (53 * hash) + getNewSku().hashCode();
+      hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingAccount().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1194,6 +1516,7 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         bitField0_ = 0;
         entitlement_ = "";
         newSku_ = "";
+        billingAccount_ = "";
         return this;
       }
 
@@ -1240,6 +1563,9 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.newSku_ = newSku_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.billingAccount_ = billingAccount_;
         }
       }
 
@@ -1306,6 +1632,11 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getBillingAccount().isEmpty()) {
+          billingAccount_ = other.billingAccount_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1344,6 +1675,12 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  billingAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1591,6 +1928,137 @@ public final class ListPurchasableOffersRequest extends com.google.protobuf.Gene
         checkByteStringIsUtf8(value);
         newSku_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object billingAccount_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of the new target Billing Account. Provide this
+       * Billing Account when setting up billing for a trial subscription. Format:
+       * accounts/{account_id}/billingAccounts/{billing_account_id}.
+       *
+       * This field is only relevant for multi-currency accounts. It should be
+       * left empty for single currency accounts.
+       * </pre>
+       *
+       * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The billingAccount.
+       */
+      public java.lang.String getBillingAccount() {
+        java.lang.Object ref = billingAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          billingAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of the new target Billing Account. Provide this
+       * Billing Account when setting up billing for a trial subscription. Format:
+       * accounts/{account_id}/billingAccounts/{billing_account_id}.
+       *
+       * This field is only relevant for multi-currency accounts. It should be
+       * left empty for single currency accounts.
+       * </pre>
+       *
+       * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for billingAccount.
+       */
+      public com.google.protobuf.ByteString getBillingAccountBytes() {
+        java.lang.Object ref = billingAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          billingAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of the new target Billing Account. Provide this
+       * Billing Account when setting up billing for a trial subscription. Format:
+       * accounts/{account_id}/billingAccounts/{billing_account_id}.
+       *
+       * This field is only relevant for multi-currency accounts. It should be
+       * left empty for single currency accounts.
+       * </pre>
+       *
+       * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The billingAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingAccount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of the new target Billing Account. Provide this
+       * Billing Account when setting up billing for a trial subscription. Format:
+       * accounts/{account_id}/billingAccounts/{billing_account_id}.
+       *
+       * This field is only relevant for multi-currency accounts. It should be
+       * left empty for single currency accounts.
+       * </pre>
+       *
+       * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBillingAccount() {
+        billingAccount_ = getDefaultInstance().getBillingAccount();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of the new target Billing Account. Provide this
+       * Billing Account when setting up billing for a trial subscription. Format:
+       * accounts/{account_id}/billingAccounts/{billing_account_id}.
+       *
+       * This field is only relevant for multi-currency accounts. It should be
+       * left empty for single currency accounts.
+       * </pre>
+       *
+       * <code>string billing_account = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for billingAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        billingAccount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

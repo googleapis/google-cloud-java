@@ -16,38 +16,37 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START cloudchannel_v1_generated_CloudChannelService_ListTransferableOffers_sync]
+// [START cloudchannel_v1_generated_CloudChannelService_QueryEligibleBillingAccounts_async]
+import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
-import com.google.cloud.channel.v1.ListTransferableOffersRequest;
-import com.google.cloud.channel.v1.TransferableOffer;
+import com.google.cloud.channel.v1.CustomerName;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
+import java.util.ArrayList;
 
-public class SyncListTransferableOffers {
+public class AsyncQueryEligibleBillingAccounts {
 
   public static void main(String[] args) throws Exception {
-    syncListTransferableOffers();
+    asyncQueryEligibleBillingAccounts();
   }
 
-  public static void syncListTransferableOffers() throws Exception {
+  public static void asyncQueryEligibleBillingAccounts() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
-      ListTransferableOffersRequest request =
-          ListTransferableOffersRequest.newBuilder()
-              .setParent("parent-995424086")
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .setSku("sku113949")
-              .setLanguageCode("languageCode-2092349083")
-              .setBillingAccount("billingAccount708726578")
+      QueryEligibleBillingAccountsRequest request =
+          QueryEligibleBillingAccountsRequest.newBuilder()
+              .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+              .addAllSkus(new ArrayList<String>())
               .build();
-      for (TransferableOffer element :
-          cloudChannelServiceClient.listTransferableOffers(request).iterateAll()) {
-        // doThingsWith(element);
-      }
+      ApiFuture<QueryEligibleBillingAccountsResponse> future =
+          cloudChannelServiceClient.queryEligibleBillingAccountsCallable().futureCall(request);
+      // Do something.
+      QueryEligibleBillingAccountsResponse response = future.get();
     }
   }
 }
-// [END cloudchannel_v1_generated_CloudChannelService_ListTransferableOffers_sync]
+// [END cloudchannel_v1_generated_CloudChannelService_QueryEligibleBillingAccounts_async]
