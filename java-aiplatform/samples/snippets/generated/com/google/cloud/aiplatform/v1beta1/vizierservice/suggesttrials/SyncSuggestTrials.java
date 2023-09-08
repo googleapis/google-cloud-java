@@ -20,7 +20,9 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.cloud.aiplatform.v1beta1.StudyName;
 import com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest;
 import com.google.cloud.aiplatform.v1beta1.SuggestTrialsResponse;
+import com.google.cloud.aiplatform.v1beta1.TrialContext;
 import com.google.cloud.aiplatform.v1beta1.VizierServiceClient;
+import java.util.ArrayList;
 
 public class SyncSuggestTrials {
 
@@ -40,6 +42,7 @@ public class SyncSuggestTrials {
               .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
               .setSuggestionCount(390130452)
               .setClientId("clientId908408390")
+              .addAllContexts(new ArrayList<TrialContext>())
               .build();
       SuggestTrialsResponse response = vizierServiceClient.suggestTrialsAsync(request).get();
     }

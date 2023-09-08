@@ -63,59 +63,62 @@ public final class IndexEndpointProto {
       "\n/google/cloud/aiplatform/v1/index_endpo"
           + "int.proto\022\032google.cloud.aiplatform.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\0322google/cloud/aiplatfo"
-          + "rm/v1/machine_resources.proto\0323google/cl"
-          + "oud/aiplatform/v1/service_networking.pro"
-          + "to\032\037google/protobuf/timestamp.proto\"\210\006\n\r"
-          + "IndexEndpoint\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\032\n\014dis"
-          + "play_name\030\002 \001(\tB\004\342A\001\002\022\023\n\013description\030\003 \001"
-          + "(\t\022I\n\020deployed_indexes\030\004 \003(\0132).google.cl"
-          + "oud.aiplatform.v1.DeployedIndexB\004\342A\001\003\022\014\n"
-          + "\004etag\030\005 \001(\t\022E\n\006labels\030\006 \003(\01325.google.clo"
-          + "ud.aiplatform.v1.IndexEndpoint.LabelsEnt"
-          + "ry\0225\n\013create_time\030\007 \001(\0132\032.google.protobu"
-          + "f.TimestampB\004\342A\001\003\0225\n\013update_time\030\010 \001(\0132\032"
-          + ".google.protobuf.TimestampB\004\342A\001\003\022\025\n\007netw"
-          + "ork\030\t \001(\tB\004\342A\001\001\022.\n\036enable_private_servic"
-          + "e_connect\030\n \001(\010B\006\030\001\342A\001\001\022e\n\036private_servi"
-          + "ce_connect_config\030\014 \001(\01327.google.cloud.a"
-          + "iplatform.v1.PrivateServiceConnectConfig"
-          + "B\004\342A\001\001\022%\n\027public_endpoint_enabled\030\r \001(\010B"
-          + "\004\342A\001\001\022)\n\033public_endpoint_domain_name\030\016 \001"
-          + "(\tB\004\342A\001\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001:u\352Ar\n\'aiplatform.googlea"
-          + "pis.com/IndexEndpoint\022Gprojects/{project"
-          + "}/locations/{location}/indexEndpoints/{i"
-          + "ndex_endpoint}\"\242\005\n\rDeployedIndex\022\020\n\002id\030\001"
-          + " \001(\tB\004\342A\001\002\0227\n\005index\030\002 \001(\tB(\342A\001\002\372A!\n\037aipl"
-          + "atform.googleapis.com/Index\022\024\n\014display_n"
-          + "ame\030\003 \001(\t\0225\n\013create_time\030\004 \001(\0132\032.google."
-          + "protobuf.TimestampB\004\342A\001\003\022R\n\021private_endp"
-          + "oints\030\005 \001(\01321.google.cloud.aiplatform.v1"
-          + ".IndexPrivateEndpointsB\004\342A\001\003\0229\n\017index_sy"
-          + "nc_time\030\006 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\004\342A\001\003\022Q\n\023automatic_resources\030\007 \001(\0132..g"
-          + "oogle.cloud.aiplatform.v1.AutomaticResou"
-          + "rcesB\004\342A\001\001\022Q\n\023dedicated_resources\030\020 \001(\0132"
-          + "..google.cloud.aiplatform.v1.DedicatedRe"
-          + "sourcesB\004\342A\001\001\022#\n\025enable_access_logging\030\010"
-          + " \001(\010B\004\342A\001\001\022]\n\032deployed_index_auth_config"
-          + "\030\t \001(\01323.google.cloud.aiplatform.v1.Depl"
-          + "oyedIndexAuthConfigB\004\342A\001\001\022 \n\022reserved_ip"
-          + "_ranges\030\n \003(\tB\004\342A\001\001\022\036\n\020deployment_group\030"
-          + "\013 \001(\tB\004\342A\001\001\"\256\001\n\027DeployedIndexAuthConfig\022"
-          + "W\n\rauth_provider\030\001 \001(\0132@.google.cloud.ai"
-          + "platform.v1.DeployedIndexAuthConfig.Auth"
-          + "Provider\032:\n\014AuthProvider\022\021\n\taudiences\030\001 "
-          + "\003(\t\022\027\n\017allowed_issuers\030\002 \003(\t\"[\n\025IndexPri"
-          + "vateEndpoints\022 \n\022match_grpc_address\030\001 \001("
-          + "\tB\004\342A\001\003\022 \n\022service_attachment\030\002 \001(\tB\004\342A\001"
-          + "\003B\320\001\n\036com.google.cloud.aiplatform.v1B\022In"
-          + "dexEndpointProtoP\001Z>cloud.google.com/go/"
-          + "aiplatform/apiv1/aiplatformpb;aiplatform"
-          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "pi/resource.proto\0320google/cloud/aiplatfo"
+          + "rm/v1/encryption_spec.proto\0322google/clou"
+          + "d/aiplatform/v1/machine_resources.proto\032"
+          + "3google/cloud/aiplatform/v1/service_netw"
+          + "orking.proto\032\037google/protobuf/timestamp."
+          + "proto\"\323\006\n\rIndexEndpoint\022\022\n\004name\030\001 \001(\tB\004\342"
+          + "A\001\003\022\032\n\014display_name\030\002 \001(\tB\004\342A\001\002\022\023\n\013descr"
+          + "iption\030\003 \001(\t\022I\n\020deployed_indexes\030\004 \003(\0132)"
+          + ".google.cloud.aiplatform.v1.DeployedInde"
+          + "xB\004\342A\001\003\022\014\n\004etag\030\005 \001(\t\022E\n\006labels\030\006 \003(\01325."
+          + "google.cloud.aiplatform.v1.IndexEndpoint"
+          + ".LabelsEntry\0225\n\013create_time\030\007 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\004\342A\001\003\0225\n\013update_ti"
+          + "me\030\010 \001(\0132\032.google.protobuf.TimestampB\004\342A"
+          + "\001\003\022\025\n\007network\030\t \001(\tB\004\342A\001\001\022.\n\036enable_priv"
+          + "ate_service_connect\030\n \001(\010B\006\030\001\342A\001\001\022e\n\036pri"
+          + "vate_service_connect_config\030\014 \001(\01327.goog"
+          + "le.cloud.aiplatform.v1.PrivateServiceCon"
+          + "nectConfigB\004\342A\001\001\022%\n\027public_endpoint_enab"
+          + "led\030\r \001(\010B\004\342A\001\001\022)\n\033public_endpoint_domai"
+          + "n_name\030\016 \001(\tB\004\342A\001\003\022I\n\017encryption_spec\030\017 "
+          + "\001(\0132*.google.cloud.aiplatform.v1.Encrypt"
+          + "ionSpecB\004\342A\001\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:u\352Ar\n\'aiplatform.go"
+          + "ogleapis.com/IndexEndpoint\022Gprojects/{pr"
+          + "oject}/locations/{location}/indexEndpoin"
+          + "ts/{index_endpoint}\"\242\005\n\rDeployedIndex\022\020\n"
+          + "\002id\030\001 \001(\tB\004\342A\001\002\0227\n\005index\030\002 \001(\tB(\342A\001\002\372A!\n"
+          + "\037aiplatform.googleapis.com/Index\022\024\n\014disp"
+          + "lay_name\030\003 \001(\t\0225\n\013create_time\030\004 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\004\342A\001\003\022R\n\021private"
+          + "_endpoints\030\005 \001(\01321.google.cloud.aiplatfo"
+          + "rm.v1.IndexPrivateEndpointsB\004\342A\001\003\0229\n\017ind"
+          + "ex_sync_time\030\006 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\004\342A\001\003\022Q\n\023automatic_resources\030\007 \001("
+          + "\0132..google.cloud.aiplatform.v1.Automatic"
+          + "ResourcesB\004\342A\001\001\022Q\n\023dedicated_resources\030\020"
+          + " \001(\0132..google.cloud.aiplatform.v1.Dedica"
+          + "tedResourcesB\004\342A\001\001\022#\n\025enable_access_logg"
+          + "ing\030\010 \001(\010B\004\342A\001\001\022]\n\032deployed_index_auth_c"
+          + "onfig\030\t \001(\01323.google.cloud.aiplatform.v1"
+          + ".DeployedIndexAuthConfigB\004\342A\001\001\022 \n\022reserv"
+          + "ed_ip_ranges\030\n \003(\tB\004\342A\001\001\022\036\n\020deployment_g"
+          + "roup\030\013 \001(\tB\004\342A\001\001\"\256\001\n\027DeployedIndexAuthCo"
+          + "nfig\022W\n\rauth_provider\030\001 \001(\0132@.google.clo"
+          + "ud.aiplatform.v1.DeployedIndexAuthConfig"
+          + ".AuthProvider\032:\n\014AuthProvider\022\021\n\taudienc"
+          + "es\030\001 \003(\t\022\027\n\017allowed_issuers\030\002 \003(\t\"[\n\025Ind"
+          + "exPrivateEndpoints\022 \n\022match_grpc_address"
+          + "\030\001 \001(\tB\004\342A\001\003\022 \n\022service_attachment\030\002 \001(\t"
+          + "B\004\342A\001\003B\320\001\n\036com.google.cloud.aiplatform.v"
+          + "1B\022IndexEndpointProtoP\001Z>cloud.google.co"
+          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +126,7 @@ public final class IndexEndpointProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ServiceNetworkingProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -146,6 +150,7 @@ public final class IndexEndpointProto {
               "PrivateServiceConnectConfig",
               "PublicEndpointEnabled",
               "PublicEndpointDomainName",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1_IndexEndpoint_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_IndexEndpoint_descriptor.getNestedTypes().get(0);
@@ -209,6 +214,7 @@ public final class IndexEndpointProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ServiceNetworkingProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

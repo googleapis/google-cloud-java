@@ -19788,7 +19788,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -19809,7 +19809,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -21531,7 +21531,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -21552,7 +21552,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
      * @return The convexStopConfig.
      */
     @java.lang.Override

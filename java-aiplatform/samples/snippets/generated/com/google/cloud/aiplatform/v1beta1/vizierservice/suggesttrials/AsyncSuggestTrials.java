@@ -20,8 +20,10 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1beta1.StudyName;
 import com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest;
+import com.google.cloud.aiplatform.v1beta1.TrialContext;
 import com.google.cloud.aiplatform.v1beta1.VizierServiceClient;
 import com.google.longrunning.Operation;
+import java.util.ArrayList;
 
 public class AsyncSuggestTrials {
 
@@ -41,6 +43,7 @@ public class AsyncSuggestTrials {
               .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
               .setSuggestionCount(390130452)
               .setClientId("clientId908408390")
+              .addAllContexts(new ArrayList<TrialContext>())
               .build();
       ApiFuture<Operation> future = vizierServiceClient.suggestTrialsCallable().futureCall(request);
       // Do something.
