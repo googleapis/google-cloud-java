@@ -40,6 +40,13 @@ deep-copy-regex:
 
 - source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src"
+
+- source: "/google/cloud/notebooks/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-notebooks/$1/proto-google-cloud-notebooks/src"
+
+- source: "/google/cloud/notebooks/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-notebooks/$1/grpc-google-cloud-notebooks/src"
+
 - source: "/google/cloud/notebooks/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-notebooks/$1/samples/snippets/generated"
 
