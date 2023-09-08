@@ -50,4 +50,5 @@
     <module>proto-google-shopping-merchant-inventories-v1beta</module>
     <module>google-shopping-merchant-inventories-bom</module>
   </modules>
-</project>
+
+  </project>
