@@ -672,3 +672,5 @@ grpc-google-cloud-language-v2:2.24.0:2.25.0-SNAPSHOT
 google-cloud-infra-manager:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-infra-manager-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-infra-manager-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-notebooks-v2:1.21.0:1.22.0-SNAPSHOT
+grpc-google-cloud-notebooks-v2:1.21.0:1.22.0-SNAPSHOT
