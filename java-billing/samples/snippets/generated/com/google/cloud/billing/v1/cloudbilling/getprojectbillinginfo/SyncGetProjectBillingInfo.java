@@ -20,7 +20,7 @@ package com.google.cloud.billing.v1.samples;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.GetProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
-import com.google.cloud.billing.v1.ProjectBillingInfoName;
+import com.google.cloud.billing.v1.ProjectName;
 
 public class SyncGetProjectBillingInfo {
 
@@ -37,7 +37,7 @@ public class SyncGetProjectBillingInfo {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       GetProjectBillingInfoRequest request =
           GetProjectBillingInfoRequest.newBuilder()
-              .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .build();
       ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(request);
     }

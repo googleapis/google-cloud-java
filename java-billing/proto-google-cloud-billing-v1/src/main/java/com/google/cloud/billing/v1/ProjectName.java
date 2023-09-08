@@ -28,18 +28,18 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class ProjectBillingInfoName implements ResourceName {
+public class ProjectName implements ResourceName {
   private static final PathTemplate PROJECT =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/billingInfo");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
 
   @Deprecated
-  protected ProjectBillingInfoName() {
+  protected ProjectName() {
     project = null;
   }
 
-  private ProjectBillingInfoName(Builder builder) {
+  private ProjectName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
   }
 
@@ -55,7 +55,7 @@ public class ProjectBillingInfoName implements ResourceName {
     return new Builder(this);
   }
 
-  public static ProjectBillingInfoName of(String project) {
+  public static ProjectName of(String project) {
     return newBuilder().setProject(project).build();
   }
 
@@ -63,27 +63,27 @@ public class ProjectBillingInfoName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  public static ProjectBillingInfoName parse(String formattedString) {
+  public static ProjectName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
         PROJECT.validatedMatch(
-            formattedString, "ProjectBillingInfoName.parse: formattedString not in valid format");
+            formattedString, "ProjectName.parse: formattedString not in valid format");
     return of(matchMap.get("project"));
   }
 
-  public static List<ProjectBillingInfoName> parseList(List<String> formattedStrings) {
-    List<ProjectBillingInfoName> list = new ArrayList<>(formattedStrings.size());
+  public static List<ProjectName> parseList(List<String> formattedStrings) {
+    List<ProjectName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<ProjectBillingInfoName> values) {
+  public static List<String> toStringList(List<ProjectName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (ProjectBillingInfoName value : values) {
+    for (ProjectName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -128,7 +128,7 @@ public class ProjectBillingInfoName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      ProjectBillingInfoName that = ((ProjectBillingInfoName) o);
+      ProjectName that = ((ProjectName) o);
       return Objects.equals(this.project, that.project);
     }
     return false;
@@ -142,7 +142,7 @@ public class ProjectBillingInfoName implements ResourceName {
     return h;
   }
 
-  /** Builder for projects/{project}/billingInfo. */
+  /** Builder for projects/{project}. */
   public static class Builder {
     private String project;
 
@@ -157,12 +157,12 @@ public class ProjectBillingInfoName implements ResourceName {
       return this;
     }
 
-    private Builder(ProjectBillingInfoName projectBillingInfoName) {
-      this.project = projectBillingInfoName.project;
+    private Builder(ProjectName projectName) {
+      this.project = projectName.project;
     }
 
-    public ProjectBillingInfoName build() {
-      return new ProjectBillingInfoName(this);
+    public ProjectName build() {
+      return new ProjectName(this);
     }
   }
 }

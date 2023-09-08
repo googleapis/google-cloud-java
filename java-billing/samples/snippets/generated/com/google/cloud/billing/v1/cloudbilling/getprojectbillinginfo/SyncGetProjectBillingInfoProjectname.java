@@ -16,27 +16,27 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectbillinginfoname_sync]
+// [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectname_sync]
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
-import com.google.cloud.billing.v1.ProjectBillingInfoName;
+import com.google.cloud.billing.v1.ProjectName;
 
-public class SyncGetProjectBillingInfoProjectbillinginfoname {
+public class SyncGetProjectBillingInfoProjectname {
 
   public static void main(String[] args) throws Exception {
-    syncGetProjectBillingInfoProjectbillinginfoname();
+    syncGetProjectBillingInfoProjectname();
   }
 
-  public static void syncGetProjectBillingInfoProjectbillinginfoname() throws Exception {
+  public static void syncGetProjectBillingInfoProjectname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
       ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
     }
   }
 }
-// [END cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectbillinginfoname_sync]
+// [END cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_Projectname_sync]
