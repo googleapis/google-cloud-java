@@ -47,11 +47,12 @@ public final class DataStoreConnectionProto {
           + "flow.cx.v3.DataStoreType\022\022\n\ndata_store\030\002"
           + " \001(\t*b\n\rDataStoreType\022\037\n\033DATA_STORE_TYPE"
           + "_UNSPECIFIED\020\000\022\016\n\nPUBLIC_WEB\020\001\022\020\n\014UNSTRU"
-          + "CTURED\020\002\022\016\n\nSTRUCTURED\020\003B\232\001\n!com.google."
+          + "CTURED\020\002\022\016\n\nSTRUCTURED\020\003B\276\001\n!com.google."
           + "cloud.dialogflow.cx.v3B\030DataStoreConnect"
           + "ionProtoP\001Z1cloud.google.com/go/dialogfl"
           + "ow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.C"
-          + "loud.Dialogflow.Cx.V3b\006proto3"
+          + "loud.Dialogflow.Cx.V3\352\002!Google::Cloud::D"
+          + "ialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
