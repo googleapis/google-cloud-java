@@ -188,7 +188,7 @@ public class TransferConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       TransferConfigName that = ((TransferConfigName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.transferConfig, that.transferConfig)
