@@ -672,3 +672,6 @@ grpc-google-cloud-language-v2:2.24.0:2.25.0-SNAPSHOT
 google-cloud-infra-manager:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-infra-manager-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-infra-manager-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-inventories:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
