@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.notebooks.v2",
+  "libraryPackage": "com.google.cloud.notebooks.v2",
+  "services": {
+    "NotebookService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NotebookServiceClient",
+          "rpcs": {
+            "CheckInstanceUpgradability": {
+              "methods": ["checkInstanceUpgradability", "checkInstanceUpgradabilityCallable"]
+            },
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "DiagnoseInstance": {
+              "methods": ["diagnoseInstanceAsync", "diagnoseInstanceAsync", "diagnoseInstanceAsync", "diagnoseInstanceOperationCallable", "diagnoseInstanceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ResetInstance": {
+              "methods": ["resetInstanceAsync", "resetInstanceOperationCallable", "resetInstanceCallable"]
+            },
+            "RollbackInstance": {
+              "methods": ["rollbackInstanceAsync", "rollbackInstanceOperationCallable", "rollbackInstanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartInstance": {
+              "methods": ["startInstanceAsync", "startInstanceOperationCallable", "startInstanceCallable"]
+            },
+            "StopInstance": {
+              "methods": ["stopInstanceAsync", "stopInstanceOperationCallable", "stopInstanceCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpgradeInstance": {
+              "methods": ["upgradeInstanceAsync", "upgradeInstanceOperationCallable", "upgradeInstanceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
