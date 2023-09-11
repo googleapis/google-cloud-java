@@ -41,6 +41,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-notebooks-v2</artifactId>
+        <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-notebooks-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-notebooks-v1beta1</artifactId>
         <version>0.29.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-notebooks-v1beta1:current} -->
       </dependency>
@@ -48,6 +53,11 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-notebooks-v1</artifactId>
         <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-notebooks-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-notebooks-v2</artifactId>
+        <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-notebooks-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
