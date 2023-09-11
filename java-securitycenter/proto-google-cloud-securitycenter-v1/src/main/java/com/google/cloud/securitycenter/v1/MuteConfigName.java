@@ -247,7 +247,7 @@ public class MuteConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       MuteConfigName that = ((MuteConfigName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.muteConfig, that.muteConfig)

@@ -405,7 +405,7 @@ public class SettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SettingsName that = ((SettingsName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.folder, that.folder)

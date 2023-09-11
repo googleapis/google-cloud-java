@@ -266,7 +266,7 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SecurityHealthAnalyticsCustomModuleName that = ((SecurityHealthAnalyticsCustomModuleName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.customModule, that.customModule)

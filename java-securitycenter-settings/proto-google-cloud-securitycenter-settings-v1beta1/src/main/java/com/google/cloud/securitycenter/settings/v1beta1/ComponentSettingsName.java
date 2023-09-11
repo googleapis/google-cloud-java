@@ -444,7 +444,7 @@ public class ComponentSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ComponentSettingsName that = ((ComponentSettingsName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.component, that.component)

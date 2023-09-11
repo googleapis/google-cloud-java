@@ -226,7 +226,7 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SecurityHealthAnalyticsSettingsName that = ((SecurityHealthAnalyticsSettingsName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.folder, that.folder)

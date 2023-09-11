@@ -154,7 +154,7 @@ public class CompanyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CompanyName that = ((CompanyName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.tenant, that.tenant)
