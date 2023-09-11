@@ -209,7 +209,7 @@ public class KnowledgeBaseName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       KnowledgeBaseName that = ((KnowledgeBaseName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.knowledgeBase, that.knowledgeBase)
