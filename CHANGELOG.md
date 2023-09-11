@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.17.1](https://github.com/googleapis/java-datastore/compare/v2.17.0...v2.17.1) (2023-09-11)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#1184](https://github.com/googleapis/java-datastore/issues/1184)) ([6cbb795](https://github.com/googleapis/java-datastore/commit/6cbb79589e7eb8648c734bd02579a93423aa4e13))
+* Update dependency org.easymock:easymock to v5.2.0 ([#1180](https://github.com/googleapis/java-datastore/issues/1180)) ([3e62380](https://github.com/googleapis/java-datastore/commit/3e62380ae2793437aa9c4d21fa4484a8896cb49e))
+
+
+### Documentation
+
+* Marking AggregationResult#get as Obsolete ([#1185](https://github.com/googleapis/java-datastore/issues/1185)) ([252f854](https://github.com/googleapis/java-datastore/commit/252f8549895250ced3aecf5c082cb0b41ea12472))
+
 ## [2.17.0](https://github.com/googleapis/java-datastore/compare/v2.16.3...v2.17.0) (2023-08-22)
 
 
