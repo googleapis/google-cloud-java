@@ -137,7 +137,7 @@ public class NoteName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       NoteName that = ((NoteName) o);
       return Objects.equals(this.project, that.project) && Objects.equals(this.note, that.note);
     }

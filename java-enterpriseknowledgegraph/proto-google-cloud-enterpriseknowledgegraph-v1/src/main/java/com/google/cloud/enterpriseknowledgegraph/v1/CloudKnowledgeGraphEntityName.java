@@ -168,7 +168,7 @@ public class CloudKnowledgeGraphEntityName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CloudKnowledgeGraphEntityName that = ((CloudKnowledgeGraphEntityName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
