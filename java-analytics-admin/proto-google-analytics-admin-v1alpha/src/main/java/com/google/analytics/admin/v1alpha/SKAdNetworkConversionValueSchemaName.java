@@ -172,7 +172,7 @@ public class SKAdNetworkConversionValueSchemaName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SKAdNetworkConversionValueSchemaName that = ((SKAdNetworkConversionValueSchemaName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.dataStream, that.dataStream)

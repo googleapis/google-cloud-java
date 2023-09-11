@@ -198,7 +198,7 @@ public class FeatureName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       FeatureName that = ((FeatureName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

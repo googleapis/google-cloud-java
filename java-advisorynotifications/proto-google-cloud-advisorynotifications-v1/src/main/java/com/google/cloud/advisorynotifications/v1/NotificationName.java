@@ -158,7 +158,7 @@ public class NotificationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       NotificationName that = ((NotificationName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.location, that.location)

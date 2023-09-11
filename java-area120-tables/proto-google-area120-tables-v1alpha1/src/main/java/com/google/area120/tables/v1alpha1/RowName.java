@@ -137,7 +137,7 @@ public class RowName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       RowName that = ((RowName) o);
       return Objects.equals(this.table, that.table) && Objects.equals(this.row, that.row);
     }

@@ -127,7 +127,7 @@ public class PropertyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       PropertyName that = ((PropertyName) o);
       return Objects.equals(this.propertyId, that.propertyId);
     }

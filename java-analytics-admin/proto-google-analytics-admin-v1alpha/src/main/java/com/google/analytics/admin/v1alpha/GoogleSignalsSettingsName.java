@@ -128,7 +128,7 @@ public class GoogleSignalsSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       GoogleSignalsSettingsName that = ((GoogleSignalsSettingsName) o);
       return Objects.equals(this.property, that.property);
     }

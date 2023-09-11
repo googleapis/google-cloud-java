@@ -250,7 +250,7 @@ public class SavedQueryName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SavedQueryName that = ((SavedQueryName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.savedQuery, that.savedQuery)

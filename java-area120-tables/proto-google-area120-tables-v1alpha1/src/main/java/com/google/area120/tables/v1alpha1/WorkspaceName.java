@@ -127,7 +127,7 @@ public class WorkspaceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       WorkspaceName that = ((WorkspaceName) o);
       return Objects.equals(this.workspace, that.workspace);
     }

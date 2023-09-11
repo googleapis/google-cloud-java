@@ -127,7 +127,7 @@ public class DataSharingSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DataSharingSettingsName that = ((DataSharingSettingsName) o);
       return Objects.equals(this.account, that.account);
     }

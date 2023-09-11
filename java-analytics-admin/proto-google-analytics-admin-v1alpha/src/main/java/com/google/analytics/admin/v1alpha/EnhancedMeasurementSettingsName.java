@@ -139,7 +139,7 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EnhancedMeasurementSettingsName that = ((EnhancedMeasurementSettingsName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.dataStream, that.dataStream);

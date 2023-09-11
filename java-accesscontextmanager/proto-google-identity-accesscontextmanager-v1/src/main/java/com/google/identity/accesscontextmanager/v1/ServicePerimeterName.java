@@ -143,7 +143,7 @@ public class ServicePerimeterName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ServicePerimeterName that = ((ServicePerimeterName) o);
       return Objects.equals(this.accessPolicy, that.accessPolicy)
           && Objects.equals(this.servicePerimeter, that.servicePerimeter);

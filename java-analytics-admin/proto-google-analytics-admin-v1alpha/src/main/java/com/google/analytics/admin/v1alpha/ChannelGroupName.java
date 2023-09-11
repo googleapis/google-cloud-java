@@ -137,7 +137,7 @@ public class ChannelGroupName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ChannelGroupName that = ((ChannelGroupName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.channelGroup, that.channelGroup);
