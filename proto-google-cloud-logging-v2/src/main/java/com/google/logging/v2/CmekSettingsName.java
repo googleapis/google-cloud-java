@@ -325,7 +325,7 @@ public class CmekSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CmekSettingsName that = ((CmekSettingsName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.organization, that.organization)

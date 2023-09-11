@@ -140,7 +140,7 @@ public class BillingAccountLocationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       BillingAccountLocationName that = ((BillingAccountLocationName) o);
       return Objects.equals(this.billingAccount, that.billingAccount)
           && Objects.equals(this.location, that.location);

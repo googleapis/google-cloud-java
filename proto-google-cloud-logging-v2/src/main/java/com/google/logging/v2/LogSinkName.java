@@ -286,7 +286,7 @@ public class LogSinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       LogSinkName that = ((LogSinkName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.sink, that.sink)
