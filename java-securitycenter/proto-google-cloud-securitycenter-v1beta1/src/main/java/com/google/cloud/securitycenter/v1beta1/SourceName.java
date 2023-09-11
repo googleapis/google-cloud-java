@@ -137,7 +137,7 @@ public class SourceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SourceName that = ((SourceName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.source, that.source);
