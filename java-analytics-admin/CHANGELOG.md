@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.34.0 (2023-09-11)
+
+### Features
+
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9752](https://github.com/googleapis/google-cloud-java/issues/9752))
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9753](https://github.com/googleapis/google-cloud-java/issues/9753))
+* rename the `intraday_export_enabled` field to `enterprise_export_enabled`  in the `BigQueryLink` resource
+* add `UpdateConversionEvent` method to the Admin API v1 beta ([12a9af7](https://github.com/googleapis/google-cloud-java/commit/12a9af79d1003572e590781988bd51700f2d41a8))
+* add `UpdateConversionEvent` method to the Admin API v1 beta ([08c1a7d](https://github.com/googleapis/google-cloud-java/commit/08c1a7d5de7de007b13c6618858890acc8c7b532))
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([12a9af7](https://github.com/googleapis/google-cloud-java/commit/12a9af79d1003572e590781988bd51700f2d41a8))
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9752](https://github.com/googleapis/google-cloud-java/issues/9752)) ([12a9af7](https://github.com/googleapis/google-cloud-java/commit/12a9af79d1003572e590781988bd51700f2d41a8))
+* rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9753](https://github.com/googleapis/google-cloud-java/issues/9753)) ([08c1a7d](https://github.com/googleapis/google-cloud-java/commit/08c1a7d5de7de007b13c6618858890acc8c7b532))
+* rename the `intraday_export_enabled` field to `enterprise_export_enabled`  in the `BigQueryLink` resource ([08c1a7d](https://github.com/googleapis/google-cloud-java/commit/08c1a7d5de7de007b13c6618858890acc8c7b532))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.33.0 (2023-08-08)
 
 ### Features

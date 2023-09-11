@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.25.0 (2023-09-11)
+
+### Features
+
+* add SecurityFlavor to NfsExportOptions ([#9773](https://github.com/googleapis/google-cloud-java/issues/9773)) ([7619e47](https://github.com/googleapis/google-cloud-java/commit/7619e47f0df0bb5a42eb5b2a728096c67b31b507))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 1.24.0 (2023-08-08)
 
 ### Dependencies

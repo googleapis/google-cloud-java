@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.24.0 (2023-09-11)
+
+### Features
+
+* Add more compute resource API descriptions to match with VM's machine type field ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+* add stderr_snippet to indicate the real stderr output by runnables to the execution field of status event ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+* Clarify Batch API proto doc about pubsub notifications ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+* Revert HTML formats in comments ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+* Update description on size_gb in disk field ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+* Update description on size_gb in disk field ([#9744](https://github.com/googleapis/google-cloud-java/issues/9744)) ([42b33d5](https://github.com/googleapis/google-cloud-java/commit/42b33d51fa9cdd0c2237825f009198a648e0e9c0))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.23.0 (2023-08-08)
 
 ### Features

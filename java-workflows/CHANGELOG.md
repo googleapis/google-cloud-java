@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.24.0 (2023-09-11)
+
+### Features
+
+* add UNAVAILABLE to state enum of workflow deployment ([#9767](https://github.com/googleapis/google-cloud-java/issues/9767)) ([d21a74c](https://github.com/googleapis/google-cloud-java/commit/d21a74cf5a41c3f1e2ef7c71bc0d23170b72ea4a))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 2.23.0 (2023-08-08)
 
 ### Dependencies

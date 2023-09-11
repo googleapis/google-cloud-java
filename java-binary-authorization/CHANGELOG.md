@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.23.0 (2023-09-11)
+
+### Features
+
+* Adds support for check-based platform policy evaluation to Binary Authorization Continuous Validation logs ([#9768](https://github.com/googleapis/google-cloud-java/issues/9768)) ([e434587](https://github.com/googleapis/google-cloud-java/commit/e434587eff639a1ebb08e2ec0b067514911b3dae))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 1.22.0 (2023-08-08)
 
 ### Dependencies

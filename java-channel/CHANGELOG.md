@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.28.0 (2023-09-11)
+
+### Features
+
+* Launch QueryEligibleBillingAccounts API ([#9806](https://github.com/googleapis/google-cloud-java/issues/9806)) ([cb5f17e](https://github.com/googleapis/google-cloud-java/commit/cb5f17ea39dd511d9e9e3f9250a483c842bc0f24))
+* mark ChannelPartnerGranularity as deprecated and offer alternatives ([#9807](https://github.com/googleapis/google-cloud-java/issues/9807)) ([13e9ee1](https://github.com/googleapis/google-cloud-java/commit/13e9ee123e26b31b6a24eeadf7def6abd76cd186))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 3.27.0 (2023-08-08)
 
 ### Dependencies
