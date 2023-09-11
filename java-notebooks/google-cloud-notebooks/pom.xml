@@ -40,10 +40,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
