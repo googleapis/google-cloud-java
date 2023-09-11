@@ -137,7 +137,7 @@ public class BudgetName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       BudgetName that = ((BudgetName) o);
       return Objects.equals(this.billingAccount, that.billingAccount)
           && Objects.equals(this.budget, that.budget);

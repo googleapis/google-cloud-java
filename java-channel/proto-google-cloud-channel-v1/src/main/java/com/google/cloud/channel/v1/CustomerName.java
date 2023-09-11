@@ -137,7 +137,7 @@ public class CustomerName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CustomerName that = ((CustomerName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.customer, that.customer);
