@@ -174,7 +174,7 @@ public class DeviceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DeviceName that = ((DeviceName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

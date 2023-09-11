@@ -160,7 +160,7 @@ public class ConversionWorkspaceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ConversionWorkspaceName that = ((ConversionWorkspaceName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
