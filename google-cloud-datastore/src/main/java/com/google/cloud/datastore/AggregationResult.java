@@ -15,9 +15,7 @@
  */
 package com.google.cloud.datastore;
 
-import static com.google.cloud.datastore.ValueType.DOUBLE;
-import static com.google.cloud.datastore.ValueType.LONG;
-
+import com.google.api.core.ObsoleteApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import java.util.Map;
@@ -41,6 +39,7 @@ public class AggregationResult {
    *     'property_\d'
    * @return An aggregation result value for the given alias.
    */
+  @ObsoleteApi("Please use getLong(String) instead, see Github issue #1175 for details.")
   public Long get(String alias) {
     return getLong(alias);
   }
