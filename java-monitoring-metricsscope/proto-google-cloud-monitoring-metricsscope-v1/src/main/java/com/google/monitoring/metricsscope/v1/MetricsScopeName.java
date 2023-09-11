@@ -127,7 +127,7 @@ public class MetricsScopeName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       MetricsScopeName that = ((MetricsScopeName) o);
       return Objects.equals(this.metricsScope, that.metricsScope);
     }

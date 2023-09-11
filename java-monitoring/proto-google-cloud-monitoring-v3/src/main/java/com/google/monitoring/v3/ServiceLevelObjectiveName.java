@@ -305,7 +305,7 @@ public class ServiceLevelObjectiveName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ServiceLevelObjectiveName that = ((ServiceLevelObjectiveName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.service, that.service)
