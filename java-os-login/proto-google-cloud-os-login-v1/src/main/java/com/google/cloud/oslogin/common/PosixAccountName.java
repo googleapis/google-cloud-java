@@ -137,7 +137,7 @@ public class PosixAccountName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       PosixAccountName that = ((PosixAccountName) o);
       return Objects.equals(this.user, that.user) && Objects.equals(this.project, that.project);
     }
