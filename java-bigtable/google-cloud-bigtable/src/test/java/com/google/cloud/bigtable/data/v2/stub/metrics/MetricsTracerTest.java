@@ -20,10 +20,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.when;
 
-import com.google.api.gax.batching.BatchResource;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
-import com.google.api.gax.batching.BatchingDescriptor;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -387,45 +385,38 @@ public class MetricsTracerTest {
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
 
-    try (Batcher batcher =
+    try (Batcher<ByteString, Row> batcher =
         stub.newBulkReadRowsBatcher(Query.create(TABLE_ID), GrpcCallContext.createDefault())) {
       batcher.add(ByteString.copyFromUtf8("row1"));
-      batcher.sendOutstanding();
-
-      long throttledTimeMetric =
-          StatsTestUtils.getAggregationValueAsLong(
-              localStats,
-              RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW,
-              ImmutableMap.of(
-                  RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
-              PROJECT_ID,
-              INSTANCE_ID,
-              APP_PROFILE_ID);
-      assertThat(throttledTimeMetric).isEqualTo(0);
     }
+
+    long throttledTimeMetric =
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
+            RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW,
+            ImmutableMap.of(RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
+    assertThat(throttledTimeMetric).isEqualTo(0);
   }
 
   @Test
   public void testBatchMutateRowsThrottledTime() throws Exception {
     FlowController flowController = Mockito.mock(FlowController.class);
-    BatchingDescriptor batchingDescriptor = Mockito.mock(MutateRowsBatchingDescriptor.class);
-    when(batchingDescriptor.createResource(any())).thenReturn(new FakeBatchResource());
-    when(batchingDescriptor.createEmptyResource()).thenReturn(new FakeBatchResource());
+    MutateRowsBatchingDescriptor batchingDescriptor = new MutateRowsBatchingDescriptor();
+
     // Mock throttling
     final long throttled = 50;
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) throws Throwable {
-                Thread.sleep(throttled);
-                return null;
-              }
+            invocation -> {
+              Thread.sleep(throttled);
+              return null;
             })
         .when(flowController)
         .reserve(any(Long.class), any(Long.class));
     when(flowController.getMaxElementCountLimit()).thenReturn(null);
     when(flowController.getMaxRequestBytesLimit()).thenReturn(null);
-    when(batchingDescriptor.newRequestBuilder(any())).thenCallRealMethod();
 
     doAnswer(
             new Answer() {
@@ -444,18 +435,18 @@ public class MetricsTracerTest {
 
     ApiCallContext defaultContext = GrpcCallContext.createDefault();
 
-    Batcher batcher =
-        new BatcherImpl(
+    try (Batcher<RowMutationEntry, Void> batcher =
+        new BatcherImpl<>(
             batchingDescriptor,
             stub.bulkMutateRowsCallable().withDefaultCallContext(defaultContext),
             BulkMutation.create(TABLE_ID),
             settings.getStubSettings().bulkMutateRowsSettings().getBatchingSettings(),
             Executors.newSingleThreadScheduledExecutor(),
             flowController,
-            defaultContext);
+            defaultContext)) {
 
-    batcher.add(RowMutationEntry.create("key"));
-    batcher.sendOutstanding();
+      batcher.add(RowMutationEntry.create("key").deleteRow());
+    }
 
     long throttledTimeMetric =
         StatsTestUtils.getAggregationValueAsLong(
@@ -472,30 +463,5 @@ public class MetricsTracerTest {
   @SuppressWarnings("unchecked")
   private static <T> StreamObserver<T> anyObserver(Class<T> returnType) {
     return (StreamObserver<T>) any(returnType);
-  }
-
-  private class FakeBatchResource implements BatchResource {
-
-    FakeBatchResource() {}
-
-    @Override
-    public BatchResource add(BatchResource resource) {
-      return new FakeBatchResource();
-    }
-
-    @Override
-    public long getElementCount() {
-      return 1;
-    }
-
-    @Override
-    public long getByteCount() {
-      return 1;
-    }
-
-    @Override
-    public boolean shouldFlush(long maxElementThreshold, long maxBytesThreshold) {
-      return false;
-    }
   }
 }

@@ -273,7 +273,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
       }
     }
 
-    recorder.putClientBlockingLatencies(totalClientBlockingTime.get());
+    // Make sure to reset the blocking time after recording it for the next attempt
+    recorder.putClientBlockingLatencies(totalClientBlockingTime.getAndSet(0));
 
     // Patch the status until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception

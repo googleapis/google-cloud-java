@@ -59,6 +59,9 @@ class MetricsTracer extends BigtableTracer {
 
   private volatile int attempt = 0;
 
+  private volatile boolean reportBatchingLatency = false;
+  private volatile long batchThrottledLatency = 0;
+
   MetricsTracer(
       OperationType operationType,
       Tagger tagger,
@@ -167,6 +170,14 @@ class MetricsTracer extends BigtableTracer {
                 RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY,
                 attemptTimer.elapsed(TimeUnit.MILLISECONDS));
 
+    if (reportBatchingLatency) {
+      measures.put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, batchThrottledLatency);
+
+      // Reset batch throttling latency for next attempt. This can't be done in attemptStarted
+      // because batching flow control will add batching latency before the attempt has started.
+      batchThrottledLatency = 0;
+    }
+
     // Patch the throwable until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception
     // so it could get processed by extractStatus
@@ -216,11 +227,8 @@ class MetricsTracer extends BigtableTracer {
 
   @Override
   public void batchRequestThrottled(long totalThrottledMs) {
-    MeasureMap measures =
-        stats
-            .newMeasureMap()
-            .put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, totalThrottledMs);
-    measures.record(newTagCtxBuilder().build());
+    reportBatchingLatency = true;
+    batchThrottledLatency += totalThrottledMs;
   }
 
   private TagContextBuilder newTagCtxBuilder() {

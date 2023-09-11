@@ -299,6 +299,11 @@ class StatsTestUtils {
 
     AggregationData aggregationData = aggregationMap.get(tagValues);
 
+    if (aggregationData == null) {
+      throw new RuntimeException(
+          "Failed to find metric for: " + tags + ". Current aggregation data: " + aggregationMap);
+    }
+
     return aggregationData.match(
         new io.opencensus.common.Function<AggregationData.SumDataDouble, Long>() {
           @Override
