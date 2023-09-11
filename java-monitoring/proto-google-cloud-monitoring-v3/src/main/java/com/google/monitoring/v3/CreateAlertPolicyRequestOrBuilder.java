@@ -27,8 +27,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
-   * which to create the alerting policy. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
+   * to create the alerting policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *
@@ -52,8 +53,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
-   * which to create the alerting policy. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
+   * to create the alerting policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *
@@ -78,9 +80,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The requested alerting policy. You should omit the `name` field in this
-   * policy. The name will be returned in the new policy, including
-   * a new `[ALERT_POLICY_ID]` value.
+   * Required. The requested alerting policy. You should omit the `name` field
+   * in this policy. The name will be returned in the new policy, including a
+   * new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>
@@ -94,9 +96,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The requested alerting policy. You should omit the `name` field in this
-   * policy. The name will be returned in the new policy, including
-   * a new `[ALERT_POLICY_ID]` value.
+   * Required. The requested alerting policy. You should omit the `name` field
+   * in this policy. The name will be returned in the new policy, including a
+   * new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>
@@ -110,9 +112,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The requested alerting policy. You should omit the `name` field in this
-   * policy. The name will be returned in the new policy, including
-   * a new `[ALERT_POLICY_ID]` value.
+   * Required. The requested alerting policy. You should omit the `name` field
+   * in this policy. The name will be returned in the new policy, including a
+   * new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>

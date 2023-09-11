@@ -74,6 +74,12 @@ public interface AlertPolicyOrBuilder
    * notifications, and incidents. To avoid confusion, don't use the same
    * display name for multiple policies in the same project. The name is
    * limited to 512 Unicode characters.
+   *
+   * The convention for the display_name of a PrometheusQueryLanguageCondition
+   * is "{rule group name}/{alert name}", where the {rule group name} and
+   * {alert name} should be taken from the corresponding Prometheus
+   * configuration file. This convention is not enforced.
+   * In any case the display_name is not a unique key of the AlertPolicy.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -89,6 +95,12 @@ public interface AlertPolicyOrBuilder
    * notifications, and incidents. To avoid confusion, don't use the same
    * display name for multiple policies in the same project. The name is
    * limited to 512 Unicode characters.
+   *
+   * The convention for the display_name of a PrometheusQueryLanguageCondition
+   * is "{rule group name}/{alert name}", where the {rule group name} and
+   * {alert name} should be taken from the corresponding Prometheus
+   * configuration file. This convention is not enforced.
+   * In any case the display_name is not a unique key of the AlertPolicy.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -155,6 +167,13 @@ public interface AlertPolicyOrBuilder
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
    * dashes. Keys must begin with a letter.
+   *
+   * Note that Prometheus {alert name} is a
+   * [valid Prometheus label
+   * names](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels),
+   * whereas Prometheus {rule group} is an unrestricted UTF-8 string.
+   * This means that they cannot be stored as-is in user labels, because
+   * they may contain characters that are not allowed in user-label values.
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
@@ -171,6 +190,13 @@ public interface AlertPolicyOrBuilder
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
    * dashes. Keys must begin with a letter.
+   *
+   * Note that Prometheus {alert name} is a
+   * [valid Prometheus label
+   * names](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels),
+   * whereas Prometheus {rule group} is an unrestricted UTF-8 string.
+   * This means that they cannot be stored as-is in user labels, because
+   * they may contain characters that are not allowed in user-label values.
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
@@ -190,6 +216,13 @@ public interface AlertPolicyOrBuilder
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
    * dashes. Keys must begin with a letter.
+   *
+   * Note that Prometheus {alert name} is a
+   * [valid Prometheus label
+   * names](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels),
+   * whereas Prometheus {rule group} is an unrestricted UTF-8 string.
+   * This means that they cannot be stored as-is in user labels, because
+   * they may contain characters that are not allowed in user-label values.
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
@@ -206,6 +239,13 @@ public interface AlertPolicyOrBuilder
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
    * dashes. Keys must begin with a letter.
+   *
+   * Note that Prometheus {alert name} is a
+   * [valid Prometheus label
+   * names](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels),
+   * whereas Prometheus {rule group} is an unrestricted UTF-8 string.
+   * This means that they cannot be stored as-is in user labels, because
+   * they may contain characters that are not allowed in user-label values.
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
@@ -226,6 +266,13 @@ public interface AlertPolicyOrBuilder
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
    * dashes. Keys must begin with a letter.
+   *
+   * Note that Prometheus {alert name} is a
+   * [valid Prometheus label
+   * names](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels),
+   * whereas Prometheus {rule group} is an unrestricted UTF-8 string.
+   * This means that they cannot be stored as-is in user labels, because
+   * they may contain characters that are not allowed in user-label values.
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
@@ -242,6 +289,8 @@ public interface AlertPolicyOrBuilder
    * conditions.
    * If `condition_time_series_query_language` is present, it must be the only
    * `condition`.
+   * If `condition_monitoring_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -256,6 +305,8 @@ public interface AlertPolicyOrBuilder
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
    * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
+   * If `condition_monitoring_query_language` is present, it must be the only
    * `condition`.
    * </pre>
    *
@@ -272,6 +323,8 @@ public interface AlertPolicyOrBuilder
    * conditions.
    * If `condition_time_series_query_language` is present, it must be the only
    * `condition`.
+   * If `condition_monitoring_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -286,6 +339,8 @@ public interface AlertPolicyOrBuilder
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
    * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
+   * If `condition_monitoring_query_language` is present, it must be the only
    * `condition`.
    * </pre>
    *
@@ -302,6 +357,8 @@ public interface AlertPolicyOrBuilder
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
    * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
+   * If `condition_monitoring_query_language` is present, it must be the only
    * `condition`.
    * </pre>
    *
@@ -391,8 +448,9 @@ public interface AlertPolicyOrBuilder
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. OK if the alert
-   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * Read-only description of how the alert policy is invalid. This field is
+   * only set when the alert policy is invalid. An invalid alert policy will not
+   * generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -404,8 +462,9 @@ public interface AlertPolicyOrBuilder
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. OK if the alert
-   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * Read-only description of how the alert policy is invalid. This field is
+   * only set when the alert policy is invalid. An invalid alert policy will not
+   * generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -417,8 +476,9 @@ public interface AlertPolicyOrBuilder
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. OK if the alert
-   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * Read-only description of how the alert policy is invalid. This field is
+   * only set when the alert policy is invalid. An invalid alert policy will not
+   * generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>

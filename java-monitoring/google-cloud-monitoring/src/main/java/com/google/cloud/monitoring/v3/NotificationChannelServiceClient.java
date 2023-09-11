@@ -620,7 +620,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -659,7 +660,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -699,7 +701,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -738,7 +741,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -775,7 +779,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -812,7 +817,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -850,7 +856,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the notification channels that have been created for the project.
+   * Lists the notification channels that have been created for the project. To list the types of
+   * notification channels that are supported, use the `ListNotificationChannelDescriptors` method.
    *
    * <p>Sample code:
    *
@@ -1039,6 +1046,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1080,6 +1091,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
    *
    * <p>Sample code:
    *
@@ -1123,6 +1138,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1164,6 +1183,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
    *
    * <p>Sample code:
    *
@@ -1207,6 +1230,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1240,6 +1267,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * Creates a new notification channel, representing a single notification endpoint such as an
    * email address, SMS number, or PagerDuty service.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1270,6 +1301,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a notification channel. Fields not specified in the field mask remain unchanged.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
    *
    * <p>Sample code:
    *
@@ -1309,6 +1344,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Updates a notification channel. Fields not specified in the field mask remain unchanged.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1341,6 +1380,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Updates a notification channel. Fields not specified in the field mask remain unchanged.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1371,6 +1414,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification channel.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
    *
    * <p>Sample code:
    *
@@ -1411,6 +1458,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Deletes a notification channel.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1448,6 +1499,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   /**
    * Deletes a notification channel.
    *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1480,6 +1535,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification channel.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of notification
+   * channels in a single project. This includes calls to CreateNotificationChannel,
+   * DeleteNotificationChannel and UpdateNotificationChannel.
    *
    * <p>Sample code:
    *
