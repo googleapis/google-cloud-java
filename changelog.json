@@ -4,6 +4,1322 @@
     {
       "changes": [
         {
+          "type": "fix",
+          "sha": "84141269f69deef3b57128570e609aacad1428ba",
+          "message": "[videostitcher] use correct child_type annotation",
+          "issues": [
+            "9774"
+          ],
+          "breakingChangeNote": "[videostitcher] use correct child_type annotation ([#9774](https://github.com/googleapis/google-cloud-java/issues/9774))"
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-stitcher",
+      "id": "343682d9-b10d-4efa-8a04-28282f89b9cd",
+      "createTime": "2023-09-11T22:14:47.852Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add `GetSKAdNetworkConversionValueSchema`, `CreateSKAdNetworkConversionValueSchema`, `DeleteSKAdNetworkConversionValueSchema`, `UpdateSKAdNetworkConversionValueSchema`, `ListSKAdNetworkConversionValueSchemas` methods to the Admin API v1 alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `skadnetwork_conversion_value_schema` field to the `ChangeHistoryResource.resource` oneof type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `SKADNETWORK_CONVERSION_VALUE_SCHEMA` option to the `ChangeHistoryResourceType` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add `CoarseValue`, `ConversionValues`, `EventMapping`, `SKAdNetworkConversionValueSchema` types",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource",
+          "issues": [
+            "9752"
+          ],
+          "breakingChangeNote": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9752](https://github.com/googleapis/google-cloud-java/issues/9752))"
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `counting_method` field to the `ConversionEvent` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `ConversionCountingMethod` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `ITEM` option to the `DimensionScope` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "make the field `default_uri` of `WebStreamData` mutable",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the missing `REQUIRED` annotation to the `update_mask` field of `UpdateMeasurementProtocolSecretRequest`",
+          "issues": [],
+          "breakingChangeNote": "add the missing `REQUIRED` annotation to the `update_mask` field of `UpdateMeasurementProtocolSecretRequest`"
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "[analyticsadmin] add `UpdateConversionEvent` method to the Admin API v1 beta",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add `UpdateConversionEvent` method to the Admin API v1 alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `counting_method` field to the `ConversionEvent` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "add the `ConversionCountingMethod` enum",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "12a9af79d1003572e590781988bd51700f2d41a8",
+          "message": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource",
+          "issues": [],
+          "breakingChangeNote": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource"
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add `GetSKAdNetworkConversionValueSchema`, `CreateSKAdNetworkConversionValueSchema`, `DeleteSKAdNetworkConversionValueSchema`, `UpdateSKAdNetworkConversionValueSchema`, `ListSKAdNetworkConversionValueSchemas` methods to the Admin API v1 alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `skadnetwork_conversion_value_schema` field to the `ChangeHistoryResource.resource` oneof type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `SKADNETWORK_CONVERSION_VALUE_SCHEMA` option to the `ChangeHistoryResourceType` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add `CoarseValue`, `ConversionValues`, `EventMapping`, `SKAdNetworkConversionValueSchema` types",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource",
+          "issues": [
+            "9753"
+          ],
+          "breakingChangeNote": "[analyticsadmin] rename the `enterprise_daily_export_enabled` field to `fresh_daily_export_enabled` in the `BigQueryLink` resource ([#9753](https://github.com/googleapis/google-cloud-java/issues/9753))"
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `counting_method` field to the `ConversionEvent` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `ConversionCountingMethod` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `ITEM` option to the `DimensionScope` enum",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "make the field `default_uri` of `WebStreamData` mutable",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the missing `REQUIRED` annotation to the `update_mask` field of `UpdateMeasurementProtocolSecretRequest`",
+          "issues": [],
+          "breakingChangeNote": "add the missing `REQUIRED` annotation to the `update_mask` field of `UpdateMeasurementProtocolSecretRequest`"
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "[analyticsadmin] add `UpdateConversionEvent` method to the Admin API v1 beta",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add `UpdateConversionEvent` method to the Admin API v1 alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `counting_method` field to the `ConversionEvent` type",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "add the `ConversionCountingMethod` enum",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "08c1a7d5de7de007b13c6618858890acc8c7b532",
+          "message": "[analyticsadmin] rename the `intraday_export_enabled` field to `enterprise_export_enabled`  in the `BigQueryLink` resource",
+          "issues": [],
+          "breakingChangeNote": "[analyticsadmin] rename the `intraday_export_enabled` field to `enterprise_export_enabled`  in the `BigQueryLink` resource"
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "ea70d381-e6a6-4e8e-a502-c6278f95d0f8",
+      "createTime": "2023-09-11T22:14:47.849Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "5fc8016ebddd7123182f1ab802daee571ea6a558",
+          "message": "[billingbudgets] Supported project-level-budgets in Public Budget API V1",
+          "issues": [
+            "9777"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "5fc8016ebddd7123182f1ab802daee571ea6a558",
+          "message": "[billingbudgets] Supported project-level-budgets in Public Budget API V1Beta",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billingbudgets",
+      "id": "8b63d5c9-1f65-4c01-8093-e001b3d54e36",
+      "createTime": "2023-09-11T22:14:47.845Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ca8152000954e2299d85e17b6278a70ad1ae86ca",
+          "message": "[bigquerydatapolicy] support using custom UDF in the data policy",
+          "issues": [
+            "9759"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ca8152000954e2299d85e17b6278a70ad1ae86ca",
+          "message": "[bigquerydatapolicy] sync the new PredefinedExpression types to the client library",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatapolicy",
+      "id": "279edd35-2baf-4617-af8f-35965f5236a5",
+      "createTime": "2023-09-11T22:14:47.842Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7619e47f0df0bb5a42eb5b2a728096c67b31b507",
+          "message": "add ZONAL tier to Instance",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7619e47f0df0bb5a42eb5b2a728096c67b31b507",
+          "message": "add FileProtocol to Instance",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7619e47f0df0bb5a42eb5b2a728096c67b31b507",
+          "message": "add DirectoryServicesConfig to Instance",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7619e47f0df0bb5a42eb5b2a728096c67b31b507",
+          "message": "add INVALID state to Backup",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7619e47f0df0bb5a42eb5b2a728096c67b31b507",
+          "message": "[file] add SecurityFlavor to NfsExportOptions",
+          "issues": [
+            "9773"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-filestore",
+      "id": "e36ca273-4d85-4170-8274-a5055f004124",
+      "createTime": "2023-09-11T22:14:47.838Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] Update description on size_gb in disk field",
+          "issues": [
+            "9744"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] Update description on size_gb in disk field",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "update comments",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] add stderr_snippet to indicate the real stderr output by runnables to the execution field of status event",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "Expand compute resource API docs to match with VM's machine type field",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "Clarify Batch API proto doc about pubsub notifications",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] Revert HTML formats in comments",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "add Batch Managed Container support for v1alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] Add more compute resource API descriptions to match with VM's machine type field",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "add Batch Managed Container support for v1alpha",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "42b33d51fa9cdd0c2237825f009198a648e0e9c0",
+          "message": "[batch] Clarify Batch API proto doc about pubsub notifications",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "c997a9ea-ce6b-456a-9fc3-07460629fdd5",
+      "createTime": "2023-09-11T22:14:47.833Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add new enum values for network firewall policies to API",
+          "issues": [
+            "9749"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add fields related to Google services to API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add fields related to PBR and NCC routes to API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add new abort and drop causes to API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add fields related to load balancers to API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "8f6b372ad1d4d2f28cc3edf87aefe85ff0d66a99",
+          "message": "[networkmanagement] add dynamic probing fields to v1 API",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "5dd6d959-84e1-4301-a5c2-d1e5ec0950b1",
+      "createTime": "2023-09-11T22:14:47.829Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "bca95978869eb75c4492ac6db66577f85f4e1151",
+          "message": "[storageinsights] Add link to documentation for ReportConfig proto fields",
+          "issues": [
+            "9756"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storageinsights",
+      "id": "7e50943c-2054-4333-baea-ac1f9d1a9993",
+      "createTime": "2023-09-11T22:14:47.826Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e434587eff639a1ebb08e2ec0b067514911b3dae",
+          "message": "Adds support for communicating configuration issues that prevent Continuous Validation from monitoring pods",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "e434587eff639a1ebb08e2ec0b067514911b3dae",
+          "message": "Remove unused unsupported_policy_event event_type from ContinuousValidationPodEvent",
+          "issues": [],
+          "breakingChangeNote": "Remove unused unsupported_policy_event event_type from ContinuousValidationPodEvent"
+        },
+        {
+          "type": "feat",
+          "sha": "e434587eff639a1ebb08e2ec0b067514911b3dae",
+          "message": "[binaryauthorization] Adds support for check-based platform policy evaluation to Binary Authorization Continuous Validation logs",
+          "issues": [
+            "9768"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-binary-authorization",
+      "id": "72660c9d-205f-453a-9ce8-1af4ffb887df",
+      "createTime": "2023-09-11T22:14:47.822Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "added Knowledge Search API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "[dialogflow] added speech endpointing setting",
+          "issues": [
+            "9760"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "added Knowledge Search API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "[dialogflow] added speech endpointing setting",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "added the platform of the virtual agent response messages",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "[dialogflow] added baseline model version used to generate the summary",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "added the platform of the virtual agent response messages",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "411a707e2bf040ffeab897518d2d4781512012ca",
+          "message": "[dialogflow] added baseline model version used to generate the summary",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "0a2039cf-dfd2-464c-a6d7-4cde6c3c0cc6",
+      "createTime": "2023-09-11T22:14:47.819Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "1285e8d1ee812be4f64d2ecfc958ed2a1b291e37",
+          "message": "[datacatalog] fix typo",
+          "issues": [
+            "9779"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "304a6222-3204-4533-bc2e-cbee43067733",
+      "createTime": "2023-09-11T22:14:47.815Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1453bc7dfa863a9bc436d614e5f500b729367b35",
+          "message": "add Pipeline Service to Document Warehouse API v1",
+          "issues": [
+            "9757"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "1453bc7dfa863a9bc436d614e5f500b729367b35",
+          "message": "add `ON_CREATE_LINK`, `ON_DELETE_LINK` fields to support new rule engine triggers in Document Warehouse API v1",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "1453bc7dfa863a9bc436d614e5f500b729367b35",
+          "message": "deprecate DB_CLOUD_SQL_POSTGRES in Document Warehouse API v1",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "1453bc7dfa863a9bc436d614e5f500b729367b35",
+          "message": "add `disposition_time`, `legal_hold`, `document_is_retention_folder`, `document_is_legal_hold_folder`, `question_answer`, `document_name_filter` field to Document Warehouse API v1",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contentwarehouse",
+      "id": "1caf4df5-f891-4626-a292-f07c7607d975",
+      "createTime": "2023-09-11T22:14:47.806Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f12a18814bf2c1df4391080dcf14ebc872060064",
+          "message": "add LOG_NONE to call_log_level",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "f12a18814bf2c1df4391080dcf14ebc872060064",
+          "message": "add status, labels, duration and state_error fields to Execution",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "f12a18814bf2c1df4391080dcf14ebc872060064",
+          "message": "add filter and order_by fields to ListExecutionsRequest",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "f12a18814bf2c1df4391080dcf14ebc872060064",
+          "message": "[workflowexecutions] add UNAVAILABLE and QUEUED to state enum",
+          "issues": [
+            "9771"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflow-executions",
+      "id": "5b2eb13d-7b44-45fd-a762-8b77dca95361",
+      "createTime": "2023-09-11T22:14:47.803Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c7139704e3de3b67a750c763419e08569ff7d494",
+          "message": "[language] Add support for the v2 API",
+          "issues": [
+            "9758"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-language",
+      "id": "abe1d7c3-f2e9-4dc7-af66-6fcd96cd1805",
+      "createTime": "2023-09-11T22:14:47.799Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "[container] add UpdateNodePoolRequest.machine_type, disk_type, disk_size_gb",
+          "issues": [
+            "9745"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "publicize tpu topology in v1 API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "[container] add support for NodeConfig Update",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "[container] Add preview support for monitoring a cluster's pods for compliance with a provided Binary Authorization platform policy via Binary Authorization Continuous Validation",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "[container] add APIs for GKE OOTB metrics packages",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b3fbe124daa80410502cf6ef4c194285ba4cd272",
+          "message": "[container] add APIs for GKE OOTB metrics packages",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "c7dc4b5a-a80f-4df2-b1e1-c4989ce499fe",
+      "createTime": "2023-09-11T22:14:47.796Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b898dcd352c348f8acf2aee635233a6df86bdf3e",
+          "message": "[confidentialcomputing] Add a new field `partial_errors` to `VerifyAttestationResponse` proto",
+          "issues": [
+            "9750"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-confidentialcomputing",
+      "id": "65369788-49d3-41b4-92eb-e28c1c01e164",
+      "createTime": "2023-09-11T22:14:47.793Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "support search summarization",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "support structural search features",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "support image search",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "added query expansion details in search response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "support bring your own embedding feature",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "support tail suggestions in completion API",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "allow uri in user events",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "[discoveryengine] support conversational / multi-turn search",
+          "issues": [
+            "9786"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "added more options for search extractive content support",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "added more skip reasons and details for search summarization",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "added query expansion details in search response",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "updated summarization interface for multi-turn search",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "allow uri in user events",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "ea37f15e3d203779038230f7845b8014ebdca960",
+          "message": "[discoveryengine] supported bring your own embedding feature",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "0a0a7a4d-ba40-4992-a5eb-4ea8bc3d2ec3",
+      "createTime": "2023-09-11T22:14:47.788Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "several new resources and RPCs",
+          "issues": [],
+          "scope": "baremetalsolution"
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add RPCs Enable/Disable InteractiveSerialConsole",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add RPCs Rename/Evict Volume",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add RPC EvictLune",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add SSHKey resource and methods",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add VolumeSnapshot resource and methods",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add NFSShare resource and methods",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add ProvisioningConfig resource and methods",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add OsImage resource and methods",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2b3e9157e3f931833e6269555934941103e5e8bf",
+          "message": "add new Instance state values",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bare-metal-solution",
+      "id": "fe48e4c3-d9f4-4221-9b16-3834819fc213",
+      "createTime": "2023-09-11T22:14:47.784Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "aeb0588ccafcc245ad5f87bd3183ee88b5776c90",
+          "message": "[recommender] ListRecommenders and ListInsightTypes RPC methods",
+          "issues": [
+            "9798"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "b6c0df298b039b4408e22224b1f45eabb433b412",
+          "message": "[recommender] Add MarkRecommendationDismissed method",
+          "issues": [
+            "9791"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommender",
+      "id": "6e3d0bde-03bb-4fc7-b311-cb097de56966",
+      "createTime": "2023-09-11T22:14:47.780Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d21a74cf5a41c3f1e2ef7c71bc0d23170b72ea4a",
+          "message": "[workflows] add UNAVAILABLE to state enum of workflow deployment",
+          "issues": [
+            "9767"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflows",
+      "id": "6b65ffb2-446c-4e45-acc7-5f6b489deced",
+      "createTime": "2023-09-11T22:14:47.776Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "87fc3d3c8055b57c45582c43f4cb4e363d9fcec3",
+          "message": "[tpu] publish boot_disk_config to support CHD with KMS",
+          "issues": [
+            "9795"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "9996b84fec92ffb26bf3fa364e5010fc332a0e30",
+          "message": "Add MultiNodeParams in TPU",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "9996b84fec92ffb26bf3fa364e5010fc332a0e30",
+          "message": "[tpu] Add ResetQueueResource to the TPU service",
+          "issues": [
+            "9748"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "fa32a2f0-a501-4c64-ad3d-d345589b6083",
+      "createTime": "2023-09-11T22:14:47.773Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6e23c3a406e19af410a1a1dd0d0487329875040e",
+          "message": "[dataproc] support min_num_instances for primary worker and InstanceFlexibilityPolicy for secondary worker",
+          "issues": [
+            "9775"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "054659c7-c9b9-4495-aa84-0d72f76eb188",
+      "createTime": "2023-09-11T22:14:47.769Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8c2aacb739e635b270b4cb970e0aae4104671b4e",
+          "message": "[datamigration] Adding GenerateTcpProxyScript API",
+          "issues": [
+            "9799"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "1b52ee7c-52ab-4be4-bf17-f0ab84e558a0",
+      "createTime": "2023-09-11T22:14:47.765Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3d82fb4b24e210ad06eb5b1b9b2599a0326b0a20",
+          "message": "[infra-manager] new module for infra-manager",
+          "issues": [
+            "9802"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "8b80e98c-1fd9-4b55-996f-384abdcf3ab6",
+      "createTime": "2023-09-11T22:14:47.761Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3d82fb4b24e210ad06eb5b1b9b2599a0326b0a20",
+          "message": "[infra-manager] new module for infra-manager",
+          "issues": [
+            "9802"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-infra-manager",
+      "id": "3bfe7536-6d43-4d0c-8a43-46fe74bd2086",
+      "createTime": "2023-09-11T22:14:47.756Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c087490cdbf264f65a23c9347b75cb6fbba30450",
+          "message": "[workstations] add config service_account_scopes",
+          "issues": [
+            "9790"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "783a1d23-023a-42e3-a712-f85a09cfde31",
+      "createTime": "2023-09-11T22:14:47.751Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "52ef3cc5b9b3f1301f7b18947ac0a5407b6d7f43",
+          "message": "[cloudoptimization] added support for walking mode and cost_per_kilometer_below_soft_max",
+          "issues": [
+            "9803"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "f07db1b2887582f676fb94e4fd8fd5198442a01b",
+          "message": "[cloudoptimization] Minor formatting fix",
+          "issues": [
+            "9770"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "f07db1b2887582f676fb94e4fd8fd5198442a01b",
+          "message": "[cloudoptimization] Minor formatting",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "36bcb0fb-855e-40fe-958a-46d67e0c014f",
+      "createTime": "2023-09-11T22:14:47.746Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "ab086542826d7c0c75af03c34bfd2e50f4ffbd9c",
+          "message": "[cloudkms] Minor formatting",
+          "issues": [
+            "9794"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "41e7eac13f452c989e42d8dfe2d8ee56f88ac5f1",
+          "message": "[cloudkms] Minor formatting",
+          "issues": [
+            "9785"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "80c3c5c5-e068-4ddd-9503-528125be8265",
+      "createTime": "2023-09-11T22:14:47.741Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1ce4fa6f87735c2b9d4351b0d8c542afc48e8aec",
+          "message": "[aiplatform] add encryption_spec to index.proto and index_endpoint.proto",
+          "issues": [
+            "9805"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "[aiplatform] add UpdatePersistentResourceRequest and add resource_pool_images and head_node_resource_pool_id to RaySpec",
+          "issues": [
+            "9769"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "update field_behavior for `name` to be IMMUTABLE instead of OUTPUT_ONLY in Context, ModelMonitor, Schedule, DeploymentResourcePool",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "Expose CreateDatasetVersionOperationMetadata and RestoreDatasetVersionOperationMetadata to DatasetService",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add Timestamp to Feature",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add disk_type and disk_size_gb to PersistentDiskSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add schedule_name to PipelineJob",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add CountTokens to PredictionService",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add Parent to PublisherModel",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add open_evaluation_pipeline to PublisherModel",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "remove idle_replica_count from PersistentResource",
+          "issues": [],
+          "breakingChangeNote": "remove idle_replica_count from PersistentResource"
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "[aiplatform] add NVIDIA_H100_80GB and TPU_V5_LITEPOD to AcceleratorType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "Expose CreateDatasetVersionOperationMetadata and RestoreDatasetVersionOperationMetadata to DatasetService",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add disk_type and disk_size_gb to PersistentDiskSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add schedule_name to PipelineJob",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add open_evaluation_pipeline to PublisherModel",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "add ReadTensorboardSize to TensorboardService",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "48ac78c692cd145c8aafb6497b27054d069ed6ca",
+          "message": "[aiplatform] update field_behavior for `name` to be IMMUTABLE instead of OUTPUT_ONLY in Context, ModelMonitor, Schedule, DeploymentResourcePool",
+          "issues": []
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "0bbecfab-ba16-4bec-afec-3aa82e98c2c7",
+      "createTime": "2023-09-11T22:14:47.735Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "13e9ee123e26b31b6a24eeadf7def6abd76cd186",
+          "message": "[cloudchannel] mark ChannelPartnerGranularity as deprecated and offer alternatives",
+          "issues": [
+            "9807"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "cb5f17ea39dd511d9e9e3f9250a483c842bc0f24",
+          "message": "[cloudchannel] Launch QueryEligibleBillingAccounts API",
+          "issues": [
+            "9806"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "e56ebd40-629b-4525-8629-20e2dd31d706",
+      "createTime": "2023-09-11T22:14:47.730Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "acfa7dc1a6ae637ea148d21753ebcb49dbb90b74",
+          "message": "[cloudbilling] fixed resource_reference for name in GetProjectBillingInfo",
+          "issues": [
+            "9778"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "551e4256-14ae-4bde-8d1f-7ffb40508066",
+      "createTime": "2023-09-11T22:14:47.726Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "668032fad3d8a98058da9e214df9dae7168e53d7",
+          "message": "added iam troubleshooter v3 and v3beta api clients",
+          "issues": [
+            "9800"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "f6a43d6b-607f-4f70-bb5e-bd00503a446d",
+      "createTime": "2023-09-11T22:14:47.722Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "0a2b63a31be97490ecbfa9951134193514f08760",
+          "message": "[dialogflow-cx] Fix Ruby namespaces for generative AI classes",
+          "issues": [
+            "9813"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "c1e969ee2d5dcead33ec5069b3bb7cf379d18559",
+          "message": "[dialogflow-cx] added generative AI, safety/security and speech endpointing settings",
+          "issues": [
+            "9751"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "69c616e0-d2fe-4586-b9e0-7dbe7e4d4bf9",
+      "createTime": "2023-09-11T22:14:47.718Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b1910b13fd24531e65b1ff8e9804a6d25b4ce2ae",
+          "message": "[monitoring] Added support for retriggering notifications in AlertPolicy",
+          "issues": [
+            "9823"
+          ]
+        }
+      ],
+      "version": "1.18.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring",
+      "id": "ea345ad9-15b8-446b-9d1e-dddcac290467",
+      "createTime": "2023-09-11T22:14:47.711Z"
+    },
+    {
+      "changes": [
+        {
           "type": "docs",
           "sha": "9ebc18fefb698b317f6b3a66dfd28fc97c856eeb",
           "message": "[cloudtasks] minor formatting",
@@ -9265,5 +10581,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-08-08T14:10:11.817Z"
+  "updateTime": "2023-09-11T22:14:47.852Z"
 }
