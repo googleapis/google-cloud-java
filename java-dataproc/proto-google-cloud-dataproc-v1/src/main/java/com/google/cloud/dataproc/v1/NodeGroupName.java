@@ -174,7 +174,7 @@ public class NodeGroupName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       NodeGroupName that = ((NodeGroupName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.region, that.region)

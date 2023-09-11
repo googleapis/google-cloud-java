@@ -292,7 +292,7 @@ public class InspectTemplateName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InspectTemplateName that = ((InspectTemplateName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.inspectTemplate, that.inspectTemplate)

@@ -209,7 +209,7 @@ public class DlpJobName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DlpJobName that = ((DlpJobName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.dlpJob, that.dlpJob)
