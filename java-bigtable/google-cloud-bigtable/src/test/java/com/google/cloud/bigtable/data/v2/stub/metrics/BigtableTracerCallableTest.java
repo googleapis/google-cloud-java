@@ -403,7 +403,11 @@ public class BigtableTracerCallableTest {
 
     @Override
     public void mutateRows(MutateRowsRequest request, StreamObserver<MutateRowsResponse> observer) {
-      observer.onNext(MutateRowsResponse.getDefaultInstance());
+      MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+      for (int i = 0; i < request.getEntriesCount(); i++) {
+        builder.addEntries(MutateRowsResponse.Entry.newBuilder().setIndex(i));
+      }
+      observer.onNext(builder.build());
       observer.onCompleted();
     }
 

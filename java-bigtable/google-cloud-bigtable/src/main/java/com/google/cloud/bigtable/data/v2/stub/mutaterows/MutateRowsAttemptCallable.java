@@ -35,6 +35,7 @@ import com.google.cloud.bigtable.gaxx.retrying.NonCancellableFuture;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.rpc.Code;
 import java.util.List;
@@ -263,9 +264,12 @@ class MutateRowsAttemptCallable implements Callable<Void> {
 
     Builder builder = lastRequest.toBuilder().clearEntries();
     List<Integer> newOriginalIndexes = Lists.newArrayList();
+    boolean[] seenIndices = new boolean[currentRequest.getEntriesCount()];
 
     for (MutateRowsResponse response : responses) {
       for (Entry entry : response.getEntriesList()) {
+        seenIndices[Ints.checkedCast(entry.getIndex())] = true;
+
         if (entry.getStatus().getCode() == Code.OK_VALUE) {
           continue;
         }
@@ -286,6 +290,26 @@ class MutateRowsAttemptCallable implements Callable<Void> {
           builder.addEntries(lastRequest.getEntries((int) entry.getIndex()));
         }
       }
+    }
+
+    // Handle missing mutations
+    for (int i = 0; i < seenIndices.length; i++) {
+      if (seenIndices[i]) {
+        continue;
+      }
+
+      int origIndex = getOriginalIndex(i);
+      FailedMutation failedMutation =
+          FailedMutation.create(
+              origIndex,
+              ApiExceptionFactory.createException(
+                  "Missing entry response for entry " + origIndex,
+                  null,
+                  GrpcStatusCode.of(io.grpc.Status.Code.INTERNAL),
+                  false));
+
+      allFailures.add(failedMutation);
+      permanentFailures.add(failedMutation);
     }
 
     currentRequest = builder.build();

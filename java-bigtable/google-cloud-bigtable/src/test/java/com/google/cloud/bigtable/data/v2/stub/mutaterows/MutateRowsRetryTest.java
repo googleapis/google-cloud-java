@@ -107,7 +107,11 @@ public class MutateRowsRetryTest {
         MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
       attemptCounter.incrementAndGet();
       if (expectations.isEmpty()) {
-        responseObserver.onNext(MutateRowsResponse.getDefaultInstance());
+        MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+        for (int i = 0; i < request.getEntriesCount(); i++) {
+          builder.addEntriesBuilder().setIndex(i);
+        }
+        responseObserver.onNext(builder.build());
         responseObserver.onCompleted();
       } else {
         Exception expectedRpc = expectations.poll();

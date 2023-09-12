@@ -422,10 +422,15 @@ public class MetricsTracerTest {
             new Answer() {
               @Override
               public Object answer(InvocationOnMock invocation) {
+                MutateRowsRequest request = (MutateRowsRequest) invocation.getArguments()[0];
                 @SuppressWarnings("unchecked")
                 StreamObserver<MutateRowsResponse> observer =
                     (StreamObserver<MutateRowsResponse>) invocation.getArguments()[1];
-                observer.onNext(MutateRowsResponse.getDefaultInstance());
+                MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+                for (int i = 0; i < request.getEntriesCount(); i++) {
+                  builder.addEntriesBuilder().setIndex(i);
+                }
+                observer.onNext(builder.build());
                 observer.onCompleted();
                 return null;
               }

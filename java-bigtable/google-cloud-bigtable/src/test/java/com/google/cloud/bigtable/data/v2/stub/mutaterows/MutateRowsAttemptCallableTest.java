@@ -41,6 +41,8 @@ import com.google.rpc.Status;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -90,6 +92,37 @@ public class MutateRowsAttemptCallableTest {
     assertThat(parentFuture.attemptFuture.get()).isNull();
     // innerCallable received the request
     assertThat(innerCallable.lastRequest).isEqualTo(request);
+  }
+
+  @Test
+  public void missingEntry() {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder()
+            .addEntries(Entry.getDefaultInstance())
+            .addEntries(Entry.getDefaultInstance())
+            .build();
+    innerCallable.response.add(
+        MutateRowsResponse.newBuilder()
+            .addEntries(MutateRowsResponse.Entry.newBuilder().setIndex(0))
+            .build());
+
+    MutateRowsAttemptCallable attemptCallable =
+        new MutateRowsAttemptCallable(innerCallable, request, callContext, retryCodes);
+    attemptCallable.setExternalFuture(parentFuture);
+    attemptCallable.call();
+
+    ExecutionException executionException =
+        Assert.assertThrows(ExecutionException.class, () -> parentFuture.attemptFuture.get());
+    assertThat(executionException).hasCauseThat().isInstanceOf(MutateRowsException.class);
+    MutateRowsException e = (MutateRowsException) executionException.getCause();
+
+    assertThat(e).hasMessageThat().contains("Some mutations failed to apply");
+    assertThat(e.getFailedMutations()).hasSize(1);
+    FailedMutation failedMutation = e.getFailedMutations().get(0);
+    assertThat(failedMutation.getIndex()).isEqualTo(1);
+    assertThat(failedMutation.getError())
+        .hasMessageThat()
+        .contains("Missing entry response for entry 1");
   }
 
   @Test

@@ -223,7 +223,11 @@ public class StatsHeadersCallableTest {
         observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));
         return;
       }
-      observer.onNext(MutateRowsResponse.getDefaultInstance());
+      MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+      for (int i = 0; i < request.getEntriesCount(); i++) {
+        builder.addEntriesBuilder().setIndex(i);
+      }
+      observer.onNext(builder.build());
       observer.onCompleted();
     }
 
