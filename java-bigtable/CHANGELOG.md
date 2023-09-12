@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.27.1](https://github.com/googleapis/java-bigtable/compare/v2.27.0...v2.27.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* Aggregate batching throttling latency per attempt and reset it between ([#1905](https://github.com/googleapis/java-bigtable/issues/1905)) ([e6cc5f6](https://github.com/googleapis/java-bigtable/commit/e6cc5f615630d15b717df1056ceed98f21f2297b))
+* Make sure to propagate the response when throttling is enabled ([#1908](https://github.com/googleapis/java-bigtable/issues/1908)) ([f743187](https://github.com/googleapis/java-bigtable/commit/f7431871ba4ea64351fc5710089f8308e91d7978))
+
+
+### Dependencies
+
+* Update the Java code generator (gapic-generator-java) to 2.25.0 ([#1902](https://github.com/googleapis/java-bigtable/issues/1902)) ([f4fe6a0](https://github.com/googleapis/java-bigtable/commit/f4fe6a054194f68da1d7a548dec7a1cec68c1a2c))
+
 ## [2.27.0](https://github.com/googleapis/java-bigtable/compare/v2.26.0...v2.27.0) (2023-08-17)
 
 
