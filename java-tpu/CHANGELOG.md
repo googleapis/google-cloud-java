@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.25.0 (2023-09-11)
+
+### Features
+
+* Add ResetQueueResource to the TPU service ([#9748](https://github.com/googleapis/google-cloud-java/issues/9748)) ([9996b84](https://github.com/googleapis/google-cloud-java/commit/9996b84fec92ffb26bf3fa364e5010fc332a0e30))
+* publish boot_disk_config to support CHD with KMS ([#9795](https://github.com/googleapis/google-cloud-java/issues/9795)) ([87fc3d3](https://github.com/googleapis/google-cloud-java/commit/87fc3d3c8055b57c45582c43f4cb4e363d9fcec3))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 2.24.0 (2023-08-08)
 
 ### Features

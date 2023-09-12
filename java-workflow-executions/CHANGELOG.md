@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.24.0 (2023-09-11)
+
+### Features
+
+* add UNAVAILABLE and QUEUED to state enum ([#9771](https://github.com/googleapis/google-cloud-java/issues/9771)) ([f12a188](https://github.com/googleapis/google-cloud-java/commit/f12a18814bf2c1df4391080dcf14ebc872060064))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 2.23.0 (2023-08-08)
 
 ### Dependencies

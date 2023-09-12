@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.22.0 (2023-09-11)
+
+### Features
+
+* added support for walking mode and cost_per_kilometer_below_soft_max ([#9803](https://github.com/googleapis/google-cloud-java/issues/9803)) ([52ef3cc](https://github.com/googleapis/google-cloud-java/commit/52ef3cc5b9b3f1301f7b18947ac0a5407b6d7f43))
+* Minor formatting ([f07db1b](https://github.com/googleapis/google-cloud-java/commit/f07db1b2887582f676fb94e4fd8fd5198442a01b))
+* Minor formatting fix ([#9770](https://github.com/googleapis/google-cloud-java/issues/9770)) ([f07db1b](https://github.com/googleapis/google-cloud-java/commit/f07db1b2887582f676fb94e4fd8fd5198442a01b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 1.21.0 (2023-08-08)
 
 ### Dependencies

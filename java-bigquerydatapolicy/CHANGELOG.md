@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.21.0 (2023-09-11)
+
+### Features
+
+* support using custom UDF in the data policy ([#9759](https://github.com/googleapis/google-cloud-java/issues/9759)) ([ca81520](https://github.com/googleapis/google-cloud-java/commit/ca8152000954e2299d85e17b6278a70ad1ae86ca))
+* sync the new PredefinedExpression types to the client library ([ca81520](https://github.com/googleapis/google-cloud-java/commit/ca8152000954e2299d85e17b6278a70ad1ae86ca))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.20.0 (2023-08-08)
 
 ### Dependencies

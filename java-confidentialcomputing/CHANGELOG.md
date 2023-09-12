@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.10.0 (2023-09-11)
+
+### Features
+
+* Add a new field `partial_errors` to `VerifyAttestationResponse` proto ([#9750](https://github.com/googleapis/google-cloud-java/issues/9750)) ([b898dcd](https://github.com/googleapis/google-cloud-java/commit/b898dcd352c348f8acf2aee635233a6df86bdf3e))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.9.0 (2023-08-08)
 
 ### Features

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.20.0 (2023-09-11)
+
+### Features
+
+* support conversational / multi-turn search ([#9786](https://github.com/googleapis/google-cloud-java/issues/9786)) ([ea37f15](https://github.com/googleapis/google-cloud-java/commit/ea37f15e3d203779038230f7845b8014ebdca960))
+* supported bring your own embedding feature ([ea37f15](https://github.com/googleapis/google-cloud-java/commit/ea37f15e3d203779038230f7845b8014ebdca960))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.19.0 (2023-08-08)
 
 ### Features

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.35.0 (2023-09-11)
+
+### Features
+
+* added generative AI, safety/security and speech endpointing settings ([#9751](https://github.com/googleapis/google-cloud-java/issues/9751)) ([c1e969e](https://github.com/googleapis/google-cloud-java/commit/c1e969ee2d5dcead33ec5069b3bb7cf379d18559))
+* Fix Ruby namespaces for generative AI classes ([#9813](https://github.com/googleapis/google-cloud-java/issues/9813)) ([0a2b63a](https://github.com/googleapis/google-cloud-java/commit/0a2b63a31be97490ecbfa9951134193514f08760))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
 ## 0.34.0 (2023-08-08)
 
 ### Dependencies
