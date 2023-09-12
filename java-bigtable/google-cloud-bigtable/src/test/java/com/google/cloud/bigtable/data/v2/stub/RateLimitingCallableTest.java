@@ -27,9 +27,13 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamController;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.RateLimitInfo;
 import com.google.cloud.bigtable.gaxx.testing.FakeStatusCode;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.rpc.Code;
+import com.google.rpc.Status;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -136,6 +140,46 @@ public class RateLimitingCallableTest {
     double newQps = callableToTest.getCurrentRate();
 
     assertThat(newQps).isWithin(0.1).of(oldQps * RateLimitingServerStreamingCallable.MIN_FACTOR);
+  }
+
+  @Test
+  public void testResponseIsPropagated() {
+    MutateRowsResponse expectedResponse =
+        MutateRowsResponse.newBuilder()
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder()
+                    .setIndex(0)
+                    .setStatus(Status.newBuilder().setCode(Code.PERMISSION_DENIED_VALUE)))
+            .build();
+    innerCallable =
+        new MockCallable() {
+          @Override
+          public void call(
+              MutateRowsRequest mutateRowsRequest,
+              ResponseObserver<MutateRowsResponse> responseObserver,
+              ApiCallContext apiCallContext) {
+            responseObserver.onResponse(expectedResponse);
+            responseObserver.onComplete();
+          }
+        };
+
+    callableToTest = new RateLimitingServerStreamingCallable(innerCallable);
+
+    ResponseObserver<MutateRowsResponse> mockObserver = Mockito.mock(ResponseObserver.class);
+
+    MutateRowsRequest req =
+        MutateRowsRequest.newBuilder()
+            .addEntries(
+                MutateRowsRequest.Entry.newBuilder()
+                    .setRowKey(ByteString.copyFromUtf8("k1"))
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance())))
+            .build();
+
+    callableToTest.call(req, mockObserver, context);
+
+    Mockito.verify(mockObserver, Mockito.times(1)).onResponse(Mockito.eq(expectedResponse));
   }
 
   private static class MockResponseObserver implements ResponseObserver<MutateRowsResponse> {

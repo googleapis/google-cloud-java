@@ -127,6 +127,7 @@ class RateLimitingServerStreamingCallable
               Duration.ofSeconds(com.google.protobuf.util.Durations.toSeconds(info.getPeriod())));
         }
       }
+      outerObserver.onResponse(response);
     }
 
     @Override
