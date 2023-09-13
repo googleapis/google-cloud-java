@@ -528,6 +528,7 @@ public class EnhancedBigtableStubTest {
     byte[] decodedFlags = Base64.getDecoder().decode(encodedFlags);
     FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
     assertThat(featureFlags.getMutateRowsRateLimit()).isTrue();
+    assertThat(featureFlags.getMutateRowsRateLimit2()).isTrue();
   }
 
   @Test
@@ -547,6 +548,7 @@ public class EnhancedBigtableStubTest {
     byte[] decodedFlags = Base64.getDecoder().decode(encodedFlags);
     FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
     assertThat(featureFlags.getMutateRowsRateLimit()).isFalse();
+    assertThat(featureFlags.getMutateRowsRateLimit2()).isFalse();
   }
 
   @Test

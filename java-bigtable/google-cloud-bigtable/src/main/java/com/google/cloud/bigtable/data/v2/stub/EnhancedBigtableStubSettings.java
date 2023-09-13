@@ -980,6 +980,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       if (this.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
         // only set mutate rows feature flag when this feature is enabled
         featureFlags.setMutateRowsRateLimit(true);
+        featureFlags.setMutateRowsRateLimit2(true);
       }
 
       // Serialize the web64 encode the bigtable feature flags
