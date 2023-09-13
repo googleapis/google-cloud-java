@@ -83,6 +83,11 @@ public class DatasetTest {
       TableInfo.newBuilder(
               TableId.of(NEW_PROJECT_ID, "dataset", "table3"), EXTERNAL_TABLE_DEFINITION)
           .build();
+  private static final ExternalDatasetReference EXTERNAL_DATASET_REFERENCE =
+      ExternalDatasetReference.newBuilder()
+          .setExternalSource("source")
+          .setConnection("connection")
+          .build();
 
   @Rule public MockitoRule rule;
 
@@ -319,6 +324,31 @@ public class DatasetTest {
     compareDataset(expectedDataset, Dataset.fromPb(bigquery, expectedDataset.toPb()));
   }
 
+  @Test
+  public void testExternalDatasetReference() {
+    Dataset datasetWithExternalDatasetReference =
+        new Dataset.Builder(bigquery, DATASET_ID)
+            .setAcl(ACCESS_RULES)
+            .setCreationTime(CREATION_TIME)
+            .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
+            .setDescription(DESCRIPTION)
+            .setEtag(ETAG)
+            .setFriendlyName(FRIENDLY_NAME)
+            .setGeneratedId(GENERATED_ID)
+            .setLastModified(LAST_MODIFIED)
+            .setLocation(LOCATION)
+            .setSelfLink(SELF_LINK)
+            .setLabels(LABELS)
+            .setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE)
+            .build();
+    assertEquals(
+        EXTERNAL_DATASET_REFERENCE,
+        datasetWithExternalDatasetReference.getExternalDatasetReference());
+    compareDataset(
+        datasetWithExternalDatasetReference,
+        datasetWithExternalDatasetReference.toBuilder().build());
+  }
+
   private void compareDataset(Dataset expected, Dataset value) {
     assertEquals(expected, value);
     compareDatasetInfo(expected, value);
@@ -338,5 +368,6 @@ public class DatasetTest {
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getDefaultTableLifetime(), value.getDefaultTableLifetime());
     assertEquals(expected.getLastModified(), value.getLastModified());
+    assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
   }
 }

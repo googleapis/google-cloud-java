@@ -73,6 +73,7 @@ public class DatasetInfo implements Serializable {
   private final EncryptionConfiguration defaultEncryptionConfiguration;
   private final Long defaultPartitionExpirationMs;
   private final String defaultCollation;
+  private final ExternalDatasetReference externalDatasetReference;
 
   /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
@@ -126,6 +127,13 @@ public class DatasetInfo implements Serializable {
     abstract Builder setSelfLink(String selfLink);
 
     public abstract Builder setLabels(Map<String, String> labels);
+
+    /**
+     * Optional. Information about the external metadata storage where the dataset is defined.
+     * Filled out when the dataset type is EXTERNAL
+     */
+    public abstract Builder setExternalDatasetReference(
+        ExternalDatasetReference externalDatasetReference);
 
     /**
      * The default encryption key for all tables in the dataset. Once this property is set, all
@@ -183,6 +191,7 @@ public class DatasetInfo implements Serializable {
     private EncryptionConfiguration defaultEncryptionConfiguration;
     private Long defaultPartitionExpirationMs;
     private String defaultCollation;
+    private ExternalDatasetReference externalDatasetReference;
 
     BuilderImpl() {}
 
@@ -202,6 +211,7 @@ public class DatasetInfo implements Serializable {
       this.defaultEncryptionConfiguration = datasetInfo.defaultEncryptionConfiguration;
       this.defaultPartitionExpirationMs = datasetInfo.defaultPartitionExpirationMs;
       this.defaultCollation = datasetInfo.defaultCollation;
+      this.externalDatasetReference = datasetInfo.externalDatasetReference;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -236,6 +246,10 @@ public class DatasetInfo implements Serializable {
       }
       this.defaultPartitionExpirationMs = datasetPb.getDefaultPartitionExpirationMs();
       this.defaultCollation = datasetPb.getDefaultCollation();
+      if (datasetPb.getExternalDatasetReference() != null) {
+        this.externalDatasetReference =
+            ExternalDatasetReference.fromPb(datasetPb.getExternalDatasetReference());
+      }
     }
 
     @Override
@@ -337,6 +351,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setExternalDatasetReference(ExternalDatasetReference externalDatasetReference) {
+      this.externalDatasetReference = externalDatasetReference;
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -358,6 +378,7 @@ public class DatasetInfo implements Serializable {
     defaultEncryptionConfiguration = builder.defaultEncryptionConfiguration;
     defaultPartitionExpirationMs = builder.defaultPartitionExpirationMs;
     defaultCollation = builder.defaultCollation;
+    externalDatasetReference = builder.externalDatasetReference;
   }
 
   /** Returns the dataset identity. */
@@ -487,6 +508,14 @@ public class DatasetInfo implements Serializable {
     return defaultCollation;
   }
 
+  /**
+   * Returns information about the external metadata storage where the dataset is defined. Filled
+   * out when the dataset type is EXTERNAL.
+   */
+  public ExternalDatasetReference getExternalDatasetReference() {
+    return externalDatasetReference;
+  }
+
   /** Returns a builder for the dataset object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -510,6 +539,7 @@ public class DatasetInfo implements Serializable {
         .add("defaultEncryptionConfiguration", defaultEncryptionConfiguration)
         .add("defaultPartitionExpirationMs", defaultPartitionExpirationMs)
         .add("defaultCollation", defaultCollation)
+        .add("externalDatasetReference", externalDatasetReference)
         .toString();
   }
 
@@ -587,6 +617,9 @@ public class DatasetInfo implements Serializable {
     }
     if (defaultCollation != null) {
       datasetPb.setDefaultCollation(defaultCollation);
+    }
+    if (externalDatasetReference != null) {
+      datasetPb.setExternalDatasetReference(externalDatasetReference.toPb());
     }
     return datasetPb;
   }

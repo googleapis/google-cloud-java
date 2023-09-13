@@ -58,6 +58,12 @@ public class DatasetInfoTest {
   private static final DatasetId DATASET_ID_COMPLETE = DatasetId.of("project", "dataset");
   private static final EncryptionConfiguration DATASET_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
+
+  private static final ExternalDatasetReference EXTERNAL_DATASET_REFERENCE =
+      ExternalDatasetReference.newBuilder()
+          .setExternalSource("source")
+          .setConnection("connection")
+          .build();
   private static final DatasetInfo DATASET_INFO =
       DatasetInfo.newBuilder(DATASET_ID)
           .setAcl(ACCESS_RULES)
@@ -82,6 +88,8 @@ public class DatasetInfoTest {
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE_WITH_IAM_MEMBER =
       DATASET_INFO.toBuilder().setAcl(ACCESS_RULES_IAM_MEMBER).build();
+  private static final DatasetInfo DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE =
+      DATASET_INFO.toBuilder().setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE).build();
 
   @Test
   public void testToBuilder() {
@@ -106,6 +114,28 @@ public class DatasetInfoTest {
   public void testToBuilderIncomplete() {
     DatasetInfo datasetInfo = DatasetInfo.newBuilder(DATASET_ID).build();
     assertEquals(datasetInfo, datasetInfo.toBuilder().build());
+  }
+
+  @Test
+  public void testToBuilderWithExternalDatasetReference() {
+    compareDatasets(
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE,
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.toBuilder().build());
+
+    ExternalDatasetReference externalDatasetReference =
+        ExternalDatasetReference.newBuilder()
+            .setExternalSource("source2")
+            .setConnection("connection2")
+            .build();
+    DatasetInfo datasetInfo =
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE
+            .toBuilder()
+            .setExternalDatasetReference(externalDatasetReference)
+            .build();
+    assertEquals(externalDatasetReference, datasetInfo.getExternalDatasetReference());
+    datasetInfo =
+        datasetInfo.toBuilder().setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE).build();
+    compareDatasets(DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE, datasetInfo);
   }
 
   @Test
@@ -137,6 +167,9 @@ public class DatasetInfoTest {
     assertEquals(LOCATION, DATASET_INFO_COMPLETE.getLocation());
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.getSelfLink());
     assertEquals(LABELS, DATASET_INFO_COMPLETE.getLabels());
+    assertEquals(
+        EXTERNAL_DATASET_REFERENCE,
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.getExternalDatasetReference());
   }
 
   @Test
@@ -156,6 +189,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getDefaultEncryptionConfiguration());
     assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
+    assertNull(datasetInfo.getExternalDatasetReference());
 
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
@@ -172,11 +206,15 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getDefaultEncryptionConfiguration());
     assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
+    assertNull(datasetInfo.getExternalDatasetReference());
   }
 
   @Test
   public void testToPbAndFromPb() {
     compareDatasets(DATASET_INFO_COMPLETE, DatasetInfo.fromPb(DATASET_INFO_COMPLETE.toPb()));
+    compareDatasets(
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE,
+        DatasetInfo.fromPb(DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.toPb()));
     DatasetInfo datasetInfo = DatasetInfo.newBuilder("project", "dataset").build();
     compareDatasets(datasetInfo, DatasetInfo.fromPb(datasetInfo.toPb()));
   }
@@ -204,5 +242,6 @@ public class DatasetInfoTest {
         expected.getDefaultEncryptionConfiguration(), value.getDefaultEncryptionConfiguration());
     assertEquals(
         expected.getDefaultPartitionExpirationMs(), value.getDefaultPartitionExpirationMs());
+    assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
   }
 }

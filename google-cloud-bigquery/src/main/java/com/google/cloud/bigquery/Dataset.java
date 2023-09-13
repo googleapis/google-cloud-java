@@ -153,6 +153,12 @@ public class Dataset extends DatasetInfo {
     }
 
     @Override
+    public Builder setExternalDatasetReference(ExternalDatasetReference externalDatasetReference) {
+      infoBuilder.setExternalDatasetReference(externalDatasetReference);
+      return this;
+    }
+
+    @Override
     public Dataset build() {
       return new Dataset(bigquery, infoBuilder);
     }
