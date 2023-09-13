@@ -176,7 +176,7 @@ public class RemoteRpcTest {
         httpRequest
             .getHeaders()
             .getFirstHeaderStringValue(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER);
-    assertEquals(8, header.length());
+    assertEquals(9, header.length());
   }
 
   @Test

@@ -76,7 +76,7 @@ class ChecksumEnforcingInputStream extends InputStream {
       endToEndChecksumHandler.update(b, off, i);
     } else {
       // no more payload to read. compute checksum and verify
-      if (!expectedChecksum.equalsIgnoreCase(endToEndChecksumHandler.hash())) {
+      if (!expectedChecksum.equals(endToEndChecksumHandler.hash())) {
         throw new IOException("possible memory corruption on payload detected");
       }
     }

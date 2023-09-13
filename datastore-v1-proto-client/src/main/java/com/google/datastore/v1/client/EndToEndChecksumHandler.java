@@ -40,7 +40,11 @@ class EndToEndChecksumHandler {
       return null;
     }
     HashCode hc = getNewCrc32cHasher().putBytes(bytes).hash();
-    return hc.toString();
+    return hashToString(hc);
+  }
+
+  private static String hashToString(HashCode hc) {
+    return String.valueOf(Integer.toUnsignedLong(hc.asInt()));
   }
 
   private static Hasher getNewCrc32cHasher() {
@@ -59,7 +63,7 @@ class EndToEndChecksumHandler {
         && !checksum.isEmpty()
         && bytes != null
         && bytes.length > 0
-        && checksum.equalsIgnoreCase(computeChecksum(bytes));
+        && checksum.equals(computeChecksum(bytes));
   }
 
   static boolean hasChecksumHeader(HttpResponse response) {
@@ -76,6 +80,6 @@ class EndToEndChecksumHandler {
   }
 
   String hash() {
-    return hasher.hash().toString();
+    return hashToString(hasher.hash());
   }
 }
