@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.125.0](https://github.com/googleapis/java-pubsub/compare/v1.124.2...v1.125.0) (2023-09-12)
+
+
+### Features
+
+* Receipt modack ([#1540](https://github.com/googleapis/java-pubsub/issues/1540)) ([74d8da9](https://github.com/googleapis/java-pubsub/commit/74d8da97c42b672e3f9f26b9a535d6bac948a402))
+
+
+### Bug Fixes
+
+* Make retry policy back off more aggressively for RPCs that retry RESOURCE_EXHAUSTD ([#1704](https://github.com/googleapis/java-pubsub/issues/1704)) ([f61e7e0](https://github.com/googleapis/java-pubsub/commit/f61e7e0e2895a90e30ecf4dcbfa8c70022947d9e))
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#1712](https://github.com/googleapis/java-pubsub/issues/1712)) ([404c492](https://github.com/googleapis/java-pubsub/commit/404c492823306c1448c62383b9ea88cf9e43b970))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.31.2 ([#1713](https://github.com/googleapis/java-pubsub/issues/1713)) ([32cb43c](https://github.com/googleapis/java-pubsub/commit/32cb43cce40f7a39602eb7d9b39a88eb229fc4ef))
+* Update dependency com.google.cloud:google-cloud-core to v2.23.0 ([#1717](https://github.com/googleapis/java-pubsub/issues/1717)) ([929f778](https://github.com/googleapis/java-pubsub/commit/929f778e341aefe61206e55de828bf5a86e4efd3))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#1718](https://github.com/googleapis/java-pubsub/issues/1718)) ([0eeaa19](https://github.com/googleapis/java-pubsub/commit/0eeaa19a640513e80d595ca7c4016e26fc30871b))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.24.3 ([#1698](https://github.com/googleapis/java-pubsub/issues/1698)) ([1157fbf](https://github.com/googleapis/java-pubsub/commit/1157fbff92204eae55bb24ad803f0b8e1336ac10))
+* Update dependency org.easymock:easymock to v5.2.0 ([#1711](https://github.com/googleapis/java-pubsub/issues/1711)) ([313f6dd](https://github.com/googleapis/java-pubsub/commit/313f6dd8b82fbc57df066615e285325969b6d2e4))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.25 ([#1709](https://github.com/googleapis/java-pubsub/issues/1709)) ([1cc8a53](https://github.com/googleapis/java-pubsub/commit/1cc8a53a416acdd5f9cd4fc598f2f5f182a2ad44))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.26 ([#1715](https://github.com/googleapis/java-pubsub/issues/1715)) ([f2cc75f](https://github.com/googleapis/java-pubsub/commit/f2cc75f960521e8be50cf354e00024d66fb8f7fb))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.25 ([#1710](https://github.com/googleapis/java-pubsub/issues/1710)) ([9764c3f](https://github.com/googleapis/java-pubsub/commit/9764c3f740cd726ad09cef82039561bd145fbe0c))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.26 ([#1716](https://github.com/googleapis/java-pubsub/issues/1716)) ([6c9e949](https://github.com/googleapis/java-pubsub/commit/6c9e9493ec7aeaa0711ad2155fa6a549937284df))
+
 ## [1.124.2](https://github.com/googleapis/java-pubsub/compare/v1.124.1...v1.124.2) (2023-08-15)
 
 
