@@ -458,6 +458,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setRetryableCodes(readRowsSettings.getRetryableCodes())
             .setRetrySettings(readRowsSettings.getRetrySettings())
             .setIdleTimeout(readRowsSettings.getIdleTimeout())
+            .setWaitTimeout(readRowsSettings.getWaitTimeout())
             .build();
 
     ServerStreamingCallable<ReadRowsRequest, RowT> watched =
@@ -906,6 +907,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 settings.generateInitialChangeStreamPartitionsSettings().getRetrySettings())
             .setIdleTimeout(
                 settings.generateInitialChangeStreamPartitionsSettings().getIdleTimeout())
+            .setWaitTimeout(
+                settings.generateInitialChangeStreamPartitionsSettings().getWaitTimeout())
             .build();
 
     ServerStreamingCallable<String, ByteStringRange> watched =
@@ -980,6 +983,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setRetryableCodes(settings.readChangeStreamSettings().getRetryableCodes())
             .setRetrySettings(settings.readChangeStreamSettings().getRetrySettings())
             .setIdleTimeout(settings.readChangeStreamSettings().getIdleTimeout())
+            .setWaitTimeout(settings.readChangeStreamSettings().getWaitTimeout())
             .build();
 
     ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> watched =
