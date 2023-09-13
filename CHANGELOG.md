@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.42.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.41.1...v2.42.0) (2023-09-13)
+
+
+### Features
+
+* Add default_missing_value_interpretation field; indicate KMS_SERVICE_ERROR is retryable ([#2229](https://github.com/googleapis/java-bigquerystorage/issues/2229)) ([df686d6](https://github.com/googleapis/java-bigquerystorage/commit/df686d6ac51d182b52dbd1f5a69585bb605e9b94))
+* Expose settings to configure default missing value interpretation. ([#2230](https://github.com/googleapis/java-bigquerystorage/issues/2230)) ([dc5ed73](https://github.com/googleapis/java-bigquerystorage/commit/dc5ed73f513a77939286d3c129fc26f039c23d5c))
+
+
+### Bug Fixes
+
+* Populate final stauts to initial request during connection shutdown ([#2228](https://github.com/googleapis/java-bigquerystorage/issues/2228)) ([9b9b5c0](https://github.com/googleapis/java-bigquerystorage/commit/9b9b5c09d7bc458493338eced8527a168fff0129))
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#2237](https://github.com/googleapis/java-bigquerystorage/issues/2237)) ([d5d739f](https://github.com/googleapis/java-bigquerystorage/commit/d5d739fe7624b74584c1272f13635f728fdf53d2))
+* Update arrow.version to v13 ([#2234](https://github.com/googleapis/java-bigquerystorage/issues/2234)) ([ac45c2a](https://github.com/googleapis/java-bigquerystorage/commit/ac45c2aa189fa0cba05f88486f44d3b1d6f761ca))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.31.1 ([#2225](https://github.com/googleapis/java-bigquerystorage/issues/2225)) ([5144c5a](https://github.com/googleapis/java-bigquerystorage/commit/5144c5ad1e107f96d2003064cd2823982ac0e360))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.31.2 ([#2241](https://github.com/googleapis/java-bigquerystorage/issues/2241)) ([91e3730](https://github.com/googleapis/java-bigquerystorage/commit/91e37303f57ec2e211a375652a8eca8b7d39d1e6))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#2239](https://github.com/googleapis/java-bigquerystorage/issues/2239)) ([5352a7d](https://github.com/googleapis/java-bigquerystorage/commit/5352a7d7e1d7b01a33936adf7e204c5f49f0c230))
+* Update dependency org.apache.arrow:arrow-memory-netty to v13 ([#2235](https://github.com/googleapis/java-bigquerystorage/issues/2235)) ([7e50bef](https://github.com/googleapis/java-bigquerystorage/commit/7e50bef3fa3c92c94aeefedca0ae87c5132bb1be))
+
 ## [2.41.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.41.0...v2.41.1) (2023-08-08)
 
 
