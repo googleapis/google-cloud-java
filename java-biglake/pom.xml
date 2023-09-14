@@ -56,8 +56,8 @@
 
   <modules>
     <module>google-cloud-biglake</module>
-    <module>grpc-google-cloud-biglake-v1alpha1</module>
     <module>grpc-google-cloud-biglake-v1</module>
+    <module>grpc-google-cloud-biglake-v1alpha1</module>
     <module>proto-google-cloud-biglake-v1alpha1</module>
     <module>proto-google-cloud-biglake-v1</module>
     <module>google-cloud-biglake-bom</module>
