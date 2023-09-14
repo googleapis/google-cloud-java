@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.125.1](https://github.com/googleapis/java-pubsub/compare/v1.125.0...v1.125.1) (2023-09-14)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 - abandoned ([#1719](https://github.com/googleapis/java-pubsub/issues/1719)) ([b82f15a](https://github.com/googleapis/java-pubsub/commit/b82f15a099f3366620f5e22764b043911ebd88d1))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.32.0 ([#1725](https://github.com/googleapis/java-pubsub/issues/1725)) ([f40f09a](https://github.com/googleapis/java-pubsub/commit/f40f09a185c035cc03b6be6ec62f880da9f7b377))
+
 ## [1.125.0](https://github.com/googleapis/java-pubsub/compare/v1.124.2...v1.125.0) (2023-09-12)
 
 
