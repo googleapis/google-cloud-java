@@ -41,7 +41,9 @@ import java.util.List;
  */
 public class DatastoreOptions {
   private final String projectId;
-  private final String databaseId;
+
+  @Deprecated private final String databaseId;
+
   private final String projectEndpoint;
   private final String host;
   private final String localHost;
@@ -75,7 +77,9 @@ public class DatastoreOptions {
         "Can set at most one of project endpoint, host, and local host.";
 
     private String projectId;
-    private String databaseId;
+
+    @Deprecated private String databaseId;
+
     private String projectEndpoint;
     private String host;
     private String localHost;
@@ -107,8 +111,19 @@ public class DatastoreOptions {
       return this;
     }
 
-    /** Sets the database ID used to access Cloud Datastore. */
+    /**
+     * This field is ignored and will be removed in a future release. Please set the database id on
+     * the request itself. For example:
+     *
+     * <pre>{@code
+     * CommitRequest.newBuilder()
+     *     .setDatabaseId("my-database-id")
+     *     ....
+     *     .build();
+     * }</pre>
+     */
     @BetaApi
+    @Deprecated
     public Builder databaseId(String databaseId) {
       this.databaseId = databaseId;
       return this;
@@ -188,7 +203,19 @@ public class DatastoreOptions {
     return projectId;
   }
 
+  /**
+   * This field is ignored and will be removed in a future release. Please set the database id on
+   * the request itself. For example:
+   *
+   * <pre>{@code
+   * CommitRequest.newBuilder()
+   *     .setDatabaseId("my-database-id")
+   *     ....
+   *     .build();
+   * }</pre>
+   */
   @BetaApi
+  @Deprecated
   public String getDatabaseId() {
     return databaseId;
   }

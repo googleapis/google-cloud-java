@@ -216,6 +216,7 @@ public class DatastoreClientTest {
   }
 
   @Test
+  // TODO: remove this test once deprecated `databaseId` is removed
   public void setDatabaseId() {
     DatastoreOptions options =
         new DatastoreOptions.Builder()
