@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.32.0](https://github.com/googleapis/java-bigquery/compare/v2.31.2...v2.32.0) (2023-09-14)
+
+
+### Features
+
+* Add support for converting interval fields to threeten PeriodDuration ([#2838](https://github.com/googleapis/java-bigquery/issues/2838)) ([2294c2f](https://github.com/googleapis/java-bigquery/commit/2294c2ffca62a22a66786a9a4c6c9ef1be898e5d))
+* Add support for ExternalDatasetReference ([#2871](https://github.com/googleapis/java-bigquery/issues/2871)) ([bbb86fd](https://github.com/googleapis/java-bigquery/commit/bbb86fd8488ad253f2e9cf3fb08360330bd860a3))
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#2862](https://github.com/googleapis/java-bigquery/issues/2862)) ([902e9b9](https://github.com/googleapis/java-bigquery/commit/902e9b97cd548910354297ff6e605df094a03175))
+* Update actions/upload-artifact action to v3.1.3 ([#2867](https://github.com/googleapis/java-bigquery/issues/2867)) ([cbbf0fb](https://github.com/googleapis/java-bigquery/commit/cbbf0fb8a99c0633335d81cd36a7b53dfe9df20b))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.26.0 ([#2873](https://github.com/googleapis/java-bigquery/issues/2873)) ([6196625](https://github.com/googleapis/java-bigquery/commit/6196625d614ce80641008ffab3b5bf9720651bb9))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.30.0 ([#2874](https://github.com/googleapis/java-bigquery/issues/2874)) ([6cafedf](https://github.com/googleapis/java-bigquery/commit/6cafedf634bc88f41b2b5d3ec1425341b02ac8b6))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#2870](https://github.com/googleapis/java-bigquery/issues/2870)) ([f24439b](https://github.com/googleapis/java-bigquery/commit/f24439b7adf1f08cee4b65918b4395861fe88517))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.26 ([#2868](https://github.com/googleapis/java-bigquery/issues/2868)) ([d01031c](https://github.com/googleapis/java-bigquery/commit/d01031cbc6d50f9aff8c6d49a8d2c54496779451))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.26 ([#2869](https://github.com/googleapis/java-bigquery/issues/2869)) ([edd7141](https://github.com/googleapis/java-bigquery/commit/edd714129b65d73f894591c4d40e1a8e79c36b04))
+
 ## [2.31.2](https://github.com/googleapis/java-bigquery/compare/v2.31.1...v2.31.2) (2023-09-05)
 
 
